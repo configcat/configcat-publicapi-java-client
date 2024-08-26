@@ -1,0 +1,1 @@
+Please check the [Github Releases](https://github.com/configcat/configcat-publicapi-java-client/releases) page for the changelog of the ConfigCat Public API Java Client.
