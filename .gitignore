@@ -35,11 +35,10 @@ bin
 # BlueJ files
 *.ctxt
 
-**/.idea/*
-
 **/.gradle/*
 **/build/*
 out/
 
 .DS_Store
 .vscode
+
