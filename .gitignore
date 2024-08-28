@@ -35,6 +35,8 @@ bin
 # BlueJ files
 *.ctxt
 
+**/.idea/*
+
 **/.gradle/*
 **/build/*
 out/
