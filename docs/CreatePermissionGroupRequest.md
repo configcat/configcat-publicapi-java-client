@@ -1,0 +1,56 @@
+
+
+# CreatePermissionGroupRequest
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**name** | **String** | Name of the Permission Group. |  |
+|**canManageMembers** | **Boolean** | Group members can manage team members. |  [optional] |
+|**canCreateOrUpdateConfig** | **Boolean** | Group members can create/update Configs. |  [optional] |
+|**canDeleteConfig** | **Boolean** | Group members can delete Configs. |  [optional] |
+|**canCreateOrUpdateEnvironment** | **Boolean** | Group members can create/update Environments. |  [optional] |
+|**canDeleteEnvironment** | **Boolean** | Group members can delete Environments. |  [optional] |
+|**canCreateOrUpdateSetting** | **Boolean** | Group members can create/update Feature Flags and Settings. |  [optional] |
+|**canTagSetting** | **Boolean** | Group members can attach/detach Tags to Feature Flags and Settings. |  [optional] |
+|**canDeleteSetting** | **Boolean** | Group members can delete Feature Flags and Settings. |  [optional] |
+|**canCreateOrUpdateTag** | **Boolean** | Group members can create/update Tags. |  [optional] |
+|**canDeleteTag** | **Boolean** | Group members can delete Tags. |  [optional] |
+|**canManageWebhook** | **Boolean** | Group members can create/update/delete Webhooks. |  [optional] |
+|**canUseExportImport** | **Boolean** | Group members can use the export/import feature. |  [optional] |
+|**canManageProductPreferences** | **Boolean** | Group members can update Product preferences. |  [optional] |
+|**canManageIntegrations** | **Boolean** | Group members can add and configure integrations. |  [optional] |
+|**canViewSdkKey** | **Boolean** | Group members has access to SDK keys. |  [optional] |
+|**canRotateSdkKey** | **Boolean** | Group members can rotate SDK keys. |  [optional] |
+|**canCreateOrUpdateSegments** | **Boolean** | Group members can create/update Segments. |  [optional] |
+|**canDeleteSegments** | **Boolean** | Group members can delete Segments. |  [optional] |
+|**canViewProductAuditLog** | **Boolean** | Group members has access to audit logs. |  [optional] |
+|**canViewProductStatistics** | **Boolean** | Group members has access to product statistics. |  [optional] |
+|**accessType** | [**AccessTypeEnum**](#AccessTypeEnum) | Represent the Feature Management permission. |  [optional] |
+|**newEnvironmentAccessType** | [**NewEnvironmentAccessTypeEnum**](#NewEnvironmentAccessTypeEnum) | Represent the environment specific Feature Management permission. |  [optional] |
+|**environmentAccesses** | [**List&lt;CreateOrUpdateEnvironmentAccessModel&gt;**](CreateOrUpdateEnvironmentAccessModel.md) | List of environment specific permissions. |  [optional] |
+
+
+
+## Enum: AccessTypeEnum
+
+| Name | Value |
+|---- | -----|
+| READ_ONLY | &quot;readOnly&quot; |
+| FULL | &quot;full&quot; |
+| CUSTOM | &quot;custom&quot; |
+
+
+
+## Enum: NewEnvironmentAccessTypeEnum
+
+| Name | Value |
+|---- | -----|
+| FULL | &quot;full&quot; |
+| READ_ONLY | &quot;readOnly&quot; |
+| NONE | &quot;none&quot; |
+
+
+
