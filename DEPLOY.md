@@ -1,7 +1,8 @@
 # Steps to deploy
-1. In the `GENERATE.md` command update the `artifactVersion` property value to the new version.
-2. Run the command and generate the client.
-4. Commit & Push
+1. (Optional) Follow the guide in `REGENERATE.md` if you want to regenerate the full client code (e.g. refreshing with new API endpoints)
+2. Update the version in the `build.gradle` file.
+3. Commit & Push
+
 ## Publish
 Use the **same version** for the git tag as in the properties file.
 - Via git tag

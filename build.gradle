@@ -2,6 +2,7 @@ apply plugin: 'idea'
 apply plugin: 'eclipse'
 apply plugin: 'java'
 apply plugin: 'com.diffplug.spotless'
+apply plugin: 'signing'
 
 group = 'com.configcat'
 version = '1.0.0'
@@ -78,27 +79,6 @@ if(hasProperty('target') && target == 'android') {
         archives sourcesJar
     }
 
-} else {
-
-    apply plugin: 'java'
-    apply plugin: 'maven-publish'
-
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
-
-    publishing {
-        publications {
-            maven(MavenPublication) {
-               artifactId = 'configcat-publicapi-java-client'
-               from components.java
-            }
-        }
-    }
-
-    task execute(type:JavaExec) {
-       main = System.getProperty('mainClass')
-       classpath = sourceSets.main.runtimeClasspath
-    }
 }
 
 ext {
@@ -164,5 +144,58 @@ test {
     testLogging {
         events "passed", "skipped", "failed"
     }
+}
 
+
+def publishing = extensions.getByType(PublishingExtension)
+publishing.repositories {
+    maven {
+        credentials {
+            username findProperty('OSSRH_USERNAME') as String
+            password findProperty('OSSRH_PASSWORD') as String
+        }
+       url = 'https://oss.sonatype.org/service/local/staging/deploy/maven2'
+    }
+}
+
+def publication = publishing.publications.create("main", MavenPublication) {
+    from(components.getByName("java"))
+
+    pom {
+        name.set("ConfigCat PublicApi Java Client")
+        description.set("ConfigCat PublicApi Java Client generated with OpenAPI Generator.")
+        url.set("https://github.com/configcat/configcat-publicapi-java-client")
+        licenses {
+            license {
+                name.set("MIT License")
+                url.set("https://raw.githubusercontent.com/configcat/configcat-publicapi-java-client/main/LICENSE")
+                distribution.set("repo")
+            }
+        }
+        scm {
+            connection.set("scm:git:git://github.com/configcat/configcat-publicapi-java-client.git")
+            developerConnection.set("scm:git:ssh:git@github.com:configcat/configcat-publicapi-java-client.git")
+            url.set("https://github.com/configcat/configcat-publicapi-java-client")
+        }
+        developers {
+            developer {
+                id.set("configcat")
+                name.set("ConfigCat")
+                email.set("developer@configcat.com")
+            }
+        }
+        organization {
+            url.set("https://configcat.com")
+            name.set("ConfigCat")
+        }
+    }
+}
+
+signing {
+    def signingKey = findProperty("SIGNING_KEY")
+    def signingPassphrase = findProperty("SIGNING_PASSPHRASE")
+    if (signingKey && signingPassphrase) {
+        useInMemoryPgpKeys(signingKey as String, signingPassphrase as String)
+        sign publication
+    }
 }
