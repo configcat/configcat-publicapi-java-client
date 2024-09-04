@@ -33,7 +33,7 @@ jobs:
       run: ./gradlew test --stacktrace
       
   deploy-release:
-    needs: [ coverage-scan, test ]
+    needs: [ test ]
     if: startsWith(github.ref, 'refs/tags')
     runs-on: ubuntu-latest
     steps:
@@ -50,7 +50,7 @@ jobs:
       run: chmod +x gradlew
       
     - name: Deploy release with Gradle
-      run: ./gradlew publishMainPublicationToMavenRepository -Dbuild.number=$GITHUB_RUN_NUMBER
+      run: ./gradlew publishMainPublicationToMavenRepository
       env:
         ORG_GRADLE_PROJECT_OSSRH_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
         ORG_GRADLE_PROJECT_OSSRH_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
