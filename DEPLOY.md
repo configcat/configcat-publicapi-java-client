@@ -1,5 +1,7 @@
 # Steps to deploy
 1. (Optional) Follow the guide in `REGENERATE.md` if you want to regenerate the full client code (e.g. refreshing with new API endpoints)
+   1. If necessary update the dependencies manually OR
+   2. Before generating the client code, remove the `build.gradle` from the `.openapi-generator-ignore` file. After generation, add the `build.gradle` back to the ignore file. In the newly generated `build.gradle`, set up the signing and publication task as before the regeneration.  
 2. Update the version in the `build.gradle` file.
 3. Commit & Push
 
