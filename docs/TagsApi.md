@@ -1,6 +1,6 @@
 # TagsApi
 
-All URIs are relative to *https://test-api.configcat.com*
+All URIs are relative to *https://api.configcat.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -33,7 +33,7 @@ import com.configcat.publicapi.java.client.api.TagsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test-api.configcat.com");
+    defaultClient.setBasePath("https://api.configcat.com");
     
     // Configure HTTP basic authorization: Basic
     HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
@@ -106,7 +106,7 @@ import com.configcat.publicapi.java.client.api.TagsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test-api.configcat.com");
+    defaultClient.setBasePath("https://api.configcat.com");
     
     // Configure HTTP basic authorization: Basic
     HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
@@ -176,7 +176,7 @@ import com.configcat.publicapi.java.client.api.TagsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test-api.configcat.com");
+    defaultClient.setBasePath("https://api.configcat.com");
     
     // Configure HTTP basic authorization: Basic
     HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
@@ -247,7 +247,7 @@ import com.configcat.publicapi.java.client.api.TagsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test-api.configcat.com");
+    defaultClient.setBasePath("https://api.configcat.com");
     
     // Configure HTTP basic authorization: Basic
     HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
@@ -318,7 +318,7 @@ import com.configcat.publicapi.java.client.api.TagsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test-api.configcat.com");
+    defaultClient.setBasePath("https://api.configcat.com");
     
     // Configure HTTP basic authorization: Basic
     HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
@@ -387,7 +387,7 @@ import com.configcat.publicapi.java.client.api.TagsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://test-api.configcat.com");
+    defaultClient.setBasePath("https://api.configcat.com");
     
     // Configure HTTP basic authorization: Basic
     HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
