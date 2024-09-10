@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java-versions: [ 11, 17, 19 ]
+        java-versions: [8, 11, 17, 19 ]
       fail-fast: false
     steps:
     - uses: actions/checkout@v4
@@ -42,7 +42,7 @@ jobs:
     - name: Set up JDK
       uses: actions/setup-java@v4
       with:
-        java-version: 11
+        java-version: 8
         distribution: zulu
         cache: gradle
 

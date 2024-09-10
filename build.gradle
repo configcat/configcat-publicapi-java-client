@@ -147,6 +147,10 @@ test {
     }
 }
 
+extensions.getByType(JavaPluginExtension).with {
+    withJavadocJar()
+    withSourcesJar()
+}
 
 def publishing = extensions.getByType(PublishingExtension)
 publishing.repositories {
