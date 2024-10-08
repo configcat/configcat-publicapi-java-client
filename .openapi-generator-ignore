@@ -8,4 +8,5 @@
 /.github/workflows/maven.yml
 .gitignore
 build.gradle
+build.sbt
 pom.xml
