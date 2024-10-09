@@ -1,6 +1,6 @@
 /*
  * ConfigCat Public Management API
- * The purpose of this API is to access the ConfigCat platform programmatically. You can **Create**, **Read**, **Update** and **Delete** any entities like **Feature Flags, Configs, Environments** or **Products** within ConfigCat.  **Base API URL**: https://api.configcat.com  If you prefer the swagger documentation, you can find it here: [Swagger UI](https://api.configcat.com/swagger).  The API is based on HTTP REST, uses resource-oriented URLs, status codes and supports JSON  format.   **Important:** Do not use this API for accessing and evaluating feature flag values. Use the [SDKs](https://configcat.com/docs/sdk-reference/overview) or the [ConfigCat Proxy](https://configcat.com/docs/advanced/proxy/proxy-overview/) instead.  # OpenAPI Specification  The complete specification is publicly available in the following formats:  - [OpenAPI v3](https://api.configcat.com/docs/v1/swagger.json) - [Swagger v2](https://api.configcat.com/docs/v1/swagger.v2.json)  You can use it to generate client libraries in various languages with [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) or [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) to interact with this API.  # Authentication This API uses the [Basic HTTP Authentication Scheme](https://en.wikipedia.org/wiki/Basic_access_authentication).   <!-- ReDoc-Inject: <security-definitions> -->  # Throttling and rate limits All the rate limited API calls are returning information about the current rate limit period in the following HTTP headers:  | Header | Description | | :- | :- | | X-Rate-Limit-Remaining | The maximum number of requests remaining in the current rate limit period. | | X-Rate-Limit-Reset     | The time when the current rate limit period resets.        |  When the rate limit is exceeded by a request, the API returns with a `HTTP 429 - Too many requests` status along with a `Retry-After` HTTP header. 
+ * The purpose of this API is to access the ConfigCat platform programmatically. You can **Create**, **Read**, **Update** and **Delete** any entities like **Feature Flags, Configs, Environments** or **Products** within ConfigCat.  **Base API URL**: https://api.configcat.com  If you prefer the swagger documentation, you can find it here: [Swagger UI](https://api.configcat.com/swagger).  The API is based on HTTP REST, uses resource-oriented URLs, status codes and supports JSON  format.   **Important:** Do not use this API for accessing and evaluating feature flag values. Use the [SDKs](https://configcat.com/docs/sdk-reference/overview) or the [ConfigCat Proxy](https://configcat.com/docs/advanced/proxy/proxy-overview/) instead.  # OpenAPI Specification  The complete specification is publicly available in the following formats:  - [OpenAPI v3](https://api.configcat.com/docs/v1/swagger.json) - [Swagger v2](https://api.configcat.com/docs/v1/swagger.v2.json)  You can use it to generate client libraries in various languages with [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) or [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) to interact with this API.  # Authentication This API uses the [Basic HTTP Authentication Scheme](https://en.wikipedia.org/wiki/Basic_access_authentication).   <!-- ReDoc-Inject: <security-definitions> -->  # Throttling and rate limits All the rate limited API calls are returning information about the current rate limit period in the following HTTP headers:  | Header | Description | | :- | :- | | X-Rate-Limit-Remaining | The maximum number of requests remaining in the current rate limit period. | | X-Rate-Limit-Reset     | The time when the current rate limit period resets.        |  When the rate limit is exceeded by a request, the API returns with a `HTTP 429 - Too many requests` status along with a `Retry-After` HTTP header.
  *
  * The version of the OpenAPI document: v1
  * Contact: support@configcat.com
@@ -10,344 +10,366 @@
  * Do not edit the class manually.
  */
 
-
 package com.configcat.publicapi.java.client.model;
 
-import java.util.Objects;
-import com.configcat.publicapi.java.client.model.OrganizationPermissionModel;
+
+import com.configcat.publicapi.java.client.JSON;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.TypeAdapterFactory;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.TypeAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
+import org.openapitools.jackson.nullable.JsonNullable;
 
-import com.configcat.publicapi.java.client.JSON;
-
-/**
- * Describes an Organization Member.
- */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-10T12:39:37.024419310Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+/** Describes an Organization Member. */
+@javax.annotation.Generated(
+        value = "org.openapitools.codegen.languages.JavaClientCodegen",
+        date = "2024-10-09T12:38:06.739118192Z[Etc/UTC]",
+        comments = "Generator version: 7.7.0")
 public class OrganizationMemberModel {
-  public static final String SERIALIZED_NAME_USER_ID = "userId";
-  @SerializedName(SERIALIZED_NAME_USER_ID)
-  private String userId;
+    public static final String SERIALIZED_NAME_USER_ID = "userId";
 
-  public static final String SERIALIZED_NAME_FULL_NAME = "fullName";
-  @SerializedName(SERIALIZED_NAME_FULL_NAME)
-  private String fullName;
+    @SerializedName(SERIALIZED_NAME_USER_ID)
+    private String userId;
 
-  public static final String SERIALIZED_NAME_EMAIL = "email";
-  @SerializedName(SERIALIZED_NAME_EMAIL)
-  private String email;
+    public static final String SERIALIZED_NAME_FULL_NAME = "fullName";
 
-  public static final String SERIALIZED_NAME_TWO_FACTOR_ENABLED = "twoFactorEnabled";
-  @SerializedName(SERIALIZED_NAME_TWO_FACTOR_ENABLED)
-  private Boolean twoFactorEnabled;
+    @SerializedName(SERIALIZED_NAME_FULL_NAME)
+    private String fullName;
 
-  public static final String SERIALIZED_NAME_PERMISSIONS = "permissions";
-  @SerializedName(SERIALIZED_NAME_PERMISSIONS)
-  private List<OrganizationPermissionModel> permissions;
+    public static final String SERIALIZED_NAME_EMAIL = "email";
 
-  public OrganizationMemberModel() {
-  }
+    @SerializedName(SERIALIZED_NAME_EMAIL)
+    private String email;
 
-  public OrganizationMemberModel userId(String userId) {
-    this.userId = userId;
-    return this;
-  }
+    public static final String SERIALIZED_NAME_TWO_FACTOR_ENABLED = "twoFactorEnabled";
 
-  /**
-   * Identifier of the Organization Admin.
-   * @return userId
-   */
-  @javax.annotation.Nullable
-  public String getUserId() {
-    return userId;
-  }
+    @SerializedName(SERIALIZED_NAME_TWO_FACTOR_ENABLED)
+    private Boolean twoFactorEnabled;
 
-  public void setUserId(String userId) {
-    this.userId = userId;
-  }
+    public static final String SERIALIZED_NAME_PERMISSIONS = "permissions";
 
+    @SerializedName(SERIALIZED_NAME_PERMISSIONS)
+    private List<OrganizationPermissionModel> permissions;
 
-  public OrganizationMemberModel fullName(String fullName) {
-    this.fullName = fullName;
-    return this;
-  }
+    public OrganizationMemberModel() {}
 
-  /**
-   * Name of the Organization Admin.
-   * @return fullName
-   */
-  @javax.annotation.Nullable
-  public String getFullName() {
-    return fullName;
-  }
-
-  public void setFullName(String fullName) {
-    this.fullName = fullName;
-  }
-
-
-  public OrganizationMemberModel email(String email) {
-    this.email = email;
-    return this;
-  }
-
-  /**
-   * Email of the OrganizationAdmin.
-   * @return email
-   */
-  @javax.annotation.Nullable
-  public String getEmail() {
-    return email;
-  }
-
-  public void setEmail(String email) {
-    this.email = email;
-  }
-
-
-  public OrganizationMemberModel twoFactorEnabled(Boolean twoFactorEnabled) {
-    this.twoFactorEnabled = twoFactorEnabled;
-    return this;
-  }
-
-  /**
-   * Determines whether 2FA is enabled for the Organization Admin.
-   * @return twoFactorEnabled
-   */
-  @javax.annotation.Nullable
-  public Boolean getTwoFactorEnabled() {
-    return twoFactorEnabled;
-  }
-
-  public void setTwoFactorEnabled(Boolean twoFactorEnabled) {
-    this.twoFactorEnabled = twoFactorEnabled;
-  }
-
-
-  public OrganizationMemberModel permissions(List<OrganizationPermissionModel> permissions) {
-    this.permissions = permissions;
-    return this;
-  }
-
-  public OrganizationMemberModel addPermissionsItem(OrganizationPermissionModel permissionsItem) {
-    if (this.permissions == null) {
-      this.permissions = new ArrayList<>();
+    public OrganizationMemberModel userId(String userId) {
+        this.userId = userId;
+        return this;
     }
-    this.permissions.add(permissionsItem);
-    return this;
-  }
 
-  /**
-   * The permissions of the Member.
-   * @return permissions
-   */
-  @javax.annotation.Nullable
-  public List<OrganizationPermissionModel> getPermissions() {
-    return permissions;
-  }
-
-  public void setPermissions(List<OrganizationPermissionModel> permissions) {
-    this.permissions = permissions;
-  }
-
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+    /**
+     * Identifier of the Organization Admin.
+     *
+     * @return userId
+     */
+    @javax.annotation.Nullable
+    public String getUserId() {
+        return userId;
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
-    OrganizationMemberModel organizationMemberModel = (OrganizationMemberModel) o;
-    return Objects.equals(this.userId, organizationMemberModel.userId) &&
-        Objects.equals(this.fullName, organizationMemberModel.fullName) &&
-        Objects.equals(this.email, organizationMemberModel.email) &&
-        Objects.equals(this.twoFactorEnabled, organizationMemberModel.twoFactorEnabled) &&
-        Objects.equals(this.permissions, organizationMemberModel.permissions);
-  }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(userId, fullName, email, twoFactorEnabled, permissions);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
+    public OrganizationMemberModel fullName(String fullName) {
+        this.fullName = fullName;
+        return this;
     }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
-  }
 
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class OrganizationMemberModel {\n");
-    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
-    sb.append("    fullName: ").append(toIndentedString(fullName)).append("\n");
-    sb.append("    email: ").append(toIndentedString(email)).append("\n");
-    sb.append("    twoFactorEnabled: ").append(toIndentedString(twoFactorEnabled)).append("\n");
-    sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
+    /**
+     * Name of the Organization Admin.
+     *
+     * @return fullName
+     */
+    @javax.annotation.Nullable
+    public String getFullName() {
+        return fullName;
     }
-    return o.toString().replace("\n", "\n    ");
-  }
 
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
 
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
+    public OrganizationMemberModel email(String email) {
+        this.email = email;
+        return this;
+    }
 
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("userId");
-    openapiFields.add("fullName");
-    openapiFields.add("email");
-    openapiFields.add("twoFactorEnabled");
-    openapiFields.add("permissions");
+    /**
+     * Email of the OrganizationAdmin.
+     *
+     * @return email
+     */
+    @javax.annotation.Nullable
+    public String getEmail() {
+        return email;
+    }
 
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to OrganizationMemberModel
-   */
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      if (jsonElement == null) {
-        if (!OrganizationMemberModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in OrganizationMemberModel is not found in the empty JSON string", OrganizationMemberModel.openapiRequiredFields.toString()));
+    public OrganizationMemberModel twoFactorEnabled(Boolean twoFactorEnabled) {
+        this.twoFactorEnabled = twoFactorEnabled;
+        return this;
+    }
+
+    /**
+     * Determines whether 2FA is enabled for the Organization Admin.
+     *
+     * @return twoFactorEnabled
+     */
+    @javax.annotation.Nullable
+    public Boolean getTwoFactorEnabled() {
+        return twoFactorEnabled;
+    }
+
+    public void setTwoFactorEnabled(Boolean twoFactorEnabled) {
+        this.twoFactorEnabled = twoFactorEnabled;
+    }
+
+    public OrganizationMemberModel permissions(List<OrganizationPermissionModel> permissions) {
+        this.permissions = permissions;
+        return this;
+    }
+
+    public OrganizationMemberModel addPermissionsItem(OrganizationPermissionModel permissionsItem) {
+        if (this.permissions == null) {
+            this.permissions = new ArrayList<>();
         }
-      }
+        this.permissions.add(permissionsItem);
+        return this;
+    }
 
-      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!OrganizationMemberModel.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `OrganizationMemberModel` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
-        }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("userId") != null && !jsonObj.get("userId").isJsonNull()) && !jsonObj.get("userId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `userId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("userId").toString()));
-      }
-      if ((jsonObj.get("fullName") != null && !jsonObj.get("fullName").isJsonNull()) && !jsonObj.get("fullName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `fullName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("fullName").toString()));
-      }
-      if ((jsonObj.get("email") != null && !jsonObj.get("email").isJsonNull()) && !jsonObj.get("email").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
-      }
-      if (jsonObj.get("permissions") != null && !jsonObj.get("permissions").isJsonNull()) {
-        JsonArray jsonArraypermissions = jsonObj.getAsJsonArray("permissions");
-        if (jsonArraypermissions != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("permissions").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `permissions` to be an array in the JSON string but got `%s`", jsonObj.get("permissions").toString()));
-          }
+    /**
+     * The permissions of the Member.
+     *
+     * @return permissions
+     */
+    @javax.annotation.Nullable
+    public List<OrganizationPermissionModel> getPermissions() {
+        return permissions;
+    }
 
-          // validate the optional field `permissions` (array)
-          for (int i = 0; i < jsonArraypermissions.size(); i++) {
-            OrganizationPermissionModel.validateJsonElement(jsonArraypermissions.get(i));
-          };
-        }
-      }
-  }
+    public void setPermissions(List<OrganizationPermissionModel> permissions) {
+        this.permissions = permissions;
+    }
 
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
     @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!OrganizationMemberModel.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'OrganizationMemberModel' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<OrganizationMemberModel> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(OrganizationMemberModel.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<OrganizationMemberModel>() {
-           @Override
-           public void write(JsonWriter out, OrganizationMemberModel value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public OrganizationMemberModel read(JsonReader in) throws IOException {
-             JsonElement jsonElement = elementAdapter.read(in);
-             validateJsonElement(jsonElement);
-             return thisAdapter.fromJsonTree(jsonElement);
-           }
-
-       }.nullSafe();
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        OrganizationMemberModel organizationMemberModel = (OrganizationMemberModel) o;
+        return Objects.equals(this.userId, organizationMemberModel.userId)
+                && Objects.equals(this.fullName, organizationMemberModel.fullName)
+                && Objects.equals(this.email, organizationMemberModel.email)
+                && Objects.equals(this.twoFactorEnabled, organizationMemberModel.twoFactorEnabled)
+                && Objects.equals(this.permissions, organizationMemberModel.permissions);
     }
-  }
 
-  /**
-   * Create an instance of OrganizationMemberModel given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of OrganizationMemberModel
-   * @throws IOException if the JSON string is invalid with respect to OrganizationMemberModel
-   */
-  public static OrganizationMemberModel fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, OrganizationMemberModel.class);
-  }
+    private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+        return a == b
+                || (a != null
+                        && b != null
+                        && a.isPresent()
+                        && b.isPresent()
+                        && Objects.deepEquals(a.get(), b.get()));
+    }
 
-  /**
-   * Convert an instance of OrganizationMemberModel to an JSON string
-   *
-   * @return JSON string
-   */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
+    @Override
+    public int hashCode() {
+        return Objects.hash(userId, fullName, email, twoFactorEnabled, permissions);
+    }
+
+    private static <T> int hashCodeNullable(JsonNullable<T> a) {
+        if (a == null) {
+            return 1;
+        }
+        return a.isPresent() ? Arrays.deepHashCode(new Object[] {a.get()}) : 31;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class OrganizationMemberModel {\n");
+        sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+        sb.append("    fullName: ").append(toIndentedString(fullName)).append("\n");
+        sb.append("    email: ").append(toIndentedString(email)).append("\n");
+        sb.append("    twoFactorEnabled: ").append(toIndentedString(twoFactorEnabled)).append("\n");
+        sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces (except the first
+     * line).
+     */
+    private String toIndentedString(Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+    public static HashSet<String> openapiFields;
+    public static HashSet<String> openapiRequiredFields;
+
+    static {
+        // a set of all properties/fields (JSON key names)
+        openapiFields = new HashSet<String>();
+        openapiFields.add("userId");
+        openapiFields.add("fullName");
+        openapiFields.add("email");
+        openapiFields.add("twoFactorEnabled");
+        openapiFields.add("permissions");
+
+        // a set of required properties/fields (JSON key names)
+        openapiRequiredFields = new HashSet<String>();
+    }
+
+    /**
+     * Validates the JSON Element and throws an exception if issues found
+     *
+     * @param jsonElement JSON Element
+     * @throws IOException if the JSON Element is invalid with respect to OrganizationMemberModel
+     */
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+        if (jsonElement == null) {
+            if (!OrganizationMemberModel.openapiRequiredFields
+                    .isEmpty()) { // has required fields but JSON element is null
+                throw new IllegalArgumentException(
+                        String.format(
+                                "The required field(s) %s in OrganizationMemberModel is not found"
+                                        + " in the empty JSON string",
+                                OrganizationMemberModel.openapiRequiredFields.toString()));
+            }
+        }
+
+        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+        // check to see if the JSON string contains additional fields
+        for (Map.Entry<String, JsonElement> entry : entries) {
+            if (!OrganizationMemberModel.openapiFields.contains(entry.getKey())) {
+                throw new IllegalArgumentException(
+                        String.format(
+                                "The field `%s` in the JSON string is not defined in the"
+                                        + " `OrganizationMemberModel` properties. JSON: %s",
+                                entry.getKey(), jsonElement.toString()));
+            }
+        }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+        if ((jsonObj.get("userId") != null && !jsonObj.get("userId").isJsonNull())
+                && !jsonObj.get("userId").isJsonPrimitive()) {
+            throw new IllegalArgumentException(
+                    String.format(
+                            "Expected the field `userId` to be a primitive type in the JSON string"
+                                    + " but got `%s`",
+                            jsonObj.get("userId").toString()));
+        }
+        if ((jsonObj.get("fullName") != null && !jsonObj.get("fullName").isJsonNull())
+                && !jsonObj.get("fullName").isJsonPrimitive()) {
+            throw new IllegalArgumentException(
+                    String.format(
+                            "Expected the field `fullName` to be a primitive type in the JSON"
+                                    + " string but got `%s`",
+                            jsonObj.get("fullName").toString()));
+        }
+        if ((jsonObj.get("email") != null && !jsonObj.get("email").isJsonNull())
+                && !jsonObj.get("email").isJsonPrimitive()) {
+            throw new IllegalArgumentException(
+                    String.format(
+                            "Expected the field `email` to be a primitive type in the JSON string"
+                                    + " but got `%s`",
+                            jsonObj.get("email").toString()));
+        }
+        if (jsonObj.get("permissions") != null && !jsonObj.get("permissions").isJsonNull()) {
+            JsonArray jsonArraypermissions = jsonObj.getAsJsonArray("permissions");
+            if (jsonArraypermissions != null) {
+                // ensure the json data is an array
+                if (!jsonObj.get("permissions").isJsonArray()) {
+                    throw new IllegalArgumentException(
+                            String.format(
+                                    "Expected the field `permissions` to be an array in the JSON"
+                                            + " string but got `%s`",
+                                    jsonObj.get("permissions").toString()));
+                }
+
+                // validate the optional field `permissions` (array)
+                for (int i = 0; i < jsonArraypermissions.size(); i++) {
+                    OrganizationPermissionModel.validateJsonElement(jsonArraypermissions.get(i));
+                }
+                ;
+            }
+        }
+    }
+
+    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+        @SuppressWarnings("unchecked")
+        @Override
+        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+            if (!OrganizationMemberModel.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'OrganizationMemberModel' and its
+                // subtypes
+            }
+            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<OrganizationMemberModel> thisAdapter =
+                    gson.getDelegateAdapter(this, TypeToken.get(OrganizationMemberModel.class));
+
+            return (TypeAdapter<T>)
+                    new TypeAdapter<OrganizationMemberModel>() {
+                        @Override
+                        public void write(JsonWriter out, OrganizationMemberModel value)
+                                throws IOException {
+                            JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+                            elementAdapter.write(out, obj);
+                        }
+
+                        @Override
+                        public OrganizationMemberModel read(JsonReader in) throws IOException {
+                            JsonElement jsonElement = elementAdapter.read(in);
+                            validateJsonElement(jsonElement);
+                            return thisAdapter.fromJsonTree(jsonElement);
+                        }
+                    }.nullSafe();
+        }
+    }
+
+    /**
+     * Create an instance of OrganizationMemberModel given an JSON string
+     *
+     * @param jsonString JSON string
+     * @return An instance of OrganizationMemberModel
+     * @throws IOException if the JSON string is invalid with respect to OrganizationMemberModel
+     */
+    public static OrganizationMemberModel fromJson(String jsonString) throws IOException {
+        return JSON.getGson().fromJson(jsonString, OrganizationMemberModel.class);
+    }
+
+    /**
+     * Convert an instance of OrganizationMemberModel to an JSON string
+     *
+     * @return JSON string
+     */
+    public String toJson() {
+        return JSON.getGson().toJson(this);
+    }
 }
-

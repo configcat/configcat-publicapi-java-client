@@ -1,6 +1,6 @@
 /*
  * ConfigCat Public Management API
- * The purpose of this API is to access the ConfigCat platform programmatically. You can **Create**, **Read**, **Update** and **Delete** any entities like **Feature Flags, Configs, Environments** or **Products** within ConfigCat.  **Base API URL**: https://api.configcat.com  If you prefer the swagger documentation, you can find it here: [Swagger UI](https://api.configcat.com/swagger).  The API is based on HTTP REST, uses resource-oriented URLs, status codes and supports JSON  format.   **Important:** Do not use this API for accessing and evaluating feature flag values. Use the [SDKs](https://configcat.com/docs/sdk-reference/overview) or the [ConfigCat Proxy](https://configcat.com/docs/advanced/proxy/proxy-overview/) instead.  # OpenAPI Specification  The complete specification is publicly available in the following formats:  - [OpenAPI v3](https://api.configcat.com/docs/v1/swagger.json) - [Swagger v2](https://api.configcat.com/docs/v1/swagger.v2.json)  You can use it to generate client libraries in various languages with [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) or [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) to interact with this API.  # Authentication This API uses the [Basic HTTP Authentication Scheme](https://en.wikipedia.org/wiki/Basic_access_authentication).   <!-- ReDoc-Inject: <security-definitions> -->  # Throttling and rate limits All the rate limited API calls are returning information about the current rate limit period in the following HTTP headers:  | Header | Description | | :- | :- | | X-Rate-Limit-Remaining | The maximum number of requests remaining in the current rate limit period. | | X-Rate-Limit-Reset     | The time when the current rate limit period resets.        |  When the rate limit is exceeded by a request, the API returns with a `HTTP 429 - Too many requests` status along with a `Retry-After` HTTP header. 
+ * The purpose of this API is to access the ConfigCat platform programmatically. You can **Create**, **Read**, **Update** and **Delete** any entities like **Feature Flags, Configs, Environments** or **Products** within ConfigCat.  **Base API URL**: https://api.configcat.com  If you prefer the swagger documentation, you can find it here: [Swagger UI](https://api.configcat.com/swagger).  The API is based on HTTP REST, uses resource-oriented URLs, status codes and supports JSON  format.   **Important:** Do not use this API for accessing and evaluating feature flag values. Use the [SDKs](https://configcat.com/docs/sdk-reference/overview) or the [ConfigCat Proxy](https://configcat.com/docs/advanced/proxy/proxy-overview/) instead.  # OpenAPI Specification  The complete specification is publicly available in the following formats:  - [OpenAPI v3](https://api.configcat.com/docs/v1/swagger.json) - [Swagger v2](https://api.configcat.com/docs/v1/swagger.v2.json)  You can use it to generate client libraries in various languages with [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) or [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) to interact with this API.  # Authentication This API uses the [Basic HTTP Authentication Scheme](https://en.wikipedia.org/wiki/Basic_access_authentication).   <!-- ReDoc-Inject: <security-definitions> -->  # Throttling and rate limits All the rate limited API calls are returning information about the current rate limit period in the following HTTP headers:  | Header | Description | | :- | :- | | X-Rate-Limit-Remaining | The maximum number of requests remaining in the current rate limit period. | | X-Rate-Limit-Reset     | The time when the current rate limit period resets.        |  When the rate limit is exceeded by a request, the API returns with a `HTTP 429 - Too many requests` status along with a `Retry-After` HTTP header.
  *
  * The version of the OpenAPI document: v1
  * Contact: support@configcat.com
@@ -10,954 +10,1003 @@
  * Do not edit the class manually.
  */
 
-
 package com.configcat.publicapi.java.client.model;
 
-import java.util.Objects;
-import com.configcat.publicapi.java.client.model.CreateOrUpdateEnvironmentAccessModel;
+
+import com.configcat.publicapi.java.client.JSON;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.TypeAdapterFactory;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.TypeAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
+import org.openapitools.jackson.nullable.JsonNullable;
 
-import com.configcat.publicapi.java.client.JSON;
-
-/**
- * UpdatePermissionGroupRequest
- */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-10T12:39:37.024419310Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+/** UpdatePermissionGroupRequest */
+@javax.annotation.Generated(
+        value = "org.openapitools.codegen.languages.JavaClientCodegen",
+        date = "2024-10-09T12:38:06.739118192Z[Etc/UTC]",
+        comments = "Generator version: 7.7.0")
 public class UpdatePermissionGroupRequest {
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  private String name;
+    public static final String SERIALIZED_NAME_NAME = "name";
 
-  public static final String SERIALIZED_NAME_CAN_MANAGE_MEMBERS = "canManageMembers";
-  @SerializedName(SERIALIZED_NAME_CAN_MANAGE_MEMBERS)
-  private Boolean canManageMembers;
+    @SerializedName(SERIALIZED_NAME_NAME)
+    private String name;
 
-  public static final String SERIALIZED_NAME_CAN_CREATE_OR_UPDATE_CONFIG = "canCreateOrUpdateConfig";
-  @SerializedName(SERIALIZED_NAME_CAN_CREATE_OR_UPDATE_CONFIG)
-  private Boolean canCreateOrUpdateConfig;
+    public static final String SERIALIZED_NAME_CAN_MANAGE_MEMBERS = "canManageMembers";
 
-  public static final String SERIALIZED_NAME_CAN_DELETE_CONFIG = "canDeleteConfig";
-  @SerializedName(SERIALIZED_NAME_CAN_DELETE_CONFIG)
-  private Boolean canDeleteConfig;
+    @SerializedName(SERIALIZED_NAME_CAN_MANAGE_MEMBERS)
+    private Boolean canManageMembers;
 
-  public static final String SERIALIZED_NAME_CAN_CREATE_OR_UPDATE_ENVIRONMENT = "canCreateOrUpdateEnvironment";
-  @SerializedName(SERIALIZED_NAME_CAN_CREATE_OR_UPDATE_ENVIRONMENT)
-  private Boolean canCreateOrUpdateEnvironment;
+    public static final String SERIALIZED_NAME_CAN_CREATE_OR_UPDATE_CONFIG =
+            "canCreateOrUpdateConfig";
 
-  public static final String SERIALIZED_NAME_CAN_DELETE_ENVIRONMENT = "canDeleteEnvironment";
-  @SerializedName(SERIALIZED_NAME_CAN_DELETE_ENVIRONMENT)
-  private Boolean canDeleteEnvironment;
+    @SerializedName(SERIALIZED_NAME_CAN_CREATE_OR_UPDATE_CONFIG)
+    private Boolean canCreateOrUpdateConfig;
 
-  public static final String SERIALIZED_NAME_CAN_CREATE_OR_UPDATE_SETTING = "canCreateOrUpdateSetting";
-  @SerializedName(SERIALIZED_NAME_CAN_CREATE_OR_UPDATE_SETTING)
-  private Boolean canCreateOrUpdateSetting;
+    public static final String SERIALIZED_NAME_CAN_DELETE_CONFIG = "canDeleteConfig";
 
-  public static final String SERIALIZED_NAME_CAN_TAG_SETTING = "canTagSetting";
-  @SerializedName(SERIALIZED_NAME_CAN_TAG_SETTING)
-  private Boolean canTagSetting;
+    @SerializedName(SERIALIZED_NAME_CAN_DELETE_CONFIG)
+    private Boolean canDeleteConfig;
 
-  public static final String SERIALIZED_NAME_CAN_DELETE_SETTING = "canDeleteSetting";
-  @SerializedName(SERIALIZED_NAME_CAN_DELETE_SETTING)
-  private Boolean canDeleteSetting;
+    public static final String SERIALIZED_NAME_CAN_CREATE_OR_UPDATE_ENVIRONMENT =
+            "canCreateOrUpdateEnvironment";
 
-  public static final String SERIALIZED_NAME_CAN_CREATE_OR_UPDATE_TAG = "canCreateOrUpdateTag";
-  @SerializedName(SERIALIZED_NAME_CAN_CREATE_OR_UPDATE_TAG)
-  private Boolean canCreateOrUpdateTag;
+    @SerializedName(SERIALIZED_NAME_CAN_CREATE_OR_UPDATE_ENVIRONMENT)
+    private Boolean canCreateOrUpdateEnvironment;
 
-  public static final String SERIALIZED_NAME_CAN_DELETE_TAG = "canDeleteTag";
-  @SerializedName(SERIALIZED_NAME_CAN_DELETE_TAG)
-  private Boolean canDeleteTag;
+    public static final String SERIALIZED_NAME_CAN_DELETE_ENVIRONMENT = "canDeleteEnvironment";
 
-  public static final String SERIALIZED_NAME_CAN_MANAGE_WEBHOOK = "canManageWebhook";
-  @SerializedName(SERIALIZED_NAME_CAN_MANAGE_WEBHOOK)
-  private Boolean canManageWebhook;
+    @SerializedName(SERIALIZED_NAME_CAN_DELETE_ENVIRONMENT)
+    private Boolean canDeleteEnvironment;
 
-  public static final String SERIALIZED_NAME_CAN_USE_EXPORT_IMPORT = "canUseExportImport";
-  @SerializedName(SERIALIZED_NAME_CAN_USE_EXPORT_IMPORT)
-  private Boolean canUseExportImport;
+    public static final String SERIALIZED_NAME_CAN_CREATE_OR_UPDATE_SETTING =
+            "canCreateOrUpdateSetting";
 
-  public static final String SERIALIZED_NAME_CAN_MANAGE_PRODUCT_PREFERENCES = "canManageProductPreferences";
-  @SerializedName(SERIALIZED_NAME_CAN_MANAGE_PRODUCT_PREFERENCES)
-  private Boolean canManageProductPreferences;
+    @SerializedName(SERIALIZED_NAME_CAN_CREATE_OR_UPDATE_SETTING)
+    private Boolean canCreateOrUpdateSetting;
 
-  public static final String SERIALIZED_NAME_CAN_MANAGE_INTEGRATIONS = "canManageIntegrations";
-  @SerializedName(SERIALIZED_NAME_CAN_MANAGE_INTEGRATIONS)
-  private Boolean canManageIntegrations;
+    public static final String SERIALIZED_NAME_CAN_TAG_SETTING = "canTagSetting";
 
-  public static final String SERIALIZED_NAME_CAN_VIEW_SDK_KEY = "canViewSdkKey";
-  @SerializedName(SERIALIZED_NAME_CAN_VIEW_SDK_KEY)
-  private Boolean canViewSdkKey;
+    @SerializedName(SERIALIZED_NAME_CAN_TAG_SETTING)
+    private Boolean canTagSetting;
 
-  public static final String SERIALIZED_NAME_CAN_ROTATE_SDK_KEY = "canRotateSdkKey";
-  @SerializedName(SERIALIZED_NAME_CAN_ROTATE_SDK_KEY)
-  private Boolean canRotateSdkKey;
+    public static final String SERIALIZED_NAME_CAN_DELETE_SETTING = "canDeleteSetting";
 
-  public static final String SERIALIZED_NAME_CAN_CREATE_OR_UPDATE_SEGMENTS = "canCreateOrUpdateSegments";
-  @SerializedName(SERIALIZED_NAME_CAN_CREATE_OR_UPDATE_SEGMENTS)
-  private Boolean canCreateOrUpdateSegments;
+    @SerializedName(SERIALIZED_NAME_CAN_DELETE_SETTING)
+    private Boolean canDeleteSetting;
 
-  public static final String SERIALIZED_NAME_CAN_DELETE_SEGMENTS = "canDeleteSegments";
-  @SerializedName(SERIALIZED_NAME_CAN_DELETE_SEGMENTS)
-  private Boolean canDeleteSegments;
+    public static final String SERIALIZED_NAME_CAN_CREATE_OR_UPDATE_TAG = "canCreateOrUpdateTag";
 
-  public static final String SERIALIZED_NAME_CAN_VIEW_PRODUCT_AUDIT_LOG = "canViewProductAuditLog";
-  @SerializedName(SERIALIZED_NAME_CAN_VIEW_PRODUCT_AUDIT_LOG)
-  private Boolean canViewProductAuditLog;
+    @SerializedName(SERIALIZED_NAME_CAN_CREATE_OR_UPDATE_TAG)
+    private Boolean canCreateOrUpdateTag;
 
-  public static final String SERIALIZED_NAME_CAN_VIEW_PRODUCT_STATISTICS = "canViewProductStatistics";
-  @SerializedName(SERIALIZED_NAME_CAN_VIEW_PRODUCT_STATISTICS)
-  private Boolean canViewProductStatistics;
+    public static final String SERIALIZED_NAME_CAN_DELETE_TAG = "canDeleteTag";
 
-  /**
-   * Gets or Sets accessType
-   */
-  @JsonAdapter(AccessTypeEnum.Adapter.class)
-  public enum AccessTypeEnum {
-    READ_ONLY("readOnly"),
-    
-    FULL("full"),
-    
-    CUSTOM("custom");
+    @SerializedName(SERIALIZED_NAME_CAN_DELETE_TAG)
+    private Boolean canDeleteTag;
 
-    private String value;
+    public static final String SERIALIZED_NAME_CAN_MANAGE_WEBHOOK = "canManageWebhook";
 
-    AccessTypeEnum(String value) {
-      this.value = value;
+    @SerializedName(SERIALIZED_NAME_CAN_MANAGE_WEBHOOK)
+    private Boolean canManageWebhook;
+
+    public static final String SERIALIZED_NAME_CAN_USE_EXPORT_IMPORT = "canUseExportImport";
+
+    @SerializedName(SERIALIZED_NAME_CAN_USE_EXPORT_IMPORT)
+    private Boolean canUseExportImport;
+
+    public static final String SERIALIZED_NAME_CAN_MANAGE_PRODUCT_PREFERENCES =
+            "canManageProductPreferences";
+
+    @SerializedName(SERIALIZED_NAME_CAN_MANAGE_PRODUCT_PREFERENCES)
+    private Boolean canManageProductPreferences;
+
+    public static final String SERIALIZED_NAME_CAN_MANAGE_INTEGRATIONS = "canManageIntegrations";
+
+    @SerializedName(SERIALIZED_NAME_CAN_MANAGE_INTEGRATIONS)
+    private Boolean canManageIntegrations;
+
+    public static final String SERIALIZED_NAME_CAN_VIEW_SDK_KEY = "canViewSdkKey";
+
+    @SerializedName(SERIALIZED_NAME_CAN_VIEW_SDK_KEY)
+    private Boolean canViewSdkKey;
+
+    public static final String SERIALIZED_NAME_CAN_ROTATE_SDK_KEY = "canRotateSdkKey";
+
+    @SerializedName(SERIALIZED_NAME_CAN_ROTATE_SDK_KEY)
+    private Boolean canRotateSdkKey;
+
+    public static final String SERIALIZED_NAME_CAN_CREATE_OR_UPDATE_SEGMENTS =
+            "canCreateOrUpdateSegments";
+
+    @SerializedName(SERIALIZED_NAME_CAN_CREATE_OR_UPDATE_SEGMENTS)
+    private Boolean canCreateOrUpdateSegments;
+
+    public static final String SERIALIZED_NAME_CAN_DELETE_SEGMENTS = "canDeleteSegments";
+
+    @SerializedName(SERIALIZED_NAME_CAN_DELETE_SEGMENTS)
+    private Boolean canDeleteSegments;
+
+    public static final String SERIALIZED_NAME_CAN_VIEW_PRODUCT_AUDIT_LOG =
+            "canViewProductAuditLog";
+
+    @SerializedName(SERIALIZED_NAME_CAN_VIEW_PRODUCT_AUDIT_LOG)
+    private Boolean canViewProductAuditLog;
+
+    public static final String SERIALIZED_NAME_CAN_VIEW_PRODUCT_STATISTICS =
+            "canViewProductStatistics";
+
+    @SerializedName(SERIALIZED_NAME_CAN_VIEW_PRODUCT_STATISTICS)
+    private Boolean canViewProductStatistics;
+
+    public static final String SERIALIZED_NAME_CAN_DISABLE2_F_A = "canDisable2FA";
+
+    @SerializedName(SERIALIZED_NAME_CAN_DISABLE2_F_A)
+    private Boolean canDisable2FA;
+
+    public static final String SERIALIZED_NAME_ACCESS_TYPE = "accessType";
+
+    @SerializedName(SERIALIZED_NAME_ACCESS_TYPE)
+    private AccessType accessType;
+
+    public static final String SERIALIZED_NAME_NEW_ENVIRONMENT_ACCESS_TYPE =
+            "newEnvironmentAccessType";
+
+    @SerializedName(SERIALIZED_NAME_NEW_ENVIRONMENT_ACCESS_TYPE)
+    private EnvironmentAccessType newEnvironmentAccessType;
+
+    public static final String SERIALIZED_NAME_ENVIRONMENT_ACCESSES = "environmentAccesses";
+
+    @SerializedName(SERIALIZED_NAME_ENVIRONMENT_ACCESSES)
+    private List<CreateOrUpdateEnvironmentAccessModel> environmentAccesses;
+
+    public UpdatePermissionGroupRequest() {}
+
+    public UpdatePermissionGroupRequest name(String name) {
+        this.name = name;
+        return this;
     }
 
-    public String getValue() {
-      return value;
+    /**
+     * Name of the Permission Group.
+     *
+     * @return name
+     */
+    @javax.annotation.Nullable
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public UpdatePermissionGroupRequest canManageMembers(Boolean canManageMembers) {
+        this.canManageMembers = canManageMembers;
+        return this;
+    }
+
+    /**
+     * Group members can manage team members.
+     *
+     * @return canManageMembers
+     */
+    @javax.annotation.Nullable
+    public Boolean getCanManageMembers() {
+        return canManageMembers;
+    }
+
+    public void setCanManageMembers(Boolean canManageMembers) {
+        this.canManageMembers = canManageMembers;
+    }
+
+    public UpdatePermissionGroupRequest canCreateOrUpdateConfig(Boolean canCreateOrUpdateConfig) {
+        this.canCreateOrUpdateConfig = canCreateOrUpdateConfig;
+        return this;
+    }
+
+    /**
+     * Group members can create/update Configs.
+     *
+     * @return canCreateOrUpdateConfig
+     */
+    @javax.annotation.Nullable
+    public Boolean getCanCreateOrUpdateConfig() {
+        return canCreateOrUpdateConfig;
+    }
+
+    public void setCanCreateOrUpdateConfig(Boolean canCreateOrUpdateConfig) {
+        this.canCreateOrUpdateConfig = canCreateOrUpdateConfig;
+    }
+
+    public UpdatePermissionGroupRequest canDeleteConfig(Boolean canDeleteConfig) {
+        this.canDeleteConfig = canDeleteConfig;
+        return this;
+    }
+
+    /**
+     * Group members can delete Configs.
+     *
+     * @return canDeleteConfig
+     */
+    @javax.annotation.Nullable
+    public Boolean getCanDeleteConfig() {
+        return canDeleteConfig;
+    }
+
+    public void setCanDeleteConfig(Boolean canDeleteConfig) {
+        this.canDeleteConfig = canDeleteConfig;
+    }
+
+    public UpdatePermissionGroupRequest canCreateOrUpdateEnvironment(
+            Boolean canCreateOrUpdateEnvironment) {
+        this.canCreateOrUpdateEnvironment = canCreateOrUpdateEnvironment;
+        return this;
+    }
+
+    /**
+     * Group members can create/update Environments.
+     *
+     * @return canCreateOrUpdateEnvironment
+     */
+    @javax.annotation.Nullable
+    public Boolean getCanCreateOrUpdateEnvironment() {
+        return canCreateOrUpdateEnvironment;
+    }
+
+    public void setCanCreateOrUpdateEnvironment(Boolean canCreateOrUpdateEnvironment) {
+        this.canCreateOrUpdateEnvironment = canCreateOrUpdateEnvironment;
+    }
+
+    public UpdatePermissionGroupRequest canDeleteEnvironment(Boolean canDeleteEnvironment) {
+        this.canDeleteEnvironment = canDeleteEnvironment;
+        return this;
+    }
+
+    /**
+     * Group members can delete Environments.
+     *
+     * @return canDeleteEnvironment
+     */
+    @javax.annotation.Nullable
+    public Boolean getCanDeleteEnvironment() {
+        return canDeleteEnvironment;
+    }
+
+    public void setCanDeleteEnvironment(Boolean canDeleteEnvironment) {
+        this.canDeleteEnvironment = canDeleteEnvironment;
+    }
+
+    public UpdatePermissionGroupRequest canCreateOrUpdateSetting(Boolean canCreateOrUpdateSetting) {
+        this.canCreateOrUpdateSetting = canCreateOrUpdateSetting;
+        return this;
+    }
+
+    /**
+     * Group members can create/update Feature Flags and Settings.
+     *
+     * @return canCreateOrUpdateSetting
+     */
+    @javax.annotation.Nullable
+    public Boolean getCanCreateOrUpdateSetting() {
+        return canCreateOrUpdateSetting;
+    }
+
+    public void setCanCreateOrUpdateSetting(Boolean canCreateOrUpdateSetting) {
+        this.canCreateOrUpdateSetting = canCreateOrUpdateSetting;
+    }
+
+    public UpdatePermissionGroupRequest canTagSetting(Boolean canTagSetting) {
+        this.canTagSetting = canTagSetting;
+        return this;
+    }
+
+    /**
+     * Group members can attach/detach Tags to Feature Flags and Settings.
+     *
+     * @return canTagSetting
+     */
+    @javax.annotation.Nullable
+    public Boolean getCanTagSetting() {
+        return canTagSetting;
+    }
+
+    public void setCanTagSetting(Boolean canTagSetting) {
+        this.canTagSetting = canTagSetting;
+    }
+
+    public UpdatePermissionGroupRequest canDeleteSetting(Boolean canDeleteSetting) {
+        this.canDeleteSetting = canDeleteSetting;
+        return this;
+    }
+
+    /**
+     * Group members can delete Feature Flags and Settings.
+     *
+     * @return canDeleteSetting
+     */
+    @javax.annotation.Nullable
+    public Boolean getCanDeleteSetting() {
+        return canDeleteSetting;
+    }
+
+    public void setCanDeleteSetting(Boolean canDeleteSetting) {
+        this.canDeleteSetting = canDeleteSetting;
+    }
+
+    public UpdatePermissionGroupRequest canCreateOrUpdateTag(Boolean canCreateOrUpdateTag) {
+        this.canCreateOrUpdateTag = canCreateOrUpdateTag;
+        return this;
+    }
+
+    /**
+     * Group members can create/update Tags.
+     *
+     * @return canCreateOrUpdateTag
+     */
+    @javax.annotation.Nullable
+    public Boolean getCanCreateOrUpdateTag() {
+        return canCreateOrUpdateTag;
+    }
+
+    public void setCanCreateOrUpdateTag(Boolean canCreateOrUpdateTag) {
+        this.canCreateOrUpdateTag = canCreateOrUpdateTag;
+    }
+
+    public UpdatePermissionGroupRequest canDeleteTag(Boolean canDeleteTag) {
+        this.canDeleteTag = canDeleteTag;
+        return this;
+    }
+
+    /**
+     * Group members can delete Tags.
+     *
+     * @return canDeleteTag
+     */
+    @javax.annotation.Nullable
+    public Boolean getCanDeleteTag() {
+        return canDeleteTag;
+    }
+
+    public void setCanDeleteTag(Boolean canDeleteTag) {
+        this.canDeleteTag = canDeleteTag;
+    }
+
+    public UpdatePermissionGroupRequest canManageWebhook(Boolean canManageWebhook) {
+        this.canManageWebhook = canManageWebhook;
+        return this;
+    }
+
+    /**
+     * Group members can create/update/delete Webhooks.
+     *
+     * @return canManageWebhook
+     */
+    @javax.annotation.Nullable
+    public Boolean getCanManageWebhook() {
+        return canManageWebhook;
+    }
+
+    public void setCanManageWebhook(Boolean canManageWebhook) {
+        this.canManageWebhook = canManageWebhook;
+    }
+
+    public UpdatePermissionGroupRequest canUseExportImport(Boolean canUseExportImport) {
+        this.canUseExportImport = canUseExportImport;
+        return this;
+    }
+
+    /**
+     * Group members can use the export/import feature.
+     *
+     * @return canUseExportImport
+     */
+    @javax.annotation.Nullable
+    public Boolean getCanUseExportImport() {
+        return canUseExportImport;
+    }
+
+    public void setCanUseExportImport(Boolean canUseExportImport) {
+        this.canUseExportImport = canUseExportImport;
+    }
+
+    public UpdatePermissionGroupRequest canManageProductPreferences(
+            Boolean canManageProductPreferences) {
+        this.canManageProductPreferences = canManageProductPreferences;
+        return this;
+    }
+
+    /**
+     * Group members can update Product preferences.
+     *
+     * @return canManageProductPreferences
+     */
+    @javax.annotation.Nullable
+    public Boolean getCanManageProductPreferences() {
+        return canManageProductPreferences;
+    }
+
+    public void setCanManageProductPreferences(Boolean canManageProductPreferences) {
+        this.canManageProductPreferences = canManageProductPreferences;
+    }
+
+    public UpdatePermissionGroupRequest canManageIntegrations(Boolean canManageIntegrations) {
+        this.canManageIntegrations = canManageIntegrations;
+        return this;
+    }
+
+    /**
+     * Group members can add and configure integrations.
+     *
+     * @return canManageIntegrations
+     */
+    @javax.annotation.Nullable
+    public Boolean getCanManageIntegrations() {
+        return canManageIntegrations;
+    }
+
+    public void setCanManageIntegrations(Boolean canManageIntegrations) {
+        this.canManageIntegrations = canManageIntegrations;
+    }
+
+    public UpdatePermissionGroupRequest canViewSdkKey(Boolean canViewSdkKey) {
+        this.canViewSdkKey = canViewSdkKey;
+        return this;
+    }
+
+    /**
+     * Group members has access to SDK keys.
+     *
+     * @return canViewSdkKey
+     */
+    @javax.annotation.Nullable
+    public Boolean getCanViewSdkKey() {
+        return canViewSdkKey;
+    }
+
+    public void setCanViewSdkKey(Boolean canViewSdkKey) {
+        this.canViewSdkKey = canViewSdkKey;
+    }
+
+    public UpdatePermissionGroupRequest canRotateSdkKey(Boolean canRotateSdkKey) {
+        this.canRotateSdkKey = canRotateSdkKey;
+        return this;
+    }
+
+    /**
+     * Group members can rotate SDK keys.
+     *
+     * @return canRotateSdkKey
+     */
+    @javax.annotation.Nullable
+    public Boolean getCanRotateSdkKey() {
+        return canRotateSdkKey;
+    }
+
+    public void setCanRotateSdkKey(Boolean canRotateSdkKey) {
+        this.canRotateSdkKey = canRotateSdkKey;
+    }
+
+    public UpdatePermissionGroupRequest canCreateOrUpdateSegments(
+            Boolean canCreateOrUpdateSegments) {
+        this.canCreateOrUpdateSegments = canCreateOrUpdateSegments;
+        return this;
+    }
+
+    /**
+     * Group members can create/update Segments.
+     *
+     * @return canCreateOrUpdateSegments
+     */
+    @javax.annotation.Nullable
+    public Boolean getCanCreateOrUpdateSegments() {
+        return canCreateOrUpdateSegments;
+    }
+
+    public void setCanCreateOrUpdateSegments(Boolean canCreateOrUpdateSegments) {
+        this.canCreateOrUpdateSegments = canCreateOrUpdateSegments;
+    }
+
+    public UpdatePermissionGroupRequest canDeleteSegments(Boolean canDeleteSegments) {
+        this.canDeleteSegments = canDeleteSegments;
+        return this;
+    }
+
+    /**
+     * Group members can delete Segments.
+     *
+     * @return canDeleteSegments
+     */
+    @javax.annotation.Nullable
+    public Boolean getCanDeleteSegments() {
+        return canDeleteSegments;
+    }
+
+    public void setCanDeleteSegments(Boolean canDeleteSegments) {
+        this.canDeleteSegments = canDeleteSegments;
+    }
+
+    public UpdatePermissionGroupRequest canViewProductAuditLog(Boolean canViewProductAuditLog) {
+        this.canViewProductAuditLog = canViewProductAuditLog;
+        return this;
+    }
+
+    /**
+     * Group members has access to audit logs.
+     *
+     * @return canViewProductAuditLog
+     */
+    @javax.annotation.Nullable
+    public Boolean getCanViewProductAuditLog() {
+        return canViewProductAuditLog;
+    }
+
+    public void setCanViewProductAuditLog(Boolean canViewProductAuditLog) {
+        this.canViewProductAuditLog = canViewProductAuditLog;
+    }
+
+    public UpdatePermissionGroupRequest canViewProductStatistics(Boolean canViewProductStatistics) {
+        this.canViewProductStatistics = canViewProductStatistics;
+        return this;
+    }
+
+    /**
+     * Group members has access to product statistics.
+     *
+     * @return canViewProductStatistics
+     */
+    @javax.annotation.Nullable
+    public Boolean getCanViewProductStatistics() {
+        return canViewProductStatistics;
+    }
+
+    public void setCanViewProductStatistics(Boolean canViewProductStatistics) {
+        this.canViewProductStatistics = canViewProductStatistics;
+    }
+
+    public UpdatePermissionGroupRequest canDisable2FA(Boolean canDisable2FA) {
+        this.canDisable2FA = canDisable2FA;
+        return this;
+    }
+
+    /**
+     * Group members can disable two-factor authentication for other members.
+     *
+     * @return canDisable2FA
+     */
+    @javax.annotation.Nullable
+    public Boolean getCanDisable2FA() {
+        return canDisable2FA;
+    }
+
+    public void setCanDisable2FA(Boolean canDisable2FA) {
+        this.canDisable2FA = canDisable2FA;
+    }
+
+    public UpdatePermissionGroupRequest accessType(AccessType accessType) {
+        this.accessType = accessType;
+        return this;
+    }
+
+    /**
+     * Get accessType
+     *
+     * @return accessType
+     */
+    @javax.annotation.Nullable
+    public AccessType getAccessType() {
+        return accessType;
+    }
+
+    public void setAccessType(AccessType accessType) {
+        this.accessType = accessType;
+    }
+
+    public UpdatePermissionGroupRequest newEnvironmentAccessType(
+            EnvironmentAccessType newEnvironmentAccessType) {
+        this.newEnvironmentAccessType = newEnvironmentAccessType;
+        return this;
+    }
+
+    /**
+     * Get newEnvironmentAccessType
+     *
+     * @return newEnvironmentAccessType
+     */
+    @javax.annotation.Nullable
+    public EnvironmentAccessType getNewEnvironmentAccessType() {
+        return newEnvironmentAccessType;
+    }
+
+    public void setNewEnvironmentAccessType(EnvironmentAccessType newEnvironmentAccessType) {
+        this.newEnvironmentAccessType = newEnvironmentAccessType;
+    }
+
+    public UpdatePermissionGroupRequest environmentAccesses(
+            List<CreateOrUpdateEnvironmentAccessModel> environmentAccesses) {
+        this.environmentAccesses = environmentAccesses;
+        return this;
+    }
+
+    public UpdatePermissionGroupRequest addEnvironmentAccessesItem(
+            CreateOrUpdateEnvironmentAccessModel environmentAccessesItem) {
+        if (this.environmentAccesses == null) {
+            this.environmentAccesses = new ArrayList<>();
+        }
+        this.environmentAccesses.add(environmentAccessesItem);
+        return this;
+    }
+
+    /**
+     * List of environment specific permissions.
+     *
+     * @return environmentAccesses
+     */
+    @javax.annotation.Nullable
+    public List<CreateOrUpdateEnvironmentAccessModel> getEnvironmentAccesses() {
+        return environmentAccesses;
+    }
+
+    public void setEnvironmentAccesses(
+            List<CreateOrUpdateEnvironmentAccessModel> environmentAccesses) {
+        this.environmentAccesses = environmentAccesses;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        UpdatePermissionGroupRequest updatePermissionGroupRequest =
+                (UpdatePermissionGroupRequest) o;
+        return Objects.equals(this.name, updatePermissionGroupRequest.name)
+                && Objects.equals(
+                        this.canManageMembers, updatePermissionGroupRequest.canManageMembers)
+                && Objects.equals(
+                        this.canCreateOrUpdateConfig,
+                        updatePermissionGroupRequest.canCreateOrUpdateConfig)
+                && Objects.equals(
+                        this.canDeleteConfig, updatePermissionGroupRequest.canDeleteConfig)
+                && Objects.equals(
+                        this.canCreateOrUpdateEnvironment,
+                        updatePermissionGroupRequest.canCreateOrUpdateEnvironment)
+                && Objects.equals(
+                        this.canDeleteEnvironment,
+                        updatePermissionGroupRequest.canDeleteEnvironment)
+                && Objects.equals(
+                        this.canCreateOrUpdateSetting,
+                        updatePermissionGroupRequest.canCreateOrUpdateSetting)
+                && Objects.equals(this.canTagSetting, updatePermissionGroupRequest.canTagSetting)
+                && Objects.equals(
+                        this.canDeleteSetting, updatePermissionGroupRequest.canDeleteSetting)
+                && Objects.equals(
+                        this.canCreateOrUpdateTag,
+                        updatePermissionGroupRequest.canCreateOrUpdateTag)
+                && Objects.equals(this.canDeleteTag, updatePermissionGroupRequest.canDeleteTag)
+                && Objects.equals(
+                        this.canManageWebhook, updatePermissionGroupRequest.canManageWebhook)
+                && Objects.equals(
+                        this.canUseExportImport, updatePermissionGroupRequest.canUseExportImport)
+                && Objects.equals(
+                        this.canManageProductPreferences,
+                        updatePermissionGroupRequest.canManageProductPreferences)
+                && Objects.equals(
+                        this.canManageIntegrations,
+                        updatePermissionGroupRequest.canManageIntegrations)
+                && Objects.equals(this.canViewSdkKey, updatePermissionGroupRequest.canViewSdkKey)
+                && Objects.equals(
+                        this.canRotateSdkKey, updatePermissionGroupRequest.canRotateSdkKey)
+                && Objects.equals(
+                        this.canCreateOrUpdateSegments,
+                        updatePermissionGroupRequest.canCreateOrUpdateSegments)
+                && Objects.equals(
+                        this.canDeleteSegments, updatePermissionGroupRequest.canDeleteSegments)
+                && Objects.equals(
+                        this.canViewProductAuditLog,
+                        updatePermissionGroupRequest.canViewProductAuditLog)
+                && Objects.equals(
+                        this.canViewProductStatistics,
+                        updatePermissionGroupRequest.canViewProductStatistics)
+                && Objects.equals(this.canDisable2FA, updatePermissionGroupRequest.canDisable2FA)
+                && Objects.equals(this.accessType, updatePermissionGroupRequest.accessType)
+                && Objects.equals(
+                        this.newEnvironmentAccessType,
+                        updatePermissionGroupRequest.newEnvironmentAccessType)
+                && Objects.equals(
+                        this.environmentAccesses, updatePermissionGroupRequest.environmentAccesses);
+    }
+
+    private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+        return a == b
+                || (a != null
+                        && b != null
+                        && a.isPresent()
+                        && b.isPresent()
+                        && Objects.deepEquals(a.get(), b.get()));
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(
+                name,
+                canManageMembers,
+                canCreateOrUpdateConfig,
+                canDeleteConfig,
+                canCreateOrUpdateEnvironment,
+                canDeleteEnvironment,
+                canCreateOrUpdateSetting,
+                canTagSetting,
+                canDeleteSetting,
+                canCreateOrUpdateTag,
+                canDeleteTag,
+                canManageWebhook,
+                canUseExportImport,
+                canManageProductPreferences,
+                canManageIntegrations,
+                canViewSdkKey,
+                canRotateSdkKey,
+                canCreateOrUpdateSegments,
+                canDeleteSegments,
+                canViewProductAuditLog,
+                canViewProductStatistics,
+                canDisable2FA,
+                accessType,
+                newEnvironmentAccessType,
+                environmentAccesses);
+    }
+
+    private static <T> int hashCodeNullable(JsonNullable<T> a) {
+        if (a == null) {
+            return 1;
+        }
+        return a.isPresent() ? Arrays.deepHashCode(new Object[] {a.get()}) : 31;
     }
 
     @Override
     public String toString() {
-      return String.valueOf(value);
+        StringBuilder sb = new StringBuilder();
+        sb.append("class UpdatePermissionGroupRequest {\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    canManageMembers: ").append(toIndentedString(canManageMembers)).append("\n");
+        sb.append("    canCreateOrUpdateConfig: ")
+                .append(toIndentedString(canCreateOrUpdateConfig))
+                .append("\n");
+        sb.append("    canDeleteConfig: ").append(toIndentedString(canDeleteConfig)).append("\n");
+        sb.append("    canCreateOrUpdateEnvironment: ")
+                .append(toIndentedString(canCreateOrUpdateEnvironment))
+                .append("\n");
+        sb.append("    canDeleteEnvironment: ")
+                .append(toIndentedString(canDeleteEnvironment))
+                .append("\n");
+        sb.append("    canCreateOrUpdateSetting: ")
+                .append(toIndentedString(canCreateOrUpdateSetting))
+                .append("\n");
+        sb.append("    canTagSetting: ").append(toIndentedString(canTagSetting)).append("\n");
+        sb.append("    canDeleteSetting: ").append(toIndentedString(canDeleteSetting)).append("\n");
+        sb.append("    canCreateOrUpdateTag: ")
+                .append(toIndentedString(canCreateOrUpdateTag))
+                .append("\n");
+        sb.append("    canDeleteTag: ").append(toIndentedString(canDeleteTag)).append("\n");
+        sb.append("    canManageWebhook: ").append(toIndentedString(canManageWebhook)).append("\n");
+        sb.append("    canUseExportImport: ")
+                .append(toIndentedString(canUseExportImport))
+                .append("\n");
+        sb.append("    canManageProductPreferences: ")
+                .append(toIndentedString(canManageProductPreferences))
+                .append("\n");
+        sb.append("    canManageIntegrations: ")
+                .append(toIndentedString(canManageIntegrations))
+                .append("\n");
+        sb.append("    canViewSdkKey: ").append(toIndentedString(canViewSdkKey)).append("\n");
+        sb.append("    canRotateSdkKey: ").append(toIndentedString(canRotateSdkKey)).append("\n");
+        sb.append("    canCreateOrUpdateSegments: ")
+                .append(toIndentedString(canCreateOrUpdateSegments))
+                .append("\n");
+        sb.append("    canDeleteSegments: ")
+                .append(toIndentedString(canDeleteSegments))
+                .append("\n");
+        sb.append("    canViewProductAuditLog: ")
+                .append(toIndentedString(canViewProductAuditLog))
+                .append("\n");
+        sb.append("    canViewProductStatistics: ")
+                .append(toIndentedString(canViewProductStatistics))
+                .append("\n");
+        sb.append("    canDisable2FA: ").append(toIndentedString(canDisable2FA)).append("\n");
+        sb.append("    accessType: ").append(toIndentedString(accessType)).append("\n");
+        sb.append("    newEnvironmentAccessType: ")
+                .append(toIndentedString(newEnvironmentAccessType))
+                .append("\n");
+        sb.append("    environmentAccesses: ")
+                .append(toIndentedString(environmentAccesses))
+                .append("\n");
+        sb.append("}");
+        return sb.toString();
     }
 
-    public static AccessTypeEnum fromValue(String value) {
-      for (AccessTypeEnum b : AccessTypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
+    /**
+     * Convert the given object to string with each line indented by 4 spaces (except the first
+     * line).
+     */
+    private String toIndentedString(Object o) {
+        if (o == null) {
+            return "null";
         }
-      }
-      return null;
+        return o.toString().replace("\n", "\n    ");
     }
 
-    public static class Adapter extends TypeAdapter<AccessTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final AccessTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
+    public static HashSet<String> openapiFields;
+    public static HashSet<String> openapiRequiredFields;
 
-      @Override
-      public AccessTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return AccessTypeEnum.fromValue(value);
-      }
+    static {
+        // a set of all properties/fields (JSON key names)
+        openapiFields = new HashSet<String>();
+        openapiFields.add("name");
+        openapiFields.add("canManageMembers");
+        openapiFields.add("canCreateOrUpdateConfig");
+        openapiFields.add("canDeleteConfig");
+        openapiFields.add("canCreateOrUpdateEnvironment");
+        openapiFields.add("canDeleteEnvironment");
+        openapiFields.add("canCreateOrUpdateSetting");
+        openapiFields.add("canTagSetting");
+        openapiFields.add("canDeleteSetting");
+        openapiFields.add("canCreateOrUpdateTag");
+        openapiFields.add("canDeleteTag");
+        openapiFields.add("canManageWebhook");
+        openapiFields.add("canUseExportImport");
+        openapiFields.add("canManageProductPreferences");
+        openapiFields.add("canManageIntegrations");
+        openapiFields.add("canViewSdkKey");
+        openapiFields.add("canRotateSdkKey");
+        openapiFields.add("canCreateOrUpdateSegments");
+        openapiFields.add("canDeleteSegments");
+        openapiFields.add("canViewProductAuditLog");
+        openapiFields.add("canViewProductStatistics");
+        openapiFields.add("canDisable2FA");
+        openapiFields.add("accessType");
+        openapiFields.add("newEnvironmentAccessType");
+        openapiFields.add("environmentAccesses");
+
+        // a set of required properties/fields (JSON key names)
+        openapiRequiredFields = new HashSet<String>();
     }
 
+    /**
+     * Validates the JSON Element and throws an exception if issues found
+     *
+     * @param jsonElement JSON Element
+     * @throws IOException if the JSON Element is invalid with respect to
+     *     UpdatePermissionGroupRequest
+     */
     public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      AccessTypeEnum.fromValue(value);
-    }
-  }
-
-  public static final String SERIALIZED_NAME_ACCESS_TYPE = "accessType";
-  @SerializedName(SERIALIZED_NAME_ACCESS_TYPE)
-  private AccessTypeEnum accessType;
-
-  /**
-   * Gets or Sets newEnvironmentAccessType
-   */
-  @JsonAdapter(NewEnvironmentAccessTypeEnum.Adapter.class)
-  public enum NewEnvironmentAccessTypeEnum {
-    FULL("full"),
-    
-    READ_ONLY("readOnly"),
-    
-    NONE("none");
-
-    private String value;
-
-    NewEnvironmentAccessTypeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static NewEnvironmentAccessTypeEnum fromValue(String value) {
-      for (NewEnvironmentAccessTypeEnum b : NewEnvironmentAccessTypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
+        if (jsonElement == null) {
+            if (!UpdatePermissionGroupRequest.openapiRequiredFields
+                    .isEmpty()) { // has required fields but JSON element is null
+                throw new IllegalArgumentException(
+                        String.format(
+                                "The required field(s) %s in UpdatePermissionGroupRequest is not"
+                                        + " found in the empty JSON string",
+                                UpdatePermissionGroupRequest.openapiRequiredFields.toString()));
+            }
         }
-      }
-      return null;
-    }
 
-    public static class Adapter extends TypeAdapter<NewEnvironmentAccessTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final NewEnvironmentAccessTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public NewEnvironmentAccessTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return NewEnvironmentAccessTypeEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      NewEnvironmentAccessTypeEnum.fromValue(value);
-    }
-  }
-
-  public static final String SERIALIZED_NAME_NEW_ENVIRONMENT_ACCESS_TYPE = "newEnvironmentAccessType";
-  @SerializedName(SERIALIZED_NAME_NEW_ENVIRONMENT_ACCESS_TYPE)
-  private NewEnvironmentAccessTypeEnum newEnvironmentAccessType;
-
-  public static final String SERIALIZED_NAME_ENVIRONMENT_ACCESSES = "environmentAccesses";
-  @SerializedName(SERIALIZED_NAME_ENVIRONMENT_ACCESSES)
-  private List<CreateOrUpdateEnvironmentAccessModel> environmentAccesses;
-
-  public UpdatePermissionGroupRequest() {
-  }
-
-  public UpdatePermissionGroupRequest name(String name) {
-    this.name = name;
-    return this;
-  }
-
-  /**
-   * Name of the Permission Group.
-   * @return name
-   */
-  @javax.annotation.Nullable
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-
-  public UpdatePermissionGroupRequest canManageMembers(Boolean canManageMembers) {
-    this.canManageMembers = canManageMembers;
-    return this;
-  }
-
-  /**
-   * Group members can manage team members.
-   * @return canManageMembers
-   */
-  @javax.annotation.Nullable
-  public Boolean getCanManageMembers() {
-    return canManageMembers;
-  }
-
-  public void setCanManageMembers(Boolean canManageMembers) {
-    this.canManageMembers = canManageMembers;
-  }
-
-
-  public UpdatePermissionGroupRequest canCreateOrUpdateConfig(Boolean canCreateOrUpdateConfig) {
-    this.canCreateOrUpdateConfig = canCreateOrUpdateConfig;
-    return this;
-  }
-
-  /**
-   * Group members can create/update Configs.
-   * @return canCreateOrUpdateConfig
-   */
-  @javax.annotation.Nullable
-  public Boolean getCanCreateOrUpdateConfig() {
-    return canCreateOrUpdateConfig;
-  }
-
-  public void setCanCreateOrUpdateConfig(Boolean canCreateOrUpdateConfig) {
-    this.canCreateOrUpdateConfig = canCreateOrUpdateConfig;
-  }
-
-
-  public UpdatePermissionGroupRequest canDeleteConfig(Boolean canDeleteConfig) {
-    this.canDeleteConfig = canDeleteConfig;
-    return this;
-  }
-
-  /**
-   * Group members can delete Configs.
-   * @return canDeleteConfig
-   */
-  @javax.annotation.Nullable
-  public Boolean getCanDeleteConfig() {
-    return canDeleteConfig;
-  }
-
-  public void setCanDeleteConfig(Boolean canDeleteConfig) {
-    this.canDeleteConfig = canDeleteConfig;
-  }
-
-
-  public UpdatePermissionGroupRequest canCreateOrUpdateEnvironment(Boolean canCreateOrUpdateEnvironment) {
-    this.canCreateOrUpdateEnvironment = canCreateOrUpdateEnvironment;
-    return this;
-  }
-
-  /**
-   * Group members can create/update Environments.
-   * @return canCreateOrUpdateEnvironment
-   */
-  @javax.annotation.Nullable
-  public Boolean getCanCreateOrUpdateEnvironment() {
-    return canCreateOrUpdateEnvironment;
-  }
-
-  public void setCanCreateOrUpdateEnvironment(Boolean canCreateOrUpdateEnvironment) {
-    this.canCreateOrUpdateEnvironment = canCreateOrUpdateEnvironment;
-  }
-
-
-  public UpdatePermissionGroupRequest canDeleteEnvironment(Boolean canDeleteEnvironment) {
-    this.canDeleteEnvironment = canDeleteEnvironment;
-    return this;
-  }
-
-  /**
-   * Group members can delete Environments.
-   * @return canDeleteEnvironment
-   */
-  @javax.annotation.Nullable
-  public Boolean getCanDeleteEnvironment() {
-    return canDeleteEnvironment;
-  }
-
-  public void setCanDeleteEnvironment(Boolean canDeleteEnvironment) {
-    this.canDeleteEnvironment = canDeleteEnvironment;
-  }
-
-
-  public UpdatePermissionGroupRequest canCreateOrUpdateSetting(Boolean canCreateOrUpdateSetting) {
-    this.canCreateOrUpdateSetting = canCreateOrUpdateSetting;
-    return this;
-  }
-
-  /**
-   * Group members can create/update Feature Flags and Settings.
-   * @return canCreateOrUpdateSetting
-   */
-  @javax.annotation.Nullable
-  public Boolean getCanCreateOrUpdateSetting() {
-    return canCreateOrUpdateSetting;
-  }
-
-  public void setCanCreateOrUpdateSetting(Boolean canCreateOrUpdateSetting) {
-    this.canCreateOrUpdateSetting = canCreateOrUpdateSetting;
-  }
-
-
-  public UpdatePermissionGroupRequest canTagSetting(Boolean canTagSetting) {
-    this.canTagSetting = canTagSetting;
-    return this;
-  }
-
-  /**
-   * Group members can attach/detach Tags to Feature Flags and Settings.
-   * @return canTagSetting
-   */
-  @javax.annotation.Nullable
-  public Boolean getCanTagSetting() {
-    return canTagSetting;
-  }
-
-  public void setCanTagSetting(Boolean canTagSetting) {
-    this.canTagSetting = canTagSetting;
-  }
-
-
-  public UpdatePermissionGroupRequest canDeleteSetting(Boolean canDeleteSetting) {
-    this.canDeleteSetting = canDeleteSetting;
-    return this;
-  }
-
-  /**
-   * Group members can delete Feature Flags and Settings.
-   * @return canDeleteSetting
-   */
-  @javax.annotation.Nullable
-  public Boolean getCanDeleteSetting() {
-    return canDeleteSetting;
-  }
-
-  public void setCanDeleteSetting(Boolean canDeleteSetting) {
-    this.canDeleteSetting = canDeleteSetting;
-  }
-
-
-  public UpdatePermissionGroupRequest canCreateOrUpdateTag(Boolean canCreateOrUpdateTag) {
-    this.canCreateOrUpdateTag = canCreateOrUpdateTag;
-    return this;
-  }
-
-  /**
-   * Group members can create/update Tags.
-   * @return canCreateOrUpdateTag
-   */
-  @javax.annotation.Nullable
-  public Boolean getCanCreateOrUpdateTag() {
-    return canCreateOrUpdateTag;
-  }
-
-  public void setCanCreateOrUpdateTag(Boolean canCreateOrUpdateTag) {
-    this.canCreateOrUpdateTag = canCreateOrUpdateTag;
-  }
-
-
-  public UpdatePermissionGroupRequest canDeleteTag(Boolean canDeleteTag) {
-    this.canDeleteTag = canDeleteTag;
-    return this;
-  }
-
-  /**
-   * Group members can delete Tags.
-   * @return canDeleteTag
-   */
-  @javax.annotation.Nullable
-  public Boolean getCanDeleteTag() {
-    return canDeleteTag;
-  }
-
-  public void setCanDeleteTag(Boolean canDeleteTag) {
-    this.canDeleteTag = canDeleteTag;
-  }
-
-
-  public UpdatePermissionGroupRequest canManageWebhook(Boolean canManageWebhook) {
-    this.canManageWebhook = canManageWebhook;
-    return this;
-  }
-
-  /**
-   * Group members can create/update/delete Webhooks.
-   * @return canManageWebhook
-   */
-  @javax.annotation.Nullable
-  public Boolean getCanManageWebhook() {
-    return canManageWebhook;
-  }
-
-  public void setCanManageWebhook(Boolean canManageWebhook) {
-    this.canManageWebhook = canManageWebhook;
-  }
-
-
-  public UpdatePermissionGroupRequest canUseExportImport(Boolean canUseExportImport) {
-    this.canUseExportImport = canUseExportImport;
-    return this;
-  }
-
-  /**
-   * Group members can use the export/import feature.
-   * @return canUseExportImport
-   */
-  @javax.annotation.Nullable
-  public Boolean getCanUseExportImport() {
-    return canUseExportImport;
-  }
-
-  public void setCanUseExportImport(Boolean canUseExportImport) {
-    this.canUseExportImport = canUseExportImport;
-  }
-
-
-  public UpdatePermissionGroupRequest canManageProductPreferences(Boolean canManageProductPreferences) {
-    this.canManageProductPreferences = canManageProductPreferences;
-    return this;
-  }
-
-  /**
-   * Group members can update Product preferences.
-   * @return canManageProductPreferences
-   */
-  @javax.annotation.Nullable
-  public Boolean getCanManageProductPreferences() {
-    return canManageProductPreferences;
-  }
-
-  public void setCanManageProductPreferences(Boolean canManageProductPreferences) {
-    this.canManageProductPreferences = canManageProductPreferences;
-  }
-
-
-  public UpdatePermissionGroupRequest canManageIntegrations(Boolean canManageIntegrations) {
-    this.canManageIntegrations = canManageIntegrations;
-    return this;
-  }
-
-  /**
-   * Group members can add and configure integrations.
-   * @return canManageIntegrations
-   */
-  @javax.annotation.Nullable
-  public Boolean getCanManageIntegrations() {
-    return canManageIntegrations;
-  }
-
-  public void setCanManageIntegrations(Boolean canManageIntegrations) {
-    this.canManageIntegrations = canManageIntegrations;
-  }
-
-
-  public UpdatePermissionGroupRequest canViewSdkKey(Boolean canViewSdkKey) {
-    this.canViewSdkKey = canViewSdkKey;
-    return this;
-  }
-
-  /**
-   * Group members has access to SDK keys.
-   * @return canViewSdkKey
-   */
-  @javax.annotation.Nullable
-  public Boolean getCanViewSdkKey() {
-    return canViewSdkKey;
-  }
-
-  public void setCanViewSdkKey(Boolean canViewSdkKey) {
-    this.canViewSdkKey = canViewSdkKey;
-  }
-
-
-  public UpdatePermissionGroupRequest canRotateSdkKey(Boolean canRotateSdkKey) {
-    this.canRotateSdkKey = canRotateSdkKey;
-    return this;
-  }
-
-  /**
-   * Group members can rotate SDK keys.
-   * @return canRotateSdkKey
-   */
-  @javax.annotation.Nullable
-  public Boolean getCanRotateSdkKey() {
-    return canRotateSdkKey;
-  }
-
-  public void setCanRotateSdkKey(Boolean canRotateSdkKey) {
-    this.canRotateSdkKey = canRotateSdkKey;
-  }
-
-
-  public UpdatePermissionGroupRequest canCreateOrUpdateSegments(Boolean canCreateOrUpdateSegments) {
-    this.canCreateOrUpdateSegments = canCreateOrUpdateSegments;
-    return this;
-  }
-
-  /**
-   * Group members can create/update Segments.
-   * @return canCreateOrUpdateSegments
-   */
-  @javax.annotation.Nullable
-  public Boolean getCanCreateOrUpdateSegments() {
-    return canCreateOrUpdateSegments;
-  }
-
-  public void setCanCreateOrUpdateSegments(Boolean canCreateOrUpdateSegments) {
-    this.canCreateOrUpdateSegments = canCreateOrUpdateSegments;
-  }
-
-
-  public UpdatePermissionGroupRequest canDeleteSegments(Boolean canDeleteSegments) {
-    this.canDeleteSegments = canDeleteSegments;
-    return this;
-  }
-
-  /**
-   * Group members can delete Segments.
-   * @return canDeleteSegments
-   */
-  @javax.annotation.Nullable
-  public Boolean getCanDeleteSegments() {
-    return canDeleteSegments;
-  }
-
-  public void setCanDeleteSegments(Boolean canDeleteSegments) {
-    this.canDeleteSegments = canDeleteSegments;
-  }
-
-
-  public UpdatePermissionGroupRequest canViewProductAuditLog(Boolean canViewProductAuditLog) {
-    this.canViewProductAuditLog = canViewProductAuditLog;
-    return this;
-  }
-
-  /**
-   * Group members has access to audit logs.
-   * @return canViewProductAuditLog
-   */
-  @javax.annotation.Nullable
-  public Boolean getCanViewProductAuditLog() {
-    return canViewProductAuditLog;
-  }
-
-  public void setCanViewProductAuditLog(Boolean canViewProductAuditLog) {
-    this.canViewProductAuditLog = canViewProductAuditLog;
-  }
-
-
-  public UpdatePermissionGroupRequest canViewProductStatistics(Boolean canViewProductStatistics) {
-    this.canViewProductStatistics = canViewProductStatistics;
-    return this;
-  }
-
-  /**
-   * Group members has access to product statistics.
-   * @return canViewProductStatistics
-   */
-  @javax.annotation.Nullable
-  public Boolean getCanViewProductStatistics() {
-    return canViewProductStatistics;
-  }
-
-  public void setCanViewProductStatistics(Boolean canViewProductStatistics) {
-    this.canViewProductStatistics = canViewProductStatistics;
-  }
-
-
-  public UpdatePermissionGroupRequest accessType(AccessTypeEnum accessType) {
-    this.accessType = accessType;
-    return this;
-  }
-
-  /**
-   * Get accessType
-   * @return accessType
-   */
-  @javax.annotation.Nullable
-  public AccessTypeEnum getAccessType() {
-    return accessType;
-  }
-
-  public void setAccessType(AccessTypeEnum accessType) {
-    this.accessType = accessType;
-  }
-
-
-  public UpdatePermissionGroupRequest newEnvironmentAccessType(NewEnvironmentAccessTypeEnum newEnvironmentAccessType) {
-    this.newEnvironmentAccessType = newEnvironmentAccessType;
-    return this;
-  }
-
-  /**
-   * Get newEnvironmentAccessType
-   * @return newEnvironmentAccessType
-   */
-  @javax.annotation.Nullable
-  public NewEnvironmentAccessTypeEnum getNewEnvironmentAccessType() {
-    return newEnvironmentAccessType;
-  }
-
-  public void setNewEnvironmentAccessType(NewEnvironmentAccessTypeEnum newEnvironmentAccessType) {
-    this.newEnvironmentAccessType = newEnvironmentAccessType;
-  }
-
-
-  public UpdatePermissionGroupRequest environmentAccesses(List<CreateOrUpdateEnvironmentAccessModel> environmentAccesses) {
-    this.environmentAccesses = environmentAccesses;
-    return this;
-  }
-
-  public UpdatePermissionGroupRequest addEnvironmentAccessesItem(CreateOrUpdateEnvironmentAccessModel environmentAccessesItem) {
-    if (this.environmentAccesses == null) {
-      this.environmentAccesses = new ArrayList<>();
-    }
-    this.environmentAccesses.add(environmentAccessesItem);
-    return this;
-  }
-
-  /**
-   * List of environment specific permissions.
-   * @return environmentAccesses
-   */
-  @javax.annotation.Nullable
-  public List<CreateOrUpdateEnvironmentAccessModel> getEnvironmentAccesses() {
-    return environmentAccesses;
-  }
-
-  public void setEnvironmentAccesses(List<CreateOrUpdateEnvironmentAccessModel> environmentAccesses) {
-    this.environmentAccesses = environmentAccesses;
-  }
-
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    UpdatePermissionGroupRequest updatePermissionGroupRequest = (UpdatePermissionGroupRequest) o;
-    return Objects.equals(this.name, updatePermissionGroupRequest.name) &&
-        Objects.equals(this.canManageMembers, updatePermissionGroupRequest.canManageMembers) &&
-        Objects.equals(this.canCreateOrUpdateConfig, updatePermissionGroupRequest.canCreateOrUpdateConfig) &&
-        Objects.equals(this.canDeleteConfig, updatePermissionGroupRequest.canDeleteConfig) &&
-        Objects.equals(this.canCreateOrUpdateEnvironment, updatePermissionGroupRequest.canCreateOrUpdateEnvironment) &&
-        Objects.equals(this.canDeleteEnvironment, updatePermissionGroupRequest.canDeleteEnvironment) &&
-        Objects.equals(this.canCreateOrUpdateSetting, updatePermissionGroupRequest.canCreateOrUpdateSetting) &&
-        Objects.equals(this.canTagSetting, updatePermissionGroupRequest.canTagSetting) &&
-        Objects.equals(this.canDeleteSetting, updatePermissionGroupRequest.canDeleteSetting) &&
-        Objects.equals(this.canCreateOrUpdateTag, updatePermissionGroupRequest.canCreateOrUpdateTag) &&
-        Objects.equals(this.canDeleteTag, updatePermissionGroupRequest.canDeleteTag) &&
-        Objects.equals(this.canManageWebhook, updatePermissionGroupRequest.canManageWebhook) &&
-        Objects.equals(this.canUseExportImport, updatePermissionGroupRequest.canUseExportImport) &&
-        Objects.equals(this.canManageProductPreferences, updatePermissionGroupRequest.canManageProductPreferences) &&
-        Objects.equals(this.canManageIntegrations, updatePermissionGroupRequest.canManageIntegrations) &&
-        Objects.equals(this.canViewSdkKey, updatePermissionGroupRequest.canViewSdkKey) &&
-        Objects.equals(this.canRotateSdkKey, updatePermissionGroupRequest.canRotateSdkKey) &&
-        Objects.equals(this.canCreateOrUpdateSegments, updatePermissionGroupRequest.canCreateOrUpdateSegments) &&
-        Objects.equals(this.canDeleteSegments, updatePermissionGroupRequest.canDeleteSegments) &&
-        Objects.equals(this.canViewProductAuditLog, updatePermissionGroupRequest.canViewProductAuditLog) &&
-        Objects.equals(this.canViewProductStatistics, updatePermissionGroupRequest.canViewProductStatistics) &&
-        Objects.equals(this.accessType, updatePermissionGroupRequest.accessType) &&
-        Objects.equals(this.newEnvironmentAccessType, updatePermissionGroupRequest.newEnvironmentAccessType) &&
-        Objects.equals(this.environmentAccesses, updatePermissionGroupRequest.environmentAccesses);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(name, canManageMembers, canCreateOrUpdateConfig, canDeleteConfig, canCreateOrUpdateEnvironment, canDeleteEnvironment, canCreateOrUpdateSetting, canTagSetting, canDeleteSetting, canCreateOrUpdateTag, canDeleteTag, canManageWebhook, canUseExportImport, canManageProductPreferences, canManageIntegrations, canViewSdkKey, canRotateSdkKey, canCreateOrUpdateSegments, canDeleteSegments, canViewProductAuditLog, canViewProductStatistics, accessType, newEnvironmentAccessType, environmentAccesses);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class UpdatePermissionGroupRequest {\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    canManageMembers: ").append(toIndentedString(canManageMembers)).append("\n");
-    sb.append("    canCreateOrUpdateConfig: ").append(toIndentedString(canCreateOrUpdateConfig)).append("\n");
-    sb.append("    canDeleteConfig: ").append(toIndentedString(canDeleteConfig)).append("\n");
-    sb.append("    canCreateOrUpdateEnvironment: ").append(toIndentedString(canCreateOrUpdateEnvironment)).append("\n");
-    sb.append("    canDeleteEnvironment: ").append(toIndentedString(canDeleteEnvironment)).append("\n");
-    sb.append("    canCreateOrUpdateSetting: ").append(toIndentedString(canCreateOrUpdateSetting)).append("\n");
-    sb.append("    canTagSetting: ").append(toIndentedString(canTagSetting)).append("\n");
-    sb.append("    canDeleteSetting: ").append(toIndentedString(canDeleteSetting)).append("\n");
-    sb.append("    canCreateOrUpdateTag: ").append(toIndentedString(canCreateOrUpdateTag)).append("\n");
-    sb.append("    canDeleteTag: ").append(toIndentedString(canDeleteTag)).append("\n");
-    sb.append("    canManageWebhook: ").append(toIndentedString(canManageWebhook)).append("\n");
-    sb.append("    canUseExportImport: ").append(toIndentedString(canUseExportImport)).append("\n");
-    sb.append("    canManageProductPreferences: ").append(toIndentedString(canManageProductPreferences)).append("\n");
-    sb.append("    canManageIntegrations: ").append(toIndentedString(canManageIntegrations)).append("\n");
-    sb.append("    canViewSdkKey: ").append(toIndentedString(canViewSdkKey)).append("\n");
-    sb.append("    canRotateSdkKey: ").append(toIndentedString(canRotateSdkKey)).append("\n");
-    sb.append("    canCreateOrUpdateSegments: ").append(toIndentedString(canCreateOrUpdateSegments)).append("\n");
-    sb.append("    canDeleteSegments: ").append(toIndentedString(canDeleteSegments)).append("\n");
-    sb.append("    canViewProductAuditLog: ").append(toIndentedString(canViewProductAuditLog)).append("\n");
-    sb.append("    canViewProductStatistics: ").append(toIndentedString(canViewProductStatistics)).append("\n");
-    sb.append("    accessType: ").append(toIndentedString(accessType)).append("\n");
-    sb.append("    newEnvironmentAccessType: ").append(toIndentedString(newEnvironmentAccessType)).append("\n");
-    sb.append("    environmentAccesses: ").append(toIndentedString(environmentAccesses)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("canManageMembers");
-    openapiFields.add("canCreateOrUpdateConfig");
-    openapiFields.add("canDeleteConfig");
-    openapiFields.add("canCreateOrUpdateEnvironment");
-    openapiFields.add("canDeleteEnvironment");
-    openapiFields.add("canCreateOrUpdateSetting");
-    openapiFields.add("canTagSetting");
-    openapiFields.add("canDeleteSetting");
-    openapiFields.add("canCreateOrUpdateTag");
-    openapiFields.add("canDeleteTag");
-    openapiFields.add("canManageWebhook");
-    openapiFields.add("canUseExportImport");
-    openapiFields.add("canManageProductPreferences");
-    openapiFields.add("canManageIntegrations");
-    openapiFields.add("canViewSdkKey");
-    openapiFields.add("canRotateSdkKey");
-    openapiFields.add("canCreateOrUpdateSegments");
-    openapiFields.add("canDeleteSegments");
-    openapiFields.add("canViewProductAuditLog");
-    openapiFields.add("canViewProductStatistics");
-    openapiFields.add("accessType");
-    openapiFields.add("newEnvironmentAccessType");
-    openapiFields.add("environmentAccesses");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-  }
-
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to UpdatePermissionGroupRequest
-   */
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      if (jsonElement == null) {
-        if (!UpdatePermissionGroupRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdatePermissionGroupRequest is not found in the empty JSON string", UpdatePermissionGroupRequest.openapiRequiredFields.toString()));
+        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+        // check to see if the JSON string contains additional fields
+        for (Map.Entry<String, JsonElement> entry : entries) {
+            if (!UpdatePermissionGroupRequest.openapiFields.contains(entry.getKey())) {
+                throw new IllegalArgumentException(
+                        String.format(
+                                "The field `%s` in the JSON string is not defined in the"
+                                        + " `UpdatePermissionGroupRequest` properties. JSON: %s",
+                                entry.getKey(), jsonElement.toString()));
+            }
         }
-      }
-
-      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!UpdatePermissionGroupRequest.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `UpdatePermissionGroupRequest` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
-        }
-      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if ((jsonObj.get("accessType") != null && !jsonObj.get("accessType").isJsonNull()) && !jsonObj.get("accessType").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `accessType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("accessType").toString()));
-      }
-      // validate the optional field `accessType`
-      if (jsonObj.get("accessType") != null && !jsonObj.get("accessType").isJsonNull()) {
-        AccessTypeEnum.validateJsonElement(jsonObj.get("accessType"));
-      }
-      if ((jsonObj.get("newEnvironmentAccessType") != null && !jsonObj.get("newEnvironmentAccessType").isJsonNull()) && !jsonObj.get("newEnvironmentAccessType").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `newEnvironmentAccessType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("newEnvironmentAccessType").toString()));
-      }
-      // validate the optional field `newEnvironmentAccessType`
-      if (jsonObj.get("newEnvironmentAccessType") != null && !jsonObj.get("newEnvironmentAccessType").isJsonNull()) {
-        NewEnvironmentAccessTypeEnum.validateJsonElement(jsonObj.get("newEnvironmentAccessType"));
-      }
-      if (jsonObj.get("environmentAccesses") != null && !jsonObj.get("environmentAccesses").isJsonNull()) {
-        JsonArray jsonArrayenvironmentAccesses = jsonObj.getAsJsonArray("environmentAccesses");
-        if (jsonArrayenvironmentAccesses != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("environmentAccesses").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `environmentAccesses` to be an array in the JSON string but got `%s`", jsonObj.get("environmentAccesses").toString()));
-          }
-
-          // validate the optional field `environmentAccesses` (array)
-          for (int i = 0; i < jsonArrayenvironmentAccesses.size(); i++) {
-            CreateOrUpdateEnvironmentAccessModel.validateJsonElement(jsonArrayenvironmentAccesses.get(i));
-          };
+        if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull())
+                && !jsonObj.get("name").isJsonPrimitive()) {
+            throw new IllegalArgumentException(
+                    String.format(
+                            "Expected the field `name` to be a primitive type in the JSON string"
+                                    + " but got `%s`",
+                            jsonObj.get("name").toString()));
         }
-      }
-  }
+        // validate the optional field `accessType`
+        if (jsonObj.get("accessType") != null && !jsonObj.get("accessType").isJsonNull()) {
+            AccessType.validateJsonElement(jsonObj.get("accessType"));
+        }
+        // validate the optional field `newEnvironmentAccessType`
+        if (jsonObj.get("newEnvironmentAccessType") != null
+                && !jsonObj.get("newEnvironmentAccessType").isJsonNull()) {
+            EnvironmentAccessType.validateJsonElement(jsonObj.get("newEnvironmentAccessType"));
+        }
+        if (jsonObj.get("environmentAccesses") != null
+                && !jsonObj.get("environmentAccesses").isJsonNull()) {
+            JsonArray jsonArrayenvironmentAccesses = jsonObj.getAsJsonArray("environmentAccesses");
+            if (jsonArrayenvironmentAccesses != null) {
+                // ensure the json data is an array
+                if (!jsonObj.get("environmentAccesses").isJsonArray()) {
+                    throw new IllegalArgumentException(
+                            String.format(
+                                    "Expected the field `environmentAccesses` to be an array in"
+                                            + " the JSON string but got `%s`",
+                                    jsonObj.get("environmentAccesses").toString()));
+                }
 
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!UpdatePermissionGroupRequest.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'UpdatePermissionGroupRequest' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<UpdatePermissionGroupRequest> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(UpdatePermissionGroupRequest.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<UpdatePermissionGroupRequest>() {
-           @Override
-           public void write(JsonWriter out, UpdatePermissionGroupRequest value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public UpdatePermissionGroupRequest read(JsonReader in) throws IOException {
-             JsonElement jsonElement = elementAdapter.read(in);
-             validateJsonElement(jsonElement);
-             return thisAdapter.fromJsonTree(jsonElement);
-           }
-
-       }.nullSafe();
+                // validate the optional field `environmentAccesses` (array)
+                for (int i = 0; i < jsonArrayenvironmentAccesses.size(); i++) {
+                    CreateOrUpdateEnvironmentAccessModel.validateJsonElement(
+                            jsonArrayenvironmentAccesses.get(i));
+                }
+                ;
+            }
+        }
     }
-  }
 
-  /**
-   * Create an instance of UpdatePermissionGroupRequest given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of UpdatePermissionGroupRequest
-   * @throws IOException if the JSON string is invalid with respect to UpdatePermissionGroupRequest
-   */
-  public static UpdatePermissionGroupRequest fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, UpdatePermissionGroupRequest.class);
-  }
+    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+        @SuppressWarnings("unchecked")
+        @Override
+        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+            if (!UpdatePermissionGroupRequest.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'UpdatePermissionGroupRequest' and its
+                // subtypes
+            }
+            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<UpdatePermissionGroupRequest> thisAdapter =
+                    gson.getDelegateAdapter(
+                            this, TypeToken.get(UpdatePermissionGroupRequest.class));
 
-  /**
-   * Convert an instance of UpdatePermissionGroupRequest to an JSON string
-   *
-   * @return JSON string
-   */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
+            return (TypeAdapter<T>)
+                    new TypeAdapter<UpdatePermissionGroupRequest>() {
+                        @Override
+                        public void write(JsonWriter out, UpdatePermissionGroupRequest value)
+                                throws IOException {
+                            JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+                            elementAdapter.write(out, obj);
+                        }
+
+                        @Override
+                        public UpdatePermissionGroupRequest read(JsonReader in) throws IOException {
+                            JsonElement jsonElement = elementAdapter.read(in);
+                            validateJsonElement(jsonElement);
+                            return thisAdapter.fromJsonTree(jsonElement);
+                        }
+                    }.nullSafe();
+        }
+    }
+
+    /**
+     * Create an instance of UpdatePermissionGroupRequest given an JSON string
+     *
+     * @param jsonString JSON string
+     * @return An instance of UpdatePermissionGroupRequest
+     * @throws IOException if the JSON string is invalid with respect to
+     *     UpdatePermissionGroupRequest
+     */
+    public static UpdatePermissionGroupRequest fromJson(String jsonString) throws IOException {
+        return JSON.getGson().fromJson(jsonString, UpdatePermissionGroupRequest.class);
+    }
+
+    /**
+     * Convert an instance of UpdatePermissionGroupRequest to an JSON string
+     *
+     * @return JSON string
+     */
+    public String toJson() {
+        return JSON.getGson().toJson(this);
+    }
 }
-

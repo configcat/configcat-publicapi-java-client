@@ -28,29 +28,10 @@
 |**canDeleteSegments** | **Boolean** | Group members can delete Segments. |  [optional] |
 |**canViewProductAuditLog** | **Boolean** | Group members has access to audit logs. |  [optional] |
 |**canViewProductStatistics** | **Boolean** | Group members has access to product statistics. |  [optional] |
-|**accessType** | [**AccessTypeEnum**](#AccessTypeEnum) | Represent the Feature Management permission. |  [optional] |
-|**newEnvironmentAccessType** | [**NewEnvironmentAccessTypeEnum**](#NewEnvironmentAccessTypeEnum) | Represent the environment specific Feature Management permission. |  [optional] |
+|**accessType** | **AccessType** |  |  [optional] |
+|**newEnvironmentAccessType** | **EnvironmentAccessType** |  |  [optional] |
 |**environmentAccesses** | [**List&lt;CreateOrUpdateEnvironmentAccessModel&gt;**](CreateOrUpdateEnvironmentAccessModel.md) | List of environment specific permissions. |  [optional] |
-
-
-
-## Enum: AccessTypeEnum
-
-| Name | Value |
-|---- | -----|
-| READ_ONLY | &quot;readOnly&quot; |
-| FULL | &quot;full&quot; |
-| CUSTOM | &quot;custom&quot; |
-
-
-
-## Enum: NewEnvironmentAccessTypeEnum
-
-| Name | Value |
-|---- | -----|
-| FULL | &quot;full&quot; |
-| READ_ONLY | &quot;readOnly&quot; |
-| NONE | &quot;none&quot; |
+|**canDisable2FA** | **Boolean** | Group members can disable two-factor authentication for other members. |  [optional] |
 
 
 

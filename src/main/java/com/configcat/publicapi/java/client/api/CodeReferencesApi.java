@@ -1,6 +1,6 @@
 /*
  * ConfigCat Public Management API
- * The purpose of this API is to access the ConfigCat platform programmatically. You can **Create**, **Read**, **Update** and **Delete** any entities like **Feature Flags, Configs, Environments** or **Products** within ConfigCat.  **Base API URL**: https://api.configcat.com  If you prefer the swagger documentation, you can find it here: [Swagger UI](https://api.configcat.com/swagger).  The API is based on HTTP REST, uses resource-oriented URLs, status codes and supports JSON  format.   **Important:** Do not use this API for accessing and evaluating feature flag values. Use the [SDKs](https://configcat.com/docs/sdk-reference/overview) or the [ConfigCat Proxy](https://configcat.com/docs/advanced/proxy/proxy-overview/) instead.  # OpenAPI Specification  The complete specification is publicly available in the following formats:  - [OpenAPI v3](https://api.configcat.com/docs/v1/swagger.json) - [Swagger v2](https://api.configcat.com/docs/v1/swagger.v2.json)  You can use it to generate client libraries in various languages with [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) or [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) to interact with this API.  # Authentication This API uses the [Basic HTTP Authentication Scheme](https://en.wikipedia.org/wiki/Basic_access_authentication).   <!-- ReDoc-Inject: <security-definitions> -->  # Throttling and rate limits All the rate limited API calls are returning information about the current rate limit period in the following HTTP headers:  | Header | Description | | :- | :- | | X-Rate-Limit-Remaining | The maximum number of requests remaining in the current rate limit period. | | X-Rate-Limit-Reset     | The time when the current rate limit period resets.        |  When the rate limit is exceeded by a request, the API returns with a `HTTP 429 - Too many requests` status along with a `Retry-After` HTTP header. 
+ * The purpose of this API is to access the ConfigCat platform programmatically. You can **Create**, **Read**, **Update** and **Delete** any entities like **Feature Flags, Configs, Environments** or **Products** within ConfigCat.  **Base API URL**: https://api.configcat.com  If you prefer the swagger documentation, you can find it here: [Swagger UI](https://api.configcat.com/swagger).  The API is based on HTTP REST, uses resource-oriented URLs, status codes and supports JSON  format.   **Important:** Do not use this API for accessing and evaluating feature flag values. Use the [SDKs](https://configcat.com/docs/sdk-reference/overview) or the [ConfigCat Proxy](https://configcat.com/docs/advanced/proxy/proxy-overview/) instead.  # OpenAPI Specification  The complete specification is publicly available in the following formats:  - [OpenAPI v3](https://api.configcat.com/docs/v1/swagger.json) - [Swagger v2](https://api.configcat.com/docs/v1/swagger.v2.json)  You can use it to generate client libraries in various languages with [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) or [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) to interact with this API.  # Authentication This API uses the [Basic HTTP Authentication Scheme](https://en.wikipedia.org/wiki/Basic_access_authentication).   <!-- ReDoc-Inject: <security-definitions> -->  # Throttling and rate limits All the rate limited API calls are returning information about the current rate limit period in the following HTTP headers:  | Header | Description | | :- | :- | | X-Rate-Limit-Remaining | The maximum number of requests remaining in the current rate limit period. | | X-Rate-Limit-Reset     | The time when the current rate limit period resets.        |  When the rate limit is exceeded by a request, the API returns with a `HTTP 429 - Too many requests` status along with a `Retry-After` HTTP header.
  *
  * The version of the OpenAPI document: v1
  * Contact: support@configcat.com
@@ -10,8 +10,8 @@
  * Do not edit the class manually.
  */
 
-
 package com.configcat.publicapi.java.client.api;
+
 
 import com.configcat.publicapi.java.client.ApiCallback;
 import com.configcat.publicapi.java.client.ApiClient;
@@ -19,18 +19,10 @@ import com.configcat.publicapi.java.client.ApiException;
 import com.configcat.publicapi.java.client.ApiResponse;
 import com.configcat.publicapi.java.client.Configuration;
 import com.configcat.publicapi.java.client.Pair;
-import com.configcat.publicapi.java.client.ProgressRequestBody;
-import com.configcat.publicapi.java.client.ProgressResponseBody;
-
-import com.google.gson.reflect.TypeToken;
-
-import java.io.IOException;
-
-
 import com.configcat.publicapi.java.client.model.CodeReferenceModel;
 import com.configcat.publicapi.java.client.model.CodeReferenceRequest;
 import com.configcat.publicapi.java.client.model.DeleteRepositoryReportsRequest;
-
+import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -76,28 +68,32 @@ public class CodeReferencesApi {
 
     /**
      * Build call for v1CodeReferencesDeleteReportsPost
-     * @param deleteRepositoryReportsRequest  (required)
+     *
+     * @param deleteRepositoryReportsRequest (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     </table>
+     *     <table summary="Response Details" border="1">
+     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+     * <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     * </table>
      */
-    public okhttp3.Call v1CodeReferencesDeleteReportsPostCall(DeleteRepositoryReportsRequest deleteRepositoryReportsRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1CodeReferencesDeleteReportsPostCall(
+            DeleteRepositoryReportsRequest deleteRepositoryReportsRequest,
+            final ApiCallback _callback)
+            throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {  };
+        String[] localBasePaths = new String[] {};
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
+        if (localCustomBaseUrl != null) {
             basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
+        } else if (localBasePaths.length > 0) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -114,122 +110,150 @@ public class CodeReferencesApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        final String[] localVarAccepts = {
-        };
+        final String[] localVarAccepts = {};
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
             localVarHeaderParams.put("Accept", localVarAccept);
         }
 
         final String[] localVarContentTypes = {
-            "application/json",
-            "text/json",
-            "application/*+json"
+            "application/json", "text/json", "application/*+json"
         };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        final String localVarContentType =
+                localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] { "Basic" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        String[] localVarAuthNames = new String[] {"Basic"};
+        return localVarApiClient.buildCall(
+                basePath,
+                localVarPath,
+                "POST",
+                localVarQueryParams,
+                localVarCollectionQueryParams,
+                localVarPostBody,
+                localVarHeaderParams,
+                localVarCookieParams,
+                localVarFormParams,
+                localVarAuthNames,
+                _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1CodeReferencesDeleteReportsPostValidateBeforeCall(DeleteRepositoryReportsRequest deleteRepositoryReportsRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1CodeReferencesDeleteReportsPostValidateBeforeCall(
+            DeleteRepositoryReportsRequest deleteRepositoryReportsRequest,
+            final ApiCallback _callback)
+            throws ApiException {
         // verify the required parameter 'deleteRepositoryReportsRequest' is set
         if (deleteRepositoryReportsRequest == null) {
-            throw new ApiException("Missing the required parameter 'deleteRepositoryReportsRequest' when calling v1CodeReferencesDeleteReportsPost(Async)");
+            throw new ApiException(
+                    "Missing the required parameter 'deleteRepositoryReportsRequest' when calling"
+                            + " v1CodeReferencesDeleteReportsPost(Async)");
         }
 
         return v1CodeReferencesDeleteReportsPostCall(deleteRepositoryReportsRequest, _callback);
-
     }
 
     /**
      * Delete Reference reports
-     * 
-     * @param deleteRepositoryReportsRequest  (required)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     *
+     * @param deleteRepositoryReportsRequest (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
+     *     response body
      * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     </table>
+     *     <table summary="Response Details" border="1">
+     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+     * <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     * </table>
      */
-    public void v1CodeReferencesDeleteReportsPost(DeleteRepositoryReportsRequest deleteRepositoryReportsRequest) throws ApiException {
+    public void v1CodeReferencesDeleteReportsPost(
+            DeleteRepositoryReportsRequest deleteRepositoryReportsRequest) throws ApiException {
         v1CodeReferencesDeleteReportsPostWithHttpInfo(deleteRepositoryReportsRequest);
     }
 
     /**
      * Delete Reference reports
-     * 
-     * @param deleteRepositoryReportsRequest  (required)
+     *
+     * @param deleteRepositoryReportsRequest (required)
      * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
+     *     response body
      * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     </table>
+     *     <table summary="Response Details" border="1">
+     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+     * <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     * </table>
      */
-    public ApiResponse<Void> v1CodeReferencesDeleteReportsPostWithHttpInfo(DeleteRepositoryReportsRequest deleteRepositoryReportsRequest) throws ApiException {
-        okhttp3.Call localVarCall = v1CodeReferencesDeleteReportsPostValidateBeforeCall(deleteRepositoryReportsRequest, null);
+    public ApiResponse<Void> v1CodeReferencesDeleteReportsPostWithHttpInfo(
+            DeleteRepositoryReportsRequest deleteRepositoryReportsRequest) throws ApiException {
+        okhttp3.Call localVarCall =
+                v1CodeReferencesDeleteReportsPostValidateBeforeCall(
+                        deleteRepositoryReportsRequest, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Delete Reference reports (asynchronously)
-     * 
-     * @param deleteRepositoryReportsRequest  (required)
+     *
+     * @param deleteRepositoryReportsRequest (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body
+     *     object
      * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     </table>
+     *     <table summary="Response Details" border="1">
+     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+     * <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     * </table>
      */
-    public okhttp3.Call v1CodeReferencesDeleteReportsPostAsync(DeleteRepositoryReportsRequest deleteRepositoryReportsRequest, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call v1CodeReferencesDeleteReportsPostAsync(
+            DeleteRepositoryReportsRequest deleteRepositoryReportsRequest,
+            final ApiCallback<Void> _callback)
+            throws ApiException {
 
-        okhttp3.Call localVarCall = v1CodeReferencesDeleteReportsPostValidateBeforeCall(deleteRepositoryReportsRequest, _callback);
+        okhttp3.Call localVarCall =
+                v1CodeReferencesDeleteReportsPostValidateBeforeCall(
+                        deleteRepositoryReportsRequest, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for v1CodeReferencesPost
-     * @param codeReferenceRequest  (required)
+     *
+     * @param codeReferenceRequest (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     </table>
+     *     <table summary="Response Details" border="1">
+     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+     * <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     * </table>
      */
-    public okhttp3.Call v1CodeReferencesPostCall(CodeReferenceRequest codeReferenceRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1CodeReferencesPostCall(
+            CodeReferenceRequest codeReferenceRequest, final ApiCallback _callback)
+            throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {  };
+        String[] localBasePaths = new String[] {};
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
+        if (localCustomBaseUrl != null) {
             basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
+        } else if (localBasePaths.length > 0) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -246,122 +270,145 @@ public class CodeReferencesApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        final String[] localVarAccepts = {
-        };
+        final String[] localVarAccepts = {};
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
             localVarHeaderParams.put("Accept", localVarAccept);
         }
 
         final String[] localVarContentTypes = {
-            "application/json",
-            "text/json",
-            "application/*+json"
+            "application/json", "text/json", "application/*+json"
         };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        final String localVarContentType =
+                localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] { "Basic" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        String[] localVarAuthNames = new String[] {"Basic"};
+        return localVarApiClient.buildCall(
+                basePath,
+                localVarPath,
+                "POST",
+                localVarQueryParams,
+                localVarCollectionQueryParams,
+                localVarPostBody,
+                localVarHeaderParams,
+                localVarCookieParams,
+                localVarFormParams,
+                localVarAuthNames,
+                _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1CodeReferencesPostValidateBeforeCall(CodeReferenceRequest codeReferenceRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1CodeReferencesPostValidateBeforeCall(
+            CodeReferenceRequest codeReferenceRequest, final ApiCallback _callback)
+            throws ApiException {
         // verify the required parameter 'codeReferenceRequest' is set
         if (codeReferenceRequest == null) {
-            throw new ApiException("Missing the required parameter 'codeReferenceRequest' when calling v1CodeReferencesPost(Async)");
+            throw new ApiException(
+                    "Missing the required parameter 'codeReferenceRequest' when calling"
+                            + " v1CodeReferencesPost(Async)");
         }
 
         return v1CodeReferencesPostCall(codeReferenceRequest, _callback);
-
     }
 
     /**
      * Upload References
-     * 
-     * @param codeReferenceRequest  (required)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     *
+     * @param codeReferenceRequest (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
+     *     response body
      * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     </table>
+     *     <table summary="Response Details" border="1">
+     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+     * <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     * </table>
      */
-    public void v1CodeReferencesPost(CodeReferenceRequest codeReferenceRequest) throws ApiException {
+    public void v1CodeReferencesPost(CodeReferenceRequest codeReferenceRequest)
+            throws ApiException {
         v1CodeReferencesPostWithHttpInfo(codeReferenceRequest);
     }
 
     /**
      * Upload References
-     * 
-     * @param codeReferenceRequest  (required)
+     *
+     * @param codeReferenceRequest (required)
      * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
+     *     response body
      * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     </table>
+     *     <table summary="Response Details" border="1">
+     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+     * <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     * </table>
      */
-    public ApiResponse<Void> v1CodeReferencesPostWithHttpInfo(CodeReferenceRequest codeReferenceRequest) throws ApiException {
-        okhttp3.Call localVarCall = v1CodeReferencesPostValidateBeforeCall(codeReferenceRequest, null);
+    public ApiResponse<Void> v1CodeReferencesPostWithHttpInfo(
+            CodeReferenceRequest codeReferenceRequest) throws ApiException {
+        okhttp3.Call localVarCall =
+                v1CodeReferencesPostValidateBeforeCall(codeReferenceRequest, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Upload References (asynchronously)
-     * 
-     * @param codeReferenceRequest  (required)
+     *
+     * @param codeReferenceRequest (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body
+     *     object
      * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     </table>
+     *     <table summary="Response Details" border="1">
+     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+     * <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     * </table>
      */
-    public okhttp3.Call v1CodeReferencesPostAsync(CodeReferenceRequest codeReferenceRequest, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call v1CodeReferencesPostAsync(
+            CodeReferenceRequest codeReferenceRequest, final ApiCallback<Void> _callback)
+            throws ApiException {
 
-        okhttp3.Call localVarCall = v1CodeReferencesPostValidateBeforeCall(codeReferenceRequest, _callback);
+        okhttp3.Call localVarCall =
+                v1CodeReferencesPostValidateBeforeCall(codeReferenceRequest, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for v1SettingsSettingIdCodeReferencesGet
+     *
      * @param settingId The identifier of the Feature Flag or Setting. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     </table>
+     *     <table summary="Response Details" border="1">
+     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     * </table>
      */
-    public okhttp3.Call v1SettingsSettingIdCodeReferencesGetCall(Integer settingId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1SettingsSettingIdCodeReferencesGetCall(
+            Integer settingId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {  };
+        String[] localBasePaths = new String[] {};
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
+        if (localCustomBaseUrl != null) {
             basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
+        } else if (localBasePaths.length > 0) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -370,8 +417,11 @@ public class CodeReferencesApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/v1/settings/{settingId}/code-references"
-            .replace("{" + "settingId" + "}", localVarApiClient.escapeString(settingId.toString()));
+        String localVarPath =
+                "/v1/settings/{settingId}/code-references"
+                        .replace(
+                                "{" + "settingId" + "}",
+                                localVarApiClient.escapeString(settingId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -379,97 +429,118 @@ public class CodeReferencesApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        final String[] localVarAccepts = {
-            "application/json"
-        };
+        final String[] localVarAccepts = {"application/json"};
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
             localVarHeaderParams.put("Accept", localVarAccept);
         }
 
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        final String[] localVarContentTypes = {};
+        final String localVarContentType =
+                localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] { "Basic" };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        String[] localVarAuthNames = new String[] {"Basic"};
+        return localVarApiClient.buildCall(
+                basePath,
+                localVarPath,
+                "GET",
+                localVarQueryParams,
+                localVarCollectionQueryParams,
+                localVarPostBody,
+                localVarHeaderParams,
+                localVarCookieParams,
+                localVarFormParams,
+                localVarAuthNames,
+                _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1SettingsSettingIdCodeReferencesGetValidateBeforeCall(Integer settingId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1SettingsSettingIdCodeReferencesGetValidateBeforeCall(
+            Integer settingId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'settingId' is set
         if (settingId == null) {
-            throw new ApiException("Missing the required parameter 'settingId' when calling v1SettingsSettingIdCodeReferencesGet(Async)");
+            throw new ApiException(
+                    "Missing the required parameter 'settingId' when calling"
+                            + " v1SettingsSettingIdCodeReferencesGet(Async)");
         }
 
         return v1SettingsSettingIdCodeReferencesGetCall(settingId, _callback);
-
     }
 
     /**
      * Get References for Feature Flag or Setting
-     * 
+     *
      * @param settingId The identifier of the Feature Flag or Setting. (required)
      * @return List&lt;CodeReferenceModel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
+     *     response body
      * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     </table>
+     *     <table summary="Response Details" border="1">
+     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     * </table>
      */
-    public List<CodeReferenceModel> v1SettingsSettingIdCodeReferencesGet(Integer settingId) throws ApiException {
-        ApiResponse<List<CodeReferenceModel>> localVarResp = v1SettingsSettingIdCodeReferencesGetWithHttpInfo(settingId);
+    public List<CodeReferenceModel> v1SettingsSettingIdCodeReferencesGet(Integer settingId)
+            throws ApiException {
+        ApiResponse<List<CodeReferenceModel>> localVarResp =
+                v1SettingsSettingIdCodeReferencesGetWithHttpInfo(settingId);
         return localVarResp.getData();
     }
 
     /**
      * Get References for Feature Flag or Setting
-     * 
+     *
      * @param settingId The identifier of the Feature Flag or Setting. (required)
      * @return ApiResponse&lt;List&lt;CodeReferenceModel&gt;&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
+     *     response body
      * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     </table>
+     *     <table summary="Response Details" border="1">
+     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     * </table>
      */
-    public ApiResponse<List<CodeReferenceModel>> v1SettingsSettingIdCodeReferencesGetWithHttpInfo(Integer settingId) throws ApiException {
-        okhttp3.Call localVarCall = v1SettingsSettingIdCodeReferencesGetValidateBeforeCall(settingId, null);
-        Type localVarReturnType = new TypeToken<List<CodeReferenceModel>>(){}.getType();
+    public ApiResponse<List<CodeReferenceModel>> v1SettingsSettingIdCodeReferencesGetWithHttpInfo(
+            Integer settingId) throws ApiException {
+        okhttp3.Call localVarCall =
+                v1SettingsSettingIdCodeReferencesGetValidateBeforeCall(settingId, null);
+        Type localVarReturnType = new TypeToken<List<CodeReferenceModel>>() {}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Get References for Feature Flag or Setting (asynchronously)
-     * 
+     *
      * @param settingId The identifier of the Feature Flag or Setting. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body
+     *     object
      * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     </table>
+     *     <table summary="Response Details" border="1">
+     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     * </table>
      */
-    public okhttp3.Call v1SettingsSettingIdCodeReferencesGetAsync(Integer settingId, final ApiCallback<List<CodeReferenceModel>> _callback) throws ApiException {
+    public okhttp3.Call v1SettingsSettingIdCodeReferencesGetAsync(
+            Integer settingId, final ApiCallback<List<CodeReferenceModel>> _callback)
+            throws ApiException {
 
-        okhttp3.Call localVarCall = v1SettingsSettingIdCodeReferencesGetValidateBeforeCall(settingId, _callback);
-        Type localVarReturnType = new TypeToken<List<CodeReferenceModel>>(){}.getType();
+        okhttp3.Call localVarCall =
+                v1SettingsSettingIdCodeReferencesGetValidateBeforeCall(settingId, _callback);
+        Type localVarReturnType = new TypeToken<List<CodeReferenceModel>>() {}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

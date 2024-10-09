@@ -878,85 +878,9 @@ paths:
         name: auditLogType
         required: false
         schema:
-          enum:
-          - productCreated
-          - productChanged
-          - productOwnershipTransferred
-          - productDeleted
-          - productsReordered
-          - teamMemberInvited
-          - teamMemberInvitationRevoked
-          - teamMemberJoined
-          - teamMemberPermissionGroupChanged
-          - teamMemberRemoved
-          - teamMemberLeft
-          - teamMemberInvitationChanged
-          - teamMemberInvitationResent
-          - teamMemberInvitationRejected
-          - configCreated
-          - configChanged
-          - configDeleted
-          - configsReordered
-          - environmentCreated
-          - environmentChanged
-          - environmentDeleted
-          - environmentsReordered
-          - settingCreated
-          - settingChanged
-          - settingDeleted
-          - settingsReordered
-          - settingValueChanged
-          - webHookCreated
-          - webHookChanged
-          - webHookDeleted
-          - permissionGroupCreated
-          - permissionGroupChanged
-          - permissionGroupDeleted
-          - permissionGroupDefault
-          - apiKeyAdded
-          - apiKeyRemoved
-          - integrationAdded
-          - integrationChanged
-          - integrationRemoved
-          - apiKeyConnected
-          - integrationLinkAdded
-          - integrationLinkRemoved
-          - organizationAdded
-          - organizationRemoved
-          - organizationChanged
-          - organizationSubscriptionTypeChanged
-          - organizationAdminChanged
-          - organizationAdminLeft
-          - organizationAdminDisabled2FA
-          - tagAdded
-          - tagChanged
-          - tagRemoved
-          - settingTagAdded
-          - settingTagRemoved
-          - publicApiAccessTokenAdded
-          - publicApiAccessTokenRemoved
-          - domainAdded
-          - domainVerified
-          - domainRemoved
-          - domainSamlConfigured
-          - domainSamlDeleted
-          - autoProvisioningConfigurationChanged
-          - samlIdpConfigurationAdded
-          - samlIdpConfigurationRemoved
-          - samlIdpConfigurationUpdated
-          - organizationMemberJoined
-          - organizationMemberProductJoinRequested
-          - organizationMemberProductJoinRequestRejected
-          - organizationMemberProductJoinRequestApproved
-          - codeReferencesUploaded
-          - codeReferenceDeleted
-          - codeReferenceStaleBranchDeleted
-          - segmentCreated
-          - segmentChanged
-          - segmentDeleted
-          - webhookSigningKeyDeleted
-          - webhookSigningKeyCreated
-          type: string
+          allOf:
+          - $ref: '#/components/schemas/AuditLogType'
+          nullable: true
         style: form
       - description: Filter Audit logs by starting UTC date.
         explode: true
@@ -1540,11 +1464,7 @@ paths:
         name: integrationLinkType
         required: true
         schema:
-          enum:
-          - trello
-          - jira
-          - monday
-          type: string
+          $ref: '#/components/schemas/IntegrationLinkType'
         style: simple
       - description: The key of the integration link.
         explode: false
@@ -1685,85 +1605,9 @@ paths:
         name: auditLogType
         required: false
         schema:
-          enum:
-          - productCreated
-          - productChanged
-          - productOwnershipTransferred
-          - productDeleted
-          - productsReordered
-          - teamMemberInvited
-          - teamMemberInvitationRevoked
-          - teamMemberJoined
-          - teamMemberPermissionGroupChanged
-          - teamMemberRemoved
-          - teamMemberLeft
-          - teamMemberInvitationChanged
-          - teamMemberInvitationResent
-          - teamMemberInvitationRejected
-          - configCreated
-          - configChanged
-          - configDeleted
-          - configsReordered
-          - environmentCreated
-          - environmentChanged
-          - environmentDeleted
-          - environmentsReordered
-          - settingCreated
-          - settingChanged
-          - settingDeleted
-          - settingsReordered
-          - settingValueChanged
-          - webHookCreated
-          - webHookChanged
-          - webHookDeleted
-          - permissionGroupCreated
-          - permissionGroupChanged
-          - permissionGroupDeleted
-          - permissionGroupDefault
-          - apiKeyAdded
-          - apiKeyRemoved
-          - integrationAdded
-          - integrationChanged
-          - integrationRemoved
-          - apiKeyConnected
-          - integrationLinkAdded
-          - integrationLinkRemoved
-          - organizationAdded
-          - organizationRemoved
-          - organizationChanged
-          - organizationSubscriptionTypeChanged
-          - organizationAdminChanged
-          - organizationAdminLeft
-          - organizationAdminDisabled2FA
-          - tagAdded
-          - tagChanged
-          - tagRemoved
-          - settingTagAdded
-          - settingTagRemoved
-          - publicApiAccessTokenAdded
-          - publicApiAccessTokenRemoved
-          - domainAdded
-          - domainVerified
-          - domainRemoved
-          - domainSamlConfigured
-          - domainSamlDeleted
-          - autoProvisioningConfigurationChanged
-          - samlIdpConfigurationAdded
-          - samlIdpConfigurationRemoved
-          - samlIdpConfigurationUpdated
-          - organizationMemberJoined
-          - organizationMemberProductJoinRequested
-          - organizationMemberProductJoinRequestRejected
-          - organizationMemberProductJoinRequestApproved
-          - codeReferencesUploaded
-          - codeReferenceDeleted
-          - codeReferenceStaleBranchDeleted
-          - segmentCreated
-          - segmentChanged
-          - segmentDeleted
-          - webhookSigningKeyDeleted
-          - webhookSigningKeyCreated
-          type: string
+          allOf:
+          - $ref: '#/components/schemas/AuditLogType'
+          nullable: true
         style: form
       - description: Filter Audit logs by starting UTC date.
         explode: true
@@ -5309,11 +5153,7 @@ paths:
         name: integrationLinkType
         required: true
         schema:
-          enum:
-          - trello
-          - jira
-          - monday
-          type: string
+          $ref: '#/components/schemas/IntegrationLinkType'
         style: simple
       - description: The key of the integration link.
         explode: false
@@ -5370,11 +5210,7 @@ paths:
         name: integrationLinkType
         required: true
         schema:
-          enum:
-          - trello
-          - jira
-          - monday
-          type: string
+          $ref: '#/components/schemas/IntegrationLinkType'
         style: simple
       - description: The key of the integration link.
         explode: false
@@ -5870,6 +5706,13 @@ paths:
       - application/json
 components:
   schemas:
+    AccessType:
+      description: Represent the Feature Management permission.
+      enum:
+      - readOnly
+      - full
+      - custom
+      type: string
     AddOrUpdateIntegrationLinkModel:
       additionalProperties: false
       example:
@@ -5938,85 +5781,7 @@ components:
           format: date-time
           type: string
         auditLogTypeEnum:
-          enum:
-          - productCreated
-          - productChanged
-          - productOwnershipTransferred
-          - productDeleted
-          - productsReordered
-          - teamMemberInvited
-          - teamMemberInvitationRevoked
-          - teamMemberJoined
-          - teamMemberPermissionGroupChanged
-          - teamMemberRemoved
-          - teamMemberLeft
-          - teamMemberInvitationChanged
-          - teamMemberInvitationResent
-          - teamMemberInvitationRejected
-          - configCreated
-          - configChanged
-          - configDeleted
-          - configsReordered
-          - environmentCreated
-          - environmentChanged
-          - environmentDeleted
-          - environmentsReordered
-          - settingCreated
-          - settingChanged
-          - settingDeleted
-          - settingsReordered
-          - settingValueChanged
-          - webHookCreated
-          - webHookChanged
-          - webHookDeleted
-          - permissionGroupCreated
-          - permissionGroupChanged
-          - permissionGroupDeleted
-          - permissionGroupDefault
-          - apiKeyAdded
-          - apiKeyRemoved
-          - integrationAdded
-          - integrationChanged
-          - integrationRemoved
-          - apiKeyConnected
-          - integrationLinkAdded
-          - integrationLinkRemoved
-          - organizationAdded
-          - organizationRemoved
-          - organizationChanged
-          - organizationSubscriptionTypeChanged
-          - organizationAdminChanged
-          - organizationAdminLeft
-          - organizationAdminDisabled2FA
-          - tagAdded
-          - tagChanged
-          - tagRemoved
-          - settingTagAdded
-          - settingTagRemoved
-          - publicApiAccessTokenAdded
-          - publicApiAccessTokenRemoved
-          - domainAdded
-          - domainVerified
-          - domainRemoved
-          - domainSamlConfigured
-          - domainSamlDeleted
-          - autoProvisioningConfigurationChanged
-          - samlIdpConfigurationAdded
-          - samlIdpConfigurationRemoved
-          - samlIdpConfigurationUpdated
-          - organizationMemberJoined
-          - organizationMemberProductJoinRequested
-          - organizationMemberProductJoinRequestRejected
-          - organizationMemberProductJoinRequestApproved
-          - codeReferencesUploaded
-          - codeReferenceDeleted
-          - codeReferenceStaleBranchDeleted
-          - segmentCreated
-          - segmentChanged
-          - segmentDeleted
-          - webhookSigningKeyDeleted
-          - webhookSigningKeyCreated
-          type: string
+          $ref: '#/components/schemas/AuditLogType'
         changeSetId:
           format: uuid
           nullable: true
@@ -6045,6 +5810,87 @@ components:
           nullable: true
           type: string
       type: object
+    AuditLogType:
+      enum:
+      - productCreated
+      - productChanged
+      - productOwnershipTransferred
+      - productDeleted
+      - productsReordered
+      - teamMemberInvited
+      - teamMemberInvitationRevoked
+      - teamMemberJoined
+      - teamMemberPermissionGroupChanged
+      - teamMemberRemoved
+      - teamMemberLeft
+      - teamMemberInvitationChanged
+      - teamMemberInvitationResent
+      - teamMemberInvitationRejected
+      - configCreated
+      - configChanged
+      - configDeleted
+      - configsReordered
+      - environmentCreated
+      - environmentChanged
+      - environmentDeleted
+      - environmentsReordered
+      - settingCreated
+      - settingChanged
+      - settingDeleted
+      - settingsReordered
+      - settingValueChanged
+      - webHookCreated
+      - webHookChanged
+      - webHookDeleted
+      - permissionGroupCreated
+      - permissionGroupChanged
+      - permissionGroupDeleted
+      - permissionGroupDefault
+      - apiKeyAdded
+      - apiKeyRemoved
+      - integrationAdded
+      - integrationChanged
+      - integrationRemoved
+      - apiKeyConnected
+      - integrationLinkAdded
+      - integrationLinkRemoved
+      - organizationAdded
+      - organizationRemoved
+      - organizationChanged
+      - organizationSubscriptionTypeChanged
+      - organizationAdminChanged
+      - organizationAdminLeft
+      - twoFactorDisabledForMember
+      - tagAdded
+      - tagChanged
+      - tagRemoved
+      - settingTagAdded
+      - settingTagRemoved
+      - publicApiAccessTokenAdded
+      - publicApiAccessTokenRemoved
+      - domainAdded
+      - domainVerified
+      - domainRemoved
+      - domainSamlConfigured
+      - domainSamlDeleted
+      - autoProvisioningConfigurationChanged
+      - samlIdpConfigurationAdded
+      - samlIdpConfigurationRemoved
+      - samlIdpConfigurationUpdated
+      - organizationMemberJoined
+      - organizationMemberProductJoinRequested
+      - organizationMemberProductJoinRequestRejected
+      - organizationMemberProductJoinRequestApproved
+      - organizationMemberRemoved
+      - codeReferencesUploaded
+      - codeReferenceDeleted
+      - codeReferenceStaleBranchDeleted
+      - segmentCreated
+      - segmentChanged
+      - segmentDeleted
+      - webhookSigningKeyDeleted
+      - webhookSigningKeyCreated
+      type: string
     CodeReferenceModel:
       additionalProperties: false
       example:
@@ -6377,12 +6223,7 @@ components:
           nullable: true
           type: string
         evaluationVersion:
-          description: "Determines the evaluation version of a Config.\r\nUsing `v2`\
-            \ enables the new features of Config V2 (https://configcat.com/docs/advanced/config-v2)."
-          enum:
-          - v1
-          - v2
-          type: string
+          $ref: '#/components/schemas/EvaluationVersion'
       type: object
     ConfigSettingFormulaModel:
       additionalProperties: false
@@ -7314,12 +7155,7 @@ components:
           nullable: true
           type: integer
         evaluationVersion:
-          description: "Determines the evaluation version of a Config.\r\nUsing `v2`\
-            \ enables the new features of Config V2 (https://configcat.com/docs/advanced/config-v2)."
-          enum:
-          - v1
-          - v2
-          type: string
+          $ref: '#/components/schemas/EvaluationVersion'
       required:
       - name
       type: object
@@ -7372,15 +7208,7 @@ components:
           key: parameters
       properties:
         integrationType:
-          description: Type of the Integration.
-          enum:
-          - dataDog
-          - slack
-          - amplitude
-          - mixPanel
-          - segment
-          - pubNub
-          type: string
+          $ref: '#/components/schemas/IntegrationType'
         name:
           description: Name of the Integration.
           minLength: 1
@@ -7416,51 +7244,47 @@ components:
       additionalProperties: false
       example:
         environmentId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        environmentAccessType: full
+        environmentAccessType: null
       properties:
         environmentId:
           description: Identifier of the Environment.
           format: uuid
           type: string
         environmentAccessType:
-          description: Represent the environment specific Feature Management permission.
-          enum:
-          - full
-          - readOnly
-          - none
-          type: string
+          $ref: '#/components/schemas/EnvironmentAccessType'
       type: object
     CreatePermissionGroupRequest:
       additionalProperties: false
       example:
         canViewProductStatistics: true
-        canDeleteConfig: true
         canDeleteTag: true
         environmentAccesses:
         - environmentId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-          environmentAccessType: full
+          environmentAccessType: null
         - environmentId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-          environmentAccessType: full
-        canDeleteEnvironment: true
-        canCreateOrUpdateConfig: true
+          environmentAccessType: null
         canManageProductPreferences: true
         canManageIntegrations: true
         canDeleteSegments: true
         accessType: readOnly
-        canTagSetting: true
         canManageMembers: true
         canManageWebhook: true
         canUseExportImport: true
         canViewSdkKey: true
-        canCreateOrUpdateEnvironment: true
         canDeleteSetting: true
-        name: name
         canRotateSdkKey: true
+        canCreateOrUpdateSegments: true
+        canCreateOrUpdateSetting: true
+        canDeleteConfig: true
+        canDisable2FA: true
+        canDeleteEnvironment: true
+        canCreateOrUpdateConfig: true
+        canTagSetting: true
+        canCreateOrUpdateEnvironment: true
+        name: name
         canViewProductAuditLog: true
         canCreateOrUpdateTag: true
         newEnvironmentAccessType: full
-        canCreateOrUpdateSegments: true
-        canCreateOrUpdateSetting: true
       properties:
         name:
           description: Name of the Permission Group.
@@ -7528,25 +7352,19 @@ components:
           description: Group members has access to product statistics.
           type: boolean
         accessType:
-          description: Represent the Feature Management permission.
-          enum:
-          - readOnly
-          - full
-          - custom
-          type: string
+          $ref: '#/components/schemas/AccessType'
         newEnvironmentAccessType:
-          description: Represent the environment specific Feature Management permission.
-          enum:
-          - full
-          - readOnly
-          - none
-          type: string
+          $ref: '#/components/schemas/EnvironmentAccessType'
         environmentAccesses:
           description: List of environment specific permissions.
           items:
             $ref: '#/components/schemas/CreateOrUpdateEnvironmentAccessModel'
           nullable: true
           type: array
+        canDisable2FA:
+          description: Group members can disable two-factor authentication for other
+            members.
+          type: boolean
       required:
       - name
       type: object
@@ -7604,26 +7422,7 @@ components:
           minLength: 1
           type: string
         comparator:
-          enum:
-          - isOneOf
-          - isNotOneOf
-          - contains
-          - doesNotContain
-          - semVerIsOneOf
-          - semVerIsNotOneOf
-          - semVerLess
-          - semVerLessOrEquals
-          - semVerGreater
-          - semVerGreaterOrEquals
-          - numberEquals
-          - numberDoesNotEqual
-          - numberLess
-          - numberLessOrEquals
-          - numberGreater
-          - numberGreaterOrEquals
-          - sensitiveIsOneOf
-          - sensitiveIsNotOneOf
-          type: string
+          $ref: '#/components/schemas/RolloutRuleComparator'
         comparisonValue:
           description: The value to compare with the given user attribute's value.
           minLength: 1
@@ -7682,13 +7481,7 @@ components:
           minLength: 1
           type: string
         settingType:
-          description: The type of the Feature Flag or Setting.
-          enum:
-          - boolean
-          - string
-          - int
-          - double
-          type: string
+          $ref: '#/components/schemas/SettingType'
         initialValues:
           description: "Optional, initial value of the Feature Flag or Setting in\
             \ the given Environments."
@@ -7768,7 +7561,7 @@ components:
       example:
         environmentId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         color: color
-        environmentAccessType: full
+        environmentAccessType: null
         name: name
         description: description
         order: 6
@@ -7799,13 +7592,15 @@ components:
             when the Feature Flags or Settings in the given Environment are saved.
           type: boolean
         environmentAccessType:
-          description: Represent the environment specific Feature Management permission.
-          enum:
-          - full
-          - readOnly
-          - none
-          type: string
+          $ref: '#/components/schemas/EnvironmentAccessType'
       type: object
+    EnvironmentAccessType:
+      description: Represent the environment specific Feature Management permission.
+      enum:
+      - full
+      - readOnly
+      - none
+      type: string
     EnvironmentModel:
       additionalProperties: false
       description: Details of the Environment.
@@ -7853,6 +7648,13 @@ components:
             when the Feature Flags or Settings in the given Environment are saved.
           type: boolean
       type: object
+    EvaluationVersion:
+      description: "Determines the evaluation version of a Config.\r\nUsing `v2` enables\
+        \ the new features of Config V2 (https://configcat.com/docs/advanced/config-v2)."
+      enum:
+      - v1
+      - v2
+      type: string
     FeatureFlagLimitations:
       additionalProperties: false
       description: Subscription limitations regarding Feature flag or Setting values
@@ -8174,15 +7976,17 @@ components:
           nullable: true
           type: string
         integrationLinkType:
-          enum:
-          - trello
-          - jira
-          - monday
-          type: string
+          $ref: '#/components/schemas/IntegrationLinkType'
         url:
           nullable: true
           type: string
       type: object
+    IntegrationLinkType:
+      enum:
+      - trello
+      - jira
+      - monday
+      type: string
     IntegrationModel:
       additionalProperties: false
       description: Details of the Integration.
@@ -8219,15 +8023,7 @@ components:
           nullable: true
           type: string
         integrationType:
-          description: Type of the Integration.
-          enum:
-          - dataDog
-          - slack
-          - amplitude
-          - mixPanel
-          - segment
-          - pubNub
-          type: string
+          $ref: '#/components/schemas/IntegrationType'
         parameters:
           additionalProperties:
             nullable: true
@@ -8252,6 +8048,15 @@ components:
           nullable: true
           type: array
       type: object
+    IntegrationType:
+      enum:
+      - dataDog
+      - slack
+      - amplitude
+      - mixPanel
+      - segment
+      - pubNub
+      type: string
     IntegrationsModel:
       additionalProperties: false
       example:
@@ -8365,16 +8170,7 @@ components:
         value: ""
       properties:
         op:
-          description: The JSON Patch operation. (https://jsonpatch.com)
-          enum:
-          - unknown
-          - add
-          - remove
-          - replace
-          - move
-          - copy
-          - test
-          type: string
+          $ref: '#/components/schemas/OperationType'
         path:
           description: The source path.
           minLength: 1
@@ -8390,6 +8186,15 @@ components:
       - op
       - path
       type: object
+    KeyGenerationMode:
+      description: Determines the Feature Flag key generation mode.
+      enum:
+      - camelCase
+      - lowerCase
+      - upperCase
+      - pascalCase
+      - kebabCase
+      type: string
     MeModel:
       additionalProperties: false
       example:
@@ -8478,6 +8283,16 @@ components:
       - name
       - parameters
       type: object
+    OperationType:
+      enum:
+      - unknown
+      - add
+      - remove
+      - replace
+      - move
+      - copy
+      - test
+      type: string
     OrganizationAdminModel:
       additionalProperties: false
       description: Describes an Organization Admin.
@@ -8761,14 +8576,14 @@ components:
         environmentAccesses:
         - environmentId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
           color: color
-          environmentAccessType: full
+          environmentAccessType: null
           name: name
           description: description
           order: 6
           reasonRequired: true
         - environmentId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
           color: color
-          environmentAccessType: full
+          environmentAccessType: null
           name: name
           description: description
           order: 6
@@ -8796,6 +8611,7 @@ components:
           order: 0
           reasonRequired: true
         canDeleteConfig: true
+        canDisable2FA: true
         canDeleteEnvironment: true
         canCreateOrUpdateConfig: true
         canTagSetting: true
@@ -8873,20 +8689,14 @@ components:
         canViewProductStatistics:
           description: Group members has access to product statistics.
           type: boolean
+        canDisable2FA:
+          description: Group members can disable two-factor authentication for other
+            members.
+          type: boolean
         accessType:
-          description: Represent the Feature Management permission.
-          enum:
-          - readOnly
-          - full
-          - custom
-          type: string
+          $ref: '#/components/schemas/AccessType'
         newEnvironmentAccessType:
-          description: Represent the environment specific Feature Management permission.
-          enum:
-          - full
-          - readOnly
-          - none
-          type: string
+          $ref: '#/components/schemas/EnvironmentAccessType'
         environmentAccesses:
           description: List of environment specific permissions.
           items:
@@ -8915,14 +8725,7 @@ components:
           description: Indicates that a mandatory note required for saving and publishing.
           type: boolean
         keyGenerationMode:
-          description: Determines the Feature Flag key generation mode.
-          enum:
-          - camelCase
-          - lowerCase
-          - upperCase
-          - pascalCase
-          - kebabCase
-          type: string
+          $ref: '#/components/schemas/KeyGenerationMode'
         showVariationId:
           description: Indicates whether a variation ID's must be shown on the ConfigCat
             Dashboard.
@@ -8938,6 +8741,13 @@ components:
           description: Indicates whether Feature flags and Settings must have a hint.
           type: boolean
       type: object
+    PrerequisiteComparator:
+      description: Prerequisite flag comparison operator used during the evaluation
+        process.
+      enum:
+      - equals
+      - doesNotEqual
+      type: string
     PrerequisiteFlagConditionModel:
       additionalProperties: false
       description: Describes a condition that is based on a prerequisite flag.
@@ -8955,12 +8765,7 @@ components:
           format: int32
           type: integer
         comparator:
-          description: Prerequisite flag comparison operator used during the evaluation
-            process.
-          enum:
-          - equals
-          - doesNotEqual
-          type: string
+          $ref: '#/components/schemas/PrerequisiteComparator'
         prerequisiteComparisonValue:
           $ref: '#/components/schemas/ValueModel'
       required:
@@ -9150,6 +8955,29 @@ components:
       required:
       - percentage
       type: object
+    RolloutRuleComparator:
+      description: The comparison operator the evaluation process must use when it
+        compares the given user attribute's value with the comparison value.
+      enum:
+      - isOneOf
+      - isNotOneOf
+      - contains
+      - doesNotContain
+      - semVerIsOneOf
+      - semVerIsNotOneOf
+      - semVerLess
+      - semVerLessOrEquals
+      - semVerGreater
+      - semVerGreaterOrEquals
+      - numberEquals
+      - numberDoesNotEqual
+      - numberLess
+      - numberLessOrEquals
+      - numberGreater
+      - numberGreaterOrEquals
+      - sensitiveIsOneOf
+      - sensitiveIsNotOneOf
+      type: string
     RolloutRuleModel:
       additionalProperties: false
       example:
@@ -9167,27 +8995,7 @@ components:
           nullable: true
           type: string
         comparator:
-          enum:
-          - isOneOf
-          - isNotOneOf
-          - contains
-          - doesNotContain
-          - semVerIsOneOf
-          - semVerIsNotOneOf
-          - semVerLess
-          - semVerLessOrEquals
-          - semVerGreater
-          - semVerGreaterOrEquals
-          - numberEquals
-          - numberDoesNotEqual
-          - numberLess
-          - numberLessOrEquals
-          - numberGreater
-          - numberGreaterOrEquals
-          - sensitiveIsOneOf
-          - sensitiveIsNotOneOf
-          nullable: true
-          type: string
+          $ref: '#/components/schemas/RolloutRuleComparator'
         comparisonValue:
           description: The value to compare against.
           nullable: true
@@ -9197,12 +9005,7 @@ components:
             the setting type.
           nullable: true
         segmentComparator:
-          description: The segment comparison operator.
-          enum:
-          - isIn
-          - isNotIn
-          nullable: true
-          type: string
+          $ref: '#/components/schemas/SegmentComparator'
         segmentId:
           description: The segment to compare against.
           format: uuid
@@ -9224,6 +9027,12 @@ components:
           nullable: true
           type: string
       type: object
+    SegmentComparator:
+      description: The segment comparison operator used during the evaluation process.
+      enum:
+      - isIn
+      - isNotIn
+      type: string
     SegmentConditionModel:
       additionalProperties: false
       description: Describes a condition that is based on a segment.
@@ -9236,12 +9045,7 @@ components:
           format: uuid
           type: string
         comparator:
-          description: The segment comparison operator used during the evaluation
-            process.
-          enum:
-          - isIn
-          - isNotIn
-          type: string
+          $ref: '#/components/schemas/SegmentComparator'
       required:
       - comparator
       - segmentId
@@ -9382,28 +9186,7 @@ components:
           nullable: true
           type: string
         comparator:
-          description: The comparison operator the evaluation process must use when
-            it compares the given user attribute's value with the comparison value.
-          enum:
-          - isOneOf
-          - isNotOneOf
-          - contains
-          - doesNotContain
-          - semVerIsOneOf
-          - semVerIsNotOneOf
-          - semVerLess
-          - semVerLessOrEquals
-          - semVerGreater
-          - semVerGreaterOrEquals
-          - numberEquals
-          - numberDoesNotEqual
-          - numberLess
-          - numberLessOrEquals
-          - numberGreater
-          - numberGreaterOrEquals
-          - sensitiveIsOneOf
-          - sensitiveIsNotOneOf
-          type: string
+          $ref: '#/components/schemas/RolloutRuleComparator'
         comparisonValue:
           description: The value to compare with the given user attribute's value.
           nullable: true
@@ -9441,13 +9224,7 @@ components:
           nullable: true
           type: string
         settingType:
-          description: The type of the Feature Flag or Setting.
-          enum:
-          - boolean
-          - string
-          - int
-          - double
-          type: string
+          $ref: '#/components/schemas/SettingType'
         order:
           description: The order of the Feature Flag or Setting represented on the
             ConfigCat Dashboard.
@@ -9804,13 +9581,7 @@ components:
           format: int32
           type: integer
         settingType:
-          description: The type of the Feature Flag or Setting.
-          enum:
-          - boolean
-          - string
-          - int
-          - double
-          type: string
+          $ref: '#/components/schemas/SettingType'
         configId:
           description: Identifier of the Feature Flag's Config.
           format: uuid
@@ -9847,6 +9618,14 @@ components:
           nullable: true
           type: string
       type: object
+    SettingType:
+      description: The type of the Feature Flag or Setting.
+      enum:
+      - boolean
+      - string
+      - int
+      - double
+      type: string
     SettingValueModel:
       additionalProperties: false
       example:
@@ -10798,33 +10577,34 @@ components:
       additionalProperties: false
       example:
         canViewProductStatistics: true
-        canDeleteConfig: true
         canDeleteTag: true
         environmentAccesses:
         - environmentId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-          environmentAccessType: full
+          environmentAccessType: null
         - environmentId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-          environmentAccessType: full
-        canDeleteEnvironment: true
-        canCreateOrUpdateConfig: true
+          environmentAccessType: null
         canManageProductPreferences: true
         canManageIntegrations: true
         canDeleteSegments: true
         accessType: readOnly
-        canTagSetting: true
         canManageMembers: true
         canManageWebhook: true
         canUseExportImport: true
         canViewSdkKey: true
-        canCreateOrUpdateEnvironment: true
         canDeleteSetting: true
-        name: name
         canRotateSdkKey: true
+        canCreateOrUpdateSegments: true
+        canCreateOrUpdateSetting: true
+        canDeleteConfig: true
+        canDisable2FA: true
+        canDeleteEnvironment: true
+        canCreateOrUpdateConfig: true
+        canTagSetting: true
+        canCreateOrUpdateEnvironment: true
+        name: name
         canViewProductAuditLog: true
         canCreateOrUpdateTag: true
         newEnvironmentAccessType: full
-        canCreateOrUpdateSegments: true
-        canCreateOrUpdateSetting: true
       properties:
         name:
           description: Name of the Permission Group.
@@ -10912,20 +10692,15 @@ components:
           description: Group members has access to product statistics.
           nullable: true
           type: boolean
+        canDisable2FA:
+          description: Group members can disable two-factor authentication for other
+            members.
+          nullable: true
+          type: boolean
         accessType:
-          enum:
-          - readOnly
-          - full
-          - custom
-          nullable: true
-          type: string
+          $ref: '#/components/schemas/AccessType'
         newEnvironmentAccessType:
-          enum:
-          - full
-          - readOnly
-          - none
-          nullable: true
-          type: string
+          $ref: '#/components/schemas/EnvironmentAccessType'
         environmentAccesses:
           description: List of environment specific permissions.
           items:
@@ -10952,15 +10727,7 @@ components:
           nullable: true
           type: boolean
         keyGenerationMode:
-          description: Determines the Feature Flag key generation mode.
-          enum:
-          - camelCase
-          - lowerCase
-          - upperCase
-          - pascalCase
-          - kebabCase
-          nullable: true
-          type: string
+          $ref: '#/components/schemas/KeyGenerationMode'
         showVariationId:
           description: Indicates whether a variation ID's must be shown on the ConfigCat
             Dashboard.
@@ -11044,27 +10811,7 @@ components:
           nullable: true
           type: string
         comparator:
-          enum:
-          - isOneOf
-          - isNotOneOf
-          - contains
-          - doesNotContain
-          - semVerIsOneOf
-          - semVerIsNotOneOf
-          - semVerLess
-          - semVerLessOrEquals
-          - semVerGreater
-          - semVerGreaterOrEquals
-          - numberEquals
-          - numberDoesNotEqual
-          - numberLess
-          - numberLessOrEquals
-          - numberGreater
-          - numberGreaterOrEquals
-          - sensitiveIsOneOf
-          - sensitiveIsNotOneOf
-          nullable: true
-          type: string
+          $ref: '#/components/schemas/RolloutRuleComparator'
         comparisonValue:
           nullable: true
           type: string
@@ -11223,6 +10970,47 @@ components:
           nullable: true
           type: string
       type: object
+    UserComparator:
+      description: The comparison operator which defines the relation between the
+        comparison attribute and the comparison value.
+      enum:
+      - isOneOf
+      - isNotOneOf
+      - containsAnyOf
+      - doesNotContainAnyOf
+      - semVerIsOneOf
+      - semVerIsNotOneOf
+      - semVerLess
+      - semVerLessOrEquals
+      - semVerGreater
+      - semVerGreaterOrEquals
+      - numberEquals
+      - numberDoesNotEqual
+      - numberLess
+      - numberLessOrEquals
+      - numberGreater
+      - numberGreaterOrEquals
+      - sensitiveIsOneOf
+      - sensitiveIsNotOneOf
+      - dateTimeBefore
+      - dateTimeAfter
+      - sensitiveTextEquals
+      - sensitiveTextDoesNotEqual
+      - sensitiveTextStartsWithAnyOf
+      - sensitiveTextNotStartsWithAnyOf
+      - sensitiveTextEndsWithAnyOf
+      - sensitiveTextNotEndsWithAnyOf
+      - sensitiveArrayContainsAnyOf
+      - sensitiveArrayDoesNotContainAnyOf
+      - textEquals
+      - textDoesNotEqual
+      - textStartsWithAnyOf
+      - textNotStartsWithAnyOf
+      - textEndsWithAnyOf
+      - textNotEndsWithAnyOf
+      - arrayContainsAnyOf
+      - arrayDoesNotContainAnyOf
+      type: string
     UserConditionModel:
       additionalProperties: false
       description: Describes a condition that is based on user attributes.
@@ -11245,46 +11033,7 @@ components:
           minLength: 1
           type: string
         comparator:
-          description: The comparison operator which defines the relation between
-            the comparison attribute and the comparison value.
-          enum:
-          - isOneOf
-          - isNotOneOf
-          - containsAnyOf
-          - doesNotContainAnyOf
-          - semVerIsOneOf
-          - semVerIsNotOneOf
-          - semVerLess
-          - semVerLessOrEquals
-          - semVerGreater
-          - semVerGreaterOrEquals
-          - numberEquals
-          - numberDoesNotEqual
-          - numberLess
-          - numberLessOrEquals
-          - numberGreater
-          - numberGreaterOrEquals
-          - sensitiveIsOneOf
-          - sensitiveIsNotOneOf
-          - dateTimeBefore
-          - dateTimeAfter
-          - sensitiveTextEquals
-          - sensitiveTextDoesNotEqual
-          - sensitiveTextStartsWithAnyOf
-          - sensitiveTextNotStartsWithAnyOf
-          - sensitiveTextEndsWithAnyOf
-          - sensitiveTextNotEndsWithAnyOf
-          - sensitiveArrayContainsAnyOf
-          - sensitiveArrayDoesNotContainAnyOf
-          - textEquals
-          - textDoesNotEqual
-          - textStartsWithAnyOf
-          - textNotStartsWithAnyOf
-          - textEndsWithAnyOf
-          - textNotEndsWithAnyOf
-          - arrayContainsAnyOf
-          - arrayDoesNotContainAnyOf
-          type: string
+          $ref: '#/components/schemas/UserComparator'
         comparisonValue:
           $ref: '#/components/schemas/ComparisonValueModel'
       required:
@@ -11344,6 +11093,11 @@ components:
           nullable: true
           type: number
       type: object
+    WebHookHttpMethod:
+      enum:
+      - get
+      - post
+      type: string
     WebHookRequest:
       additionalProperties: false
       example:
@@ -11370,11 +11124,7 @@ components:
           nullable: true
           type: string
         httpMethod:
-          description: The HTTP method of the remote endpoint.
-          enum:
-          - get
-          - post
-          type: string
+          $ref: '#/components/schemas/WebHookHttpMethod'
         webHookHeaders:
           description: List of HTTP headers.
           items:
@@ -11470,11 +11220,7 @@ components:
           nullable: true
           type: string
         httpMethod:
-          description: The HTTP method.
-          enum:
-          - get
-          - post
-          type: string
+          $ref: '#/components/schemas/WebHookHttpMethod'
         content:
           description: The HTTP body content.
           nullable: true

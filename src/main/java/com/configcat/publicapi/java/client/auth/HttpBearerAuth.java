@@ -1,6 +1,6 @@
 /*
  * ConfigCat Public Management API
- * The purpose of this API is to access the ConfigCat platform programmatically. You can **Create**, **Read**, **Update** and **Delete** any entities like **Feature Flags, Configs, Environments** or **Products** within ConfigCat.  **Base API URL**: https://api.configcat.com  If you prefer the swagger documentation, you can find it here: [Swagger UI](https://api.configcat.com/swagger).  The API is based on HTTP REST, uses resource-oriented URLs, status codes and supports JSON  format.   **Important:** Do not use this API for accessing and evaluating feature flag values. Use the [SDKs](https://configcat.com/docs/sdk-reference/overview) or the [ConfigCat Proxy](https://configcat.com/docs/advanced/proxy/proxy-overview/) instead.  # OpenAPI Specification  The complete specification is publicly available in the following formats:  - [OpenAPI v3](https://api.configcat.com/docs/v1/swagger.json) - [Swagger v2](https://api.configcat.com/docs/v1/swagger.v2.json)  You can use it to generate client libraries in various languages with [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) or [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) to interact with this API.  # Authentication This API uses the [Basic HTTP Authentication Scheme](https://en.wikipedia.org/wiki/Basic_access_authentication).   <!-- ReDoc-Inject: <security-definitions> -->  # Throttling and rate limits All the rate limited API calls are returning information about the current rate limit period in the following HTTP headers:  | Header | Description | | :- | :- | | X-Rate-Limit-Remaining | The maximum number of requests remaining in the current rate limit period. | | X-Rate-Limit-Reset     | The time when the current rate limit period resets.        |  When the rate limit is exceeded by a request, the API returns with a `HTTP 429 - Too many requests` status along with a `Retry-After` HTTP header. 
+ * The purpose of this API is to access the ConfigCat platform programmatically. You can **Create**, **Read**, **Update** and **Delete** any entities like **Feature Flags, Configs, Environments** or **Products** within ConfigCat.  **Base API URL**: https://api.configcat.com  If you prefer the swagger documentation, you can find it here: [Swagger UI](https://api.configcat.com/swagger).  The API is based on HTTP REST, uses resource-oriented URLs, status codes and supports JSON  format.   **Important:** Do not use this API for accessing and evaluating feature flag values. Use the [SDKs](https://configcat.com/docs/sdk-reference/overview) or the [ConfigCat Proxy](https://configcat.com/docs/advanced/proxy/proxy-overview/) instead.  # OpenAPI Specification  The complete specification is publicly available in the following formats:  - [OpenAPI v3](https://api.configcat.com/docs/v1/swagger.json) - [Swagger v2](https://api.configcat.com/docs/v1/swagger.v2.json)  You can use it to generate client libraries in various languages with [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) or [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) to interact with this API.  # Authentication This API uses the [Basic HTTP Authentication Scheme](https://en.wikipedia.org/wiki/Basic_access_authentication).   <!-- ReDoc-Inject: <security-definitions> -->  # Throttling and rate limits All the rate limited API calls are returning information about the current rate limit period in the following HTTP headers:  | Header | Description | | :- | :- | | X-Rate-Limit-Remaining | The maximum number of requests remaining in the current rate limit period. | | X-Rate-Limit-Reset     | The time when the current rate limit period resets.        |  When the rate limit is exceeded by a request, the API returns with a `HTTP 429 - Too many requests` status along with a `Retry-After` HTTP header.
  *
  * The version of the OpenAPI document: v1
  * Contact: support@configcat.com
@@ -10,66 +10,79 @@
  * Do not edit the class manually.
  */
 
-
 package com.configcat.publicapi.java.client.auth;
+
 
 import com.configcat.publicapi.java.client.ApiException;
 import com.configcat.publicapi.java.client.Pair;
-
 import java.net.URI;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.function.Supplier;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-10T12:39:37.024419310Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(
+        value = "org.openapitools.codegen.languages.JavaClientCodegen",
+        date = "2024-10-09T12:38:06.739118192Z[Etc/UTC]",
+        comments = "Generator version: 7.7.0")
 public class HttpBearerAuth implements Authentication {
-  private final String scheme;
-  private Supplier<String> tokenSupplier;
+    private final String scheme;
+    private Supplier<String> tokenSupplier;
 
-  public HttpBearerAuth(String scheme) {
-    this.scheme = scheme;
-  }
-
-  /**
-   * Gets the token, which together with the scheme, will be sent as the value of the Authorization header.
-   *
-   * @return The bearer token
-   */
-  public String getBearerToken() {
-    return tokenSupplier.get();
-  }
-
-  /**
-   * Sets the token, which together with the scheme, will be sent as the value of the Authorization header.
-   *
-   * @param bearerToken The bearer token to send in the Authorization header
-   */
-  public void setBearerToken(String bearerToken) {
-    this.tokenSupplier = () -> bearerToken;
-  }
-
-  /**
-   * Sets the supplier of tokens, which together with the scheme, will be sent as the value of the Authorization header.
-   *
-   * @param tokenSupplier The supplier of bearer tokens to send in the Authorization header
-   */
-  public void setBearerToken(Supplier<String> tokenSupplier) {
-    this.tokenSupplier = tokenSupplier;
-  }
-
-  @Override
-  public void applyToParams(List<Pair> queryParams, Map<String, String> headerParams, Map<String, String> cookieParams,
-                            String payload, String method, URI uri) throws ApiException {
-    String bearerToken = Optional.ofNullable(tokenSupplier).map(Supplier::get).orElse(null);
-    if (bearerToken == null) {
-      return;
+    public HttpBearerAuth(String scheme) {
+        this.scheme = scheme;
     }
 
-    headerParams.put("Authorization", (scheme != null ? upperCaseBearer(scheme) + " " : "") + bearerToken);
-  }
+    /**
+     * Gets the token, which together with the scheme, will be sent as the value of the
+     * Authorization header.
+     *
+     * @return The bearer token
+     */
+    public String getBearerToken() {
+        return tokenSupplier.get();
+    }
 
-  private static String upperCaseBearer(String scheme) {
-    return ("bearer".equalsIgnoreCase(scheme)) ? "Bearer" : scheme;
-  }
+    /**
+     * Sets the token, which together with the scheme, will be sent as the value of the
+     * Authorization header.
+     *
+     * @param bearerToken The bearer token to send in the Authorization header
+     */
+    public void setBearerToken(String bearerToken) {
+        this.tokenSupplier = () -> bearerToken;
+    }
+
+    /**
+     * Sets the supplier of tokens, which together with the scheme, will be sent as the value of the
+     * Authorization header.
+     *
+     * @param tokenSupplier The supplier of bearer tokens to send in the Authorization header
+     */
+    public void setBearerToken(Supplier<String> tokenSupplier) {
+        this.tokenSupplier = tokenSupplier;
+    }
+
+    @Override
+    public void applyToParams(
+            List<Pair> queryParams,
+            Map<String, String> headerParams,
+            Map<String, String> cookieParams,
+            String payload,
+            String method,
+            URI uri)
+            throws ApiException {
+        String bearerToken = Optional.ofNullable(tokenSupplier).map(Supplier::get).orElse(null);
+        if (bearerToken == null) {
+            return;
+        }
+
+        headerParams.put(
+                "Authorization",
+                (scheme != null ? upperCaseBearer(scheme) + " " : "") + bearerToken);
+    }
+
+    private static String upperCaseBearer(String scheme) {
+        return ("bearer".equalsIgnoreCase(scheme)) ? "Bearer" : scheme;
+    }
 }
