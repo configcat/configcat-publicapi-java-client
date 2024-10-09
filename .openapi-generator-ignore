@@ -10,4 +10,4 @@
 build.gradle
 build.sbt
 pom.xml
-**/test/*
+src/test/
