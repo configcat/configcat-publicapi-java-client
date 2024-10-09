@@ -42,7 +42,7 @@ public class Example {
     IntegrationLinksApi apiInstance = new IntegrationLinksApi(defaultClient);
     UUID environmentId = UUID.randomUUID(); // UUID | The identifier of the Environment.
     Integer settingId = 56; // Integer | The id of the Setting.
-    String integrationLinkType = "trello"; // String | The integration link's type.
+    IntegrationLinkType integrationLinkType = IntegrationLinkType.fromValue("trello"); // IntegrationLinkType | The integration link's type.
     String key = "key_example"; // String | The key of the integration link.
     AddOrUpdateIntegrationLinkModel addOrUpdateIntegrationLinkModel = new AddOrUpdateIntegrationLinkModel(); // AddOrUpdateIntegrationLinkModel | 
     try {
@@ -65,7 +65,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **environmentId** | **UUID**| The identifier of the Environment. | |
 | **settingId** | **Integer**| The id of the Setting. | |
-| **integrationLinkType** | **String**| The integration link&#39;s type. | [enum: trello, jira, monday] |
+| **integrationLinkType** | [**IntegrationLinkType**](.md)| The integration link&#39;s type. | [enum: trello, jira, monday] |
 | **key** | **String**| The key of the integration link. | |
 | **addOrUpdateIntegrationLinkModel** | [**AddOrUpdateIntegrationLinkModel**](AddOrUpdateIntegrationLinkModel.md)|  | [optional] |
 
@@ -121,7 +121,7 @@ public class Example {
     IntegrationLinksApi apiInstance = new IntegrationLinksApi(defaultClient);
     UUID environmentId = UUID.randomUUID(); // UUID | The identifier of the Environment.
     Integer settingId = 56; // Integer | The id of the Setting.
-    String integrationLinkType = "trello"; // String | The integration's type.
+    IntegrationLinkType integrationLinkType = IntegrationLinkType.fromValue("trello"); // IntegrationLinkType | The integration's type.
     String key = "key_example"; // String | The key of the integration link.
     try {
       DeleteIntegrationLinkModel result = apiInstance.deleteIntegrationLink(environmentId, settingId, integrationLinkType, key);
@@ -143,7 +143,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **environmentId** | **UUID**| The identifier of the Environment. | |
 | **settingId** | **Integer**| The id of the Setting. | |
-| **integrationLinkType** | **String**| The integration&#39;s type. | [enum: trello, jira, monday] |
+| **integrationLinkType** | [**IntegrationLinkType**](.md)| The integration&#39;s type. | [enum: trello, jira, monday] |
 | **key** | **String**| The key of the integration link. | |
 
 ### Return type
@@ -196,7 +196,7 @@ public class Example {
     Basic.setPassword("YOUR PASSWORD");
 
     IntegrationLinksApi apiInstance = new IntegrationLinksApi(defaultClient);
-    String integrationLinkType = "trello"; // String | The integration link's type.
+    IntegrationLinkType integrationLinkType = IntegrationLinkType.fromValue("trello"); // IntegrationLinkType | The integration link's type.
     String key = "key_example"; // String | The key of the integration link.
     try {
       IntegrationLinkDetailsModel result = apiInstance.getIntegrationLinkDetails(integrationLinkType, key);
@@ -216,7 +216,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **integrationLinkType** | **String**| The integration link&#39;s type. | [enum: trello, jira, monday] |
+| **integrationLinkType** | [**IntegrationLinkType**](.md)| The integration link&#39;s type. | [enum: trello, jira, monday] |
 | **key** | **String**| The key of the integration link. | |
 
 ### Return type

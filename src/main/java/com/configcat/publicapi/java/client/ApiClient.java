@@ -1,6 +1,6 @@
 /*
  * ConfigCat Public Management API
- * The purpose of this API is to access the ConfigCat platform programmatically. You can **Create**, **Read**, **Update** and **Delete** any entities like **Feature Flags, Configs, Environments** or **Products** within ConfigCat.  **Base API URL**: https://api.configcat.com  If you prefer the swagger documentation, you can find it here: [Swagger UI](https://api.configcat.com/swagger).  The API is based on HTTP REST, uses resource-oriented URLs, status codes and supports JSON  format.   **Important:** Do not use this API for accessing and evaluating feature flag values. Use the [SDKs](https://configcat.com/docs/sdk-reference/overview) or the [ConfigCat Proxy](https://configcat.com/docs/advanced/proxy/proxy-overview/) instead.  # OpenAPI Specification  The complete specification is publicly available in the following formats:  - [OpenAPI v3](https://api.configcat.com/docs/v1/swagger.json) - [Swagger v2](https://api.configcat.com/docs/v1/swagger.v2.json)  You can use it to generate client libraries in various languages with [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) or [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) to interact with this API.  # Authentication This API uses the [Basic HTTP Authentication Scheme](https://en.wikipedia.org/wiki/Basic_access_authentication).   <!-- ReDoc-Inject: <security-definitions> -->  # Throttling and rate limits All the rate limited API calls are returning information about the current rate limit period in the following HTTP headers:  | Header | Description | | :- | :- | | X-Rate-Limit-Remaining | The maximum number of requests remaining in the current rate limit period. | | X-Rate-Limit-Reset     | The time when the current rate limit period resets.        |  When the rate limit is exceeded by a request, the API returns with a `HTTP 429 - Too many requests` status along with a `Retry-After` HTTP header. 
+ * The purpose of this API is to access the ConfigCat platform programmatically. You can **Create**, **Read**, **Update** and **Delete** any entities like **Feature Flags, Configs, Environments** or **Products** within ConfigCat.  **Base API URL**: https://api.configcat.com  If you prefer the swagger documentation, you can find it here: [Swagger UI](https://api.configcat.com/swagger).  The API is based on HTTP REST, uses resource-oriented URLs, status codes and supports JSON  format.   **Important:** Do not use this API for accessing and evaluating feature flag values. Use the [SDKs](https://configcat.com/docs/sdk-reference/overview) or the [ConfigCat Proxy](https://configcat.com/docs/advanced/proxy/proxy-overview/) instead.  # OpenAPI Specification  The complete specification is publicly available in the following formats:  - [OpenAPI v3](https://api.configcat.com/docs/v1/swagger.json) - [Swagger v2](https://api.configcat.com/docs/v1/swagger.v2.json)  You can use it to generate client libraries in various languages with [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) or [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) to interact with this API.  # Authentication This API uses the [Basic HTTP Authentication Scheme](https://en.wikipedia.org/wiki/Basic_access_authentication).   <!-- ReDoc-Inject: <security-definitions> -->  # Throttling and rate limits All the rate limited API calls are returning information about the current rate limit period in the following HTTP headers:  | Header | Description | | :- | :- | | X-Rate-Limit-Remaining | The maximum number of requests remaining in the current rate limit period. | | X-Rate-Limit-Reset     | The time when the current rate limit period resets.        |  When the rate limit is exceeded by a request, the API returns with a `HTTP 429 - Too many requests` status along with a `Retry-After` HTTP header.
  *
  * The version of the OpenAPI document: v1
  * Contact: support@configcat.com
@@ -10,19 +10,12 @@
  * Do not edit the class manually.
  */
 
-
 package com.configcat.publicapi.java.client;
 
-import okhttp3.*;
-import okhttp3.internal.http.HttpMethod;
-import okhttp3.internal.tls.OkHostnameVerifier;
-import okhttp3.logging.HttpLoggingInterceptor;
-import okhttp3.logging.HttpLoggingInterceptor.Level;
-import okio.Buffer;
-import okio.BufferedSink;
-import okio.Okio;
 
-import javax.net.ssl.*;
+import com.configcat.publicapi.java.client.auth.ApiKeyAuth;
+import com.configcat.publicapi.java.client.auth.Authentication;
+import com.configcat.publicapi.java.client.auth.HttpBasicAuth;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -39,7 +32,6 @@ import java.security.SecureRandom;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
-import java.security.cert.X509Certificate;
 import java.text.DateFormat;
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
@@ -47,28 +39,29 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.Map.Entry;
 import java.util.concurrent.TimeUnit;
-import java.util.function.Supplier;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.net.ssl.*;
+import okhttp3.*;
+import okhttp3.internal.http.HttpMethod;
+import okhttp3.internal.tls.OkHostnameVerifier;
+import okhttp3.logging.HttpLoggingInterceptor;
+import okhttp3.logging.HttpLoggingInterceptor.Level;
+import okio.Buffer;
+import okio.BufferedSink;
+import okio.Okio;
 
-import com.configcat.publicapi.java.client.auth.Authentication;
-import com.configcat.publicapi.java.client.auth.HttpBasicAuth;
-import com.configcat.publicapi.java.client.auth.HttpBearerAuth;
-import com.configcat.publicapi.java.client.auth.ApiKeyAuth;
-
-/**
- * <p>ApiClient class.</p>
- */
+/** ApiClient class. */
 public class ApiClient {
 
     private String basePath = "https://api.configcat.com";
-    protected List<ServerConfiguration> servers = new ArrayList<ServerConfiguration>(Arrays.asList(
-    new ServerConfiguration(
-      "https://api.configcat.com",
-      "No description provided",
-      new HashMap<String, ServerVariable>()
-    )
-  ));
+    protected List<ServerConfiguration> servers =
+            new ArrayList<ServerConfiguration>(
+                    Arrays.asList(
+                            new ServerConfiguration(
+                                    "https://api.configcat.com",
+                                    "No description provided",
+                                    new HashMap<String, ServerVariable>())));
     protected Integer serverIndex = 0;
     protected Map<String, String> serverVariables = null;
     private boolean debugging = false;
@@ -92,9 +85,7 @@ public class ApiClient {
 
     private HttpLoggingInterceptor loggingInterceptor;
 
-    /**
-     * Basic constructor for ApiClient
-     */
+    /** Basic constructor for ApiClient */
     public ApiClient() {
         init();
         initHttpClient();
@@ -128,7 +119,7 @@ public class ApiClient {
     private void initHttpClient(List<Interceptor> interceptors) {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         builder.addNetworkInterceptor(getProgressInterceptor());
-        for (Interceptor interceptor: interceptors) {
+        for (Interceptor interceptor : interceptors) {
             builder.addInterceptor(interceptor);
         }
 
@@ -245,9 +236,9 @@ public class ApiClient {
     }
 
     /**
-     * Configure whether to verify certificate and hostname when making https requests.
-     * Default to true.
-     * NOTE: Do NOT set to false in production code, otherwise you would face multiple types of cryptographic attacks.
+     * Configure whether to verify certificate and hostname when making https requests. Default to
+     * true. NOTE: Do NOT set to false in production code, otherwise you would face multiple types
+     * of cryptographic attacks.
      *
      * @param verifyingSsl True to verify TLS/SSL connection
      * @return ApiClient
@@ -268,8 +259,8 @@ public class ApiClient {
     }
 
     /**
-     * Configure the CA certificate to be trusted when making https requests.
-     * Use null to reset to default.
+     * Configure the CA certificate to be trusted when making https requests. Use null to reset to
+     * default.
      *
      * @param sslCaCert input stream for SSL CA cert
      * @return ApiClient
@@ -281,7 +272,7 @@ public class ApiClient {
     }
 
     /**
-     * <p>Getter for the field <code>keyManagers</code>.</p>
+     * Getter for the field <code>keyManagers</code>.
      *
      * @return an array of {@link javax.net.ssl.KeyManager} objects
      */
@@ -290,8 +281,8 @@ public class ApiClient {
     }
 
     /**
-     * Configure client keys to use for authorization in an SSL session.
-     * Use null to reset to default.
+     * Configure client keys to use for authorization in an SSL session. Use null to reset to
+     * default.
      *
      * @param managers The KeyManagers to use
      * @return ApiClient
@@ -303,7 +294,7 @@ public class ApiClient {
     }
 
     /**
-     * <p>Getter for the field <code>dateFormat</code>.</p>
+     * Getter for the field <code>dateFormat</code>.
      *
      * @return a {@link java.text.DateFormat} object
      */
@@ -312,7 +303,7 @@ public class ApiClient {
     }
 
     /**
-     * <p>Setter for the field <code>dateFormat</code>.</p>
+     * Setter for the field <code>dateFormat</code>.
      *
      * @param dateFormat a {@link java.text.DateFormat} object
      * @return a {@link com.configcat.publicapi.java.client.ApiClient} object
@@ -323,7 +314,7 @@ public class ApiClient {
     }
 
     /**
-     * <p>Set SqlDateFormat.</p>
+     * Set SqlDateFormat.
      *
      * @param dateFormat a {@link java.text.DateFormat} object
      * @return a {@link com.configcat.publicapi.java.client.ApiClient} object
@@ -334,7 +325,7 @@ public class ApiClient {
     }
 
     /**
-     * <p>Set OffsetDateTimeFormat.</p>
+     * Set OffsetDateTimeFormat.
      *
      * @param dateFormat a {@link java.time.format.DateTimeFormatter} object
      * @return a {@link com.configcat.publicapi.java.client.ApiClient} object
@@ -345,7 +336,7 @@ public class ApiClient {
     }
 
     /**
-     * <p>Set LocalDateFormat.</p>
+     * Set LocalDateFormat.
      *
      * @param dateFormat a {@link java.time.format.DateTimeFormatter} object
      * @return a {@link com.configcat.publicapi.java.client.ApiClient} object
@@ -356,7 +347,7 @@ public class ApiClient {
     }
 
     /**
-     * <p>Set LenientOnJson.</p>
+     * Set LenientOnJson.
      *
      * @param lenientOnJson a boolean
      * @return a {@link com.configcat.publicapi.java.client.ApiClient} object
@@ -384,7 +375,6 @@ public class ApiClient {
     public Authentication getAuthentication(String authName) {
         return authentications.get(authName);
     }
-
 
     /**
      * Helper method to set username for the first HTTP basic authentication.
@@ -463,7 +453,8 @@ public class ApiClient {
      * @param region Region
      * @param service Service to access to
      */
-    public void setAWS4Configuration(String accessKey, String secretKey, String region, String service) {
+    public void setAWS4Configuration(
+            String accessKey, String secretKey, String region, String service) {
         throw new RuntimeException("No AWS4 authentication configured!");
     }
 
@@ -476,7 +467,12 @@ public class ApiClient {
      * @param region Region
      * @param service Service to access to
      */
-    public void setAWS4Configuration(String accessKey, String secretKey, String sessionToken, String region, String service) {
+    public void setAWS4Configuration(
+            String accessKey,
+            String secretKey,
+            String sessionToken,
+            String region,
+            String service) {
         throw new RuntimeException("No AWS4 authentication configured!");
     }
 
@@ -548,11 +544,12 @@ public class ApiClient {
     }
 
     /**
-     * The path of temporary folder used to store downloaded files from endpoints
-     * with file response. The default value is <code>null</code>, i.e. using
-     * the system's default temporary folder.
+     * The path of temporary folder used to store downloaded files from endpoints with file
+     * response. The default value is <code>null</code>, i.e. using the system's default temporary
+     * folder.
      *
-     * @see <a href="https://docs.oracle.com/javase/7/docs/api/java/nio/file/Files.html#createTempFile(java.lang.String,%20java.lang.String,%20java.nio.file.attribute.FileAttribute...)">createTempFile</a>
+     * @see <a
+     *     href="https://docs.oracle.com/javase/7/docs/api/java/nio/file/Files.html#createTempFile(java.lang.String,%20java.lang.String,%20java.nio.file.attribute.FileAttribute...)">createTempFile</a>
      * @return Temporary folder path
      */
     public String getTempFolderPath() {
@@ -580,15 +577,18 @@ public class ApiClient {
     }
 
     /**
-     * Sets the connect timeout (in milliseconds).
-     * A value of 0 means no timeout, otherwise values must be between 1 and
-     * {@link java.lang.Integer#MAX_VALUE}.
+     * Sets the connect timeout (in milliseconds). A value of 0 means no timeout, otherwise values
+     * must be between 1 and {@link java.lang.Integer#MAX_VALUE}.
      *
      * @param connectionTimeout connection timeout in milliseconds
      * @return Api client
      */
     public ApiClient setConnectTimeout(int connectionTimeout) {
-        httpClient = httpClient.newBuilder().connectTimeout(connectionTimeout, TimeUnit.MILLISECONDS).build();
+        httpClient =
+                httpClient
+                        .newBuilder()
+                        .connectTimeout(connectionTimeout, TimeUnit.MILLISECONDS)
+                        .build();
         return this;
     }
 
@@ -602,15 +602,15 @@ public class ApiClient {
     }
 
     /**
-     * Sets the read timeout (in milliseconds).
-     * A value of 0 means no timeout, otherwise values must be between 1 and
-     * {@link java.lang.Integer#MAX_VALUE}.
+     * Sets the read timeout (in milliseconds). A value of 0 means no timeout, otherwise values must
+     * be between 1 and {@link java.lang.Integer#MAX_VALUE}.
      *
      * @param readTimeout read timeout in milliseconds
      * @return Api client
      */
     public ApiClient setReadTimeout(int readTimeout) {
-        httpClient = httpClient.newBuilder().readTimeout(readTimeout, TimeUnit.MILLISECONDS).build();
+        httpClient =
+                httpClient.newBuilder().readTimeout(readTimeout, TimeUnit.MILLISECONDS).build();
         return this;
     }
 
@@ -624,18 +624,17 @@ public class ApiClient {
     }
 
     /**
-     * Sets the write timeout (in milliseconds).
-     * A value of 0 means no timeout, otherwise values must be between 1 and
-     * {@link java.lang.Integer#MAX_VALUE}.
+     * Sets the write timeout (in milliseconds). A value of 0 means no timeout, otherwise values
+     * must be between 1 and {@link java.lang.Integer#MAX_VALUE}.
      *
      * @param writeTimeout connection timeout in milliseconds
      * @return Api client
      */
     public ApiClient setWriteTimeout(int writeTimeout) {
-        httpClient = httpClient.newBuilder().writeTimeout(writeTimeout, TimeUnit.MILLISECONDS).build();
+        httpClient =
+                httpClient.newBuilder().writeTimeout(writeTimeout, TimeUnit.MILLISECONDS).build();
         return this;
     }
-
 
     /**
      * Format the given parameter object into string.
@@ -646,8 +645,10 @@ public class ApiClient {
     public String parameterToString(Object param) {
         if (param == null) {
             return "";
-        } else if (param instanceof Date || param instanceof OffsetDateTime || param instanceof LocalDate) {
-            //Serialize to json string and remove the " enclosing characters
+        } else if (param instanceof Date
+                || param instanceof OffsetDateTime
+                || param instanceof LocalDate) {
+            // Serialize to json string and remove the " enclosing characters
             String jsonStr = JSON.serialize(param);
             return jsonStr.substring(1, jsonStr.length() - 1);
         } else if (param instanceof Collection) {
@@ -667,7 +668,7 @@ public class ApiClient {
     /**
      * Formats the specified query parameter to a list containing a single {@code Pair} object.
      *
-     * Note that {@code value} must not be a collection.
+     * <p>Note that {@code value} must not be a collection.
      *
      * @param name The name of the parameter.
      * @param value The value of the parameter.
@@ -688,7 +689,7 @@ public class ApiClient {
     /**
      * Formats the specified collection query parameters to a list of {@code Pair} objects.
      *
-     * Note that the values of each of the returned Pair objects are percent-encoded.
+     * <p>Note that the values of each of the returned Pair objects are percent-encoded.
      *
      * @param collectionFormat The collection format of the parameter.
      * @param name The name of the parameter.
@@ -760,7 +761,7 @@ public class ApiClient {
             delimiter = "|";
         }
 
-        StringBuilder sb = new StringBuilder() ;
+        StringBuilder sb = new StringBuilder();
         for (Object item : value) {
             sb.append(delimiter);
             sb.append(parameterToString(item));
@@ -770,8 +771,7 @@ public class ApiClient {
     }
 
     /**
-     * Sanitize filename by removing path.
-     * e.g. ../../sun.gif becomes sun.gif
+     * Sanitize filename by removing path. e.g. ../../sun.gif becomes sun.gif
      *
      * @param filename The filename to be sanitized
      * @return The sanitized filename
@@ -781,13 +781,10 @@ public class ApiClient {
     }
 
     /**
-     * Check if the given MIME is a JSON MIME.
-     * JSON MIME examples:
-     *   application/json
-     *   application/json; charset=UTF8
-     *   APPLICATION/JSON
-     *   application/vnd.company+json
-     * "* / *" is also default to JSON
+     * Check if the given MIME is a JSON MIME. JSON MIME examples: application/json
+     * application/json; charset=UTF8 APPLICATION/JSON application/vnd.company+json "* / *" is also
+     * default to JSON
+     *
      * @param mime MIME (Multipurpose Internet Mail Extensions)
      * @return True if the given MIME is JSON, false otherwise.
      */
@@ -797,13 +794,12 @@ public class ApiClient {
     }
 
     /**
-     * Select the Accept header's value from the given accepts array:
-     *   if JSON exists in the given array, use it;
-     *   otherwise use all of them (joining into a string)
+     * Select the Accept header's value from the given accepts array: if JSON exists in the given
+     * array, use it; otherwise use all of them (joining into a string)
      *
      * @param accepts The accepts array to select from
-     * @return The Accept header to use. If the given array is empty,
-     *   null will be returned (not to set the Accept header explicitly).
+     * @return The Accept header to use. If the given array is empty, null will be returned (not to
+     *     set the Accept header explicitly).
      */
     public String selectHeaderAccept(String[] accepts) {
         if (accepts.length == 0) {
@@ -818,13 +814,12 @@ public class ApiClient {
     }
 
     /**
-     * Select the Content-Type header's value from the given array:
-     *   if JSON exists in the given array, use it;
-     *   otherwise use the first one of the array.
+     * Select the Content-Type header's value from the given array: if JSON exists in the given
+     * array, use it; otherwise use the first one of the array.
      *
      * @param contentTypes The Content-Type array to select from
-     * @return The Content-Type header to use. If the given array is empty,
-     *   returns null. If it matches "any", JSON will be used.
+     * @return The Content-Type header to use. If the given array is empty, returns null. If it
+     *     matches "any", JSON will be used.
      */
     public String selectHeaderContentType(String[] contentTypes) {
         if (contentTypes.length == 0) {
@@ -859,15 +854,16 @@ public class ApiClient {
     }
 
     /**
-     * Deserialize response body to Java object, according to the return type and
-     * the Content-Type response header.
+     * Deserialize response body to Java object, according to the return type and the Content-Type
+     * response header.
      *
      * @param <T> Type
      * @param response HTTP response
      * @param returnType The type of the Java object
      * @return The deserialized Java object
-     * @throws com.configcat.publicapi.java.client.ApiException If fail to deserialize response body, i.e. cannot read response body
-     *   or the Content-Type of the response is not supported.
+     * @throws com.configcat.publicapi.java.client.ApiException If fail to deserialize response
+     *     body, i.e. cannot read response body or the Content-Type of the response is not
+     *     supported.
      */
     @SuppressWarnings("unchecked")
     public <T> T deserialize(Response response, Type returnType) throws ApiException {
@@ -889,10 +885,8 @@ public class ApiClient {
 
         String respBody;
         try {
-            if (response.body() != null)
-                respBody = response.body().string();
-            else
-                respBody = null;
+            if (response.body() != null) respBody = response.body().string();
+            else respBody = null;
         } catch (IOException e) {
             throw new ApiException(e);
         }
@@ -921,13 +915,14 @@ public class ApiClient {
     }
 
     /**
-     * Serialize the given Java object into request body according to the object's
-     * class and the request Content-Type.
+     * Serialize the given Java object into request body according to the object's class and the
+     * request Content-Type.
      *
      * @param obj The Java object
      * @param contentType The request Content-Type
      * @return The serialized request body
-     * @throws com.configcat.publicapi.java.client.ApiException If fail to serialize the given object
+     * @throws com.configcat.publicapi.java.client.ApiException If fail to serialize the given
+     *     object
      */
     public RequestBody serialize(Object obj, String contentType) throws ApiException {
         if (obj instanceof byte[]) {
@@ -957,7 +952,8 @@ public class ApiClient {
      * Download file from the given response.
      *
      * @param response An instance of the Response object
-     * @throws com.configcat.publicapi.java.client.ApiException If fail to read file content from response and write to disk
+     * @throws com.configcat.publicapi.java.client.ApiException If fail to read file content from
+     *     response and write to disk
      * @return Downloaded file
      */
     public File downloadFileFromResponse(Response response) throws ApiException {
@@ -1005,14 +1001,11 @@ public class ApiClient {
                 suffix = filename.substring(pos);
             }
             // Files.createTempFile requires the prefix to be at least three characters long
-            if (prefix.length() < 3)
-                prefix = "download-";
+            if (prefix.length() < 3) prefix = "download-";
         }
 
-        if (tempFolderPath == null)
-            return Files.createTempFile(prefix, suffix).toFile();
-        else
-            return Files.createTempFile(Paths.get(tempFolderPath), prefix, suffix).toFile();
+        if (tempFolderPath == null) return Files.createTempFile(prefix, suffix).toFile();
+        else return Files.createTempFile(Paths.get(tempFolderPath), prefix, suffix).toFile();
     }
 
     /**
@@ -1033,9 +1026,8 @@ public class ApiClient {
      * @param returnType The return type used to deserialize HTTP response body
      * @param <T> The return type corresponding to (same with) returnType
      * @param call Call
-     * @return ApiResponse object containing response status, headers and
-     *   data, which is a Java object deserialized from response body and would be null
-     *   when returnType is null.
+     * @return ApiResponse object containing response status, headers and data, which is a Java
+     *     object deserialized from response body and would be null when returnType is null.
      * @throws com.configcat.publicapi.java.client.ApiException If fail to execute the call
      */
     public <T> ApiResponse<T> execute(Call call, Type returnType) throws ApiException {
@@ -1070,27 +1062,32 @@ public class ApiClient {
      */
     @SuppressWarnings("unchecked")
     public <T> void executeAsync(Call call, final Type returnType, final ApiCallback<T> callback) {
-        call.enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-                callback.onFailure(new ApiException(e), 0, null);
-            }
+        call.enqueue(
+                new Callback() {
+                    @Override
+                    public void onFailure(Call call, IOException e) {
+                        callback.onFailure(new ApiException(e), 0, null);
+                    }
 
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                T result;
-                try {
-                    result = (T) handleResponse(response, returnType);
-                } catch (ApiException e) {
-                    callback.onFailure(e, response.code(), response.headers().toMultimap());
-                    return;
-                } catch (Exception e) {
-                    callback.onFailure(new ApiException(e), response.code(), response.headers().toMultimap());
-                    return;
-                }
-                callback.onSuccess(result, response.code(), response.headers().toMultimap());
-            }
-        });
+                    @Override
+                    public void onResponse(Call call, Response response) throws IOException {
+                        T result;
+                        try {
+                            result = (T) handleResponse(response, returnType);
+                        } catch (ApiException e) {
+                            callback.onFailure(e, response.code(), response.headers().toMultimap());
+                            return;
+                        } catch (Exception e) {
+                            callback.onFailure(
+                                    new ApiException(e),
+                                    response.code(),
+                                    response.headers().toMultimap());
+                            return;
+                        }
+                        callback.onSuccess(
+                                result, response.code(), response.headers().toMultimap());
+                    }
+                });
     }
 
     /**
@@ -1100,8 +1097,8 @@ public class ApiClient {
      * @param response Response
      * @param returnType Return type
      * @return Type
-     * @throws com.configcat.publicapi.java.client.ApiException If the response has an unsuccessful status code or
-     *                      fail to deserialize the response body
+     * @throws com.configcat.publicapi.java.client.ApiException If the response has an unsuccessful
+     *     status code or fail to deserialize the response body
      */
     public <T> T handleResponse(Response response, Type returnType) throws ApiException {
         if (response.isSuccessful()) {
@@ -1112,7 +1109,11 @@ public class ApiClient {
                     try {
                         response.body().close();
                     } catch (Exception e) {
-                        throw new ApiException(response.message(), e, response.code(), response.headers().toMultimap());
+                        throw new ApiException(
+                                response.message(),
+                                e,
+                                response.code(),
+                                response.headers().toMultimap());
                     }
                 }
                 return null;
@@ -1125,10 +1126,15 @@ public class ApiClient {
                 try {
                     respBody = response.body().string();
                 } catch (IOException e) {
-                    throw new ApiException(response.message(), e, response.code(), response.headers().toMultimap());
+                    throw new ApiException(
+                            response.message(),
+                            e,
+                            response.code(),
+                            response.headers().toMultimap());
                 }
             }
-            throw new ApiException(response.message(), response.code(), response.headers().toMultimap(), respBody);
+            throw new ApiException(
+                    response.message(), response.code(), response.headers().toMultimap(), respBody);
         }
     }
 
@@ -1137,7 +1143,8 @@ public class ApiClient {
      *
      * @param baseUrl The base URL
      * @param path The sub-path of the HTTP URL
-     * @param method The request method, one of "GET", "HEAD", "OPTIONS", "POST", "PUT", "PATCH" and "DELETE"
+     * @param method The request method, one of "GET", "HEAD", "OPTIONS", "POST", "PUT", "PATCH" and
+     *     "DELETE"
      * @param queryParams The query parameters
      * @param collectionQueryParams The collection query parameters
      * @param body The request body object
@@ -1147,10 +1154,35 @@ public class ApiClient {
      * @param authNames The authentications to apply
      * @param callback Callback for upload/download progress
      * @return The HTTP call
-     * @throws com.configcat.publicapi.java.client.ApiException If fail to serialize the request body object
+     * @throws com.configcat.publicapi.java.client.ApiException If fail to serialize the request
+     *     body object
      */
-    public Call buildCall(String baseUrl, String path, String method, List<Pair> queryParams, List<Pair> collectionQueryParams, Object body, Map<String, String> headerParams, Map<String, String> cookieParams, Map<String, Object> formParams, String[] authNames, ApiCallback callback) throws ApiException {
-        Request request = buildRequest(baseUrl, path, method, queryParams, collectionQueryParams, body, headerParams, cookieParams, formParams, authNames, callback);
+    public Call buildCall(
+            String baseUrl,
+            String path,
+            String method,
+            List<Pair> queryParams,
+            List<Pair> collectionQueryParams,
+            Object body,
+            Map<String, String> headerParams,
+            Map<String, String> cookieParams,
+            Map<String, Object> formParams,
+            String[] authNames,
+            ApiCallback callback)
+            throws ApiException {
+        Request request =
+                buildRequest(
+                        baseUrl,
+                        path,
+                        method,
+                        queryParams,
+                        collectionQueryParams,
+                        body,
+                        headerParams,
+                        cookieParams,
+                        formParams,
+                        authNames,
+                        callback);
 
         return httpClient.newCall(request);
     }
@@ -1160,7 +1192,8 @@ public class ApiClient {
      *
      * @param baseUrl The base URL
      * @param path The sub-path of the HTTP URL
-     * @param method The request method, one of "GET", "HEAD", "OPTIONS", "POST", "PUT", "PATCH" and "DELETE"
+     * @param method The request method, one of "GET", "HEAD", "OPTIONS", "POST", "PUT", "PATCH" and
+     *     "DELETE"
      * @param queryParams The query parameters
      * @param collectionQueryParams The collection query parameters
      * @param body The request body object
@@ -1170,9 +1203,22 @@ public class ApiClient {
      * @param authNames The authentications to apply
      * @param callback Callback for upload/download progress
      * @return The HTTP request
-     * @throws com.configcat.publicapi.java.client.ApiException If fail to serialize the request body object
+     * @throws com.configcat.publicapi.java.client.ApiException If fail to serialize the request
+     *     body object
      */
-    public Request buildRequest(String baseUrl, String path, String method, List<Pair> queryParams, List<Pair> collectionQueryParams, Object body, Map<String, String> headerParams, Map<String, String> cookieParams, Map<String, Object> formParams, String[] authNames, ApiCallback callback) throws ApiException {
+    public Request buildRequest(
+            String baseUrl,
+            String path,
+            String method,
+            List<Pair> queryParams,
+            List<Pair> collectionQueryParams,
+            Object body,
+            Map<String, String> headerParams,
+            Map<String, String> cookieParams,
+            Map<String, Object> formParams,
+            String[] authNames,
+            ApiCallback callback)
+            throws ApiException {
         // aggregate queryParams (non-collection) and collectionQueryParams into allQueryParams
         List<Pair> allQueryParams = new ArrayList<Pair>(queryParams);
         allQueryParams.addAll(collectionQueryParams);
@@ -1198,14 +1244,23 @@ public class ApiClient {
                 reqBody = null;
             } else {
                 // use an empty request body (for POST, PUT and PATCH)
-                reqBody = RequestBody.create("", contentType == null ? null : MediaType.parse(contentType));
+                reqBody =
+                        RequestBody.create(
+                                "", contentType == null ? null : MediaType.parse(contentType));
             }
         } else {
             reqBody = serialize(body, contentType);
         }
 
         // update parameters with authentication settings
-        updateParamsForAuth(authNames, allQueryParams, headerParams, cookieParams, requestBodyToString(reqBody), method, URI.create(url));
+        updateParamsForAuth(
+                authNames,
+                allQueryParams,
+                headerParams,
+                cookieParams,
+                requestBodyToString(reqBody),
+                method,
+                URI.create(url));
 
         final Request.Builder reqBuilder = new Request.Builder().url(url);
         processHeaderParams(headerParams, reqBuilder);
@@ -1236,7 +1291,8 @@ public class ApiClient {
      * @param collectionQueryParams The collection query parameters
      * @return The full URL
      */
-    public String buildUrl(String baseUrl, String path, List<Pair> queryParams, List<Pair> collectionQueryParams) {
+    public String buildUrl(
+            String baseUrl, String path, List<Pair> queryParams, List<Pair> collectionQueryParams) {
         final StringBuilder url = new StringBuilder();
         if (baseUrl != null) {
             url.append(baseUrl).append(path);
@@ -1244,9 +1300,11 @@ public class ApiClient {
             String baseURL;
             if (serverIndex != null) {
                 if (serverIndex < 0 || serverIndex >= servers.size()) {
-                    throw new ArrayIndexOutOfBoundsException(String.format(
-                    "Invalid index %d when selecting the host settings. Must be less than %d", serverIndex, servers.size()
-                    ));
+                    throw new ArrayIndexOutOfBoundsException(
+                            String.format(
+                                    "Invalid index %d when selecting the host settings. Must be"
+                                            + " less than %d",
+                                    serverIndex, servers.size()));
                 }
                 baseURL = servers.get(serverIndex).URL(serverVariables);
             } else {
@@ -1267,7 +1325,9 @@ public class ApiClient {
                         url.append("&");
                     }
                     String value = parameterToString(param.getValue());
-                    url.append(escapeString(param.getName())).append("=").append(escapeString(value));
+                    url.append(escapeString(param.getName()))
+                            .append("=")
+                            .append(escapeString(value));
                 }
             }
         }
@@ -1317,11 +1377,13 @@ public class ApiClient {
      */
     public void processCookieParams(Map<String, String> cookieParams, Request.Builder reqBuilder) {
         for (Entry<String, String> param : cookieParams.entrySet()) {
-            reqBuilder.addHeader("Cookie", String.format("%s=%s", param.getKey(), param.getValue()));
+            reqBuilder.addHeader(
+                    "Cookie", String.format("%s=%s", param.getKey(), param.getValue()));
         }
         for (Entry<String, String> param : defaultCookieMap.entrySet()) {
             if (!cookieParams.containsKey(param.getKey())) {
-                reqBuilder.addHeader("Cookie", String.format("%s=%s", param.getKey(), param.getValue()));
+                reqBuilder.addHeader(
+                        "Cookie", String.format("%s=%s", param.getKey(), param.getValue()));
             }
         }
     }
@@ -1338,8 +1400,15 @@ public class ApiClient {
      * @param uri URI
      * @throws com.configcat.publicapi.java.client.ApiException If fails to update the parameters
      */
-    public void updateParamsForAuth(String[] authNames, List<Pair> queryParams, Map<String, String> headerParams,
-                                    Map<String, String> cookieParams, String payload, String method, URI uri) throws ApiException {
+    public void updateParamsForAuth(
+            String[] authNames,
+            List<Pair> queryParams,
+            Map<String, String> headerParams,
+            Map<String, String> cookieParams,
+            String payload,
+            String method,
+            URI uri)
+            throws ApiException {
         for (String authName : authNames) {
             Authentication auth = authentications.get(authName);
             if (auth == null) {
@@ -1364,8 +1433,8 @@ public class ApiClient {
     }
 
     /**
-     * Build a multipart (file uploading) request body with the given form parameters,
-     * which could contain text fields and file fields.
+     * Build a multipart (file uploading) request body with the given form parameters, which could
+     * contain text fields and file fields.
      *
      * @param formParams Form parameters in the form of Map
      * @return RequestBody
@@ -1378,7 +1447,7 @@ public class ApiClient {
                 addPartToMultiPartBuilder(mpBuilder, param.getKey(), file);
             } else if (param.getValue() instanceof List) {
                 List list = (List) param.getValue();
-                for (Object item: list) {
+                for (Object item : list) {
                     if (item instanceof File) {
                         addPartToMultiPartBuilder(mpBuilder, param.getKey(), (File) item);
                     } else {
@@ -1410,24 +1479,29 @@ public class ApiClient {
     /**
      * Add a Content-Disposition Header for the given key and file to the MultipartBody Builder.
      *
-     * @param mpBuilder MultipartBody.Builder 
+     * @param mpBuilder MultipartBody.Builder
      * @param key The key of the Header element
      * @param file The file to add to the Header
-     */ 
+     */
     private void addPartToMultiPartBuilder(MultipartBody.Builder mpBuilder, String key, File file) {
-        Headers partHeaders = Headers.of("Content-Disposition", "form-data; name=\"" + key + "\"; filename=\"" + file.getName() + "\"");
+        Headers partHeaders =
+                Headers.of(
+                        "Content-Disposition",
+                        "form-data; name=\"" + key + "\"; filename=\"" + file.getName() + "\"");
         MediaType mediaType = MediaType.parse(guessContentTypeFromFile(file));
         mpBuilder.addPart(partHeaders, RequestBody.create(file, mediaType));
     }
 
     /**
-     * Add a Content-Disposition Header for the given key and complex object to the MultipartBody Builder.
+     * Add a Content-Disposition Header for the given key and complex object to the MultipartBody
+     * Builder.
      *
      * @param mpBuilder MultipartBody.Builder
      * @param key The key of the Header element
      * @param obj The complex object to add to the Header
      */
-    private void addPartToMultiPartBuilder(MultipartBody.Builder mpBuilder, String key, Object obj) {
+    private void addPartToMultiPartBuilder(
+            MultipartBody.Builder mpBuilder, String key, Object obj) {
         RequestBody requestBody;
         if (obj instanceof String) {
             requestBody = RequestBody.create((String) obj, MediaType.parse("text/plain"));
@@ -1446,8 +1520,8 @@ public class ApiClient {
     }
 
     /**
-     * Get network interceptor to add it to the httpClient to track download progress for
-     * async requests.
+     * Get network interceptor to add it to the httpClient to track download progress for async
+     * requests.
      */
     private Interceptor getProgressInterceptor() {
         return new Interceptor() {
@@ -1457,9 +1531,10 @@ public class ApiClient {
                 final Response originalResponse = chain.proceed(request);
                 if (request.tag() instanceof ApiCallback) {
                     final ApiCallback callback = (ApiCallback) request.tag();
-                    return originalResponse.newBuilder()
-                        .body(new ProgressResponseBody(originalResponse.body(), callback))
-                        .build();
+                    return originalResponse
+                            .newBuilder()
+                            .body(new ProgressResponseBody(originalResponse.body(), callback))
+                            .build();
                 }
                 return originalResponse;
             }
@@ -1467,47 +1542,54 @@ public class ApiClient {
     }
 
     /**
-     * Apply SSL related settings to httpClient according to the current values of
-     * verifyingSsl and sslCaCert.
+     * Apply SSL related settings to httpClient according to the current values of verifyingSsl and
+     * sslCaCert.
      */
     private void applySslSettings() {
         try {
             TrustManager[] trustManagers;
             HostnameVerifier hostnameVerifier;
             if (!verifyingSsl) {
-                trustManagers = new TrustManager[]{
-                        new X509TrustManager() {
-                            @Override
-                            public void checkClientTrusted(java.security.cert.X509Certificate[] chain, String authType) throws CertificateException {
-                            }
+                trustManagers =
+                        new TrustManager[] {
+                            new X509TrustManager() {
+                                @Override
+                                public void checkClientTrusted(
+                                        java.security.cert.X509Certificate[] chain, String authType)
+                                        throws CertificateException {}
 
-                            @Override
-                            public void checkServerTrusted(java.security.cert.X509Certificate[] chain, String authType) throws CertificateException {
-                            }
+                                @Override
+                                public void checkServerTrusted(
+                                        java.security.cert.X509Certificate[] chain, String authType)
+                                        throws CertificateException {}
 
-                            @Override
-                            public java.security.cert.X509Certificate[] getAcceptedIssuers() {
-                                return new java.security.cert.X509Certificate[]{};
+                                @Override
+                                public java.security.cert.X509Certificate[] getAcceptedIssuers() {
+                                    return new java.security.cert.X509Certificate[] {};
+                                }
                             }
-                        }
-                };
-                hostnameVerifier = new HostnameVerifier() {
-                    @Override
-                    public boolean verify(String hostname, SSLSession session) {
-                        return true;
-                    }
-                };
+                        };
+                hostnameVerifier =
+                        new HostnameVerifier() {
+                            @Override
+                            public boolean verify(String hostname, SSLSession session) {
+                                return true;
+                            }
+                        };
             } else {
-                TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+                TrustManagerFactory trustManagerFactory =
+                        TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
 
                 if (sslCaCert == null) {
                     trustManagerFactory.init((KeyStore) null);
                 } else {
                     char[] password = null; // Any password will work.
                     CertificateFactory certificateFactory = CertificateFactory.getInstance("X.509");
-                    Collection<? extends Certificate> certificates = certificateFactory.generateCertificates(sslCaCert);
+                    Collection<? extends Certificate> certificates =
+                            certificateFactory.generateCertificates(sslCaCert);
                     if (certificates.isEmpty()) {
-                        throw new IllegalArgumentException("expected non-empty set of trusted certificates");
+                        throw new IllegalArgumentException(
+                                "expected non-empty set of trusted certificates");
                     }
                     KeyStore caKeyStore = newEmptyKeyStore(password);
                     int index = 0;
@@ -1523,8 +1605,12 @@ public class ApiClient {
 
             SSLContext sslContext = SSLContext.getInstance("TLS");
             sslContext.init(keyManagers, trustManagers, new SecureRandom());
-            httpClient = httpClient.newBuilder()
-                            .sslSocketFactory(sslContext.getSocketFactory(), (X509TrustManager) trustManagers[0])
+            httpClient =
+                    httpClient
+                            .newBuilder()
+                            .sslSocketFactory(
+                                    sslContext.getSocketFactory(),
+                                    (X509TrustManager) trustManagers[0])
                             .hostnameVerifier(hostnameVerifier)
                             .build();
         } catch (GeneralSecurityException e) {
@@ -1547,7 +1633,8 @@ public class ApiClient {
      *
      * @param requestBody The HTTP request object
      * @return The string representation of the HTTP request body
-     * @throws com.configcat.publicapi.java.client.ApiException If fail to serialize the request body object into a string
+     * @throws com.configcat.publicapi.java.client.ApiException If fail to serialize the request
+     *     body object into a string
      */
     private String requestBodyToString(RequestBody requestBody) throws ApiException {
         if (requestBody != null) {

@@ -9,18 +9,8 @@
 |------------ | ------------- | ------------- | -------------|
 |**key** | **String** |  |  [optional] |
 |**description** | **String** |  |  [optional] |
-|**integrationLinkType** | [**IntegrationLinkTypeEnum**](#IntegrationLinkTypeEnum) |  |  [optional] |
+|**integrationLinkType** | **IntegrationLinkType** |  |  [optional] |
 |**url** | **String** |  |  [optional] |
-
-
-
-## Enum: IntegrationLinkTypeEnum
-
-| Name | Value |
-|---- | -----|
-| TRELLO | &quot;trello&quot; |
-| JIRA | &quot;jira&quot; |
-| MONDAY | &quot;monday&quot; |
 
 
 

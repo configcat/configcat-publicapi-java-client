@@ -1,6 +1,6 @@
 /*
  * ConfigCat Public Management API
- * The purpose of this API is to access the ConfigCat platform programmatically. You can **Create**, **Read**, **Update** and **Delete** any entities like **Feature Flags, Configs, Environments** or **Products** within ConfigCat.  **Base API URL**: https://api.configcat.com  If you prefer the swagger documentation, you can find it here: [Swagger UI](https://api.configcat.com/swagger).  The API is based on HTTP REST, uses resource-oriented URLs, status codes and supports JSON  format.   **Important:** Do not use this API for accessing and evaluating feature flag values. Use the [SDKs](https://configcat.com/docs/sdk-reference/overview) or the [ConfigCat Proxy](https://configcat.com/docs/advanced/proxy/proxy-overview/) instead.  # OpenAPI Specification  The complete specification is publicly available in the following formats:  - [OpenAPI v3](https://api.configcat.com/docs/v1/swagger.json) - [Swagger v2](https://api.configcat.com/docs/v1/swagger.v2.json)  You can use it to generate client libraries in various languages with [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) or [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) to interact with this API.  # Authentication This API uses the [Basic HTTP Authentication Scheme](https://en.wikipedia.org/wiki/Basic_access_authentication).   <!-- ReDoc-Inject: <security-definitions> -->  # Throttling and rate limits All the rate limited API calls are returning information about the current rate limit period in the following HTTP headers:  | Header | Description | | :- | :- | | X-Rate-Limit-Remaining | The maximum number of requests remaining in the current rate limit period. | | X-Rate-Limit-Reset     | The time when the current rate limit period resets.        |  When the rate limit is exceeded by a request, the API returns with a `HTTP 429 - Too many requests` status along with a `Retry-After` HTTP header. 
+ * The purpose of this API is to access the ConfigCat platform programmatically. You can **Create**, **Read**, **Update** and **Delete** any entities like **Feature Flags, Configs, Environments** or **Products** within ConfigCat.  **Base API URL**: https://api.configcat.com  If you prefer the swagger documentation, you can find it here: [Swagger UI](https://api.configcat.com/swagger).  The API is based on HTTP REST, uses resource-oriented URLs, status codes and supports JSON  format.   **Important:** Do not use this API for accessing and evaluating feature flag values. Use the [SDKs](https://configcat.com/docs/sdk-reference/overview) or the [ConfigCat Proxy](https://configcat.com/docs/advanced/proxy/proxy-overview/) instead.  # OpenAPI Specification  The complete specification is publicly available in the following formats:  - [OpenAPI v3](https://api.configcat.com/docs/v1/swagger.json) - [Swagger v2](https://api.configcat.com/docs/v1/swagger.v2.json)  You can use it to generate client libraries in various languages with [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) or [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) to interact with this API.  # Authentication This API uses the [Basic HTTP Authentication Scheme](https://en.wikipedia.org/wiki/Basic_access_authentication).   <!-- ReDoc-Inject: <security-definitions> -->  # Throttling and rate limits All the rate limited API calls are returning information about the current rate limit period in the following HTTP headers:  | Header | Description | | :- | :- | | X-Rate-Limit-Remaining | The maximum number of requests remaining in the current rate limit period. | | X-Rate-Limit-Reset     | The time when the current rate limit period resets.        |  When the rate limit is exceeded by a request, the API returns with a `HTTP 429 - Too many requests` status along with a `Retry-After` HTTP header.
  *
  * The version of the OpenAPI document: v1
  * Contact: support@configcat.com
@@ -10,297 +10,322 @@
  * Do not edit the class manually.
  */
 
-
 package com.configcat.publicapi.java.client.model;
 
-import java.util.Objects;
-import com.configcat.publicapi.java.client.model.TargetingRuleModel;
-import com.configcat.publicapi.java.client.model.ValueModel;
+
+import com.configcat.publicapi.java.client.JSON;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.TypeAdapterFactory;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import com.google.gson.TypeAdapterFactory;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.TypeAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import java.io.IOException;
-
-import java.lang.reflect.Type;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
+import org.openapitools.jackson.nullable.JsonNullable;
 
-import com.configcat.publicapi.java.client.JSON;
-
-/**
- * UpdateEvaluationFormulaModel
- */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-09-10T12:39:37.024419310Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+/** UpdateEvaluationFormulaModel */
+@javax.annotation.Generated(
+        value = "org.openapitools.codegen.languages.JavaClientCodegen",
+        date = "2024-10-09T12:38:06.739118192Z[Etc/UTC]",
+        comments = "Generator version: 7.7.0")
 public class UpdateEvaluationFormulaModel {
-  public static final String SERIALIZED_NAME_DEFAULT_VALUE = "defaultValue";
-  @SerializedName(SERIALIZED_NAME_DEFAULT_VALUE)
-  private ValueModel defaultValue;
+    public static final String SERIALIZED_NAME_DEFAULT_VALUE = "defaultValue";
 
-  public static final String SERIALIZED_NAME_TARGETING_RULES = "targetingRules";
-  @SerializedName(SERIALIZED_NAME_TARGETING_RULES)
-  private List<TargetingRuleModel> targetingRules;
+    @SerializedName(SERIALIZED_NAME_DEFAULT_VALUE)
+    private ValueModel defaultValue;
 
-  public static final String SERIALIZED_NAME_PERCENTAGE_EVALUATION_ATTRIBUTE = "percentageEvaluationAttribute";
-  @SerializedName(SERIALIZED_NAME_PERCENTAGE_EVALUATION_ATTRIBUTE)
-  private String percentageEvaluationAttribute;
+    public static final String SERIALIZED_NAME_TARGETING_RULES = "targetingRules";
 
-  public UpdateEvaluationFormulaModel() {
-  }
+    @SerializedName(SERIALIZED_NAME_TARGETING_RULES)
+    private List<TargetingRuleModel> targetingRules;
 
-  public UpdateEvaluationFormulaModel defaultValue(ValueModel defaultValue) {
-    this.defaultValue = defaultValue;
-    return this;
-  }
+    public static final String SERIALIZED_NAME_PERCENTAGE_EVALUATION_ATTRIBUTE =
+            "percentageEvaluationAttribute";
 
-  /**
-   * Get defaultValue
-   * @return defaultValue
-   */
-  @javax.annotation.Nonnull
-  public ValueModel getDefaultValue() {
-    return defaultValue;
-  }
+    @SerializedName(SERIALIZED_NAME_PERCENTAGE_EVALUATION_ATTRIBUTE)
+    private String percentageEvaluationAttribute;
 
-  public void setDefaultValue(ValueModel defaultValue) {
-    this.defaultValue = defaultValue;
-  }
+    public UpdateEvaluationFormulaModel() {}
 
-
-  public UpdateEvaluationFormulaModel targetingRules(List<TargetingRuleModel> targetingRules) {
-    this.targetingRules = targetingRules;
-    return this;
-  }
-
-  public UpdateEvaluationFormulaModel addTargetingRulesItem(TargetingRuleModel targetingRulesItem) {
-    if (this.targetingRules == null) {
-      this.targetingRules = new ArrayList<>();
+    public UpdateEvaluationFormulaModel defaultValue(ValueModel defaultValue) {
+        this.defaultValue = defaultValue;
+        return this;
     }
-    this.targetingRules.add(targetingRulesItem);
-    return this;
-  }
 
-  /**
-   * The targeting rules of the Feature Flag or Setting.
-   * @return targetingRules
-   */
-  @javax.annotation.Nullable
-  public List<TargetingRuleModel> getTargetingRules() {
-    return targetingRules;
-  }
-
-  public void setTargetingRules(List<TargetingRuleModel> targetingRules) {
-    this.targetingRules = targetingRules;
-  }
-
-
-  public UpdateEvaluationFormulaModel percentageEvaluationAttribute(String percentageEvaluationAttribute) {
-    this.percentageEvaluationAttribute = percentageEvaluationAttribute;
-    return this;
-  }
-
-  /**
-   * The user attribute used for percentage evaluation. If not set, it defaults to the &#x60;Identifier&#x60; user object attribute.
-   * @return percentageEvaluationAttribute
-   */
-  @javax.annotation.Nullable
-  public String getPercentageEvaluationAttribute() {
-    return percentageEvaluationAttribute;
-  }
-
-  public void setPercentageEvaluationAttribute(String percentageEvaluationAttribute) {
-    this.percentageEvaluationAttribute = percentageEvaluationAttribute;
-  }
-
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+    /**
+     * Get defaultValue
+     *
+     * @return defaultValue
+     */
+    @javax.annotation.Nonnull
+    public ValueModel getDefaultValue() {
+        return defaultValue;
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    public void setDefaultValue(ValueModel defaultValue) {
+        this.defaultValue = defaultValue;
     }
-    UpdateEvaluationFormulaModel updateEvaluationFormulaModel = (UpdateEvaluationFormulaModel) o;
-    return Objects.equals(this.defaultValue, updateEvaluationFormulaModel.defaultValue) &&
-        Objects.equals(this.targetingRules, updateEvaluationFormulaModel.targetingRules) &&
-        Objects.equals(this.percentageEvaluationAttribute, updateEvaluationFormulaModel.percentageEvaluationAttribute);
-  }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(defaultValue, targetingRules, percentageEvaluationAttribute);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
+    public UpdateEvaluationFormulaModel targetingRules(List<TargetingRuleModel> targetingRules) {
+        this.targetingRules = targetingRules;
+        return this;
     }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
-  }
 
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class UpdateEvaluationFormulaModel {\n");
-    sb.append("    defaultValue: ").append(toIndentedString(defaultValue)).append("\n");
-    sb.append("    targetingRules: ").append(toIndentedString(targetingRules)).append("\n");
-    sb.append("    percentageEvaluationAttribute: ").append(toIndentedString(percentageEvaluationAttribute)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-
-  public static HashSet<String> openapiFields;
-  public static HashSet<String> openapiRequiredFields;
-
-  static {
-    // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("defaultValue");
-    openapiFields.add("targetingRules");
-    openapiFields.add("percentageEvaluationAttribute");
-
-    // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("defaultValue");
-  }
-
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to UpdateEvaluationFormulaModel
-   */
-  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      if (jsonElement == null) {
-        if (!UpdateEvaluationFormulaModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdateEvaluationFormulaModel is not found in the empty JSON string", UpdateEvaluationFormulaModel.openapiRequiredFields.toString()));
+    public UpdateEvaluationFormulaModel addTargetingRulesItem(
+            TargetingRuleModel targetingRulesItem) {
+        if (this.targetingRules == null) {
+            this.targetingRules = new ArrayList<>();
         }
-      }
+        this.targetingRules.add(targetingRulesItem);
+        return this;
+    }
 
-      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-      // check to see if the JSON string contains additional fields
-      for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!UpdateEvaluationFormulaModel.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `UpdateEvaluationFormulaModel` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
-        }
-      }
+    /**
+     * The targeting rules of the Feature Flag or Setting.
+     *
+     * @return targetingRules
+     */
+    @javax.annotation.Nullable
+    public List<TargetingRuleModel> getTargetingRules() {
+        return targetingRules;
+    }
 
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : UpdateEvaluationFormulaModel.openapiRequiredFields) {
-        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
-        }
-      }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the required field `defaultValue`
-      ValueModel.validateJsonElement(jsonObj.get("defaultValue"));
-      if (jsonObj.get("targetingRules") != null && !jsonObj.get("targetingRules").isJsonNull()) {
-        JsonArray jsonArraytargetingRules = jsonObj.getAsJsonArray("targetingRules");
-        if (jsonArraytargetingRules != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("targetingRules").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `targetingRules` to be an array in the JSON string but got `%s`", jsonObj.get("targetingRules").toString()));
-          }
+    public void setTargetingRules(List<TargetingRuleModel> targetingRules) {
+        this.targetingRules = targetingRules;
+    }
 
-          // validate the optional field `targetingRules` (array)
-          for (int i = 0; i < jsonArraytargetingRules.size(); i++) {
-            TargetingRuleModel.validateJsonElement(jsonArraytargetingRules.get(i));
-          };
-        }
-      }
-      if ((jsonObj.get("percentageEvaluationAttribute") != null && !jsonObj.get("percentageEvaluationAttribute").isJsonNull()) && !jsonObj.get("percentageEvaluationAttribute").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `percentageEvaluationAttribute` to be a primitive type in the JSON string but got `%s`", jsonObj.get("percentageEvaluationAttribute").toString()));
-      }
-  }
+    public UpdateEvaluationFormulaModel percentageEvaluationAttribute(
+            String percentageEvaluationAttribute) {
+        this.percentageEvaluationAttribute = percentageEvaluationAttribute;
+        return this;
+    }
 
-  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-    @SuppressWarnings("unchecked")
+    /**
+     * The user attribute used for percentage evaluation. If not set, it defaults to the
+     * &#x60;Identifier&#x60; user object attribute.
+     *
+     * @return percentageEvaluationAttribute
+     */
+    @javax.annotation.Nullable
+    public String getPercentageEvaluationAttribute() {
+        return percentageEvaluationAttribute;
+    }
+
+    public void setPercentageEvaluationAttribute(String percentageEvaluationAttribute) {
+        this.percentageEvaluationAttribute = percentageEvaluationAttribute;
+    }
+
     @Override
-    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!UpdateEvaluationFormulaModel.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'UpdateEvaluationFormulaModel' and its subtypes
-       }
-       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<UpdateEvaluationFormulaModel> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(UpdateEvaluationFormulaModel.class));
-
-       return (TypeAdapter<T>) new TypeAdapter<UpdateEvaluationFormulaModel>() {
-           @Override
-           public void write(JsonWriter out, UpdateEvaluationFormulaModel value) throws IOException {
-             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-             elementAdapter.write(out, obj);
-           }
-
-           @Override
-           public UpdateEvaluationFormulaModel read(JsonReader in) throws IOException {
-             JsonElement jsonElement = elementAdapter.read(in);
-             validateJsonElement(jsonElement);
-             return thisAdapter.fromJsonTree(jsonElement);
-           }
-
-       }.nullSafe();
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        UpdateEvaluationFormulaModel updateEvaluationFormulaModel =
+                (UpdateEvaluationFormulaModel) o;
+        return Objects.equals(this.defaultValue, updateEvaluationFormulaModel.defaultValue)
+                && Objects.equals(this.targetingRules, updateEvaluationFormulaModel.targetingRules)
+                && Objects.equals(
+                        this.percentageEvaluationAttribute,
+                        updateEvaluationFormulaModel.percentageEvaluationAttribute);
     }
-  }
 
-  /**
-   * Create an instance of UpdateEvaluationFormulaModel given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of UpdateEvaluationFormulaModel
-   * @throws IOException if the JSON string is invalid with respect to UpdateEvaluationFormulaModel
-   */
-  public static UpdateEvaluationFormulaModel fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, UpdateEvaluationFormulaModel.class);
-  }
+    private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+        return a == b
+                || (a != null
+                        && b != null
+                        && a.isPresent()
+                        && b.isPresent()
+                        && Objects.deepEquals(a.get(), b.get()));
+    }
 
-  /**
-   * Convert an instance of UpdateEvaluationFormulaModel to an JSON string
-   *
-   * @return JSON string
-   */
-  public String toJson() {
-    return JSON.getGson().toJson(this);
-  }
+    @Override
+    public int hashCode() {
+        return Objects.hash(defaultValue, targetingRules, percentageEvaluationAttribute);
+    }
+
+    private static <T> int hashCodeNullable(JsonNullable<T> a) {
+        if (a == null) {
+            return 1;
+        }
+        return a.isPresent() ? Arrays.deepHashCode(new Object[] {a.get()}) : 31;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class UpdateEvaluationFormulaModel {\n");
+        sb.append("    defaultValue: ").append(toIndentedString(defaultValue)).append("\n");
+        sb.append("    targetingRules: ").append(toIndentedString(targetingRules)).append("\n");
+        sb.append("    percentageEvaluationAttribute: ")
+                .append(toIndentedString(percentageEvaluationAttribute))
+                .append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces (except the first
+     * line).
+     */
+    private String toIndentedString(Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+    public static HashSet<String> openapiFields;
+    public static HashSet<String> openapiRequiredFields;
+
+    static {
+        // a set of all properties/fields (JSON key names)
+        openapiFields = new HashSet<String>();
+        openapiFields.add("defaultValue");
+        openapiFields.add("targetingRules");
+        openapiFields.add("percentageEvaluationAttribute");
+
+        // a set of required properties/fields (JSON key names)
+        openapiRequiredFields = new HashSet<String>();
+        openapiRequiredFields.add("defaultValue");
+    }
+
+    /**
+     * Validates the JSON Element and throws an exception if issues found
+     *
+     * @param jsonElement JSON Element
+     * @throws IOException if the JSON Element is invalid with respect to
+     *     UpdateEvaluationFormulaModel
+     */
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+        if (jsonElement == null) {
+            if (!UpdateEvaluationFormulaModel.openapiRequiredFields
+                    .isEmpty()) { // has required fields but JSON element is null
+                throw new IllegalArgumentException(
+                        String.format(
+                                "The required field(s) %s in UpdateEvaluationFormulaModel is not"
+                                        + " found in the empty JSON string",
+                                UpdateEvaluationFormulaModel.openapiRequiredFields.toString()));
+            }
+        }
+
+        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+        // check to see if the JSON string contains additional fields
+        for (Map.Entry<String, JsonElement> entry : entries) {
+            if (!UpdateEvaluationFormulaModel.openapiFields.contains(entry.getKey())) {
+                throw new IllegalArgumentException(
+                        String.format(
+                                "The field `%s` in the JSON string is not defined in the"
+                                        + " `UpdateEvaluationFormulaModel` properties. JSON: %s",
+                                entry.getKey(), jsonElement.toString()));
+            }
+        }
+
+        // check to make sure all required properties/fields are present in the JSON string
+        for (String requiredField : UpdateEvaluationFormulaModel.openapiRequiredFields) {
+            if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+                throw new IllegalArgumentException(
+                        String.format(
+                                "The required field `%s` is not found in the JSON string: %s",
+                                requiredField, jsonElement.toString()));
+            }
+        }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+        // validate the required field `defaultValue`
+        ValueModel.validateJsonElement(jsonObj.get("defaultValue"));
+        if (jsonObj.get("targetingRules") != null && !jsonObj.get("targetingRules").isJsonNull()) {
+            JsonArray jsonArraytargetingRules = jsonObj.getAsJsonArray("targetingRules");
+            if (jsonArraytargetingRules != null) {
+                // ensure the json data is an array
+                if (!jsonObj.get("targetingRules").isJsonArray()) {
+                    throw new IllegalArgumentException(
+                            String.format(
+                                    "Expected the field `targetingRules` to be an array in the"
+                                            + " JSON string but got `%s`",
+                                    jsonObj.get("targetingRules").toString()));
+                }
+
+                // validate the optional field `targetingRules` (array)
+                for (int i = 0; i < jsonArraytargetingRules.size(); i++) {
+                    TargetingRuleModel.validateJsonElement(jsonArraytargetingRules.get(i));
+                }
+                ;
+            }
+        }
+        if ((jsonObj.get("percentageEvaluationAttribute") != null
+                        && !jsonObj.get("percentageEvaluationAttribute").isJsonNull())
+                && !jsonObj.get("percentageEvaluationAttribute").isJsonPrimitive()) {
+            throw new IllegalArgumentException(
+                    String.format(
+                            "Expected the field `percentageEvaluationAttribute` to be a primitive"
+                                    + " type in the JSON string but got `%s`",
+                            jsonObj.get("percentageEvaluationAttribute").toString()));
+        }
+    }
+
+    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+        @SuppressWarnings("unchecked")
+        @Override
+        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+            if (!UpdateEvaluationFormulaModel.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'UpdateEvaluationFormulaModel' and its
+                // subtypes
+            }
+            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<UpdateEvaluationFormulaModel> thisAdapter =
+                    gson.getDelegateAdapter(
+                            this, TypeToken.get(UpdateEvaluationFormulaModel.class));
+
+            return (TypeAdapter<T>)
+                    new TypeAdapter<UpdateEvaluationFormulaModel>() {
+                        @Override
+                        public void write(JsonWriter out, UpdateEvaluationFormulaModel value)
+                                throws IOException {
+                            JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+                            elementAdapter.write(out, obj);
+                        }
+
+                        @Override
+                        public UpdateEvaluationFormulaModel read(JsonReader in) throws IOException {
+                            JsonElement jsonElement = elementAdapter.read(in);
+                            validateJsonElement(jsonElement);
+                            return thisAdapter.fromJsonTree(jsonElement);
+                        }
+                    }.nullSafe();
+        }
+    }
+
+    /**
+     * Create an instance of UpdateEvaluationFormulaModel given an JSON string
+     *
+     * @param jsonString JSON string
+     * @return An instance of UpdateEvaluationFormulaModel
+     * @throws IOException if the JSON string is invalid with respect to
+     *     UpdateEvaluationFormulaModel
+     */
+    public static UpdateEvaluationFormulaModel fromJson(String jsonString) throws IOException {
+        return JSON.getGson().fromJson(jsonString, UpdateEvaluationFormulaModel.class);
+    }
+
+    /**
+     * Convert an instance of UpdateEvaluationFormulaModel to an JSON string
+     *
+     * @return JSON string
+     */
+    public String toJson() {
+        return JSON.getGson().toJson(this);
+    }
 }
-

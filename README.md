@@ -2,7 +2,7 @@
 
 ConfigCat Public Management API
 - API version: v1
-  - Build date: 2024-09-10T12:39:37.024419310Z[Etc/UTC]
+  - Build date: 2024-10-09T12:38:06.739118192Z[Etc/UTC]
   - Generator version: 7.7.0
 
 The purpose of this API is to access the ConfigCat platform programmatically.
@@ -138,7 +138,7 @@ public class Example {
     UUID productId = UUID.randomUUID(); // UUID | The identifier of the Product.
     UUID configId = UUID.randomUUID(); // UUID | The identifier of the Config.
     UUID environmentId = UUID.randomUUID(); // UUID | The identifier of the Environment.
-    String auditLogType = "productCreated"; // String | Filter Audit logs by Audit log type.
+    AuditLogType auditLogType = AuditLogType.fromValue("productCreated"); // AuditLogType | Filter Audit logs by Audit log type.
     OffsetDateTime fromUtcDateTime = OffsetDateTime.now(); // OffsetDateTime | Filter Audit logs by starting UTC date.
     OffsetDateTime toUtcDateTime = OffsetDateTime.now(); // OffsetDateTime | Filter Audit logs by ending UTC date.
     try {
@@ -257,9 +257,11 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
+ - [AccessType](docs/AccessType.md)
  - [AddOrUpdateIntegrationLinkModel](docs/AddOrUpdateIntegrationLinkModel.md)
  - [AddOrUpdateJiraIntegrationLinkModel](docs/AddOrUpdateJiraIntegrationLinkModel.md)
  - [AuditLogItemModel](docs/AuditLogItemModel.md)
+ - [AuditLogType](docs/AuditLogType.md)
  - [CodeReferenceModel](docs/CodeReferenceModel.md)
  - [CodeReferenceRequest](docs/CodeReferenceRequest.md)
  - [ComparisonValueListModel](docs/ComparisonValueListModel.md)
@@ -283,21 +285,27 @@ Class | Method | HTTP request | Description
  - [DeleteIntegrationLinkModel](docs/DeleteIntegrationLinkModel.md)
  - [DeleteRepositoryReportsRequest](docs/DeleteRepositoryReportsRequest.md)
  - [EnvironmentAccessModel](docs/EnvironmentAccessModel.md)
+ - [EnvironmentAccessType](docs/EnvironmentAccessType.md)
  - [EnvironmentModel](docs/EnvironmentModel.md)
+ - [EvaluationVersion](docs/EvaluationVersion.md)
  - [FeatureFlagLimitations](docs/FeatureFlagLimitations.md)
  - [FlagReference](docs/FlagReference.md)
  - [InitialValue](docs/InitialValue.md)
  - [IntegrationLinkDetail](docs/IntegrationLinkDetail.md)
  - [IntegrationLinkDetailsModel](docs/IntegrationLinkDetailsModel.md)
  - [IntegrationLinkModel](docs/IntegrationLinkModel.md)
+ - [IntegrationLinkType](docs/IntegrationLinkType.md)
  - [IntegrationModel](docs/IntegrationModel.md)
+ - [IntegrationType](docs/IntegrationType.md)
  - [IntegrationsModel](docs/IntegrationsModel.md)
  - [InvitationModel](docs/InvitationModel.md)
  - [InviteMembersRequest](docs/InviteMembersRequest.md)
  - [JsonPatchOperation](docs/JsonPatchOperation.md)
+ - [KeyGenerationMode](docs/KeyGenerationMode.md)
  - [MeModel](docs/MeModel.md)
  - [MemberModel](docs/MemberModel.md)
  - [ModifyIntegrationRequest](docs/ModifyIntegrationRequest.md)
+ - [OperationType](docs/OperationType.md)
  - [OrganizationAdminModel](docs/OrganizationAdminModel.md)
  - [OrganizationInvitationModel](docs/OrganizationInvitationModel.md)
  - [OrganizationMemberModel](docs/OrganizationMemberModel.md)
@@ -309,6 +317,7 @@ Class | Method | HTTP request | Description
  - [PercentageOptionModel](docs/PercentageOptionModel.md)
  - [PermissionGroupModel](docs/PermissionGroupModel.md)
  - [PreferencesModel](docs/PreferencesModel.md)
+ - [PrerequisiteComparator](docs/PrerequisiteComparator.md)
  - [PrerequisiteFlagConditionModel](docs/PrerequisiteFlagConditionModel.md)
  - [ProductModel](docs/ProductModel.md)
  - [ReasonRequiredEnvironmentModel](docs/ReasonRequiredEnvironmentModel.md)
@@ -316,8 +325,10 @@ Class | Method | HTTP request | Description
  - [ReferenceLines](docs/ReferenceLines.md)
  - [ReplaceSettingModel](docs/ReplaceSettingModel.md)
  - [RolloutPercentageItemModel](docs/RolloutPercentageItemModel.md)
+ - [RolloutRuleComparator](docs/RolloutRuleComparator.md)
  - [RolloutRuleModel](docs/RolloutRuleModel.md)
  - [SdkKeysModel](docs/SdkKeysModel.md)
+ - [SegmentComparator](docs/SegmentComparator.md)
  - [SegmentConditionModel](docs/SegmentConditionModel.md)
  - [SegmentListModel](docs/SegmentListModel.md)
  - [SegmentModel](docs/SegmentModel.md)
@@ -325,6 +336,7 @@ Class | Method | HTTP request | Description
  - [SettingFormulaModel](docs/SettingFormulaModel.md)
  - [SettingModel](docs/SettingModel.md)
  - [SettingTagModel](docs/SettingTagModel.md)
+ - [SettingType](docs/SettingType.md)
  - [SettingValueModel](docs/SettingValueModel.md)
  - [TagModel](docs/TagModel.md)
  - [TargetingRuleModel](docs/TargetingRuleModel.md)
@@ -343,9 +355,11 @@ Class | Method | HTTP request | Description
  - [UpdateSettingValueWithSettingIdModel](docs/UpdateSettingValueWithSettingIdModel.md)
  - [UpdateSettingValuesWithIdModel](docs/UpdateSettingValuesWithIdModel.md)
  - [UpdateTagModel](docs/UpdateTagModel.md)
+ - [UserComparator](docs/UserComparator.md)
  - [UserConditionModel](docs/UserConditionModel.md)
  - [UserModel](docs/UserModel.md)
  - [ValueModel](docs/ValueModel.md)
+ - [WebHookHttpMethod](docs/WebHookHttpMethod.md)
  - [WebHookRequest](docs/WebHookRequest.md)
  - [WebhookConfig](docs/WebhookConfig.md)
  - [WebhookEnvironment](docs/WebhookEnvironment.md)

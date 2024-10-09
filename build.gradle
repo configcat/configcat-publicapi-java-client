@@ -6,7 +6,7 @@ apply plugin: 'signing'
 apply plugin: 'maven-publish'
 
 group = 'com.configcat'
-version = '1.0.0'
+version = '1.0.1'
 
 buildscript {
     repositories {
@@ -96,6 +96,7 @@ dependencies {
     implementation 'javax.ws.rs:jsr311-api:1.1.1'
     implementation 'javax.ws.rs:javax.ws.rs-api:2.1.1'
     implementation 'org.openapitools:jackson-databind-nullable:0.2.6'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.15.0-rc1'
     implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
     implementation "jakarta.annotation:jakarta.annotation-api:$jakarta_annotation_version"
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.2'
@@ -104,6 +105,7 @@ dependencies {
 }
 
 javadoc {
+    failOnError = false
     options.tags = [ "http.response.details:a:Http Response Details" ]
 }
 
