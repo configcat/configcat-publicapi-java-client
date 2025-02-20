@@ -1,6 +1,6 @@
 /*
  * ConfigCat Public Management API
- * The purpose of this API is to access the ConfigCat platform programmatically. You can **Create**, **Read**, **Update** and **Delete** any entities like **Feature Flags, Configs, Environments** or **Products** within ConfigCat.  **Base API URL**: https://api.configcat.com  If you prefer the swagger documentation, you can find it here: [Swagger UI](https://api.configcat.com/swagger).  The API is based on HTTP REST, uses resource-oriented URLs, status codes and supports JSON  format.   **Important:** Do not use this API for accessing and evaluating feature flag values. Use the [SDKs](https://configcat.com/docs/sdk-reference/overview) or the [ConfigCat Proxy](https://configcat.com/docs/advanced/proxy/proxy-overview/) instead.  # OpenAPI Specification  The complete specification is publicly available in the following formats:  - [OpenAPI v3](https://api.configcat.com/docs/v1/swagger.json) - [Swagger v2](https://api.configcat.com/docs/v1/swagger.v2.json)  You can use it to generate client libraries in various languages with [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) or [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) to interact with this API.  # Authentication This API uses the [Basic HTTP Authentication Scheme](https://en.wikipedia.org/wiki/Basic_access_authentication).   <!-- ReDoc-Inject: <security-definitions> -->  # Throttling and rate limits All the rate limited API calls are returning information about the current rate limit period in the following HTTP headers:  | Header | Description | | :- | :- | | X-Rate-Limit-Remaining | The maximum number of requests remaining in the current rate limit period. | | X-Rate-Limit-Reset     | The time when the current rate limit period resets.        |  When the rate limit is exceeded by a request, the API returns with a `HTTP 429 - Too many requests` status along with a `Retry-After` HTTP header.
+ * The purpose of this API is to access the ConfigCat platform programmatically. You can **Create**, **Read**, **Update** and **Delete** any entities like **Feature Flags, Configs, Environments** or **Products** within ConfigCat.  **Base API URL**: https://api.configcat.com  If you prefer the swagger documentation, you can find it here: [Swagger UI](https://api.configcat.com/swagger).  The API is based on HTTP REST, uses resource-oriented URLs, status codes and supports JSON  format.   **Important:** Do not use this API for accessing and evaluating feature flag values. Use the [SDKs](https://configcat.com/docs/sdk-reference/overview) or the [ConfigCat Proxy](https://configcat.com/docs/advanced/proxy/proxy-overview/) instead.  # OpenAPI Specification  The complete specification is publicly available in the following formats:  - [OpenAPI v3](https://api.configcat.com/docs/v1/swagger.json) - [Swagger v2](https://api.configcat.com/docs/v1/swagger.v2.json)  You can use it to generate client libraries in various languages with [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) or [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) to interact with this API.  # Authentication This API uses the [Basic HTTP Authentication Scheme](https://en.wikipedia.org/wiki/Basic_access_authentication).   <!-- ReDoc-Inject: <security-definitions> -->  # Throttling and rate limits All the rate limited API calls are returning information about the current rate limit period in the following HTTP headers:  | Header | Description | | :- | :- | | X-Rate-Limit-Remaining | The maximum number of requests remaining in the current rate limit period. | | X-Rate-Limit-Reset     | The time when the current rate limit period resets.        |  When the rate limit is exceeded by a request, the API returns with a `HTTP 429 - Too many requests` status along with a `Retry-After` HTTP header. 
  *
  * The version of the OpenAPI document: v1
  * Contact: support@configcat.com
@@ -10,79 +10,71 @@
  * Do not edit the class manually.
  */
 
-package com.configcat.publicapi.java.client.auth;
 
+package com.configcat.publicapi.java.client.auth;
 
 import com.configcat.publicapi.java.client.ApiException;
 import com.configcat.publicapi.java.client.Pair;
+
 import java.net.URI;
-import java.util.List;
 import java.util.Map;
+import java.util.List;
 
-@javax.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        date = "2024-10-09T12:38:06.739118192Z[Etc/UTC]",
-        comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class ApiKeyAuth implements Authentication {
-    private final String location;
-    private final String paramName;
+  private final String location;
+  private final String paramName;
 
-    private String apiKey;
-    private String apiKeyPrefix;
+  private String apiKey;
+  private String apiKeyPrefix;
 
-    public ApiKeyAuth(String location, String paramName) {
-        this.location = location;
-        this.paramName = paramName;
+  public ApiKeyAuth(String location, String paramName) {
+    this.location = location;
+    this.paramName = paramName;
+  }
+
+  public String getLocation() {
+    return location;
+  }
+
+  public String getParamName() {
+    return paramName;
+  }
+
+  public String getApiKey() {
+    return apiKey;
+  }
+
+  public void setApiKey(String apiKey) {
+    this.apiKey = apiKey;
+  }
+
+  public String getApiKeyPrefix() {
+    return apiKeyPrefix;
+  }
+
+  public void setApiKeyPrefix(String apiKeyPrefix) {
+    this.apiKeyPrefix = apiKeyPrefix;
+  }
+
+  @Override
+  public void applyToParams(List<Pair> queryParams, Map<String, String> headerParams, Map<String, String> cookieParams,
+                           String payload, String method, URI uri) throws ApiException {
+    if (apiKey == null) {
+      return;
     }
-
-    public String getLocation() {
-        return location;
+    String value;
+    if (apiKeyPrefix != null) {
+      value = apiKeyPrefix + " " + apiKey;
+    } else {
+      value = apiKey;
     }
-
-    public String getParamName() {
-        return paramName;
+    if ("query".equals(location)) {
+      queryParams.add(new Pair(paramName, value));
+    } else if ("header".equals(location)) {
+      headerParams.put(paramName, value);
+    } else if ("cookie".equals(location)) {
+      cookieParams.put(paramName, value);
     }
-
-    public String getApiKey() {
-        return apiKey;
-    }
-
-    public void setApiKey(String apiKey) {
-        this.apiKey = apiKey;
-    }
-
-    public String getApiKeyPrefix() {
-        return apiKeyPrefix;
-    }
-
-    public void setApiKeyPrefix(String apiKeyPrefix) {
-        this.apiKeyPrefix = apiKeyPrefix;
-    }
-
-    @Override
-    public void applyToParams(
-            List<Pair> queryParams,
-            Map<String, String> headerParams,
-            Map<String, String> cookieParams,
-            String payload,
-            String method,
-            URI uri)
-            throws ApiException {
-        if (apiKey == null) {
-            return;
-        }
-        String value;
-        if (apiKeyPrefix != null) {
-            value = apiKeyPrefix + " " + apiKey;
-        } else {
-            value = apiKey;
-        }
-        if ("query".equals(location)) {
-            queryParams.add(new Pair(paramName, value));
-        } else if ("header".equals(location)) {
-            headerParams.put(paramName, value);
-        } else if ("cookie".equals(location)) {
-            cookieParams.put(paramName, value);
-        }
-    }
+  }
 }

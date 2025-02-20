@@ -16,6 +16,7 @@ Metadata of a Feature Flag or Setting.
 |**settingType** | **SettingType** |  |  [optional] |
 |**configId** | **UUID** | Identifier of the Feature Flag&#39;s Config. |  [optional] |
 |**configName** | **String** | Name of the Feature Flag&#39;s Config. |  [optional] |
+|**createdAt** | **OffsetDateTime** | The creation time of the Feature Flag or Setting. |  [optional] |
 |**tags** | [**List&lt;TagModel&gt;**](TagModel.md) | The tags attached to the Feature Flag or Setting. |  [optional] |
 
 

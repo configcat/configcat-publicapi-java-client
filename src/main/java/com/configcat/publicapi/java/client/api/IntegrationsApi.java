@@ -1,6 +1,6 @@
 /*
  * ConfigCat Public Management API
- * The purpose of this API is to access the ConfigCat platform programmatically. You can **Create**, **Read**, **Update** and **Delete** any entities like **Feature Flags, Configs, Environments** or **Products** within ConfigCat.  **Base API URL**: https://api.configcat.com  If you prefer the swagger documentation, you can find it here: [Swagger UI](https://api.configcat.com/swagger).  The API is based on HTTP REST, uses resource-oriented URLs, status codes and supports JSON  format.   **Important:** Do not use this API for accessing and evaluating feature flag values. Use the [SDKs](https://configcat.com/docs/sdk-reference/overview) or the [ConfigCat Proxy](https://configcat.com/docs/advanced/proxy/proxy-overview/) instead.  # OpenAPI Specification  The complete specification is publicly available in the following formats:  - [OpenAPI v3](https://api.configcat.com/docs/v1/swagger.json) - [Swagger v2](https://api.configcat.com/docs/v1/swagger.v2.json)  You can use it to generate client libraries in various languages with [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) or [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) to interact with this API.  # Authentication This API uses the [Basic HTTP Authentication Scheme](https://en.wikipedia.org/wiki/Basic_access_authentication).   <!-- ReDoc-Inject: <security-definitions> -->  # Throttling and rate limits All the rate limited API calls are returning information about the current rate limit period in the following HTTP headers:  | Header | Description | | :- | :- | | X-Rate-Limit-Remaining | The maximum number of requests remaining in the current rate limit period. | | X-Rate-Limit-Reset     | The time when the current rate limit period resets.        |  When the rate limit is exceeded by a request, the API returns with a `HTTP 429 - Too many requests` status along with a `Retry-After` HTTP header.
+ * The purpose of this API is to access the ConfigCat platform programmatically. You can **Create**, **Read**, **Update** and **Delete** any entities like **Feature Flags, Configs, Environments** or **Products** within ConfigCat.  **Base API URL**: https://api.configcat.com  If you prefer the swagger documentation, you can find it here: [Swagger UI](https://api.configcat.com/swagger).  The API is based on HTTP REST, uses resource-oriented URLs, status codes and supports JSON  format.   **Important:** Do not use this API for accessing and evaluating feature flag values. Use the [SDKs](https://configcat.com/docs/sdk-reference/overview) or the [ConfigCat Proxy](https://configcat.com/docs/advanced/proxy/proxy-overview/) instead.  # OpenAPI Specification  The complete specification is publicly available in the following formats:  - [OpenAPI v3](https://api.configcat.com/docs/v1/swagger.json) - [Swagger v2](https://api.configcat.com/docs/v1/swagger.v2.json)  You can use it to generate client libraries in various languages with [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) or [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) to interact with this API.  # Authentication This API uses the [Basic HTTP Authentication Scheme](https://en.wikipedia.org/wiki/Basic_access_authentication).   <!-- ReDoc-Inject: <security-definitions> -->  # Throttling and rate limits All the rate limited API calls are returning information about the current rate limit period in the following HTTP headers:  | Header | Description | | :- | :- | | X-Rate-Limit-Remaining | The maximum number of requests remaining in the current rate limit period. | | X-Rate-Limit-Reset     | The time when the current rate limit period resets.        |  When the rate limit is exceeded by a request, the API returns with a `HTTP 429 - Too many requests` status along with a `Retry-After` HTTP header. 
  *
  * The version of the OpenAPI document: v1
  * Contact: support@configcat.com
@@ -10,8 +10,8 @@
  * Do not edit the class manually.
  */
 
-package com.configcat.publicapi.java.client.api;
 
+package com.configcat.publicapi.java.client.api;
 
 import com.configcat.publicapi.java.client.ApiCallback;
 import com.configcat.publicapi.java.client.ApiClient;
@@ -19,17 +19,25 @@ import com.configcat.publicapi.java.client.ApiException;
 import com.configcat.publicapi.java.client.ApiResponse;
 import com.configcat.publicapi.java.client.Configuration;
 import com.configcat.publicapi.java.client.Pair;
+import com.configcat.publicapi.java.client.ProgressRequestBody;
+import com.configcat.publicapi.java.client.ProgressResponseBody;
+
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
+
+
 import com.configcat.publicapi.java.client.model.CreateIntegrationModel;
 import com.configcat.publicapi.java.client.model.IntegrationModel;
 import com.configcat.publicapi.java.client.model.IntegrationsModel;
 import com.configcat.publicapi.java.client.model.ModifyIntegrationRequest;
-import com.google.gson.reflect.TypeToken;
+import java.util.UUID;
+
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 public class IntegrationsApi {
     private ApiClient localVarApiClient;
@@ -70,34 +78,29 @@ public class IntegrationsApi {
 
     /**
      * Build call for createIntegration
-     *
      * @param productId The identifier of the Product. (required)
-     * @param createIntegrationModel (required)
+     * @param createIntegrationModel  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call createIntegrationCall(
-            UUID productId,
-            CreateIntegrationModel createIntegrationModel,
-            final ApiCallback _callback)
-            throws ApiException {
+    public okhttp3.Call createIntegrationCall(UUID productId, CreateIntegrationModel createIntegrationModel, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {};
+        String[] localBasePaths = new String[] {  };
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null) {
+        if (localCustomBaseUrl != null){
             basePath = localCustomBaseUrl;
-        } else if (localBasePaths.length > 0) {
+        } else if ( localBasePaths.length > 0 ) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -106,11 +109,8 @@ public class IntegrationsApi {
         Object localVarPostBody = createIntegrationModel;
 
         // create path and map variables
-        String localVarPath =
-                "/v1/products/{productId}/integrations"
-                        .replace(
-                                "{" + "productId" + "}",
-                                localVarApiClient.escapeString(productId.toString()));
+        String localVarPath = "/v1/products/{productId}/integrations"
+            .replace("{" + "productId" + "}", localVarApiClient.escapeString(productId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -118,218 +118,135 @@ public class IntegrationsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        final String[] localVarAccepts = {"application/json"};
+        final String[] localVarAccepts = {
+            "application/json"
+        };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
             localVarHeaderParams.put("Accept", localVarAccept);
         }
 
         final String[] localVarContentTypes = {
-            "application/json", "text/json", "application/*+json"
+            "application/json",
+            "text/json",
+            "application/*+json"
         };
-        final String localVarContentType =
-                localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] {"Basic"};
-        return localVarApiClient.buildCall(
-                basePath,
-                localVarPath,
-                "POST",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarCookieParams,
-                localVarFormParams,
-                localVarAuthNames,
-                _callback);
+        String[] localVarAuthNames = new String[] { "Basic" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createIntegrationValidateBeforeCall(
-            UUID productId,
-            CreateIntegrationModel createIntegrationModel,
-            final ApiCallback _callback)
-            throws ApiException {
+    private okhttp3.Call createIntegrationValidateBeforeCall(UUID productId, CreateIntegrationModel createIntegrationModel, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'productId' is set
         if (productId == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'productId' when calling"
-                            + " createIntegration(Async)");
+            throw new ApiException("Missing the required parameter 'productId' when calling createIntegration(Async)");
         }
 
         // verify the required parameter 'createIntegrationModel' is set
         if (createIntegrationModel == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'createIntegrationModel' when calling"
-                            + " createIntegration(Async)");
+            throw new ApiException("Missing the required parameter 'createIntegrationModel' when calling createIntegration(Async)");
         }
 
         return createIntegrationCall(productId, createIntegrationModel, _callback);
+
     }
 
     /**
-     * Create Integration This endpoint creates a new Integration in a specified Product identified
-     * by the &#x60;productId&#x60; parameter, which can be obtained from the [List
-     * Products](#operation/get-products) endpoint. The Parameters dictionary differs for each
-     * IntegrationType: - Datadog - &#x60;apikey&#x60;: Required. Datadog API key. -
-     * &#x60;site&#x60;: Datadog site. Available values: &#x60;Us&#x60;, &#x60;Eu&#x60;,
-     * &#x60;Us1Fed&#x60;, &#x60;Us3&#x60;, &#x60;Us5&#x60;. Default: &#x60;Us&#x60;. - Slack
-     * Connecting the Slack integration through the Public Management API will not post messages
-     * with the ConfigCat Feature Flags Slack app but with an incoming webhook. -
-     * &#x60;incoming_webhook.url&#x60;: Required. The [incoming webhook
-     * URL](https://api.slack.com/messaging/webhooks) where the integration should post messages. -
-     * Amplitude - &#x60;apiKey&#x60;: Required. Amplitude API Key. - &#x60;secretKey&#x60;:
-     * Required. Amplitude Secret Key. - Mixpanel - &#x60;serviceAccountUserName&#x60;: Required.
-     * Mixpanel Service Account Username. - &#x60;serviceAccountSecret&#x60;: Required. Mixpanel
-     * Service Account Secret. - &#x60;projectId&#x60;: Required. Mixpanel Project ID. -
-     * &#x60;server&#x60;: Mixpanel Server. Available values: &#x60;StandardServer&#x60;,
-     * &#x60;EUResidencyServer&#x60;. Default: &#x60;StandardServer&#x60;. - Twilio Segment -
-     * &#x60;writeKey&#x60;: Required. Twilio Segment Write Key. - &#x60;server&#x60;: Twilio
-     * Segment Server. Available values: &#x60;Us&#x60;, &#x60;Eu&#x60;. Default: &#x60;Us&#x60;. -
-     * PubNub (work in progress)
-     *
+     * Create Integration
+     * This endpoint creates a new Integration in a specified Product  identified by the &#x60;productId&#x60; parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.  The Parameters dictionary differs for each IntegrationType: - Datadog  - &#x60;apikey&#x60;: Required. Datadog API key.  - &#x60;site&#x60;: Datadog site. Available values: &#x60;Us&#x60;, &#x60;Eu&#x60;, &#x60;Us1Fed&#x60;, &#x60;Us3&#x60;, &#x60;Us5&#x60;. Default: &#x60;Us&#x60;. - Slack    Connecting the Slack integration through the Public Management API will not post messages with the ConfigCat Feature Flags Slack app but with an incoming webhook.  - &#x60;incoming_webhook.url&#x60;: Required. The [incoming webhook URL](https://api.slack.com/messaging/webhooks) where the integration should post messages. - Amplitude  - &#x60;apiKey&#x60;: Required. Amplitude API Key.  - &#x60;secretKey&#x60;: Required. Amplitude Secret Key. - Mixpanel  - &#x60;serviceAccountUserName&#x60;: Required. Mixpanel Service Account Username.  - &#x60;serviceAccountSecret&#x60;: Required. Mixpanel Service Account Secret.  - &#x60;projectId&#x60;: Required. Mixpanel Project ID.  - &#x60;server&#x60;: Mixpanel Server. Available values: &#x60;StandardServer&#x60;, &#x60;EUResidencyServer&#x60;. Default: &#x60;StandardServer&#x60;. - Twilio Segment  - &#x60;writeKey&#x60;: Required. Twilio Segment Write Key.  - &#x60;server&#x60;: Twilio Segment Server. Available values: &#x60;Us&#x60;, &#x60;Eu&#x60;. Default: &#x60;Us&#x60;. - PubNub (work in progress)
      * @param productId The identifier of the Product. (required)
-     * @param createIntegrationModel (required)
+     * @param createIntegrationModel  (required)
      * @return IntegrationModel
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public IntegrationModel createIntegration(
-            UUID productId, CreateIntegrationModel createIntegrationModel) throws ApiException {
-        ApiResponse<IntegrationModel> localVarResp =
-                createIntegrationWithHttpInfo(productId, createIntegrationModel);
+    public IntegrationModel createIntegration(UUID productId, CreateIntegrationModel createIntegrationModel) throws ApiException {
+        ApiResponse<IntegrationModel> localVarResp = createIntegrationWithHttpInfo(productId, createIntegrationModel);
         return localVarResp.getData();
     }
 
     /**
-     * Create Integration This endpoint creates a new Integration in a specified Product identified
-     * by the &#x60;productId&#x60; parameter, which can be obtained from the [List
-     * Products](#operation/get-products) endpoint. The Parameters dictionary differs for each
-     * IntegrationType: - Datadog - &#x60;apikey&#x60;: Required. Datadog API key. -
-     * &#x60;site&#x60;: Datadog site. Available values: &#x60;Us&#x60;, &#x60;Eu&#x60;,
-     * &#x60;Us1Fed&#x60;, &#x60;Us3&#x60;, &#x60;Us5&#x60;. Default: &#x60;Us&#x60;. - Slack
-     * Connecting the Slack integration through the Public Management API will not post messages
-     * with the ConfigCat Feature Flags Slack app but with an incoming webhook. -
-     * &#x60;incoming_webhook.url&#x60;: Required. The [incoming webhook
-     * URL](https://api.slack.com/messaging/webhooks) where the integration should post messages. -
-     * Amplitude - &#x60;apiKey&#x60;: Required. Amplitude API Key. - &#x60;secretKey&#x60;:
-     * Required. Amplitude Secret Key. - Mixpanel - &#x60;serviceAccountUserName&#x60;: Required.
-     * Mixpanel Service Account Username. - &#x60;serviceAccountSecret&#x60;: Required. Mixpanel
-     * Service Account Secret. - &#x60;projectId&#x60;: Required. Mixpanel Project ID. -
-     * &#x60;server&#x60;: Mixpanel Server. Available values: &#x60;StandardServer&#x60;,
-     * &#x60;EUResidencyServer&#x60;. Default: &#x60;StandardServer&#x60;. - Twilio Segment -
-     * &#x60;writeKey&#x60;: Required. Twilio Segment Write Key. - &#x60;server&#x60;: Twilio
-     * Segment Server. Available values: &#x60;Us&#x60;, &#x60;Eu&#x60;. Default: &#x60;Us&#x60;. -
-     * PubNub (work in progress)
-     *
+     * Create Integration
+     * This endpoint creates a new Integration in a specified Product  identified by the &#x60;productId&#x60; parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.  The Parameters dictionary differs for each IntegrationType: - Datadog  - &#x60;apikey&#x60;: Required. Datadog API key.  - &#x60;site&#x60;: Datadog site. Available values: &#x60;Us&#x60;, &#x60;Eu&#x60;, &#x60;Us1Fed&#x60;, &#x60;Us3&#x60;, &#x60;Us5&#x60;. Default: &#x60;Us&#x60;. - Slack    Connecting the Slack integration through the Public Management API will not post messages with the ConfigCat Feature Flags Slack app but with an incoming webhook.  - &#x60;incoming_webhook.url&#x60;: Required. The [incoming webhook URL](https://api.slack.com/messaging/webhooks) where the integration should post messages. - Amplitude  - &#x60;apiKey&#x60;: Required. Amplitude API Key.  - &#x60;secretKey&#x60;: Required. Amplitude Secret Key. - Mixpanel  - &#x60;serviceAccountUserName&#x60;: Required. Mixpanel Service Account Username.  - &#x60;serviceAccountSecret&#x60;: Required. Mixpanel Service Account Secret.  - &#x60;projectId&#x60;: Required. Mixpanel Project ID.  - &#x60;server&#x60;: Mixpanel Server. Available values: &#x60;StandardServer&#x60;, &#x60;EUResidencyServer&#x60;. Default: &#x60;StandardServer&#x60;. - Twilio Segment  - &#x60;writeKey&#x60;: Required. Twilio Segment Write Key.  - &#x60;server&#x60;: Twilio Segment Server. Available values: &#x60;Us&#x60;, &#x60;Eu&#x60;. Default: &#x60;Us&#x60;. - PubNub (work in progress)
      * @param productId The identifier of the Product. (required)
-     * @param createIntegrationModel (required)
+     * @param createIntegrationModel  (required)
      * @return ApiResponse&lt;IntegrationModel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public ApiResponse<IntegrationModel> createIntegrationWithHttpInfo(
-            UUID productId, CreateIntegrationModel createIntegrationModel) throws ApiException {
-        okhttp3.Call localVarCall =
-                createIntegrationValidateBeforeCall(productId, createIntegrationModel, null);
-        Type localVarReturnType = new TypeToken<IntegrationModel>() {}.getType();
+    public ApiResponse<IntegrationModel> createIntegrationWithHttpInfo(UUID productId, CreateIntegrationModel createIntegrationModel) throws ApiException {
+        okhttp3.Call localVarCall = createIntegrationValidateBeforeCall(productId, createIntegrationModel, null);
+        Type localVarReturnType = new TypeToken<IntegrationModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Create Integration (asynchronously) This endpoint creates a new Integration in a specified
-     * Product identified by the &#x60;productId&#x60; parameter, which can be obtained from the
-     * [List Products](#operation/get-products) endpoint. The Parameters dictionary differs for each
-     * IntegrationType: - Datadog - &#x60;apikey&#x60;: Required. Datadog API key. -
-     * &#x60;site&#x60;: Datadog site. Available values: &#x60;Us&#x60;, &#x60;Eu&#x60;,
-     * &#x60;Us1Fed&#x60;, &#x60;Us3&#x60;, &#x60;Us5&#x60;. Default: &#x60;Us&#x60;. - Slack
-     * Connecting the Slack integration through the Public Management API will not post messages
-     * with the ConfigCat Feature Flags Slack app but with an incoming webhook. -
-     * &#x60;incoming_webhook.url&#x60;: Required. The [incoming webhook
-     * URL](https://api.slack.com/messaging/webhooks) where the integration should post messages. -
-     * Amplitude - &#x60;apiKey&#x60;: Required. Amplitude API Key. - &#x60;secretKey&#x60;:
-     * Required. Amplitude Secret Key. - Mixpanel - &#x60;serviceAccountUserName&#x60;: Required.
-     * Mixpanel Service Account Username. - &#x60;serviceAccountSecret&#x60;: Required. Mixpanel
-     * Service Account Secret. - &#x60;projectId&#x60;: Required. Mixpanel Project ID. -
-     * &#x60;server&#x60;: Mixpanel Server. Available values: &#x60;StandardServer&#x60;,
-     * &#x60;EUResidencyServer&#x60;. Default: &#x60;StandardServer&#x60;. - Twilio Segment -
-     * &#x60;writeKey&#x60;: Required. Twilio Segment Write Key. - &#x60;server&#x60;: Twilio
-     * Segment Server. Available values: &#x60;Us&#x60;, &#x60;Eu&#x60;. Default: &#x60;Us&#x60;. -
-     * PubNub (work in progress)
-     *
+     * Create Integration (asynchronously)
+     * This endpoint creates a new Integration in a specified Product  identified by the &#x60;productId&#x60; parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.  The Parameters dictionary differs for each IntegrationType: - Datadog  - &#x60;apikey&#x60;: Required. Datadog API key.  - &#x60;site&#x60;: Datadog site. Available values: &#x60;Us&#x60;, &#x60;Eu&#x60;, &#x60;Us1Fed&#x60;, &#x60;Us3&#x60;, &#x60;Us5&#x60;. Default: &#x60;Us&#x60;. - Slack    Connecting the Slack integration through the Public Management API will not post messages with the ConfigCat Feature Flags Slack app but with an incoming webhook.  - &#x60;incoming_webhook.url&#x60;: Required. The [incoming webhook URL](https://api.slack.com/messaging/webhooks) where the integration should post messages. - Amplitude  - &#x60;apiKey&#x60;: Required. Amplitude API Key.  - &#x60;secretKey&#x60;: Required. Amplitude Secret Key. - Mixpanel  - &#x60;serviceAccountUserName&#x60;: Required. Mixpanel Service Account Username.  - &#x60;serviceAccountSecret&#x60;: Required. Mixpanel Service Account Secret.  - &#x60;projectId&#x60;: Required. Mixpanel Project ID.  - &#x60;server&#x60;: Mixpanel Server. Available values: &#x60;StandardServer&#x60;, &#x60;EUResidencyServer&#x60;. Default: &#x60;StandardServer&#x60;. - Twilio Segment  - &#x60;writeKey&#x60;: Required. Twilio Segment Write Key.  - &#x60;server&#x60;: Twilio Segment Server. Available values: &#x60;Us&#x60;, &#x60;Eu&#x60;. Default: &#x60;Us&#x60;. - PubNub (work in progress)
      * @param productId The identifier of the Product. (required)
-     * @param createIntegrationModel (required)
+     * @param createIntegrationModel  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body
-     *     object
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call createIntegrationAsync(
-            UUID productId,
-            CreateIntegrationModel createIntegrationModel,
-            final ApiCallback<IntegrationModel> _callback)
-            throws ApiException {
+    public okhttp3.Call createIntegrationAsync(UUID productId, CreateIntegrationModel createIntegrationModel, final ApiCallback<IntegrationModel> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall =
-                createIntegrationValidateBeforeCall(productId, createIntegrationModel, _callback);
-        Type localVarReturnType = new TypeToken<IntegrationModel>() {}.getType();
+        okhttp3.Call localVarCall = createIntegrationValidateBeforeCall(productId, createIntegrationModel, _callback);
+        Type localVarReturnType = new TypeToken<IntegrationModel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for deleteIntegration
-     *
      * @param integrationId The identifier of the Integration. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call deleteIntegrationCall(UUID integrationId, final ApiCallback _callback)
-            throws ApiException {
+    public okhttp3.Call deleteIntegrationCall(UUID integrationId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {};
+        String[] localBasePaths = new String[] {  };
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null) {
+        if (localCustomBaseUrl != null){
             basePath = localCustomBaseUrl;
-        } else if (localBasePaths.length > 0) {
+        } else if ( localBasePaths.length > 0 ) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -338,11 +255,8 @@ public class IntegrationsApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath =
-                "/v1/integrations/{integrationId}"
-                        .replace(
-                                "{" + "integrationId" + "}",
-                                localVarApiClient.escapeString(integrationId.toString()));
+        String localVarPath = "/v1/integrations/{integrationId}"
+            .replace("{" + "integrationId" + "}", localVarApiClient.escapeString(integrationId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -350,83 +264,67 @@ public class IntegrationsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        final String[] localVarAccepts = {};
+        final String[] localVarAccepts = {
+        };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
             localVarHeaderParams.put("Accept", localVarAccept);
         }
 
-        final String[] localVarContentTypes = {};
-        final String localVarContentType =
-                localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] {"Basic"};
-        return localVarApiClient.buildCall(
-                basePath,
-                localVarPath,
-                "DELETE",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarCookieParams,
-                localVarFormParams,
-                localVarAuthNames,
-                _callback);
+        String[] localVarAuthNames = new String[] { "Basic" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteIntegrationValidateBeforeCall(
-            UUID integrationId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteIntegrationValidateBeforeCall(UUID integrationId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'integrationId' is set
         if (integrationId == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'integrationId' when calling"
-                            + " deleteIntegration(Async)");
+            throw new ApiException("Missing the required parameter 'integrationId' when calling deleteIntegration(Async)");
         }
 
         return deleteIntegrationCall(integrationId, _callback);
+
     }
 
     /**
-     * Delete Integration This endpoint removes a Integration identified by the
-     * &#x60;integrationId&#x60; parameter.
-     *
+     * Delete Integration
+     * This endpoint removes a Integration identified by the &#x60;integrationId&#x60; parameter.
      * @param integrationId The identifier of the Integration. (required)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
     public void deleteIntegration(UUID integrationId) throws ApiException {
         deleteIntegrationWithHttpInfo(integrationId);
     }
 
     /**
-     * Delete Integration This endpoint removes a Integration identified by the
-     * &#x60;integrationId&#x60; parameter.
-     *
+     * Delete Integration
+     * This endpoint removes a Integration identified by the &#x60;integrationId&#x60; parameter.
      * @param integrationId The identifier of the Integration. (required)
      * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
     public ApiResponse<Void> deleteIntegrationWithHttpInfo(UUID integrationId) throws ApiException {
         okhttp3.Call localVarCall = deleteIntegrationValidateBeforeCall(integrationId, null);
@@ -434,25 +332,22 @@ public class IntegrationsApi {
     }
 
     /**
-     * Delete Integration (asynchronously) This endpoint removes a Integration identified by the
-     * &#x60;integrationId&#x60; parameter.
-     *
+     * Delete Integration (asynchronously)
+     * This endpoint removes a Integration identified by the &#x60;integrationId&#x60; parameter.
      * @param integrationId The identifier of the Integration. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body
-     *     object
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call deleteIntegrationAsync(
-            UUID integrationId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteIntegrationAsync(UUID integrationId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteIntegrationValidateBeforeCall(integrationId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -460,30 +355,28 @@ public class IntegrationsApi {
     }
     /**
      * Build call for getIntegration
-     *
      * @param integrationId The identifier of the Integration. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td> When everything is ok, the integration data returned. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When everything is ok, the integration data returned. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call getIntegrationCall(UUID integrationId, final ApiCallback _callback)
-            throws ApiException {
+    public okhttp3.Call getIntegrationCall(UUID integrationId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {};
+        String[] localBasePaths = new String[] {  };
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null) {
+        if (localCustomBaseUrl != null){
             basePath = localCustomBaseUrl;
-        } else if (localBasePaths.length > 0) {
+        } else if ( localBasePaths.length > 0 ) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -492,11 +385,8 @@ public class IntegrationsApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath =
-                "/v1/integrations/{integrationId}"
-                        .replace(
-                                "{" + "integrationId" + "}",
-                                localVarApiClient.escapeString(integrationId.toString()));
+        String localVarPath = "/v1/integrations/{integrationId}"
+            .replace("{" + "integrationId" + "}", localVarApiClient.escapeString(integrationId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -504,63 +394,50 @@ public class IntegrationsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        final String[] localVarAccepts = {"application/json"};
+        final String[] localVarAccepts = {
+            "application/json"
+        };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
             localVarHeaderParams.put("Accept", localVarAccept);
         }
 
-        final String[] localVarContentTypes = {};
-        final String localVarContentType =
-                localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] {"Basic"};
-        return localVarApiClient.buildCall(
-                basePath,
-                localVarPath,
-                "GET",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarCookieParams,
-                localVarFormParams,
-                localVarAuthNames,
-                _callback);
+        String[] localVarAuthNames = new String[] { "Basic" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getIntegrationValidateBeforeCall(
-            UUID integrationId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getIntegrationValidateBeforeCall(UUID integrationId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'integrationId' is set
         if (integrationId == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'integrationId' when calling"
-                            + " getIntegration(Async)");
+            throw new ApiException("Missing the required parameter 'integrationId' when calling getIntegration(Async)");
         }
 
         return getIntegrationCall(integrationId, _callback);
+
     }
 
     /**
-     * Get Integration This endpoint returns the metadata of an Integration identified by the
-     * &#x60;integrationId&#x60;.
-     *
+     * Get Integration
+     * This endpoint returns the metadata of an Integration identified by the &#x60;integrationId&#x60;.
      * @param integrationId The identifier of the Integration. (required)
      * @return IntegrationModel
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td> When everything is ok, the integration data returned. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When everything is ok, the integration data returned. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
     public IntegrationModel getIntegration(UUID integrationId) throws ApiException {
         ApiResponse<IntegrationModel> localVarResp = getIntegrationWithHttpInfo(integrationId);
@@ -568,81 +445,73 @@ public class IntegrationsApi {
     }
 
     /**
-     * Get Integration This endpoint returns the metadata of an Integration identified by the
-     * &#x60;integrationId&#x60;.
-     *
+     * Get Integration
+     * This endpoint returns the metadata of an Integration identified by the &#x60;integrationId&#x60;.
      * @param integrationId The identifier of the Integration. (required)
      * @return ApiResponse&lt;IntegrationModel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td> When everything is ok, the integration data returned. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When everything is ok, the integration data returned. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public ApiResponse<IntegrationModel> getIntegrationWithHttpInfo(UUID integrationId)
-            throws ApiException {
+    public ApiResponse<IntegrationModel> getIntegrationWithHttpInfo(UUID integrationId) throws ApiException {
         okhttp3.Call localVarCall = getIntegrationValidateBeforeCall(integrationId, null);
-        Type localVarReturnType = new TypeToken<IntegrationModel>() {}.getType();
+        Type localVarReturnType = new TypeToken<IntegrationModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Get Integration (asynchronously) This endpoint returns the metadata of an Integration
-     * identified by the &#x60;integrationId&#x60;.
-     *
+     * Get Integration (asynchronously)
+     * This endpoint returns the metadata of an Integration identified by the &#x60;integrationId&#x60;.
      * @param integrationId The identifier of the Integration. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body
-     *     object
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td> When everything is ok, the integration data returned. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When everything is ok, the integration data returned. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call getIntegrationAsync(
-            UUID integrationId, final ApiCallback<IntegrationModel> _callback) throws ApiException {
+    public okhttp3.Call getIntegrationAsync(UUID integrationId, final ApiCallback<IntegrationModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getIntegrationValidateBeforeCall(integrationId, _callback);
-        Type localVarReturnType = new TypeToken<IntegrationModel>() {}.getType();
+        Type localVarReturnType = new TypeToken<IntegrationModel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for getIntegrations
-     *
      * @param productId The identifier of the Product. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call getIntegrationsCall(UUID productId, final ApiCallback _callback)
-            throws ApiException {
+    public okhttp3.Call getIntegrationsCall(UUID productId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {};
+        String[] localBasePaths = new String[] {  };
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null) {
+        if (localCustomBaseUrl != null){
             basePath = localCustomBaseUrl;
-        } else if (localBasePaths.length > 0) {
+        } else if ( localBasePaths.length > 0 ) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -651,11 +520,8 @@ public class IntegrationsApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath =
-                "/v1/products/{productId}/integrations"
-                        .replace(
-                                "{" + "productId" + "}",
-                                localVarApiClient.escapeString(productId.toString()));
+        String localVarPath = "/v1/products/{productId}/integrations"
+            .replace("{" + "productId" + "}", localVarApiClient.escapeString(productId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -663,64 +529,50 @@ public class IntegrationsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        final String[] localVarAccepts = {"application/json"};
+        final String[] localVarAccepts = {
+            "application/json"
+        };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
             localVarHeaderParams.put("Accept", localVarAccept);
         }
 
-        final String[] localVarContentTypes = {};
-        final String localVarContentType =
-                localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] {"Basic"};
-        return localVarApiClient.buildCall(
-                basePath,
-                localVarPath,
-                "GET",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarCookieParams,
-                localVarFormParams,
-                localVarAuthNames,
-                _callback);
+        String[] localVarAuthNames = new String[] { "Basic" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getIntegrationsValidateBeforeCall(
-            UUID productId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getIntegrationsValidateBeforeCall(UUID productId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'productId' is set
         if (productId == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'productId' when calling"
-                            + " getIntegrations(Async)");
+            throw new ApiException("Missing the required parameter 'productId' when calling getIntegrations(Async)");
         }
 
         return getIntegrationsCall(productId, _callback);
+
     }
 
     /**
-     * List Integrations This endpoint returns the list of the Integrations that belongs to the
-     * given Product identified by the &#x60;productId&#x60; parameter, which can be obtained from
-     * the [List Products](#operation/get-products) endpoint.
-     *
+     * List Integrations
+     * This endpoint returns the list of the Integrations that belongs to the given Product identified by the &#x60;productId&#x60; parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.
      * @param productId The identifier of the Product. (required)
      * @return IntegrationsModel
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
     public IntegrationsModel getIntegrations(UUID productId) throws ApiException {
         ApiResponse<IntegrationsModel> localVarResp = getIntegrationsWithHttpInfo(productId);
@@ -728,87 +580,74 @@ public class IntegrationsApi {
     }
 
     /**
-     * List Integrations This endpoint returns the list of the Integrations that belongs to the
-     * given Product identified by the &#x60;productId&#x60; parameter, which can be obtained from
-     * the [List Products](#operation/get-products) endpoint.
-     *
+     * List Integrations
+     * This endpoint returns the list of the Integrations that belongs to the given Product identified by the &#x60;productId&#x60; parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.
      * @param productId The identifier of the Product. (required)
      * @return ApiResponse&lt;IntegrationsModel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public ApiResponse<IntegrationsModel> getIntegrationsWithHttpInfo(UUID productId)
-            throws ApiException {
+    public ApiResponse<IntegrationsModel> getIntegrationsWithHttpInfo(UUID productId) throws ApiException {
         okhttp3.Call localVarCall = getIntegrationsValidateBeforeCall(productId, null);
-        Type localVarReturnType = new TypeToken<IntegrationsModel>() {}.getType();
+        Type localVarReturnType = new TypeToken<IntegrationsModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * List Integrations (asynchronously) This endpoint returns the list of the Integrations that
-     * belongs to the given Product identified by the &#x60;productId&#x60; parameter, which can be
-     * obtained from the [List Products](#operation/get-products) endpoint.
-     *
+     * List Integrations (asynchronously)
+     * This endpoint returns the list of the Integrations that belongs to the given Product identified by the &#x60;productId&#x60; parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.
      * @param productId The identifier of the Product. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body
-     *     object
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call getIntegrationsAsync(
-            UUID productId, final ApiCallback<IntegrationsModel> _callback) throws ApiException {
+    public okhttp3.Call getIntegrationsAsync(UUID productId, final ApiCallback<IntegrationsModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getIntegrationsValidateBeforeCall(productId, _callback);
-        Type localVarReturnType = new TypeToken<IntegrationsModel>() {}.getType();
+        Type localVarReturnType = new TypeToken<IntegrationsModel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for updateIntegration
-     *
      * @param integrationId The identifier of the Integration. (required)
-     * @param modifyIntegrationRequest (required)
+     * @param modifyIntegrationRequest  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call updateIntegrationCall(
-            UUID integrationId,
-            ModifyIntegrationRequest modifyIntegrationRequest,
-            final ApiCallback _callback)
-            throws ApiException {
+    public okhttp3.Call updateIntegrationCall(UUID integrationId, ModifyIntegrationRequest modifyIntegrationRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {};
+        String[] localBasePaths = new String[] {  };
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null) {
+        if (localCustomBaseUrl != null){
             basePath = localCustomBaseUrl;
-        } else if (localBasePaths.length > 0) {
+        } else if ( localBasePaths.length > 0 ) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -817,11 +656,8 @@ public class IntegrationsApi {
         Object localVarPostBody = modifyIntegrationRequest;
 
         // create path and map variables
-        String localVarPath =
-                "/v1/integrations/{integrationId}"
-                        .replace(
-                                "{" + "integrationId" + "}",
-                                localVarApiClient.escapeString(integrationId.toString()));
+        String localVarPath = "/v1/integrations/{integrationId}"
+            .replace("{" + "integrationId" + "}", localVarApiClient.escapeString(integrationId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -829,187 +665,108 @@ public class IntegrationsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        final String[] localVarAccepts = {"application/json"};
+        final String[] localVarAccepts = {
+            "application/json"
+        };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
             localVarHeaderParams.put("Accept", localVarAccept);
         }
 
         final String[] localVarContentTypes = {
-            "application/json", "text/json", "application/*+json"
+            "application/json",
+            "text/json",
+            "application/*+json"
         };
-        final String localVarContentType =
-                localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] {"Basic"};
-        return localVarApiClient.buildCall(
-                basePath,
-                localVarPath,
-                "PUT",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarCookieParams,
-                localVarFormParams,
-                localVarAuthNames,
-                _callback);
+        String[] localVarAuthNames = new String[] { "Basic" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateIntegrationValidateBeforeCall(
-            UUID integrationId,
-            ModifyIntegrationRequest modifyIntegrationRequest,
-            final ApiCallback _callback)
-            throws ApiException {
+    private okhttp3.Call updateIntegrationValidateBeforeCall(UUID integrationId, ModifyIntegrationRequest modifyIntegrationRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'integrationId' is set
         if (integrationId == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'integrationId' when calling"
-                            + " updateIntegration(Async)");
+            throw new ApiException("Missing the required parameter 'integrationId' when calling updateIntegration(Async)");
         }
 
         // verify the required parameter 'modifyIntegrationRequest' is set
         if (modifyIntegrationRequest == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'modifyIntegrationRequest' when calling"
-                            + " updateIntegration(Async)");
+            throw new ApiException("Missing the required parameter 'modifyIntegrationRequest' when calling updateIntegration(Async)");
         }
 
         return updateIntegrationCall(integrationId, modifyIntegrationRequest, _callback);
+
     }
 
     /**
-     * Update Integration This endpoint updates a Config identified by the &#x60;integrationId&#x60;
-     * parameter. The Parameters dictionary differs for each IntegrationType: - Datadog -
-     * &#x60;apikey&#x60;: Required. Datadog API key. - &#x60;site&#x60;: Datadog site. Available
-     * values: &#x60;Us&#x60;, &#x60;Eu&#x60;, &#x60;Us1Fed&#x60;, &#x60;Us3&#x60;, &#x60;Us5&#x60;.
-     * Default: &#x60;Us&#x60;. - Slack Connecting the Slack integration through the Public
-     * Management API will not post messages with the ConfigCat Feature Flags Slack app but with an
-     * incoming webhook. - &#x60;incoming_webhook.url&#x60;: Required. The [incoming webhook
-     * URL](https://api.slack.com/messaging/webhooks) where the integration should post messages. -
-     * Amplitude - &#x60;apiKey&#x60;: Required. Amplitude API Key. - &#x60;secretKey&#x60;:
-     * Required. Amplitude Secret Key. - Mixpanel - &#x60;serviceAccountUserName&#x60;: Required.
-     * Mixpanel Service Account Username. - &#x60;serviceAccountSecret&#x60;: Required. Mixpanel
-     * Service Account Secret. - &#x60;projectId&#x60;: Required. Mixpanel Project ID. -
-     * &#x60;server&#x60;: Mixpanel Server. Available values: &#x60;StandardServer&#x60;,
-     * &#x60;EUResidencyServer&#x60;. Default: &#x60;StandardServer&#x60;. - Twilio Segment -
-     * &#x60;writeKey&#x60;: Required. Twilio Segment Write Key. - &#x60;server&#x60;: Twilio
-     * Segment Server. Available values: &#x60;Us&#x60;, &#x60;Eu&#x60;. Default: &#x60;Us&#x60;. -
-     * PubNub (work in progress)
-     *
+     * Update Integration
+     * This endpoint updates a Config identified by the &#x60;integrationId&#x60; parameter.  The Parameters dictionary differs for each IntegrationType: - Datadog  - &#x60;apikey&#x60;: Required. Datadog API key.  - &#x60;site&#x60;: Datadog site. Available values: &#x60;Us&#x60;, &#x60;Eu&#x60;, &#x60;Us1Fed&#x60;, &#x60;Us3&#x60;, &#x60;Us5&#x60;. Default: &#x60;Us&#x60;. - Slack    Connecting the Slack integration through the Public Management API will not post messages with the ConfigCat Feature Flags Slack app but with an incoming webhook.  - &#x60;incoming_webhook.url&#x60;: Required. The [incoming webhook URL](https://api.slack.com/messaging/webhooks) where the integration should post messages. - Amplitude  - &#x60;apiKey&#x60;: Required. Amplitude API Key.  - &#x60;secretKey&#x60;: Required. Amplitude Secret Key. - Mixpanel  - &#x60;serviceAccountUserName&#x60;: Required. Mixpanel Service Account Username.  - &#x60;serviceAccountSecret&#x60;: Required. Mixpanel Service Account Secret.  - &#x60;projectId&#x60;: Required. Mixpanel Project ID.  - &#x60;server&#x60;: Mixpanel Server. Available values: &#x60;StandardServer&#x60;, &#x60;EUResidencyServer&#x60;. Default: &#x60;StandardServer&#x60;. - Twilio Segment  - &#x60;writeKey&#x60;: Required. Twilio Segment Write Key.  - &#x60;server&#x60;: Twilio Segment Server. Available values: &#x60;Us&#x60;, &#x60;Eu&#x60;. Default: &#x60;Us&#x60;. - PubNub (work in progress)
      * @param integrationId The identifier of the Integration. (required)
-     * @param modifyIntegrationRequest (required)
+     * @param modifyIntegrationRequest  (required)
      * @return IntegrationModel
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public IntegrationModel updateIntegration(
-            UUID integrationId, ModifyIntegrationRequest modifyIntegrationRequest)
-            throws ApiException {
-        ApiResponse<IntegrationModel> localVarResp =
-                updateIntegrationWithHttpInfo(integrationId, modifyIntegrationRequest);
+    public IntegrationModel updateIntegration(UUID integrationId, ModifyIntegrationRequest modifyIntegrationRequest) throws ApiException {
+        ApiResponse<IntegrationModel> localVarResp = updateIntegrationWithHttpInfo(integrationId, modifyIntegrationRequest);
         return localVarResp.getData();
     }
 
     /**
-     * Update Integration This endpoint updates a Config identified by the &#x60;integrationId&#x60;
-     * parameter. The Parameters dictionary differs for each IntegrationType: - Datadog -
-     * &#x60;apikey&#x60;: Required. Datadog API key. - &#x60;site&#x60;: Datadog site. Available
-     * values: &#x60;Us&#x60;, &#x60;Eu&#x60;, &#x60;Us1Fed&#x60;, &#x60;Us3&#x60;, &#x60;Us5&#x60;.
-     * Default: &#x60;Us&#x60;. - Slack Connecting the Slack integration through the Public
-     * Management API will not post messages with the ConfigCat Feature Flags Slack app but with an
-     * incoming webhook. - &#x60;incoming_webhook.url&#x60;: Required. The [incoming webhook
-     * URL](https://api.slack.com/messaging/webhooks) where the integration should post messages. -
-     * Amplitude - &#x60;apiKey&#x60;: Required. Amplitude API Key. - &#x60;secretKey&#x60;:
-     * Required. Amplitude Secret Key. - Mixpanel - &#x60;serviceAccountUserName&#x60;: Required.
-     * Mixpanel Service Account Username. - &#x60;serviceAccountSecret&#x60;: Required. Mixpanel
-     * Service Account Secret. - &#x60;projectId&#x60;: Required. Mixpanel Project ID. -
-     * &#x60;server&#x60;: Mixpanel Server. Available values: &#x60;StandardServer&#x60;,
-     * &#x60;EUResidencyServer&#x60;. Default: &#x60;StandardServer&#x60;. - Twilio Segment -
-     * &#x60;writeKey&#x60;: Required. Twilio Segment Write Key. - &#x60;server&#x60;: Twilio
-     * Segment Server. Available values: &#x60;Us&#x60;, &#x60;Eu&#x60;. Default: &#x60;Us&#x60;. -
-     * PubNub (work in progress)
-     *
+     * Update Integration
+     * This endpoint updates a Config identified by the &#x60;integrationId&#x60; parameter.  The Parameters dictionary differs for each IntegrationType: - Datadog  - &#x60;apikey&#x60;: Required. Datadog API key.  - &#x60;site&#x60;: Datadog site. Available values: &#x60;Us&#x60;, &#x60;Eu&#x60;, &#x60;Us1Fed&#x60;, &#x60;Us3&#x60;, &#x60;Us5&#x60;. Default: &#x60;Us&#x60;. - Slack    Connecting the Slack integration through the Public Management API will not post messages with the ConfigCat Feature Flags Slack app but with an incoming webhook.  - &#x60;incoming_webhook.url&#x60;: Required. The [incoming webhook URL](https://api.slack.com/messaging/webhooks) where the integration should post messages. - Amplitude  - &#x60;apiKey&#x60;: Required. Amplitude API Key.  - &#x60;secretKey&#x60;: Required. Amplitude Secret Key. - Mixpanel  - &#x60;serviceAccountUserName&#x60;: Required. Mixpanel Service Account Username.  - &#x60;serviceAccountSecret&#x60;: Required. Mixpanel Service Account Secret.  - &#x60;projectId&#x60;: Required. Mixpanel Project ID.  - &#x60;server&#x60;: Mixpanel Server. Available values: &#x60;StandardServer&#x60;, &#x60;EUResidencyServer&#x60;. Default: &#x60;StandardServer&#x60;. - Twilio Segment  - &#x60;writeKey&#x60;: Required. Twilio Segment Write Key.  - &#x60;server&#x60;: Twilio Segment Server. Available values: &#x60;Us&#x60;, &#x60;Eu&#x60;. Default: &#x60;Us&#x60;. - PubNub (work in progress)
      * @param integrationId The identifier of the Integration. (required)
-     * @param modifyIntegrationRequest (required)
+     * @param modifyIntegrationRequest  (required)
      * @return ApiResponse&lt;IntegrationModel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public ApiResponse<IntegrationModel> updateIntegrationWithHttpInfo(
-            UUID integrationId, ModifyIntegrationRequest modifyIntegrationRequest)
-            throws ApiException {
-        okhttp3.Call localVarCall =
-                updateIntegrationValidateBeforeCall(integrationId, modifyIntegrationRequest, null);
-        Type localVarReturnType = new TypeToken<IntegrationModel>() {}.getType();
+    public ApiResponse<IntegrationModel> updateIntegrationWithHttpInfo(UUID integrationId, ModifyIntegrationRequest modifyIntegrationRequest) throws ApiException {
+        okhttp3.Call localVarCall = updateIntegrationValidateBeforeCall(integrationId, modifyIntegrationRequest, null);
+        Type localVarReturnType = new TypeToken<IntegrationModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Update Integration (asynchronously) This endpoint updates a Config identified by the
-     * &#x60;integrationId&#x60; parameter. The Parameters dictionary differs for each
-     * IntegrationType: - Datadog - &#x60;apikey&#x60;: Required. Datadog API key. -
-     * &#x60;site&#x60;: Datadog site. Available values: &#x60;Us&#x60;, &#x60;Eu&#x60;,
-     * &#x60;Us1Fed&#x60;, &#x60;Us3&#x60;, &#x60;Us5&#x60;. Default: &#x60;Us&#x60;. - Slack
-     * Connecting the Slack integration through the Public Management API will not post messages
-     * with the ConfigCat Feature Flags Slack app but with an incoming webhook. -
-     * &#x60;incoming_webhook.url&#x60;: Required. The [incoming webhook
-     * URL](https://api.slack.com/messaging/webhooks) where the integration should post messages. -
-     * Amplitude - &#x60;apiKey&#x60;: Required. Amplitude API Key. - &#x60;secretKey&#x60;:
-     * Required. Amplitude Secret Key. - Mixpanel - &#x60;serviceAccountUserName&#x60;: Required.
-     * Mixpanel Service Account Username. - &#x60;serviceAccountSecret&#x60;: Required. Mixpanel
-     * Service Account Secret. - &#x60;projectId&#x60;: Required. Mixpanel Project ID. -
-     * &#x60;server&#x60;: Mixpanel Server. Available values: &#x60;StandardServer&#x60;,
-     * &#x60;EUResidencyServer&#x60;. Default: &#x60;StandardServer&#x60;. - Twilio Segment -
-     * &#x60;writeKey&#x60;: Required. Twilio Segment Write Key. - &#x60;server&#x60;: Twilio
-     * Segment Server. Available values: &#x60;Us&#x60;, &#x60;Eu&#x60;. Default: &#x60;Us&#x60;. -
-     * PubNub (work in progress)
-     *
+     * Update Integration (asynchronously)
+     * This endpoint updates a Config identified by the &#x60;integrationId&#x60; parameter.  The Parameters dictionary differs for each IntegrationType: - Datadog  - &#x60;apikey&#x60;: Required. Datadog API key.  - &#x60;site&#x60;: Datadog site. Available values: &#x60;Us&#x60;, &#x60;Eu&#x60;, &#x60;Us1Fed&#x60;, &#x60;Us3&#x60;, &#x60;Us5&#x60;. Default: &#x60;Us&#x60;. - Slack    Connecting the Slack integration through the Public Management API will not post messages with the ConfigCat Feature Flags Slack app but with an incoming webhook.  - &#x60;incoming_webhook.url&#x60;: Required. The [incoming webhook URL](https://api.slack.com/messaging/webhooks) where the integration should post messages. - Amplitude  - &#x60;apiKey&#x60;: Required. Amplitude API Key.  - &#x60;secretKey&#x60;: Required. Amplitude Secret Key. - Mixpanel  - &#x60;serviceAccountUserName&#x60;: Required. Mixpanel Service Account Username.  - &#x60;serviceAccountSecret&#x60;: Required. Mixpanel Service Account Secret.  - &#x60;projectId&#x60;: Required. Mixpanel Project ID.  - &#x60;server&#x60;: Mixpanel Server. Available values: &#x60;StandardServer&#x60;, &#x60;EUResidencyServer&#x60;. Default: &#x60;StandardServer&#x60;. - Twilio Segment  - &#x60;writeKey&#x60;: Required. Twilio Segment Write Key.  - &#x60;server&#x60;: Twilio Segment Server. Available values: &#x60;Us&#x60;, &#x60;Eu&#x60;. Default: &#x60;Us&#x60;. - PubNub (work in progress)
      * @param integrationId The identifier of the Integration. (required)
-     * @param modifyIntegrationRequest (required)
+     * @param modifyIntegrationRequest  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body
-     *     object
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call updateIntegrationAsync(
-            UUID integrationId,
-            ModifyIntegrationRequest modifyIntegrationRequest,
-            final ApiCallback<IntegrationModel> _callback)
-            throws ApiException {
+    public okhttp3.Call updateIntegrationAsync(UUID integrationId, ModifyIntegrationRequest modifyIntegrationRequest, final ApiCallback<IntegrationModel> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall =
-                updateIntegrationValidateBeforeCall(
-                        integrationId, modifyIntegrationRequest, _callback);
-        Type localVarReturnType = new TypeToken<IntegrationModel>() {}.getType();
+        okhttp3.Call localVarCall = updateIntegrationValidateBeforeCall(integrationId, modifyIntegrationRequest, _callback);
+        Type localVarReturnType = new TypeToken<IntegrationModel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

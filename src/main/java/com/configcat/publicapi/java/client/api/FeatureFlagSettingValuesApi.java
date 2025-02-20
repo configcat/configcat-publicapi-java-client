@@ -1,6 +1,6 @@
 /*
  * ConfigCat Public Management API
- * The purpose of this API is to access the ConfigCat platform programmatically. You can **Create**, **Read**, **Update** and **Delete** any entities like **Feature Flags, Configs, Environments** or **Products** within ConfigCat.  **Base API URL**: https://api.configcat.com  If you prefer the swagger documentation, you can find it here: [Swagger UI](https://api.configcat.com/swagger).  The API is based on HTTP REST, uses resource-oriented URLs, status codes and supports JSON  format.   **Important:** Do not use this API for accessing and evaluating feature flag values. Use the [SDKs](https://configcat.com/docs/sdk-reference/overview) or the [ConfigCat Proxy](https://configcat.com/docs/advanced/proxy/proxy-overview/) instead.  # OpenAPI Specification  The complete specification is publicly available in the following formats:  - [OpenAPI v3](https://api.configcat.com/docs/v1/swagger.json) - [Swagger v2](https://api.configcat.com/docs/v1/swagger.v2.json)  You can use it to generate client libraries in various languages with [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) or [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) to interact with this API.  # Authentication This API uses the [Basic HTTP Authentication Scheme](https://en.wikipedia.org/wiki/Basic_access_authentication).   <!-- ReDoc-Inject: <security-definitions> -->  # Throttling and rate limits All the rate limited API calls are returning information about the current rate limit period in the following HTTP headers:  | Header | Description | | :- | :- | | X-Rate-Limit-Remaining | The maximum number of requests remaining in the current rate limit period. | | X-Rate-Limit-Reset     | The time when the current rate limit period resets.        |  When the rate limit is exceeded by a request, the API returns with a `HTTP 429 - Too many requests` status along with a `Retry-After` HTTP header.
+ * The purpose of this API is to access the ConfigCat platform programmatically. You can **Create**, **Read**, **Update** and **Delete** any entities like **Feature Flags, Configs, Environments** or **Products** within ConfigCat.  **Base API URL**: https://api.configcat.com  If you prefer the swagger documentation, you can find it here: [Swagger UI](https://api.configcat.com/swagger).  The API is based on HTTP REST, uses resource-oriented URLs, status codes and supports JSON  format.   **Important:** Do not use this API for accessing and evaluating feature flag values. Use the [SDKs](https://configcat.com/docs/sdk-reference/overview) or the [ConfigCat Proxy](https://configcat.com/docs/advanced/proxy/proxy-overview/) instead.  # OpenAPI Specification  The complete specification is publicly available in the following formats:  - [OpenAPI v3](https://api.configcat.com/docs/v1/swagger.json) - [Swagger v2](https://api.configcat.com/docs/v1/swagger.v2.json)  You can use it to generate client libraries in various languages with [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) or [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) to interact with this API.  # Authentication This API uses the [Basic HTTP Authentication Scheme](https://en.wikipedia.org/wiki/Basic_access_authentication).   <!-- ReDoc-Inject: <security-definitions> -->  # Throttling and rate limits All the rate limited API calls are returning information about the current rate limit period in the following HTTP headers:  | Header | Description | | :- | :- | | X-Rate-Limit-Remaining | The maximum number of requests remaining in the current rate limit period. | | X-Rate-Limit-Reset     | The time when the current rate limit period resets.        |  When the rate limit is exceeded by a request, the API returns with a `HTTP 429 - Too many requests` status along with a `Retry-After` HTTP header. 
  *
  * The version of the OpenAPI document: v1
  * Contact: support@configcat.com
@@ -10,8 +10,8 @@
  * Do not edit the class manually.
  */
 
-package com.configcat.publicapi.java.client.api;
 
+package com.configcat.publicapi.java.client.api;
 
 import com.configcat.publicapi.java.client.ApiCallback;
 import com.configcat.publicapi.java.client.ApiClient;
@@ -19,18 +19,26 @@ import com.configcat.publicapi.java.client.ApiException;
 import com.configcat.publicapi.java.client.ApiResponse;
 import com.configcat.publicapi.java.client.Configuration;
 import com.configcat.publicapi.java.client.Pair;
+import com.configcat.publicapi.java.client.ProgressRequestBody;
+import com.configcat.publicapi.java.client.ProgressResponseBody;
+
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
+
+
 import com.configcat.publicapi.java.client.model.ConfigSettingValuesModel;
 import com.configcat.publicapi.java.client.model.JsonPatchOperation;
 import com.configcat.publicapi.java.client.model.SettingValueModel;
+import java.util.UUID;
 import com.configcat.publicapi.java.client.model.UpdateSettingValueModel;
 import com.configcat.publicapi.java.client.model.UpdateSettingValuesWithIdModel;
-import com.google.gson.reflect.TypeToken;
+
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 public class FeatureFlagSettingValuesApi {
     private ApiClient localVarApiClient;
@@ -71,32 +79,29 @@ public class FeatureFlagSettingValuesApi {
 
     /**
      * Build call for getSettingValue
-     *
      * @param environmentId The identifier of the Environment. (required)
      * @param settingId The id of the Setting. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td> When everything is ok, the setting value data returned. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When everything is ok, the setting value data returned. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call getSettingValueCall(
-            UUID environmentId, Integer settingId, final ApiCallback _callback)
-            throws ApiException {
+    public okhttp3.Call getSettingValueCall(UUID environmentId, Integer settingId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {};
+        String[] localBasePaths = new String[] {  };
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null) {
+        if (localCustomBaseUrl != null){
             basePath = localCustomBaseUrl;
-        } else if (localBasePaths.length > 0) {
+        } else if ( localBasePaths.length > 0 ) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -105,14 +110,9 @@ public class FeatureFlagSettingValuesApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath =
-                "/v1/environments/{environmentId}/settings/{settingId}/value"
-                        .replace(
-                                "{" + "environmentId" + "}",
-                                localVarApiClient.escapeString(environmentId.toString()))
-                        .replace(
-                                "{" + "settingId" + "}",
-                                localVarApiClient.escapeString(settingId.toString()));
+        String localVarPath = "/v1/environments/{environmentId}/settings/{settingId}/value"
+            .replace("{" + "environmentId" + "}", localVarApiClient.escapeString(environmentId.toString()))
+            .replace("{" + "settingId" + "}", localVarApiClient.escapeString(settingId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -120,189 +120,133 @@ public class FeatureFlagSettingValuesApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        final String[] localVarAccepts = {"application/json"};
+        final String[] localVarAccepts = {
+            "application/json"
+        };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
             localVarHeaderParams.put("Accept", localVarAccept);
         }
 
-        final String[] localVarContentTypes = {};
-        final String localVarContentType =
-                localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] {"Basic"};
-        return localVarApiClient.buildCall(
-                basePath,
-                localVarPath,
-                "GET",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarCookieParams,
-                localVarFormParams,
-                localVarAuthNames,
-                _callback);
+        String[] localVarAuthNames = new String[] { "Basic" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSettingValueValidateBeforeCall(
-            UUID environmentId, Integer settingId, final ApiCallback _callback)
-            throws ApiException {
+    private okhttp3.Call getSettingValueValidateBeforeCall(UUID environmentId, Integer settingId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'environmentId' is set
         if (environmentId == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'environmentId' when calling"
-                            + " getSettingValue(Async)");
+            throw new ApiException("Missing the required parameter 'environmentId' when calling getSettingValue(Async)");
         }
 
         // verify the required parameter 'settingId' is set
         if (settingId == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'settingId' when calling"
-                            + " getSettingValue(Async)");
+            throw new ApiException("Missing the required parameter 'settingId' when calling getSettingValue(Async)");
         }
 
         return getSettingValueCall(environmentId, settingId, _callback);
+
     }
 
     /**
-     * Get value This endpoint returns the value of a Feature Flag or Setting in a specified
-     * Environment identified by the &#x60;environmentId&#x60; parameter. The most important
-     * attributes in the response are the &#x60;value&#x60;, &#x60;rolloutRules&#x60; and
-     * &#x60;percentageRules&#x60;. The &#x60;value&#x60; represents what the clients will get when
-     * the evaluation requests of our SDKs are not matching to any of the defined Targeting or
-     * Percentage Rules, or when there are no additional rules to evaluate. The
-     * &#x60;rolloutRules&#x60; and &#x60;percentageRules&#x60; attributes are representing the
-     * current Targeting and Percentage Rules configuration of the actual Feature Flag or Setting in
-     * an **ordered** collection, which means the order of the returned rules is matching to the
-     * evaluation order. You can read more about these rules
-     * [here](https://configcat.com/docs/targeting/targeting-overview).
-     *
+     * Get value
+     * This endpoint returns the value of a Feature Flag or Setting  in a specified Environment identified by the &#x60;environmentId&#x60; parameter.  The most important attributes in the response are the &#x60;value&#x60;, &#x60;rolloutRules&#x60; and &#x60;percentageRules&#x60;. The &#x60;value&#x60; represents what the clients will get when the evaluation requests of our SDKs  are not matching to any of the defined Targeting or Percentage Rules, or when there are no additional rules to evaluate.  The &#x60;rolloutRules&#x60; and &#x60;percentageRules&#x60; attributes are representing the current  Targeting and Percentage Rules configuration of the actual Feature Flag or Setting  in an **ordered** collection, which means the order of the returned rules is matching to the evaluation order. You can read more about these rules [here](https://configcat.com/docs/targeting/targeting-overview).
      * @param environmentId The identifier of the Environment. (required)
      * @param settingId The id of the Setting. (required)
      * @return SettingValueModel
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td> When everything is ok, the setting value data returned. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When everything is ok, the setting value data returned. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public SettingValueModel getSettingValue(UUID environmentId, Integer settingId)
-            throws ApiException {
-        ApiResponse<SettingValueModel> localVarResp =
-                getSettingValueWithHttpInfo(environmentId, settingId);
+    public SettingValueModel getSettingValue(UUID environmentId, Integer settingId) throws ApiException {
+        ApiResponse<SettingValueModel> localVarResp = getSettingValueWithHttpInfo(environmentId, settingId);
         return localVarResp.getData();
     }
 
     /**
-     * Get value This endpoint returns the value of a Feature Flag or Setting in a specified
-     * Environment identified by the &#x60;environmentId&#x60; parameter. The most important
-     * attributes in the response are the &#x60;value&#x60;, &#x60;rolloutRules&#x60; and
-     * &#x60;percentageRules&#x60;. The &#x60;value&#x60; represents what the clients will get when
-     * the evaluation requests of our SDKs are not matching to any of the defined Targeting or
-     * Percentage Rules, or when there are no additional rules to evaluate. The
-     * &#x60;rolloutRules&#x60; and &#x60;percentageRules&#x60; attributes are representing the
-     * current Targeting and Percentage Rules configuration of the actual Feature Flag or Setting in
-     * an **ordered** collection, which means the order of the returned rules is matching to the
-     * evaluation order. You can read more about these rules
-     * [here](https://configcat.com/docs/targeting/targeting-overview).
-     *
+     * Get value
+     * This endpoint returns the value of a Feature Flag or Setting  in a specified Environment identified by the &#x60;environmentId&#x60; parameter.  The most important attributes in the response are the &#x60;value&#x60;, &#x60;rolloutRules&#x60; and &#x60;percentageRules&#x60;. The &#x60;value&#x60; represents what the clients will get when the evaluation requests of our SDKs  are not matching to any of the defined Targeting or Percentage Rules, or when there are no additional rules to evaluate.  The &#x60;rolloutRules&#x60; and &#x60;percentageRules&#x60; attributes are representing the current  Targeting and Percentage Rules configuration of the actual Feature Flag or Setting  in an **ordered** collection, which means the order of the returned rules is matching to the evaluation order. You can read more about these rules [here](https://configcat.com/docs/targeting/targeting-overview).
      * @param environmentId The identifier of the Environment. (required)
      * @param settingId The id of the Setting. (required)
      * @return ApiResponse&lt;SettingValueModel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td> When everything is ok, the setting value data returned. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When everything is ok, the setting value data returned. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public ApiResponse<SettingValueModel> getSettingValueWithHttpInfo(
-            UUID environmentId, Integer settingId) throws ApiException {
-        okhttp3.Call localVarCall =
-                getSettingValueValidateBeforeCall(environmentId, settingId, null);
-        Type localVarReturnType = new TypeToken<SettingValueModel>() {}.getType();
+    public ApiResponse<SettingValueModel> getSettingValueWithHttpInfo(UUID environmentId, Integer settingId) throws ApiException {
+        okhttp3.Call localVarCall = getSettingValueValidateBeforeCall(environmentId, settingId, null);
+        Type localVarReturnType = new TypeToken<SettingValueModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Get value (asynchronously) This endpoint returns the value of a Feature Flag or Setting in a
-     * specified Environment identified by the &#x60;environmentId&#x60; parameter. The most
-     * important attributes in the response are the &#x60;value&#x60;, &#x60;rolloutRules&#x60; and
-     * &#x60;percentageRules&#x60;. The &#x60;value&#x60; represents what the clients will get when
-     * the evaluation requests of our SDKs are not matching to any of the defined Targeting or
-     * Percentage Rules, or when there are no additional rules to evaluate. The
-     * &#x60;rolloutRules&#x60; and &#x60;percentageRules&#x60; attributes are representing the
-     * current Targeting and Percentage Rules configuration of the actual Feature Flag or Setting in
-     * an **ordered** collection, which means the order of the returned rules is matching to the
-     * evaluation order. You can read more about these rules
-     * [here](https://configcat.com/docs/targeting/targeting-overview).
-     *
+     * Get value (asynchronously)
+     * This endpoint returns the value of a Feature Flag or Setting  in a specified Environment identified by the &#x60;environmentId&#x60; parameter.  The most important attributes in the response are the &#x60;value&#x60;, &#x60;rolloutRules&#x60; and &#x60;percentageRules&#x60;. The &#x60;value&#x60; represents what the clients will get when the evaluation requests of our SDKs  are not matching to any of the defined Targeting or Percentage Rules, or when there are no additional rules to evaluate.  The &#x60;rolloutRules&#x60; and &#x60;percentageRules&#x60; attributes are representing the current  Targeting and Percentage Rules configuration of the actual Feature Flag or Setting  in an **ordered** collection, which means the order of the returned rules is matching to the evaluation order. You can read more about these rules [here](https://configcat.com/docs/targeting/targeting-overview).
      * @param environmentId The identifier of the Environment. (required)
      * @param settingId The id of the Setting. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body
-     *     object
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td> When everything is ok, the setting value data returned. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When everything is ok, the setting value data returned. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call getSettingValueAsync(
-            UUID environmentId, Integer settingId, final ApiCallback<SettingValueModel> _callback)
-            throws ApiException {
+    public okhttp3.Call getSettingValueAsync(UUID environmentId, Integer settingId, final ApiCallback<SettingValueModel> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall =
-                getSettingValueValidateBeforeCall(environmentId, settingId, _callback);
-        Type localVarReturnType = new TypeToken<SettingValueModel>() {}.getType();
+        okhttp3.Call localVarCall = getSettingValueValidateBeforeCall(environmentId, settingId, _callback);
+        Type localVarReturnType = new TypeToken<SettingValueModel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for getSettingValues
-     *
      * @param configId The identifier of the Config. (required)
      * @param environmentId The identifier of the Environment. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td> When everything is ok, the setting values returned. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When everything is ok, the setting values returned. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call getSettingValuesCall(
-            UUID configId, UUID environmentId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getSettingValuesCall(UUID configId, UUID environmentId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {};
+        String[] localBasePaths = new String[] {  };
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null) {
+        if (localCustomBaseUrl != null){
             basePath = localCustomBaseUrl;
-        } else if (localBasePaths.length > 0) {
+        } else if ( localBasePaths.length > 0 ) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -311,14 +255,9 @@ public class FeatureFlagSettingValuesApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath =
-                "/v1/configs/{configId}/environments/{environmentId}/values"
-                        .replace(
-                                "{" + "configId" + "}",
-                                localVarApiClient.escapeString(configId.toString()))
-                        .replace(
-                                "{" + "environmentId" + "}",
-                                localVarApiClient.escapeString(environmentId.toString()));
+        String localVarPath = "/v1/configs/{configId}/environments/{environmentId}/values"
+            .replace("{" + "configId" + "}", localVarApiClient.escapeString(configId.toString()))
+            .replace("{" + "environmentId" + "}", localVarApiClient.escapeString(environmentId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -326,199 +265,135 @@ public class FeatureFlagSettingValuesApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        final String[] localVarAccepts = {"application/json"};
+        final String[] localVarAccepts = {
+            "application/json"
+        };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
             localVarHeaderParams.put("Accept", localVarAccept);
         }
 
-        final String[] localVarContentTypes = {};
-        final String localVarContentType =
-                localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] {"Basic"};
-        return localVarApiClient.buildCall(
-                basePath,
-                localVarPath,
-                "GET",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarCookieParams,
-                localVarFormParams,
-                localVarAuthNames,
-                _callback);
+        String[] localVarAuthNames = new String[] { "Basic" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSettingValuesValidateBeforeCall(
-            UUID configId, UUID environmentId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getSettingValuesValidateBeforeCall(UUID configId, UUID environmentId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'configId' is set
         if (configId == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'configId' when calling"
-                            + " getSettingValues(Async)");
+            throw new ApiException("Missing the required parameter 'configId' when calling getSettingValues(Async)");
         }
 
         // verify the required parameter 'environmentId' is set
         if (environmentId == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'environmentId' when calling"
-                            + " getSettingValues(Async)");
+            throw new ApiException("Missing the required parameter 'environmentId' when calling getSettingValues(Async)");
         }
 
         return getSettingValuesCall(configId, environmentId, _callback);
+
     }
 
     /**
-     * Get values This endpoint returns the value of a specified Config&#39;s Feature Flags or
-     * Settings identified by the &#x60;configId&#x60; parameter in a specified Environment
-     * identified by the &#x60;environmentId&#x60; parameter. The most important attributes in the
-     * response are the &#x60;value&#x60;, &#x60;rolloutRules&#x60; and &#x60;percentageRules&#x60;.
-     * The &#x60;value&#x60; represents what the clients will get when the evaluation requests of
-     * our SDKs are not matching to any of the defined Targeting or Percentage Rules, or when there
-     * are no additional rules to evaluate. The &#x60;rolloutRules&#x60; and
-     * &#x60;percentageRules&#x60; attributes are representing the current Targeting and Percentage
-     * Rules configuration of the actual Feature Flag or Setting in an **ordered** collection, which
-     * means the order of the returned rules is matching to the evaluation order. You can read more
-     * about these rules [here](https://configcat.com/docs/targeting/targeting-overview/).
-     *
+     * Get values
+     * This endpoint returns the value of a specified Config&#39;s Feature Flags or Settings identified by the &#x60;configId&#x60; parameter in a specified Environment identified by the &#x60;environmentId&#x60; parameter.  The most important attributes in the response are the &#x60;value&#x60;, &#x60;rolloutRules&#x60; and &#x60;percentageRules&#x60;. The &#x60;value&#x60; represents what the clients will get when the evaluation requests of our SDKs  are not matching to any of the defined Targeting or Percentage Rules, or when there are no additional rules to evaluate.  The &#x60;rolloutRules&#x60; and &#x60;percentageRules&#x60; attributes are representing the current  Targeting and Percentage Rules configuration of the actual Feature Flag or Setting  in an **ordered** collection, which means the order of the returned rules is matching to the evaluation order. You can read more about these rules [here](https://configcat.com/docs/targeting/targeting-overview/).
      * @param configId The identifier of the Config. (required)
      * @param environmentId The identifier of the Environment. (required)
      * @return ConfigSettingValuesModel
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td> When everything is ok, the setting values returned. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When everything is ok, the setting values returned. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public ConfigSettingValuesModel getSettingValues(UUID configId, UUID environmentId)
-            throws ApiException {
-        ApiResponse<ConfigSettingValuesModel> localVarResp =
-                getSettingValuesWithHttpInfo(configId, environmentId);
+    public ConfigSettingValuesModel getSettingValues(UUID configId, UUID environmentId) throws ApiException {
+        ApiResponse<ConfigSettingValuesModel> localVarResp = getSettingValuesWithHttpInfo(configId, environmentId);
         return localVarResp.getData();
     }
 
     /**
-     * Get values This endpoint returns the value of a specified Config&#39;s Feature Flags or
-     * Settings identified by the &#x60;configId&#x60; parameter in a specified Environment
-     * identified by the &#x60;environmentId&#x60; parameter. The most important attributes in the
-     * response are the &#x60;value&#x60;, &#x60;rolloutRules&#x60; and &#x60;percentageRules&#x60;.
-     * The &#x60;value&#x60; represents what the clients will get when the evaluation requests of
-     * our SDKs are not matching to any of the defined Targeting or Percentage Rules, or when there
-     * are no additional rules to evaluate. The &#x60;rolloutRules&#x60; and
-     * &#x60;percentageRules&#x60; attributes are representing the current Targeting and Percentage
-     * Rules configuration of the actual Feature Flag or Setting in an **ordered** collection, which
-     * means the order of the returned rules is matching to the evaluation order. You can read more
-     * about these rules [here](https://configcat.com/docs/targeting/targeting-overview/).
-     *
+     * Get values
+     * This endpoint returns the value of a specified Config&#39;s Feature Flags or Settings identified by the &#x60;configId&#x60; parameter in a specified Environment identified by the &#x60;environmentId&#x60; parameter.  The most important attributes in the response are the &#x60;value&#x60;, &#x60;rolloutRules&#x60; and &#x60;percentageRules&#x60;. The &#x60;value&#x60; represents what the clients will get when the evaluation requests of our SDKs  are not matching to any of the defined Targeting or Percentage Rules, or when there are no additional rules to evaluate.  The &#x60;rolloutRules&#x60; and &#x60;percentageRules&#x60; attributes are representing the current  Targeting and Percentage Rules configuration of the actual Feature Flag or Setting  in an **ordered** collection, which means the order of the returned rules is matching to the evaluation order. You can read more about these rules [here](https://configcat.com/docs/targeting/targeting-overview/).
      * @param configId The identifier of the Config. (required)
      * @param environmentId The identifier of the Environment. (required)
      * @return ApiResponse&lt;ConfigSettingValuesModel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td> When everything is ok, the setting values returned. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When everything is ok, the setting values returned. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public ApiResponse<ConfigSettingValuesModel> getSettingValuesWithHttpInfo(
-            UUID configId, UUID environmentId) throws ApiException {
-        okhttp3.Call localVarCall =
-                getSettingValuesValidateBeforeCall(configId, environmentId, null);
-        Type localVarReturnType = new TypeToken<ConfigSettingValuesModel>() {}.getType();
+    public ApiResponse<ConfigSettingValuesModel> getSettingValuesWithHttpInfo(UUID configId, UUID environmentId) throws ApiException {
+        okhttp3.Call localVarCall = getSettingValuesValidateBeforeCall(configId, environmentId, null);
+        Type localVarReturnType = new TypeToken<ConfigSettingValuesModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Get values (asynchronously) This endpoint returns the value of a specified Config&#39;s
-     * Feature Flags or Settings identified by the &#x60;configId&#x60; parameter in a specified
-     * Environment identified by the &#x60;environmentId&#x60; parameter. The most important
-     * attributes in the response are the &#x60;value&#x60;, &#x60;rolloutRules&#x60; and
-     * &#x60;percentageRules&#x60;. The &#x60;value&#x60; represents what the clients will get when
-     * the evaluation requests of our SDKs are not matching to any of the defined Targeting or
-     * Percentage Rules, or when there are no additional rules to evaluate. The
-     * &#x60;rolloutRules&#x60; and &#x60;percentageRules&#x60; attributes are representing the
-     * current Targeting and Percentage Rules configuration of the actual Feature Flag or Setting in
-     * an **ordered** collection, which means the order of the returned rules is matching to the
-     * evaluation order. You can read more about these rules
-     * [here](https://configcat.com/docs/targeting/targeting-overview/).
-     *
+     * Get values (asynchronously)
+     * This endpoint returns the value of a specified Config&#39;s Feature Flags or Settings identified by the &#x60;configId&#x60; parameter in a specified Environment identified by the &#x60;environmentId&#x60; parameter.  The most important attributes in the response are the &#x60;value&#x60;, &#x60;rolloutRules&#x60; and &#x60;percentageRules&#x60;. The &#x60;value&#x60; represents what the clients will get when the evaluation requests of our SDKs  are not matching to any of the defined Targeting or Percentage Rules, or when there are no additional rules to evaluate.  The &#x60;rolloutRules&#x60; and &#x60;percentageRules&#x60; attributes are representing the current  Targeting and Percentage Rules configuration of the actual Feature Flag or Setting  in an **ordered** collection, which means the order of the returned rules is matching to the evaluation order. You can read more about these rules [here](https://configcat.com/docs/targeting/targeting-overview/).
      * @param configId The identifier of the Config. (required)
      * @param environmentId The identifier of the Environment. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body
-     *     object
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td> When everything is ok, the setting values returned. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When everything is ok, the setting values returned. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call getSettingValuesAsync(
-            UUID configId,
-            UUID environmentId,
-            final ApiCallback<ConfigSettingValuesModel> _callback)
-            throws ApiException {
+    public okhttp3.Call getSettingValuesAsync(UUID configId, UUID environmentId, final ApiCallback<ConfigSettingValuesModel> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall =
-                getSettingValuesValidateBeforeCall(configId, environmentId, _callback);
-        Type localVarReturnType = new TypeToken<ConfigSettingValuesModel>() {}.getType();
+        okhttp3.Call localVarCall = getSettingValuesValidateBeforeCall(configId, environmentId, _callback);
+        Type localVarReturnType = new TypeToken<ConfigSettingValuesModel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for postSettingValues
-     *
      * @param configId The identifier of the Config. (required)
      * @param environmentId The identifier of the Environment. (required)
-     * @param updateSettingValuesWithIdModel (required)
-     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes
-     *     require a reason\&quot; preference is turned on. (optional)
+     * @param updateSettingValuesWithIdModel  (required)
+     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td> When everything is ok, the updated setting values returned. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When everything is ok, the updated setting values returned. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call postSettingValuesCall(
-            UUID configId,
-            UUID environmentId,
-            UpdateSettingValuesWithIdModel updateSettingValuesWithIdModel,
-            String reason,
-            final ApiCallback _callback)
-            throws ApiException {
+    public okhttp3.Call postSettingValuesCall(UUID configId, UUID environmentId, UpdateSettingValuesWithIdModel updateSettingValuesWithIdModel, String reason, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {};
+        String[] localBasePaths = new String[] {  };
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null) {
+        if (localCustomBaseUrl != null){
             basePath = localCustomBaseUrl;
-        } else if (localBasePaths.length > 0) {
+        } else if ( localBasePaths.length > 0 ) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -527,14 +402,9 @@ public class FeatureFlagSettingValuesApi {
         Object localVarPostBody = updateSettingValuesWithIdModel;
 
         // create path and map variables
-        String localVarPath =
-                "/v1/configs/{configId}/environments/{environmentId}/values"
-                        .replace(
-                                "{" + "configId" + "}",
-                                localVarApiClient.escapeString(configId.toString()))
-                        .replace(
-                                "{" + "environmentId" + "}",
-                                localVarApiClient.escapeString(environmentId.toString()));
+        String localVarPath = "/v1/configs/{configId}/environments/{environmentId}/values"
+            .replace("{" + "configId" + "}", localVarApiClient.escapeString(configId.toString()))
+            .replace("{" + "environmentId" + "}", localVarApiClient.escapeString(environmentId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -546,271 +416,149 @@ public class FeatureFlagSettingValuesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("reason", reason));
         }
 
-        final String[] localVarAccepts = {"application/json"};
+        final String[] localVarAccepts = {
+            "application/json"
+        };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
             localVarHeaderParams.put("Accept", localVarAccept);
         }
 
         final String[] localVarContentTypes = {
-            "application/json", "text/json", "application/*+json"
+            "application/json",
+            "text/json",
+            "application/*+json"
         };
-        final String localVarContentType =
-                localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] {"Basic"};
-        return localVarApiClient.buildCall(
-                basePath,
-                localVarPath,
-                "POST",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarCookieParams,
-                localVarFormParams,
-                localVarAuthNames,
-                _callback);
+        String[] localVarAuthNames = new String[] { "Basic" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postSettingValuesValidateBeforeCall(
-            UUID configId,
-            UUID environmentId,
-            UpdateSettingValuesWithIdModel updateSettingValuesWithIdModel,
-            String reason,
-            final ApiCallback _callback)
-            throws ApiException {
+    private okhttp3.Call postSettingValuesValidateBeforeCall(UUID configId, UUID environmentId, UpdateSettingValuesWithIdModel updateSettingValuesWithIdModel, String reason, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'configId' is set
         if (configId == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'configId' when calling"
-                            + " postSettingValues(Async)");
+            throw new ApiException("Missing the required parameter 'configId' when calling postSettingValues(Async)");
         }
 
         // verify the required parameter 'environmentId' is set
         if (environmentId == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'environmentId' when calling"
-                            + " postSettingValues(Async)");
+            throw new ApiException("Missing the required parameter 'environmentId' when calling postSettingValues(Async)");
         }
 
         // verify the required parameter 'updateSettingValuesWithIdModel' is set
         if (updateSettingValuesWithIdModel == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'updateSettingValuesWithIdModel' when calling"
-                            + " postSettingValues(Async)");
+            throw new ApiException("Missing the required parameter 'updateSettingValuesWithIdModel' when calling postSettingValues(Async)");
         }
 
-        return postSettingValuesCall(
-                configId, environmentId, updateSettingValuesWithIdModel, reason, _callback);
+        return postSettingValuesCall(configId, environmentId, updateSettingValuesWithIdModel, reason, _callback);
+
     }
 
     /**
-     * Post values This endpoint replaces the values of a specified Config&#39;s Feature Flags or
-     * Settings identified by the &#x60;configId&#x60; parameter in a specified Environment
-     * identified by the &#x60;environmentId&#x60; parameter. Only the &#x60;value&#x60;,
-     * &#x60;rolloutRules&#x60; and &#x60;percentageRules&#x60; attributes are modifiable by this
-     * endpoint. **Important:** As this endpoint is doing a complete replace, it&#39;s important to
-     * set every other attribute that you don&#39;t want to change in its original state. Not
-     * listing one means it will reset. For example: We have the following resource.
-     * &#x60;&#x60;&#x60;json { \&quot;settingValues\&quot;: [ {
-     * \&quot;rolloutPercentageItems\&quot;: [ { \&quot;percentage\&quot;: 30, \&quot;value\&quot;:
-     * true }, { \&quot;percentage\&quot;: 70, \&quot;value\&quot;: false } ],
-     * \&quot;rolloutRules\&quot;: [], \&quot;value\&quot;: false, \&quot;settingId\&quot;: 1 } ] }
-     * &#x60;&#x60;&#x60; If we send a replace request body as below: &#x60;&#x60;&#x60;json {
-     * \&quot;settingValues\&quot;: [ { \&quot;value\&quot;: true, \&quot;settingId\&quot;: 1 } ] }
-     * &#x60;&#x60;&#x60; Then besides that the default value is set to &#x60;true&#x60;, all the
-     * Percentage Rules are deleted. So we get a response like this: &#x60;&#x60;&#x60;json {
-     * \&quot;settingValues\&quot;: [ { \&quot;rolloutPercentageItems\&quot;: [],
-     * \&quot;rolloutRules\&quot;: [], \&quot;value\&quot;: true, \&quot;setting\&quot;: {
-     * \&quot;settingId\&quot;: 1 } } ] } &#x60;&#x60;&#x60; The &#x60;rolloutRules&#x60; property
-     * describes two types of rules: - **Targeting rules**: When you want to add or update a
-     * targeting rule, the &#x60;comparator&#x60;, &#x60;comparisonAttribute&#x60;, and
-     * &#x60;comparisonValue&#x60; members are required. - **Segment rules**: When you want to add
-     * add or update a segment rule, the &#x60;segmentId&#x60; which identifies the desired segment
-     * and the &#x60;segmentComparator&#x60; members are required.
-     *
+     * Post values
+     * This endpoint replaces the values of a specified Config&#39;s Feature Flags or Settings identified by the &#x60;configId&#x60; parameter in a specified Environment identified by the &#x60;environmentId&#x60; parameter.  Only the &#x60;value&#x60;, &#x60;rolloutRules&#x60; and &#x60;percentageRules&#x60; attributes are modifiable by this endpoint.  **Important:** As this endpoint is doing a complete replace, it&#39;s important to set every other attribute that you don&#39;t  want to change in its original state. Not listing one means it will reset.  For example: We have the following resource. &#x60;&#x60;&#x60;json {   \&quot;settingValues\&quot;: [     {       \&quot;rolloutPercentageItems\&quot;: [         {           \&quot;percentage\&quot;: 30,           \&quot;value\&quot;: true         },         {           \&quot;percentage\&quot;: 70,           \&quot;value\&quot;: false         }       ],       \&quot;rolloutRules\&quot;: [],       \&quot;value\&quot;: false,       \&quot;settingId\&quot;: 1     }   ] } &#x60;&#x60;&#x60; If we send a replace request body as below: &#x60;&#x60;&#x60;json {    \&quot;settingValues\&quot;: [     {       \&quot;value\&quot;: true,       \&quot;settingId\&quot;: 1     }   ] } &#x60;&#x60;&#x60; Then besides that the default value is set to &#x60;true&#x60;, all the Percentage Rules are deleted.  So we get a response like this: &#x60;&#x60;&#x60;json {   \&quot;settingValues\&quot;: [     {       \&quot;rolloutPercentageItems\&quot;: [],       \&quot;rolloutRules\&quot;: [],       \&quot;value\&quot;: true,       \&quot;setting\&quot;:        {         \&quot;settingId\&quot;: 1       }     }   ] } &#x60;&#x60;&#x60;  The &#x60;rolloutRules&#x60; property describes two types of rules:  - **Targeting rules**: When you want to add or update a targeting rule, the &#x60;comparator&#x60;, &#x60;comparisonAttribute&#x60;, and &#x60;comparisonValue&#x60; members are required. - **Segment rules**: When you want to add add or update a segment rule, the &#x60;segmentId&#x60; which identifies the desired segment and the &#x60;segmentComparator&#x60; members are required.
      * @param configId The identifier of the Config. (required)
      * @param environmentId The identifier of the Environment. (required)
-     * @param updateSettingValuesWithIdModel (required)
-     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes
-     *     require a reason\&quot; preference is turned on. (optional)
+     * @param updateSettingValuesWithIdModel  (required)
+     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
      * @return ConfigSettingValuesModel
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td> When everything is ok, the updated setting values returned. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When everything is ok, the updated setting values returned. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public ConfigSettingValuesModel postSettingValues(
-            UUID configId,
-            UUID environmentId,
-            UpdateSettingValuesWithIdModel updateSettingValuesWithIdModel,
-            String reason)
-            throws ApiException {
-        ApiResponse<ConfigSettingValuesModel> localVarResp =
-                postSettingValuesWithHttpInfo(
-                        configId, environmentId, updateSettingValuesWithIdModel, reason);
+    public ConfigSettingValuesModel postSettingValues(UUID configId, UUID environmentId, UpdateSettingValuesWithIdModel updateSettingValuesWithIdModel, String reason) throws ApiException {
+        ApiResponse<ConfigSettingValuesModel> localVarResp = postSettingValuesWithHttpInfo(configId, environmentId, updateSettingValuesWithIdModel, reason);
         return localVarResp.getData();
     }
 
     /**
-     * Post values This endpoint replaces the values of a specified Config&#39;s Feature Flags or
-     * Settings identified by the &#x60;configId&#x60; parameter in a specified Environment
-     * identified by the &#x60;environmentId&#x60; parameter. Only the &#x60;value&#x60;,
-     * &#x60;rolloutRules&#x60; and &#x60;percentageRules&#x60; attributes are modifiable by this
-     * endpoint. **Important:** As this endpoint is doing a complete replace, it&#39;s important to
-     * set every other attribute that you don&#39;t want to change in its original state. Not
-     * listing one means it will reset. For example: We have the following resource.
-     * &#x60;&#x60;&#x60;json { \&quot;settingValues\&quot;: [ {
-     * \&quot;rolloutPercentageItems\&quot;: [ { \&quot;percentage\&quot;: 30, \&quot;value\&quot;:
-     * true }, { \&quot;percentage\&quot;: 70, \&quot;value\&quot;: false } ],
-     * \&quot;rolloutRules\&quot;: [], \&quot;value\&quot;: false, \&quot;settingId\&quot;: 1 } ] }
-     * &#x60;&#x60;&#x60; If we send a replace request body as below: &#x60;&#x60;&#x60;json {
-     * \&quot;settingValues\&quot;: [ { \&quot;value\&quot;: true, \&quot;settingId\&quot;: 1 } ] }
-     * &#x60;&#x60;&#x60; Then besides that the default value is set to &#x60;true&#x60;, all the
-     * Percentage Rules are deleted. So we get a response like this: &#x60;&#x60;&#x60;json {
-     * \&quot;settingValues\&quot;: [ { \&quot;rolloutPercentageItems\&quot;: [],
-     * \&quot;rolloutRules\&quot;: [], \&quot;value\&quot;: true, \&quot;setting\&quot;: {
-     * \&quot;settingId\&quot;: 1 } } ] } &#x60;&#x60;&#x60; The &#x60;rolloutRules&#x60; property
-     * describes two types of rules: - **Targeting rules**: When you want to add or update a
-     * targeting rule, the &#x60;comparator&#x60;, &#x60;comparisonAttribute&#x60;, and
-     * &#x60;comparisonValue&#x60; members are required. - **Segment rules**: When you want to add
-     * add or update a segment rule, the &#x60;segmentId&#x60; which identifies the desired segment
-     * and the &#x60;segmentComparator&#x60; members are required.
-     *
+     * Post values
+     * This endpoint replaces the values of a specified Config&#39;s Feature Flags or Settings identified by the &#x60;configId&#x60; parameter in a specified Environment identified by the &#x60;environmentId&#x60; parameter.  Only the &#x60;value&#x60;, &#x60;rolloutRules&#x60; and &#x60;percentageRules&#x60; attributes are modifiable by this endpoint.  **Important:** As this endpoint is doing a complete replace, it&#39;s important to set every other attribute that you don&#39;t  want to change in its original state. Not listing one means it will reset.  For example: We have the following resource. &#x60;&#x60;&#x60;json {   \&quot;settingValues\&quot;: [     {       \&quot;rolloutPercentageItems\&quot;: [         {           \&quot;percentage\&quot;: 30,           \&quot;value\&quot;: true         },         {           \&quot;percentage\&quot;: 70,           \&quot;value\&quot;: false         }       ],       \&quot;rolloutRules\&quot;: [],       \&quot;value\&quot;: false,       \&quot;settingId\&quot;: 1     }   ] } &#x60;&#x60;&#x60; If we send a replace request body as below: &#x60;&#x60;&#x60;json {    \&quot;settingValues\&quot;: [     {       \&quot;value\&quot;: true,       \&quot;settingId\&quot;: 1     }   ] } &#x60;&#x60;&#x60; Then besides that the default value is set to &#x60;true&#x60;, all the Percentage Rules are deleted.  So we get a response like this: &#x60;&#x60;&#x60;json {   \&quot;settingValues\&quot;: [     {       \&quot;rolloutPercentageItems\&quot;: [],       \&quot;rolloutRules\&quot;: [],       \&quot;value\&quot;: true,       \&quot;setting\&quot;:        {         \&quot;settingId\&quot;: 1       }     }   ] } &#x60;&#x60;&#x60;  The &#x60;rolloutRules&#x60; property describes two types of rules:  - **Targeting rules**: When you want to add or update a targeting rule, the &#x60;comparator&#x60;, &#x60;comparisonAttribute&#x60;, and &#x60;comparisonValue&#x60; members are required. - **Segment rules**: When you want to add add or update a segment rule, the &#x60;segmentId&#x60; which identifies the desired segment and the &#x60;segmentComparator&#x60; members are required.
      * @param configId The identifier of the Config. (required)
      * @param environmentId The identifier of the Environment. (required)
-     * @param updateSettingValuesWithIdModel (required)
-     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes
-     *     require a reason\&quot; preference is turned on. (optional)
+     * @param updateSettingValuesWithIdModel  (required)
+     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
      * @return ApiResponse&lt;ConfigSettingValuesModel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td> When everything is ok, the updated setting values returned. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When everything is ok, the updated setting values returned. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public ApiResponse<ConfigSettingValuesModel> postSettingValuesWithHttpInfo(
-            UUID configId,
-            UUID environmentId,
-            UpdateSettingValuesWithIdModel updateSettingValuesWithIdModel,
-            String reason)
-            throws ApiException {
-        okhttp3.Call localVarCall =
-                postSettingValuesValidateBeforeCall(
-                        configId, environmentId, updateSettingValuesWithIdModel, reason, null);
-        Type localVarReturnType = new TypeToken<ConfigSettingValuesModel>() {}.getType();
+    public ApiResponse<ConfigSettingValuesModel> postSettingValuesWithHttpInfo(UUID configId, UUID environmentId, UpdateSettingValuesWithIdModel updateSettingValuesWithIdModel, String reason) throws ApiException {
+        okhttp3.Call localVarCall = postSettingValuesValidateBeforeCall(configId, environmentId, updateSettingValuesWithIdModel, reason, null);
+        Type localVarReturnType = new TypeToken<ConfigSettingValuesModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Post values (asynchronously) This endpoint replaces the values of a specified Config&#39;s
-     * Feature Flags or Settings identified by the &#x60;configId&#x60; parameter in a specified
-     * Environment identified by the &#x60;environmentId&#x60; parameter. Only the
-     * &#x60;value&#x60;, &#x60;rolloutRules&#x60; and &#x60;percentageRules&#x60; attributes are
-     * modifiable by this endpoint. **Important:** As this endpoint is doing a complete replace,
-     * it&#39;s important to set every other attribute that you don&#39;t want to change in its
-     * original state. Not listing one means it will reset. For example: We have the following
-     * resource. &#x60;&#x60;&#x60;json { \&quot;settingValues\&quot;: [ {
-     * \&quot;rolloutPercentageItems\&quot;: [ { \&quot;percentage\&quot;: 30, \&quot;value\&quot;:
-     * true }, { \&quot;percentage\&quot;: 70, \&quot;value\&quot;: false } ],
-     * \&quot;rolloutRules\&quot;: [], \&quot;value\&quot;: false, \&quot;settingId\&quot;: 1 } ] }
-     * &#x60;&#x60;&#x60; If we send a replace request body as below: &#x60;&#x60;&#x60;json {
-     * \&quot;settingValues\&quot;: [ { \&quot;value\&quot;: true, \&quot;settingId\&quot;: 1 } ] }
-     * &#x60;&#x60;&#x60; Then besides that the default value is set to &#x60;true&#x60;, all the
-     * Percentage Rules are deleted. So we get a response like this: &#x60;&#x60;&#x60;json {
-     * \&quot;settingValues\&quot;: [ { \&quot;rolloutPercentageItems\&quot;: [],
-     * \&quot;rolloutRules\&quot;: [], \&quot;value\&quot;: true, \&quot;setting\&quot;: {
-     * \&quot;settingId\&quot;: 1 } } ] } &#x60;&#x60;&#x60; The &#x60;rolloutRules&#x60; property
-     * describes two types of rules: - **Targeting rules**: When you want to add or update a
-     * targeting rule, the &#x60;comparator&#x60;, &#x60;comparisonAttribute&#x60;, and
-     * &#x60;comparisonValue&#x60; members are required. - **Segment rules**: When you want to add
-     * add or update a segment rule, the &#x60;segmentId&#x60; which identifies the desired segment
-     * and the &#x60;segmentComparator&#x60; members are required.
-     *
+     * Post values (asynchronously)
+     * This endpoint replaces the values of a specified Config&#39;s Feature Flags or Settings identified by the &#x60;configId&#x60; parameter in a specified Environment identified by the &#x60;environmentId&#x60; parameter.  Only the &#x60;value&#x60;, &#x60;rolloutRules&#x60; and &#x60;percentageRules&#x60; attributes are modifiable by this endpoint.  **Important:** As this endpoint is doing a complete replace, it&#39;s important to set every other attribute that you don&#39;t  want to change in its original state. Not listing one means it will reset.  For example: We have the following resource. &#x60;&#x60;&#x60;json {   \&quot;settingValues\&quot;: [     {       \&quot;rolloutPercentageItems\&quot;: [         {           \&quot;percentage\&quot;: 30,           \&quot;value\&quot;: true         },         {           \&quot;percentage\&quot;: 70,           \&quot;value\&quot;: false         }       ],       \&quot;rolloutRules\&quot;: [],       \&quot;value\&quot;: false,       \&quot;settingId\&quot;: 1     }   ] } &#x60;&#x60;&#x60; If we send a replace request body as below: &#x60;&#x60;&#x60;json {    \&quot;settingValues\&quot;: [     {       \&quot;value\&quot;: true,       \&quot;settingId\&quot;: 1     }   ] } &#x60;&#x60;&#x60; Then besides that the default value is set to &#x60;true&#x60;, all the Percentage Rules are deleted.  So we get a response like this: &#x60;&#x60;&#x60;json {   \&quot;settingValues\&quot;: [     {       \&quot;rolloutPercentageItems\&quot;: [],       \&quot;rolloutRules\&quot;: [],       \&quot;value\&quot;: true,       \&quot;setting\&quot;:        {         \&quot;settingId\&quot;: 1       }     }   ] } &#x60;&#x60;&#x60;  The &#x60;rolloutRules&#x60; property describes two types of rules:  - **Targeting rules**: When you want to add or update a targeting rule, the &#x60;comparator&#x60;, &#x60;comparisonAttribute&#x60;, and &#x60;comparisonValue&#x60; members are required. - **Segment rules**: When you want to add add or update a segment rule, the &#x60;segmentId&#x60; which identifies the desired segment and the &#x60;segmentComparator&#x60; members are required.
      * @param configId The identifier of the Config. (required)
      * @param environmentId The identifier of the Environment. (required)
-     * @param updateSettingValuesWithIdModel (required)
-     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes
-     *     require a reason\&quot; preference is turned on. (optional)
+     * @param updateSettingValuesWithIdModel  (required)
+     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body
-     *     object
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td> When everything is ok, the updated setting values returned. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When everything is ok, the updated setting values returned. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call postSettingValuesAsync(
-            UUID configId,
-            UUID environmentId,
-            UpdateSettingValuesWithIdModel updateSettingValuesWithIdModel,
-            String reason,
-            final ApiCallback<ConfigSettingValuesModel> _callback)
-            throws ApiException {
+    public okhttp3.Call postSettingValuesAsync(UUID configId, UUID environmentId, UpdateSettingValuesWithIdModel updateSettingValuesWithIdModel, String reason, final ApiCallback<ConfigSettingValuesModel> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall =
-                postSettingValuesValidateBeforeCall(
-                        configId, environmentId, updateSettingValuesWithIdModel, reason, _callback);
-        Type localVarReturnType = new TypeToken<ConfigSettingValuesModel>() {}.getType();
+        okhttp3.Call localVarCall = postSettingValuesValidateBeforeCall(configId, environmentId, updateSettingValuesWithIdModel, reason, _callback);
+        Type localVarReturnType = new TypeToken<ConfigSettingValuesModel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for replaceSettingValue
-     *
      * @param environmentId The identifier of the Environment. (required)
      * @param settingId The id of the Setting. (required)
-     * @param updateSettingValueModel (required)
-     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes
-     *     require a reason\&quot; preference is turned on. (optional)
+     * @param updateSettingValueModel  (required)
+     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call replaceSettingValueCall(
-            UUID environmentId,
-            Integer settingId,
-            UpdateSettingValueModel updateSettingValueModel,
-            String reason,
-            final ApiCallback _callback)
-            throws ApiException {
+    public okhttp3.Call replaceSettingValueCall(UUID environmentId, Integer settingId, UpdateSettingValueModel updateSettingValueModel, String reason, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {};
+        String[] localBasePaths = new String[] {  };
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null) {
+        if (localCustomBaseUrl != null){
             basePath = localCustomBaseUrl;
-        } else if (localBasePaths.length > 0) {
+        } else if ( localBasePaths.length > 0 ) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -819,14 +567,9 @@ public class FeatureFlagSettingValuesApi {
         Object localVarPostBody = updateSettingValueModel;
 
         // create path and map variables
-        String localVarPath =
-                "/v1/environments/{environmentId}/settings/{settingId}/value"
-                        .replace(
-                                "{" + "environmentId" + "}",
-                                localVarApiClient.escapeString(environmentId.toString()))
-                        .replace(
-                                "{" + "settingId" + "}",
-                                localVarApiClient.escapeString(settingId.toString()));
+        String localVarPath = "/v1/environments/{environmentId}/settings/{settingId}/value"
+            .replace("{" + "environmentId" + "}", localVarApiClient.escapeString(environmentId.toString()))
+            .replace("{" + "settingId" + "}", localVarApiClient.escapeString(settingId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -838,260 +581,150 @@ public class FeatureFlagSettingValuesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("reason", reason));
         }
 
-        final String[] localVarAccepts = {"application/json"};
+        final String[] localVarAccepts = {
+            "application/json"
+        };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
             localVarHeaderParams.put("Accept", localVarAccept);
         }
 
         final String[] localVarContentTypes = {
-            "application/json", "text/json", "application/*+json"
+            "application/json",
+            "text/json",
+            "application/*+json"
         };
-        final String localVarContentType =
-                localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] {"Basic"};
-        return localVarApiClient.buildCall(
-                basePath,
-                localVarPath,
-                "PUT",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarCookieParams,
-                localVarFormParams,
-                localVarAuthNames,
-                _callback);
+        String[] localVarAuthNames = new String[] { "Basic" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call replaceSettingValueValidateBeforeCall(
-            UUID environmentId,
-            Integer settingId,
-            UpdateSettingValueModel updateSettingValueModel,
-            String reason,
-            final ApiCallback _callback)
-            throws ApiException {
+    private okhttp3.Call replaceSettingValueValidateBeforeCall(UUID environmentId, Integer settingId, UpdateSettingValueModel updateSettingValueModel, String reason, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'environmentId' is set
         if (environmentId == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'environmentId' when calling"
-                            + " replaceSettingValue(Async)");
+            throw new ApiException("Missing the required parameter 'environmentId' when calling replaceSettingValue(Async)");
         }
 
         // verify the required parameter 'settingId' is set
         if (settingId == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'settingId' when calling"
-                            + " replaceSettingValue(Async)");
+            throw new ApiException("Missing the required parameter 'settingId' when calling replaceSettingValue(Async)");
         }
 
         // verify the required parameter 'updateSettingValueModel' is set
         if (updateSettingValueModel == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'updateSettingValueModel' when calling"
-                            + " replaceSettingValue(Async)");
+            throw new ApiException("Missing the required parameter 'updateSettingValueModel' when calling replaceSettingValue(Async)");
         }
 
-        return replaceSettingValueCall(
-                environmentId, settingId, updateSettingValueModel, reason, _callback);
+        return replaceSettingValueCall(environmentId, settingId, updateSettingValueModel, reason, _callback);
+
     }
 
     /**
-     * Replace value This endpoint replaces the whole value of a Feature Flag or Setting in a
-     * specified Environment. Only the &#x60;value&#x60;, &#x60;rolloutRules&#x60; and
-     * &#x60;percentageRules&#x60; attributes are modifiable by this endpoint. **Important:** As
-     * this endpoint is doing a complete replace, it&#39;s important to set every other attribute
-     * that you don&#39;t want to change in its original state. Not listing one means it will reset.
-     * For example: We have the following resource. &#x60;&#x60;&#x60;json {
-     * \&quot;rolloutPercentageItems\&quot;: [ { \&quot;percentage\&quot;: 30, \&quot;value\&quot;:
-     * true }, { \&quot;percentage\&quot;: 70, \&quot;value\&quot;: false } ],
-     * \&quot;rolloutRules\&quot;: [], \&quot;value\&quot;: false } &#x60;&#x60;&#x60; If we send a
-     * replace request body as below: &#x60;&#x60;&#x60;json { \&quot;value\&quot;: true }
-     * &#x60;&#x60;&#x60; Then besides that the default value is set to &#x60;true&#x60;, all the
-     * Percentage Rules are deleted. So we get a response like this: &#x60;&#x60;&#x60;json {
-     * \&quot;rolloutPercentageItems\&quot;: [], \&quot;rolloutRules\&quot;: [],
-     * \&quot;value\&quot;: true } &#x60;&#x60;&#x60; The &#x60;rolloutRules&#x60; property
-     * describes two types of rules: - **Targeting rules**: When you want to add or update a
-     * targeting rule, the &#x60;comparator&#x60;, &#x60;comparisonAttribute&#x60;, and
-     * &#x60;comparisonValue&#x60; members are required. - **Segment rules**: When you want to add
-     * add or update a segment rule, the &#x60;segmentId&#x60; which identifies the desired segment
-     * and the &#x60;segmentComparator&#x60; members are required.
-     *
+     * Replace value
+     * This endpoint replaces the whole value of a Feature Flag or Setting in a specified Environment.  Only the &#x60;value&#x60;, &#x60;rolloutRules&#x60; and &#x60;percentageRules&#x60; attributes are modifiable by this endpoint.  **Important:** As this endpoint is doing a complete replace, it&#39;s important to set every other attribute that you don&#39;t  want to change in its original state. Not listing one means it will reset.  For example: We have the following resource. &#x60;&#x60;&#x60;json {   \&quot;rolloutPercentageItems\&quot;: [     {       \&quot;percentage\&quot;: 30,       \&quot;value\&quot;: true     },     {       \&quot;percentage\&quot;: 70,       \&quot;value\&quot;: false     }   ],   \&quot;rolloutRules\&quot;: [],   \&quot;value\&quot;: false } &#x60;&#x60;&#x60; If we send a replace request body as below: &#x60;&#x60;&#x60;json {   \&quot;value\&quot;: true } &#x60;&#x60;&#x60; Then besides that the default value is set to &#x60;true&#x60;, all the Percentage Rules are deleted.  So we get a response like this: &#x60;&#x60;&#x60;json {   \&quot;rolloutPercentageItems\&quot;: [],   \&quot;rolloutRules\&quot;: [],   \&quot;value\&quot;: true } &#x60;&#x60;&#x60;  The &#x60;rolloutRules&#x60; property describes two types of rules:  - **Targeting rules**: When you want to add or update a targeting rule, the &#x60;comparator&#x60;, &#x60;comparisonAttribute&#x60;, and &#x60;comparisonValue&#x60; members are required. - **Segment rules**: When you want to add add or update a segment rule, the &#x60;segmentId&#x60; which identifies the desired segment and the &#x60;segmentComparator&#x60; members are required.
      * @param environmentId The identifier of the Environment. (required)
      * @param settingId The id of the Setting. (required)
-     * @param updateSettingValueModel (required)
-     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes
-     *     require a reason\&quot; preference is turned on. (optional)
+     * @param updateSettingValueModel  (required)
+     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
      * @return SettingValueModel
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public SettingValueModel replaceSettingValue(
-            UUID environmentId,
-            Integer settingId,
-            UpdateSettingValueModel updateSettingValueModel,
-            String reason)
-            throws ApiException {
-        ApiResponse<SettingValueModel> localVarResp =
-                replaceSettingValueWithHttpInfo(
-                        environmentId, settingId, updateSettingValueModel, reason);
+    public SettingValueModel replaceSettingValue(UUID environmentId, Integer settingId, UpdateSettingValueModel updateSettingValueModel, String reason) throws ApiException {
+        ApiResponse<SettingValueModel> localVarResp = replaceSettingValueWithHttpInfo(environmentId, settingId, updateSettingValueModel, reason);
         return localVarResp.getData();
     }
 
     /**
-     * Replace value This endpoint replaces the whole value of a Feature Flag or Setting in a
-     * specified Environment. Only the &#x60;value&#x60;, &#x60;rolloutRules&#x60; and
-     * &#x60;percentageRules&#x60; attributes are modifiable by this endpoint. **Important:** As
-     * this endpoint is doing a complete replace, it&#39;s important to set every other attribute
-     * that you don&#39;t want to change in its original state. Not listing one means it will reset.
-     * For example: We have the following resource. &#x60;&#x60;&#x60;json {
-     * \&quot;rolloutPercentageItems\&quot;: [ { \&quot;percentage\&quot;: 30, \&quot;value\&quot;:
-     * true }, { \&quot;percentage\&quot;: 70, \&quot;value\&quot;: false } ],
-     * \&quot;rolloutRules\&quot;: [], \&quot;value\&quot;: false } &#x60;&#x60;&#x60; If we send a
-     * replace request body as below: &#x60;&#x60;&#x60;json { \&quot;value\&quot;: true }
-     * &#x60;&#x60;&#x60; Then besides that the default value is set to &#x60;true&#x60;, all the
-     * Percentage Rules are deleted. So we get a response like this: &#x60;&#x60;&#x60;json {
-     * \&quot;rolloutPercentageItems\&quot;: [], \&quot;rolloutRules\&quot;: [],
-     * \&quot;value\&quot;: true } &#x60;&#x60;&#x60; The &#x60;rolloutRules&#x60; property
-     * describes two types of rules: - **Targeting rules**: When you want to add or update a
-     * targeting rule, the &#x60;comparator&#x60;, &#x60;comparisonAttribute&#x60;, and
-     * &#x60;comparisonValue&#x60; members are required. - **Segment rules**: When you want to add
-     * add or update a segment rule, the &#x60;segmentId&#x60; which identifies the desired segment
-     * and the &#x60;segmentComparator&#x60; members are required.
-     *
+     * Replace value
+     * This endpoint replaces the whole value of a Feature Flag or Setting in a specified Environment.  Only the &#x60;value&#x60;, &#x60;rolloutRules&#x60; and &#x60;percentageRules&#x60; attributes are modifiable by this endpoint.  **Important:** As this endpoint is doing a complete replace, it&#39;s important to set every other attribute that you don&#39;t  want to change in its original state. Not listing one means it will reset.  For example: We have the following resource. &#x60;&#x60;&#x60;json {   \&quot;rolloutPercentageItems\&quot;: [     {       \&quot;percentage\&quot;: 30,       \&quot;value\&quot;: true     },     {       \&quot;percentage\&quot;: 70,       \&quot;value\&quot;: false     }   ],   \&quot;rolloutRules\&quot;: [],   \&quot;value\&quot;: false } &#x60;&#x60;&#x60; If we send a replace request body as below: &#x60;&#x60;&#x60;json {   \&quot;value\&quot;: true } &#x60;&#x60;&#x60; Then besides that the default value is set to &#x60;true&#x60;, all the Percentage Rules are deleted.  So we get a response like this: &#x60;&#x60;&#x60;json {   \&quot;rolloutPercentageItems\&quot;: [],   \&quot;rolloutRules\&quot;: [],   \&quot;value\&quot;: true } &#x60;&#x60;&#x60;  The &#x60;rolloutRules&#x60; property describes two types of rules:  - **Targeting rules**: When you want to add or update a targeting rule, the &#x60;comparator&#x60;, &#x60;comparisonAttribute&#x60;, and &#x60;comparisonValue&#x60; members are required. - **Segment rules**: When you want to add add or update a segment rule, the &#x60;segmentId&#x60; which identifies the desired segment and the &#x60;segmentComparator&#x60; members are required.
      * @param environmentId The identifier of the Environment. (required)
      * @param settingId The id of the Setting. (required)
-     * @param updateSettingValueModel (required)
-     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes
-     *     require a reason\&quot; preference is turned on. (optional)
+     * @param updateSettingValueModel  (required)
+     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
      * @return ApiResponse&lt;SettingValueModel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public ApiResponse<SettingValueModel> replaceSettingValueWithHttpInfo(
-            UUID environmentId,
-            Integer settingId,
-            UpdateSettingValueModel updateSettingValueModel,
-            String reason)
-            throws ApiException {
-        okhttp3.Call localVarCall =
-                replaceSettingValueValidateBeforeCall(
-                        environmentId, settingId, updateSettingValueModel, reason, null);
-        Type localVarReturnType = new TypeToken<SettingValueModel>() {}.getType();
+    public ApiResponse<SettingValueModel> replaceSettingValueWithHttpInfo(UUID environmentId, Integer settingId, UpdateSettingValueModel updateSettingValueModel, String reason) throws ApiException {
+        okhttp3.Call localVarCall = replaceSettingValueValidateBeforeCall(environmentId, settingId, updateSettingValueModel, reason, null);
+        Type localVarReturnType = new TypeToken<SettingValueModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Replace value (asynchronously) This endpoint replaces the whole value of a Feature Flag or
-     * Setting in a specified Environment. Only the &#x60;value&#x60;, &#x60;rolloutRules&#x60; and
-     * &#x60;percentageRules&#x60; attributes are modifiable by this endpoint. **Important:** As
-     * this endpoint is doing a complete replace, it&#39;s important to set every other attribute
-     * that you don&#39;t want to change in its original state. Not listing one means it will reset.
-     * For example: We have the following resource. &#x60;&#x60;&#x60;json {
-     * \&quot;rolloutPercentageItems\&quot;: [ { \&quot;percentage\&quot;: 30, \&quot;value\&quot;:
-     * true }, { \&quot;percentage\&quot;: 70, \&quot;value\&quot;: false } ],
-     * \&quot;rolloutRules\&quot;: [], \&quot;value\&quot;: false } &#x60;&#x60;&#x60; If we send a
-     * replace request body as below: &#x60;&#x60;&#x60;json { \&quot;value\&quot;: true }
-     * &#x60;&#x60;&#x60; Then besides that the default value is set to &#x60;true&#x60;, all the
-     * Percentage Rules are deleted. So we get a response like this: &#x60;&#x60;&#x60;json {
-     * \&quot;rolloutPercentageItems\&quot;: [], \&quot;rolloutRules\&quot;: [],
-     * \&quot;value\&quot;: true } &#x60;&#x60;&#x60; The &#x60;rolloutRules&#x60; property
-     * describes two types of rules: - **Targeting rules**: When you want to add or update a
-     * targeting rule, the &#x60;comparator&#x60;, &#x60;comparisonAttribute&#x60;, and
-     * &#x60;comparisonValue&#x60; members are required. - **Segment rules**: When you want to add
-     * add or update a segment rule, the &#x60;segmentId&#x60; which identifies the desired segment
-     * and the &#x60;segmentComparator&#x60; members are required.
-     *
+     * Replace value (asynchronously)
+     * This endpoint replaces the whole value of a Feature Flag or Setting in a specified Environment.  Only the &#x60;value&#x60;, &#x60;rolloutRules&#x60; and &#x60;percentageRules&#x60; attributes are modifiable by this endpoint.  **Important:** As this endpoint is doing a complete replace, it&#39;s important to set every other attribute that you don&#39;t  want to change in its original state. Not listing one means it will reset.  For example: We have the following resource. &#x60;&#x60;&#x60;json {   \&quot;rolloutPercentageItems\&quot;: [     {       \&quot;percentage\&quot;: 30,       \&quot;value\&quot;: true     },     {       \&quot;percentage\&quot;: 70,       \&quot;value\&quot;: false     }   ],   \&quot;rolloutRules\&quot;: [],   \&quot;value\&quot;: false } &#x60;&#x60;&#x60; If we send a replace request body as below: &#x60;&#x60;&#x60;json {   \&quot;value\&quot;: true } &#x60;&#x60;&#x60; Then besides that the default value is set to &#x60;true&#x60;, all the Percentage Rules are deleted.  So we get a response like this: &#x60;&#x60;&#x60;json {   \&quot;rolloutPercentageItems\&quot;: [],   \&quot;rolloutRules\&quot;: [],   \&quot;value\&quot;: true } &#x60;&#x60;&#x60;  The &#x60;rolloutRules&#x60; property describes two types of rules:  - **Targeting rules**: When you want to add or update a targeting rule, the &#x60;comparator&#x60;, &#x60;comparisonAttribute&#x60;, and &#x60;comparisonValue&#x60; members are required. - **Segment rules**: When you want to add add or update a segment rule, the &#x60;segmentId&#x60; which identifies the desired segment and the &#x60;segmentComparator&#x60; members are required.
      * @param environmentId The identifier of the Environment. (required)
      * @param settingId The id of the Setting. (required)
-     * @param updateSettingValueModel (required)
-     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes
-     *     require a reason\&quot; preference is turned on. (optional)
+     * @param updateSettingValueModel  (required)
+     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body
-     *     object
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call replaceSettingValueAsync(
-            UUID environmentId,
-            Integer settingId,
-            UpdateSettingValueModel updateSettingValueModel,
-            String reason,
-            final ApiCallback<SettingValueModel> _callback)
-            throws ApiException {
+    public okhttp3.Call replaceSettingValueAsync(UUID environmentId, Integer settingId, UpdateSettingValueModel updateSettingValueModel, String reason, final ApiCallback<SettingValueModel> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall =
-                replaceSettingValueValidateBeforeCall(
-                        environmentId, settingId, updateSettingValueModel, reason, _callback);
-        Type localVarReturnType = new TypeToken<SettingValueModel>() {}.getType();
+        okhttp3.Call localVarCall = replaceSettingValueValidateBeforeCall(environmentId, settingId, updateSettingValueModel, reason, _callback);
+        Type localVarReturnType = new TypeToken<SettingValueModel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for updateSettingValue
-     *
      * @param environmentId The identifier of the Environment. (required)
      * @param settingId The id of the Setting. (required)
-     * @param jsonPatchOperation (required)
-     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes
-     *     require a reason\&quot; preference is turned on. (optional)
+     * @param jsonPatchOperation  (required)
+     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td> When the patch was successful. </td><td>  -  </td></tr>
-     * <tr><td> 204 </td><td> When no change applied on the resource. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When the patch was successful. </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> When no change applied on the resource. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call updateSettingValueCall(
-            UUID environmentId,
-            Integer settingId,
-            List<JsonPatchOperation> jsonPatchOperation,
-            String reason,
-            final ApiCallback _callback)
-            throws ApiException {
+    public okhttp3.Call updateSettingValueCall(UUID environmentId, Integer settingId, List<JsonPatchOperation> jsonPatchOperation, String reason, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {};
+        String[] localBasePaths = new String[] {  };
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null) {
+        if (localCustomBaseUrl != null){
             basePath = localCustomBaseUrl;
-        } else if (localBasePaths.length > 0) {
+        } else if ( localBasePaths.length > 0 ) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -1100,14 +733,9 @@ public class FeatureFlagSettingValuesApi {
         Object localVarPostBody = jsonPatchOperation;
 
         // create path and map variables
-        String localVarPath =
-                "/v1/environments/{environmentId}/settings/{settingId}/value"
-                        .replace(
-                                "{" + "environmentId" + "}",
-                                localVarApiClient.escapeString(environmentId.toString()))
-                        .replace(
-                                "{" + "settingId" + "}",
-                                localVarApiClient.escapeString(settingId.toString()));
+        String localVarPath = "/v1/environments/{environmentId}/settings/{settingId}/value"
+            .replace("{" + "environmentId" + "}", localVarApiClient.escapeString(environmentId.toString()))
+            .replace("{" + "settingId" + "}", localVarApiClient.escapeString(settingId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1119,237 +747,122 @@ public class FeatureFlagSettingValuesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("reason", reason));
         }
 
-        final String[] localVarAccepts = {"application/json"};
+        final String[] localVarAccepts = {
+            "application/json"
+        };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
             localVarHeaderParams.put("Accept", localVarAccept);
         }
 
         final String[] localVarContentTypes = {
-            "application/json", "text/json", "application/*+json"
+            "application/json",
+            "text/json",
+            "application/*+json"
         };
-        final String localVarContentType =
-                localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] {"Basic"};
-        return localVarApiClient.buildCall(
-                basePath,
-                localVarPath,
-                "PATCH",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarCookieParams,
-                localVarFormParams,
-                localVarAuthNames,
-                _callback);
+        String[] localVarAuthNames = new String[] { "Basic" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateSettingValueValidateBeforeCall(
-            UUID environmentId,
-            Integer settingId,
-            List<JsonPatchOperation> jsonPatchOperation,
-            String reason,
-            final ApiCallback _callback)
-            throws ApiException {
+    private okhttp3.Call updateSettingValueValidateBeforeCall(UUID environmentId, Integer settingId, List<JsonPatchOperation> jsonPatchOperation, String reason, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'environmentId' is set
         if (environmentId == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'environmentId' when calling"
-                            + " updateSettingValue(Async)");
+            throw new ApiException("Missing the required parameter 'environmentId' when calling updateSettingValue(Async)");
         }
 
         // verify the required parameter 'settingId' is set
         if (settingId == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'settingId' when calling"
-                            + " updateSettingValue(Async)");
+            throw new ApiException("Missing the required parameter 'settingId' when calling updateSettingValue(Async)");
         }
 
         // verify the required parameter 'jsonPatchOperation' is set
         if (jsonPatchOperation == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'jsonPatchOperation' when calling"
-                            + " updateSettingValue(Async)");
+            throw new ApiException("Missing the required parameter 'jsonPatchOperation' when calling updateSettingValue(Async)");
         }
 
-        return updateSettingValueCall(
-                environmentId, settingId, jsonPatchOperation, reason, _callback);
+        return updateSettingValueCall(environmentId, settingId, jsonPatchOperation, reason, _callback);
+
     }
 
     /**
-     * Update value This endpoint updates the value of a Feature Flag or Setting with a collection
-     * of [JSON Patch](https://jsonpatch.com) operations in a specified Environment. Only the
-     * &#x60;value&#x60;, &#x60;rolloutRules&#x60; and &#x60;percentageRules&#x60; attributes are
-     * modifiable by this endpoint. The advantage of using JSON Patch is that you can describe
-     * individual update operations on a resource without touching attributes that you don&#39;t
-     * want to change. It supports collection reordering, so it also can be used for reordering the
-     * targeting rules of a Feature Flag or Setting. For example: We have the following resource.
-     * &#x60;&#x60;&#x60;json { \&quot;rolloutPercentageItems\&quot;: [ { \&quot;percentage\&quot;:
-     * 30, \&quot;value\&quot;: true }, { \&quot;percentage\&quot;: 70, \&quot;value\&quot;: false }
-     * ], \&quot;rolloutRules\&quot;: [], \&quot;value\&quot;: false } &#x60;&#x60;&#x60; If we send
-     * an update request body as below: &#x60;&#x60;&#x60;json [ { \&quot;op\&quot;:
-     * \&quot;replace\&quot;, \&quot;path\&quot;: \&quot;/value\&quot;, \&quot;value\&quot;: true }
-     * ] &#x60;&#x60;&#x60; Only the default value is going to be set to &#x60;true&#x60; and all
-     * the Percentage Rules are remaining unchanged. So we get a response like this:
-     * &#x60;&#x60;&#x60;json { \&quot;rolloutPercentageItems\&quot;: [ { \&quot;percentage\&quot;:
-     * 30, \&quot;value\&quot;: true }, { \&quot;percentage\&quot;: 70, \&quot;value\&quot;: false }
-     * ], \&quot;rolloutRules\&quot;: [], \&quot;value\&quot;: true } &#x60;&#x60;&#x60; The
-     * &#x60;rolloutRules&#x60; property describes two types of rules: - **Targeting rules**: When
-     * you want to add or update a targeting rule, the &#x60;comparator&#x60;,
-     * &#x60;comparisonAttribute&#x60;, and &#x60;comparisonValue&#x60; members are required. -
-     * **Segment rules**: When you want to add add or update a segment rule, the
-     * &#x60;segmentId&#x60; which identifies the desired segment and the
-     * &#x60;segmentComparator&#x60; members are required.
-     *
+     * Update value
+     * This endpoint updates the value of a Feature Flag or Setting  with a collection of [JSON Patch](https://jsonpatch.com) operations in a specified Environment.  Only the &#x60;value&#x60;, &#x60;rolloutRules&#x60; and &#x60;percentageRules&#x60; attributes are modifiable by this endpoint.  The advantage of using JSON Patch is that you can describe individual update operations on a resource without touching attributes that you don&#39;t want to change. It supports collection reordering, so it also  can be used for reordering the targeting rules of a Feature Flag or Setting.  For example: We have the following resource. &#x60;&#x60;&#x60;json {   \&quot;rolloutPercentageItems\&quot;: [     {       \&quot;percentage\&quot;: 30,       \&quot;value\&quot;: true     },     {       \&quot;percentage\&quot;: 70,       \&quot;value\&quot;: false     }   ],   \&quot;rolloutRules\&quot;: [],   \&quot;value\&quot;: false } &#x60;&#x60;&#x60; If we send an update request body as below: &#x60;&#x60;&#x60;json [   {     \&quot;op\&quot;: \&quot;replace\&quot;,     \&quot;path\&quot;: \&quot;/value\&quot;,     \&quot;value\&quot;: true   } ] &#x60;&#x60;&#x60; Only the default value is going to be set to &#x60;true&#x60; and all the Percentage Rules are remaining unchanged. So we get a response like this: &#x60;&#x60;&#x60;json {   \&quot;rolloutPercentageItems\&quot;: [     {       \&quot;percentage\&quot;: 30,       \&quot;value\&quot;: true     },     {       \&quot;percentage\&quot;: 70,       \&quot;value\&quot;: false     }   ],   \&quot;rolloutRules\&quot;: [],   \&quot;value\&quot;: true } &#x60;&#x60;&#x60;  The &#x60;rolloutRules&#x60; property describes two types of rules:  - **Targeting rules**: When you want to add or update a targeting rule, the &#x60;comparator&#x60;, &#x60;comparisonAttribute&#x60;, and &#x60;comparisonValue&#x60; members are required. - **Segment rules**: When you want to add add or update a segment rule, the &#x60;segmentId&#x60; which identifies the desired segment and the &#x60;segmentComparator&#x60; members are required.
      * @param environmentId The identifier of the Environment. (required)
      * @param settingId The id of the Setting. (required)
-     * @param jsonPatchOperation (required)
-     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes
-     *     require a reason\&quot; preference is turned on. (optional)
+     * @param jsonPatchOperation  (required)
+     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
      * @return SettingValueModel
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td> When the patch was successful. </td><td>  -  </td></tr>
-     * <tr><td> 204 </td><td> When no change applied on the resource. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When the patch was successful. </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> When no change applied on the resource. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public SettingValueModel updateSettingValue(
-            UUID environmentId,
-            Integer settingId,
-            List<JsonPatchOperation> jsonPatchOperation,
-            String reason)
-            throws ApiException {
-        ApiResponse<SettingValueModel> localVarResp =
-                updateSettingValueWithHttpInfo(
-                        environmentId, settingId, jsonPatchOperation, reason);
+    public SettingValueModel updateSettingValue(UUID environmentId, Integer settingId, List<JsonPatchOperation> jsonPatchOperation, String reason) throws ApiException {
+        ApiResponse<SettingValueModel> localVarResp = updateSettingValueWithHttpInfo(environmentId, settingId, jsonPatchOperation, reason);
         return localVarResp.getData();
     }
 
     /**
-     * Update value This endpoint updates the value of a Feature Flag or Setting with a collection
-     * of [JSON Patch](https://jsonpatch.com) operations in a specified Environment. Only the
-     * &#x60;value&#x60;, &#x60;rolloutRules&#x60; and &#x60;percentageRules&#x60; attributes are
-     * modifiable by this endpoint. The advantage of using JSON Patch is that you can describe
-     * individual update operations on a resource without touching attributes that you don&#39;t
-     * want to change. It supports collection reordering, so it also can be used for reordering the
-     * targeting rules of a Feature Flag or Setting. For example: We have the following resource.
-     * &#x60;&#x60;&#x60;json { \&quot;rolloutPercentageItems\&quot;: [ { \&quot;percentage\&quot;:
-     * 30, \&quot;value\&quot;: true }, { \&quot;percentage\&quot;: 70, \&quot;value\&quot;: false }
-     * ], \&quot;rolloutRules\&quot;: [], \&quot;value\&quot;: false } &#x60;&#x60;&#x60; If we send
-     * an update request body as below: &#x60;&#x60;&#x60;json [ { \&quot;op\&quot;:
-     * \&quot;replace\&quot;, \&quot;path\&quot;: \&quot;/value\&quot;, \&quot;value\&quot;: true }
-     * ] &#x60;&#x60;&#x60; Only the default value is going to be set to &#x60;true&#x60; and all
-     * the Percentage Rules are remaining unchanged. So we get a response like this:
-     * &#x60;&#x60;&#x60;json { \&quot;rolloutPercentageItems\&quot;: [ { \&quot;percentage\&quot;:
-     * 30, \&quot;value\&quot;: true }, { \&quot;percentage\&quot;: 70, \&quot;value\&quot;: false }
-     * ], \&quot;rolloutRules\&quot;: [], \&quot;value\&quot;: true } &#x60;&#x60;&#x60; The
-     * &#x60;rolloutRules&#x60; property describes two types of rules: - **Targeting rules**: When
-     * you want to add or update a targeting rule, the &#x60;comparator&#x60;,
-     * &#x60;comparisonAttribute&#x60;, and &#x60;comparisonValue&#x60; members are required. -
-     * **Segment rules**: When you want to add add or update a segment rule, the
-     * &#x60;segmentId&#x60; which identifies the desired segment and the
-     * &#x60;segmentComparator&#x60; members are required.
-     *
+     * Update value
+     * This endpoint updates the value of a Feature Flag or Setting  with a collection of [JSON Patch](https://jsonpatch.com) operations in a specified Environment.  Only the &#x60;value&#x60;, &#x60;rolloutRules&#x60; and &#x60;percentageRules&#x60; attributes are modifiable by this endpoint.  The advantage of using JSON Patch is that you can describe individual update operations on a resource without touching attributes that you don&#39;t want to change. It supports collection reordering, so it also  can be used for reordering the targeting rules of a Feature Flag or Setting.  For example: We have the following resource. &#x60;&#x60;&#x60;json {   \&quot;rolloutPercentageItems\&quot;: [     {       \&quot;percentage\&quot;: 30,       \&quot;value\&quot;: true     },     {       \&quot;percentage\&quot;: 70,       \&quot;value\&quot;: false     }   ],   \&quot;rolloutRules\&quot;: [],   \&quot;value\&quot;: false } &#x60;&#x60;&#x60; If we send an update request body as below: &#x60;&#x60;&#x60;json [   {     \&quot;op\&quot;: \&quot;replace\&quot;,     \&quot;path\&quot;: \&quot;/value\&quot;,     \&quot;value\&quot;: true   } ] &#x60;&#x60;&#x60; Only the default value is going to be set to &#x60;true&#x60; and all the Percentage Rules are remaining unchanged. So we get a response like this: &#x60;&#x60;&#x60;json {   \&quot;rolloutPercentageItems\&quot;: [     {       \&quot;percentage\&quot;: 30,       \&quot;value\&quot;: true     },     {       \&quot;percentage\&quot;: 70,       \&quot;value\&quot;: false     }   ],   \&quot;rolloutRules\&quot;: [],   \&quot;value\&quot;: true } &#x60;&#x60;&#x60;  The &#x60;rolloutRules&#x60; property describes two types of rules:  - **Targeting rules**: When you want to add or update a targeting rule, the &#x60;comparator&#x60;, &#x60;comparisonAttribute&#x60;, and &#x60;comparisonValue&#x60; members are required. - **Segment rules**: When you want to add add or update a segment rule, the &#x60;segmentId&#x60; which identifies the desired segment and the &#x60;segmentComparator&#x60; members are required.
      * @param environmentId The identifier of the Environment. (required)
      * @param settingId The id of the Setting. (required)
-     * @param jsonPatchOperation (required)
-     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes
-     *     require a reason\&quot; preference is turned on. (optional)
+     * @param jsonPatchOperation  (required)
+     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
      * @return ApiResponse&lt;SettingValueModel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td> When the patch was successful. </td><td>  -  </td></tr>
-     * <tr><td> 204 </td><td> When no change applied on the resource. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When the patch was successful. </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> When no change applied on the resource. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public ApiResponse<SettingValueModel> updateSettingValueWithHttpInfo(
-            UUID environmentId,
-            Integer settingId,
-            List<JsonPatchOperation> jsonPatchOperation,
-            String reason)
-            throws ApiException {
-        okhttp3.Call localVarCall =
-                updateSettingValueValidateBeforeCall(
-                        environmentId, settingId, jsonPatchOperation, reason, null);
-        Type localVarReturnType = new TypeToken<SettingValueModel>() {}.getType();
+    public ApiResponse<SettingValueModel> updateSettingValueWithHttpInfo(UUID environmentId, Integer settingId, List<JsonPatchOperation> jsonPatchOperation, String reason) throws ApiException {
+        okhttp3.Call localVarCall = updateSettingValueValidateBeforeCall(environmentId, settingId, jsonPatchOperation, reason, null);
+        Type localVarReturnType = new TypeToken<SettingValueModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Update value (asynchronously) This endpoint updates the value of a Feature Flag or Setting
-     * with a collection of [JSON Patch](https://jsonpatch.com) operations in a specified
-     * Environment. Only the &#x60;value&#x60;, &#x60;rolloutRules&#x60; and
-     * &#x60;percentageRules&#x60; attributes are modifiable by this endpoint. The advantage of
-     * using JSON Patch is that you can describe individual update operations on a resource without
-     * touching attributes that you don&#39;t want to change. It supports collection reordering, so
-     * it also can be used for reordering the targeting rules of a Feature Flag or Setting. For
-     * example: We have the following resource. &#x60;&#x60;&#x60;json {
-     * \&quot;rolloutPercentageItems\&quot;: [ { \&quot;percentage\&quot;: 30, \&quot;value\&quot;:
-     * true }, { \&quot;percentage\&quot;: 70, \&quot;value\&quot;: false } ],
-     * \&quot;rolloutRules\&quot;: [], \&quot;value\&quot;: false } &#x60;&#x60;&#x60; If we send an
-     * update request body as below: &#x60;&#x60;&#x60;json [ { \&quot;op\&quot;:
-     * \&quot;replace\&quot;, \&quot;path\&quot;: \&quot;/value\&quot;, \&quot;value\&quot;: true }
-     * ] &#x60;&#x60;&#x60; Only the default value is going to be set to &#x60;true&#x60; and all
-     * the Percentage Rules are remaining unchanged. So we get a response like this:
-     * &#x60;&#x60;&#x60;json { \&quot;rolloutPercentageItems\&quot;: [ { \&quot;percentage\&quot;:
-     * 30, \&quot;value\&quot;: true }, { \&quot;percentage\&quot;: 70, \&quot;value\&quot;: false }
-     * ], \&quot;rolloutRules\&quot;: [], \&quot;value\&quot;: true } &#x60;&#x60;&#x60; The
-     * &#x60;rolloutRules&#x60; property describes two types of rules: - **Targeting rules**: When
-     * you want to add or update a targeting rule, the &#x60;comparator&#x60;,
-     * &#x60;comparisonAttribute&#x60;, and &#x60;comparisonValue&#x60; members are required. -
-     * **Segment rules**: When you want to add add or update a segment rule, the
-     * &#x60;segmentId&#x60; which identifies the desired segment and the
-     * &#x60;segmentComparator&#x60; members are required.
-     *
+     * Update value (asynchronously)
+     * This endpoint updates the value of a Feature Flag or Setting  with a collection of [JSON Patch](https://jsonpatch.com) operations in a specified Environment.  Only the &#x60;value&#x60;, &#x60;rolloutRules&#x60; and &#x60;percentageRules&#x60; attributes are modifiable by this endpoint.  The advantage of using JSON Patch is that you can describe individual update operations on a resource without touching attributes that you don&#39;t want to change. It supports collection reordering, so it also  can be used for reordering the targeting rules of a Feature Flag or Setting.  For example: We have the following resource. &#x60;&#x60;&#x60;json {   \&quot;rolloutPercentageItems\&quot;: [     {       \&quot;percentage\&quot;: 30,       \&quot;value\&quot;: true     },     {       \&quot;percentage\&quot;: 70,       \&quot;value\&quot;: false     }   ],   \&quot;rolloutRules\&quot;: [],   \&quot;value\&quot;: false } &#x60;&#x60;&#x60; If we send an update request body as below: &#x60;&#x60;&#x60;json [   {     \&quot;op\&quot;: \&quot;replace\&quot;,     \&quot;path\&quot;: \&quot;/value\&quot;,     \&quot;value\&quot;: true   } ] &#x60;&#x60;&#x60; Only the default value is going to be set to &#x60;true&#x60; and all the Percentage Rules are remaining unchanged. So we get a response like this: &#x60;&#x60;&#x60;json {   \&quot;rolloutPercentageItems\&quot;: [     {       \&quot;percentage\&quot;: 30,       \&quot;value\&quot;: true     },     {       \&quot;percentage\&quot;: 70,       \&quot;value\&quot;: false     }   ],   \&quot;rolloutRules\&quot;: [],   \&quot;value\&quot;: true } &#x60;&#x60;&#x60;  The &#x60;rolloutRules&#x60; property describes two types of rules:  - **Targeting rules**: When you want to add or update a targeting rule, the &#x60;comparator&#x60;, &#x60;comparisonAttribute&#x60;, and &#x60;comparisonValue&#x60; members are required. - **Segment rules**: When you want to add add or update a segment rule, the &#x60;segmentId&#x60; which identifies the desired segment and the &#x60;segmentComparator&#x60; members are required.
      * @param environmentId The identifier of the Environment. (required)
      * @param settingId The id of the Setting. (required)
-     * @param jsonPatchOperation (required)
-     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes
-     *     require a reason\&quot; preference is turned on. (optional)
+     * @param jsonPatchOperation  (required)
+     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body
-     *     object
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td> When the patch was successful. </td><td>  -  </td></tr>
-     * <tr><td> 204 </td><td> When no change applied on the resource. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When the patch was successful. </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> When no change applied on the resource. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call updateSettingValueAsync(
-            UUID environmentId,
-            Integer settingId,
-            List<JsonPatchOperation> jsonPatchOperation,
-            String reason,
-            final ApiCallback<SettingValueModel> _callback)
-            throws ApiException {
+    public okhttp3.Call updateSettingValueAsync(UUID environmentId, Integer settingId, List<JsonPatchOperation> jsonPatchOperation, String reason, final ApiCallback<SettingValueModel> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall =
-                updateSettingValueValidateBeforeCall(
-                        environmentId, settingId, jsonPatchOperation, reason, _callback);
-        Type localVarReturnType = new TypeToken<SettingValueModel>() {}.getType();
+        okhttp3.Call localVarCall = updateSettingValueValidateBeforeCall(environmentId, settingId, jsonPatchOperation, reason, _callback);
+        Type localVarReturnType = new TypeToken<SettingValueModel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

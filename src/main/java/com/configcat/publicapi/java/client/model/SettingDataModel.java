@@ -1,6 +1,6 @@
 /*
  * ConfigCat Public Management API
- * The purpose of this API is to access the ConfigCat platform programmatically. You can **Create**, **Read**, **Update** and **Delete** any entities like **Feature Flags, Configs, Environments** or **Products** within ConfigCat.  **Base API URL**: https://api.configcat.com  If you prefer the swagger documentation, you can find it here: [Swagger UI](https://api.configcat.com/swagger).  The API is based on HTTP REST, uses resource-oriented URLs, status codes and supports JSON  format.   **Important:** Do not use this API for accessing and evaluating feature flag values. Use the [SDKs](https://configcat.com/docs/sdk-reference/overview) or the [ConfigCat Proxy](https://configcat.com/docs/advanced/proxy/proxy-overview/) instead.  # OpenAPI Specification  The complete specification is publicly available in the following formats:  - [OpenAPI v3](https://api.configcat.com/docs/v1/swagger.json) - [Swagger v2](https://api.configcat.com/docs/v1/swagger.v2.json)  You can use it to generate client libraries in various languages with [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) or [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) to interact with this API.  # Authentication This API uses the [Basic HTTP Authentication Scheme](https://en.wikipedia.org/wiki/Basic_access_authentication).   <!-- ReDoc-Inject: <security-definitions> -->  # Throttling and rate limits All the rate limited API calls are returning information about the current rate limit period in the following HTTP headers:  | Header | Description | | :- | :- | | X-Rate-Limit-Remaining | The maximum number of requests remaining in the current rate limit period. | | X-Rate-Limit-Reset     | The time when the current rate limit period resets.        |  When the rate limit is exceeded by a request, the API returns with a `HTTP 429 - Too many requests` status along with a `Retry-After` HTTP header.
+ * The purpose of this API is to access the ConfigCat platform programmatically. You can **Create**, **Read**, **Update** and **Delete** any entities like **Feature Flags, Configs, Environments** or **Products** within ConfigCat.  **Base API URL**: https://api.configcat.com  If you prefer the swagger documentation, you can find it here: [Swagger UI](https://api.configcat.com/swagger).  The API is based on HTTP REST, uses resource-oriented URLs, status codes and supports JSON  format.   **Important:** Do not use this API for accessing and evaluating feature flag values. Use the [SDKs](https://configcat.com/docs/sdk-reference/overview) or the [ConfigCat Proxy](https://configcat.com/docs/advanced/proxy/proxy-overview/) instead.  # OpenAPI Specification  The complete specification is publicly available in the following formats:  - [OpenAPI v3](https://api.configcat.com/docs/v1/swagger.json) - [Swagger v2](https://api.configcat.com/docs/v1/swagger.v2.json)  You can use it to generate client libraries in various languages with [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) or [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) to interact with this API.  # Authentication This API uses the [Basic HTTP Authentication Scheme](https://en.wikipedia.org/wiki/Basic_access_authentication).   <!-- ReDoc-Inject: <security-definitions> -->  # Throttling and rate limits All the rate limited API calls are returning information about the current rate limit period in the following HTTP headers:  | Header | Description | | :- | :- | | X-Rate-Limit-Remaining | The maximum number of requests remaining in the current rate limit period. | | X-Rate-Limit-Reset     | The time when the current rate limit period resets.        |  When the rate limit is exceeded by a request, the API returns with a `HTTP 429 - Too many requests` status along with a `Retry-After` HTTP header. 
  *
  * The version of the OpenAPI document: v1
  * Contact: support@configcat.com
@@ -10,501 +10,542 @@
  * Do not edit the class manually.
  */
 
+
 package com.configcat.publicapi.java.client.model;
 
-
-import com.configcat.publicapi.java.client.JSON;
-import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
+import java.util.Objects;
+import com.configcat.publicapi.java.client.model.SettingType;
 import com.google.gson.TypeAdapter;
-import com.google.gson.TypeAdapterFactory;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
 import org.openapitools.jackson.nullable.JsonNullable;
 
-/** Metadata of a Feature Flag or Setting. */
-@javax.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        date = "2024-10-09T12:38:06.739118192Z[Etc/UTC]",
-        comments = "Generator version: 7.7.0")
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.configcat.publicapi.java.client.JSON;
+
+/**
+ * Metadata of a Feature Flag or Setting.
+ */
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class SettingDataModel {
-    public static final String SERIALIZED_NAME_SETTING_ID = "settingId";
+  public static final String SERIALIZED_NAME_SETTING_ID = "settingId";
+  @SerializedName(SERIALIZED_NAME_SETTING_ID)
+  private Integer settingId;
 
-    @SerializedName(SERIALIZED_NAME_SETTING_ID)
-    private Integer settingId;
+  public static final String SERIALIZED_NAME_KEY = "key";
+  @SerializedName(SERIALIZED_NAME_KEY)
+  private String key;
 
-    public static final String SERIALIZED_NAME_KEY = "key";
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  private String name;
 
-    @SerializedName(SERIALIZED_NAME_KEY)
-    private String key;
+  public static final String SERIALIZED_NAME_HINT = "hint";
+  @SerializedName(SERIALIZED_NAME_HINT)
+  private String hint;
 
-    public static final String SERIALIZED_NAME_NAME = "name";
+  public static final String SERIALIZED_NAME_SETTING_TYPE = "settingType";
+  @SerializedName(SERIALIZED_NAME_SETTING_TYPE)
+  private SettingType settingType;
 
-    @SerializedName(SERIALIZED_NAME_NAME)
-    private String name;
+  public static final String SERIALIZED_NAME_ORDER = "order";
+  @SerializedName(SERIALIZED_NAME_ORDER)
+  private Integer order;
 
-    public static final String SERIALIZED_NAME_HINT = "hint";
+  public static final String SERIALIZED_NAME_CREATED_AT = "createdAt";
+  @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  private OffsetDateTime createdAt;
 
-    @SerializedName(SERIALIZED_NAME_HINT)
-    private String hint;
+  public static final String SERIALIZED_NAME_CREATOR_EMAIL = "creatorEmail";
+  @SerializedName(SERIALIZED_NAME_CREATOR_EMAIL)
+  private String creatorEmail;
 
-    public static final String SERIALIZED_NAME_SETTING_TYPE = "settingType";
+  public static final String SERIALIZED_NAME_CREATOR_FULL_NAME = "creatorFullName";
+  @SerializedName(SERIALIZED_NAME_CREATOR_FULL_NAME)
+  private String creatorFullName;
 
-    @SerializedName(SERIALIZED_NAME_SETTING_TYPE)
-    private SettingType settingType;
+  public static final String SERIALIZED_NAME_IS_WATCHING = "isWatching";
+  @SerializedName(SERIALIZED_NAME_IS_WATCHING)
+  private Boolean isWatching;
 
-    public static final String SERIALIZED_NAME_ORDER = "order";
+  public SettingDataModel() {
+  }
 
-    @SerializedName(SERIALIZED_NAME_ORDER)
-    private Integer order;
+  public SettingDataModel settingId(Integer settingId) {
+    this.settingId = settingId;
+    return this;
+  }
 
-    public static final String SERIALIZED_NAME_CREATED_AT = "createdAt";
+  /**
+   * Identifier of the Feature Flag or Setting.
+   * @return settingId
+   */
+  @javax.annotation.Nullable
+  public Integer getSettingId() {
+    return settingId;
+  }
 
-    @SerializedName(SERIALIZED_NAME_CREATED_AT)
-    private OffsetDateTime createdAt;
+  public void setSettingId(Integer settingId) {
+    this.settingId = settingId;
+  }
 
-    public static final String SERIALIZED_NAME_CREATOR_EMAIL = "creatorEmail";
 
-    @SerializedName(SERIALIZED_NAME_CREATOR_EMAIL)
-    private String creatorEmail;
+  public SettingDataModel key(String key) {
+    this.key = key;
+    return this;
+  }
 
-    public static final String SERIALIZED_NAME_CREATOR_FULL_NAME = "creatorFullName";
+  /**
+   * Key of the Feature Flag or Setting.
+   * @return key
+   */
+  @javax.annotation.Nullable
+  public String getKey() {
+    return key;
+  }
 
-    @SerializedName(SERIALIZED_NAME_CREATOR_FULL_NAME)
-    private String creatorFullName;
+  public void setKey(String key) {
+    this.key = key;
+  }
 
-    public static final String SERIALIZED_NAME_IS_WATCHING = "isWatching";
 
-    @SerializedName(SERIALIZED_NAME_IS_WATCHING)
-    private Boolean isWatching;
+  public SettingDataModel name(String name) {
+    this.name = name;
+    return this;
+  }
 
-    public SettingDataModel() {}
+  /**
+   * Name of the Feature Flag or Setting.
+   * @return name
+   */
+  @javax.annotation.Nullable
+  public String getName() {
+    return name;
+  }
 
-    public SettingDataModel settingId(Integer settingId) {
-        this.settingId = settingId;
-        return this;
+  public void setName(String name) {
+    this.name = name;
+  }
+
+
+  public SettingDataModel hint(String hint) {
+    this.hint = hint;
+    return this;
+  }
+
+  /**
+   * Description of the Feature Flag or Setting.
+   * @return hint
+   */
+  @javax.annotation.Nullable
+  public String getHint() {
+    return hint;
+  }
+
+  public void setHint(String hint) {
+    this.hint = hint;
+  }
+
+
+  public SettingDataModel settingType(SettingType settingType) {
+    this.settingType = settingType;
+    return this;
+  }
+
+  /**
+   * Get settingType
+   * @return settingType
+   */
+  @javax.annotation.Nullable
+  public SettingType getSettingType() {
+    return settingType;
+  }
+
+  public void setSettingType(SettingType settingType) {
+    this.settingType = settingType;
+  }
+
+
+  public SettingDataModel order(Integer order) {
+    this.order = order;
+    return this;
+  }
+
+  /**
+   * The order of the Feature Flag or Setting represented on the ConfigCat Dashboard.
+   * @return order
+   */
+  @javax.annotation.Nullable
+  public Integer getOrder() {
+    return order;
+  }
+
+  public void setOrder(Integer order) {
+    this.order = order;
+  }
+
+
+  public SettingDataModel createdAt(OffsetDateTime createdAt) {
+    this.createdAt = createdAt;
+    return this;
+  }
+
+  /**
+   * The creation time of the Feature Flag or Setting.
+   * @return createdAt
+   */
+  @javax.annotation.Nullable
+  public OffsetDateTime getCreatedAt() {
+    return createdAt;
+  }
+
+  public void setCreatedAt(OffsetDateTime createdAt) {
+    this.createdAt = createdAt;
+  }
+
+
+  public SettingDataModel creatorEmail(String creatorEmail) {
+    this.creatorEmail = creatorEmail;
+    return this;
+  }
+
+  /**
+   * The user&#39;s email address who created the Feature Flag or Setting.
+   * @return creatorEmail
+   */
+  @javax.annotation.Nullable
+  public String getCreatorEmail() {
+    return creatorEmail;
+  }
+
+  public void setCreatorEmail(String creatorEmail) {
+    this.creatorEmail = creatorEmail;
+  }
+
+
+  public SettingDataModel creatorFullName(String creatorFullName) {
+    this.creatorFullName = creatorFullName;
+    return this;
+  }
+
+  /**
+   * The user&#39;s name who created the Feature Flag or Setting.
+   * @return creatorFullName
+   */
+  @javax.annotation.Nullable
+  public String getCreatorFullName() {
+    return creatorFullName;
+  }
+
+  public void setCreatorFullName(String creatorFullName) {
+    this.creatorFullName = creatorFullName;
+  }
+
+
+  public SettingDataModel isWatching(Boolean isWatching) {
+    this.isWatching = isWatching;
+    return this;
+  }
+
+  /**
+   * Get isWatching
+   * @return isWatching
+   */
+  @javax.annotation.Nullable
+  public Boolean getIsWatching() {
+    return isWatching;
+  }
+
+  public void setIsWatching(Boolean isWatching) {
+    this.isWatching = isWatching;
+  }
+
+  /**
+   * A container for additional, undeclared properties.
+   * This is a holder for any undeclared properties as specified with
+   * the 'additionalProperties' keyword in the OAS document.
+   */
+  private Map<String, Object> additionalProperties;
+
+  /**
+   * Set the additional (undeclared) property with the specified name and value.
+   * If the property does not already exist, create it otherwise replace it.
+   *
+   * @param key name of the property
+   * @param value value of the property
+   * @return the SettingDataModel instance itself
+   */
+  public SettingDataModel putAdditionalProperty(String key, Object value) {
+    if (this.additionalProperties == null) {
+        this.additionalProperties = new HashMap<String, Object>();
     }
+    this.additionalProperties.put(key, value);
+    return this;
+  }
 
-    /**
-     * Identifier of the Feature Flag or Setting.
-     *
-     * @return settingId
-     */
-    @javax.annotation.Nullable
-    public Integer getSettingId() {
-        return settingId;
+  /**
+   * Return the additional (undeclared) property.
+   *
+   * @return a map of objects
+   */
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+
+  /**
+   * Return the additional (undeclared) property with the specified name.
+   *
+   * @param key name of the property
+   * @return an object
+   */
+  public Object getAdditionalProperty(String key) {
+    if (this.additionalProperties == null) {
+        return null;
     }
+    return this.additionalProperties.get(key);
+  }
 
-    public void setSettingId(Integer settingId) {
-        this.settingId = settingId;
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
     }
-
-    public SettingDataModel key(String key) {
-        this.key = key;
-        return this;
+    if (o == null || getClass() != o.getClass()) {
+      return false;
     }
+    SettingDataModel settingDataModel = (SettingDataModel) o;
+    return Objects.equals(this.settingId, settingDataModel.settingId) &&
+        Objects.equals(this.key, settingDataModel.key) &&
+        Objects.equals(this.name, settingDataModel.name) &&
+        Objects.equals(this.hint, settingDataModel.hint) &&
+        Objects.equals(this.settingType, settingDataModel.settingType) &&
+        Objects.equals(this.order, settingDataModel.order) &&
+        Objects.equals(this.createdAt, settingDataModel.createdAt) &&
+        Objects.equals(this.creatorEmail, settingDataModel.creatorEmail) &&
+        Objects.equals(this.creatorFullName, settingDataModel.creatorFullName) &&
+        Objects.equals(this.isWatching, settingDataModel.isWatching)&&
+        Objects.equals(this.additionalProperties, settingDataModel.additionalProperties);
+  }
 
-    /**
-     * Key of the Feature Flag or Setting.
-     *
-     * @return key
-     */
-    @javax.annotation.Nullable
-    public String getKey() {
-        return key;
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(settingId, key, name, hint, settingType, order, createdAt, creatorEmail, creatorFullName, isWatching, additionalProperties);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
     }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+  }
 
-    public void setKey(String key) {
-        this.key = key;
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class SettingDataModel {\n");
+    sb.append("    settingId: ").append(toIndentedString(settingId)).append("\n");
+    sb.append("    key: ").append(toIndentedString(key)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    hint: ").append(toIndentedString(hint)).append("\n");
+    sb.append("    settingType: ").append(toIndentedString(settingType)).append("\n");
+    sb.append("    order: ").append(toIndentedString(order)).append("\n");
+    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    creatorEmail: ").append(toIndentedString(creatorEmail)).append("\n");
+    sb.append("    creatorFullName: ").append(toIndentedString(creatorFullName)).append("\n");
+    sb.append("    isWatching: ").append(toIndentedString(isWatching)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(Object o) {
+    if (o == null) {
+      return "null";
     }
+    return o.toString().replace("\n", "\n    ");
+  }
 
-    public SettingDataModel name(String name) {
-        this.name = name;
-        return this;
-    }
 
-    /**
-     * Name of the Feature Flag or Setting.
-     *
-     * @return name
-     */
-    @javax.annotation.Nullable
-    public String getName() {
-        return name;
-    }
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("settingId");
+    openapiFields.add("key");
+    openapiFields.add("name");
+    openapiFields.add("hint");
+    openapiFields.add("settingType");
+    openapiFields.add("order");
+    openapiFields.add("createdAt");
+    openapiFields.add("creatorEmail");
+    openapiFields.add("creatorFullName");
+    openapiFields.add("isWatching");
 
-    public SettingDataModel hint(String hint) {
-        this.hint = hint;
-        return this;
-    }
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
 
-    /**
-     * Description of the Feature Flag or Setting.
-     *
-     * @return hint
-     */
-    @javax.annotation.Nullable
-    public String getHint() {
-        return hint;
-    }
-
-    public void setHint(String hint) {
-        this.hint = hint;
-    }
-
-    public SettingDataModel settingType(SettingType settingType) {
-        this.settingType = settingType;
-        return this;
-    }
-
-    /**
-     * Get settingType
-     *
-     * @return settingType
-     */
-    @javax.annotation.Nullable
-    public SettingType getSettingType() {
-        return settingType;
-    }
-
-    public void setSettingType(SettingType settingType) {
-        this.settingType = settingType;
-    }
-
-    public SettingDataModel order(Integer order) {
-        this.order = order;
-        return this;
-    }
-
-    /**
-     * The order of the Feature Flag or Setting represented on the ConfigCat Dashboard.
-     *
-     * @return order
-     */
-    @javax.annotation.Nullable
-    public Integer getOrder() {
-        return order;
-    }
-
-    public void setOrder(Integer order) {
-        this.order = order;
-    }
-
-    public SettingDataModel createdAt(OffsetDateTime createdAt) {
-        this.createdAt = createdAt;
-        return this;
-    }
-
-    /**
-     * The creation time of the Feature Flag or Setting.
-     *
-     * @return createdAt
-     */
-    @javax.annotation.Nullable
-    public OffsetDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(OffsetDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public SettingDataModel creatorEmail(String creatorEmail) {
-        this.creatorEmail = creatorEmail;
-        return this;
-    }
-
-    /**
-     * The user&#39;s email address who created the Feature Flag or Setting.
-     *
-     * @return creatorEmail
-     */
-    @javax.annotation.Nullable
-    public String getCreatorEmail() {
-        return creatorEmail;
-    }
-
-    public void setCreatorEmail(String creatorEmail) {
-        this.creatorEmail = creatorEmail;
-    }
-
-    public SettingDataModel creatorFullName(String creatorFullName) {
-        this.creatorFullName = creatorFullName;
-        return this;
-    }
-
-    /**
-     * The user&#39;s name who created the Feature Flag or Setting.
-     *
-     * @return creatorFullName
-     */
-    @javax.annotation.Nullable
-    public String getCreatorFullName() {
-        return creatorFullName;
-    }
-
-    public void setCreatorFullName(String creatorFullName) {
-        this.creatorFullName = creatorFullName;
-    }
-
-    public SettingDataModel isWatching(Boolean isWatching) {
-        this.isWatching = isWatching;
-        return this;
-    }
-
-    /**
-     * Get isWatching
-     *
-     * @return isWatching
-     */
-    @javax.annotation.Nullable
-    public Boolean getIsWatching() {
-        return isWatching;
-    }
-
-    public void setIsWatching(Boolean isWatching) {
-        this.isWatching = isWatching;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to SettingDataModel
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!SettingDataModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in SettingDataModel is not found in the empty JSON string", SettingDataModel.openapiRequiredFields.toString()));
         }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        SettingDataModel settingDataModel = (SettingDataModel) o;
-        return Objects.equals(this.settingId, settingDataModel.settingId)
-                && Objects.equals(this.key, settingDataModel.key)
-                && Objects.equals(this.name, settingDataModel.name)
-                && Objects.equals(this.hint, settingDataModel.hint)
-                && Objects.equals(this.settingType, settingDataModel.settingType)
-                && Objects.equals(this.order, settingDataModel.order)
-                && Objects.equals(this.createdAt, settingDataModel.createdAt)
-                && Objects.equals(this.creatorEmail, settingDataModel.creatorEmail)
-                && Objects.equals(this.creatorFullName, settingDataModel.creatorFullName)
-                && Objects.equals(this.isWatching, settingDataModel.isWatching);
-    }
-
-    private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-        return a == b
-                || (a != null
-                        && b != null
-                        && a.isPresent()
-                        && b.isPresent()
-                        && Objects.deepEquals(a.get(), b.get()));
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(
-                settingId,
-                key,
-                name,
-                hint,
-                settingType,
-                order,
-                createdAt,
-                creatorEmail,
-                creatorFullName,
-                isWatching);
-    }
-
-    private static <T> int hashCodeNullable(JsonNullable<T> a) {
-        if (a == null) {
-            return 1;
-        }
-        return a.isPresent() ? Arrays.deepHashCode(new Object[] {a.get()}) : 31;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("class SettingDataModel {\n");
-        sb.append("    settingId: ").append(toIndentedString(settingId)).append("\n");
-        sb.append("    key: ").append(toIndentedString(key)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    hint: ").append(toIndentedString(hint)).append("\n");
-        sb.append("    settingType: ").append(toIndentedString(settingType)).append("\n");
-        sb.append("    order: ").append(toIndentedString(order)).append("\n");
-        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-        sb.append("    creatorEmail: ").append(toIndentedString(creatorEmail)).append("\n");
-        sb.append("    creatorFullName: ").append(toIndentedString(creatorFullName)).append("\n");
-        sb.append("    isWatching: ").append(toIndentedString(isWatching)).append("\n");
-        sb.append("}");
-        return sb.toString();
-    }
-
-    /**
-     * Convert the given object to string with each line indented by 4 spaces (except the first
-     * line).
-     */
-    private String toIndentedString(Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n    ");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("settingId");
-        openapiFields.add("key");
-        openapiFields.add("name");
-        openapiFields.add("hint");
-        openapiFields.add("settingType");
-        openapiFields.add("order");
-        openapiFields.add("createdAt");
-        openapiFields.add("creatorEmail");
-        openapiFields.add("creatorFullName");
-        openapiFields.add("isWatching");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to SettingDataModel
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!SettingDataModel.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in SettingDataModel is not found in the"
-                                        + " empty JSON string",
-                                SettingDataModel.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!SettingDataModel.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `SettingDataModel` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-        if ((jsonObj.get("key") != null && !jsonObj.get("key").isJsonNull())
-                && !jsonObj.get("key").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `key` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("key").toString()));
-        }
-        if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull())
-                && !jsonObj.get("name").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `name` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("name").toString()));
-        }
-        if ((jsonObj.get("hint") != null && !jsonObj.get("hint").isJsonNull())
-                && !jsonObj.get("hint").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `hint` to be a primitive type in the JSON string"
-                                    + " but got `%s`",
-                            jsonObj.get("hint").toString()));
-        }
-        // validate the optional field `settingType`
-        if (jsonObj.get("settingType") != null && !jsonObj.get("settingType").isJsonNull()) {
-            SettingType.validateJsonElement(jsonObj.get("settingType"));
-        }
-        if ((jsonObj.get("creatorEmail") != null && !jsonObj.get("creatorEmail").isJsonNull())
-                && !jsonObj.get("creatorEmail").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `creatorEmail` to be a primitive type in the JSON"
-                                    + " string but got `%s`",
-                            jsonObj.get("creatorEmail").toString()));
-        }
-        if ((jsonObj.get("creatorFullName") != null && !jsonObj.get("creatorFullName").isJsonNull())
-                && !jsonObj.get("creatorFullName").isJsonPrimitive()) {
-            throw new IllegalArgumentException(
-                    String.format(
-                            "Expected the field `creatorFullName` to be a primitive type in the"
-                                    + " JSON string but got `%s`",
-                            jsonObj.get("creatorFullName").toString()));
-        }
+      if ((jsonObj.get("key") != null && !jsonObj.get("key").isJsonNull()) && !jsonObj.get("key").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+      }
+      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("hint") != null && !jsonObj.get("hint").isJsonNull()) && !jsonObj.get("hint").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `hint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hint").toString()));
+      }
+      // validate the optional field `settingType`
+      if (jsonObj.get("settingType") != null && !jsonObj.get("settingType").isJsonNull()) {
+        SettingType.validateJsonElement(jsonObj.get("settingType"));
+      }
+      if ((jsonObj.get("creatorEmail") != null && !jsonObj.get("creatorEmail").isJsonNull()) && !jsonObj.get("creatorEmail").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `creatorEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("creatorEmail").toString()));
+      }
+      if ((jsonObj.get("creatorFullName") != null && !jsonObj.get("creatorFullName").isJsonNull()) && !jsonObj.get("creatorFullName").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `creatorFullName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("creatorFullName").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!SettingDataModel.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'SettingDataModel' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<SettingDataModel> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(SettingDataModel.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<SettingDataModel>() {
+           @Override
+           public void write(JsonWriter out, SettingDataModel value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             obj.remove("additionalProperties");
+             // serialize additional properties
+             if (value.getAdditionalProperties() != null) {
+               for (Map.Entry<String, Object> entry : value.getAdditionalProperties().entrySet()) {
+                 if (entry.getValue() instanceof String)
+                   obj.addProperty(entry.getKey(), (String) entry.getValue());
+                 else if (entry.getValue() instanceof Number)
+                   obj.addProperty(entry.getKey(), (Number) entry.getValue());
+                 else if (entry.getValue() instanceof Boolean)
+                   obj.addProperty(entry.getKey(), (Boolean) entry.getValue());
+                 else if (entry.getValue() instanceof Character)
+                   obj.addProperty(entry.getKey(), (Character) entry.getValue());
+                 else {
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
+                 }
+               }
+             }
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public SettingDataModel read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
+             // store additional fields in the deserialized instance
+             SettingDataModel instance = thisAdapter.fromJsonTree(jsonObj);
+             for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
+               if (!openapiFields.contains(entry.getKey())) {
+                 if (entry.getValue().isJsonPrimitive()) { // primitive type
+                   if (entry.getValue().getAsJsonPrimitive().isString())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsString());
+                   else if (entry.getValue().getAsJsonPrimitive().isNumber())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsNumber());
+                   else if (entry.getValue().getAsJsonPrimitive().isBoolean())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
+                   else
+                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                 } else if (entry.getValue().isJsonArray()) {
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
+                 } else { // JSON object
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), HashMap.class));
+                 }
+               }
+             }
+             return instance;
+           }
+
+       }.nullSafe();
     }
+  }
 
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!SettingDataModel.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'SettingDataModel' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<SettingDataModel> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(SettingDataModel.class));
+  /**
+   * Create an instance of SettingDataModel given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of SettingDataModel
+   * @throws IOException if the JSON string is invalid with respect to SettingDataModel
+   */
+  public static SettingDataModel fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, SettingDataModel.class);
+  }
 
-            return (TypeAdapter<T>)
-                    new TypeAdapter<SettingDataModel>() {
-                        @Override
-                        public void write(JsonWriter out, SettingDataModel value)
-                                throws IOException {
-                            JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public SettingDataModel read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of SettingDataModel given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of SettingDataModel
-     * @throws IOException if the JSON string is invalid with respect to SettingDataModel
-     */
-    public static SettingDataModel fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, SettingDataModel.class);
-    }
-
-    /**
-     * Convert an instance of SettingDataModel to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
+  /**
+   * Convert an instance of SettingDataModel to an JSON string
+   *
+   * @return JSON string
+   */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
+

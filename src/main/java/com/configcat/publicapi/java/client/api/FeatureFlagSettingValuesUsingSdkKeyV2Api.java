@@ -1,6 +1,6 @@
 /*
  * ConfigCat Public Management API
- * The purpose of this API is to access the ConfigCat platform programmatically. You can **Create**, **Read**, **Update** and **Delete** any entities like **Feature Flags, Configs, Environments** or **Products** within ConfigCat.  **Base API URL**: https://api.configcat.com  If you prefer the swagger documentation, you can find it here: [Swagger UI](https://api.configcat.com/swagger).  The API is based on HTTP REST, uses resource-oriented URLs, status codes and supports JSON  format.   **Important:** Do not use this API for accessing and evaluating feature flag values. Use the [SDKs](https://configcat.com/docs/sdk-reference/overview) or the [ConfigCat Proxy](https://configcat.com/docs/advanced/proxy/proxy-overview/) instead.  # OpenAPI Specification  The complete specification is publicly available in the following formats:  - [OpenAPI v3](https://api.configcat.com/docs/v1/swagger.json) - [Swagger v2](https://api.configcat.com/docs/v1/swagger.v2.json)  You can use it to generate client libraries in various languages with [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) or [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) to interact with this API.  # Authentication This API uses the [Basic HTTP Authentication Scheme](https://en.wikipedia.org/wiki/Basic_access_authentication).   <!-- ReDoc-Inject: <security-definitions> -->  # Throttling and rate limits All the rate limited API calls are returning information about the current rate limit period in the following HTTP headers:  | Header | Description | | :- | :- | | X-Rate-Limit-Remaining | The maximum number of requests remaining in the current rate limit period. | | X-Rate-Limit-Reset     | The time when the current rate limit period resets.        |  When the rate limit is exceeded by a request, the API returns with a `HTTP 429 - Too many requests` status along with a `Retry-After` HTTP header.
+ * The purpose of this API is to access the ConfigCat platform programmatically. You can **Create**, **Read**, **Update** and **Delete** any entities like **Feature Flags, Configs, Environments** or **Products** within ConfigCat.  **Base API URL**: https://api.configcat.com  If you prefer the swagger documentation, you can find it here: [Swagger UI](https://api.configcat.com/swagger).  The API is based on HTTP REST, uses resource-oriented URLs, status codes and supports JSON  format.   **Important:** Do not use this API for accessing and evaluating feature flag values. Use the [SDKs](https://configcat.com/docs/sdk-reference/overview) or the [ConfigCat Proxy](https://configcat.com/docs/advanced/proxy/proxy-overview/) instead.  # OpenAPI Specification  The complete specification is publicly available in the following formats:  - [OpenAPI v3](https://api.configcat.com/docs/v1/swagger.json) - [Swagger v2](https://api.configcat.com/docs/v1/swagger.v2.json)  You can use it to generate client libraries in various languages with [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) or [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) to interact with this API.  # Authentication This API uses the [Basic HTTP Authentication Scheme](https://en.wikipedia.org/wiki/Basic_access_authentication).   <!-- ReDoc-Inject: <security-definitions> -->  # Throttling and rate limits All the rate limited API calls are returning information about the current rate limit period in the following HTTP headers:  | Header | Description | | :- | :- | | X-Rate-Limit-Remaining | The maximum number of requests remaining in the current rate limit period. | | X-Rate-Limit-Reset     | The time when the current rate limit period resets.        |  When the rate limit is exceeded by a request, the API returns with a `HTTP 429 - Too many requests` status along with a `Retry-After` HTTP header. 
  *
  * The version of the OpenAPI document: v1
  * Contact: support@configcat.com
@@ -10,8 +10,8 @@
  * Do not edit the class manually.
  */
 
-package com.configcat.publicapi.java.client.api;
 
+package com.configcat.publicapi.java.client.api;
 
 import com.configcat.publicapi.java.client.ApiCallback;
 import com.configcat.publicapi.java.client.ApiClient;
@@ -19,10 +19,18 @@ import com.configcat.publicapi.java.client.ApiException;
 import com.configcat.publicapi.java.client.ApiResponse;
 import com.configcat.publicapi.java.client.Configuration;
 import com.configcat.publicapi.java.client.Pair;
+import com.configcat.publicapi.java.client.ProgressRequestBody;
+import com.configcat.publicapi.java.client.ProgressResponseBody;
+
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
+
+
 import com.configcat.publicapi.java.client.model.JsonPatchOperation;
 import com.configcat.publicapi.java.client.model.SettingFormulaModel;
 import com.configcat.publicapi.java.client.model.UpdateEvaluationFormulaModel;
-import com.google.gson.reflect.TypeToken;
+
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -68,33 +76,29 @@ public class FeatureFlagSettingValuesUsingSdkKeyV2Api {
 
     /**
      * Build call for getSettingValueBySdkkeyV2
-     *
      * @param settingKeyOrId The key or id of the Setting. (required)
-     * @param X_CONFIGCAT_SDKKEY The ConfigCat SDK Key. (https://app.configcat.com/sdkkey)
-     *     (optional)
+     * @param X_CONFIGCAT_SDKKEY The ConfigCat SDK Key. (https://app.configcat.com/sdkkey) (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call getSettingValueBySdkkeyV2Call(
-            String settingKeyOrId, String X_CONFIGCAT_SDKKEY, final ApiCallback _callback)
-            throws ApiException {
+    public okhttp3.Call getSettingValueBySdkkeyV2Call(String settingKeyOrId, String X_CONFIGCAT_SDKKEY, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {};
+        String[] localBasePaths = new String[] {  };
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null) {
+        if (localCustomBaseUrl != null){
             basePath = localCustomBaseUrl;
-        } else if (localBasePaths.length > 0) {
+        } else if ( localBasePaths.length > 0 ) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -103,11 +107,8 @@ public class FeatureFlagSettingValuesUsingSdkKeyV2Api {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath =
-                "/v2/settings/{settingKeyOrId}/value"
-                        .replace(
-                                "{" + "settingKeyOrId" + "}",
-                                localVarApiClient.escapeString(settingKeyOrId.toString()));
+        String localVarPath = "/v2/settings/{settingKeyOrId}/value"
+            .replace("{" + "settingKeyOrId" + "}", localVarApiClient.escapeString(settingKeyOrId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -116,218 +117,133 @@ public class FeatureFlagSettingValuesUsingSdkKeyV2Api {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         if (X_CONFIGCAT_SDKKEY != null) {
-            localVarHeaderParams.put(
-                    "X-CONFIGCAT-SDKKEY", localVarApiClient.parameterToString(X_CONFIGCAT_SDKKEY));
+            localVarHeaderParams.put("X-CONFIGCAT-SDKKEY", localVarApiClient.parameterToString(X_CONFIGCAT_SDKKEY));
         }
 
-        final String[] localVarAccepts = {"application/json"};
+        final String[] localVarAccepts = {
+            "application/json"
+        };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
             localVarHeaderParams.put("Accept", localVarAccept);
         }
 
-        final String[] localVarContentTypes = {};
-        final String localVarContentType =
-                localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] {"Basic"};
-        return localVarApiClient.buildCall(
-                basePath,
-                localVarPath,
-                "GET",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarCookieParams,
-                localVarFormParams,
-                localVarAuthNames,
-                _callback);
+        String[] localVarAuthNames = new String[] { "Basic" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSettingValueBySdkkeyV2ValidateBeforeCall(
-            String settingKeyOrId, String X_CONFIGCAT_SDKKEY, final ApiCallback _callback)
-            throws ApiException {
+    private okhttp3.Call getSettingValueBySdkkeyV2ValidateBeforeCall(String settingKeyOrId, String X_CONFIGCAT_SDKKEY, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'settingKeyOrId' is set
         if (settingKeyOrId == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'settingKeyOrId' when calling"
-                            + " getSettingValueBySdkkeyV2(Async)");
+            throw new ApiException("Missing the required parameter 'settingKeyOrId' when calling getSettingValueBySdkkeyV2(Async)");
         }
 
         return getSettingValueBySdkkeyV2Call(settingKeyOrId, X_CONFIGCAT_SDKKEY, _callback);
+
     }
 
     /**
-     * Get value This endpoint returns the value of a Feature Flag or Setting in a specified
-     * Environment identified by the &lt;a target&#x3D;\&quot;_blank\&quot; rel&#x3D;\&quot;noopener
-     * noreferrer\&quot; href&#x3D;\&quot;https://app.configcat.com/sdkkey\&quot;&gt;SDK
-     * key&lt;/a&gt; passed in the &#x60;X-CONFIGCAT-SDKKEY&#x60; header. The most important fields
-     * in the response are the &#x60;defaultValue&#x60;, &#x60;targetingRules&#x60;. The
-     * &#x60;defaultValue&#x60; represents what the clients will get when the evaluation requests of
-     * our SDKs are not matching to any of the defined Targeting Rules, or when there are no
-     * additional rules to evaluate. The &#x60;targetingRules&#x60; represents the current Targeting
-     * Rule configuration of the actual Feature Flag or Setting in an **ordered** collection, which
-     * means the order of the returned rules is matching to the evaluation order. You can read more
-     * about these rules [here](https://configcat.com/docs/targeting/targeting-overview/). The
-     * &#x60;percentageEvaluationAttribute&#x60; represents the custom [User
-     * Object](https://configcat.com/docs/targeting/user-object/) attribute that must be used at the
-     * [percentage
-     * evaluation](https://configcat.com/docs/advanced/targeting/#anatomy-of-the-percentage-based-targeting)
-     * of the Feature Flag or Setting.
-     *
+     * Get value
+     * This endpoint returns the value of a Feature Flag or Setting in a specified Environment identified by the &lt;a target&#x3D;\&quot;_blank\&quot; rel&#x3D;\&quot;noopener noreferrer\&quot; href&#x3D;\&quot;https://app.configcat.com/sdkkey\&quot;&gt;SDK key&lt;/a&gt; passed in the &#x60;X-CONFIGCAT-SDKKEY&#x60; header.  The most important fields in the response are the &#x60;defaultValue&#x60;, &#x60;targetingRules&#x60;. The &#x60;defaultValue&#x60; represents what the clients will get when the evaluation requests of our SDKs are not matching to any of the defined Targeting Rules, or when there are no additional rules to evaluate.  The &#x60;targetingRules&#x60; represents the current Targeting Rule configuration of the actual Feature Flag or Setting in an **ordered** collection, which means the order of the returned rules is matching to the evaluation order. You can read more about these rules [here](https://configcat.com/docs/targeting/targeting-overview/).  The &#x60;percentageEvaluationAttribute&#x60; represents the custom [User Object](https://configcat.com/docs/targeting/user-object/) attribute that must be used at the [percentage evaluation](https://configcat.com/docs/advanced/targeting/#anatomy-of-the-percentage-based-targeting) of the Feature Flag or Setting.
      * @param settingKeyOrId The key or id of the Setting. (required)
-     * @param X_CONFIGCAT_SDKKEY The ConfigCat SDK Key. (https://app.configcat.com/sdkkey)
-     *     (optional)
+     * @param X_CONFIGCAT_SDKKEY The ConfigCat SDK Key. (https://app.configcat.com/sdkkey) (optional)
      * @return SettingFormulaModel
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public SettingFormulaModel getSettingValueBySdkkeyV2(
-            String settingKeyOrId, String X_CONFIGCAT_SDKKEY) throws ApiException {
-        ApiResponse<SettingFormulaModel> localVarResp =
-                getSettingValueBySdkkeyV2WithHttpInfo(settingKeyOrId, X_CONFIGCAT_SDKKEY);
+    public SettingFormulaModel getSettingValueBySdkkeyV2(String settingKeyOrId, String X_CONFIGCAT_SDKKEY) throws ApiException {
+        ApiResponse<SettingFormulaModel> localVarResp = getSettingValueBySdkkeyV2WithHttpInfo(settingKeyOrId, X_CONFIGCAT_SDKKEY);
         return localVarResp.getData();
     }
 
     /**
-     * Get value This endpoint returns the value of a Feature Flag or Setting in a specified
-     * Environment identified by the &lt;a target&#x3D;\&quot;_blank\&quot; rel&#x3D;\&quot;noopener
-     * noreferrer\&quot; href&#x3D;\&quot;https://app.configcat.com/sdkkey\&quot;&gt;SDK
-     * key&lt;/a&gt; passed in the &#x60;X-CONFIGCAT-SDKKEY&#x60; header. The most important fields
-     * in the response are the &#x60;defaultValue&#x60;, &#x60;targetingRules&#x60;. The
-     * &#x60;defaultValue&#x60; represents what the clients will get when the evaluation requests of
-     * our SDKs are not matching to any of the defined Targeting Rules, or when there are no
-     * additional rules to evaluate. The &#x60;targetingRules&#x60; represents the current Targeting
-     * Rule configuration of the actual Feature Flag or Setting in an **ordered** collection, which
-     * means the order of the returned rules is matching to the evaluation order. You can read more
-     * about these rules [here](https://configcat.com/docs/targeting/targeting-overview/). The
-     * &#x60;percentageEvaluationAttribute&#x60; represents the custom [User
-     * Object](https://configcat.com/docs/targeting/user-object/) attribute that must be used at the
-     * [percentage
-     * evaluation](https://configcat.com/docs/advanced/targeting/#anatomy-of-the-percentage-based-targeting)
-     * of the Feature Flag or Setting.
-     *
+     * Get value
+     * This endpoint returns the value of a Feature Flag or Setting in a specified Environment identified by the &lt;a target&#x3D;\&quot;_blank\&quot; rel&#x3D;\&quot;noopener noreferrer\&quot; href&#x3D;\&quot;https://app.configcat.com/sdkkey\&quot;&gt;SDK key&lt;/a&gt; passed in the &#x60;X-CONFIGCAT-SDKKEY&#x60; header.  The most important fields in the response are the &#x60;defaultValue&#x60;, &#x60;targetingRules&#x60;. The &#x60;defaultValue&#x60; represents what the clients will get when the evaluation requests of our SDKs are not matching to any of the defined Targeting Rules, or when there are no additional rules to evaluate.  The &#x60;targetingRules&#x60; represents the current Targeting Rule configuration of the actual Feature Flag or Setting in an **ordered** collection, which means the order of the returned rules is matching to the evaluation order. You can read more about these rules [here](https://configcat.com/docs/targeting/targeting-overview/).  The &#x60;percentageEvaluationAttribute&#x60; represents the custom [User Object](https://configcat.com/docs/targeting/user-object/) attribute that must be used at the [percentage evaluation](https://configcat.com/docs/advanced/targeting/#anatomy-of-the-percentage-based-targeting) of the Feature Flag or Setting.
      * @param settingKeyOrId The key or id of the Setting. (required)
-     * @param X_CONFIGCAT_SDKKEY The ConfigCat SDK Key. (https://app.configcat.com/sdkkey)
-     *     (optional)
+     * @param X_CONFIGCAT_SDKKEY The ConfigCat SDK Key. (https://app.configcat.com/sdkkey) (optional)
      * @return ApiResponse&lt;SettingFormulaModel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public ApiResponse<SettingFormulaModel> getSettingValueBySdkkeyV2WithHttpInfo(
-            String settingKeyOrId, String X_CONFIGCAT_SDKKEY) throws ApiException {
-        okhttp3.Call localVarCall =
-                getSettingValueBySdkkeyV2ValidateBeforeCall(
-                        settingKeyOrId, X_CONFIGCAT_SDKKEY, null);
-        Type localVarReturnType = new TypeToken<SettingFormulaModel>() {}.getType();
+    public ApiResponse<SettingFormulaModel> getSettingValueBySdkkeyV2WithHttpInfo(String settingKeyOrId, String X_CONFIGCAT_SDKKEY) throws ApiException {
+        okhttp3.Call localVarCall = getSettingValueBySdkkeyV2ValidateBeforeCall(settingKeyOrId, X_CONFIGCAT_SDKKEY, null);
+        Type localVarReturnType = new TypeToken<SettingFormulaModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Get value (asynchronously) This endpoint returns the value of a Feature Flag or Setting in a
-     * specified Environment identified by the &lt;a target&#x3D;\&quot;_blank\&quot;
-     * rel&#x3D;\&quot;noopener noreferrer\&quot;
-     * href&#x3D;\&quot;https://app.configcat.com/sdkkey\&quot;&gt;SDK key&lt;/a&gt; passed in the
-     * &#x60;X-CONFIGCAT-SDKKEY&#x60; header. The most important fields in the response are the
-     * &#x60;defaultValue&#x60;, &#x60;targetingRules&#x60;. The &#x60;defaultValue&#x60; represents
-     * what the clients will get when the evaluation requests of our SDKs are not matching to any of
-     * the defined Targeting Rules, or when there are no additional rules to evaluate. The
-     * &#x60;targetingRules&#x60; represents the current Targeting Rule configuration of the actual
-     * Feature Flag or Setting in an **ordered** collection, which means the order of the returned
-     * rules is matching to the evaluation order. You can read more about these rules
-     * [here](https://configcat.com/docs/targeting/targeting-overview/). The
-     * &#x60;percentageEvaluationAttribute&#x60; represents the custom [User
-     * Object](https://configcat.com/docs/targeting/user-object/) attribute that must be used at the
-     * [percentage
-     * evaluation](https://configcat.com/docs/advanced/targeting/#anatomy-of-the-percentage-based-targeting)
-     * of the Feature Flag or Setting.
-     *
+     * Get value (asynchronously)
+     * This endpoint returns the value of a Feature Flag or Setting in a specified Environment identified by the &lt;a target&#x3D;\&quot;_blank\&quot; rel&#x3D;\&quot;noopener noreferrer\&quot; href&#x3D;\&quot;https://app.configcat.com/sdkkey\&quot;&gt;SDK key&lt;/a&gt; passed in the &#x60;X-CONFIGCAT-SDKKEY&#x60; header.  The most important fields in the response are the &#x60;defaultValue&#x60;, &#x60;targetingRules&#x60;. The &#x60;defaultValue&#x60; represents what the clients will get when the evaluation requests of our SDKs are not matching to any of the defined Targeting Rules, or when there are no additional rules to evaluate.  The &#x60;targetingRules&#x60; represents the current Targeting Rule configuration of the actual Feature Flag or Setting in an **ordered** collection, which means the order of the returned rules is matching to the evaluation order. You can read more about these rules [here](https://configcat.com/docs/targeting/targeting-overview/).  The &#x60;percentageEvaluationAttribute&#x60; represents the custom [User Object](https://configcat.com/docs/targeting/user-object/) attribute that must be used at the [percentage evaluation](https://configcat.com/docs/advanced/targeting/#anatomy-of-the-percentage-based-targeting) of the Feature Flag or Setting.
      * @param settingKeyOrId The key or id of the Setting. (required)
-     * @param X_CONFIGCAT_SDKKEY The ConfigCat SDK Key. (https://app.configcat.com/sdkkey)
-     *     (optional)
+     * @param X_CONFIGCAT_SDKKEY The ConfigCat SDK Key. (https://app.configcat.com/sdkkey) (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body
-     *     object
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call getSettingValueBySdkkeyV2Async(
-            String settingKeyOrId,
-            String X_CONFIGCAT_SDKKEY,
-            final ApiCallback<SettingFormulaModel> _callback)
-            throws ApiException {
+    public okhttp3.Call getSettingValueBySdkkeyV2Async(String settingKeyOrId, String X_CONFIGCAT_SDKKEY, final ApiCallback<SettingFormulaModel> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall =
-                getSettingValueBySdkkeyV2ValidateBeforeCall(
-                        settingKeyOrId, X_CONFIGCAT_SDKKEY, _callback);
-        Type localVarReturnType = new TypeToken<SettingFormulaModel>() {}.getType();
+        okhttp3.Call localVarCall = getSettingValueBySdkkeyV2ValidateBeforeCall(settingKeyOrId, X_CONFIGCAT_SDKKEY, _callback);
+        Type localVarReturnType = new TypeToken<SettingFormulaModel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for replaceSettingValueBySdkkeyV2
-     *
      * @param settingKeyOrId The key or id of the Setting. (required)
-     * @param updateEvaluationFormulaModel (required)
-     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes
-     *     require a reason\&quot; preference is turned on. (optional)
-     * @param X_CONFIGCAT_SDKKEY The ConfigCat SDK Key. (https://app.configcat.com/sdkkey)
-     *     (optional)
+     * @param updateEvaluationFormulaModel  (required)
+     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
+     * @param X_CONFIGCAT_SDKKEY The ConfigCat SDK Key. (https://app.configcat.com/sdkkey) (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call replaceSettingValueBySdkkeyV2Call(
-            String settingKeyOrId,
-            UpdateEvaluationFormulaModel updateEvaluationFormulaModel,
-            String reason,
-            String X_CONFIGCAT_SDKKEY,
-            final ApiCallback _callback)
-            throws ApiException {
+    public okhttp3.Call replaceSettingValueBySdkkeyV2Call(String settingKeyOrId, UpdateEvaluationFormulaModel updateEvaluationFormulaModel, String reason, String X_CONFIGCAT_SDKKEY, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {};
+        String[] localBasePaths = new String[] {  };
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null) {
+        if (localCustomBaseUrl != null){
             basePath = localCustomBaseUrl;
-        } else if (localBasePaths.length > 0) {
+        } else if ( localBasePaths.length > 0 ) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -336,11 +252,8 @@ public class FeatureFlagSettingValuesUsingSdkKeyV2Api {
         Object localVarPostBody = updateEvaluationFormulaModel;
 
         // create path and map variables
-        String localVarPath =
-                "/v2/settings/{settingKeyOrId}/value"
-                        .replace(
-                                "{" + "settingKeyOrId" + "}",
-                                localVarApiClient.escapeString(settingKeyOrId.toString()));
+        String localVarPath = "/v2/settings/{settingKeyOrId}/value"
+            .replace("{" + "settingKeyOrId" + "}", localVarApiClient.escapeString(settingKeyOrId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -353,276 +266,148 @@ public class FeatureFlagSettingValuesUsingSdkKeyV2Api {
         }
 
         if (X_CONFIGCAT_SDKKEY != null) {
-            localVarHeaderParams.put(
-                    "X-CONFIGCAT-SDKKEY", localVarApiClient.parameterToString(X_CONFIGCAT_SDKKEY));
+            localVarHeaderParams.put("X-CONFIGCAT-SDKKEY", localVarApiClient.parameterToString(X_CONFIGCAT_SDKKEY));
         }
 
-        final String[] localVarAccepts = {"application/json"};
+        final String[] localVarAccepts = {
+            "application/json"
+        };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
             localVarHeaderParams.put("Accept", localVarAccept);
         }
 
         final String[] localVarContentTypes = {
-            "application/json", "text/json", "application/*+json"
+            "application/json",
+            "text/json",
+            "application/*+json"
         };
-        final String localVarContentType =
-                localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] {"Basic"};
-        return localVarApiClient.buildCall(
-                basePath,
-                localVarPath,
-                "PUT",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarCookieParams,
-                localVarFormParams,
-                localVarAuthNames,
-                _callback);
+        String[] localVarAuthNames = new String[] { "Basic" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call replaceSettingValueBySdkkeyV2ValidateBeforeCall(
-            String settingKeyOrId,
-            UpdateEvaluationFormulaModel updateEvaluationFormulaModel,
-            String reason,
-            String X_CONFIGCAT_SDKKEY,
-            final ApiCallback _callback)
-            throws ApiException {
+    private okhttp3.Call replaceSettingValueBySdkkeyV2ValidateBeforeCall(String settingKeyOrId, UpdateEvaluationFormulaModel updateEvaluationFormulaModel, String reason, String X_CONFIGCAT_SDKKEY, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'settingKeyOrId' is set
         if (settingKeyOrId == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'settingKeyOrId' when calling"
-                            + " replaceSettingValueBySdkkeyV2(Async)");
+            throw new ApiException("Missing the required parameter 'settingKeyOrId' when calling replaceSettingValueBySdkkeyV2(Async)");
         }
 
         // verify the required parameter 'updateEvaluationFormulaModel' is set
         if (updateEvaluationFormulaModel == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'updateEvaluationFormulaModel' when calling"
-                            + " replaceSettingValueBySdkkeyV2(Async)");
+            throw new ApiException("Missing the required parameter 'updateEvaluationFormulaModel' when calling replaceSettingValueBySdkkeyV2(Async)");
         }
 
-        return replaceSettingValueBySdkkeyV2Call(
-                settingKeyOrId,
-                updateEvaluationFormulaModel,
-                reason,
-                X_CONFIGCAT_SDKKEY,
-                _callback);
+        return replaceSettingValueBySdkkeyV2Call(settingKeyOrId, updateEvaluationFormulaModel, reason, X_CONFIGCAT_SDKKEY, _callback);
+
     }
 
     /**
-     * Replace value This endpoint replaces the value and the Targeting Rules of a Feature Flag or
-     * Setting in a specified Environment identified by the &lt;a target&#x3D;\&quot;_blank\&quot;
-     * rel&#x3D;\&quot;noopener noreferrer\&quot;
-     * href&#x3D;\&quot;https://app.configcat.com/sdkkey\&quot;&gt;SDK key&lt;/a&gt; passed in the
-     * &#x60;X-CONFIGCAT-SDKKEY&#x60; header. Only the &#x60;defaultValue&#x60;,
-     * &#x60;targetingRules&#x60;, and &#x60;percentageEvaluationAttribute&#x60; fields are
-     * modifiable by this endpoint. **Important:** As this endpoint is doing a complete replace,
-     * it&#39;s important to set every other field that you don&#39;t want to change to its original
-     * state. Not listing one means it will reset. For example: We have the following resource of a
-     * Feature Flag. &#x60;&#x60;&#x60;json { \&quot;defaultValue\&quot;: { \&quot;boolValue\&quot;:
-     * false }, \&quot;targetingRules\&quot;: [ { \&quot;conditions\&quot;: [ {
-     * \&quot;userCondition\&quot;: { \&quot;comparisonAttribute\&quot;: \&quot;Email\&quot;,
-     * \&quot;comparator\&quot;: \&quot;sensitiveTextEquals\&quot;, \&quot;comparisonValue\&quot;: {
-     * \&quot;stringValue\&quot;: \&quot;test@example.com\&quot; } } } ],
-     * \&quot;percentageOptions\&quot;: [], \&quot;value\&quot;: { \&quot;boolValue\&quot;: true } }
-     * ] } &#x60;&#x60;&#x60; If we send a replace request body as below: &#x60;&#x60;&#x60;json {
-     * \&quot;defaultValue\&quot;: { \&quot;boolValue\&quot;: true } } &#x60;&#x60;&#x60; Then
-     * besides that the default served value is set to &#x60;true&#x60;, all the Targeting Rules are
-     * deleted. So we get a response like this: &#x60;&#x60;&#x60;json { \&quot;defaultValue\&quot;:
-     * { \&quot;boolValue\&quot;: true }, \&quot;targetingRules\&quot;: [] } &#x60;&#x60;&#x60;
-     *
+     * Replace value
+     * This endpoint replaces the value and the Targeting Rules of a Feature Flag or Setting in a specified Environment identified by the &lt;a target&#x3D;\&quot;_blank\&quot; rel&#x3D;\&quot;noopener noreferrer\&quot; href&#x3D;\&quot;https://app.configcat.com/sdkkey\&quot;&gt;SDK key&lt;/a&gt; passed in the &#x60;X-CONFIGCAT-SDKKEY&#x60; header.  Only the &#x60;defaultValue&#x60;, &#x60;targetingRules&#x60;, and &#x60;percentageEvaluationAttribute&#x60; fields are modifiable by this endpoint.  **Important:** As this endpoint is doing a complete replace, it&#39;s important to set every other field that you don&#39;t want to change to its original state. Not listing one means it will reset.  For example: We have the following resource of a Feature Flag. &#x60;&#x60;&#x60;json {   \&quot;defaultValue\&quot;: {     \&quot;boolValue\&quot;: false   },   \&quot;targetingRules\&quot;: [     {       \&quot;conditions\&quot;: [         {           \&quot;userCondition\&quot;: {             \&quot;comparisonAttribute\&quot;: \&quot;Email\&quot;,             \&quot;comparator\&quot;: \&quot;sensitiveTextEquals\&quot;,             \&quot;comparisonValue\&quot;: {               \&quot;stringValue\&quot;: \&quot;test@example.com\&quot;             }           }         }       ],       \&quot;percentageOptions\&quot;: [],       \&quot;value\&quot;: {         \&quot;boolValue\&quot;: true       }     }   ] } &#x60;&#x60;&#x60; If we send a replace request body as below: &#x60;&#x60;&#x60;json {   \&quot;defaultValue\&quot;: {     \&quot;boolValue\&quot;: true   } } &#x60;&#x60;&#x60; Then besides that the default served value is set to &#x60;true&#x60;, all the Targeting Rules are deleted. So we get a response like this: &#x60;&#x60;&#x60;json {   \&quot;defaultValue\&quot;: {     \&quot;boolValue\&quot;: true   },   \&quot;targetingRules\&quot;: [] } &#x60;&#x60;&#x60;
      * @param settingKeyOrId The key or id of the Setting. (required)
-     * @param updateEvaluationFormulaModel (required)
-     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes
-     *     require a reason\&quot; preference is turned on. (optional)
-     * @param X_CONFIGCAT_SDKKEY The ConfigCat SDK Key. (https://app.configcat.com/sdkkey)
-     *     (optional)
+     * @param updateEvaluationFormulaModel  (required)
+     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
+     * @param X_CONFIGCAT_SDKKEY The ConfigCat SDK Key. (https://app.configcat.com/sdkkey) (optional)
      * @return SettingFormulaModel
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public SettingFormulaModel replaceSettingValueBySdkkeyV2(
-            String settingKeyOrId,
-            UpdateEvaluationFormulaModel updateEvaluationFormulaModel,
-            String reason,
-            String X_CONFIGCAT_SDKKEY)
-            throws ApiException {
-        ApiResponse<SettingFormulaModel> localVarResp =
-                replaceSettingValueBySdkkeyV2WithHttpInfo(
-                        settingKeyOrId, updateEvaluationFormulaModel, reason, X_CONFIGCAT_SDKKEY);
+    public SettingFormulaModel replaceSettingValueBySdkkeyV2(String settingKeyOrId, UpdateEvaluationFormulaModel updateEvaluationFormulaModel, String reason, String X_CONFIGCAT_SDKKEY) throws ApiException {
+        ApiResponse<SettingFormulaModel> localVarResp = replaceSettingValueBySdkkeyV2WithHttpInfo(settingKeyOrId, updateEvaluationFormulaModel, reason, X_CONFIGCAT_SDKKEY);
         return localVarResp.getData();
     }
 
     /**
-     * Replace value This endpoint replaces the value and the Targeting Rules of a Feature Flag or
-     * Setting in a specified Environment identified by the &lt;a target&#x3D;\&quot;_blank\&quot;
-     * rel&#x3D;\&quot;noopener noreferrer\&quot;
-     * href&#x3D;\&quot;https://app.configcat.com/sdkkey\&quot;&gt;SDK key&lt;/a&gt; passed in the
-     * &#x60;X-CONFIGCAT-SDKKEY&#x60; header. Only the &#x60;defaultValue&#x60;,
-     * &#x60;targetingRules&#x60;, and &#x60;percentageEvaluationAttribute&#x60; fields are
-     * modifiable by this endpoint. **Important:** As this endpoint is doing a complete replace,
-     * it&#39;s important to set every other field that you don&#39;t want to change to its original
-     * state. Not listing one means it will reset. For example: We have the following resource of a
-     * Feature Flag. &#x60;&#x60;&#x60;json { \&quot;defaultValue\&quot;: { \&quot;boolValue\&quot;:
-     * false }, \&quot;targetingRules\&quot;: [ { \&quot;conditions\&quot;: [ {
-     * \&quot;userCondition\&quot;: { \&quot;comparisonAttribute\&quot;: \&quot;Email\&quot;,
-     * \&quot;comparator\&quot;: \&quot;sensitiveTextEquals\&quot;, \&quot;comparisonValue\&quot;: {
-     * \&quot;stringValue\&quot;: \&quot;test@example.com\&quot; } } } ],
-     * \&quot;percentageOptions\&quot;: [], \&quot;value\&quot;: { \&quot;boolValue\&quot;: true } }
-     * ] } &#x60;&#x60;&#x60; If we send a replace request body as below: &#x60;&#x60;&#x60;json {
-     * \&quot;defaultValue\&quot;: { \&quot;boolValue\&quot;: true } } &#x60;&#x60;&#x60; Then
-     * besides that the default served value is set to &#x60;true&#x60;, all the Targeting Rules are
-     * deleted. So we get a response like this: &#x60;&#x60;&#x60;json { \&quot;defaultValue\&quot;:
-     * { \&quot;boolValue\&quot;: true }, \&quot;targetingRules\&quot;: [] } &#x60;&#x60;&#x60;
-     *
+     * Replace value
+     * This endpoint replaces the value and the Targeting Rules of a Feature Flag or Setting in a specified Environment identified by the &lt;a target&#x3D;\&quot;_blank\&quot; rel&#x3D;\&quot;noopener noreferrer\&quot; href&#x3D;\&quot;https://app.configcat.com/sdkkey\&quot;&gt;SDK key&lt;/a&gt; passed in the &#x60;X-CONFIGCAT-SDKKEY&#x60; header.  Only the &#x60;defaultValue&#x60;, &#x60;targetingRules&#x60;, and &#x60;percentageEvaluationAttribute&#x60; fields are modifiable by this endpoint.  **Important:** As this endpoint is doing a complete replace, it&#39;s important to set every other field that you don&#39;t want to change to its original state. Not listing one means it will reset.  For example: We have the following resource of a Feature Flag. &#x60;&#x60;&#x60;json {   \&quot;defaultValue\&quot;: {     \&quot;boolValue\&quot;: false   },   \&quot;targetingRules\&quot;: [     {       \&quot;conditions\&quot;: [         {           \&quot;userCondition\&quot;: {             \&quot;comparisonAttribute\&quot;: \&quot;Email\&quot;,             \&quot;comparator\&quot;: \&quot;sensitiveTextEquals\&quot;,             \&quot;comparisonValue\&quot;: {               \&quot;stringValue\&quot;: \&quot;test@example.com\&quot;             }           }         }       ],       \&quot;percentageOptions\&quot;: [],       \&quot;value\&quot;: {         \&quot;boolValue\&quot;: true       }     }   ] } &#x60;&#x60;&#x60; If we send a replace request body as below: &#x60;&#x60;&#x60;json {   \&quot;defaultValue\&quot;: {     \&quot;boolValue\&quot;: true   } } &#x60;&#x60;&#x60; Then besides that the default served value is set to &#x60;true&#x60;, all the Targeting Rules are deleted. So we get a response like this: &#x60;&#x60;&#x60;json {   \&quot;defaultValue\&quot;: {     \&quot;boolValue\&quot;: true   },   \&quot;targetingRules\&quot;: [] } &#x60;&#x60;&#x60;
      * @param settingKeyOrId The key or id of the Setting. (required)
-     * @param updateEvaluationFormulaModel (required)
-     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes
-     *     require a reason\&quot; preference is turned on. (optional)
-     * @param X_CONFIGCAT_SDKKEY The ConfigCat SDK Key. (https://app.configcat.com/sdkkey)
-     *     (optional)
+     * @param updateEvaluationFormulaModel  (required)
+     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
+     * @param X_CONFIGCAT_SDKKEY The ConfigCat SDK Key. (https://app.configcat.com/sdkkey) (optional)
      * @return ApiResponse&lt;SettingFormulaModel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public ApiResponse<SettingFormulaModel> replaceSettingValueBySdkkeyV2WithHttpInfo(
-            String settingKeyOrId,
-            UpdateEvaluationFormulaModel updateEvaluationFormulaModel,
-            String reason,
-            String X_CONFIGCAT_SDKKEY)
-            throws ApiException {
-        okhttp3.Call localVarCall =
-                replaceSettingValueBySdkkeyV2ValidateBeforeCall(
-                        settingKeyOrId,
-                        updateEvaluationFormulaModel,
-                        reason,
-                        X_CONFIGCAT_SDKKEY,
-                        null);
-        Type localVarReturnType = new TypeToken<SettingFormulaModel>() {}.getType();
+    public ApiResponse<SettingFormulaModel> replaceSettingValueBySdkkeyV2WithHttpInfo(String settingKeyOrId, UpdateEvaluationFormulaModel updateEvaluationFormulaModel, String reason, String X_CONFIGCAT_SDKKEY) throws ApiException {
+        okhttp3.Call localVarCall = replaceSettingValueBySdkkeyV2ValidateBeforeCall(settingKeyOrId, updateEvaluationFormulaModel, reason, X_CONFIGCAT_SDKKEY, null);
+        Type localVarReturnType = new TypeToken<SettingFormulaModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Replace value (asynchronously) This endpoint replaces the value and the Targeting Rules of a
-     * Feature Flag or Setting in a specified Environment identified by the &lt;a
-     * target&#x3D;\&quot;_blank\&quot; rel&#x3D;\&quot;noopener noreferrer\&quot;
-     * href&#x3D;\&quot;https://app.configcat.com/sdkkey\&quot;&gt;SDK key&lt;/a&gt; passed in the
-     * &#x60;X-CONFIGCAT-SDKKEY&#x60; header. Only the &#x60;defaultValue&#x60;,
-     * &#x60;targetingRules&#x60;, and &#x60;percentageEvaluationAttribute&#x60; fields are
-     * modifiable by this endpoint. **Important:** As this endpoint is doing a complete replace,
-     * it&#39;s important to set every other field that you don&#39;t want to change to its original
-     * state. Not listing one means it will reset. For example: We have the following resource of a
-     * Feature Flag. &#x60;&#x60;&#x60;json { \&quot;defaultValue\&quot;: { \&quot;boolValue\&quot;:
-     * false }, \&quot;targetingRules\&quot;: [ { \&quot;conditions\&quot;: [ {
-     * \&quot;userCondition\&quot;: { \&quot;comparisonAttribute\&quot;: \&quot;Email\&quot;,
-     * \&quot;comparator\&quot;: \&quot;sensitiveTextEquals\&quot;, \&quot;comparisonValue\&quot;: {
-     * \&quot;stringValue\&quot;: \&quot;test@example.com\&quot; } } } ],
-     * \&quot;percentageOptions\&quot;: [], \&quot;value\&quot;: { \&quot;boolValue\&quot;: true } }
-     * ] } &#x60;&#x60;&#x60; If we send a replace request body as below: &#x60;&#x60;&#x60;json {
-     * \&quot;defaultValue\&quot;: { \&quot;boolValue\&quot;: true } } &#x60;&#x60;&#x60; Then
-     * besides that the default served value is set to &#x60;true&#x60;, all the Targeting Rules are
-     * deleted. So we get a response like this: &#x60;&#x60;&#x60;json { \&quot;defaultValue\&quot;:
-     * { \&quot;boolValue\&quot;: true }, \&quot;targetingRules\&quot;: [] } &#x60;&#x60;&#x60;
-     *
+     * Replace value (asynchronously)
+     * This endpoint replaces the value and the Targeting Rules of a Feature Flag or Setting in a specified Environment identified by the &lt;a target&#x3D;\&quot;_blank\&quot; rel&#x3D;\&quot;noopener noreferrer\&quot; href&#x3D;\&quot;https://app.configcat.com/sdkkey\&quot;&gt;SDK key&lt;/a&gt; passed in the &#x60;X-CONFIGCAT-SDKKEY&#x60; header.  Only the &#x60;defaultValue&#x60;, &#x60;targetingRules&#x60;, and &#x60;percentageEvaluationAttribute&#x60; fields are modifiable by this endpoint.  **Important:** As this endpoint is doing a complete replace, it&#39;s important to set every other field that you don&#39;t want to change to its original state. Not listing one means it will reset.  For example: We have the following resource of a Feature Flag. &#x60;&#x60;&#x60;json {   \&quot;defaultValue\&quot;: {     \&quot;boolValue\&quot;: false   },   \&quot;targetingRules\&quot;: [     {       \&quot;conditions\&quot;: [         {           \&quot;userCondition\&quot;: {             \&quot;comparisonAttribute\&quot;: \&quot;Email\&quot;,             \&quot;comparator\&quot;: \&quot;sensitiveTextEquals\&quot;,             \&quot;comparisonValue\&quot;: {               \&quot;stringValue\&quot;: \&quot;test@example.com\&quot;             }           }         }       ],       \&quot;percentageOptions\&quot;: [],       \&quot;value\&quot;: {         \&quot;boolValue\&quot;: true       }     }   ] } &#x60;&#x60;&#x60; If we send a replace request body as below: &#x60;&#x60;&#x60;json {   \&quot;defaultValue\&quot;: {     \&quot;boolValue\&quot;: true   } } &#x60;&#x60;&#x60; Then besides that the default served value is set to &#x60;true&#x60;, all the Targeting Rules are deleted. So we get a response like this: &#x60;&#x60;&#x60;json {   \&quot;defaultValue\&quot;: {     \&quot;boolValue\&quot;: true   },   \&quot;targetingRules\&quot;: [] } &#x60;&#x60;&#x60;
      * @param settingKeyOrId The key or id of the Setting. (required)
-     * @param updateEvaluationFormulaModel (required)
-     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes
-     *     require a reason\&quot; preference is turned on. (optional)
-     * @param X_CONFIGCAT_SDKKEY The ConfigCat SDK Key. (https://app.configcat.com/sdkkey)
-     *     (optional)
+     * @param updateEvaluationFormulaModel  (required)
+     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
+     * @param X_CONFIGCAT_SDKKEY The ConfigCat SDK Key. (https://app.configcat.com/sdkkey) (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body
-     *     object
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call replaceSettingValueBySdkkeyV2Async(
-            String settingKeyOrId,
-            UpdateEvaluationFormulaModel updateEvaluationFormulaModel,
-            String reason,
-            String X_CONFIGCAT_SDKKEY,
-            final ApiCallback<SettingFormulaModel> _callback)
-            throws ApiException {
+    public okhttp3.Call replaceSettingValueBySdkkeyV2Async(String settingKeyOrId, UpdateEvaluationFormulaModel updateEvaluationFormulaModel, String reason, String X_CONFIGCAT_SDKKEY, final ApiCallback<SettingFormulaModel> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall =
-                replaceSettingValueBySdkkeyV2ValidateBeforeCall(
-                        settingKeyOrId,
-                        updateEvaluationFormulaModel,
-                        reason,
-                        X_CONFIGCAT_SDKKEY,
-                        _callback);
-        Type localVarReturnType = new TypeToken<SettingFormulaModel>() {}.getType();
+        okhttp3.Call localVarCall = replaceSettingValueBySdkkeyV2ValidateBeforeCall(settingKeyOrId, updateEvaluationFormulaModel, reason, X_CONFIGCAT_SDKKEY, _callback);
+        Type localVarReturnType = new TypeToken<SettingFormulaModel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for updateSettingValueBySdkkeyV2
-     *
      * @param settingKeyOrId The key or id of the Setting. (required)
-     * @param jsonPatchOperation (required)
-     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes
-     *     require a reason\&quot; preference is turned on. (optional)
-     * @param X_CONFIGCAT_SDKKEY The ConfigCat SDK Key. (https://app.configcat.com/sdkkey)
-     *     (optional)
+     * @param jsonPatchOperation  (required)
+     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
+     * @param X_CONFIGCAT_SDKKEY The ConfigCat SDK Key. (https://app.configcat.com/sdkkey) (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 204 </td><td> When no change applied on the resource. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> When no change applied on the resource. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call updateSettingValueBySdkkeyV2Call(
-            String settingKeyOrId,
-            List<JsonPatchOperation> jsonPatchOperation,
-            String reason,
-            String X_CONFIGCAT_SDKKEY,
-            final ApiCallback _callback)
-            throws ApiException {
+    public okhttp3.Call updateSettingValueBySdkkeyV2Call(String settingKeyOrId, List<JsonPatchOperation> jsonPatchOperation, String reason, String X_CONFIGCAT_SDKKEY, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {};
+        String[] localBasePaths = new String[] {  };
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null) {
+        if (localCustomBaseUrl != null){
             basePath = localCustomBaseUrl;
-        } else if (localBasePaths.length > 0) {
+        } else if ( localBasePaths.length > 0 ) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -631,11 +416,8 @@ public class FeatureFlagSettingValuesUsingSdkKeyV2Api {
         Object localVarPostBody = jsonPatchOperation;
 
         // create path and map variables
-        String localVarPath =
-                "/v2/settings/{settingKeyOrId}/value"
-                        .replace(
-                                "{" + "settingKeyOrId" + "}",
-                                localVarApiClient.escapeString(settingKeyOrId.toString()));
+        String localVarPath = "/v2/settings/{settingKeyOrId}/value"
+            .replace("{" + "settingKeyOrId" + "}", localVarApiClient.escapeString(settingKeyOrId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -648,245 +430,120 @@ public class FeatureFlagSettingValuesUsingSdkKeyV2Api {
         }
 
         if (X_CONFIGCAT_SDKKEY != null) {
-            localVarHeaderParams.put(
-                    "X-CONFIGCAT-SDKKEY", localVarApiClient.parameterToString(X_CONFIGCAT_SDKKEY));
+            localVarHeaderParams.put("X-CONFIGCAT-SDKKEY", localVarApiClient.parameterToString(X_CONFIGCAT_SDKKEY));
         }
 
-        final String[] localVarAccepts = {"application/json"};
+        final String[] localVarAccepts = {
+            "application/json"
+        };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
             localVarHeaderParams.put("Accept", localVarAccept);
         }
 
         final String[] localVarContentTypes = {
-            "application/json", "text/json", "application/*+json"
+            "application/json",
+            "text/json",
+            "application/*+json"
         };
-        final String localVarContentType =
-                localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] {"Basic"};
-        return localVarApiClient.buildCall(
-                basePath,
-                localVarPath,
-                "PATCH",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarCookieParams,
-                localVarFormParams,
-                localVarAuthNames,
-                _callback);
+        String[] localVarAuthNames = new String[] { "Basic" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateSettingValueBySdkkeyV2ValidateBeforeCall(
-            String settingKeyOrId,
-            List<JsonPatchOperation> jsonPatchOperation,
-            String reason,
-            String X_CONFIGCAT_SDKKEY,
-            final ApiCallback _callback)
-            throws ApiException {
+    private okhttp3.Call updateSettingValueBySdkkeyV2ValidateBeforeCall(String settingKeyOrId, List<JsonPatchOperation> jsonPatchOperation, String reason, String X_CONFIGCAT_SDKKEY, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'settingKeyOrId' is set
         if (settingKeyOrId == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'settingKeyOrId' when calling"
-                            + " updateSettingValueBySdkkeyV2(Async)");
+            throw new ApiException("Missing the required parameter 'settingKeyOrId' when calling updateSettingValueBySdkkeyV2(Async)");
         }
 
         // verify the required parameter 'jsonPatchOperation' is set
         if (jsonPatchOperation == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'jsonPatchOperation' when calling"
-                            + " updateSettingValueBySdkkeyV2(Async)");
+            throw new ApiException("Missing the required parameter 'jsonPatchOperation' when calling updateSettingValueBySdkkeyV2(Async)");
         }
 
-        return updateSettingValueBySdkkeyV2Call(
-                settingKeyOrId, jsonPatchOperation, reason, X_CONFIGCAT_SDKKEY, _callback);
+        return updateSettingValueBySdkkeyV2Call(settingKeyOrId, jsonPatchOperation, reason, X_CONFIGCAT_SDKKEY, _callback);
+
     }
 
     /**
-     * Update value This endpoint updates the value of a Feature Flag or Setting with a collection
-     * of [JSON Patch](https://jsonpatch.com) operations in a specified Environment. Only the
-     * &#x60;defaultValue&#x60;, &#x60;targetingRules&#x60;, and
-     * &#x60;percentageEvaluationAttribute&#x60; fields are modifiable by this endpoint. The
-     * advantage of using JSON Patch is that you can describe individual update operations on a
-     * resource without touching attributes that you don&#39;t want to change. It supports
-     * collection reordering, so it also can be used for reordering the targeting rules of a Feature
-     * Flag or Setting. For example: We have the following resource of a Feature Flag.
-     * &#x60;&#x60;&#x60;json { \&quot;defaultValue\&quot;: { \&quot;boolValue\&quot;: false },
-     * \&quot;targetingRules\&quot;: [ { \&quot;conditions\&quot;: [ { \&quot;userCondition\&quot;:
-     * { \&quot;comparisonAttribute\&quot;: \&quot;Email\&quot;, \&quot;comparator\&quot;:
-     * \&quot;sensitiveTextEquals\&quot;, \&quot;comparisonValue\&quot;: {
-     * \&quot;stringValue\&quot;: \&quot;test@example.com\&quot; } } } ],
-     * \&quot;percentageOptions\&quot;: [], \&quot;value\&quot;: { \&quot;boolValue\&quot;: true } }
-     * ] } &#x60;&#x60;&#x60; If we send an update request body as below: &#x60;&#x60;&#x60;json [ {
-     * \&quot;op\&quot;: \&quot;replace\&quot;, \&quot;path\&quot;:
-     * \&quot;/targetingRules/0/value/boolValue\&quot;, \&quot;value\&quot;: true } ]
-     * &#x60;&#x60;&#x60; Only the first Targeting Rule&#39;s &#x60;value&#x60; is going to be set
-     * to &#x60;false&#x60; and all the other fields are remaining unchanged. So we get a response
-     * like this: &#x60;&#x60;&#x60;json { \&quot;defaultValue\&quot;: { \&quot;boolValue\&quot;:
-     * false }, \&quot;targetingRules\&quot;: [ { \&quot;conditions\&quot;: [ {
-     * \&quot;userCondition\&quot;: { \&quot;comparisonAttribute\&quot;: \&quot;Email\&quot;,
-     * \&quot;comparator\&quot;: \&quot;sensitiveTextEquals\&quot;, \&quot;comparisonValue\&quot;: {
-     * \&quot;stringValue\&quot;: \&quot;test@example.com\&quot; } } } ],
-     * \&quot;percentageOptions\&quot;: [], \&quot;value\&quot;: { \&quot;boolValue\&quot;: false }
-     * } ] } &#x60;&#x60;&#x60;
-     *
+     * Update value
+     * This endpoint updates the value of a Feature Flag or Setting with a collection of [JSON Patch](https://jsonpatch.com) operations in a specified Environment.  Only the &#x60;defaultValue&#x60;, &#x60;targetingRules&#x60;, and &#x60;percentageEvaluationAttribute&#x60; fields are modifiable by this endpoint.  The advantage of using JSON Patch is that you can describe individual update operations on a resource without touching attributes that you don&#39;t want to change. It supports collection reordering, so it also can be used for reordering the targeting rules of a Feature Flag or Setting.  For example: We have the following resource of a Feature Flag. &#x60;&#x60;&#x60;json {   \&quot;defaultValue\&quot;: {     \&quot;boolValue\&quot;: false   },   \&quot;targetingRules\&quot;: [     {       \&quot;conditions\&quot;: [         {           \&quot;userCondition\&quot;: {             \&quot;comparisonAttribute\&quot;: \&quot;Email\&quot;,             \&quot;comparator\&quot;: \&quot;sensitiveTextEquals\&quot;,             \&quot;comparisonValue\&quot;: {               \&quot;stringValue\&quot;: \&quot;test@example.com\&quot;             }           }         }       ],       \&quot;percentageOptions\&quot;: [],       \&quot;value\&quot;: {         \&quot;boolValue\&quot;: true       }     }   ] } &#x60;&#x60;&#x60; If we send an update request body as below: &#x60;&#x60;&#x60;json [   {     \&quot;op\&quot;: \&quot;replace\&quot;,     \&quot;path\&quot;: \&quot;/targetingRules/0/value/boolValue\&quot;,     \&quot;value\&quot;: true   } ] &#x60;&#x60;&#x60; Only the first Targeting Rule&#39;s &#x60;value&#x60; is going to be set to &#x60;false&#x60; and all the other fields are remaining unchanged.  So we get a response like this: &#x60;&#x60;&#x60;json {   \&quot;defaultValue\&quot;: {     \&quot;boolValue\&quot;: false   },   \&quot;targetingRules\&quot;: [     {       \&quot;conditions\&quot;: [         {           \&quot;userCondition\&quot;: {             \&quot;comparisonAttribute\&quot;: \&quot;Email\&quot;,             \&quot;comparator\&quot;: \&quot;sensitiveTextEquals\&quot;,             \&quot;comparisonValue\&quot;: {               \&quot;stringValue\&quot;: \&quot;test@example.com\&quot;             }           }         }       ],       \&quot;percentageOptions\&quot;: [],       \&quot;value\&quot;: {         \&quot;boolValue\&quot;: false       }     }   ] } &#x60;&#x60;&#x60;
      * @param settingKeyOrId The key or id of the Setting. (required)
-     * @param jsonPatchOperation (required)
-     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes
-     *     require a reason\&quot; preference is turned on. (optional)
-     * @param X_CONFIGCAT_SDKKEY The ConfigCat SDK Key. (https://app.configcat.com/sdkkey)
-     *     (optional)
+     * @param jsonPatchOperation  (required)
+     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
+     * @param X_CONFIGCAT_SDKKEY The ConfigCat SDK Key. (https://app.configcat.com/sdkkey) (optional)
      * @return SettingFormulaModel
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 204 </td><td> When no change applied on the resource. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> When no change applied on the resource. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public SettingFormulaModel updateSettingValueBySdkkeyV2(
-            String settingKeyOrId,
-            List<JsonPatchOperation> jsonPatchOperation,
-            String reason,
-            String X_CONFIGCAT_SDKKEY)
-            throws ApiException {
-        ApiResponse<SettingFormulaModel> localVarResp =
-                updateSettingValueBySdkkeyV2WithHttpInfo(
-                        settingKeyOrId, jsonPatchOperation, reason, X_CONFIGCAT_SDKKEY);
+    public SettingFormulaModel updateSettingValueBySdkkeyV2(String settingKeyOrId, List<JsonPatchOperation> jsonPatchOperation, String reason, String X_CONFIGCAT_SDKKEY) throws ApiException {
+        ApiResponse<SettingFormulaModel> localVarResp = updateSettingValueBySdkkeyV2WithHttpInfo(settingKeyOrId, jsonPatchOperation, reason, X_CONFIGCAT_SDKKEY);
         return localVarResp.getData();
     }
 
     /**
-     * Update value This endpoint updates the value of a Feature Flag or Setting with a collection
-     * of [JSON Patch](https://jsonpatch.com) operations in a specified Environment. Only the
-     * &#x60;defaultValue&#x60;, &#x60;targetingRules&#x60;, and
-     * &#x60;percentageEvaluationAttribute&#x60; fields are modifiable by this endpoint. The
-     * advantage of using JSON Patch is that you can describe individual update operations on a
-     * resource without touching attributes that you don&#39;t want to change. It supports
-     * collection reordering, so it also can be used for reordering the targeting rules of a Feature
-     * Flag or Setting. For example: We have the following resource of a Feature Flag.
-     * &#x60;&#x60;&#x60;json { \&quot;defaultValue\&quot;: { \&quot;boolValue\&quot;: false },
-     * \&quot;targetingRules\&quot;: [ { \&quot;conditions\&quot;: [ { \&quot;userCondition\&quot;:
-     * { \&quot;comparisonAttribute\&quot;: \&quot;Email\&quot;, \&quot;comparator\&quot;:
-     * \&quot;sensitiveTextEquals\&quot;, \&quot;comparisonValue\&quot;: {
-     * \&quot;stringValue\&quot;: \&quot;test@example.com\&quot; } } } ],
-     * \&quot;percentageOptions\&quot;: [], \&quot;value\&quot;: { \&quot;boolValue\&quot;: true } }
-     * ] } &#x60;&#x60;&#x60; If we send an update request body as below: &#x60;&#x60;&#x60;json [ {
-     * \&quot;op\&quot;: \&quot;replace\&quot;, \&quot;path\&quot;:
-     * \&quot;/targetingRules/0/value/boolValue\&quot;, \&quot;value\&quot;: true } ]
-     * &#x60;&#x60;&#x60; Only the first Targeting Rule&#39;s &#x60;value&#x60; is going to be set
-     * to &#x60;false&#x60; and all the other fields are remaining unchanged. So we get a response
-     * like this: &#x60;&#x60;&#x60;json { \&quot;defaultValue\&quot;: { \&quot;boolValue\&quot;:
-     * false }, \&quot;targetingRules\&quot;: [ { \&quot;conditions\&quot;: [ {
-     * \&quot;userCondition\&quot;: { \&quot;comparisonAttribute\&quot;: \&quot;Email\&quot;,
-     * \&quot;comparator\&quot;: \&quot;sensitiveTextEquals\&quot;, \&quot;comparisonValue\&quot;: {
-     * \&quot;stringValue\&quot;: \&quot;test@example.com\&quot; } } } ],
-     * \&quot;percentageOptions\&quot;: [], \&quot;value\&quot;: { \&quot;boolValue\&quot;: false }
-     * } ] } &#x60;&#x60;&#x60;
-     *
+     * Update value
+     * This endpoint updates the value of a Feature Flag or Setting with a collection of [JSON Patch](https://jsonpatch.com) operations in a specified Environment.  Only the &#x60;defaultValue&#x60;, &#x60;targetingRules&#x60;, and &#x60;percentageEvaluationAttribute&#x60; fields are modifiable by this endpoint.  The advantage of using JSON Patch is that you can describe individual update operations on a resource without touching attributes that you don&#39;t want to change. It supports collection reordering, so it also can be used for reordering the targeting rules of a Feature Flag or Setting.  For example: We have the following resource of a Feature Flag. &#x60;&#x60;&#x60;json {   \&quot;defaultValue\&quot;: {     \&quot;boolValue\&quot;: false   },   \&quot;targetingRules\&quot;: [     {       \&quot;conditions\&quot;: [         {           \&quot;userCondition\&quot;: {             \&quot;comparisonAttribute\&quot;: \&quot;Email\&quot;,             \&quot;comparator\&quot;: \&quot;sensitiveTextEquals\&quot;,             \&quot;comparisonValue\&quot;: {               \&quot;stringValue\&quot;: \&quot;test@example.com\&quot;             }           }         }       ],       \&quot;percentageOptions\&quot;: [],       \&quot;value\&quot;: {         \&quot;boolValue\&quot;: true       }     }   ] } &#x60;&#x60;&#x60; If we send an update request body as below: &#x60;&#x60;&#x60;json [   {     \&quot;op\&quot;: \&quot;replace\&quot;,     \&quot;path\&quot;: \&quot;/targetingRules/0/value/boolValue\&quot;,     \&quot;value\&quot;: true   } ] &#x60;&#x60;&#x60; Only the first Targeting Rule&#39;s &#x60;value&#x60; is going to be set to &#x60;false&#x60; and all the other fields are remaining unchanged.  So we get a response like this: &#x60;&#x60;&#x60;json {   \&quot;defaultValue\&quot;: {     \&quot;boolValue\&quot;: false   },   \&quot;targetingRules\&quot;: [     {       \&quot;conditions\&quot;: [         {           \&quot;userCondition\&quot;: {             \&quot;comparisonAttribute\&quot;: \&quot;Email\&quot;,             \&quot;comparator\&quot;: \&quot;sensitiveTextEquals\&quot;,             \&quot;comparisonValue\&quot;: {               \&quot;stringValue\&quot;: \&quot;test@example.com\&quot;             }           }         }       ],       \&quot;percentageOptions\&quot;: [],       \&quot;value\&quot;: {         \&quot;boolValue\&quot;: false       }     }   ] } &#x60;&#x60;&#x60;
      * @param settingKeyOrId The key or id of the Setting. (required)
-     * @param jsonPatchOperation (required)
-     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes
-     *     require a reason\&quot; preference is turned on. (optional)
-     * @param X_CONFIGCAT_SDKKEY The ConfigCat SDK Key. (https://app.configcat.com/sdkkey)
-     *     (optional)
+     * @param jsonPatchOperation  (required)
+     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
+     * @param X_CONFIGCAT_SDKKEY The ConfigCat SDK Key. (https://app.configcat.com/sdkkey) (optional)
      * @return ApiResponse&lt;SettingFormulaModel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 204 </td><td> When no change applied on the resource. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> When no change applied on the resource. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public ApiResponse<SettingFormulaModel> updateSettingValueBySdkkeyV2WithHttpInfo(
-            String settingKeyOrId,
-            List<JsonPatchOperation> jsonPatchOperation,
-            String reason,
-            String X_CONFIGCAT_SDKKEY)
-            throws ApiException {
-        okhttp3.Call localVarCall =
-                updateSettingValueBySdkkeyV2ValidateBeforeCall(
-                        settingKeyOrId, jsonPatchOperation, reason, X_CONFIGCAT_SDKKEY, null);
-        Type localVarReturnType = new TypeToken<SettingFormulaModel>() {}.getType();
+    public ApiResponse<SettingFormulaModel> updateSettingValueBySdkkeyV2WithHttpInfo(String settingKeyOrId, List<JsonPatchOperation> jsonPatchOperation, String reason, String X_CONFIGCAT_SDKKEY) throws ApiException {
+        okhttp3.Call localVarCall = updateSettingValueBySdkkeyV2ValidateBeforeCall(settingKeyOrId, jsonPatchOperation, reason, X_CONFIGCAT_SDKKEY, null);
+        Type localVarReturnType = new TypeToken<SettingFormulaModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Update value (asynchronously) This endpoint updates the value of a Feature Flag or Setting
-     * with a collection of [JSON Patch](https://jsonpatch.com) operations in a specified
-     * Environment. Only the &#x60;defaultValue&#x60;, &#x60;targetingRules&#x60;, and
-     * &#x60;percentageEvaluationAttribute&#x60; fields are modifiable by this endpoint. The
-     * advantage of using JSON Patch is that you can describe individual update operations on a
-     * resource without touching attributes that you don&#39;t want to change. It supports
-     * collection reordering, so it also can be used for reordering the targeting rules of a Feature
-     * Flag or Setting. For example: We have the following resource of a Feature Flag.
-     * &#x60;&#x60;&#x60;json { \&quot;defaultValue\&quot;: { \&quot;boolValue\&quot;: false },
-     * \&quot;targetingRules\&quot;: [ { \&quot;conditions\&quot;: [ { \&quot;userCondition\&quot;:
-     * { \&quot;comparisonAttribute\&quot;: \&quot;Email\&quot;, \&quot;comparator\&quot;:
-     * \&quot;sensitiveTextEquals\&quot;, \&quot;comparisonValue\&quot;: {
-     * \&quot;stringValue\&quot;: \&quot;test@example.com\&quot; } } } ],
-     * \&quot;percentageOptions\&quot;: [], \&quot;value\&quot;: { \&quot;boolValue\&quot;: true } }
-     * ] } &#x60;&#x60;&#x60; If we send an update request body as below: &#x60;&#x60;&#x60;json [ {
-     * \&quot;op\&quot;: \&quot;replace\&quot;, \&quot;path\&quot;:
-     * \&quot;/targetingRules/0/value/boolValue\&quot;, \&quot;value\&quot;: true } ]
-     * &#x60;&#x60;&#x60; Only the first Targeting Rule&#39;s &#x60;value&#x60; is going to be set
-     * to &#x60;false&#x60; and all the other fields are remaining unchanged. So we get a response
-     * like this: &#x60;&#x60;&#x60;json { \&quot;defaultValue\&quot;: { \&quot;boolValue\&quot;:
-     * false }, \&quot;targetingRules\&quot;: [ { \&quot;conditions\&quot;: [ {
-     * \&quot;userCondition\&quot;: { \&quot;comparisonAttribute\&quot;: \&quot;Email\&quot;,
-     * \&quot;comparator\&quot;: \&quot;sensitiveTextEquals\&quot;, \&quot;comparisonValue\&quot;: {
-     * \&quot;stringValue\&quot;: \&quot;test@example.com\&quot; } } } ],
-     * \&quot;percentageOptions\&quot;: [], \&quot;value\&quot;: { \&quot;boolValue\&quot;: false }
-     * } ] } &#x60;&#x60;&#x60;
-     *
+     * Update value (asynchronously)
+     * This endpoint updates the value of a Feature Flag or Setting with a collection of [JSON Patch](https://jsonpatch.com) operations in a specified Environment.  Only the &#x60;defaultValue&#x60;, &#x60;targetingRules&#x60;, and &#x60;percentageEvaluationAttribute&#x60; fields are modifiable by this endpoint.  The advantage of using JSON Patch is that you can describe individual update operations on a resource without touching attributes that you don&#39;t want to change. It supports collection reordering, so it also can be used for reordering the targeting rules of a Feature Flag or Setting.  For example: We have the following resource of a Feature Flag. &#x60;&#x60;&#x60;json {   \&quot;defaultValue\&quot;: {     \&quot;boolValue\&quot;: false   },   \&quot;targetingRules\&quot;: [     {       \&quot;conditions\&quot;: [         {           \&quot;userCondition\&quot;: {             \&quot;comparisonAttribute\&quot;: \&quot;Email\&quot;,             \&quot;comparator\&quot;: \&quot;sensitiveTextEquals\&quot;,             \&quot;comparisonValue\&quot;: {               \&quot;stringValue\&quot;: \&quot;test@example.com\&quot;             }           }         }       ],       \&quot;percentageOptions\&quot;: [],       \&quot;value\&quot;: {         \&quot;boolValue\&quot;: true       }     }   ] } &#x60;&#x60;&#x60; If we send an update request body as below: &#x60;&#x60;&#x60;json [   {     \&quot;op\&quot;: \&quot;replace\&quot;,     \&quot;path\&quot;: \&quot;/targetingRules/0/value/boolValue\&quot;,     \&quot;value\&quot;: true   } ] &#x60;&#x60;&#x60; Only the first Targeting Rule&#39;s &#x60;value&#x60; is going to be set to &#x60;false&#x60; and all the other fields are remaining unchanged.  So we get a response like this: &#x60;&#x60;&#x60;json {   \&quot;defaultValue\&quot;: {     \&quot;boolValue\&quot;: false   },   \&quot;targetingRules\&quot;: [     {       \&quot;conditions\&quot;: [         {           \&quot;userCondition\&quot;: {             \&quot;comparisonAttribute\&quot;: \&quot;Email\&quot;,             \&quot;comparator\&quot;: \&quot;sensitiveTextEquals\&quot;,             \&quot;comparisonValue\&quot;: {               \&quot;stringValue\&quot;: \&quot;test@example.com\&quot;             }           }         }       ],       \&quot;percentageOptions\&quot;: [],       \&quot;value\&quot;: {         \&quot;boolValue\&quot;: false       }     }   ] } &#x60;&#x60;&#x60;
      * @param settingKeyOrId The key or id of the Setting. (required)
-     * @param jsonPatchOperation (required)
-     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes
-     *     require a reason\&quot; preference is turned on. (optional)
-     * @param X_CONFIGCAT_SDKKEY The ConfigCat SDK Key. (https://app.configcat.com/sdkkey)
-     *     (optional)
+     * @param jsonPatchOperation  (required)
+     * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
+     * @param X_CONFIGCAT_SDKKEY The ConfigCat SDK Key. (https://app.configcat.com/sdkkey) (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body
-     *     object
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 204 </td><td> When no change applied on the resource. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 204 </td><td> When no change applied on the resource. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call updateSettingValueBySdkkeyV2Async(
-            String settingKeyOrId,
-            List<JsonPatchOperation> jsonPatchOperation,
-            String reason,
-            String X_CONFIGCAT_SDKKEY,
-            final ApiCallback<SettingFormulaModel> _callback)
-            throws ApiException {
+    public okhttp3.Call updateSettingValueBySdkkeyV2Async(String settingKeyOrId, List<JsonPatchOperation> jsonPatchOperation, String reason, String X_CONFIGCAT_SDKKEY, final ApiCallback<SettingFormulaModel> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall =
-                updateSettingValueBySdkkeyV2ValidateBeforeCall(
-                        settingKeyOrId, jsonPatchOperation, reason, X_CONFIGCAT_SDKKEY, _callback);
-        Type localVarReturnType = new TypeToken<SettingFormulaModel>() {}.getType();
+        okhttp3.Call localVarCall = updateSettingValueBySdkkeyV2ValidateBeforeCall(settingKeyOrId, jsonPatchOperation, reason, X_CONFIGCAT_SDKKEY, _callback);
+        Type localVarReturnType = new TypeToken<SettingFormulaModel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

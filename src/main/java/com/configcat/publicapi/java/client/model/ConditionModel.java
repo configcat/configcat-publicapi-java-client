@@ -1,6 +1,6 @@
 /*
  * ConfigCat Public Management API
- * The purpose of this API is to access the ConfigCat platform programmatically. You can **Create**, **Read**, **Update** and **Delete** any entities like **Feature Flags, Configs, Environments** or **Products** within ConfigCat.  **Base API URL**: https://api.configcat.com  If you prefer the swagger documentation, you can find it here: [Swagger UI](https://api.configcat.com/swagger).  The API is based on HTTP REST, uses resource-oriented URLs, status codes and supports JSON  format.   **Important:** Do not use this API for accessing and evaluating feature flag values. Use the [SDKs](https://configcat.com/docs/sdk-reference/overview) or the [ConfigCat Proxy](https://configcat.com/docs/advanced/proxy/proxy-overview/) instead.  # OpenAPI Specification  The complete specification is publicly available in the following formats:  - [OpenAPI v3](https://api.configcat.com/docs/v1/swagger.json) - [Swagger v2](https://api.configcat.com/docs/v1/swagger.v2.json)  You can use it to generate client libraries in various languages with [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) or [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) to interact with this API.  # Authentication This API uses the [Basic HTTP Authentication Scheme](https://en.wikipedia.org/wiki/Basic_access_authentication).   <!-- ReDoc-Inject: <security-definitions> -->  # Throttling and rate limits All the rate limited API calls are returning information about the current rate limit period in the following HTTP headers:  | Header | Description | | :- | :- | | X-Rate-Limit-Remaining | The maximum number of requests remaining in the current rate limit period. | | X-Rate-Limit-Reset     | The time when the current rate limit period resets.        |  When the rate limit is exceeded by a request, the API returns with a `HTTP 429 - Too many requests` status along with a `Retry-After` HTTP header.
+ * The purpose of this API is to access the ConfigCat platform programmatically. You can **Create**, **Read**, **Update** and **Delete** any entities like **Feature Flags, Configs, Environments** or **Products** within ConfigCat.  **Base API URL**: https://api.configcat.com  If you prefer the swagger documentation, you can find it here: [Swagger UI](https://api.configcat.com/swagger).  The API is based on HTTP REST, uses resource-oriented URLs, status codes and supports JSON  format.   **Important:** Do not use this API for accessing and evaluating feature flag values. Use the [SDKs](https://configcat.com/docs/sdk-reference/overview) or the [ConfigCat Proxy](https://configcat.com/docs/advanced/proxy/proxy-overview/) instead.  # OpenAPI Specification  The complete specification is publicly available in the following formats:  - [OpenAPI v3](https://api.configcat.com/docs/v1/swagger.json) - [Swagger v2](https://api.configcat.com/docs/v1/swagger.v2.json)  You can use it to generate client libraries in various languages with [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) or [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) to interact with this API.  # Authentication This API uses the [Basic HTTP Authentication Scheme](https://en.wikipedia.org/wiki/Basic_access_authentication).   <!-- ReDoc-Inject: <security-definitions> -->  # Throttling and rate limits All the rate limited API calls are returning information about the current rate limit period in the following HTTP headers:  | Header | Description | | :- | :- | | X-Rate-Limit-Remaining | The maximum number of requests remaining in the current rate limit period. | | X-Rate-Limit-Reset     | The time when the current rate limit period resets.        |  When the rate limit is exceeded by a request, the API returns with a `HTTP 429 - Too many requests` status along with a `Retry-After` HTTP header. 
  *
  * The version of the OpenAPI document: v1
  * Contact: support@configcat.com
@@ -10,259 +10,342 @@
  * Do not edit the class manually.
  */
 
+
 package com.configcat.publicapi.java.client.model;
 
-
-import com.configcat.publicapi.java.client.JSON;
-import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
+import java.util.Objects;
+import com.configcat.publicapi.java.client.model.PrerequisiteFlagConditionModel;
+import com.configcat.publicapi.java.client.model.SegmentConditionModel;
+import com.configcat.publicapi.java.client.model.UserConditionModel;
 import com.google.gson.TypeAdapter;
-import com.google.gson.TypeAdapterFactory;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.Arrays;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.Set;
 
-/** ConditionModel */
-@javax.annotation.Generated(
-        value = "org.openapitools.codegen.languages.JavaClientCodegen",
-        date = "2024-10-09T12:38:06.739118192Z[Etc/UTC]",
-        comments = "Generator version: 7.7.0")
+import com.configcat.publicapi.java.client.JSON;
+
+/**
+ * ConditionModel
+ */
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class ConditionModel {
-    public static final String SERIALIZED_NAME_USER_CONDITION = "userCondition";
+  public static final String SERIALIZED_NAME_USER_CONDITION = "userCondition";
+  @SerializedName(SERIALIZED_NAME_USER_CONDITION)
+  private UserConditionModel userCondition;
 
-    @SerializedName(SERIALIZED_NAME_USER_CONDITION)
-    private UserConditionModel userCondition;
+  public static final String SERIALIZED_NAME_SEGMENT_CONDITION = "segmentCondition";
+  @SerializedName(SERIALIZED_NAME_SEGMENT_CONDITION)
+  private SegmentConditionModel segmentCondition;
 
-    public static final String SERIALIZED_NAME_SEGMENT_CONDITION = "segmentCondition";
+  public static final String SERIALIZED_NAME_PREREQUISITE_FLAG_CONDITION = "prerequisiteFlagCondition";
+  @SerializedName(SERIALIZED_NAME_PREREQUISITE_FLAG_CONDITION)
+  private PrerequisiteFlagConditionModel prerequisiteFlagCondition;
 
-    @SerializedName(SERIALIZED_NAME_SEGMENT_CONDITION)
-    private SegmentConditionModel segmentCondition;
+  public ConditionModel() {
+  }
 
-    public static final String SERIALIZED_NAME_PREREQUISITE_FLAG_CONDITION =
-            "prerequisiteFlagCondition";
+  public ConditionModel userCondition(UserConditionModel userCondition) {
+    this.userCondition = userCondition;
+    return this;
+  }
 
-    @SerializedName(SERIALIZED_NAME_PREREQUISITE_FLAG_CONDITION)
-    private PrerequisiteFlagConditionModel prerequisiteFlagCondition;
+  /**
+   * Get userCondition
+   * @return userCondition
+   */
+  @javax.annotation.Nullable
+  public UserConditionModel getUserCondition() {
+    return userCondition;
+  }
 
-    public ConditionModel() {}
+  public void setUserCondition(UserConditionModel userCondition) {
+    this.userCondition = userCondition;
+  }
 
-    public ConditionModel userCondition(UserConditionModel userCondition) {
-        this.userCondition = userCondition;
-        return this;
+
+  public ConditionModel segmentCondition(SegmentConditionModel segmentCondition) {
+    this.segmentCondition = segmentCondition;
+    return this;
+  }
+
+  /**
+   * Get segmentCondition
+   * @return segmentCondition
+   */
+  @javax.annotation.Nullable
+  public SegmentConditionModel getSegmentCondition() {
+    return segmentCondition;
+  }
+
+  public void setSegmentCondition(SegmentConditionModel segmentCondition) {
+    this.segmentCondition = segmentCondition;
+  }
+
+
+  public ConditionModel prerequisiteFlagCondition(PrerequisiteFlagConditionModel prerequisiteFlagCondition) {
+    this.prerequisiteFlagCondition = prerequisiteFlagCondition;
+    return this;
+  }
+
+  /**
+   * Get prerequisiteFlagCondition
+   * @return prerequisiteFlagCondition
+   */
+  @javax.annotation.Nullable
+  public PrerequisiteFlagConditionModel getPrerequisiteFlagCondition() {
+    return prerequisiteFlagCondition;
+  }
+
+  public void setPrerequisiteFlagCondition(PrerequisiteFlagConditionModel prerequisiteFlagCondition) {
+    this.prerequisiteFlagCondition = prerequisiteFlagCondition;
+  }
+
+  /**
+   * A container for additional, undeclared properties.
+   * This is a holder for any undeclared properties as specified with
+   * the 'additionalProperties' keyword in the OAS document.
+   */
+  private Map<String, Object> additionalProperties;
+
+  /**
+   * Set the additional (undeclared) property with the specified name and value.
+   * If the property does not already exist, create it otherwise replace it.
+   *
+   * @param key name of the property
+   * @param value value of the property
+   * @return the ConditionModel instance itself
+   */
+  public ConditionModel putAdditionalProperty(String key, Object value) {
+    if (this.additionalProperties == null) {
+        this.additionalProperties = new HashMap<String, Object>();
     }
+    this.additionalProperties.put(key, value);
+    return this;
+  }
 
-    /**
-     * Get userCondition
-     *
-     * @return userCondition
-     */
-    @javax.annotation.Nullable
-    public UserConditionModel getUserCondition() {
-        return userCondition;
+  /**
+   * Return the additional (undeclared) property.
+   *
+   * @return a map of objects
+   */
+  public Map<String, Object> getAdditionalProperties() {
+    return additionalProperties;
+  }
+
+  /**
+   * Return the additional (undeclared) property with the specified name.
+   *
+   * @param key name of the property
+   * @return an object
+   */
+  public Object getAdditionalProperty(String key) {
+    if (this.additionalProperties == null) {
+        return null;
     }
+    return this.additionalProperties.get(key);
+  }
 
-    public void setUserCondition(UserConditionModel userCondition) {
-        this.userCondition = userCondition;
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
     }
-
-    public ConditionModel segmentCondition(SegmentConditionModel segmentCondition) {
-        this.segmentCondition = segmentCondition;
-        return this;
+    if (o == null || getClass() != o.getClass()) {
+      return false;
     }
+    ConditionModel conditionModel = (ConditionModel) o;
+    return Objects.equals(this.userCondition, conditionModel.userCondition) &&
+        Objects.equals(this.segmentCondition, conditionModel.segmentCondition) &&
+        Objects.equals(this.prerequisiteFlagCondition, conditionModel.prerequisiteFlagCondition)&&
+        Objects.equals(this.additionalProperties, conditionModel.additionalProperties);
+  }
 
-    /**
-     * Get segmentCondition
-     *
-     * @return segmentCondition
-     */
-    @javax.annotation.Nullable
-    public SegmentConditionModel getSegmentCondition() {
-        return segmentCondition;
+  @Override
+  public int hashCode() {
+    return Objects.hash(userCondition, segmentCondition, prerequisiteFlagCondition, additionalProperties);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class ConditionModel {\n");
+    sb.append("    userCondition: ").append(toIndentedString(userCondition)).append("\n");
+    sb.append("    segmentCondition: ").append(toIndentedString(segmentCondition)).append("\n");
+    sb.append("    prerequisiteFlagCondition: ").append(toIndentedString(prerequisiteFlagCondition)).append("\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(Object o) {
+    if (o == null) {
+      return "null";
     }
+    return o.toString().replace("\n", "\n    ");
+  }
 
-    public void setSegmentCondition(SegmentConditionModel segmentCondition) {
-        this.segmentCondition = segmentCondition;
-    }
 
-    public ConditionModel prerequisiteFlagCondition(
-            PrerequisiteFlagConditionModel prerequisiteFlagCondition) {
-        this.prerequisiteFlagCondition = prerequisiteFlagCondition;
-        return this;
-    }
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
 
-    /**
-     * Get prerequisiteFlagCondition
-     *
-     * @return prerequisiteFlagCondition
-     */
-    @javax.annotation.Nullable
-    public PrerequisiteFlagConditionModel getPrerequisiteFlagCondition() {
-        return prerequisiteFlagCondition;
-    }
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("userCondition");
+    openapiFields.add("segmentCondition");
+    openapiFields.add("prerequisiteFlagCondition");
 
-    public void setPrerequisiteFlagCondition(
-            PrerequisiteFlagConditionModel prerequisiteFlagCondition) {
-        this.prerequisiteFlagCondition = prerequisiteFlagCondition;
-    }
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ConditionModel
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ConditionModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ConditionModel is not found in the empty JSON string", ConditionModel.openapiRequiredFields.toString()));
         }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        ConditionModel conditionModel = (ConditionModel) o;
-        return Objects.equals(this.userCondition, conditionModel.userCondition)
-                && Objects.equals(this.segmentCondition, conditionModel.segmentCondition)
-                && Objects.equals(
-                        this.prerequisiteFlagCondition, conditionModel.prerequisiteFlagCondition);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(userCondition, segmentCondition, prerequisiteFlagCondition);
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("class ConditionModel {\n");
-        sb.append("    userCondition: ").append(toIndentedString(userCondition)).append("\n");
-        sb.append("    segmentCondition: ").append(toIndentedString(segmentCondition)).append("\n");
-        sb.append("    prerequisiteFlagCondition: ")
-                .append(toIndentedString(prerequisiteFlagCondition))
-                .append("\n");
-        sb.append("}");
-        return sb.toString();
-    }
-
-    /**
-     * Convert the given object to string with each line indented by 4 spaces (except the first
-     * line).
-     */
-    private String toIndentedString(Object o) {
-        if (o == null) {
-            return "null";
-        }
-        return o.toString().replace("\n", "\n    ");
-    }
-
-    public static HashSet<String> openapiFields;
-    public static HashSet<String> openapiRequiredFields;
-
-    static {
-        // a set of all properties/fields (JSON key names)
-        openapiFields = new HashSet<String>();
-        openapiFields.add("userCondition");
-        openapiFields.add("segmentCondition");
-        openapiFields.add("prerequisiteFlagCondition");
-
-        // a set of required properties/fields (JSON key names)
-        openapiRequiredFields = new HashSet<String>();
-    }
-
-    /**
-     * Validates the JSON Element and throws an exception if issues found
-     *
-     * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to ConditionModel
-     */
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-        if (jsonElement == null) {
-            if (!ConditionModel.openapiRequiredFields
-                    .isEmpty()) { // has required fields but JSON element is null
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The required field(s) %s in ConditionModel is not found in the"
-                                        + " empty JSON string",
-                                ConditionModel.openapiRequiredFields.toString()));
-            }
-        }
-
-        Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
-        // check to see if the JSON string contains additional fields
-        for (Map.Entry<String, JsonElement> entry : entries) {
-            if (!ConditionModel.openapiFields.contains(entry.getKey())) {
-                throw new IllegalArgumentException(
-                        String.format(
-                                "The field `%s` in the JSON string is not defined in the"
-                                        + " `ConditionModel` properties. JSON: %s",
-                                entry.getKey(), jsonElement.toString()));
-            }
-        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-        // validate the optional field `userCondition`
-        if (jsonObj.get("userCondition") != null && !jsonObj.get("userCondition").isJsonNull()) {
-            UserConditionModel.validateJsonElement(jsonObj.get("userCondition"));
-        }
-        // validate the optional field `segmentCondition`
-        if (jsonObj.get("segmentCondition") != null
-                && !jsonObj.get("segmentCondition").isJsonNull()) {
-            SegmentConditionModel.validateJsonElement(jsonObj.get("segmentCondition"));
-        }
-        // validate the optional field `prerequisiteFlagCondition`
-        if (jsonObj.get("prerequisiteFlagCondition") != null
-                && !jsonObj.get("prerequisiteFlagCondition").isJsonNull()) {
-            PrerequisiteFlagConditionModel.validateJsonElement(
-                    jsonObj.get("prerequisiteFlagCondition"));
-        }
+      // validate the optional field `userCondition`
+      if (jsonObj.get("userCondition") != null && !jsonObj.get("userCondition").isJsonNull()) {
+        UserConditionModel.validateJsonElement(jsonObj.get("userCondition"));
+      }
+      // validate the optional field `segmentCondition`
+      if (jsonObj.get("segmentCondition") != null && !jsonObj.get("segmentCondition").isJsonNull()) {
+        SegmentConditionModel.validateJsonElement(jsonObj.get("segmentCondition"));
+      }
+      // validate the optional field `prerequisiteFlagCondition`
+      if (jsonObj.get("prerequisiteFlagCondition") != null && !jsonObj.get("prerequisiteFlagCondition").isJsonNull()) {
+        PrerequisiteFlagConditionModel.validateJsonElement(jsonObj.get("prerequisiteFlagCondition"));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!ConditionModel.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ConditionModel' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<ConditionModel> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ConditionModel.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<ConditionModel>() {
+           @Override
+           public void write(JsonWriter out, ConditionModel value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             obj.remove("additionalProperties");
+             // serialize additional properties
+             if (value.getAdditionalProperties() != null) {
+               for (Map.Entry<String, Object> entry : value.getAdditionalProperties().entrySet()) {
+                 if (entry.getValue() instanceof String)
+                   obj.addProperty(entry.getKey(), (String) entry.getValue());
+                 else if (entry.getValue() instanceof Number)
+                   obj.addProperty(entry.getKey(), (Number) entry.getValue());
+                 else if (entry.getValue() instanceof Boolean)
+                   obj.addProperty(entry.getKey(), (Boolean) entry.getValue());
+                 else if (entry.getValue() instanceof Character)
+                   obj.addProperty(entry.getKey(), (Character) entry.getValue());
+                 else {
+                   JsonElement jsonElement = gson.toJsonTree(entry.getValue());
+                   if (jsonElement.isJsonArray()) {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonArray());
+                   } else {
+                     obj.add(entry.getKey(), jsonElement.getAsJsonObject());
+                   }
+                 }
+               }
+             }
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public ConditionModel read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             JsonObject jsonObj = jsonElement.getAsJsonObject();
+             // store additional fields in the deserialized instance
+             ConditionModel instance = thisAdapter.fromJsonTree(jsonObj);
+             for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
+               if (!openapiFields.contains(entry.getKey())) {
+                 if (entry.getValue().isJsonPrimitive()) { // primitive type
+                   if (entry.getValue().getAsJsonPrimitive().isString())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsString());
+                   else if (entry.getValue().getAsJsonPrimitive().isNumber())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsNumber());
+                   else if (entry.getValue().getAsJsonPrimitive().isBoolean())
+                     instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
+                   else
+                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                 } else if (entry.getValue().isJsonArray()) {
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
+                 } else { // JSON object
+                     instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), HashMap.class));
+                 }
+               }
+             }
+             return instance;
+           }
+
+       }.nullSafe();
     }
+  }
 
-    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
-        @SuppressWarnings("unchecked")
-        @Override
-        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!ConditionModel.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'ConditionModel' and its subtypes
-            }
-            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<ConditionModel> thisAdapter =
-                    gson.getDelegateAdapter(this, TypeToken.get(ConditionModel.class));
+  /**
+   * Create an instance of ConditionModel given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ConditionModel
+   * @throws IOException if the JSON string is invalid with respect to ConditionModel
+   */
+  public static ConditionModel fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ConditionModel.class);
+  }
 
-            return (TypeAdapter<T>)
-                    new TypeAdapter<ConditionModel>() {
-                        @Override
-                        public void write(JsonWriter out, ConditionModel value) throws IOException {
-                            JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
-                            elementAdapter.write(out, obj);
-                        }
-
-                        @Override
-                        public ConditionModel read(JsonReader in) throws IOException {
-                            JsonElement jsonElement = elementAdapter.read(in);
-                            validateJsonElement(jsonElement);
-                            return thisAdapter.fromJsonTree(jsonElement);
-                        }
-                    }.nullSafe();
-        }
-    }
-
-    /**
-     * Create an instance of ConditionModel given an JSON string
-     *
-     * @param jsonString JSON string
-     * @return An instance of ConditionModel
-     * @throws IOException if the JSON string is invalid with respect to ConditionModel
-     */
-    public static ConditionModel fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, ConditionModel.class);
-    }
-
-    /**
-     * Convert an instance of ConditionModel to an JSON string
-     *
-     * @return JSON string
-     */
-    public String toJson() {
-        return JSON.getGson().toJson(this);
-    }
+  /**
+   * Convert an instance of ConditionModel to an JSON string
+   *
+   * @return JSON string
+   */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
+
