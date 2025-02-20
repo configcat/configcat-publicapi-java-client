@@ -1,6 +1,6 @@
 /*
  * ConfigCat Public Management API
- * The purpose of this API is to access the ConfigCat platform programmatically. You can **Create**, **Read**, **Update** and **Delete** any entities like **Feature Flags, Configs, Environments** or **Products** within ConfigCat.  **Base API URL**: https://api.configcat.com  If you prefer the swagger documentation, you can find it here: [Swagger UI](https://api.configcat.com/swagger).  The API is based on HTTP REST, uses resource-oriented URLs, status codes and supports JSON  format.   **Important:** Do not use this API for accessing and evaluating feature flag values. Use the [SDKs](https://configcat.com/docs/sdk-reference/overview) or the [ConfigCat Proxy](https://configcat.com/docs/advanced/proxy/proxy-overview/) instead.  # OpenAPI Specification  The complete specification is publicly available in the following formats:  - [OpenAPI v3](https://api.configcat.com/docs/v1/swagger.json) - [Swagger v2](https://api.configcat.com/docs/v1/swagger.v2.json)  You can use it to generate client libraries in various languages with [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) or [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) to interact with this API.  # Authentication This API uses the [Basic HTTP Authentication Scheme](https://en.wikipedia.org/wiki/Basic_access_authentication).   <!-- ReDoc-Inject: <security-definitions> -->  # Throttling and rate limits All the rate limited API calls are returning information about the current rate limit period in the following HTTP headers:  | Header | Description | | :- | :- | | X-Rate-Limit-Remaining | The maximum number of requests remaining in the current rate limit period. | | X-Rate-Limit-Reset     | The time when the current rate limit period resets.        |  When the rate limit is exceeded by a request, the API returns with a `HTTP 429 - Too many requests` status along with a `Retry-After` HTTP header.
+ * The purpose of this API is to access the ConfigCat platform programmatically. You can **Create**, **Read**, **Update** and **Delete** any entities like **Feature Flags, Configs, Environments** or **Products** within ConfigCat.  **Base API URL**: https://api.configcat.com  If you prefer the swagger documentation, you can find it here: [Swagger UI](https://api.configcat.com/swagger).  The API is based on HTTP REST, uses resource-oriented URLs, status codes and supports JSON  format.   **Important:** Do not use this API for accessing and evaluating feature flag values. Use the [SDKs](https://configcat.com/docs/sdk-reference/overview) or the [ConfigCat Proxy](https://configcat.com/docs/advanced/proxy/proxy-overview/) instead.  # OpenAPI Specification  The complete specification is publicly available in the following formats:  - [OpenAPI v3](https://api.configcat.com/docs/v1/swagger.json) - [Swagger v2](https://api.configcat.com/docs/v1/swagger.v2.json)  You can use it to generate client libraries in various languages with [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) or [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) to interact with this API.  # Authentication This API uses the [Basic HTTP Authentication Scheme](https://en.wikipedia.org/wiki/Basic_access_authentication).   <!-- ReDoc-Inject: <security-definitions> -->  # Throttling and rate limits All the rate limited API calls are returning information about the current rate limit period in the following HTTP headers:  | Header | Description | | :- | :- | | X-Rate-Limit-Remaining | The maximum number of requests remaining in the current rate limit period. | | X-Rate-Limit-Reset     | The time when the current rate limit period resets.        |  When the rate limit is exceeded by a request, the API returns with a `HTTP 429 - Too many requests` status along with a `Retry-After` HTTP header. 
  *
  * The version of the OpenAPI document: v1
  * Contact: support@configcat.com
@@ -10,8 +10,8 @@
  * Do not edit the class manually.
  */
 
-package com.configcat.publicapi.java.client.api;
 
+package com.configcat.publicapi.java.client.api;
 
 import com.configcat.publicapi.java.client.ApiCallback;
 import com.configcat.publicapi.java.client.ApiClient;
@@ -19,16 +19,24 @@ import com.configcat.publicapi.java.client.ApiException;
 import com.configcat.publicapi.java.client.ApiResponse;
 import com.configcat.publicapi.java.client.Configuration;
 import com.configcat.publicapi.java.client.Pair;
+import com.configcat.publicapi.java.client.ProgressRequestBody;
+import com.configcat.publicapi.java.client.ProgressResponseBody;
+
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
+
+
 import com.configcat.publicapi.java.client.model.CreateEnvironmentModel;
 import com.configcat.publicapi.java.client.model.EnvironmentModel;
+import java.util.UUID;
 import com.configcat.publicapi.java.client.model.UpdateEnvironmentModel;
-import com.google.gson.reflect.TypeToken;
+
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 public class EnvironmentsApi {
     private ApiClient localVarApiClient;
@@ -69,34 +77,29 @@ public class EnvironmentsApi {
 
     /**
      * Build call for createEnvironment
-     *
      * @param productId The identifier of the Product. (required)
-     * @param createEnvironmentModel (required)
+     * @param createEnvironmentModel  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call createEnvironmentCall(
-            UUID productId,
-            CreateEnvironmentModel createEnvironmentModel,
-            final ApiCallback _callback)
-            throws ApiException {
+    public okhttp3.Call createEnvironmentCall(UUID productId, CreateEnvironmentModel createEnvironmentModel, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {};
+        String[] localBasePaths = new String[] {  };
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null) {
+        if (localCustomBaseUrl != null){
             basePath = localCustomBaseUrl;
-        } else if (localBasePaths.length > 0) {
+        } else if ( localBasePaths.length > 0 ) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -105,11 +108,8 @@ public class EnvironmentsApi {
         Object localVarPostBody = createEnvironmentModel;
 
         // create path and map variables
-        String localVarPath =
-                "/v1/products/{productId}/environments"
-                        .replace(
-                                "{" + "productId" + "}",
-                                localVarApiClient.escapeString(productId.toString()));
+        String localVarPath = "/v1/products/{productId}/environments"
+            .replace("{" + "productId" + "}", localVarApiClient.escapeString(productId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -117,173 +117,136 @@ public class EnvironmentsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        final String[] localVarAccepts = {"application/json"};
+        final String[] localVarAccepts = {
+            "application/json"
+        };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
             localVarHeaderParams.put("Accept", localVarAccept);
         }
 
         final String[] localVarContentTypes = {
-            "application/json", "text/json", "application/*+json"
+            "application/json",
+            "text/json",
+            "application/*+json"
         };
-        final String localVarContentType =
-                localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] {"Basic"};
-        return localVarApiClient.buildCall(
-                basePath,
-                localVarPath,
-                "POST",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarCookieParams,
-                localVarFormParams,
-                localVarAuthNames,
-                _callback);
+        String[] localVarAuthNames = new String[] { "Basic" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createEnvironmentValidateBeforeCall(
-            UUID productId,
-            CreateEnvironmentModel createEnvironmentModel,
-            final ApiCallback _callback)
-            throws ApiException {
+    private okhttp3.Call createEnvironmentValidateBeforeCall(UUID productId, CreateEnvironmentModel createEnvironmentModel, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'productId' is set
         if (productId == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'productId' when calling"
-                            + " createEnvironment(Async)");
+            throw new ApiException("Missing the required parameter 'productId' when calling createEnvironment(Async)");
         }
 
         // verify the required parameter 'createEnvironmentModel' is set
         if (createEnvironmentModel == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'createEnvironmentModel' when calling"
-                            + " createEnvironment(Async)");
+            throw new ApiException("Missing the required parameter 'createEnvironmentModel' when calling createEnvironment(Async)");
         }
 
         return createEnvironmentCall(productId, createEnvironmentModel, _callback);
+
     }
 
     /**
-     * Create Environment This endpoint creates a new Environment in a specified Product identified
-     * by the &#x60;productId&#x60; parameter, which can be obtained from the [List
-     * Products](#operation/get-products) endpoint.
-     *
+     * Create Environment
+     * This endpoint creates a new Environment in a specified Product  identified by the &#x60;productId&#x60; parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.
      * @param productId The identifier of the Product. (required)
-     * @param createEnvironmentModel (required)
+     * @param createEnvironmentModel  (required)
      * @return EnvironmentModel
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public EnvironmentModel createEnvironment(
-            UUID productId, CreateEnvironmentModel createEnvironmentModel) throws ApiException {
-        ApiResponse<EnvironmentModel> localVarResp =
-                createEnvironmentWithHttpInfo(productId, createEnvironmentModel);
+    public EnvironmentModel createEnvironment(UUID productId, CreateEnvironmentModel createEnvironmentModel) throws ApiException {
+        ApiResponse<EnvironmentModel> localVarResp = createEnvironmentWithHttpInfo(productId, createEnvironmentModel);
         return localVarResp.getData();
     }
 
     /**
-     * Create Environment This endpoint creates a new Environment in a specified Product identified
-     * by the &#x60;productId&#x60; parameter, which can be obtained from the [List
-     * Products](#operation/get-products) endpoint.
-     *
+     * Create Environment
+     * This endpoint creates a new Environment in a specified Product  identified by the &#x60;productId&#x60; parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.
      * @param productId The identifier of the Product. (required)
-     * @param createEnvironmentModel (required)
+     * @param createEnvironmentModel  (required)
      * @return ApiResponse&lt;EnvironmentModel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public ApiResponse<EnvironmentModel> createEnvironmentWithHttpInfo(
-            UUID productId, CreateEnvironmentModel createEnvironmentModel) throws ApiException {
-        okhttp3.Call localVarCall =
-                createEnvironmentValidateBeforeCall(productId, createEnvironmentModel, null);
-        Type localVarReturnType = new TypeToken<EnvironmentModel>() {}.getType();
+    public ApiResponse<EnvironmentModel> createEnvironmentWithHttpInfo(UUID productId, CreateEnvironmentModel createEnvironmentModel) throws ApiException {
+        okhttp3.Call localVarCall = createEnvironmentValidateBeforeCall(productId, createEnvironmentModel, null);
+        Type localVarReturnType = new TypeToken<EnvironmentModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Create Environment (asynchronously) This endpoint creates a new Environment in a specified
-     * Product identified by the &#x60;productId&#x60; parameter, which can be obtained from the
-     * [List Products](#operation/get-products) endpoint.
-     *
+     * Create Environment (asynchronously)
+     * This endpoint creates a new Environment in a specified Product  identified by the &#x60;productId&#x60; parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.
      * @param productId The identifier of the Product. (required)
-     * @param createEnvironmentModel (required)
+     * @param createEnvironmentModel  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body
-     *     object
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call createEnvironmentAsync(
-            UUID productId,
-            CreateEnvironmentModel createEnvironmentModel,
-            final ApiCallback<EnvironmentModel> _callback)
-            throws ApiException {
+    public okhttp3.Call createEnvironmentAsync(UUID productId, CreateEnvironmentModel createEnvironmentModel, final ApiCallback<EnvironmentModel> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall =
-                createEnvironmentValidateBeforeCall(productId, createEnvironmentModel, _callback);
-        Type localVarReturnType = new TypeToken<EnvironmentModel>() {}.getType();
+        okhttp3.Call localVarCall = createEnvironmentValidateBeforeCall(productId, createEnvironmentModel, _callback);
+        Type localVarReturnType = new TypeToken<EnvironmentModel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for deleteEnvironment
-     *
      * @param environmentId The identifier of the Environment. (required)
-     * @param cleanupAuditLogs An optional flag which indicates whether the audit log records
-     *     related to the environment should be deleted or not. (optional)
+     * @param cleanupAuditLogs An optional flag which indicates whether the audit log records related to the environment should be deleted or not. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call deleteEnvironmentCall(
-            UUID environmentId, Boolean cleanupAuditLogs, final ApiCallback _callback)
-            throws ApiException {
+    public okhttp3.Call deleteEnvironmentCall(UUID environmentId, Boolean cleanupAuditLogs, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {};
+        String[] localBasePaths = new String[] {  };
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null) {
+        if (localCustomBaseUrl != null){
             basePath = localCustomBaseUrl;
-        } else if (localBasePaths.length > 0) {
+        } else if ( localBasePaths.length > 0 ) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -292,11 +255,8 @@ public class EnvironmentsApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath =
-                "/v1/environments/{environmentId}"
-                        .replace(
-                                "{" + "environmentId" + "}",
-                                localVarApiClient.escapeString(environmentId.toString()));
+        String localVarPath = "/v1/environments/{environmentId}"
+            .replace("{" + "environmentId" + "}", localVarApiClient.escapeString(environmentId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -305,162 +265,125 @@ public class EnvironmentsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         if (cleanupAuditLogs != null) {
-            localVarQueryParams.addAll(
-                    localVarApiClient.parameterToPair("cleanupAuditLogs", cleanupAuditLogs));
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("cleanupAuditLogs", cleanupAuditLogs));
         }
 
-        final String[] localVarAccepts = {};
+        final String[] localVarAccepts = {
+        };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
             localVarHeaderParams.put("Accept", localVarAccept);
         }
 
-        final String[] localVarContentTypes = {};
-        final String localVarContentType =
-                localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] {"Basic"};
-        return localVarApiClient.buildCall(
-                basePath,
-                localVarPath,
-                "DELETE",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarCookieParams,
-                localVarFormParams,
-                localVarAuthNames,
-                _callback);
+        String[] localVarAuthNames = new String[] { "Basic" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteEnvironmentValidateBeforeCall(
-            UUID environmentId, Boolean cleanupAuditLogs, final ApiCallback _callback)
-            throws ApiException {
+    private okhttp3.Call deleteEnvironmentValidateBeforeCall(UUID environmentId, Boolean cleanupAuditLogs, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'environmentId' is set
         if (environmentId == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'environmentId' when calling"
-                            + " deleteEnvironment(Async)");
+            throw new ApiException("Missing the required parameter 'environmentId' when calling deleteEnvironment(Async)");
         }
 
         return deleteEnvironmentCall(environmentId, cleanupAuditLogs, _callback);
+
     }
 
     /**
-     * Delete Environment This endpoint removes an Environment identified by the
-     * &#x60;environmentId&#x60; parameter. If the &#x60;cleanupAuditLogs&#x60; flag is set to true,
-     * it also deletes the audit log records related to the environment (except for the
-     * &#x60;Created a new environment&#x60; and &#x60;Deleted an environment&#x60; records).
-     *
+     * Delete Environment
+     * This endpoint removes an Environment identified by the &#x60;environmentId&#x60; parameter. If the &#x60;cleanupAuditLogs&#x60; flag is set to true, it also deletes the audit log records related to the environment (except for the &#x60;Created a new environment&#x60; and &#x60;Deleted an environment&#x60; records).
      * @param environmentId The identifier of the Environment. (required)
-     * @param cleanupAuditLogs An optional flag which indicates whether the audit log records
-     *     related to the environment should be deleted or not. (optional)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @param cleanupAuditLogs An optional flag which indicates whether the audit log records related to the environment should be deleted or not. (optional)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public void deleteEnvironment(UUID environmentId, Boolean cleanupAuditLogs)
-            throws ApiException {
+    public void deleteEnvironment(UUID environmentId, Boolean cleanupAuditLogs) throws ApiException {
         deleteEnvironmentWithHttpInfo(environmentId, cleanupAuditLogs);
     }
 
     /**
-     * Delete Environment This endpoint removes an Environment identified by the
-     * &#x60;environmentId&#x60; parameter. If the &#x60;cleanupAuditLogs&#x60; flag is set to true,
-     * it also deletes the audit log records related to the environment (except for the
-     * &#x60;Created a new environment&#x60; and &#x60;Deleted an environment&#x60; records).
-     *
+     * Delete Environment
+     * This endpoint removes an Environment identified by the &#x60;environmentId&#x60; parameter. If the &#x60;cleanupAuditLogs&#x60; flag is set to true, it also deletes the audit log records related to the environment (except for the &#x60;Created a new environment&#x60; and &#x60;Deleted an environment&#x60; records).
      * @param environmentId The identifier of the Environment. (required)
-     * @param cleanupAuditLogs An optional flag which indicates whether the audit log records
-     *     related to the environment should be deleted or not. (optional)
+     * @param cleanupAuditLogs An optional flag which indicates whether the audit log records related to the environment should be deleted or not. (optional)
      * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public ApiResponse<Void> deleteEnvironmentWithHttpInfo(
-            UUID environmentId, Boolean cleanupAuditLogs) throws ApiException {
-        okhttp3.Call localVarCall =
-                deleteEnvironmentValidateBeforeCall(environmentId, cleanupAuditLogs, null);
+    public ApiResponse<Void> deleteEnvironmentWithHttpInfo(UUID environmentId, Boolean cleanupAuditLogs) throws ApiException {
+        okhttp3.Call localVarCall = deleteEnvironmentValidateBeforeCall(environmentId, cleanupAuditLogs, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
-     * Delete Environment (asynchronously) This endpoint removes an Environment identified by the
-     * &#x60;environmentId&#x60; parameter. If the &#x60;cleanupAuditLogs&#x60; flag is set to true,
-     * it also deletes the audit log records related to the environment (except for the
-     * &#x60;Created a new environment&#x60; and &#x60;Deleted an environment&#x60; records).
-     *
+     * Delete Environment (asynchronously)
+     * This endpoint removes an Environment identified by the &#x60;environmentId&#x60; parameter. If the &#x60;cleanupAuditLogs&#x60; flag is set to true, it also deletes the audit log records related to the environment (except for the &#x60;Created a new environment&#x60; and &#x60;Deleted an environment&#x60; records).
      * @param environmentId The identifier of the Environment. (required)
-     * @param cleanupAuditLogs An optional flag which indicates whether the audit log records
-     *     related to the environment should be deleted or not. (optional)
+     * @param cleanupAuditLogs An optional flag which indicates whether the audit log records related to the environment should be deleted or not. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body
-     *     object
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call deleteEnvironmentAsync(
-            UUID environmentId, Boolean cleanupAuditLogs, final ApiCallback<Void> _callback)
-            throws ApiException {
+    public okhttp3.Call deleteEnvironmentAsync(UUID environmentId, Boolean cleanupAuditLogs, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall =
-                deleteEnvironmentValidateBeforeCall(environmentId, cleanupAuditLogs, _callback);
+        okhttp3.Call localVarCall = deleteEnvironmentValidateBeforeCall(environmentId, cleanupAuditLogs, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for getEnvironment
-     *
      * @param environmentId The identifier of the Environment. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td> When everything is ok, the environment data returned. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When everything is ok, the environment data returned. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call getEnvironmentCall(UUID environmentId, final ApiCallback _callback)
-            throws ApiException {
+    public okhttp3.Call getEnvironmentCall(UUID environmentId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {};
+        String[] localBasePaths = new String[] {  };
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null) {
+        if (localCustomBaseUrl != null){
             basePath = localCustomBaseUrl;
-        } else if (localBasePaths.length > 0) {
+        } else if ( localBasePaths.length > 0 ) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -469,11 +392,8 @@ public class EnvironmentsApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath =
-                "/v1/environments/{environmentId}"
-                        .replace(
-                                "{" + "environmentId" + "}",
-                                localVarApiClient.escapeString(environmentId.toString()));
+        String localVarPath = "/v1/environments/{environmentId}"
+            .replace("{" + "environmentId" + "}", localVarApiClient.escapeString(environmentId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -481,63 +401,50 @@ public class EnvironmentsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        final String[] localVarAccepts = {"application/json"};
+        final String[] localVarAccepts = {
+            "application/json"
+        };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
             localVarHeaderParams.put("Accept", localVarAccept);
         }
 
-        final String[] localVarContentTypes = {};
-        final String localVarContentType =
-                localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] {"Basic"};
-        return localVarApiClient.buildCall(
-                basePath,
-                localVarPath,
-                "GET",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarCookieParams,
-                localVarFormParams,
-                localVarAuthNames,
-                _callback);
+        String[] localVarAuthNames = new String[] { "Basic" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getEnvironmentValidateBeforeCall(
-            UUID environmentId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getEnvironmentValidateBeforeCall(UUID environmentId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'environmentId' is set
         if (environmentId == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'environmentId' when calling"
-                            + " getEnvironment(Async)");
+            throw new ApiException("Missing the required parameter 'environmentId' when calling getEnvironment(Async)");
         }
 
         return getEnvironmentCall(environmentId, _callback);
+
     }
 
     /**
-     * Get Environment This endpoint returns the metadata of an Environment identified by the
-     * &#x60;environmentId&#x60;.
-     *
+     * Get Environment
+     * This endpoint returns the metadata of an Environment  identified by the &#x60;environmentId&#x60;.
      * @param environmentId The identifier of the Environment. (required)
      * @return EnvironmentModel
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td> When everything is ok, the environment data returned. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When everything is ok, the environment data returned. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
     public EnvironmentModel getEnvironment(UUID environmentId) throws ApiException {
         ApiResponse<EnvironmentModel> localVarResp = getEnvironmentWithHttpInfo(environmentId);
@@ -545,81 +452,73 @@ public class EnvironmentsApi {
     }
 
     /**
-     * Get Environment This endpoint returns the metadata of an Environment identified by the
-     * &#x60;environmentId&#x60;.
-     *
+     * Get Environment
+     * This endpoint returns the metadata of an Environment  identified by the &#x60;environmentId&#x60;.
      * @param environmentId The identifier of the Environment. (required)
      * @return ApiResponse&lt;EnvironmentModel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td> When everything is ok, the environment data returned. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When everything is ok, the environment data returned. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public ApiResponse<EnvironmentModel> getEnvironmentWithHttpInfo(UUID environmentId)
-            throws ApiException {
+    public ApiResponse<EnvironmentModel> getEnvironmentWithHttpInfo(UUID environmentId) throws ApiException {
         okhttp3.Call localVarCall = getEnvironmentValidateBeforeCall(environmentId, null);
-        Type localVarReturnType = new TypeToken<EnvironmentModel>() {}.getType();
+        Type localVarReturnType = new TypeToken<EnvironmentModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Get Environment (asynchronously) This endpoint returns the metadata of an Environment
-     * identified by the &#x60;environmentId&#x60;.
-     *
+     * Get Environment (asynchronously)
+     * This endpoint returns the metadata of an Environment  identified by the &#x60;environmentId&#x60;.
      * @param environmentId The identifier of the Environment. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body
-     *     object
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td> When everything is ok, the environment data returned. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When everything is ok, the environment data returned. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call getEnvironmentAsync(
-            UUID environmentId, final ApiCallback<EnvironmentModel> _callback) throws ApiException {
+    public okhttp3.Call getEnvironmentAsync(UUID environmentId, final ApiCallback<EnvironmentModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getEnvironmentValidateBeforeCall(environmentId, _callback);
-        Type localVarReturnType = new TypeToken<EnvironmentModel>() {}.getType();
+        Type localVarReturnType = new TypeToken<EnvironmentModel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for getEnvironments
-     *
      * @param productId The identifier of the Product. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call getEnvironmentsCall(UUID productId, final ApiCallback _callback)
-            throws ApiException {
+    public okhttp3.Call getEnvironmentsCall(UUID productId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {};
+        String[] localBasePaths = new String[] {  };
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null) {
+        if (localCustomBaseUrl != null){
             basePath = localCustomBaseUrl;
-        } else if (localBasePaths.length > 0) {
+        } else if ( localBasePaths.length > 0 ) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -628,11 +527,8 @@ public class EnvironmentsApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath =
-                "/v1/products/{productId}/environments"
-                        .replace(
-                                "{" + "productId" + "}",
-                                localVarApiClient.escapeString(productId.toString()));
+        String localVarPath = "/v1/products/{productId}/environments"
+            .replace("{" + "productId" + "}", localVarApiClient.escapeString(productId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -640,64 +536,50 @@ public class EnvironmentsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        final String[] localVarAccepts = {"application/json"};
+        final String[] localVarAccepts = {
+            "application/json"
+        };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
             localVarHeaderParams.put("Accept", localVarAccept);
         }
 
-        final String[] localVarContentTypes = {};
-        final String localVarContentType =
-                localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] {"Basic"};
-        return localVarApiClient.buildCall(
-                basePath,
-                localVarPath,
-                "GET",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarCookieParams,
-                localVarFormParams,
-                localVarAuthNames,
-                _callback);
+        String[] localVarAuthNames = new String[] { "Basic" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getEnvironmentsValidateBeforeCall(
-            UUID productId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getEnvironmentsValidateBeforeCall(UUID productId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'productId' is set
         if (productId == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'productId' when calling"
-                            + " getEnvironments(Async)");
+            throw new ApiException("Missing the required parameter 'productId' when calling getEnvironments(Async)");
         }
 
         return getEnvironmentsCall(productId, _callback);
+
     }
 
     /**
-     * List Environments This endpoint returns the list of the Environments that belongs to the
-     * given Product identified by the &#x60;productId&#x60; parameter, which can be obtained from
-     * the [List Products](#operation/get-products) endpoint.
-     *
+     * List Environments
+     * This endpoint returns the list of the Environments that belongs to the given Product identified by the &#x60;productId&#x60; parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.
      * @param productId The identifier of the Product. (required)
      * @return List&lt;EnvironmentModel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
     public List<EnvironmentModel> getEnvironments(UUID productId) throws ApiException {
         ApiResponse<List<EnvironmentModel>> localVarResp = getEnvironmentsWithHttpInfo(productId);
@@ -705,88 +587,74 @@ public class EnvironmentsApi {
     }
 
     /**
-     * List Environments This endpoint returns the list of the Environments that belongs to the
-     * given Product identified by the &#x60;productId&#x60; parameter, which can be obtained from
-     * the [List Products](#operation/get-products) endpoint.
-     *
+     * List Environments
+     * This endpoint returns the list of the Environments that belongs to the given Product identified by the &#x60;productId&#x60; parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.
      * @param productId The identifier of the Product. (required)
      * @return ApiResponse&lt;List&lt;EnvironmentModel&gt;&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public ApiResponse<List<EnvironmentModel>> getEnvironmentsWithHttpInfo(UUID productId)
-            throws ApiException {
+    public ApiResponse<List<EnvironmentModel>> getEnvironmentsWithHttpInfo(UUID productId) throws ApiException {
         okhttp3.Call localVarCall = getEnvironmentsValidateBeforeCall(productId, null);
-        Type localVarReturnType = new TypeToken<List<EnvironmentModel>>() {}.getType();
+        Type localVarReturnType = new TypeToken<List<EnvironmentModel>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * List Environments (asynchronously) This endpoint returns the list of the Environments that
-     * belongs to the given Product identified by the &#x60;productId&#x60; parameter, which can be
-     * obtained from the [List Products](#operation/get-products) endpoint.
-     *
+     * List Environments (asynchronously)
+     * This endpoint returns the list of the Environments that belongs to the given Product identified by the &#x60;productId&#x60; parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.
      * @param productId The identifier of the Product. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body
-     *     object
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call getEnvironmentsAsync(
-            UUID productId, final ApiCallback<List<EnvironmentModel>> _callback)
-            throws ApiException {
+    public okhttp3.Call getEnvironmentsAsync(UUID productId, final ApiCallback<List<EnvironmentModel>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getEnvironmentsValidateBeforeCall(productId, _callback);
-        Type localVarReturnType = new TypeToken<List<EnvironmentModel>>() {}.getType();
+        Type localVarReturnType = new TypeToken<List<EnvironmentModel>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for updateEnvironment
-     *
      * @param environmentId The identifier of the Environment. (required)
-     * @param updateEnvironmentModel (required)
+     * @param updateEnvironmentModel  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call updateEnvironmentCall(
-            UUID environmentId,
-            UpdateEnvironmentModel updateEnvironmentModel,
-            final ApiCallback _callback)
-            throws ApiException {
+    public okhttp3.Call updateEnvironmentCall(UUID environmentId, UpdateEnvironmentModel updateEnvironmentModel, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {};
+        String[] localBasePaths = new String[] {  };
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null) {
+        if (localCustomBaseUrl != null){
             basePath = localCustomBaseUrl;
-        } else if (localBasePaths.length > 0) {
+        } else if ( localBasePaths.length > 0 ) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -795,11 +663,8 @@ public class EnvironmentsApi {
         Object localVarPostBody = updateEnvironmentModel;
 
         // create path and map variables
-        String localVarPath =
-                "/v1/environments/{environmentId}"
-                        .replace(
-                                "{" + "environmentId" + "}",
-                                localVarApiClient.escapeString(environmentId.toString()));
+        String localVarPath = "/v1/environments/{environmentId}"
+            .replace("{" + "environmentId" + "}", localVarApiClient.escapeString(environmentId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -807,139 +672,108 @@ public class EnvironmentsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        final String[] localVarAccepts = {"application/json"};
+        final String[] localVarAccepts = {
+            "application/json"
+        };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
             localVarHeaderParams.put("Accept", localVarAccept);
         }
 
         final String[] localVarContentTypes = {
-            "application/json", "text/json", "application/*+json"
+            "application/json",
+            "text/json",
+            "application/*+json"
         };
-        final String localVarContentType =
-                localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] {"Basic"};
-        return localVarApiClient.buildCall(
-                basePath,
-                localVarPath,
-                "PUT",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarCookieParams,
-                localVarFormParams,
-                localVarAuthNames,
-                _callback);
+        String[] localVarAuthNames = new String[] { "Basic" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateEnvironmentValidateBeforeCall(
-            UUID environmentId,
-            UpdateEnvironmentModel updateEnvironmentModel,
-            final ApiCallback _callback)
-            throws ApiException {
+    private okhttp3.Call updateEnvironmentValidateBeforeCall(UUID environmentId, UpdateEnvironmentModel updateEnvironmentModel, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'environmentId' is set
         if (environmentId == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'environmentId' when calling"
-                            + " updateEnvironment(Async)");
+            throw new ApiException("Missing the required parameter 'environmentId' when calling updateEnvironment(Async)");
         }
 
         // verify the required parameter 'updateEnvironmentModel' is set
         if (updateEnvironmentModel == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'updateEnvironmentModel' when calling"
-                            + " updateEnvironment(Async)");
+            throw new ApiException("Missing the required parameter 'updateEnvironmentModel' when calling updateEnvironment(Async)");
         }
 
         return updateEnvironmentCall(environmentId, updateEnvironmentModel, _callback);
+
     }
 
     /**
-     * Update Environment This endpoint updates an Environment identified by the
-     * &#x60;environmentId&#x60; parameter.
-     *
+     * Update Environment
+     * This endpoint updates an Environment identified by the &#x60;environmentId&#x60; parameter.
      * @param environmentId The identifier of the Environment. (required)
-     * @param updateEnvironmentModel (required)
+     * @param updateEnvironmentModel  (required)
      * @return EnvironmentModel
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public EnvironmentModel updateEnvironment(
-            UUID environmentId, UpdateEnvironmentModel updateEnvironmentModel) throws ApiException {
-        ApiResponse<EnvironmentModel> localVarResp =
-                updateEnvironmentWithHttpInfo(environmentId, updateEnvironmentModel);
+    public EnvironmentModel updateEnvironment(UUID environmentId, UpdateEnvironmentModel updateEnvironmentModel) throws ApiException {
+        ApiResponse<EnvironmentModel> localVarResp = updateEnvironmentWithHttpInfo(environmentId, updateEnvironmentModel);
         return localVarResp.getData();
     }
 
     /**
-     * Update Environment This endpoint updates an Environment identified by the
-     * &#x60;environmentId&#x60; parameter.
-     *
+     * Update Environment
+     * This endpoint updates an Environment identified by the &#x60;environmentId&#x60; parameter.
      * @param environmentId The identifier of the Environment. (required)
-     * @param updateEnvironmentModel (required)
+     * @param updateEnvironmentModel  (required)
      * @return ApiResponse&lt;EnvironmentModel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public ApiResponse<EnvironmentModel> updateEnvironmentWithHttpInfo(
-            UUID environmentId, UpdateEnvironmentModel updateEnvironmentModel) throws ApiException {
-        okhttp3.Call localVarCall =
-                updateEnvironmentValidateBeforeCall(environmentId, updateEnvironmentModel, null);
-        Type localVarReturnType = new TypeToken<EnvironmentModel>() {}.getType();
+    public ApiResponse<EnvironmentModel> updateEnvironmentWithHttpInfo(UUID environmentId, UpdateEnvironmentModel updateEnvironmentModel) throws ApiException {
+        okhttp3.Call localVarCall = updateEnvironmentValidateBeforeCall(environmentId, updateEnvironmentModel, null);
+        Type localVarReturnType = new TypeToken<EnvironmentModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Update Environment (asynchronously) This endpoint updates an Environment identified by the
-     * &#x60;environmentId&#x60; parameter.
-     *
+     * Update Environment (asynchronously)
+     * This endpoint updates an Environment identified by the &#x60;environmentId&#x60; parameter.
      * @param environmentId The identifier of the Environment. (required)
-     * @param updateEnvironmentModel (required)
+     * @param updateEnvironmentModel  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body
-     *     object
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call updateEnvironmentAsync(
-            UUID environmentId,
-            UpdateEnvironmentModel updateEnvironmentModel,
-            final ApiCallback<EnvironmentModel> _callback)
-            throws ApiException {
+    public okhttp3.Call updateEnvironmentAsync(UUID environmentId, UpdateEnvironmentModel updateEnvironmentModel, final ApiCallback<EnvironmentModel> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall =
-                updateEnvironmentValidateBeforeCall(
-                        environmentId, updateEnvironmentModel, _callback);
-        Type localVarReturnType = new TypeToken<EnvironmentModel>() {}.getType();
+        okhttp3.Call localVarCall = updateEnvironmentValidateBeforeCall(environmentId, updateEnvironmentModel, _callback);
+        Type localVarReturnType = new TypeToken<EnvironmentModel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

@@ -5714,7 +5714,6 @@ components:
       - custom
       type: string
     AddOrUpdateIntegrationLinkModel:
-      additionalProperties: false
       example:
         description: description
         url: url
@@ -5729,7 +5728,6 @@ components:
           type: string
       type: object
     AddOrUpdateJiraIntegrationLinkModel:
-      additionalProperties: false
       example:
         jiraJwtToken: jiraJwtToken
         clientKey: clientKey
@@ -5759,7 +5757,6 @@ components:
       - jiraJwtToken
       type: object
     AuditLogItemModel:
-      additionalProperties: false
       example:
         auditLogTypeEnum: productCreated
         auditLogDateTime: 2000-01-23T04:56:07.000+00:00
@@ -5877,6 +5874,7 @@ components:
       - samlIdpConfigurationAdded
       - samlIdpConfigurationRemoved
       - samlIdpConfigurationUpdated
+      - autoProvisioningEnabledChanged
       - organizationMemberJoined
       - organizationMemberProductJoinRequested
       - organizationMemberProductJoinRequestRejected
@@ -5890,9 +5888,18 @@ components:
       - segmentDeleted
       - webhookSigningKeyDeleted
       - webhookSigningKeyCreated
+      - userProvisioningConfigurationChanged
+      - syncGroupProvisioningRuleChanged
+      - syncGroupsReordered
+      - syncUserProvisioningEnabled
+      - syncUserProvisioningDisabled
+      - userEmailChanged
+      - userFullNameChanged
+      - userDisabled
+      - awsConnected
+      - awsDisconnected
       type: string
     CodeReferenceModel:
-      additionalProperties: false
       example:
         codeReferenceId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         references:
@@ -5970,7 +5977,6 @@ components:
           type: string
       type: object
     CodeReferenceRequest:
-      additionalProperties: false
       example:
         flagReferences:
         - references:
@@ -6101,7 +6107,6 @@ components:
       - repository
       type: object
     ComparisonValueListModel:
-      additionalProperties: false
       example:
         hint: hint
         value: value
@@ -6120,7 +6125,6 @@ components:
       - value
       type: object
     ComparisonValueModel:
-      additionalProperties: false
       description: The value that the user object's attribute is compared to.
       example:
         listValue:
@@ -6148,7 +6152,6 @@ components:
           type: array
       type: object
     ConditionModel:
-      additionalProperties: false
       example:
         segmentCondition:
           comparator: isIn
@@ -6181,7 +6184,6 @@ components:
           $ref: '#/components/schemas/PrerequisiteFlagConditionModel'
       type: object
     ConfigModel:
-      additionalProperties: false
       description: Details of the Config.
       example:
         product:
@@ -6226,7 +6228,6 @@ components:
           $ref: '#/components/schemas/EvaluationVersion'
       type: object
     ConfigSettingFormulaModel:
-      additionalProperties: false
       example:
         lastVersionId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         targetingRules:
@@ -6452,7 +6453,6 @@ components:
           type: array
       type: object
     ConfigSettingFormulasModel:
-      additionalProperties: false
       example:
         environment:
           product:
@@ -6851,7 +6851,6 @@ components:
           $ref: '#/components/schemas/FeatureFlagLimitations'
       type: object
     ConfigSettingValueModel:
-      additionalProperties: false
       example:
         rolloutRules:
         - comparator: isOneOf
@@ -6950,7 +6949,6 @@ components:
           type: array
       type: object
     ConfigSettingValuesModel:
-      additionalProperties: false
       example:
         environment:
           product:
@@ -7112,7 +7110,6 @@ components:
           $ref: '#/components/schemas/FeatureFlagLimitations'
       type: object
     ConnectRequest:
-      additionalProperties: false
       example:
         jiraJwtToken: jiraJwtToken
         clientKey: clientKey
@@ -7130,7 +7127,6 @@ components:
       - jiraJwtToken
       type: object
     CreateConfigRequest:
-      additionalProperties: false
       example:
         name: name
         description: description
@@ -7160,7 +7156,6 @@ components:
       - name
       type: object
     CreateEnvironmentModel:
-      additionalProperties: false
       example:
         color: color
         name: name
@@ -7194,7 +7189,6 @@ components:
       - name
       type: object
     CreateIntegrationModel:
-      additionalProperties: false
       example:
         integrationType: dataDog
         environmentIds:
@@ -7241,7 +7235,6 @@ components:
       - parameters
       type: object
     CreateOrUpdateEnvironmentAccessModel:
-      additionalProperties: false
       example:
         environmentId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         environmentAccessType: null
@@ -7254,7 +7247,6 @@ components:
           $ref: '#/components/schemas/EnvironmentAccessType'
       type: object
     CreatePermissionGroupRequest:
-      additionalProperties: false
       example:
         canViewProductStatistics: true
         canDeleteTag: true
@@ -7369,7 +7361,6 @@ components:
       - name
       type: object
     CreateProductRequest:
-      additionalProperties: false
       example:
         name: name
         description: description
@@ -7396,7 +7387,6 @@ components:
       - name
       type: object
     CreateSegmentModel:
-      additionalProperties: false
       example:
         comparator: isOneOf
         comparisonValue: comparisonValue
@@ -7434,7 +7424,6 @@ components:
       - name
       type: object
     CreateSettingInitialValues:
-      additionalProperties: false
       example:
         initialValues:
         - environmentId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
@@ -7495,7 +7484,6 @@ components:
       - settingType
       type: object
     CreateTagModel:
-      additionalProperties: false
       example:
         color: color
         name: name
@@ -7506,7 +7494,8 @@ components:
           minLength: 1
           type: string
         color:
-          description: Color of the Tag.
+          description: "Color of the Tag. Possible values: `panther`, `whale`, `salmon`,\
+            \ `lizard`, `canary`, `koala`, or any HTML color code."
           maxLength: 255
           minLength: 0
           nullable: true
@@ -7515,7 +7504,6 @@ components:
       - name
       type: object
     DeleteIntegrationLinkModel:
-      additionalProperties: false
       example:
         hasRemainingIntegrationLink: true
       properties:
@@ -7523,7 +7511,6 @@ components:
           type: boolean
       type: object
     DeleteRepositoryReportsRequest:
-      additionalProperties: false
       example:
         configId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         repository: repository
@@ -7557,7 +7544,6 @@ components:
       - repository
       type: object
     EnvironmentAccessModel:
-      additionalProperties: false
       example:
         environmentId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         color: color
@@ -7602,7 +7588,6 @@ components:
       - none
       type: string
     EnvironmentModel:
-      additionalProperties: false
       description: Details of the Environment.
       example:
         product:
@@ -7656,7 +7641,6 @@ components:
       - v2
       type: string
     FeatureFlagLimitations:
-      additionalProperties: false
       description: Subscription limitations regarding Feature flag or Setting values
         and targeting.
       example:
@@ -7701,7 +7685,6 @@ components:
           type: integer
       type: object
     FlagReference:
-      additionalProperties: false
       example:
         references:
         - file: file
@@ -7751,7 +7734,6 @@ components:
       - settingId
       type: object
     InitialValue:
-      additionalProperties: false
       example:
         environmentId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         value: ""
@@ -7766,7 +7748,6 @@ components:
           nullable: true
       type: object
     IntegrationLinkDetail:
-      additionalProperties: false
       example:
         product:
           productId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
@@ -7838,7 +7819,6 @@ components:
           type: string
       type: object
     IntegrationLinkDetailsModel:
-      additionalProperties: false
       example:
         allIntegrationLinkCount: 1
         details:
@@ -7962,7 +7942,6 @@ components:
           type: integer
       type: object
     IntegrationLinkModel:
-      additionalProperties: false
       example:
         integrationLinkType: trello
         description: description
@@ -7988,7 +7967,6 @@ components:
       - monday
       type: string
     IntegrationModel:
-      additionalProperties: false
       description: Details of the Integration.
       example:
         product:
@@ -8058,7 +8036,6 @@ components:
       - pubNub
       type: string
     IntegrationsModel:
-      additionalProperties: false
       example:
         integrations:
         - product:
@@ -8110,7 +8087,6 @@ components:
           type: array
       type: object
     InvitationModel:
-      additionalProperties: false
       example:
         permissionGroupId: 0
         createdAt: 2000-01-23T04:56:07.000+00:00
@@ -8140,7 +8116,6 @@ components:
           type: boolean
       type: object
     InviteMembersRequest:
-      additionalProperties: false
       example:
         emails:
         - emails
@@ -8162,7 +8137,6 @@ components:
       - permissionGroupId
       type: object
     JsonPatchOperation:
-      additionalProperties: false
       example:
         op: unknown
         path: path
@@ -8196,7 +8170,6 @@ components:
       - kebabCase
       type: string
     MeModel:
-      additionalProperties: false
       example:
         fullName: fullName
         email: email
@@ -8211,7 +8184,6 @@ components:
           type: string
       type: object
     MemberModel:
-      additionalProperties: false
       example:
         permissionGroupId: 0
         productId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
@@ -8241,7 +8213,6 @@ components:
           type: string
       type: object
     ModifyIntegrationRequest:
-      additionalProperties: false
       example:
         environmentIds:
         - 046b6c7f-0b8a-43b9-b35d-6489e6daee91
@@ -8294,7 +8265,6 @@ components:
       - test
       type: string
     OrganizationAdminModel:
-      additionalProperties: false
       description: Describes an Organization Admin.
       example:
         twoFactorEnabled: true
@@ -8319,7 +8289,6 @@ components:
           type: boolean
       type: object
     OrganizationInvitationModel:
-      additionalProperties: false
       example:
         permissionGroupId: 0
         createdAt: 2000-01-23T04:56:07.000+00:00
@@ -8364,7 +8333,6 @@ components:
           type: string
       type: object
     OrganizationMemberModel:
-      additionalProperties: false
       description: Describes an Organization Member.
       example:
         twoFactorEnabled: true
@@ -8408,7 +8376,6 @@ components:
           type: array
       type: object
     OrganizationMembersModel:
-      additionalProperties: false
       example:
         billingManagers:
         - twoFactorEnabled: true
@@ -8484,7 +8451,6 @@ components:
           type: array
       type: object
     OrganizationModel:
-      additionalProperties: false
       description: Details of the Organization.
       example:
         organizationId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
@@ -8500,7 +8466,6 @@ components:
           type: string
       type: object
     OrganizationPermissionGroupModel:
-      additionalProperties: false
       description: Describes the Member's Permission Group within a Product.
       example:
         permissionGroupId: 0
@@ -8516,7 +8481,6 @@ components:
           type: string
       type: object
     OrganizationPermissionModel:
-      additionalProperties: false
       description: Describes the Member's permission.
       example:
         product:
@@ -8532,7 +8496,6 @@ components:
           $ref: '#/components/schemas/OrganizationPermissionGroupModel'
       type: object
     OrganizationProductModel:
-      additionalProperties: false
       description: Describes the Member's Product.
       example:
         productId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
@@ -8548,7 +8511,6 @@ components:
           type: string
       type: object
     PercentageOptionModel:
-      additionalProperties: false
       example:
         percentage: 5
         value:
@@ -8569,7 +8531,6 @@ components:
       - value
       type: object
     PermissionGroupModel:
-      additionalProperties: false
       example:
         canViewProductStatistics: true
         canDeleteTag: true
@@ -8707,7 +8668,6 @@ components:
           $ref: '#/components/schemas/ProductModel'
       type: object
     PreferencesModel:
-      additionalProperties: false
       example:
         keyGenerationMode: camelCase
         showVariationId: true
@@ -8749,7 +8709,6 @@ components:
       - doesNotEqual
       type: string
     PrerequisiteFlagConditionModel:
-      additionalProperties: false
       description: Describes a condition that is based on a prerequisite flag.
       example:
         comparator: equals
@@ -8774,7 +8733,6 @@ components:
       - prerequisiteSettingId
       type: object
     ProductModel:
-      additionalProperties: false
       description: Details of the Product.
       example:
         productId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
@@ -8811,7 +8769,6 @@ components:
           type: boolean
       type: object
     ReasonRequiredEnvironmentModel:
-      additionalProperties: false
       example:
         environmentId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         environmentName: environmentName
@@ -8831,7 +8788,6 @@ components:
           type: string
       type: object
     ReferenceLine:
-      additionalProperties: false
       description: Determines a code reference line.
       example:
         lineText: lineText
@@ -8851,7 +8807,6 @@ components:
       - lineNumber
       type: object
     ReferenceLines:
-      additionalProperties: false
       example:
         file: file
         referenceLine:
@@ -8901,7 +8856,6 @@ components:
       - referenceLine
       type: object
     ReplaceSettingModel:
-      additionalProperties: false
       example:
         hint: hint
         name: name
@@ -8939,7 +8893,6 @@ components:
       - name
       type: object
     RolloutPercentageItemModel:
-      additionalProperties: false
       example:
         percentage: 0
         value: ""
@@ -8979,7 +8932,6 @@ components:
       - sensitiveIsNotOneOf
       type: string
     RolloutRuleModel:
-      additionalProperties: false
       example:
         comparator: isOneOf
         comparisonValue: comparisonValue
@@ -9013,7 +8965,6 @@ components:
           type: string
       type: object
     SdkKeysModel:
-      additionalProperties: false
       example:
         secondary: secondary
         primary: primary
@@ -9034,7 +8985,6 @@ components:
       - isNotIn
       type: string
     SegmentConditionModel:
-      additionalProperties: false
       description: Describes a condition that is based on a segment.
       example:
         comparator: isIn
@@ -9051,7 +9001,6 @@ components:
       - segmentId
       type: object
     SegmentListModel:
-      additionalProperties: false
       example:
         createdAt: 2000-01-23T04:56:07.000+00:00
         product:
@@ -9118,7 +9067,6 @@ components:
           type: integer
       type: object
     SegmentModel:
-      additionalProperties: false
       example:
         product:
           productId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
@@ -9193,7 +9141,6 @@ components:
           type: string
       type: object
     SettingDataModel:
-      additionalProperties: false
       description: Metadata of a Feature Flag or Setting.
       example:
         createdAt: 2000-01-23T04:56:07.000+00:00
@@ -9247,7 +9194,6 @@ components:
           type: boolean
       type: object
     SettingFormulaModel:
-      additionalProperties: false
       example:
         targetingRules:
         - percentageOptions:
@@ -9522,10 +9468,10 @@ components:
           $ref: '#/components/schemas/FeatureFlagLimitations'
       type: object
     SettingModel:
-      additionalProperties: false
       description: Metadata of a Feature Flag or Setting.
       example:
         configName: configName
+        createdAt: 2000-01-23T04:56:07.000+00:00
         configId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         hint: hint
         name: name
@@ -9590,6 +9536,11 @@ components:
           description: Name of the Feature Flag's Config.
           nullable: true
           type: string
+        createdAt:
+          description: The creation time of the Feature Flag or Setting.
+          format: date-time
+          nullable: true
+          type: string
         tags:
           description: The tags attached to the Feature Flag or Setting.
           items:
@@ -9598,7 +9549,6 @@ components:
           type: array
       type: object
     SettingTagModel:
-      additionalProperties: false
       example:
         color: color
         tagId: 1
@@ -9627,7 +9577,6 @@ components:
       - double
       type: string
     SettingValueModel:
-      additionalProperties: false
       example:
         rolloutRules:
         - comparator: isOneOf
@@ -9775,7 +9724,6 @@ components:
           type: boolean
       type: object
     TagModel:
-      additionalProperties: false
       example:
         product:
           productId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
@@ -9806,7 +9754,6 @@ components:
           type: string
       type: object
     TargetingRuleModel:
-      additionalProperties: false
       example:
         percentageOptions:
         - percentage: 5
@@ -9891,7 +9838,6 @@ components:
           $ref: '#/components/schemas/ValueModel'
       type: object
     UpdateConfigRequest:
-      additionalProperties: false
       example:
         name: name
         description: description
@@ -9917,7 +9863,6 @@ components:
           type: integer
       type: object
     UpdateEnvironmentModel:
-      additionalProperties: false
       example:
         color: color
         name: name
@@ -9950,7 +9895,6 @@ components:
           type: integer
       type: object
     UpdateEvaluationFormulaModel:
-      additionalProperties: false
       example:
         targetingRules:
         - percentageOptions:
@@ -10104,7 +10048,6 @@ components:
       - defaultValue
       type: object
     UpdateEvaluationFormulaWithIdModel:
-      additionalProperties: false
       example:
         targetingRules:
         - percentageOptions:
@@ -10263,7 +10206,6 @@ components:
       - defaultValue
       type: object
     UpdateEvaluationFormulasModel:
-      additionalProperties: false
       example:
         updateFormulas:
         - targetingRules:
@@ -10543,7 +10485,6 @@ components:
           type: array
       type: object
     UpdateMemberPermissionsRequest:
-      additionalProperties: false
       example:
         removeFromPermissionGroupsWhereIdNotSet: true
         isBillingManager: true
@@ -10574,7 +10515,6 @@ components:
           type: boolean
       type: object
     UpdatePermissionGroupRequest:
-      additionalProperties: false
       example:
         canViewProductStatistics: true
         canDeleteTag: true
@@ -10709,7 +10649,6 @@ components:
           type: array
       type: object
     UpdatePreferencesRequest:
-      additionalProperties: false
       example:
         keyGenerationMode: camelCase
         showVariationId: true
@@ -10746,7 +10685,6 @@ components:
           type: array
       type: object
     UpdateProductRequest:
-      additionalProperties: false
       example:
         name: name
         description: description
@@ -10772,7 +10710,6 @@ components:
           type: integer
       type: object
     UpdateReasonRequiredEnvironmentModel:
-      additionalProperties: false
       example:
         environmentId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         reasonRequired: true
@@ -10787,7 +10724,6 @@ components:
           type: boolean
       type: object
     UpdateSegmentModel:
-      additionalProperties: false
       example:
         comparator: isOneOf
         comparisonValue: comparisonValue
@@ -10817,7 +10753,6 @@ components:
           type: string
       type: object
     UpdateSettingValueModel:
-      additionalProperties: false
       example:
         rolloutRules:
         - comparator: isOneOf
@@ -10856,7 +10791,6 @@ components:
           nullable: true
       type: object
     UpdateSettingValueWithSettingIdModel:
-      additionalProperties: false
       example:
         rolloutRules:
         - comparator: isOneOf
@@ -10900,7 +10834,6 @@ components:
           type: integer
       type: object
     UpdateSettingValuesWithIdModel:
-      additionalProperties: false
       example:
         settingValues:
         - rolloutRules:
@@ -10952,7 +10885,6 @@ components:
           type: array
       type: object
     UpdateTagModel:
-      additionalProperties: false
       example:
         color: color
         name: name
@@ -10964,7 +10896,8 @@ components:
           nullable: true
           type: string
         color:
-          description: Color of the Tag.
+          description: "Color of the Tag. Possible values: `panther`, `whale`, `salmon`,\
+            \ `lizard`, `canary`, `koala`, or any HTML color code."
           maxLength: 255
           minLength: 0
           nullable: true
@@ -11012,7 +10945,6 @@ components:
       - arrayDoesNotContainAnyOf
       type: string
     UserConditionModel:
-      additionalProperties: false
       description: Describes a condition that is based on user attributes.
       example:
         comparator: isOneOf
@@ -11042,7 +10974,6 @@ components:
       - comparisonValue
       type: object
     UserModel:
-      additionalProperties: false
       example:
         twoFactorEnabled: true
         fullName: fullName
@@ -11066,7 +10997,6 @@ components:
           type: boolean
       type: object
     ValueModel:
-      additionalProperties: false
       description: Represents the value of a Feature Flag or Setting.
       example:
         stringValue: stringValue
@@ -11099,7 +11029,6 @@ components:
       - post
       type: string
     WebHookRequest:
-      additionalProperties: false
       example:
         webHookHeaders:
         - isSecure: true
@@ -11135,7 +11064,6 @@ components:
       - url
       type: object
     WebhookConfig:
-      additionalProperties: false
       description: The Config where the applied changes will invoke the Webhook.
       example:
         configId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
@@ -11151,7 +11079,6 @@ components:
           type: string
       type: object
     WebhookEnvironment:
-      additionalProperties: false
       description: The Environment where the applied changes will invoke the Webhook.
       example:
         environmentId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
@@ -11167,7 +11094,6 @@ components:
           type: string
       type: object
     WebhookHeaderModel:
-      additionalProperties: false
       example:
         isSecure: true
         value: value
@@ -11191,7 +11117,6 @@ components:
       - value
       type: object
     WebhookModel:
-      additionalProperties: false
       example:
         webHookHeaders:
         - isSecure: true
@@ -11237,7 +11162,6 @@ components:
           $ref: '#/components/schemas/WebhookEnvironment'
       type: object
     WebhookSigningKeysModel:
-      additionalProperties: false
       example:
         key1: key1
         key2: key2

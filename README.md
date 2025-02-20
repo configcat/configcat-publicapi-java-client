@@ -2,7 +2,7 @@
 
 ConfigCat Public Management API
 - API version: v1
-  - Build date: 2024-10-09T12:38:06.739118192Z[Etc/UTC]
+  - Build date: 2025-02-20T16:55:24.304297906Z[Etc/UTC]
   - Generator version: 7.7.0
 
 The purpose of this API is to access the ConfigCat platform programmatically.

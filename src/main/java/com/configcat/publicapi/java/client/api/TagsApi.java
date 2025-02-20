@@ -1,6 +1,6 @@
 /*
  * ConfigCat Public Management API
- * The purpose of this API is to access the ConfigCat platform programmatically. You can **Create**, **Read**, **Update** and **Delete** any entities like **Feature Flags, Configs, Environments** or **Products** within ConfigCat.  **Base API URL**: https://api.configcat.com  If you prefer the swagger documentation, you can find it here: [Swagger UI](https://api.configcat.com/swagger).  The API is based on HTTP REST, uses resource-oriented URLs, status codes and supports JSON  format.   **Important:** Do not use this API for accessing and evaluating feature flag values. Use the [SDKs](https://configcat.com/docs/sdk-reference/overview) or the [ConfigCat Proxy](https://configcat.com/docs/advanced/proxy/proxy-overview/) instead.  # OpenAPI Specification  The complete specification is publicly available in the following formats:  - [OpenAPI v3](https://api.configcat.com/docs/v1/swagger.json) - [Swagger v2](https://api.configcat.com/docs/v1/swagger.v2.json)  You can use it to generate client libraries in various languages with [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) or [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) to interact with this API.  # Authentication This API uses the [Basic HTTP Authentication Scheme](https://en.wikipedia.org/wiki/Basic_access_authentication).   <!-- ReDoc-Inject: <security-definitions> -->  # Throttling and rate limits All the rate limited API calls are returning information about the current rate limit period in the following HTTP headers:  | Header | Description | | :- | :- | | X-Rate-Limit-Remaining | The maximum number of requests remaining in the current rate limit period. | | X-Rate-Limit-Reset     | The time when the current rate limit period resets.        |  When the rate limit is exceeded by a request, the API returns with a `HTTP 429 - Too many requests` status along with a `Retry-After` HTTP header.
+ * The purpose of this API is to access the ConfigCat platform programmatically. You can **Create**, **Read**, **Update** and **Delete** any entities like **Feature Flags, Configs, Environments** or **Products** within ConfigCat.  **Base API URL**: https://api.configcat.com  If you prefer the swagger documentation, you can find it here: [Swagger UI](https://api.configcat.com/swagger).  The API is based on HTTP REST, uses resource-oriented URLs, status codes and supports JSON  format.   **Important:** Do not use this API for accessing and evaluating feature flag values. Use the [SDKs](https://configcat.com/docs/sdk-reference/overview) or the [ConfigCat Proxy](https://configcat.com/docs/advanced/proxy/proxy-overview/) instead.  # OpenAPI Specification  The complete specification is publicly available in the following formats:  - [OpenAPI v3](https://api.configcat.com/docs/v1/swagger.json) - [Swagger v2](https://api.configcat.com/docs/v1/swagger.v2.json)  You can use it to generate client libraries in various languages with [OpenAPI Generator](https://github.com/OpenAPITools/openapi-generator) or [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) to interact with this API.  # Authentication This API uses the [Basic HTTP Authentication Scheme](https://en.wikipedia.org/wiki/Basic_access_authentication).   <!-- ReDoc-Inject: <security-definitions> -->  # Throttling and rate limits All the rate limited API calls are returning information about the current rate limit period in the following HTTP headers:  | Header | Description | | :- | :- | | X-Rate-Limit-Remaining | The maximum number of requests remaining in the current rate limit period. | | X-Rate-Limit-Reset     | The time when the current rate limit period resets.        |  When the rate limit is exceeded by a request, the API returns with a `HTTP 429 - Too many requests` status along with a `Retry-After` HTTP header. 
  *
  * The version of the OpenAPI document: v1
  * Contact: support@configcat.com
@@ -10,8 +10,8 @@
  * Do not edit the class manually.
  */
 
-package com.configcat.publicapi.java.client.api;
 
+package com.configcat.publicapi.java.client.api;
 
 import com.configcat.publicapi.java.client.ApiCallback;
 import com.configcat.publicapi.java.client.ApiClient;
@@ -19,17 +19,25 @@ import com.configcat.publicapi.java.client.ApiException;
 import com.configcat.publicapi.java.client.ApiResponse;
 import com.configcat.publicapi.java.client.Configuration;
 import com.configcat.publicapi.java.client.Pair;
+import com.configcat.publicapi.java.client.ProgressRequestBody;
+import com.configcat.publicapi.java.client.ProgressResponseBody;
+
+import com.google.gson.reflect.TypeToken;
+
+import java.io.IOException;
+
+
 import com.configcat.publicapi.java.client.model.CreateTagModel;
 import com.configcat.publicapi.java.client.model.SettingModel;
 import com.configcat.publicapi.java.client.model.TagModel;
+import java.util.UUID;
 import com.configcat.publicapi.java.client.model.UpdateTagModel;
-import com.google.gson.reflect.TypeToken;
+
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 public class TagsApi {
     private ApiClient localVarApiClient;
@@ -70,32 +78,29 @@ public class TagsApi {
 
     /**
      * Build call for createTag
-     *
      * @param productId The identifier of the Organization. (required)
-     * @param createTagModel (required)
+     * @param createTagModel  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call createTagCall(
-            UUID productId, CreateTagModel createTagModel, final ApiCallback _callback)
-            throws ApiException {
+    public okhttp3.Call createTagCall(UUID productId, CreateTagModel createTagModel, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {};
+        String[] localBasePaths = new String[] {  };
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null) {
+        if (localCustomBaseUrl != null){
             basePath = localCustomBaseUrl;
-        } else if (localBasePaths.length > 0) {
+        } else if ( localBasePaths.length > 0 ) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -104,11 +109,8 @@ public class TagsApi {
         Object localVarPostBody = createTagModel;
 
         // create path and map variables
-        String localVarPath =
-                "/v1/products/{productId}/tags"
-                        .replace(
-                                "{" + "productId" + "}",
-                                localVarApiClient.escapeString(productId.toString()));
+        String localVarPath = "/v1/products/{productId}/tags"
+            .replace("{" + "productId" + "}", localVarApiClient.escapeString(productId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -116,74 +118,59 @@ public class TagsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        final String[] localVarAccepts = {"application/json"};
+        final String[] localVarAccepts = {
+            "application/json"
+        };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
             localVarHeaderParams.put("Accept", localVarAccept);
         }
 
         final String[] localVarContentTypes = {
-            "application/json", "text/json", "application/*+json"
+            "application/json",
+            "text/json",
+            "application/*+json"
         };
-        final String localVarContentType =
-                localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] {"Basic"};
-        return localVarApiClient.buildCall(
-                basePath,
-                localVarPath,
-                "POST",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarCookieParams,
-                localVarFormParams,
-                localVarAuthNames,
-                _callback);
+        String[] localVarAuthNames = new String[] { "Basic" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createTagValidateBeforeCall(
-            UUID productId, CreateTagModel createTagModel, final ApiCallback _callback)
-            throws ApiException {
+    private okhttp3.Call createTagValidateBeforeCall(UUID productId, CreateTagModel createTagModel, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'productId' is set
         if (productId == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'productId' when calling createTag(Async)");
+            throw new ApiException("Missing the required parameter 'productId' when calling createTag(Async)");
         }
 
         // verify the required parameter 'createTagModel' is set
         if (createTagModel == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'createTagModel' when calling"
-                            + " createTag(Async)");
+            throw new ApiException("Missing the required parameter 'createTagModel' when calling createTag(Async)");
         }
 
         return createTagCall(productId, createTagModel, _callback);
+
     }
 
     /**
-     * Create Tag This endpoint creates a new Tag in a specified Product identified by the
-     * &#x60;productId&#x60; parameter, which can be obtained from the [List
-     * Products](#operation/get-products) endpoint.
-     *
+     * Create Tag
+     * This endpoint creates a new Tag in a specified Product  identified by the &#x60;productId&#x60; parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.
      * @param productId The identifier of the Organization. (required)
-     * @param createTagModel (required)
+     * @param createTagModel  (required)
      * @return TagModel
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
     public TagModel createTag(UUID productId, CreateTagModel createTagModel) throws ApiException {
         ApiResponse<TagModel> localVarResp = createTagWithHttpInfo(productId, createTagModel);
@@ -191,86 +178,75 @@ public class TagsApi {
     }
 
     /**
-     * Create Tag This endpoint creates a new Tag in a specified Product identified by the
-     * &#x60;productId&#x60; parameter, which can be obtained from the [List
-     * Products](#operation/get-products) endpoint.
-     *
+     * Create Tag
+     * This endpoint creates a new Tag in a specified Product  identified by the &#x60;productId&#x60; parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.
      * @param productId The identifier of the Organization. (required)
-     * @param createTagModel (required)
+     * @param createTagModel  (required)
      * @return ApiResponse&lt;TagModel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public ApiResponse<TagModel> createTagWithHttpInfo(
-            UUID productId, CreateTagModel createTagModel) throws ApiException {
+    public ApiResponse<TagModel> createTagWithHttpInfo(UUID productId, CreateTagModel createTagModel) throws ApiException {
         okhttp3.Call localVarCall = createTagValidateBeforeCall(productId, createTagModel, null);
-        Type localVarReturnType = new TypeToken<TagModel>() {}.getType();
+        Type localVarReturnType = new TypeToken<TagModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Create Tag (asynchronously) This endpoint creates a new Tag in a specified Product identified
-     * by the &#x60;productId&#x60; parameter, which can be obtained from the [List
-     * Products](#operation/get-products) endpoint.
-     *
+     * Create Tag (asynchronously)
+     * This endpoint creates a new Tag in a specified Product  identified by the &#x60;productId&#x60; parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.
      * @param productId The identifier of the Organization. (required)
-     * @param createTagModel (required)
+     * @param createTagModel  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body
-     *     object
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call createTagAsync(
-            UUID productId, CreateTagModel createTagModel, final ApiCallback<TagModel> _callback)
-            throws ApiException {
+    public okhttp3.Call createTagAsync(UUID productId, CreateTagModel createTagModel, final ApiCallback<TagModel> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall =
-                createTagValidateBeforeCall(productId, createTagModel, _callback);
-        Type localVarReturnType = new TypeToken<TagModel>() {}.getType();
+        okhttp3.Call localVarCall = createTagValidateBeforeCall(productId, createTagModel, _callback);
+        Type localVarReturnType = new TypeToken<TagModel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for deleteTag
-     *
      * @param tagId The identifier of the Tag. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
     public okhttp3.Call deleteTagCall(Long tagId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {};
+        String[] localBasePaths = new String[] {  };
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null) {
+        if (localCustomBaseUrl != null){
             basePath = localCustomBaseUrl;
-        } else if (localBasePaths.length > 0) {
+        } else if ( localBasePaths.length > 0 ) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -279,11 +255,8 @@ public class TagsApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath =
-                "/v1/tags/{tagId}"
-                        .replace(
-                                "{" + "tagId" + "}",
-                                localVarApiClient.escapeString(tagId.toString()));
+        String localVarPath = "/v1/tags/{tagId}"
+            .replace("{" + "tagId" + "}", localVarApiClient.escapeString(tagId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -291,84 +264,67 @@ public class TagsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        final String[] localVarAccepts = {};
+        final String[] localVarAccepts = {
+        };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
             localVarHeaderParams.put("Accept", localVarAccept);
         }
 
-        final String[] localVarContentTypes = {};
-        final String localVarContentType =
-                localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] {"Basic"};
-        return localVarApiClient.buildCall(
-                basePath,
-                localVarPath,
-                "DELETE",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarCookieParams,
-                localVarFormParams,
-                localVarAuthNames,
-                _callback);
+        String[] localVarAuthNames = new String[] { "Basic" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteTagValidateBeforeCall(Long tagId, final ApiCallback _callback)
-            throws ApiException {
+    private okhttp3.Call deleteTagValidateBeforeCall(Long tagId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'tagId' is set
         if (tagId == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'tagId' when calling deleteTag(Async)");
+            throw new ApiException("Missing the required parameter 'tagId' when calling deleteTag(Async)");
         }
 
         return deleteTagCall(tagId, _callback);
+
     }
 
     /**
-     * Delete Tag This endpoint deletes a Tag identified by the &#x60;tagId&#x60; parameter. To
-     * remove a Tag from a Feature Flag or Setting use the [Update Flag](#operation/update-setting)
-     * endpoint.
-     *
+     * Delete Tag
+     * This endpoint deletes a Tag identified by the &#x60;tagId&#x60; parameter. To remove a Tag from a Feature Flag or Setting use the [Update Flag](#operation/update-setting) endpoint.
      * @param tagId The identifier of the Tag. (required)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
     public void deleteTag(Long tagId) throws ApiException {
         deleteTagWithHttpInfo(tagId);
     }
 
     /**
-     * Delete Tag This endpoint deletes a Tag identified by the &#x60;tagId&#x60; parameter. To
-     * remove a Tag from a Feature Flag or Setting use the [Update Flag](#operation/update-setting)
-     * endpoint.
-     *
+     * Delete Tag
+     * This endpoint deletes a Tag identified by the &#x60;tagId&#x60; parameter. To remove a Tag from a Feature Flag or Setting use the [Update Flag](#operation/update-setting) endpoint.
      * @param tagId The identifier of the Tag. (required)
      * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
     public ApiResponse<Void> deleteTagWithHttpInfo(Long tagId) throws ApiException {
         okhttp3.Call localVarCall = deleteTagValidateBeforeCall(tagId, null);
@@ -376,26 +332,22 @@ public class TagsApi {
     }
 
     /**
-     * Delete Tag (asynchronously) This endpoint deletes a Tag identified by the &#x60;tagId&#x60;
-     * parameter. To remove a Tag from a Feature Flag or Setting use the [Update
-     * Flag](#operation/update-setting) endpoint.
-     *
+     * Delete Tag (asynchronously)
+     * This endpoint deletes a Tag identified by the &#x60;tagId&#x60; parameter. To remove a Tag from a Feature Flag or Setting use the [Update Flag](#operation/update-setting) endpoint.
      * @param tagId The identifier of the Tag. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body
-     *     object
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call deleteTagAsync(Long tagId, final ApiCallback<Void> _callback)
-            throws ApiException {
+    public okhttp3.Call deleteTagAsync(Long tagId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteTagValidateBeforeCall(tagId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -403,30 +355,28 @@ public class TagsApi {
     }
     /**
      * Build call for getSettingsByTag
-     *
      * @param tagId The identifier of the Tag. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td> When everything is ok, the settings data returned. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When everything is ok, the settings data returned. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call getSettingsByTagCall(Long tagId, final ApiCallback _callback)
-            throws ApiException {
+    public okhttp3.Call getSettingsByTagCall(Long tagId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {};
+        String[] localBasePaths = new String[] {  };
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null) {
+        if (localCustomBaseUrl != null){
             basePath = localCustomBaseUrl;
-        } else if (localBasePaths.length > 0) {
+        } else if ( localBasePaths.length > 0 ) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -435,11 +385,8 @@ public class TagsApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath =
-                "/v1/tags/{tagId}/settings"
-                        .replace(
-                                "{" + "tagId" + "}",
-                                localVarApiClient.escapeString(tagId.toString()));
+        String localVarPath = "/v1/tags/{tagId}/settings"
+            .replace("{" + "tagId" + "}", localVarApiClient.escapeString(tagId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -447,62 +394,50 @@ public class TagsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        final String[] localVarAccepts = {"application/json"};
+        final String[] localVarAccepts = {
+            "application/json"
+        };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
             localVarHeaderParams.put("Accept", localVarAccept);
         }
 
-        final String[] localVarContentTypes = {};
-        final String localVarContentType =
-                localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] {"Basic"};
-        return localVarApiClient.buildCall(
-                basePath,
-                localVarPath,
-                "GET",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarCookieParams,
-                localVarFormParams,
-                localVarAuthNames,
-                _callback);
+        String[] localVarAuthNames = new String[] { "Basic" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSettingsByTagValidateBeforeCall(Long tagId, final ApiCallback _callback)
-            throws ApiException {
+    private okhttp3.Call getSettingsByTagValidateBeforeCall(Long tagId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'tagId' is set
         if (tagId == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'tagId' when calling getSettingsByTag(Async)");
+            throw new ApiException("Missing the required parameter 'tagId' when calling getSettingsByTag(Async)");
         }
 
         return getSettingsByTagCall(tagId, _callback);
+
     }
 
     /**
-     * List Settings by Tag This endpoint returns the list of the Settings that has the specified
-     * Tag, identified by the &#x60;tagId&#x60; parameter.
-     *
+     * List Settings by Tag
+     * This endpoint returns the list of the Settings that  has the specified Tag, identified by the &#x60;tagId&#x60; parameter.
      * @param tagId The identifier of the Tag. (required)
      * @return List&lt;SettingModel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td> When everything is ok, the settings data returned. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When everything is ok, the settings data returned. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
     public List<SettingModel> getSettingsByTag(Long tagId) throws ApiException {
         ApiResponse<List<SettingModel>> localVarResp = getSettingsByTagWithHttpInfo(tagId);
@@ -510,80 +445,73 @@ public class TagsApi {
     }
 
     /**
-     * List Settings by Tag This endpoint returns the list of the Settings that has the specified
-     * Tag, identified by the &#x60;tagId&#x60; parameter.
-     *
+     * List Settings by Tag
+     * This endpoint returns the list of the Settings that  has the specified Tag, identified by the &#x60;tagId&#x60; parameter.
      * @param tagId The identifier of the Tag. (required)
      * @return ApiResponse&lt;List&lt;SettingModel&gt;&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td> When everything is ok, the settings data returned. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When everything is ok, the settings data returned. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public ApiResponse<List<SettingModel>> getSettingsByTagWithHttpInfo(Long tagId)
-            throws ApiException {
+    public ApiResponse<List<SettingModel>> getSettingsByTagWithHttpInfo(Long tagId) throws ApiException {
         okhttp3.Call localVarCall = getSettingsByTagValidateBeforeCall(tagId, null);
-        Type localVarReturnType = new TypeToken<List<SettingModel>>() {}.getType();
+        Type localVarReturnType = new TypeToken<List<SettingModel>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * List Settings by Tag (asynchronously) This endpoint returns the list of the Settings that has
-     * the specified Tag, identified by the &#x60;tagId&#x60; parameter.
-     *
+     * List Settings by Tag (asynchronously)
+     * This endpoint returns the list of the Settings that  has the specified Tag, identified by the &#x60;tagId&#x60; parameter.
      * @param tagId The identifier of the Tag. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body
-     *     object
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td> When everything is ok, the settings data returned. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When everything is ok, the settings data returned. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call getSettingsByTagAsync(
-            Long tagId, final ApiCallback<List<SettingModel>> _callback) throws ApiException {
+    public okhttp3.Call getSettingsByTagAsync(Long tagId, final ApiCallback<List<SettingModel>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getSettingsByTagValidateBeforeCall(tagId, _callback);
-        Type localVarReturnType = new TypeToken<List<SettingModel>>() {}.getType();
+        Type localVarReturnType = new TypeToken<List<SettingModel>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for getTag
-     *
      * @param tagId The identifier of the Tag. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td> When everything is ok, the tag data returned. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When everything is ok, the tag data returned. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
     public okhttp3.Call getTagCall(Long tagId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {};
+        String[] localBasePaths = new String[] {  };
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null) {
+        if (localCustomBaseUrl != null){
             basePath = localCustomBaseUrl;
-        } else if (localBasePaths.length > 0) {
+        } else if ( localBasePaths.length > 0 ) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -592,11 +520,8 @@ public class TagsApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath =
-                "/v1/tags/{tagId}"
-                        .replace(
-                                "{" + "tagId" + "}",
-                                localVarApiClient.escapeString(tagId.toString()));
+        String localVarPath = "/v1/tags/{tagId}"
+            .replace("{" + "tagId" + "}", localVarApiClient.escapeString(tagId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -604,61 +529,50 @@ public class TagsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        final String[] localVarAccepts = {"application/json"};
+        final String[] localVarAccepts = {
+            "application/json"
+        };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
             localVarHeaderParams.put("Accept", localVarAccept);
         }
 
-        final String[] localVarContentTypes = {};
-        final String localVarContentType =
-                localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] {"Basic"};
-        return localVarApiClient.buildCall(
-                basePath,
-                localVarPath,
-                "GET",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarCookieParams,
-                localVarFormParams,
-                localVarAuthNames,
-                _callback);
+        String[] localVarAuthNames = new String[] { "Basic" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getTagValidateBeforeCall(Long tagId, final ApiCallback _callback)
-            throws ApiException {
+    private okhttp3.Call getTagValidateBeforeCall(Long tagId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'tagId' is set
         if (tagId == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'tagId' when calling getTag(Async)");
+            throw new ApiException("Missing the required parameter 'tagId' when calling getTag(Async)");
         }
 
         return getTagCall(tagId, _callback);
+
     }
 
     /**
-     * Get Tag This endpoint returns the metadata of a Tag identified by the &#x60;tagId&#x60;.
-     *
+     * Get Tag
+     * This endpoint returns the metadata of a Tag  identified by the &#x60;tagId&#x60;.
      * @param tagId The identifier of the Tag. (required)
      * @return TagModel
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td> When everything is ok, the tag data returned. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When everything is ok, the tag data returned. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
     public TagModel getTag(Long tagId) throws ApiException {
         ApiResponse<TagModel> localVarResp = getTagWithHttpInfo(tagId);
@@ -666,77 +580,71 @@ public class TagsApi {
     }
 
     /**
-     * Get Tag This endpoint returns the metadata of a Tag identified by the &#x60;tagId&#x60;.
-     *
+     * Get Tag
+     * This endpoint returns the metadata of a Tag  identified by the &#x60;tagId&#x60;.
      * @param tagId The identifier of the Tag. (required)
      * @return ApiResponse&lt;TagModel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td> When everything is ok, the tag data returned. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When everything is ok, the tag data returned. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
     public ApiResponse<TagModel> getTagWithHttpInfo(Long tagId) throws ApiException {
         okhttp3.Call localVarCall = getTagValidateBeforeCall(tagId, null);
-        Type localVarReturnType = new TypeToken<TagModel>() {}.getType();
+        Type localVarReturnType = new TypeToken<TagModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Get Tag (asynchronously) This endpoint returns the metadata of a Tag identified by the
-     * &#x60;tagId&#x60;.
-     *
+     * Get Tag (asynchronously)
+     * This endpoint returns the metadata of a Tag  identified by the &#x60;tagId&#x60;.
      * @param tagId The identifier of the Tag. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body
-     *     object
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td> When everything is ok, the tag data returned. </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When everything is ok, the tag data returned. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call getTagAsync(Long tagId, final ApiCallback<TagModel> _callback)
-            throws ApiException {
+    public okhttp3.Call getTagAsync(Long tagId, final ApiCallback<TagModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getTagValidateBeforeCall(tagId, _callback);
-        Type localVarReturnType = new TypeToken<TagModel>() {}.getType();
+        Type localVarReturnType = new TypeToken<TagModel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for getTags
-     *
      * @param productId The identifier of the Product. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call getTagsCall(UUID productId, final ApiCallback _callback)
-            throws ApiException {
+    public okhttp3.Call getTagsCall(UUID productId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {};
+        String[] localBasePaths = new String[] {  };
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null) {
+        if (localCustomBaseUrl != null){
             basePath = localCustomBaseUrl;
-        } else if (localBasePaths.length > 0) {
+        } else if ( localBasePaths.length > 0 ) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -745,11 +653,8 @@ public class TagsApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath =
-                "/v1/products/{productId}/tags"
-                        .replace(
-                                "{" + "productId" + "}",
-                                localVarApiClient.escapeString(productId.toString()));
+        String localVarPath = "/v1/products/{productId}/tags"
+            .replace("{" + "productId" + "}", localVarApiClient.escapeString(productId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -757,60 +662,48 @@ public class TagsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        final String[] localVarAccepts = {"application/json"};
+        final String[] localVarAccepts = {
+            "application/json"
+        };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
             localVarHeaderParams.put("Accept", localVarAccept);
         }
 
-        final String[] localVarContentTypes = {};
-        final String localVarContentType =
-                localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] {"Basic"};
-        return localVarApiClient.buildCall(
-                basePath,
-                localVarPath,
-                "GET",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarCookieParams,
-                localVarFormParams,
-                localVarAuthNames,
-                _callback);
+        String[] localVarAuthNames = new String[] { "Basic" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getTagsValidateBeforeCall(UUID productId, final ApiCallback _callback)
-            throws ApiException {
+    private okhttp3.Call getTagsValidateBeforeCall(UUID productId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'productId' is set
         if (productId == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'productId' when calling getTags(Async)");
+            throw new ApiException("Missing the required parameter 'productId' when calling getTags(Async)");
         }
 
         return getTagsCall(productId, _callback);
+
     }
 
     /**
-     * List Tags This endpoint returns the list of the Tags in a specified Product, identified by
-     * the &#x60;productId&#x60; parameter.
-     *
+     * List Tags
+     * This endpoint returns the list of the Tags in a  specified Product, identified by the &#x60;productId&#x60; parameter.
      * @param productId The identifier of the Product. (required)
      * @return List&lt;TagModel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
     public List<TagModel> getTags(UUID productId) throws ApiException {
         ApiResponse<List<TagModel>> localVarResp = getTagsWithHttpInfo(productId);
@@ -818,78 +711,70 @@ public class TagsApi {
     }
 
     /**
-     * List Tags This endpoint returns the list of the Tags in a specified Product, identified by
-     * the &#x60;productId&#x60; parameter.
-     *
+     * List Tags
+     * This endpoint returns the list of the Tags in a  specified Product, identified by the &#x60;productId&#x60; parameter.
      * @param productId The identifier of the Product. (required)
      * @return ApiResponse&lt;List&lt;TagModel&gt;&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
     public ApiResponse<List<TagModel>> getTagsWithHttpInfo(UUID productId) throws ApiException {
         okhttp3.Call localVarCall = getTagsValidateBeforeCall(productId, null);
-        Type localVarReturnType = new TypeToken<List<TagModel>>() {}.getType();
+        Type localVarReturnType = new TypeToken<List<TagModel>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * List Tags (asynchronously) This endpoint returns the list of the Tags in a specified Product,
-     * identified by the &#x60;productId&#x60; parameter.
-     *
+     * List Tags (asynchronously)
+     * This endpoint returns the list of the Tags in a  specified Product, identified by the &#x60;productId&#x60; parameter.
      * @param productId The identifier of the Product. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body
-     *     object
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call getTagsAsync(UUID productId, final ApiCallback<List<TagModel>> _callback)
-            throws ApiException {
+    public okhttp3.Call getTagsAsync(UUID productId, final ApiCallback<List<TagModel>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getTagsValidateBeforeCall(productId, _callback);
-        Type localVarReturnType = new TypeToken<List<TagModel>>() {}.getType();
+        Type localVarReturnType = new TypeToken<List<TagModel>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for updateTag
-     *
      * @param tagId The identifier of the Tag. (required)
-     * @param updateTagModel (required)
+     * @param updateTagModel  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call updateTagCall(
-            Long tagId, UpdateTagModel updateTagModel, final ApiCallback _callback)
-            throws ApiException {
+    public okhttp3.Call updateTagCall(Long tagId, UpdateTagModel updateTagModel, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {};
+        String[] localBasePaths = new String[] {  };
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null) {
+        if (localCustomBaseUrl != null){
             basePath = localCustomBaseUrl;
-        } else if (localBasePaths.length > 0) {
+        } else if ( localBasePaths.length > 0 ) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -898,11 +783,8 @@ public class TagsApi {
         Object localVarPostBody = updateTagModel;
 
         // create path and map variables
-        String localVarPath =
-                "/v1/tags/{tagId}"
-                        .replace(
-                                "{" + "tagId" + "}",
-                                localVarApiClient.escapeString(tagId.toString()));
+        String localVarPath = "/v1/tags/{tagId}"
+            .replace("{" + "tagId" + "}", localVarApiClient.escapeString(tagId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -910,72 +792,59 @@ public class TagsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        final String[] localVarAccepts = {"application/json"};
+        final String[] localVarAccepts = {
+            "application/json"
+        };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
             localVarHeaderParams.put("Accept", localVarAccept);
         }
 
         final String[] localVarContentTypes = {
-            "application/json", "text/json", "application/*+json"
+            "application/json",
+            "text/json",
+            "application/*+json"
         };
-        final String localVarContentType =
-                localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] {"Basic"};
-        return localVarApiClient.buildCall(
-                basePath,
-                localVarPath,
-                "PUT",
-                localVarQueryParams,
-                localVarCollectionQueryParams,
-                localVarPostBody,
-                localVarHeaderParams,
-                localVarCookieParams,
-                localVarFormParams,
-                localVarAuthNames,
-                _callback);
+        String[] localVarAuthNames = new String[] { "Basic" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateTagValidateBeforeCall(
-            Long tagId, UpdateTagModel updateTagModel, final ApiCallback _callback)
-            throws ApiException {
+    private okhttp3.Call updateTagValidateBeforeCall(Long tagId, UpdateTagModel updateTagModel, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'tagId' is set
         if (tagId == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'tagId' when calling updateTag(Async)");
+            throw new ApiException("Missing the required parameter 'tagId' when calling updateTag(Async)");
         }
 
         // verify the required parameter 'updateTagModel' is set
         if (updateTagModel == null) {
-            throw new ApiException(
-                    "Missing the required parameter 'updateTagModel' when calling"
-                            + " updateTag(Async)");
+            throw new ApiException("Missing the required parameter 'updateTagModel' when calling updateTag(Async)");
         }
 
         return updateTagCall(tagId, updateTagModel, _callback);
+
     }
 
     /**
-     * Update Tag This endpoint updates a Tag identified by the &#x60;tagId&#x60; parameter.
-     *
+     * Update Tag
+     * This endpoint updates a Tag identified by the &#x60;tagId&#x60; parameter.
      * @param tagId The identifier of the Tag. (required)
-     * @param updateTagModel (required)
+     * @param updateTagModel  (required)
      * @return TagModel
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
     public TagModel updateTag(Long tagId, UpdateTagModel updateTagModel) throws ApiException {
         ApiResponse<TagModel> localVarResp = updateTagWithHttpInfo(tagId, updateTagModel);
@@ -983,54 +852,48 @@ public class TagsApi {
     }
 
     /**
-     * Update Tag This endpoint updates a Tag identified by the &#x60;tagId&#x60; parameter.
-     *
+     * Update Tag
+     * This endpoint updates a Tag identified by the &#x60;tagId&#x60; parameter.
      * @param tagId The identifier of the Tag. (required)
-     * @param updateTagModel (required)
+     * @param updateTagModel  (required)
      * @return ApiResponse&lt;TagModel&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the
-     *     response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public ApiResponse<TagModel> updateTagWithHttpInfo(Long tagId, UpdateTagModel updateTagModel)
-            throws ApiException {
+    public ApiResponse<TagModel> updateTagWithHttpInfo(Long tagId, UpdateTagModel updateTagModel) throws ApiException {
         okhttp3.Call localVarCall = updateTagValidateBeforeCall(tagId, updateTagModel, null);
-        Type localVarReturnType = new TypeToken<TagModel>() {}.getType();
+        Type localVarReturnType = new TypeToken<TagModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Update Tag (asynchronously) This endpoint updates a Tag identified by the &#x60;tagId&#x60;
-     * parameter.
-     *
+     * Update Tag (asynchronously)
+     * This endpoint updates a Tag identified by the &#x60;tagId&#x60; parameter.
      * @param tagId The identifier of the Tag. (required)
-     * @param updateTagModel (required)
+     * @param updateTagModel  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body
-     *     object
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     *     <table summary="Response Details" border="1">
-     * <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-     * <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     * <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
-     * <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
-     * <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
-     * </table>
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
      */
-    public okhttp3.Call updateTagAsync(
-            Long tagId, UpdateTagModel updateTagModel, final ApiCallback<TagModel> _callback)
-            throws ApiException {
+    public okhttp3.Call updateTagAsync(Long tagId, UpdateTagModel updateTagModel, final ApiCallback<TagModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateTagValidateBeforeCall(tagId, updateTagModel, _callback);
-        Type localVarReturnType = new TypeToken<TagModel>() {}.getType();
+        Type localVarReturnType = new TypeToken<TagModel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
