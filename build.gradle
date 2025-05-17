@@ -1,3 +1,5 @@
+import com.vanniktech.maven.publish.JavaLibrary
+import com.vanniktech.maven.publish.JavadocJar
 import com.vanniktech.maven.publish.SonatypeHost
 
 buildscript {
@@ -20,14 +22,11 @@ plugins {
 }
 
 group = 'com.configcat'
-version = '1.1.0'
+version = '1.1.1'
 
 repositories {
     mavenCentral()
 }
-
-
-
 
 sourceSets {
     main.java.srcDirs = ['src/main/java']
@@ -152,11 +151,6 @@ test {
     }
 }
 
-extensions.getByType(JavaPluginExtension).with {
-    withJavadocJar()
-    withSourcesJar()
-}
-
 mavenPublishing {
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
 
@@ -165,6 +159,8 @@ mavenPublishing {
     if (signingInMemoryKey && signingInMemoryKeyPassword) {
         signAllPublications()
     }
+
+    configure(new JavaLibrary(new JavadocJar.Javadoc(), true))
 
     coordinates(project.group as String, project.name, project.version as String)
 
