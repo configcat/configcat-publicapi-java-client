@@ -154,8 +154,8 @@ test {
 mavenPublishing {
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
 
-    def signingInMemoryKey = findProperty("ORG_GRADLE_PROJECT_signingInMemoryKey")
-    def signingInMemoryKeyPassword = findProperty("ORG_GRADLE_PROJECT_signingInMemoryKeyPassword")
+    def signingInMemoryKey = findProperty("signingInMemoryKey")
+    def signingInMemoryKeyPassword = findProperty("signingInMemoryKeyPassword")
     if (signingInMemoryKey && signingInMemoryKeyPassword) {
         signAllPublications()
     }
