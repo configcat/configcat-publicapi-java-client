@@ -24,6 +24,9 @@ plugins {
 group = 'com.configcat'
 version = '1.1.1'
 
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
 repositories {
     mavenCentral()
 }
@@ -43,10 +46,6 @@ if(hasProperty('target') && target == 'android') {
         defaultConfig {
             minSdkVersion 14
             targetSdkVersion 25
-        }
-        compileOptions {
-            sourceCompatibility JavaVersion.VERSION_1_8
-            targetCompatibility JavaVersion.VERSION_1_8
         }
 
         // Rename the aar correctly
