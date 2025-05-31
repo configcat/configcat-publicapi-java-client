@@ -1,6 +1,6 @@
 [versions]
 spotless = "6.11.0"
-maven-publish = "0.31.0"
+maven-publish = "0.32.0"
 android-gradle = "2.3.+"
 android-maven-gradle-plugin = "2.1"
 swagger-annotations = "1.6.8"
