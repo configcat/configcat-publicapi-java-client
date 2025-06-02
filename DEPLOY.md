@@ -3,8 +3,8 @@
    1. If necessary update the dependencies manually OR
    2. Regenerate and update the `build.gradle` file.
       1. Before generating the client code, remove the `build.gradle` from the `.openapi-generator-ignore` file.
-      2. In the newly generated `build.gradle`, set up the `signing` and `publication` task as before the regeneration.
-      3. Set up the JavaDoc and Source generation `withJavadocJar()` and  `withSourcesJar()` extensions.
+      2. In the newly generated `build.gradle`, set up the `mavenPublishing` task as before the regeneration.
+      3. Clean out any not necessary task or dependencies.
       4. After generation, add the `build.gradle` back to the ignore file.   
 2. Update the version in the `build.gradle` file.
 3. Commit & Push
@@ -26,9 +26,7 @@ Use the **same version** for the git tag as in the properties file.
   Create a new [Github release](https://github.com/configcat/configcat-publicapi-java-client/releases) with a new version tag and release notes.
 
 ## Sync
-1. Log in to [Maven Repository](https://oss.sonatype.org/) and follow these steps:
-    1. Select `Staging Repositories` and select the version you published.
-    2. Click `Close`. The process might take some time, click `Refresh` to get the latest state.
-    3. When the repo is closed click `Release`, tick the `Automatically drop when released` option.
-2. Make sure the new version is available on [Maven Central](https://search.maven.org/artifact/com.configcat/configcat-publicapi-java-client).
-
+1. Log in to [Maven Central Repository](https://central.sonatype.org/) and follow these steps:
+    1. Go to the `Publish` page and select the version you published.
+    2. Click `Publish`. The process might take some time, click `Refresh` to get the latest state.
+2. Make sure the new version is available on [Maven Central](https://central.sonatype.com/artifact/com.configcat/configcat-publicapi-java-client).
