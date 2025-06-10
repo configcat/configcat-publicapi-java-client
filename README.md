@@ -2,7 +2,7 @@
 
 ConfigCat Public Management API
 - API version: v1
-  - Build date: 2025-02-20T16:55:24.304297906Z[Etc/UTC]
+  - Build date: 2025-06-10T21:25:35.532049258Z[Etc/UTC]
   - Generator version: 7.7.0
 
 The purpose of this API is to access the ConfigCat platform programmatically.
@@ -253,6 +253,7 @@ Class | Method | HTTP request | Description
 *WebhooksApi* | [**getWebhooks**](docs/WebhooksApi.md#getWebhooks) | **GET** /v1/products/{productId}/webhooks | List Webhooks
 *WebhooksApi* | [**replaceWebhook**](docs/WebhooksApi.md#replaceWebhook) | **PUT** /v1/webhooks/{webhookId} | Replace Webhook
 *WebhooksApi* | [**updateWebhook**](docs/WebhooksApi.md#updateWebhook) | **PATCH** /v1/webhooks/{webhookId} | Update Webhook
+*ZombieStaleFlagsApi* | [**getStaleflags**](docs/ZombieStaleFlagsApi.md#getStaleflags) | **GET** /v1/products/{productId}/staleflags | List Zombie (stale) flags for Product
 
 
 ## Documentation for Models
@@ -284,6 +285,7 @@ Class | Method | HTTP request | Description
  - [CreateTagModel](docs/CreateTagModel.md)
  - [DeleteIntegrationLinkModel](docs/DeleteIntegrationLinkModel.md)
  - [DeleteRepositoryReportsRequest](docs/DeleteRepositoryReportsRequest.md)
+ - [DeletedSettingModel](docs/DeletedSettingModel.md)
  - [EnvironmentAccessModel](docs/EnvironmentAccessModel.md)
  - [EnvironmentAccessType](docs/EnvironmentAccessType.md)
  - [EnvironmentModel](docs/EnvironmentModel.md)
@@ -321,8 +323,10 @@ Class | Method | HTTP request | Description
  - [PrerequisiteFlagConditionModel](docs/PrerequisiteFlagConditionModel.md)
  - [ProductModel](docs/ProductModel.md)
  - [ReasonRequiredEnvironmentModel](docs/ReasonRequiredEnvironmentModel.md)
- - [ReferenceLine](docs/ReferenceLine.md)
- - [ReferenceLines](docs/ReferenceLines.md)
+ - [ReferenceLineModel](docs/ReferenceLineModel.md)
+ - [ReferenceLineRequest](docs/ReferenceLineRequest.md)
+ - [ReferenceLinesModel](docs/ReferenceLinesModel.md)
+ - [ReferenceLinesRequest](docs/ReferenceLinesRequest.md)
  - [ReplaceSettingModel](docs/ReplaceSettingModel.md)
  - [RolloutPercentageItemModel](docs/RolloutPercentageItemModel.md)
  - [RolloutRuleComparator](docs/RolloutRuleComparator.md)
@@ -338,33 +342,54 @@ Class | Method | HTTP request | Description
  - [SettingTagModel](docs/SettingTagModel.md)
  - [SettingType](docs/SettingType.md)
  - [SettingValueModel](docs/SettingValueModel.md)
+ - [SettingValueType](docs/SettingValueType.md)
+ - [StaleFlagConfigModel](docs/StaleFlagConfigModel.md)
+ - [StaleFlagEnvironmentModel](docs/StaleFlagEnvironmentModel.md)
+ - [StaleFlagProductModel](docs/StaleFlagProductModel.md)
+ - [StaleFlagReminderScope](docs/StaleFlagReminderScope.md)
+ - [StaleFlagSettingModel](docs/StaleFlagSettingModel.md)
+ - [StaleFlagSettingTagModel](docs/StaleFlagSettingTagModel.md)
+ - [StaleFlagSettingValueModel](docs/StaleFlagSettingValueModel.md)
+ - [StaleFlagStaleInEnvironmentsType](docs/StaleFlagStaleInEnvironmentsType.md)
  - [TagModel](docs/TagModel.md)
  - [TargetingRuleModel](docs/TargetingRuleModel.md)
+ - [UpdateComparisonValueListModel](docs/UpdateComparisonValueListModel.md)
+ - [UpdateComparisonValueModel](docs/UpdateComparisonValueModel.md)
+ - [UpdateConditionModel](docs/UpdateConditionModel.md)
  - [UpdateConfigRequest](docs/UpdateConfigRequest.md)
  - [UpdateEnvironmentModel](docs/UpdateEnvironmentModel.md)
  - [UpdateEvaluationFormulaModel](docs/UpdateEvaluationFormulaModel.md)
  - [UpdateEvaluationFormulaWithIdModel](docs/UpdateEvaluationFormulaWithIdModel.md)
  - [UpdateEvaluationFormulasModel](docs/UpdateEvaluationFormulasModel.md)
  - [UpdateMemberPermissionsRequest](docs/UpdateMemberPermissionsRequest.md)
+ - [UpdatePercentageOptionModel](docs/UpdatePercentageOptionModel.md)
  - [UpdatePermissionGroupRequest](docs/UpdatePermissionGroupRequest.md)
  - [UpdatePreferencesRequest](docs/UpdatePreferencesRequest.md)
+ - [UpdatePrerequisiteFlagConditionModel](docs/UpdatePrerequisiteFlagConditionModel.md)
  - [UpdateProductRequest](docs/UpdateProductRequest.md)
  - [UpdateReasonRequiredEnvironmentModel](docs/UpdateReasonRequiredEnvironmentModel.md)
+ - [UpdateRolloutPercentageItemModel](docs/UpdateRolloutPercentageItemModel.md)
+ - [UpdateRolloutRuleModel](docs/UpdateRolloutRuleModel.md)
+ - [UpdateSegmentConditionModel](docs/UpdateSegmentConditionModel.md)
  - [UpdateSegmentModel](docs/UpdateSegmentModel.md)
  - [UpdateSettingValueModel](docs/UpdateSettingValueModel.md)
  - [UpdateSettingValueWithSettingIdModel](docs/UpdateSettingValueWithSettingIdModel.md)
  - [UpdateSettingValuesWithIdModel](docs/UpdateSettingValuesWithIdModel.md)
  - [UpdateTagModel](docs/UpdateTagModel.md)
+ - [UpdateTargetingRuleModel](docs/UpdateTargetingRuleModel.md)
+ - [UpdateUserConditionModel](docs/UpdateUserConditionModel.md)
+ - [UpdateValueModel](docs/UpdateValueModel.md)
  - [UserComparator](docs/UserComparator.md)
  - [UserConditionModel](docs/UserConditionModel.md)
  - [UserModel](docs/UserModel.md)
  - [ValueModel](docs/ValueModel.md)
  - [WebHookHttpMethod](docs/WebHookHttpMethod.md)
- - [WebHookRequest](docs/WebHookRequest.md)
+ - [WebHookRequestModel](docs/WebHookRequestModel.md)
  - [WebhookConfig](docs/WebhookConfig.md)
  - [WebhookEnvironment](docs/WebhookEnvironment.md)
  - [WebhookHeaderModel](docs/WebhookHeaderModel.md)
- - [WebhookModel](docs/WebhookModel.md)
+ - [WebhookHeaderResponseModel](docs/WebhookHeaderResponseModel.md)
+ - [WebhookResponseModel](docs/WebhookResponseModel.md)
  - [WebhookSigningKeysModel](docs/WebhookSigningKeysModel.md)
 
 
