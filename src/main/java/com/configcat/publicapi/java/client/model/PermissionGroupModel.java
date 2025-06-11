@@ -27,7 +27,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -56,7 +55,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * PermissionGroupModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class PermissionGroupModel {
   public static final String SERIALIZED_NAME_PERMISSION_GROUP_ID = "permissionGroupId";
   @SerializedName(SERIALIZED_NAME_PERMISSION_GROUP_ID)
@@ -160,7 +159,7 @@ public class PermissionGroupModel {
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_ACCESSES = "environmentAccesses";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_ACCESSES)
-  private List<EnvironmentAccessModel> environmentAccesses;
+  private List<EnvironmentAccessModel> environmentAccesses = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PRODUCT = "product";
   @SerializedName(SERIALIZED_NAME_PRODUCT)
@@ -178,7 +177,7 @@ public class PermissionGroupModel {
    * Identifier of the Permission Group.
    * @return permissionGroupId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Long getPermissionGroupId() {
     return permissionGroupId;
   }
@@ -197,7 +196,7 @@ public class PermissionGroupModel {
    * Name of the Permission Group.
    * @return name
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
@@ -216,7 +215,7 @@ public class PermissionGroupModel {
    * Group members can manage team members.
    * @return canManageMembers
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getCanManageMembers() {
     return canManageMembers;
   }
@@ -235,7 +234,7 @@ public class PermissionGroupModel {
    * Group members can create/update Configs.
    * @return canCreateOrUpdateConfig
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getCanCreateOrUpdateConfig() {
     return canCreateOrUpdateConfig;
   }
@@ -254,7 +253,7 @@ public class PermissionGroupModel {
    * Group members can delete Configs.
    * @return canDeleteConfig
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getCanDeleteConfig() {
     return canDeleteConfig;
   }
@@ -273,7 +272,7 @@ public class PermissionGroupModel {
    * Group members can create/update Environments.
    * @return canCreateOrUpdateEnvironment
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getCanCreateOrUpdateEnvironment() {
     return canCreateOrUpdateEnvironment;
   }
@@ -292,7 +291,7 @@ public class PermissionGroupModel {
    * Group members can delete Environments.
    * @return canDeleteEnvironment
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getCanDeleteEnvironment() {
     return canDeleteEnvironment;
   }
@@ -311,7 +310,7 @@ public class PermissionGroupModel {
    * Group members can create/update Feature Flags and Settings.
    * @return canCreateOrUpdateSetting
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getCanCreateOrUpdateSetting() {
     return canCreateOrUpdateSetting;
   }
@@ -330,7 +329,7 @@ public class PermissionGroupModel {
    * Group members can attach/detach Tags to Feature Flags and Settings.
    * @return canTagSetting
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getCanTagSetting() {
     return canTagSetting;
   }
@@ -349,7 +348,7 @@ public class PermissionGroupModel {
    * Group members can delete Feature Flags and Settings.
    * @return canDeleteSetting
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getCanDeleteSetting() {
     return canDeleteSetting;
   }
@@ -368,7 +367,7 @@ public class PermissionGroupModel {
    * Group members can create/update Tags.
    * @return canCreateOrUpdateTag
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getCanCreateOrUpdateTag() {
     return canCreateOrUpdateTag;
   }
@@ -387,7 +386,7 @@ public class PermissionGroupModel {
    * Group members can delete Tags.
    * @return canDeleteTag
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getCanDeleteTag() {
     return canDeleteTag;
   }
@@ -406,7 +405,7 @@ public class PermissionGroupModel {
    * Group members can create/update/delete Webhooks.
    * @return canManageWebhook
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getCanManageWebhook() {
     return canManageWebhook;
   }
@@ -425,7 +424,7 @@ public class PermissionGroupModel {
    * Group members can use the export/import feature.
    * @return canUseExportImport
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getCanUseExportImport() {
     return canUseExportImport;
   }
@@ -444,7 +443,7 @@ public class PermissionGroupModel {
    * Group members can update Product preferences.
    * @return canManageProductPreferences
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getCanManageProductPreferences() {
     return canManageProductPreferences;
   }
@@ -463,7 +462,7 @@ public class PermissionGroupModel {
    * Group members can add and configure integrations.
    * @return canManageIntegrations
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getCanManageIntegrations() {
     return canManageIntegrations;
   }
@@ -482,7 +481,7 @@ public class PermissionGroupModel {
    * Group members has access to SDK keys.
    * @return canViewSdkKey
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getCanViewSdkKey() {
     return canViewSdkKey;
   }
@@ -501,7 +500,7 @@ public class PermissionGroupModel {
    * Group members can rotate SDK keys.
    * @return canRotateSdkKey
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getCanRotateSdkKey() {
     return canRotateSdkKey;
   }
@@ -520,7 +519,7 @@ public class PermissionGroupModel {
    * Group members can create/update Segments.
    * @return canCreateOrUpdateSegments
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getCanCreateOrUpdateSegments() {
     return canCreateOrUpdateSegments;
   }
@@ -539,7 +538,7 @@ public class PermissionGroupModel {
    * Group members can delete Segments.
    * @return canDeleteSegments
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getCanDeleteSegments() {
     return canDeleteSegments;
   }
@@ -558,7 +557,7 @@ public class PermissionGroupModel {
    * Group members has access to audit logs.
    * @return canViewProductAuditLog
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getCanViewProductAuditLog() {
     return canViewProductAuditLog;
   }
@@ -577,7 +576,7 @@ public class PermissionGroupModel {
    * Group members has access to product statistics.
    * @return canViewProductStatistics
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getCanViewProductStatistics() {
     return canViewProductStatistics;
   }
@@ -596,7 +595,7 @@ public class PermissionGroupModel {
    * Group members can disable two-factor authentication for other members.
    * @return canDisable2FA
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getCanDisable2FA() {
     return canDisable2FA;
   }
@@ -615,7 +614,7 @@ public class PermissionGroupModel {
    * Get accessType
    * @return accessType
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public AccessType getAccessType() {
     return accessType;
   }
@@ -634,7 +633,7 @@ public class PermissionGroupModel {
    * Get newEnvironmentAccessType
    * @return newEnvironmentAccessType
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public EnvironmentAccessType getNewEnvironmentAccessType() {
     return newEnvironmentAccessType;
   }
@@ -661,7 +660,7 @@ public class PermissionGroupModel {
    * List of environment specific permissions.
    * @return environmentAccesses
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public List<EnvironmentAccessModel> getEnvironmentAccesses() {
     return environmentAccesses;
   }
@@ -680,7 +679,7 @@ public class PermissionGroupModel {
    * Get product
    * @return product
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ProductModel getProduct() {
     return product;
   }
@@ -774,20 +773,9 @@ public class PermissionGroupModel {
         Objects.equals(this.additionalProperties, permissionGroupModel.additionalProperties);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(permissionGroupId, name, canManageMembers, canCreateOrUpdateConfig, canDeleteConfig, canCreateOrUpdateEnvironment, canDeleteEnvironment, canCreateOrUpdateSetting, canTagSetting, canDeleteSetting, canCreateOrUpdateTag, canDeleteTag, canManageWebhook, canUseExportImport, canManageProductPreferences, canManageIntegrations, canViewSdkKey, canRotateSdkKey, canCreateOrUpdateSegments, canDeleteSegments, canViewProductAuditLog, canViewProductStatistics, canDisable2FA, accessType, newEnvironmentAccessType, environmentAccesses, product, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -874,6 +862,33 @@ public class PermissionGroupModel {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("permissionGroupId");
+    openapiRequiredFields.add("name");
+    openapiRequiredFields.add("canManageMembers");
+    openapiRequiredFields.add("canCreateOrUpdateConfig");
+    openapiRequiredFields.add("canDeleteConfig");
+    openapiRequiredFields.add("canCreateOrUpdateEnvironment");
+    openapiRequiredFields.add("canDeleteEnvironment");
+    openapiRequiredFields.add("canCreateOrUpdateSetting");
+    openapiRequiredFields.add("canTagSetting");
+    openapiRequiredFields.add("canDeleteSetting");
+    openapiRequiredFields.add("canCreateOrUpdateTag");
+    openapiRequiredFields.add("canDeleteTag");
+    openapiRequiredFields.add("canManageWebhook");
+    openapiRequiredFields.add("canUseExportImport");
+    openapiRequiredFields.add("canManageProductPreferences");
+    openapiRequiredFields.add("canManageIntegrations");
+    openapiRequiredFields.add("canViewSdkKey");
+    openapiRequiredFields.add("canRotateSdkKey");
+    openapiRequiredFields.add("canCreateOrUpdateSegments");
+    openapiRequiredFields.add("canDeleteSegments");
+    openapiRequiredFields.add("canViewProductAuditLog");
+    openapiRequiredFields.add("canViewProductStatistics");
+    openapiRequiredFields.add("canDisable2FA");
+    openapiRequiredFields.add("accessType");
+    openapiRequiredFields.add("newEnvironmentAccessType");
+    openapiRequiredFields.add("environmentAccesses");
+    openapiRequiredFields.add("product");
   }
 
   /**
@@ -888,36 +903,33 @@ public class PermissionGroupModel {
           throw new IllegalArgumentException(String.format("The required field(s) %s in PermissionGroupModel is not found in the empty JSON string", PermissionGroupModel.openapiRequiredFields.toString()));
         }
       }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      // validate the optional field `accessType`
-      if (jsonObj.get("accessType") != null && !jsonObj.get("accessType").isJsonNull()) {
-        AccessType.validateJsonElement(jsonObj.get("accessType"));
-      }
-      // validate the optional field `newEnvironmentAccessType`
-      if (jsonObj.get("newEnvironmentAccessType") != null && !jsonObj.get("newEnvironmentAccessType").isJsonNull()) {
-        EnvironmentAccessType.validateJsonElement(jsonObj.get("newEnvironmentAccessType"));
-      }
-      if (jsonObj.get("environmentAccesses") != null && !jsonObj.get("environmentAccesses").isJsonNull()) {
-        JsonArray jsonArrayenvironmentAccesses = jsonObj.getAsJsonArray("environmentAccesses");
-        if (jsonArrayenvironmentAccesses != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("environmentAccesses").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `environmentAccesses` to be an array in the JSON string but got `%s`", jsonObj.get("environmentAccesses").toString()));
-          }
 
-          // validate the optional field `environmentAccesses` (array)
-          for (int i = 0; i < jsonArrayenvironmentAccesses.size(); i++) {
-            EnvironmentAccessModel.validateJsonElement(jsonArrayenvironmentAccesses.get(i));
-          };
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : PermissionGroupModel.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
-      // validate the optional field `product`
-      if (jsonObj.get("product") != null && !jsonObj.get("product").isJsonNull()) {
-        ProductModel.validateJsonElement(jsonObj.get("product"));
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if (!jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
+      // validate the required field `accessType`
+      AccessType.validateJsonElement(jsonObj.get("accessType"));
+      // validate the required field `newEnvironmentAccessType`
+      EnvironmentAccessType.validateJsonElement(jsonObj.get("newEnvironmentAccessType"));
+      // ensure the json data is an array
+      if (!jsonObj.get("environmentAccesses").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `environmentAccesses` to be an array in the JSON string but got `%s`", jsonObj.get("environmentAccesses").toString()));
+      }
+
+      JsonArray jsonArrayenvironmentAccesses = jsonObj.getAsJsonArray("environmentAccesses");
+      // validate the required field `environmentAccesses` (array)
+      for (int i = 0; i < jsonArrayenvironmentAccesses.size(); i++) {
+        EnvironmentAccessModel.validateJsonElement(jsonArrayenvironmentAccesses.get(i));
+      };
+      // validate the required field `product`
+      ProductModel.validateJsonElement(jsonObj.get("product"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

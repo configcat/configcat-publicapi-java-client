@@ -14,8 +14,9 @@
 package com.configcat.publicapi.java.client.model;
 
 import java.util.Objects;
-import com.configcat.publicapi.java.client.model.RolloutPercentageItemModel;
-import com.configcat.publicapi.java.client.model.RolloutRuleModel;
+import com.configcat.publicapi.java.client.model.SettingValueType;
+import com.configcat.publicapi.java.client.model.UpdateRolloutPercentageItemModel;
+import com.configcat.publicapi.java.client.model.UpdateRolloutRuleModel;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -25,7 +26,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -54,29 +54,29 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * UpdateSettingValueModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class UpdateSettingValueModel {
   public static final String SERIALIZED_NAME_ROLLOUT_RULES = "rolloutRules";
   @SerializedName(SERIALIZED_NAME_ROLLOUT_RULES)
-  private List<RolloutRuleModel> rolloutRules;
+  private List<UpdateRolloutRuleModel> rolloutRules = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ROLLOUT_PERCENTAGE_ITEMS = "rolloutPercentageItems";
   @SerializedName(SERIALIZED_NAME_ROLLOUT_PERCENTAGE_ITEMS)
-  private List<RolloutPercentageItemModel> rolloutPercentageItems;
+  private List<UpdateRolloutPercentageItemModel> rolloutPercentageItems = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  private Object value = null;
+  private SettingValueType value;
 
   public UpdateSettingValueModel() {
   }
 
-  public UpdateSettingValueModel rolloutRules(List<RolloutRuleModel> rolloutRules) {
+  public UpdateSettingValueModel rolloutRules(List<UpdateRolloutRuleModel> rolloutRules) {
     this.rolloutRules = rolloutRules;
     return this;
   }
 
-  public UpdateSettingValueModel addRolloutRulesItem(RolloutRuleModel rolloutRulesItem) {
+  public UpdateSettingValueModel addRolloutRulesItem(UpdateRolloutRuleModel rolloutRulesItem) {
     if (this.rolloutRules == null) {
       this.rolloutRules = new ArrayList<>();
     }
@@ -89,21 +89,21 @@ public class UpdateSettingValueModel {
    * @return rolloutRules
    */
   @javax.annotation.Nullable
-  public List<RolloutRuleModel> getRolloutRules() {
+  public List<UpdateRolloutRuleModel> getRolloutRules() {
     return rolloutRules;
   }
 
-  public void setRolloutRules(List<RolloutRuleModel> rolloutRules) {
+  public void setRolloutRules(List<UpdateRolloutRuleModel> rolloutRules) {
     this.rolloutRules = rolloutRules;
   }
 
 
-  public UpdateSettingValueModel rolloutPercentageItems(List<RolloutPercentageItemModel> rolloutPercentageItems) {
+  public UpdateSettingValueModel rolloutPercentageItems(List<UpdateRolloutPercentageItemModel> rolloutPercentageItems) {
     this.rolloutPercentageItems = rolloutPercentageItems;
     return this;
   }
 
-  public UpdateSettingValueModel addRolloutPercentageItemsItem(RolloutPercentageItemModel rolloutPercentageItemsItem) {
+  public UpdateSettingValueModel addRolloutPercentageItemsItem(UpdateRolloutPercentageItemModel rolloutPercentageItemsItem) {
     if (this.rolloutPercentageItems == null) {
       this.rolloutPercentageItems = new ArrayList<>();
     }
@@ -116,30 +116,30 @@ public class UpdateSettingValueModel {
    * @return rolloutPercentageItems
    */
   @javax.annotation.Nullable
-  public List<RolloutPercentageItemModel> getRolloutPercentageItems() {
+  public List<UpdateRolloutPercentageItemModel> getRolloutPercentageItems() {
     return rolloutPercentageItems;
   }
 
-  public void setRolloutPercentageItems(List<RolloutPercentageItemModel> rolloutPercentageItems) {
+  public void setRolloutPercentageItems(List<UpdateRolloutPercentageItemModel> rolloutPercentageItems) {
     this.rolloutPercentageItems = rolloutPercentageItems;
   }
 
 
-  public UpdateSettingValueModel value(Object value) {
+  public UpdateSettingValueModel value(SettingValueType value) {
     this.value = value;
     return this;
   }
 
   /**
-   * The value to serve. It must respect the setting type.
+   * The value to serve. It must respect the setting type. In some generated clients for strictly typed languages you may use double/float properties to handle integer values.
    * @return value
    */
-  @javax.annotation.Nullable
-  public Object getValue() {
+  @javax.annotation.Nonnull
+  public SettingValueType getValue() {
     return value;
   }
 
-  public void setValue(Object value) {
+  public void setValue(SettingValueType value) {
     this.value = value;
   }
 
@@ -204,20 +204,9 @@ public class UpdateSettingValueModel {
         Objects.equals(this.additionalProperties, updateSettingValueModel.additionalProperties);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(rolloutRules, rolloutPercentageItems, value, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -256,6 +245,7 @@ public class UpdateSettingValueModel {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("value");
   }
 
   /**
@@ -270,6 +260,13 @@ public class UpdateSettingValueModel {
           throw new IllegalArgumentException(String.format("The required field(s) %s in UpdateSettingValueModel is not found in the empty JSON string", UpdateSettingValueModel.openapiRequiredFields.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : UpdateSettingValueModel.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (jsonObj.get("rolloutRules") != null && !jsonObj.get("rolloutRules").isJsonNull()) {
         JsonArray jsonArrayrolloutRules = jsonObj.getAsJsonArray("rolloutRules");
@@ -281,7 +278,7 @@ public class UpdateSettingValueModel {
 
           // validate the optional field `rolloutRules` (array)
           for (int i = 0; i < jsonArrayrolloutRules.size(); i++) {
-            RolloutRuleModel.validateJsonElement(jsonArrayrolloutRules.get(i));
+            UpdateRolloutRuleModel.validateJsonElement(jsonArrayrolloutRules.get(i));
           };
         }
       }
@@ -295,10 +292,12 @@ public class UpdateSettingValueModel {
 
           // validate the optional field `rolloutPercentageItems` (array)
           for (int i = 0; i < jsonArrayrolloutPercentageItems.size(); i++) {
-            RolloutPercentageItemModel.validateJsonElement(jsonArrayrolloutPercentageItems.get(i));
+            UpdateRolloutPercentageItemModel.validateJsonElement(jsonArrayrolloutPercentageItems.get(i));
           };
         }
       }
+      // validate the required field `value`
+      SettingValueType.validateJsonElement(jsonObj.get("value"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

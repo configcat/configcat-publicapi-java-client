@@ -51,7 +51,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * Describes the Member&#39;s permission.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class OrganizationPermissionModel {
   public static final String SERIALIZED_NAME_PRODUCT = "product";
   @SerializedName(SERIALIZED_NAME_PRODUCT)
@@ -73,7 +73,7 @@ public class OrganizationPermissionModel {
    * Get product
    * @return product
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public OrganizationProductModel getProduct() {
     return product;
   }
@@ -92,7 +92,7 @@ public class OrganizationPermissionModel {
    * Get permissionGroup
    * @return permissionGroup
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public OrganizationPermissionGroupModel getPermissionGroup() {
     return permissionGroup;
   }
@@ -200,6 +200,8 @@ public class OrganizationPermissionModel {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("product");
+    openapiRequiredFields.add("permissionGroup");
   }
 
   /**
@@ -214,15 +216,18 @@ public class OrganizationPermissionModel {
           throw new IllegalArgumentException(String.format("The required field(s) %s in OrganizationPermissionModel is not found in the empty JSON string", OrganizationPermissionModel.openapiRequiredFields.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : OrganizationPermissionModel.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `product`
-      if (jsonObj.get("product") != null && !jsonObj.get("product").isJsonNull()) {
-        OrganizationProductModel.validateJsonElement(jsonObj.get("product"));
-      }
-      // validate the optional field `permissionGroup`
-      if (jsonObj.get("permissionGroup") != null && !jsonObj.get("permissionGroup").isJsonNull()) {
-        OrganizationPermissionGroupModel.validateJsonElement(jsonObj.get("permissionGroup"));
-      }
+      // validate the required field `product`
+      OrganizationProductModel.validateJsonElement(jsonObj.get("product"));
+      // validate the required field `permissionGroup`
+      OrganizationPermissionGroupModel.validateJsonElement(jsonObj.get("permissionGroup"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

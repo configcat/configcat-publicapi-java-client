@@ -25,7 +25,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -54,7 +53,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * IntegrationLinkDetail
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class IntegrationLinkDetail {
   public static final String SERIALIZED_NAME_PRODUCT = "product";
   @SerializedName(SERIALIZED_NAME_PRODUCT)
@@ -92,7 +91,7 @@ public class IntegrationLinkDetail {
    * Get product
    * @return product
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ProductModel getProduct() {
     return product;
   }
@@ -111,7 +110,7 @@ public class IntegrationLinkDetail {
    * Get config
    * @return config
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ConfigModel getConfig() {
     return config;
   }
@@ -130,7 +129,7 @@ public class IntegrationLinkDetail {
    * Get environment
    * @return environment
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public EnvironmentModel getEnvironment() {
     return environment;
   }
@@ -149,7 +148,7 @@ public class IntegrationLinkDetail {
    * Get setting
    * @return setting
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public SettingDataModel getSetting() {
     return setting;
   }
@@ -168,7 +167,7 @@ public class IntegrationLinkDetail {
    * Get readOnly
    * @return readOnly
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getReadOnly() {
     return readOnly;
   }
@@ -187,7 +186,7 @@ public class IntegrationLinkDetail {
    * Get status
    * @return status
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getStatus() {
     return status;
   }
@@ -260,20 +259,9 @@ public class IntegrationLinkDetail {
         Objects.equals(this.additionalProperties, integrationLinkDetail.additionalProperties);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(product, config, environment, setting, readOnly, status, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -318,6 +306,12 @@ public class IntegrationLinkDetail {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("product");
+    openapiRequiredFields.add("config");
+    openapiRequiredFields.add("environment");
+    openapiRequiredFields.add("setting");
+    openapiRequiredFields.add("readOnly");
+    openapiRequiredFields.add("status");
   }
 
   /**
@@ -332,24 +326,23 @@ public class IntegrationLinkDetail {
           throw new IllegalArgumentException(String.format("The required field(s) %s in IntegrationLinkDetail is not found in the empty JSON string", IntegrationLinkDetail.openapiRequiredFields.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : IntegrationLinkDetail.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `product`
-      if (jsonObj.get("product") != null && !jsonObj.get("product").isJsonNull()) {
-        ProductModel.validateJsonElement(jsonObj.get("product"));
-      }
-      // validate the optional field `config`
-      if (jsonObj.get("config") != null && !jsonObj.get("config").isJsonNull()) {
-        ConfigModel.validateJsonElement(jsonObj.get("config"));
-      }
-      // validate the optional field `environment`
-      if (jsonObj.get("environment") != null && !jsonObj.get("environment").isJsonNull()) {
-        EnvironmentModel.validateJsonElement(jsonObj.get("environment"));
-      }
-      // validate the optional field `setting`
-      if (jsonObj.get("setting") != null && !jsonObj.get("setting").isJsonNull()) {
-        SettingDataModel.validateJsonElement(jsonObj.get("setting"));
-      }
-      if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
+      // validate the required field `product`
+      ProductModel.validateJsonElement(jsonObj.get("product"));
+      // validate the required field `config`
+      ConfigModel.validateJsonElement(jsonObj.get("config"));
+      // validate the required field `environment`
+      EnvironmentModel.validateJsonElement(jsonObj.get("environment"));
+      // validate the required field `setting`
+      SettingDataModel.validateJsonElement(jsonObj.get("setting"));
+      if (!jsonObj.get("status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
   }

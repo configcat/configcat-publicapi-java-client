@@ -24,7 +24,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -53,7 +52,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * IntegrationLinkDetailsModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class IntegrationLinkDetailsModel {
   public static final String SERIALIZED_NAME_DETAILS = "details";
   @SerializedName(SERIALIZED_NAME_DETAILS)
@@ -93,7 +92,7 @@ public class IntegrationLinkDetailsModel {
    * Get allIntegrationLinkCount
    * @return allIntegrationLinkCount
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Integer getAllIntegrationLinkCount() {
     return allIntegrationLinkCount;
   }
@@ -162,20 +161,9 @@ public class IntegrationLinkDetailsModel {
         Objects.equals(this.additionalProperties, integrationLinkDetailsModel.additionalProperties);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(details, allIntegrationLinkCount, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -212,6 +200,8 @@ public class IntegrationLinkDetailsModel {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("details");
+    openapiRequiredFields.add("allIntegrationLinkCount");
   }
 
   /**
@@ -226,21 +216,24 @@ public class IntegrationLinkDetailsModel {
           throw new IllegalArgumentException(String.format("The required field(s) %s in IntegrationLinkDetailsModel is not found in the empty JSON string", IntegrationLinkDetailsModel.openapiRequiredFields.toString()));
         }
       }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (jsonObj.get("details") != null && !jsonObj.get("details").isJsonNull()) {
-        JsonArray jsonArraydetails = jsonObj.getAsJsonArray("details");
-        if (jsonArraydetails != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("details").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `details` to be an array in the JSON string but got `%s`", jsonObj.get("details").toString()));
-          }
 
-          // validate the optional field `details` (array)
-          for (int i = 0; i < jsonArraydetails.size(); i++) {
-            IntegrationLinkDetail.validateJsonElement(jsonArraydetails.get(i));
-          };
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : IntegrationLinkDetailsModel.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // ensure the json data is an array
+      if (!jsonObj.get("details").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `details` to be an array in the JSON string but got `%s`", jsonObj.get("details").toString()));
+      }
+
+      JsonArray jsonArraydetails = jsonObj.getAsJsonArray("details");
+      // validate the required field `details` (array)
+      for (int i = 0; i < jsonArraydetails.size(); i++) {
+        IntegrationLinkDetail.validateJsonElement(jsonArraydetails.get(i));
+      };
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

@@ -14,19 +14,16 @@
 package com.configcat.publicapi.java.client.model;
 
 import java.util.Objects;
-import com.configcat.publicapi.java.client.model.WebHookHttpMethod;
-import com.configcat.publicapi.java.client.model.WebhookConfig;
-import com.configcat.publicapi.java.client.model.WebhookEnvironment;
-import com.configcat.publicapi.java.client.model.WebhookHeaderModel;
+import com.configcat.publicapi.java.client.model.UpdatePrerequisiteFlagConditionModel;
+import com.configcat.publicapi.java.client.model.UpdateSegmentConditionModel;
+import com.configcat.publicapi.java.client.model.UpdateUserConditionModel;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -54,179 +51,79 @@ import java.util.Set;
 import com.configcat.publicapi.java.client.JSON;
 
 /**
- * WebhookModel
+ * UpdateConditionModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
-public class WebhookModel {
-  public static final String SERIALIZED_NAME_WEBHOOK_ID = "webhookId";
-  @SerializedName(SERIALIZED_NAME_WEBHOOK_ID)
-  private Integer webhookId;
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+public class UpdateConditionModel {
+  public static final String SERIALIZED_NAME_USER_CONDITION = "userCondition";
+  @SerializedName(SERIALIZED_NAME_USER_CONDITION)
+  private UpdateUserConditionModel userCondition;
 
-  public static final String SERIALIZED_NAME_URL = "url";
-  @SerializedName(SERIALIZED_NAME_URL)
-  private String url;
+  public static final String SERIALIZED_NAME_SEGMENT_CONDITION = "segmentCondition";
+  @SerializedName(SERIALIZED_NAME_SEGMENT_CONDITION)
+  private UpdateSegmentConditionModel segmentCondition;
 
-  public static final String SERIALIZED_NAME_HTTP_METHOD = "httpMethod";
-  @SerializedName(SERIALIZED_NAME_HTTP_METHOD)
-  private WebHookHttpMethod httpMethod;
+  public static final String SERIALIZED_NAME_PREREQUISITE_FLAG_CONDITION = "prerequisiteFlagCondition";
+  @SerializedName(SERIALIZED_NAME_PREREQUISITE_FLAG_CONDITION)
+  private UpdatePrerequisiteFlagConditionModel prerequisiteFlagCondition;
 
-  public static final String SERIALIZED_NAME_CONTENT = "content";
-  @SerializedName(SERIALIZED_NAME_CONTENT)
-  private String content;
-
-  public static final String SERIALIZED_NAME_WEB_HOOK_HEADERS = "webHookHeaders";
-  @SerializedName(SERIALIZED_NAME_WEB_HOOK_HEADERS)
-  private List<WebhookHeaderModel> webHookHeaders;
-
-  public static final String SERIALIZED_NAME_CONFIG = "config";
-  @SerializedName(SERIALIZED_NAME_CONFIG)
-  private WebhookConfig config;
-
-  public static final String SERIALIZED_NAME_ENVIRONMENT = "environment";
-  @SerializedName(SERIALIZED_NAME_ENVIRONMENT)
-  private WebhookEnvironment environment;
-
-  public WebhookModel() {
+  public UpdateConditionModel() {
   }
 
-  public WebhookModel webhookId(Integer webhookId) {
-    this.webhookId = webhookId;
+  public UpdateConditionModel userCondition(UpdateUserConditionModel userCondition) {
+    this.userCondition = userCondition;
     return this;
   }
 
   /**
-   * The identifier of the Webhook.
-   * @return webhookId
+   * Get userCondition
+   * @return userCondition
    */
   @javax.annotation.Nullable
-  public Integer getWebhookId() {
-    return webhookId;
+  public UpdateUserConditionModel getUserCondition() {
+    return userCondition;
   }
 
-  public void setWebhookId(Integer webhookId) {
-    this.webhookId = webhookId;
+  public void setUserCondition(UpdateUserConditionModel userCondition) {
+    this.userCondition = userCondition;
   }
 
 
-  public WebhookModel url(String url) {
-    this.url = url;
+  public UpdateConditionModel segmentCondition(UpdateSegmentConditionModel segmentCondition) {
+    this.segmentCondition = segmentCondition;
     return this;
   }
 
   /**
-   * The URL of the Webhook.
-   * @return url
+   * Get segmentCondition
+   * @return segmentCondition
    */
   @javax.annotation.Nullable
-  public String getUrl() {
-    return url;
+  public UpdateSegmentConditionModel getSegmentCondition() {
+    return segmentCondition;
   }
 
-  public void setUrl(String url) {
-    this.url = url;
+  public void setSegmentCondition(UpdateSegmentConditionModel segmentCondition) {
+    this.segmentCondition = segmentCondition;
   }
 
 
-  public WebhookModel httpMethod(WebHookHttpMethod httpMethod) {
-    this.httpMethod = httpMethod;
+  public UpdateConditionModel prerequisiteFlagCondition(UpdatePrerequisiteFlagConditionModel prerequisiteFlagCondition) {
+    this.prerequisiteFlagCondition = prerequisiteFlagCondition;
     return this;
   }
 
   /**
-   * Get httpMethod
-   * @return httpMethod
+   * Get prerequisiteFlagCondition
+   * @return prerequisiteFlagCondition
    */
   @javax.annotation.Nullable
-  public WebHookHttpMethod getHttpMethod() {
-    return httpMethod;
+  public UpdatePrerequisiteFlagConditionModel getPrerequisiteFlagCondition() {
+    return prerequisiteFlagCondition;
   }
 
-  public void setHttpMethod(WebHookHttpMethod httpMethod) {
-    this.httpMethod = httpMethod;
-  }
-
-
-  public WebhookModel content(String content) {
-    this.content = content;
-    return this;
-  }
-
-  /**
-   * The HTTP body content.
-   * @return content
-   */
-  @javax.annotation.Nullable
-  public String getContent() {
-    return content;
-  }
-
-  public void setContent(String content) {
-    this.content = content;
-  }
-
-
-  public WebhookModel webHookHeaders(List<WebhookHeaderModel> webHookHeaders) {
-    this.webHookHeaders = webHookHeaders;
-    return this;
-  }
-
-  public WebhookModel addWebHookHeadersItem(WebhookHeaderModel webHookHeadersItem) {
-    if (this.webHookHeaders == null) {
-      this.webHookHeaders = new ArrayList<>();
-    }
-    this.webHookHeaders.add(webHookHeadersItem);
-    return this;
-  }
-
-  /**
-   * List of HTTP headers that the Webhook must send.
-   * @return webHookHeaders
-   */
-  @javax.annotation.Nullable
-  public List<WebhookHeaderModel> getWebHookHeaders() {
-    return webHookHeaders;
-  }
-
-  public void setWebHookHeaders(List<WebhookHeaderModel> webHookHeaders) {
-    this.webHookHeaders = webHookHeaders;
-  }
-
-
-  public WebhookModel config(WebhookConfig config) {
-    this.config = config;
-    return this;
-  }
-
-  /**
-   * Get config
-   * @return config
-   */
-  @javax.annotation.Nullable
-  public WebhookConfig getConfig() {
-    return config;
-  }
-
-  public void setConfig(WebhookConfig config) {
-    this.config = config;
-  }
-
-
-  public WebhookModel environment(WebhookEnvironment environment) {
-    this.environment = environment;
-    return this;
-  }
-
-  /**
-   * Get environment
-   * @return environment
-   */
-  @javax.annotation.Nullable
-  public WebhookEnvironment getEnvironment() {
-    return environment;
-  }
-
-  public void setEnvironment(WebhookEnvironment environment) {
-    this.environment = environment;
+  public void setPrerequisiteFlagCondition(UpdatePrerequisiteFlagConditionModel prerequisiteFlagCondition) {
+    this.prerequisiteFlagCondition = prerequisiteFlagCondition;
   }
 
   /**
@@ -242,9 +139,9 @@ public class WebhookModel {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the WebhookModel instance itself
+   * @return the UpdateConditionModel instance itself
    */
-  public WebhookModel putAdditionalProperty(String key, Object value) {
+  public UpdateConditionModel putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -283,15 +180,11 @@ public class WebhookModel {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    WebhookModel webhookModel = (WebhookModel) o;
-    return Objects.equals(this.webhookId, webhookModel.webhookId) &&
-        Objects.equals(this.url, webhookModel.url) &&
-        Objects.equals(this.httpMethod, webhookModel.httpMethod) &&
-        Objects.equals(this.content, webhookModel.content) &&
-        Objects.equals(this.webHookHeaders, webhookModel.webHookHeaders) &&
-        Objects.equals(this.config, webhookModel.config) &&
-        Objects.equals(this.environment, webhookModel.environment)&&
-        Objects.equals(this.additionalProperties, webhookModel.additionalProperties);
+    UpdateConditionModel updateConditionModel = (UpdateConditionModel) o;
+    return Objects.equals(this.userCondition, updateConditionModel.userCondition) &&
+        Objects.equals(this.segmentCondition, updateConditionModel.segmentCondition) &&
+        Objects.equals(this.prerequisiteFlagCondition, updateConditionModel.prerequisiteFlagCondition)&&
+        Objects.equals(this.additionalProperties, updateConditionModel.additionalProperties);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -300,7 +193,7 @@ public class WebhookModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(webhookId, url, httpMethod, content, webHookHeaders, config, environment, additionalProperties);
+    return Objects.hash(userCondition, segmentCondition, prerequisiteFlagCondition, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -313,14 +206,10 @@ public class WebhookModel {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class WebhookModel {\n");
-    sb.append("    webhookId: ").append(toIndentedString(webhookId)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    httpMethod: ").append(toIndentedString(httpMethod)).append("\n");
-    sb.append("    content: ").append(toIndentedString(content)).append("\n");
-    sb.append("    webHookHeaders: ").append(toIndentedString(webHookHeaders)).append("\n");
-    sb.append("    config: ").append(toIndentedString(config)).append("\n");
-    sb.append("    environment: ").append(toIndentedString(environment)).append("\n");
+    sb.append("class UpdateConditionModel {\n");
+    sb.append("    userCondition: ").append(toIndentedString(userCondition)).append("\n");
+    sb.append("    segmentCondition: ").append(toIndentedString(segmentCondition)).append("\n");
+    sb.append("    prerequisiteFlagCondition: ").append(toIndentedString(prerequisiteFlagCondition)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -344,13 +233,9 @@ public class WebhookModel {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("webhookId");
-    openapiFields.add("url");
-    openapiFields.add("httpMethod");
-    openapiFields.add("content");
-    openapiFields.add("webHookHeaders");
-    openapiFields.add("config");
-    openapiFields.add("environment");
+    openapiFields.add("userCondition");
+    openapiFields.add("segmentCondition");
+    openapiFields.add("prerequisiteFlagCondition");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -360,46 +245,26 @@ public class WebhookModel {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to WebhookModel
+   * @throws IOException if the JSON Element is invalid with respect to UpdateConditionModel
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!WebhookModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in WebhookModel is not found in the empty JSON string", WebhookModel.openapiRequiredFields.toString()));
+        if (!UpdateConditionModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdateConditionModel is not found in the empty JSON string", UpdateConditionModel.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("url") != null && !jsonObj.get("url").isJsonNull()) && !jsonObj.get("url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
+      // validate the optional field `userCondition`
+      if (jsonObj.get("userCondition") != null && !jsonObj.get("userCondition").isJsonNull()) {
+        UpdateUserConditionModel.validateJsonElement(jsonObj.get("userCondition"));
       }
-      // validate the optional field `httpMethod`
-      if (jsonObj.get("httpMethod") != null && !jsonObj.get("httpMethod").isJsonNull()) {
-        WebHookHttpMethod.validateJsonElement(jsonObj.get("httpMethod"));
+      // validate the optional field `segmentCondition`
+      if (jsonObj.get("segmentCondition") != null && !jsonObj.get("segmentCondition").isJsonNull()) {
+        UpdateSegmentConditionModel.validateJsonElement(jsonObj.get("segmentCondition"));
       }
-      if ((jsonObj.get("content") != null && !jsonObj.get("content").isJsonNull()) && !jsonObj.get("content").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `content` to be a primitive type in the JSON string but got `%s`", jsonObj.get("content").toString()));
-      }
-      if (jsonObj.get("webHookHeaders") != null && !jsonObj.get("webHookHeaders").isJsonNull()) {
-        JsonArray jsonArraywebHookHeaders = jsonObj.getAsJsonArray("webHookHeaders");
-        if (jsonArraywebHookHeaders != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("webHookHeaders").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `webHookHeaders` to be an array in the JSON string but got `%s`", jsonObj.get("webHookHeaders").toString()));
-          }
-
-          // validate the optional field `webHookHeaders` (array)
-          for (int i = 0; i < jsonArraywebHookHeaders.size(); i++) {
-            WebhookHeaderModel.validateJsonElement(jsonArraywebHookHeaders.get(i));
-          };
-        }
-      }
-      // validate the optional field `config`
-      if (jsonObj.get("config") != null && !jsonObj.get("config").isJsonNull()) {
-        WebhookConfig.validateJsonElement(jsonObj.get("config"));
-      }
-      // validate the optional field `environment`
-      if (jsonObj.get("environment") != null && !jsonObj.get("environment").isJsonNull()) {
-        WebhookEnvironment.validateJsonElement(jsonObj.get("environment"));
+      // validate the optional field `prerequisiteFlagCondition`
+      if (jsonObj.get("prerequisiteFlagCondition") != null && !jsonObj.get("prerequisiteFlagCondition").isJsonNull()) {
+        UpdatePrerequisiteFlagConditionModel.validateJsonElement(jsonObj.get("prerequisiteFlagCondition"));
       }
   }
 
@@ -407,16 +272,16 @@ public class WebhookModel {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!WebhookModel.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'WebhookModel' and its subtypes
+       if (!UpdateConditionModel.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'UpdateConditionModel' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<WebhookModel> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(WebhookModel.class));
+       final TypeAdapter<UpdateConditionModel> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(UpdateConditionModel.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<WebhookModel>() {
+       return (TypeAdapter<T>) new TypeAdapter<UpdateConditionModel>() {
            @Override
-           public void write(JsonWriter out, WebhookModel value) throws IOException {
+           public void write(JsonWriter out, UpdateConditionModel value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -444,12 +309,12 @@ public class WebhookModel {
            }
 
            @Override
-           public WebhookModel read(JsonReader in) throws IOException {
+           public UpdateConditionModel read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             WebhookModel instance = thisAdapter.fromJsonTree(jsonObj);
+             UpdateConditionModel instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -476,18 +341,18 @@ public class WebhookModel {
   }
 
   /**
-   * Create an instance of WebhookModel given an JSON string
+   * Create an instance of UpdateConditionModel given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of WebhookModel
-   * @throws IOException if the JSON string is invalid with respect to WebhookModel
+   * @return An instance of UpdateConditionModel
+   * @throws IOException if the JSON string is invalid with respect to UpdateConditionModel
    */
-  public static WebhookModel fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, WebhookModel.class);
+  public static UpdateConditionModel fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, UpdateConditionModel.class);
   }
 
   /**
-   * Convert an instance of WebhookModel to an JSON string
+   * Convert an instance of UpdateConditionModel to an JSON string
    *
    * @return JSON string
    */

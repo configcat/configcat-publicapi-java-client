@@ -8,8 +8,8 @@ The Config where the applied changes will invoke the Webhook.
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**name** | **String** | The Config&#39;s name. |  [optional] |
-|**configId** | **UUID** | The Config&#39;s identifier. |  [optional] |
+|**name** | **String** | The Config&#39;s name. |  |
+|**configId** | **UUID** | The Config&#39;s identifier. |  |
 
 
 

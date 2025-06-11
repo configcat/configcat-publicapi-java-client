@@ -50,7 +50,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * UpdateConfigRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class UpdateConfigRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -111,7 +111,7 @@ public class UpdateConfigRequest {
   }
 
   /**
-   * The order of the Config represented on the ConfigCat Dashboard.  Determined from an ascending sequence of integers.
+   * The order of the Config represented on the ConfigCat Dashboard. Determined from an ascending sequence of integers.
    * @return order
    */
   @javax.annotation.Nullable

@@ -8,8 +8,8 @@ Describes the Member's Product.
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**productId** | **UUID** | Identifier of the Member&#39;s Product. |  [optional] |
-|**name** | **String** | Name of the Member&#39;s Product. |  [optional] |
+|**productId** | **UUID** | Identifier of the Member&#39;s Product. |  |
+|**name** | **String** | Name of the Member&#39;s Product. |  |
 
 
 

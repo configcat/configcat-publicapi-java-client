@@ -7,8 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**primary** | **String** | The primary SDK key. |  [optional] |
-|**secondary** | **String** | The secondary SDK key. |  [optional] |
+|**primary** | **String** | The primary SDK key. |  |
+|**secondary** | **String** | The secondary SDK key. |  |
 
 
 

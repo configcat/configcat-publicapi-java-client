@@ -52,7 +52,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * ConditionModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class ConditionModel {
   public static final String SERIALIZED_NAME_USER_CONDITION = "userCondition";
   @SerializedName(SERIALIZED_NAME_USER_CONDITION)
@@ -227,6 +227,9 @@ public class ConditionModel {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("userCondition");
+    openapiRequiredFields.add("segmentCondition");
+    openapiRequiredFields.add("prerequisiteFlagCondition");
   }
 
   /**
@@ -241,19 +244,20 @@ public class ConditionModel {
           throw new IllegalArgumentException(String.format("The required field(s) %s in ConditionModel is not found in the empty JSON string", ConditionModel.openapiRequiredFields.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ConditionModel.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `userCondition`
-      if (jsonObj.get("userCondition") != null && !jsonObj.get("userCondition").isJsonNull()) {
-        UserConditionModel.validateJsonElement(jsonObj.get("userCondition"));
-      }
-      // validate the optional field `segmentCondition`
-      if (jsonObj.get("segmentCondition") != null && !jsonObj.get("segmentCondition").isJsonNull()) {
-        SegmentConditionModel.validateJsonElement(jsonObj.get("segmentCondition"));
-      }
-      // validate the optional field `prerequisiteFlagCondition`
-      if (jsonObj.get("prerequisiteFlagCondition") != null && !jsonObj.get("prerequisiteFlagCondition").isJsonNull()) {
-        PrerequisiteFlagConditionModel.validateJsonElement(jsonObj.get("prerequisiteFlagCondition"));
-      }
+      // validate the required field `userCondition`
+      UserConditionModel.validateJsonElement(jsonObj.get("userCondition"));
+      // validate the required field `segmentCondition`
+      SegmentConditionModel.validateJsonElement(jsonObj.get("segmentCondition"));
+      // validate the required field `prerequisiteFlagCondition`
+      PrerequisiteFlagConditionModel.validateJsonElement(jsonObj.get("prerequisiteFlagCondition"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

@@ -23,7 +23,6 @@ import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
 import java.util.UUID;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,7 +51,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * OrganizationInvitationModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class OrganizationInvitationModel {
   public static final String SERIALIZED_NAME_INVITATION_ID = "invitationId";
   @SerializedName(SERIALIZED_NAME_INVITATION_ID)
@@ -98,7 +97,7 @@ public class OrganizationInvitationModel {
    * The identifier of the Invitation.
    * @return invitationId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public UUID getInvitationId() {
     return invitationId;
   }
@@ -136,7 +135,7 @@ public class OrganizationInvitationModel {
    * The identifier of the Product the user was invited to.
    * @return productId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public UUID getProductId() {
     return productId;
   }
@@ -174,7 +173,7 @@ public class OrganizationInvitationModel {
    * The identifier of the Permission Group the user was invited to.
    * @return permissionGroupId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Long getPermissionGroupId() {
     return permissionGroupId;
   }
@@ -193,7 +192,7 @@ public class OrganizationInvitationModel {
    * Creation time of the Invitation.
    * @return createdAt
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
@@ -212,7 +211,7 @@ public class OrganizationInvitationModel {
    * Determines whether the Invitation is expired.
    * @return expired
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getExpired() {
     return expired;
   }
@@ -231,7 +230,7 @@ public class OrganizationInvitationModel {
    * Expiration time of the Invitation.
    * @return expires
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public OffsetDateTime getExpires() {
     return expires;
   }
@@ -306,20 +305,9 @@ public class OrganizationInvitationModel {
         Objects.equals(this.additionalProperties, organizationInvitationModel.additionalProperties);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(invitationId, email, productId, productName, permissionGroupId, createdAt, expired, expires, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -368,6 +356,14 @@ public class OrganizationInvitationModel {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("invitationId");
+    openapiRequiredFields.add("email");
+    openapiRequiredFields.add("productId");
+    openapiRequiredFields.add("productName");
+    openapiRequiredFields.add("permissionGroupId");
+    openapiRequiredFields.add("createdAt");
+    openapiRequiredFields.add("expired");
+    openapiRequiredFields.add("expires");
   }
 
   /**
@@ -382,14 +378,21 @@ public class OrganizationInvitationModel {
           throw new IllegalArgumentException(String.format("The required field(s) %s in OrganizationInvitationModel is not found in the empty JSON string", OrganizationInvitationModel.openapiRequiredFields.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : OrganizationInvitationModel.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("invitationId") != null && !jsonObj.get("invitationId").isJsonNull()) && !jsonObj.get("invitationId").isJsonPrimitive()) {
+      if (!jsonObj.get("invitationId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `invitationId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("invitationId").toString()));
       }
       if ((jsonObj.get("email") != null && !jsonObj.get("email").isJsonNull()) && !jsonObj.get("email").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
       }
-      if ((jsonObj.get("productId") != null && !jsonObj.get("productId").isJsonNull()) && !jsonObj.get("productId").isJsonPrimitive()) {
+      if (!jsonObj.get("productId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `productId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("productId").toString()));
       }
       if ((jsonObj.get("productName") != null && !jsonObj.get("productName").isJsonNull()) && !jsonObj.get("productName").isJsonPrimitive()) {

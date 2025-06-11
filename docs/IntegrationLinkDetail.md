@@ -7,12 +7,12 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**product** | [**ProductModel**](ProductModel.md) |  |  [optional] |
-|**config** | [**ConfigModel**](ConfigModel.md) |  |  [optional] |
-|**environment** | [**EnvironmentModel**](EnvironmentModel.md) |  |  [optional] |
-|**setting** | [**SettingDataModel**](SettingDataModel.md) |  |  [optional] |
-|**readOnly** | **Boolean** |  |  [optional] |
-|**status** | **String** |  |  [optional] |
+|**product** | [**ProductModel**](ProductModel.md) |  |  |
+|**config** | [**ConfigModel**](ConfigModel.md) |  |  |
+|**environment** | [**EnvironmentModel**](EnvironmentModel.md) |  |  |
+|**setting** | [**SettingDataModel**](SettingDataModel.md) |  |  |
+|**readOnly** | **Boolean** |  |  |
+|**status** | **String** |  |  |
 
 
 

@@ -27,7 +27,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -56,7 +55,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * ConfigSettingValuesModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class ConfigSettingValuesModel {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
@@ -72,7 +71,7 @@ public class ConfigSettingValuesModel {
 
   public static final String SERIALIZED_NAME_SETTING_VALUES = "settingValues";
   @SerializedName(SERIALIZED_NAME_SETTING_VALUES)
-  private List<ConfigSettingValueModel> settingValues;
+  private List<ConfigSettingValueModel> settingValues = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_FEATURE_FLAG_LIMITATIONS = "featureFlagLimitations";
   @SerializedName(SERIALIZED_NAME_FEATURE_FLAG_LIMITATIONS)
@@ -90,7 +89,7 @@ public class ConfigSettingValuesModel {
    * Get config
    * @return config
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ConfigModel getConfig() {
     return config;
   }
@@ -109,7 +108,7 @@ public class ConfigSettingValuesModel {
    * Get environment
    * @return environment
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public EnvironmentModel getEnvironment() {
     return environment;
   }
@@ -128,7 +127,7 @@ public class ConfigSettingValuesModel {
    * Get readOnly
    * @return readOnly
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getReadOnly() {
     return readOnly;
   }
@@ -155,7 +154,7 @@ public class ConfigSettingValuesModel {
    * Get settingValues
    * @return settingValues
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public List<ConfigSettingValueModel> getSettingValues() {
     return settingValues;
   }
@@ -174,7 +173,7 @@ public class ConfigSettingValuesModel {
    * Get featureFlagLimitations
    * @return featureFlagLimitations
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public FeatureFlagLimitations getFeatureFlagLimitations() {
     return featureFlagLimitations;
   }
@@ -246,20 +245,9 @@ public class ConfigSettingValuesModel {
         Objects.equals(this.additionalProperties, configSettingValuesModel.additionalProperties);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(config, environment, readOnly, settingValues, featureFlagLimitations, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -302,6 +290,11 @@ public class ConfigSettingValuesModel {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("config");
+    openapiRequiredFields.add("environment");
+    openapiRequiredFields.add("readOnly");
+    openapiRequiredFields.add("settingValues");
+    openapiRequiredFields.add("featureFlagLimitations");
   }
 
   /**
@@ -316,33 +309,30 @@ public class ConfigSettingValuesModel {
           throw new IllegalArgumentException(String.format("The required field(s) %s in ConfigSettingValuesModel is not found in the empty JSON string", ConfigSettingValuesModel.openapiRequiredFields.toString()));
         }
       }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `config`
-      if (jsonObj.get("config") != null && !jsonObj.get("config").isJsonNull()) {
-        ConfigModel.validateJsonElement(jsonObj.get("config"));
-      }
-      // validate the optional field `environment`
-      if (jsonObj.get("environment") != null && !jsonObj.get("environment").isJsonNull()) {
-        EnvironmentModel.validateJsonElement(jsonObj.get("environment"));
-      }
-      if (jsonObj.get("settingValues") != null && !jsonObj.get("settingValues").isJsonNull()) {
-        JsonArray jsonArraysettingValues = jsonObj.getAsJsonArray("settingValues");
-        if (jsonArraysettingValues != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("settingValues").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `settingValues` to be an array in the JSON string but got `%s`", jsonObj.get("settingValues").toString()));
-          }
 
-          // validate the optional field `settingValues` (array)
-          for (int i = 0; i < jsonArraysettingValues.size(); i++) {
-            ConfigSettingValueModel.validateJsonElement(jsonArraysettingValues.get(i));
-          };
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ConfigSettingValuesModel.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
-      // validate the optional field `featureFlagLimitations`
-      if (jsonObj.get("featureFlagLimitations") != null && !jsonObj.get("featureFlagLimitations").isJsonNull()) {
-        FeatureFlagLimitations.validateJsonElement(jsonObj.get("featureFlagLimitations"));
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `config`
+      ConfigModel.validateJsonElement(jsonObj.get("config"));
+      // validate the required field `environment`
+      EnvironmentModel.validateJsonElement(jsonObj.get("environment"));
+      // ensure the json data is an array
+      if (!jsonObj.get("settingValues").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `settingValues` to be an array in the JSON string but got `%s`", jsonObj.get("settingValues").toString()));
       }
+
+      JsonArray jsonArraysettingValues = jsonObj.getAsJsonArray("settingValues");
+      // validate the required field `settingValues` (array)
+      for (int i = 0; i < jsonArraysettingValues.size(); i++) {
+        ConfigSettingValueModel.validateJsonElement(jsonArraysettingValues.get(i));
+      };
+      // validate the required field `featureFlagLimitations`
+      FeatureFlagLimitations.validateJsonElement(jsonObj.get("featureFlagLimitations"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

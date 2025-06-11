@@ -14,17 +14,13 @@
 package com.configcat.publicapi.java.client.model;
 
 import java.util.Objects;
-import com.configcat.publicapi.java.client.model.ReferenceLine;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,141 +47,56 @@ import java.util.Set;
 import com.configcat.publicapi.java.client.JSON;
 
 /**
- * ReferenceLines
+ * StaleFlagSettingTagModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
-public class ReferenceLines {
-  public static final String SERIALIZED_NAME_FILE = "file";
-  @SerializedName(SERIALIZED_NAME_FILE)
-  private String _file;
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+public class StaleFlagSettingTagModel {
+  public static final String SERIALIZED_NAME_TAG_ID = "tagId";
+  @SerializedName(SERIALIZED_NAME_TAG_ID)
+  private Long tagId;
 
-  public static final String SERIALIZED_NAME_FILE_URL = "fileUrl";
-  @SerializedName(SERIALIZED_NAME_FILE_URL)
-  private String fileUrl;
+  public static final String SERIALIZED_NAME_SETTING_TAG_ID = "settingTagId";
+  @SerializedName(SERIALIZED_NAME_SETTING_TAG_ID)
+  private Long settingTagId;
 
-  public static final String SERIALIZED_NAME_PRE_LINES = "preLines";
-  @SerializedName(SERIALIZED_NAME_PRE_LINES)
-  private List<ReferenceLine> preLines;
-
-  public static final String SERIALIZED_NAME_POST_LINES = "postLines";
-  @SerializedName(SERIALIZED_NAME_POST_LINES)
-  private List<ReferenceLine> postLines;
-
-  public static final String SERIALIZED_NAME_REFERENCE_LINE = "referenceLine";
-  @SerializedName(SERIALIZED_NAME_REFERENCE_LINE)
-  private ReferenceLine referenceLine;
-
-  public ReferenceLines() {
+  public StaleFlagSettingTagModel() {
   }
 
-  public ReferenceLines _file(String _file) {
-    this._file = _file;
+  public StaleFlagSettingTagModel tagId(Long tagId) {
+    this.tagId = tagId;
     return this;
   }
 
   /**
-   * The file&#39;s name in where the code reference has been found. (Appears on the ConfigCat Dashboard)
-   * @return _file
+   * Get tagId
+   * @return tagId
    */
   @javax.annotation.Nonnull
-  public String getFile() {
-    return _file;
+  public Long getTagId() {
+    return tagId;
   }
 
-  public void setFile(String _file) {
-    this._file = _file;
+  public void setTagId(Long tagId) {
+    this.tagId = tagId;
   }
 
 
-  public ReferenceLines fileUrl(String fileUrl) {
-    this.fileUrl = fileUrl;
+  public StaleFlagSettingTagModel settingTagId(Long settingTagId) {
+    this.settingTagId = settingTagId;
     return this;
   }
 
   /**
-   * The file&#39;s url. (Used to point to the file on the repository&#39;s website)
-   * @return fileUrl
-   */
-  @javax.annotation.Nullable
-  public String getFileUrl() {
-    return fileUrl;
-  }
-
-  public void setFileUrl(String fileUrl) {
-    this.fileUrl = fileUrl;
-  }
-
-
-  public ReferenceLines preLines(List<ReferenceLine> preLines) {
-    this.preLines = preLines;
-    return this;
-  }
-
-  public ReferenceLines addPreLinesItem(ReferenceLine preLinesItem) {
-    if (this.preLines == null) {
-      this.preLines = new ArrayList<>();
-    }
-    this.preLines.add(preLinesItem);
-    return this;
-  }
-
-  /**
-   * The lines before the actual reference line.
-   * @return preLines
-   */
-  @javax.annotation.Nullable
-  public List<ReferenceLine> getPreLines() {
-    return preLines;
-  }
-
-  public void setPreLines(List<ReferenceLine> preLines) {
-    this.preLines = preLines;
-  }
-
-
-  public ReferenceLines postLines(List<ReferenceLine> postLines) {
-    this.postLines = postLines;
-    return this;
-  }
-
-  public ReferenceLines addPostLinesItem(ReferenceLine postLinesItem) {
-    if (this.postLines == null) {
-      this.postLines = new ArrayList<>();
-    }
-    this.postLines.add(postLinesItem);
-    return this;
-  }
-
-  /**
-   * The lines after the actual reference line.
-   * @return postLines
-   */
-  @javax.annotation.Nullable
-  public List<ReferenceLine> getPostLines() {
-    return postLines;
-  }
-
-  public void setPostLines(List<ReferenceLine> postLines) {
-    this.postLines = postLines;
-  }
-
-
-  public ReferenceLines referenceLine(ReferenceLine referenceLine) {
-    this.referenceLine = referenceLine;
-    return this;
-  }
-
-  /**
-   * Get referenceLine
-   * @return referenceLine
+   * Get settingTagId
+   * @return settingTagId
    */
   @javax.annotation.Nonnull
-  public ReferenceLine getReferenceLine() {
-    return referenceLine;
+  public Long getSettingTagId() {
+    return settingTagId;
   }
 
-  public void setReferenceLine(ReferenceLine referenceLine) {
-    this.referenceLine = referenceLine;
+  public void setSettingTagId(Long settingTagId) {
+    this.settingTagId = settingTagId;
   }
 
   /**
@@ -201,9 +112,9 @@ public class ReferenceLines {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the ReferenceLines instance itself
+   * @return the StaleFlagSettingTagModel instance itself
    */
-  public ReferenceLines putAdditionalProperty(String key, Object value) {
+  public StaleFlagSettingTagModel putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -242,40 +153,23 @@ public class ReferenceLines {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ReferenceLines referenceLines = (ReferenceLines) o;
-    return Objects.equals(this._file, referenceLines._file) &&
-        Objects.equals(this.fileUrl, referenceLines.fileUrl) &&
-        Objects.equals(this.preLines, referenceLines.preLines) &&
-        Objects.equals(this.postLines, referenceLines.postLines) &&
-        Objects.equals(this.referenceLine, referenceLines.referenceLine)&&
-        Objects.equals(this.additionalProperties, referenceLines.additionalProperties);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+    StaleFlagSettingTagModel staleFlagSettingTagModel = (StaleFlagSettingTagModel) o;
+    return Objects.equals(this.tagId, staleFlagSettingTagModel.tagId) &&
+        Objects.equals(this.settingTagId, staleFlagSettingTagModel.settingTagId)&&
+        Objects.equals(this.additionalProperties, staleFlagSettingTagModel.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(_file, fileUrl, preLines, postLines, referenceLine, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(tagId, settingTagId, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ReferenceLines {\n");
-    sb.append("    _file: ").append(toIndentedString(_file)).append("\n");
-    sb.append("    fileUrl: ").append(toIndentedString(fileUrl)).append("\n");
-    sb.append("    preLines: ").append(toIndentedString(preLines)).append("\n");
-    sb.append("    postLines: ").append(toIndentedString(postLines)).append("\n");
-    sb.append("    referenceLine: ").append(toIndentedString(referenceLine)).append("\n");
+    sb.append("class StaleFlagSettingTagModel {\n");
+    sb.append("    tagId: ").append(toIndentedString(tagId)).append("\n");
+    sb.append("    settingTagId: ").append(toIndentedString(settingTagId)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -299,90 +193,51 @@ public class ReferenceLines {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("file");
-    openapiFields.add("fileUrl");
-    openapiFields.add("preLines");
-    openapiFields.add("postLines");
-    openapiFields.add("referenceLine");
+    openapiFields.add("tagId");
+    openapiFields.add("settingTagId");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("file");
-    openapiRequiredFields.add("referenceLine");
+    openapiRequiredFields.add("tagId");
+    openapiRequiredFields.add("settingTagId");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to ReferenceLines
+   * @throws IOException if the JSON Element is invalid with respect to StaleFlagSettingTagModel
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!ReferenceLines.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ReferenceLines is not found in the empty JSON string", ReferenceLines.openapiRequiredFields.toString()));
+        if (!StaleFlagSettingTagModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in StaleFlagSettingTagModel is not found in the empty JSON string", StaleFlagSettingTagModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : ReferenceLines.openapiRequiredFields) {
+      for (String requiredField : StaleFlagSettingTagModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("file").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `file` to be a primitive type in the JSON string but got `%s`", jsonObj.get("file").toString()));
-      }
-      if ((jsonObj.get("fileUrl") != null && !jsonObj.get("fileUrl").isJsonNull()) && !jsonObj.get("fileUrl").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `fileUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("fileUrl").toString()));
-      }
-      if (jsonObj.get("preLines") != null && !jsonObj.get("preLines").isJsonNull()) {
-        JsonArray jsonArraypreLines = jsonObj.getAsJsonArray("preLines");
-        if (jsonArraypreLines != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("preLines").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `preLines` to be an array in the JSON string but got `%s`", jsonObj.get("preLines").toString()));
-          }
-
-          // validate the optional field `preLines` (array)
-          for (int i = 0; i < jsonArraypreLines.size(); i++) {
-            ReferenceLine.validateJsonElement(jsonArraypreLines.get(i));
-          };
-        }
-      }
-      if (jsonObj.get("postLines") != null && !jsonObj.get("postLines").isJsonNull()) {
-        JsonArray jsonArraypostLines = jsonObj.getAsJsonArray("postLines");
-        if (jsonArraypostLines != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("postLines").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `postLines` to be an array in the JSON string but got `%s`", jsonObj.get("postLines").toString()));
-          }
-
-          // validate the optional field `postLines` (array)
-          for (int i = 0; i < jsonArraypostLines.size(); i++) {
-            ReferenceLine.validateJsonElement(jsonArraypostLines.get(i));
-          };
-        }
-      }
-      // validate the required field `referenceLine`
-      ReferenceLine.validateJsonElement(jsonObj.get("referenceLine"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ReferenceLines.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ReferenceLines' and its subtypes
+       if (!StaleFlagSettingTagModel.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'StaleFlagSettingTagModel' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ReferenceLines> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ReferenceLines.class));
+       final TypeAdapter<StaleFlagSettingTagModel> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(StaleFlagSettingTagModel.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<ReferenceLines>() {
+       return (TypeAdapter<T>) new TypeAdapter<StaleFlagSettingTagModel>() {
            @Override
-           public void write(JsonWriter out, ReferenceLines value) throws IOException {
+           public void write(JsonWriter out, StaleFlagSettingTagModel value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -410,12 +265,12 @@ public class ReferenceLines {
            }
 
            @Override
-           public ReferenceLines read(JsonReader in) throws IOException {
+           public StaleFlagSettingTagModel read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             ReferenceLines instance = thisAdapter.fromJsonTree(jsonObj);
+             StaleFlagSettingTagModel instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -442,18 +297,18 @@ public class ReferenceLines {
   }
 
   /**
-   * Create an instance of ReferenceLines given an JSON string
+   * Create an instance of StaleFlagSettingTagModel given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of ReferenceLines
-   * @throws IOException if the JSON string is invalid with respect to ReferenceLines
+   * @return An instance of StaleFlagSettingTagModel
+   * @throws IOException if the JSON string is invalid with respect to StaleFlagSettingTagModel
    */
-  public static ReferenceLines fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ReferenceLines.class);
+  public static StaleFlagSettingTagModel fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, StaleFlagSettingTagModel.class);
   }
 
   /**
-   * Convert an instance of ReferenceLines to an JSON string
+   * Convert an instance of StaleFlagSettingTagModel to an JSON string
    *
    * @return JSON string
    */

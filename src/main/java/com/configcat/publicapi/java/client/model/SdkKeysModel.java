@@ -21,7 +21,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,7 +49,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * SdkKeysModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class SdkKeysModel {
   public static final String SERIALIZED_NAME_PRIMARY = "primary";
   @SerializedName(SERIALIZED_NAME_PRIMARY)
@@ -72,7 +71,7 @@ public class SdkKeysModel {
    * The primary SDK key.
    * @return primary
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getPrimary() {
     return primary;
   }
@@ -160,20 +159,9 @@ public class SdkKeysModel {
         Objects.equals(this.additionalProperties, sdkKeysModel.additionalProperties);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(primary, secondary, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -210,6 +198,8 @@ public class SdkKeysModel {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("primary");
+    openapiRequiredFields.add("secondary");
   }
 
   /**
@@ -224,8 +214,15 @@ public class SdkKeysModel {
           throw new IllegalArgumentException(String.format("The required field(s) %s in SdkKeysModel is not found in the empty JSON string", SdkKeysModel.openapiRequiredFields.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : SdkKeysModel.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("primary") != null && !jsonObj.get("primary").isJsonNull()) && !jsonObj.get("primary").isJsonPrimitive()) {
+      if (!jsonObj.get("primary").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `primary` to be a primitive type in the JSON string but got `%s`", jsonObj.get("primary").toString()));
       }
       if ((jsonObj.get("secondary") != null && !jsonObj.get("secondary").isJsonNull()) && !jsonObj.get("secondary").isJsonPrimitive()) {

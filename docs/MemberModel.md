@@ -7,11 +7,11 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**userId** | **String** | Identifier of the Member. |  [optional] |
-|**productId** | **UUID** | Identifier of the Product where the Member has access. |  [optional] |
-|**permissionGroupId** | **Long** | Identifier of the Member&#39;s Permission Group. |  [optional] |
-|**fullName** | **String** | Name of the Member. |  [optional] |
-|**email** | **String** | Email of the Member. |  [optional] |
+|**userId** | **String** | Identifier of the Member. |  |
+|**productId** | **UUID** | Identifier of the Product where the Member has access. |  |
+|**permissionGroupId** | **Long** | Identifier of the Member&#39;s Permission Group. |  |
+|**fullName** | **String** | Name of the Member. |  |
+|**email** | **String** | Email of the Member. |  |
 
 
 

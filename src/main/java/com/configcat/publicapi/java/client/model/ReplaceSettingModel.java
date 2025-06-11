@@ -52,7 +52,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * ReplaceSettingModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class ReplaceSettingModel {
   public static final String SERIALIZED_NAME_HINT = "hint";
   @SerializedName(SERIALIZED_NAME_HINT)
@@ -125,7 +125,7 @@ public class ReplaceSettingModel {
   }
 
   /**
-   * The order of the Setting represented on the ConfigCat Dashboard.  Determined from an ascending sequence of integers.
+   * The order of the Setting represented on the ConfigCat Dashboard. Determined from an ascending sequence of integers.
    * @return order
    */
   @javax.annotation.Nullable
@@ -147,7 +147,7 @@ public class ReplaceSettingModel {
    * The name of the Feature Flag or Setting.
    * @return name
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getName() {
     return name;
   }
@@ -272,7 +272,6 @@ public class ReplaceSettingModel {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("name");
   }
 
   /**
@@ -287,13 +286,6 @@ public class ReplaceSettingModel {
           throw new IllegalArgumentException(String.format("The required field(s) %s in ReplaceSettingModel is not found in the empty JSON string", ReplaceSettingModel.openapiRequiredFields.toString()));
         }
       }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : ReplaceSettingModel.openapiRequiredFields) {
-        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
-        }
-      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("hint") != null && !jsonObj.get("hint").isJsonNull()) && !jsonObj.get("hint").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `hint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hint").toString()));
@@ -302,7 +294,7 @@ public class ReplaceSettingModel {
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
-      if (!jsonObj.get("name").isJsonPrimitive()) {
+      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
   }

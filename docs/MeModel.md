@@ -7,8 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**email** | **String** |  |  [optional] [readonly] |
-|**fullName** | **String** |  |  [optional] [readonly] |
+|**email** | **String** |  |  [readonly] |
+|**fullName** | **String** |  |  [readonly] |
 
 
 

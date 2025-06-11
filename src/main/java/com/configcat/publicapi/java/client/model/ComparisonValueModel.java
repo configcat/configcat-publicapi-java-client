@@ -53,7 +53,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * The value that the user object&#39;s attribute is compared to.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class ComparisonValueModel {
   public static final String SERIALIZED_NAME_STRING_VALUE = "stringValue";
   @SerializedName(SERIALIZED_NAME_STRING_VALUE)

@@ -1,6 +1,6 @@
 
 
-# WebHookRequest
+# WebHookRequestModel
 
 
 ## Properties

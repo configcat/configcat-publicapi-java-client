@@ -16,6 +16,7 @@ package com.configcat.publicapi.java.client.model;
 import java.util.Objects;
 import com.configcat.publicapi.java.client.model.RolloutRuleComparator;
 import com.configcat.publicapi.java.client.model.SegmentComparator;
+import com.configcat.publicapi.java.client.model.SettingValueType;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -24,7 +25,6 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.UUID;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -53,7 +53,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * RolloutRuleModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class RolloutRuleModel {
   public static final String SERIALIZED_NAME_COMPARISON_ATTRIBUTE = "comparisonAttribute";
   @SerializedName(SERIALIZED_NAME_COMPARISON_ATTRIBUTE)
@@ -69,7 +69,7 @@ public class RolloutRuleModel {
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  private Object value = null;
+  private SettingValueType value;
 
   public static final String SERIALIZED_NAME_SEGMENT_COMPARATOR = "segmentComparator";
   @SerializedName(SERIALIZED_NAME_SEGMENT_COMPARATOR)
@@ -139,21 +139,21 @@ public class RolloutRuleModel {
   }
 
 
-  public RolloutRuleModel value(Object value) {
+  public RolloutRuleModel value(SettingValueType value) {
     this.value = value;
     return this;
   }
 
   /**
-   * The value to serve when the comparison matches. It must respect the setting type.
+   * The value to serve when the comparison matches. It must respect the setting type. In some generated clients for strictly typed languages you may use double/float properties to handle integer values.
    * @return value
    */
-  @javax.annotation.Nullable
-  public Object getValue() {
+  @javax.annotation.Nonnull
+  public SettingValueType getValue() {
     return value;
   }
 
-  public void setValue(Object value) {
+  public void setValue(SettingValueType value) {
     this.value = value;
   }
 
@@ -259,20 +259,9 @@ public class RolloutRuleModel {
         Objects.equals(this.additionalProperties, rolloutRuleModel.additionalProperties);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(comparisonAttribute, comparator, comparisonValue, value, segmentComparator, segmentId, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -317,6 +306,12 @@ public class RolloutRuleModel {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("comparisonAttribute");
+    openapiRequiredFields.add("comparator");
+    openapiRequiredFields.add("comparisonValue");
+    openapiRequiredFields.add("value");
+    openapiRequiredFields.add("segmentComparator");
+    openapiRequiredFields.add("segmentId");
   }
 
   /**
@@ -331,21 +326,26 @@ public class RolloutRuleModel {
           throw new IllegalArgumentException(String.format("The required field(s) %s in RolloutRuleModel is not found in the empty JSON string", RolloutRuleModel.openapiRequiredFields.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : RolloutRuleModel.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("comparisonAttribute") != null && !jsonObj.get("comparisonAttribute").isJsonNull()) && !jsonObj.get("comparisonAttribute").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `comparisonAttribute` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comparisonAttribute").toString()));
       }
-      // validate the optional field `comparator`
-      if (jsonObj.get("comparator") != null && !jsonObj.get("comparator").isJsonNull()) {
-        RolloutRuleComparator.validateJsonElement(jsonObj.get("comparator"));
-      }
+      // validate the required field `comparator`
+      RolloutRuleComparator.validateJsonElement(jsonObj.get("comparator"));
       if ((jsonObj.get("comparisonValue") != null && !jsonObj.get("comparisonValue").isJsonNull()) && !jsonObj.get("comparisonValue").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `comparisonValue` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comparisonValue").toString()));
       }
-      // validate the optional field `segmentComparator`
-      if (jsonObj.get("segmentComparator") != null && !jsonObj.get("segmentComparator").isJsonNull()) {
-        SegmentComparator.validateJsonElement(jsonObj.get("segmentComparator"));
-      }
+      // validate the required field `value`
+      SettingValueType.validateJsonElement(jsonObj.get("value"));
+      // validate the required field `segmentComparator`
+      SegmentComparator.validateJsonElement(jsonObj.get("segmentComparator"));
       if ((jsonObj.get("segmentId") != null && !jsonObj.get("segmentId").isJsonNull()) && !jsonObj.get("segmentId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `segmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("segmentId").toString()));
       }

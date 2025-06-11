@@ -8,8 +8,8 @@ Details of the Organization.
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**organizationId** | **UUID** | Identifier of the Organization. |  [optional] |
-|**name** | **String** | Name of the Organization. |  [optional] |
+|**organizationId** | **UUID** | Identifier of the Organization. |  |
+|**name** | **String** | Name of the Organization. |  |
 
 
 

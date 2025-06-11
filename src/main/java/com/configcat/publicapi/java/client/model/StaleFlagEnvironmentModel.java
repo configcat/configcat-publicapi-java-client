@@ -21,7 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.jackson.nullable.JsonNullable;
+import java.util.UUID;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,56 +48,56 @@ import java.util.Set;
 import com.configcat.publicapi.java.client.JSON;
 
 /**
- * Determines a code reference line.
+ * StaleFlagEnvironmentModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
-public class ReferenceLine {
-  public static final String SERIALIZED_NAME_LINE_TEXT = "lineText";
-  @SerializedName(SERIALIZED_NAME_LINE_TEXT)
-  private String lineText;
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+public class StaleFlagEnvironmentModel {
+  public static final String SERIALIZED_NAME_ENVIRONMENT_ID = "environmentId";
+  @SerializedName(SERIALIZED_NAME_ENVIRONMENT_ID)
+  private UUID environmentId;
 
-  public static final String SERIALIZED_NAME_LINE_NUMBER = "lineNumber";
-  @SerializedName(SERIALIZED_NAME_LINE_NUMBER)
-  private Integer lineNumber;
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  private String name;
 
-  public ReferenceLine() {
+  public StaleFlagEnvironmentModel() {
   }
 
-  public ReferenceLine lineText(String lineText) {
-    this.lineText = lineText;
+  public StaleFlagEnvironmentModel environmentId(UUID environmentId) {
+    this.environmentId = environmentId;
     return this;
   }
 
   /**
-   * The content of the reference line.
-   * @return lineText
-   */
-  @javax.annotation.Nullable
-  public String getLineText() {
-    return lineText;
-  }
-
-  public void setLineText(String lineText) {
-    this.lineText = lineText;
-  }
-
-
-  public ReferenceLine lineNumber(Integer lineNumber) {
-    this.lineNumber = lineNumber;
-    return this;
-  }
-
-  /**
-   * The line number.
-   * @return lineNumber
+   * Identifier of the Environment.
+   * @return environmentId
    */
   @javax.annotation.Nonnull
-  public Integer getLineNumber() {
-    return lineNumber;
+  public UUID getEnvironmentId() {
+    return environmentId;
   }
 
-  public void setLineNumber(Integer lineNumber) {
-    this.lineNumber = lineNumber;
+  public void setEnvironmentId(UUID environmentId) {
+    this.environmentId = environmentId;
+  }
+
+
+  public StaleFlagEnvironmentModel name(String name) {
+    this.name = name;
+    return this;
+  }
+
+  /**
+   * Name of the Environment.
+   * @return name
+   */
+  @javax.annotation.Nonnull
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
   }
 
   /**
@@ -113,9 +113,9 @@ public class ReferenceLine {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the ReferenceLine instance itself
+   * @return the StaleFlagEnvironmentModel instance itself
    */
-  public ReferenceLine putAdditionalProperty(String key, Object value) {
+  public StaleFlagEnvironmentModel putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -154,34 +154,23 @@ public class ReferenceLine {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ReferenceLine referenceLine = (ReferenceLine) o;
-    return Objects.equals(this.lineText, referenceLine.lineText) &&
-        Objects.equals(this.lineNumber, referenceLine.lineNumber)&&
-        Objects.equals(this.additionalProperties, referenceLine.additionalProperties);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+    StaleFlagEnvironmentModel staleFlagEnvironmentModel = (StaleFlagEnvironmentModel) o;
+    return Objects.equals(this.environmentId, staleFlagEnvironmentModel.environmentId) &&
+        Objects.equals(this.name, staleFlagEnvironmentModel.name)&&
+        Objects.equals(this.additionalProperties, staleFlagEnvironmentModel.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(lineText, lineNumber, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(environmentId, name, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ReferenceLine {\n");
-    sb.append("    lineText: ").append(toIndentedString(lineText)).append("\n");
-    sb.append("    lineNumber: ").append(toIndentedString(lineNumber)).append("\n");
+    sb.append("class StaleFlagEnvironmentModel {\n");
+    sb.append("    environmentId: ").append(toIndentedString(environmentId)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -205,36 +194,40 @@ public class ReferenceLine {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("lineText");
-    openapiFields.add("lineNumber");
+    openapiFields.add("environmentId");
+    openapiFields.add("name");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("lineNumber");
+    openapiRequiredFields.add("environmentId");
+    openapiRequiredFields.add("name");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to ReferenceLine
+   * @throws IOException if the JSON Element is invalid with respect to StaleFlagEnvironmentModel
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!ReferenceLine.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ReferenceLine is not found in the empty JSON string", ReferenceLine.openapiRequiredFields.toString()));
+        if (!StaleFlagEnvironmentModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in StaleFlagEnvironmentModel is not found in the empty JSON string", StaleFlagEnvironmentModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : ReferenceLine.openapiRequiredFields) {
+      for (String requiredField : StaleFlagEnvironmentModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("lineText") != null && !jsonObj.get("lineText").isJsonNull()) && !jsonObj.get("lineText").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `lineText` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lineText").toString()));
+      if (!jsonObj.get("environmentId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
+      }
+      if (!jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
   }
 
@@ -242,16 +235,16 @@ public class ReferenceLine {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ReferenceLine.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ReferenceLine' and its subtypes
+       if (!StaleFlagEnvironmentModel.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'StaleFlagEnvironmentModel' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ReferenceLine> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ReferenceLine.class));
+       final TypeAdapter<StaleFlagEnvironmentModel> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(StaleFlagEnvironmentModel.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<ReferenceLine>() {
+       return (TypeAdapter<T>) new TypeAdapter<StaleFlagEnvironmentModel>() {
            @Override
-           public void write(JsonWriter out, ReferenceLine value) throws IOException {
+           public void write(JsonWriter out, StaleFlagEnvironmentModel value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -279,12 +272,12 @@ public class ReferenceLine {
            }
 
            @Override
-           public ReferenceLine read(JsonReader in) throws IOException {
+           public StaleFlagEnvironmentModel read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             ReferenceLine instance = thisAdapter.fromJsonTree(jsonObj);
+             StaleFlagEnvironmentModel instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -311,18 +304,18 @@ public class ReferenceLine {
   }
 
   /**
-   * Create an instance of ReferenceLine given an JSON string
+   * Create an instance of StaleFlagEnvironmentModel given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of ReferenceLine
-   * @throws IOException if the JSON string is invalid with respect to ReferenceLine
+   * @return An instance of StaleFlagEnvironmentModel
+   * @throws IOException if the JSON string is invalid with respect to StaleFlagEnvironmentModel
    */
-  public static ReferenceLine fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ReferenceLine.class);
+  public static StaleFlagEnvironmentModel fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, StaleFlagEnvironmentModel.class);
   }
 
   /**
-   * Convert an instance of ReferenceLine to an JSON string
+   * Convert an instance of StaleFlagEnvironmentModel to an JSON string
    *
    * @return JSON string
    */

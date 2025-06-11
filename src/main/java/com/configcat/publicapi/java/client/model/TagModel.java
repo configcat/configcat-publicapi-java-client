@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,7 +50,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * TagModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class TagModel {
   public static final String SERIALIZED_NAME_PRODUCT = "product";
   @SerializedName(SERIALIZED_NAME_PRODUCT)
@@ -81,7 +80,7 @@ public class TagModel {
    * Get product
    * @return product
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ProductModel getProduct() {
     return product;
   }
@@ -100,7 +99,7 @@ public class TagModel {
    * Identifier of the Tag.
    * @return tagId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Long getTagId() {
     return tagId;
   }
@@ -119,7 +118,7 @@ public class TagModel {
    * Name of the Tag.
    * @return name
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
@@ -209,20 +208,9 @@ public class TagModel {
         Objects.equals(this.additionalProperties, tagModel.additionalProperties);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(product, tagId, name, color, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -263,6 +251,10 @@ public class TagModel {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("product");
+    openapiRequiredFields.add("tagId");
+    openapiRequiredFields.add("name");
+    openapiRequiredFields.add("color");
   }
 
   /**
@@ -277,12 +269,17 @@ public class TagModel {
           throw new IllegalArgumentException(String.format("The required field(s) %s in TagModel is not found in the empty JSON string", TagModel.openapiRequiredFields.toString()));
         }
       }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `product`
-      if (jsonObj.get("product") != null && !jsonObj.get("product").isJsonNull()) {
-        ProductModel.validateJsonElement(jsonObj.get("product"));
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : TagModel.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
       }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `product`
+      ProductModel.validateJsonElement(jsonObj.get("product"));
+      if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("color") != null && !jsonObj.get("color").isJsonNull()) && !jsonObj.get("color").isJsonPrimitive()) {

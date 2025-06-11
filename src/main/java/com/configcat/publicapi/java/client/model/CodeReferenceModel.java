@@ -14,7 +14,7 @@
 package com.configcat.publicapi.java.client.model;
 
 import java.util.Objects;
-import com.configcat.publicapi.java.client.model.ReferenceLines;
+import com.configcat.publicapi.java.client.model.ReferenceLinesModel;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,7 +26,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -55,7 +54,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * CodeReferenceModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class CodeReferenceModel {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
@@ -63,7 +62,7 @@ public class CodeReferenceModel {
 
   public static final String SERIALIZED_NAME_REFERENCES = "references";
   @SerializedName(SERIALIZED_NAME_REFERENCES)
-  private List<ReferenceLines> references;
+  private List<ReferenceLinesModel> references;
 
   public static final String SERIALIZED_NAME_COMMIT_URL = "commitUrl";
   @SerializedName(SERIALIZED_NAME_COMMIT_URL)
@@ -111,12 +110,12 @@ public class CodeReferenceModel {
   }
 
 
-  public CodeReferenceModel references(List<ReferenceLines> references) {
+  public CodeReferenceModel references(List<ReferenceLinesModel> references) {
     this.references = references;
     return this;
   }
 
-  public CodeReferenceModel addReferencesItem(ReferenceLines referencesItem) {
+  public CodeReferenceModel addReferencesItem(ReferenceLinesModel referencesItem) {
     if (this.references == null) {
       this.references = new ArrayList<>();
     }
@@ -129,11 +128,11 @@ public class CodeReferenceModel {
    * @return references
    */
   @javax.annotation.Nullable
-  public List<ReferenceLines> getReferences() {
+  public List<ReferenceLinesModel> getReferences() {
     return references;
   }
 
-  public void setReferences(List<ReferenceLines> references) {
+  public void setReferences(List<ReferenceLinesModel> references) {
     this.references = references;
   }
 
@@ -185,7 +184,7 @@ public class CodeReferenceModel {
    * The date and time when the reference report was uploaded.
    * @return syncedAt
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public OffsetDateTime getSyncedAt() {
     return syncedAt;
   }
@@ -223,7 +222,7 @@ public class CodeReferenceModel {
    * The identifier of the reference report.
    * @return codeReferenceId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public UUID getCodeReferenceId() {
     return codeReferenceId;
   }
@@ -317,20 +316,9 @@ public class CodeReferenceModel {
         Objects.equals(this.additionalProperties, codeReferenceModel.additionalProperties);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(branch, references, commitUrl, commitHash, syncedAt, repository, codeReferenceId, uploader, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -379,6 +367,14 @@ public class CodeReferenceModel {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("branch");
+    openapiRequiredFields.add("references");
+    openapiRequiredFields.add("commitUrl");
+    openapiRequiredFields.add("commitHash");
+    openapiRequiredFields.add("syncedAt");
+    openapiRequiredFields.add("repository");
+    openapiRequiredFields.add("codeReferenceId");
+    openapiRequiredFields.add("uploader");
   }
 
   /**
@@ -393,24 +389,27 @@ public class CodeReferenceModel {
           throw new IllegalArgumentException(String.format("The required field(s) %s in CodeReferenceModel is not found in the empty JSON string", CodeReferenceModel.openapiRequiredFields.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : CodeReferenceModel.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("branch") != null && !jsonObj.get("branch").isJsonNull()) && !jsonObj.get("branch").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `branch` to be a primitive type in the JSON string but got `%s`", jsonObj.get("branch").toString()));
       }
-      if (jsonObj.get("references") != null && !jsonObj.get("references").isJsonNull()) {
-        JsonArray jsonArrayreferences = jsonObj.getAsJsonArray("references");
-        if (jsonArrayreferences != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("references").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `references` to be an array in the JSON string but got `%s`", jsonObj.get("references").toString()));
-          }
-
-          // validate the optional field `references` (array)
-          for (int i = 0; i < jsonArrayreferences.size(); i++) {
-            ReferenceLines.validateJsonElement(jsonArrayreferences.get(i));
-          };
-        }
+      // ensure the json data is an array
+      if (!jsonObj.get("references").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `references` to be an array in the JSON string but got `%s`", jsonObj.get("references").toString()));
       }
+
+      JsonArray jsonArrayreferences = jsonObj.getAsJsonArray("references");
+      // validate the required field `references` (array)
+      for (int i = 0; i < jsonArrayreferences.size(); i++) {
+        ReferenceLinesModel.validateJsonElement(jsonArrayreferences.get(i));
+      };
       if ((jsonObj.get("commitUrl") != null && !jsonObj.get("commitUrl").isJsonNull()) && !jsonObj.get("commitUrl").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `commitUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("commitUrl").toString()));
       }
@@ -420,7 +419,7 @@ public class CodeReferenceModel {
       if ((jsonObj.get("repository") != null && !jsonObj.get("repository").isJsonNull()) && !jsonObj.get("repository").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `repository` to be a primitive type in the JSON string but got `%s`", jsonObj.get("repository").toString()));
       }
-      if ((jsonObj.get("codeReferenceId") != null && !jsonObj.get("codeReferenceId").isJsonNull()) && !jsonObj.get("codeReferenceId").isJsonPrimitive()) {
+      if (!jsonObj.get("codeReferenceId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `codeReferenceId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("codeReferenceId").toString()));
       }
       if ((jsonObj.get("uploader") != null && !jsonObj.get("uploader").isJsonNull()) && !jsonObj.get("uploader").isJsonPrimitive()) {

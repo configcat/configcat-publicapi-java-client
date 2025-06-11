@@ -29,8 +29,8 @@ import java.io.IOException;
 
 import com.configcat.publicapi.java.client.model.AuditLogItemModel;
 import com.configcat.publicapi.java.client.model.AuditLogType;
+import com.configcat.publicapi.java.client.model.DeletedSettingModel;
 import java.time.OffsetDateTime;
-import com.configcat.publicapi.java.client.model.SettingModel;
 import java.util.UUID;
 
 import java.lang.reflect.Type;
@@ -174,7 +174,7 @@ public class AuditLogsApi {
 
     /**
      * List Audit log items for Product
-     * This endpoint returns the list of Audit log items for a given Product  and the result can be optionally filtered by Config and/or Environment.
+     * This endpoint returns the list of Audit log items for a given Product  and the result can be optionally filtered by Config and/or Environment.  If neither &#x60;fromUtcDateTime&#x60; nor &#x60;toUtcDateTime&#x60; is set, the audit logs for the **last 7 days** will be returned.  The distance between &#x60;fromUtcDateTime&#x60; and &#x60;toUtcDateTime&#x60; cannot exceed **30 days**.
      * @param productId The identifier of the Product. (required)
      * @param configId The identifier of the Config. (optional)
      * @param environmentId The identifier of the Environment. (optional)
@@ -199,7 +199,7 @@ public class AuditLogsApi {
 
     /**
      * List Audit log items for Product
-     * This endpoint returns the list of Audit log items for a given Product  and the result can be optionally filtered by Config and/or Environment.
+     * This endpoint returns the list of Audit log items for a given Product  and the result can be optionally filtered by Config and/or Environment.  If neither &#x60;fromUtcDateTime&#x60; nor &#x60;toUtcDateTime&#x60; is set, the audit logs for the **last 7 days** will be returned.  The distance between &#x60;fromUtcDateTime&#x60; and &#x60;toUtcDateTime&#x60; cannot exceed **30 days**.
      * @param productId The identifier of the Product. (required)
      * @param configId The identifier of the Config. (optional)
      * @param environmentId The identifier of the Environment. (optional)
@@ -225,7 +225,7 @@ public class AuditLogsApi {
 
     /**
      * List Audit log items for Product (asynchronously)
-     * This endpoint returns the list of Audit log items for a given Product  and the result can be optionally filtered by Config and/or Environment.
+     * This endpoint returns the list of Audit log items for a given Product  and the result can be optionally filtered by Config and/or Environment.  If neither &#x60;fromUtcDateTime&#x60; nor &#x60;toUtcDateTime&#x60; is set, the audit logs for the **last 7 days** will be returned.  The distance between &#x60;fromUtcDateTime&#x60; and &#x60;toUtcDateTime&#x60; cannot exceed **30 days**.
      * @param productId The identifier of the Product. (required)
      * @param configId The identifier of the Config. (optional)
      * @param environmentId The identifier of the Environment. (optional)
@@ -326,7 +326,7 @@ public class AuditLogsApi {
      * List Deleted Settings
      * This endpoint returns the list of Feature Flags and Settings that were deleted from the given Config.
      * @param configId The identifier of the Config. (required)
-     * @return List&lt;SettingModel&gt;
+     * @return List&lt;DeletedSettingModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -337,8 +337,8 @@ public class AuditLogsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public List<SettingModel> getDeletedSettings(UUID configId) throws ApiException {
-        ApiResponse<List<SettingModel>> localVarResp = getDeletedSettingsWithHttpInfo(configId);
+    public List<DeletedSettingModel> getDeletedSettings(UUID configId) throws ApiException {
+        ApiResponse<List<DeletedSettingModel>> localVarResp = getDeletedSettingsWithHttpInfo(configId);
         return localVarResp.getData();
     }
 
@@ -346,7 +346,7 @@ public class AuditLogsApi {
      * List Deleted Settings
      * This endpoint returns the list of Feature Flags and Settings that were deleted from the given Config.
      * @param configId The identifier of the Config. (required)
-     * @return ApiResponse&lt;List&lt;SettingModel&gt;&gt;
+     * @return ApiResponse&lt;List&lt;DeletedSettingModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -357,9 +357,9 @@ public class AuditLogsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<SettingModel>> getDeletedSettingsWithHttpInfo(UUID configId) throws ApiException {
+    public ApiResponse<List<DeletedSettingModel>> getDeletedSettingsWithHttpInfo(UUID configId) throws ApiException {
         okhttp3.Call localVarCall = getDeletedSettingsValidateBeforeCall(configId, null);
-        Type localVarReturnType = new TypeToken<List<SettingModel>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<DeletedSettingModel>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -379,10 +379,10 @@ public class AuditLogsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDeletedSettingsAsync(UUID configId, final ApiCallback<List<SettingModel>> _callback) throws ApiException {
+    public okhttp3.Call getDeletedSettingsAsync(UUID configId, final ApiCallback<List<DeletedSettingModel>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getDeletedSettingsValidateBeforeCall(configId, _callback);
-        Type localVarReturnType = new TypeToken<List<SettingModel>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<DeletedSettingModel>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -489,7 +489,7 @@ public class AuditLogsApi {
 
     /**
      * List Audit log items for Organization
-     * This endpoint returns the list of Audit log items for a given Organization  and the result can be optionally filtered by Product and/or Config and/or Environment.
+     * This endpoint returns the list of Audit log items for a given Organization  and the result can be optionally filtered by Product and/or Config and/or Environment.  If neither &#x60;fromUtcDateTime&#x60; nor &#x60;toUtcDateTime&#x60; is set, the audit logs for the **last 7 days** will be returned.  The distance between &#x60;fromUtcDateTime&#x60; and &#x60;toUtcDateTime&#x60; cannot exceed **30 days**.
      * @param organizationId The identifier of the Organization. (required)
      * @param productId The identifier of the Product. (optional)
      * @param configId The identifier of the Config. (optional)
@@ -515,7 +515,7 @@ public class AuditLogsApi {
 
     /**
      * List Audit log items for Organization
-     * This endpoint returns the list of Audit log items for a given Organization  and the result can be optionally filtered by Product and/or Config and/or Environment.
+     * This endpoint returns the list of Audit log items for a given Organization  and the result can be optionally filtered by Product and/or Config and/or Environment.  If neither &#x60;fromUtcDateTime&#x60; nor &#x60;toUtcDateTime&#x60; is set, the audit logs for the **last 7 days** will be returned.  The distance between &#x60;fromUtcDateTime&#x60; and &#x60;toUtcDateTime&#x60; cannot exceed **30 days**.
      * @param organizationId The identifier of the Organization. (required)
      * @param productId The identifier of the Product. (optional)
      * @param configId The identifier of the Config. (optional)
@@ -542,7 +542,7 @@ public class AuditLogsApi {
 
     /**
      * List Audit log items for Organization (asynchronously)
-     * This endpoint returns the list of Audit log items for a given Organization  and the result can be optionally filtered by Product and/or Config and/or Environment.
+     * This endpoint returns the list of Audit log items for a given Organization  and the result can be optionally filtered by Product and/or Config and/or Environment.  If neither &#x60;fromUtcDateTime&#x60; nor &#x60;toUtcDateTime&#x60; is set, the audit logs for the **last 7 days** will be returned.  The distance between &#x60;fromUtcDateTime&#x60; and &#x60;toUtcDateTime&#x60; cannot exceed **30 days**.
      * @param organizationId The identifier of the Organization. (required)
      * @param productId The identifier of the Product. (optional)
      * @param configId The identifier of the Config. (optional)

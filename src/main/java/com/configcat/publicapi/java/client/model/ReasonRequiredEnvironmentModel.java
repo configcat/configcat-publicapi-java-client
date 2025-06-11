@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.UUID;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,7 +50,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * ReasonRequiredEnvironmentModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class ReasonRequiredEnvironmentModel {
   public static final String SERIALIZED_NAME_ENVIRONMENT_ID = "environmentId";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_ID)
@@ -77,7 +76,7 @@ public class ReasonRequiredEnvironmentModel {
    * Identifier of the Environment.
    * @return environmentId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public UUID getEnvironmentId() {
     return environmentId;
   }
@@ -96,7 +95,7 @@ public class ReasonRequiredEnvironmentModel {
    * Indicates that a mandatory note is required in this Environment for saving and publishing.
    * @return reasonRequired
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getReasonRequired() {
     return reasonRequired;
   }
@@ -185,20 +184,9 @@ public class ReasonRequiredEnvironmentModel {
         Objects.equals(this.additionalProperties, reasonRequiredEnvironmentModel.additionalProperties);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(environmentId, reasonRequired, environmentName, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -237,6 +225,9 @@ public class ReasonRequiredEnvironmentModel {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("environmentId");
+    openapiRequiredFields.add("reasonRequired");
+    openapiRequiredFields.add("environmentName");
   }
 
   /**
@@ -251,8 +242,15 @@ public class ReasonRequiredEnvironmentModel {
           throw new IllegalArgumentException(String.format("The required field(s) %s in ReasonRequiredEnvironmentModel is not found in the empty JSON string", ReasonRequiredEnvironmentModel.openapiRequiredFields.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ReasonRequiredEnvironmentModel.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("environmentId") != null && !jsonObj.get("environmentId").isJsonNull()) && !jsonObj.get("environmentId").isJsonPrimitive()) {
+      if (!jsonObj.get("environmentId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
       }
       if ((jsonObj.get("environmentName") != null && !jsonObj.get("environmentName").isJsonNull()) && !jsonObj.get("environmentName").isJsonPrimitive()) {

@@ -54,7 +54,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * CodeReferenceRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class CodeReferenceRequest {
   public static final String SERIALIZED_NAME_CONFIG_ID = "configId";
   @SerializedName(SERIALIZED_NAME_CONFIG_ID)
@@ -82,11 +82,11 @@ public class CodeReferenceRequest {
 
   public static final String SERIALIZED_NAME_ACTIVE_BRANCHES = "activeBranches";
   @SerializedName(SERIALIZED_NAME_ACTIVE_BRANCHES)
-  private List<String> activeBranches;
+  private List<String> activeBranches = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_FLAG_REFERENCES = "flagReferences";
   @SerializedName(SERIALIZED_NAME_FLAG_REFERENCES)
-  private List<FlagReference> flagReferences;
+  private List<FlagReference> flagReferences = new ArrayList<>();
 
   public CodeReferenceRequest() {
   }

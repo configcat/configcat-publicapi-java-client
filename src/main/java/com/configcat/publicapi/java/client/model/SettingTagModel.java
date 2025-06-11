@@ -21,7 +21,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,7 +49,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * SettingTagModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class SettingTagModel {
   public static final String SERIALIZED_NAME_SETTING_TAG_ID = "settingTagId";
   @SerializedName(SERIALIZED_NAME_SETTING_TAG_ID)
@@ -80,7 +79,7 @@ public class SettingTagModel {
    * Get settingTagId
    * @return settingTagId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Long getSettingTagId() {
     return settingTagId;
   }
@@ -99,7 +98,7 @@ public class SettingTagModel {
    * Get tagId
    * @return tagId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Long getTagId() {
     return tagId;
   }
@@ -118,7 +117,7 @@ public class SettingTagModel {
    * Get name
    * @return name
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
@@ -208,20 +207,9 @@ public class SettingTagModel {
         Objects.equals(this.additionalProperties, settingTagModel.additionalProperties);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(settingTagId, tagId, name, color, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -262,6 +250,10 @@ public class SettingTagModel {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("settingTagId");
+    openapiRequiredFields.add("tagId");
+    openapiRequiredFields.add("name");
+    openapiRequiredFields.add("color");
   }
 
   /**
@@ -276,8 +268,15 @@ public class SettingTagModel {
           throw new IllegalArgumentException(String.format("The required field(s) %s in SettingTagModel is not found in the empty JSON string", SettingTagModel.openapiRequiredFields.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : SettingTagModel.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+      if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("color") != null && !jsonObj.get("color").isJsonNull()) && !jsonObj.get("color").isJsonPrimitive()) {

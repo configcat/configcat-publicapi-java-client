@@ -49,7 +49,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * DeleteIntegrationLinkModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class DeleteIntegrationLinkModel {
   public static final String SERIALIZED_NAME_HAS_REMAINING_INTEGRATION_LINK = "hasRemainingIntegrationLink";
   @SerializedName(SERIALIZED_NAME_HAS_REMAINING_INTEGRATION_LINK)
@@ -67,7 +67,7 @@ public class DeleteIntegrationLinkModel {
    * Get hasRemainingIntegrationLink
    * @return hasRemainingIntegrationLink
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getHasRemainingIntegrationLink() {
     return hasRemainingIntegrationLink;
   }
@@ -172,6 +172,7 @@ public class DeleteIntegrationLinkModel {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("hasRemainingIntegrationLink");
   }
 
   /**
@@ -184,6 +185,13 @@ public class DeleteIntegrationLinkModel {
       if (jsonElement == null) {
         if (!DeleteIntegrationLinkModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in DeleteIntegrationLinkModel is not found in the empty JSON string", DeleteIntegrationLinkModel.openapiRequiredFields.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : DeleteIntegrationLinkModel.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();

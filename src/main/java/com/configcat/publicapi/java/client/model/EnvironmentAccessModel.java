@@ -23,7 +23,6 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.UUID;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,7 +51,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * EnvironmentAccessModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class EnvironmentAccessModel {
   public static final String SERIALIZED_NAME_ENVIRONMENT_ID = "environmentId";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_ID)
@@ -94,7 +93,7 @@ public class EnvironmentAccessModel {
    * Identifier of the Environment.
    * @return environmentId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public UUID getEnvironmentId() {
     return environmentId;
   }
@@ -170,7 +169,7 @@ public class EnvironmentAccessModel {
    * The order of the Environment represented on the ConfigCat Dashboard.
    * @return order
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Integer getOrder() {
     return order;
   }
@@ -189,7 +188,7 @@ public class EnvironmentAccessModel {
    * Determines whether a mandatory reason must be given every time when the Feature Flags or Settings in the given Environment are saved.
    * @return reasonRequired
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getReasonRequired() {
     return reasonRequired;
   }
@@ -208,7 +207,7 @@ public class EnvironmentAccessModel {
    * Get environmentAccessType
    * @return environmentAccessType
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public EnvironmentAccessType getEnvironmentAccessType() {
     return environmentAccessType;
   }
@@ -282,20 +281,9 @@ public class EnvironmentAccessModel {
         Objects.equals(this.additionalProperties, environmentAccessModel.additionalProperties);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(environmentId, name, color, description, order, reasonRequired, environmentAccessType, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -342,6 +330,13 @@ public class EnvironmentAccessModel {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("environmentId");
+    openapiRequiredFields.add("name");
+    openapiRequiredFields.add("color");
+    openapiRequiredFields.add("description");
+    openapiRequiredFields.add("order");
+    openapiRequiredFields.add("reasonRequired");
+    openapiRequiredFields.add("environmentAccessType");
   }
 
   /**
@@ -356,8 +351,15 @@ public class EnvironmentAccessModel {
           throw new IllegalArgumentException(String.format("The required field(s) %s in EnvironmentAccessModel is not found in the empty JSON string", EnvironmentAccessModel.openapiRequiredFields.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : EnvironmentAccessModel.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("environmentId") != null && !jsonObj.get("environmentId").isJsonNull()) && !jsonObj.get("environmentId").isJsonPrimitive()) {
+      if (!jsonObj.get("environmentId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
@@ -369,10 +371,8 @@ public class EnvironmentAccessModel {
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
-      // validate the optional field `environmentAccessType`
-      if (jsonObj.get("environmentAccessType") != null && !jsonObj.get("environmentAccessType").isJsonNull()) {
-        EnvironmentAccessType.validateJsonElement(jsonObj.get("environmentAccessType"));
-      }
+      // validate the required field `environmentAccessType`
+      EnvironmentAccessType.validateJsonElement(jsonObj.get("environmentAccessType"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

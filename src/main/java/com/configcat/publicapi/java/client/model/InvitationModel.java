@@ -23,7 +23,6 @@ import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
 import java.util.UUID;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,7 +51,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * InvitationModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class InvitationModel {
   public static final String SERIALIZED_NAME_INVITATION_ID = "invitationId";
   @SerializedName(SERIALIZED_NAME_INVITATION_ID)
@@ -86,7 +85,7 @@ public class InvitationModel {
    * The identifier of the Invitation.
    * @return invitationId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public UUID getInvitationId() {
     return invitationId;
   }
@@ -124,7 +123,7 @@ public class InvitationModel {
    * The identifier of the Permission Group the user was invited to.
    * @return permissionGroupId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Long getPermissionGroupId() {
     return permissionGroupId;
   }
@@ -143,7 +142,7 @@ public class InvitationModel {
    * Creation time of the Invitation.
    * @return createdAt
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
@@ -162,7 +161,7 @@ public class InvitationModel {
    * Determines whether the Invitation is expired.
    * @return expired
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getExpired() {
     return expired;
   }
@@ -234,20 +233,9 @@ public class InvitationModel {
         Objects.equals(this.additionalProperties, invitationModel.additionalProperties);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(invitationId, email, permissionGroupId, createdAt, expired, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -290,6 +278,11 @@ public class InvitationModel {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("invitationId");
+    openapiRequiredFields.add("email");
+    openapiRequiredFields.add("permissionGroupId");
+    openapiRequiredFields.add("createdAt");
+    openapiRequiredFields.add("expired");
   }
 
   /**
@@ -304,8 +297,15 @@ public class InvitationModel {
           throw new IllegalArgumentException(String.format("The required field(s) %s in InvitationModel is not found in the empty JSON string", InvitationModel.openapiRequiredFields.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : InvitationModel.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("invitationId") != null && !jsonObj.get("invitationId").isJsonNull()) && !jsonObj.get("invitationId").isJsonPrimitive()) {
+      if (!jsonObj.get("invitationId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `invitationId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("invitationId").toString()));
       }
       if ((jsonObj.get("email") != null && !jsonObj.get("email").isJsonNull()) && !jsonObj.get("email").isJsonPrimitive()) {

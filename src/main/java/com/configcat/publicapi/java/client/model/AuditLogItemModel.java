@@ -24,7 +24,6 @@ import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
 import java.util.UUID;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -53,7 +52,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * AuditLogItemModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class AuditLogItemModel {
   public static final String SERIALIZED_NAME_AUDIT_LOG_ID = "auditLogId";
   @SerializedName(SERIALIZED_NAME_AUDIT_LOG_ID)
@@ -115,7 +114,7 @@ public class AuditLogItemModel {
    * Get auditLogId
    * @return auditLogId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Long getAuditLogId() {
     return auditLogId;
   }
@@ -134,7 +133,7 @@ public class AuditLogItemModel {
    * Get auditLogDateTime
    * @return auditLogDateTime
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public OffsetDateTime getAuditLogDateTime() {
     return auditLogDateTime;
   }
@@ -153,7 +152,7 @@ public class AuditLogItemModel {
    * Get auditLogTypeEnum
    * @return auditLogTypeEnum
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public AuditLogType getAuditLogTypeEnum() {
     return auditLogTypeEnum;
   }
@@ -191,7 +190,7 @@ public class AuditLogItemModel {
    * Get truncated
    * @return truncated
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getTruncated() {
     return truncated;
   }
@@ -403,20 +402,9 @@ public class AuditLogItemModel {
         Objects.equals(this.additionalProperties, auditLogItemModel.additionalProperties);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(auditLogId, auditLogDateTime, auditLogTypeEnum, changeSetId, truncated, auditLogType, userEmail, userName, where, why, actionTarget, details, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -473,6 +461,18 @@ public class AuditLogItemModel {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("auditLogId");
+    openapiRequiredFields.add("auditLogDateTime");
+    openapiRequiredFields.add("auditLogTypeEnum");
+    openapiRequiredFields.add("changeSetId");
+    openapiRequiredFields.add("truncated");
+    openapiRequiredFields.add("auditLogType");
+    openapiRequiredFields.add("userEmail");
+    openapiRequiredFields.add("userName");
+    openapiRequiredFields.add("where");
+    openapiRequiredFields.add("why");
+    openapiRequiredFields.add("actionTarget");
+    openapiRequiredFields.add("details");
   }
 
   /**
@@ -487,11 +487,16 @@ public class AuditLogItemModel {
           throw new IllegalArgumentException(String.format("The required field(s) %s in AuditLogItemModel is not found in the empty JSON string", AuditLogItemModel.openapiRequiredFields.toString()));
         }
       }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `auditLogTypeEnum`
-      if (jsonObj.get("auditLogTypeEnum") != null && !jsonObj.get("auditLogTypeEnum").isJsonNull()) {
-        AuditLogType.validateJsonElement(jsonObj.get("auditLogTypeEnum"));
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : AuditLogItemModel.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `auditLogTypeEnum`
+      AuditLogType.validateJsonElement(jsonObj.get("auditLogTypeEnum"));
       if ((jsonObj.get("changeSetId") != null && !jsonObj.get("changeSetId").isJsonNull()) && !jsonObj.get("changeSetId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `changeSetId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("changeSetId").toString()));
       }

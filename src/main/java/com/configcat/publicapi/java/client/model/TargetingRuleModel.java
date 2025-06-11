@@ -26,7 +26,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -55,15 +54,15 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * TargetingRuleModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class TargetingRuleModel {
   public static final String SERIALIZED_NAME_CONDITIONS = "conditions";
   @SerializedName(SERIALIZED_NAME_CONDITIONS)
-  private List<ConditionModel> conditions;
+  private List<ConditionModel> conditions = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PERCENTAGE_OPTIONS = "percentageOptions";
   @SerializedName(SERIALIZED_NAME_PERCENTAGE_OPTIONS)
-  private List<PercentageOptionModel> percentageOptions;
+  private List<PercentageOptionModel> percentageOptions = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
@@ -86,10 +85,10 @@ public class TargetingRuleModel {
   }
 
   /**
-   * The list of conditions that are combined with logical AND operators.  It can be one of the following:  - User condition  - Segment condition  - Prerequisite flag condition
+   * The list of conditions that are combined with logical AND operators. It can be one of the following: - User condition - Segment condition - Prerequisite flag condition
    * @return conditions
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public List<ConditionModel> getConditions() {
     return conditions;
   }
@@ -116,7 +115,7 @@ public class TargetingRuleModel {
    * The percentage options from where the evaluation process will choose a value based on the flag&#39;s percentage evaluation attribute.
    * @return percentageOptions
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public List<PercentageOptionModel> getPercentageOptions() {
     return percentageOptions;
   }
@@ -205,20 +204,9 @@ public class TargetingRuleModel {
         Objects.equals(this.additionalProperties, targetingRuleModel.additionalProperties);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(conditions, percentageOptions, value, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -257,6 +245,9 @@ public class TargetingRuleModel {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("conditions");
+    openapiRequiredFields.add("percentageOptions");
+    openapiRequiredFields.add("value");
   }
 
   /**
@@ -271,39 +262,36 @@ public class TargetingRuleModel {
           throw new IllegalArgumentException(String.format("The required field(s) %s in TargetingRuleModel is not found in the empty JSON string", TargetingRuleModel.openapiRequiredFields.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : TargetingRuleModel.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (jsonObj.get("conditions") != null && !jsonObj.get("conditions").isJsonNull()) {
-        JsonArray jsonArrayconditions = jsonObj.getAsJsonArray("conditions");
-        if (jsonArrayconditions != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("conditions").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `conditions` to be an array in the JSON string but got `%s`", jsonObj.get("conditions").toString()));
-          }
+      // ensure the json data is an array
+      if (!jsonObj.get("conditions").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `conditions` to be an array in the JSON string but got `%s`", jsonObj.get("conditions").toString()));
+      }
 
-          // validate the optional field `conditions` (array)
-          for (int i = 0; i < jsonArrayconditions.size(); i++) {
-            ConditionModel.validateJsonElement(jsonArrayconditions.get(i));
-          };
-        }
+      JsonArray jsonArrayconditions = jsonObj.getAsJsonArray("conditions");
+      // validate the required field `conditions` (array)
+      for (int i = 0; i < jsonArrayconditions.size(); i++) {
+        ConditionModel.validateJsonElement(jsonArrayconditions.get(i));
+      };
+      // ensure the json data is an array
+      if (!jsonObj.get("percentageOptions").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `percentageOptions` to be an array in the JSON string but got `%s`", jsonObj.get("percentageOptions").toString()));
       }
-      if (jsonObj.get("percentageOptions") != null && !jsonObj.get("percentageOptions").isJsonNull()) {
-        JsonArray jsonArraypercentageOptions = jsonObj.getAsJsonArray("percentageOptions");
-        if (jsonArraypercentageOptions != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("percentageOptions").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `percentageOptions` to be an array in the JSON string but got `%s`", jsonObj.get("percentageOptions").toString()));
-          }
 
-          // validate the optional field `percentageOptions` (array)
-          for (int i = 0; i < jsonArraypercentageOptions.size(); i++) {
-            PercentageOptionModel.validateJsonElement(jsonArraypercentageOptions.get(i));
-          };
-        }
-      }
-      // validate the optional field `value`
-      if (jsonObj.get("value") != null && !jsonObj.get("value").isJsonNull()) {
-        ValueModel.validateJsonElement(jsonObj.get("value"));
-      }
+      JsonArray jsonArraypercentageOptions = jsonObj.getAsJsonArray("percentageOptions");
+      // validate the required field `percentageOptions` (array)
+      for (int i = 0; i < jsonArraypercentageOptions.size(); i++) {
+        PercentageOptionModel.validateJsonElement(jsonArraypercentageOptions.get(i));
+      };
+      // validate the required field `value`
+      ValueModel.validateJsonElement(jsonObj.get("value"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

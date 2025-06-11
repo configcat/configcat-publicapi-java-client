@@ -14,8 +14,8 @@
 package com.configcat.publicapi.java.client.model;
 
 import java.util.Objects;
-import com.configcat.publicapi.java.client.model.TargetingRuleModel;
-import com.configcat.publicapi.java.client.model.ValueModel;
+import com.configcat.publicapi.java.client.model.UpdateTargetingRuleModel;
+import com.configcat.publicapi.java.client.model.UpdateValueModel;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -54,15 +54,15 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * UpdateEvaluationFormulaModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class UpdateEvaluationFormulaModel {
   public static final String SERIALIZED_NAME_DEFAULT_VALUE = "defaultValue";
   @SerializedName(SERIALIZED_NAME_DEFAULT_VALUE)
-  private ValueModel defaultValue;
+  private UpdateValueModel defaultValue;
 
   public static final String SERIALIZED_NAME_TARGETING_RULES = "targetingRules";
   @SerializedName(SERIALIZED_NAME_TARGETING_RULES)
-  private List<TargetingRuleModel> targetingRules;
+  private List<UpdateTargetingRuleModel> targetingRules;
 
   public static final String SERIALIZED_NAME_PERCENTAGE_EVALUATION_ATTRIBUTE = "percentageEvaluationAttribute";
   @SerializedName(SERIALIZED_NAME_PERCENTAGE_EVALUATION_ATTRIBUTE)
@@ -71,7 +71,7 @@ public class UpdateEvaluationFormulaModel {
   public UpdateEvaluationFormulaModel() {
   }
 
-  public UpdateEvaluationFormulaModel defaultValue(ValueModel defaultValue) {
+  public UpdateEvaluationFormulaModel defaultValue(UpdateValueModel defaultValue) {
     this.defaultValue = defaultValue;
     return this;
   }
@@ -81,21 +81,21 @@ public class UpdateEvaluationFormulaModel {
    * @return defaultValue
    */
   @javax.annotation.Nonnull
-  public ValueModel getDefaultValue() {
+  public UpdateValueModel getDefaultValue() {
     return defaultValue;
   }
 
-  public void setDefaultValue(ValueModel defaultValue) {
+  public void setDefaultValue(UpdateValueModel defaultValue) {
     this.defaultValue = defaultValue;
   }
 
 
-  public UpdateEvaluationFormulaModel targetingRules(List<TargetingRuleModel> targetingRules) {
+  public UpdateEvaluationFormulaModel targetingRules(List<UpdateTargetingRuleModel> targetingRules) {
     this.targetingRules = targetingRules;
     return this;
   }
 
-  public UpdateEvaluationFormulaModel addTargetingRulesItem(TargetingRuleModel targetingRulesItem) {
+  public UpdateEvaluationFormulaModel addTargetingRulesItem(UpdateTargetingRuleModel targetingRulesItem) {
     if (this.targetingRules == null) {
       this.targetingRules = new ArrayList<>();
     }
@@ -108,11 +108,11 @@ public class UpdateEvaluationFormulaModel {
    * @return targetingRules
    */
   @javax.annotation.Nullable
-  public List<TargetingRuleModel> getTargetingRules() {
+  public List<UpdateTargetingRuleModel> getTargetingRules() {
     return targetingRules;
   }
 
-  public void setTargetingRules(List<TargetingRuleModel> targetingRules) {
+  public void setTargetingRules(List<UpdateTargetingRuleModel> targetingRules) {
     this.targetingRules = targetingRules;
   }
 
@@ -272,7 +272,7 @@ public class UpdateEvaluationFormulaModel {
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the required field `defaultValue`
-      ValueModel.validateJsonElement(jsonObj.get("defaultValue"));
+      UpdateValueModel.validateJsonElement(jsonObj.get("defaultValue"));
       if (jsonObj.get("targetingRules") != null && !jsonObj.get("targetingRules").isJsonNull()) {
         JsonArray jsonArraytargetingRules = jsonObj.getAsJsonArray("targetingRules");
         if (jsonArraytargetingRules != null) {
@@ -283,7 +283,7 @@ public class UpdateEvaluationFormulaModel {
 
           // validate the optional field `targetingRules` (array)
           for (int i = 0; i < jsonArraytargetingRules.size(); i++) {
-            TargetingRuleModel.validateJsonElement(jsonArraytargetingRules.get(i));
+            UpdateTargetingRuleModel.validateJsonElement(jsonArraytargetingRules.get(i));
           };
         }
       }

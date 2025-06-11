@@ -23,7 +23,6 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.UUID;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,7 +51,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * Details of the Product.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class ProductModel {
   public static final String SERIALIZED_NAME_ORGANIZATION = "organization";
   @SerializedName(SERIALIZED_NAME_ORGANIZATION)
@@ -90,7 +89,7 @@ public class ProductModel {
    * Get organization
    * @return organization
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public OrganizationModel getOrganization() {
     return organization;
   }
@@ -109,7 +108,7 @@ public class ProductModel {
    * Identifier of the Product.
    * @return productId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public UUID getProductId() {
     return productId;
   }
@@ -128,7 +127,7 @@ public class ProductModel {
    * Name of the Product.
    * @return name
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
@@ -163,10 +162,10 @@ public class ProductModel {
   }
 
   /**
-   * The order of the Product represented on the ConfigCat Dashboard.  Determined from an ascending sequence of integers.
+   * The order of the Product represented on the ConfigCat Dashboard. Determined from an ascending sequence of integers.
    * @return order
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Integer getOrder() {
     return order;
   }
@@ -185,7 +184,7 @@ public class ProductModel {
    * Determines whether a mandatory reason must be given every time when the Feature Flags or Settings within a Product are saved.
    * @return reasonRequired
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getReasonRequired() {
     return reasonRequired;
   }
@@ -258,20 +257,9 @@ public class ProductModel {
         Objects.equals(this.additionalProperties, productModel.additionalProperties);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(organization, productId, name, description, order, reasonRequired, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -316,6 +304,12 @@ public class ProductModel {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("organization");
+    openapiRequiredFields.add("productId");
+    openapiRequiredFields.add("name");
+    openapiRequiredFields.add("description");
+    openapiRequiredFields.add("order");
+    openapiRequiredFields.add("reasonRequired");
   }
 
   /**
@@ -330,15 +324,20 @@ public class ProductModel {
           throw new IllegalArgumentException(String.format("The required field(s) %s in ProductModel is not found in the empty JSON string", ProductModel.openapiRequiredFields.toString()));
         }
       }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `organization`
-      if (jsonObj.get("organization") != null && !jsonObj.get("organization").isJsonNull()) {
-        OrganizationModel.validateJsonElement(jsonObj.get("organization"));
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ProductModel.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
       }
-      if ((jsonObj.get("productId") != null && !jsonObj.get("productId").isJsonNull()) && !jsonObj.get("productId").isJsonPrimitive()) {
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `organization`
+      OrganizationModel.validateJsonElement(jsonObj.get("organization"));
+      if (!jsonObj.get("productId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `productId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("productId").toString()));
       }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+      if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {

@@ -183,5 +183,11 @@
 
 * `AWS_DISCONNECTED` (value: `"awsDisconnected"`)
 
+* `USER_ENABLED` (value: `"userEnabled"`)
+
+* `SYNC_USER_DELETED` (value: `"syncUserDeleted"`)
+
+* `SYNC_GROUP_DELETED` (value: `"syncGroupDeleted"`)
+
 
 

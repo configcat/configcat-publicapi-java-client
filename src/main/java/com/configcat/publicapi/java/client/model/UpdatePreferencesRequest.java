@@ -54,7 +54,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * UpdatePreferencesRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class UpdatePreferencesRequest {
   public static final String SERIALIZED_NAME_REASON_REQUIRED = "reasonRequired";
   @SerializedName(SERIALIZED_NAME_REASON_REQUIRED)

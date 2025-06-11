@@ -19,6 +19,7 @@ import com.configcat.publicapi.java.client.model.RolloutPercentageItemModel;
 import com.configcat.publicapi.java.client.model.RolloutRuleModel;
 import com.configcat.publicapi.java.client.model.SettingDataModel;
 import com.configcat.publicapi.java.client.model.SettingTagModel;
+import com.configcat.publicapi.java.client.model.SettingValueType;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -29,7 +30,6 @@ import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -58,20 +58,8 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * ConfigSettingValueModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class ConfigSettingValueModel {
-  public static final String SERIALIZED_NAME_ROLLOUT_RULES = "rolloutRules";
-  @SerializedName(SERIALIZED_NAME_ROLLOUT_RULES)
-  private List<RolloutRuleModel> rolloutRules;
-
-  public static final String SERIALIZED_NAME_ROLLOUT_PERCENTAGE_ITEMS = "rolloutPercentageItems";
-  @SerializedName(SERIALIZED_NAME_ROLLOUT_PERCENTAGE_ITEMS)
-  private List<RolloutPercentageItemModel> rolloutPercentageItems;
-
-  public static final String SERIALIZED_NAME_VALUE = "value";
-  @SerializedName(SERIALIZED_NAME_VALUE)
-  private Object value = null;
-
   public static final String SERIALIZED_NAME_SETTING = "setting";
   @SerializedName(SERIALIZED_NAME_SETTING)
   private SettingDataModel setting;
@@ -90,87 +78,26 @@ public class ConfigSettingValueModel {
 
   public static final String SERIALIZED_NAME_INTEGRATION_LINKS = "integrationLinks";
   @SerializedName(SERIALIZED_NAME_INTEGRATION_LINKS)
-  private List<IntegrationLinkModel> integrationLinks;
+  private List<IntegrationLinkModel> integrationLinks = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SETTING_TAGS = "settingTags";
   @SerializedName(SERIALIZED_NAME_SETTING_TAGS)
-  private List<SettingTagModel> settingTags;
+  private List<SettingTagModel> settingTags = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_ROLLOUT_RULES = "rolloutRules";
+  @SerializedName(SERIALIZED_NAME_ROLLOUT_RULES)
+  private List<RolloutRuleModel> rolloutRules = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_ROLLOUT_PERCENTAGE_ITEMS = "rolloutPercentageItems";
+  @SerializedName(SERIALIZED_NAME_ROLLOUT_PERCENTAGE_ITEMS)
+  private List<RolloutPercentageItemModel> rolloutPercentageItems = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_VALUE = "value";
+  @SerializedName(SERIALIZED_NAME_VALUE)
+  private SettingValueType value;
 
   public ConfigSettingValueModel() {
   }
-
-  public ConfigSettingValueModel rolloutRules(List<RolloutRuleModel> rolloutRules) {
-    this.rolloutRules = rolloutRules;
-    return this;
-  }
-
-  public ConfigSettingValueModel addRolloutRulesItem(RolloutRuleModel rolloutRulesItem) {
-    if (this.rolloutRules == null) {
-      this.rolloutRules = new ArrayList<>();
-    }
-    this.rolloutRules.add(rolloutRulesItem);
-    return this;
-  }
-
-  /**
-   * The targeting rule collection.
-   * @return rolloutRules
-   */
-  @javax.annotation.Nullable
-  public List<RolloutRuleModel> getRolloutRules() {
-    return rolloutRules;
-  }
-
-  public void setRolloutRules(List<RolloutRuleModel> rolloutRules) {
-    this.rolloutRules = rolloutRules;
-  }
-
-
-  public ConfigSettingValueModel rolloutPercentageItems(List<RolloutPercentageItemModel> rolloutPercentageItems) {
-    this.rolloutPercentageItems = rolloutPercentageItems;
-    return this;
-  }
-
-  public ConfigSettingValueModel addRolloutPercentageItemsItem(RolloutPercentageItemModel rolloutPercentageItemsItem) {
-    if (this.rolloutPercentageItems == null) {
-      this.rolloutPercentageItems = new ArrayList<>();
-    }
-    this.rolloutPercentageItems.add(rolloutPercentageItemsItem);
-    return this;
-  }
-
-  /**
-   * The percentage rule collection.
-   * @return rolloutPercentageItems
-   */
-  @javax.annotation.Nullable
-  public List<RolloutPercentageItemModel> getRolloutPercentageItems() {
-    return rolloutPercentageItems;
-  }
-
-  public void setRolloutPercentageItems(List<RolloutPercentageItemModel> rolloutPercentageItems) {
-    this.rolloutPercentageItems = rolloutPercentageItems;
-  }
-
-
-  public ConfigSettingValueModel value(Object value) {
-    this.value = value;
-    return this;
-  }
-
-  /**
-   * The value to serve. It must respect the setting type.
-   * @return value
-   */
-  @javax.annotation.Nullable
-  public Object getValue() {
-    return value;
-  }
-
-  public void setValue(Object value) {
-    this.value = value;
-  }
-
 
   public ConfigSettingValueModel setting(SettingDataModel setting) {
     this.setting = setting;
@@ -181,7 +108,7 @@ public class ConfigSettingValueModel {
    * Get setting
    * @return setting
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public SettingDataModel getSetting() {
     return setting;
   }
@@ -265,7 +192,7 @@ public class ConfigSettingValueModel {
    * The integration links attached to the Feature Flag or Setting.
    * @return integrationLinks
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public List<IntegrationLinkModel> getIntegrationLinks() {
     return integrationLinks;
   }
@@ -292,13 +219,86 @@ public class ConfigSettingValueModel {
    * The tags attached to the Feature Flag or Setting.
    * @return settingTags
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public List<SettingTagModel> getSettingTags() {
     return settingTags;
   }
 
   public void setSettingTags(List<SettingTagModel> settingTags) {
     this.settingTags = settingTags;
+  }
+
+
+  public ConfigSettingValueModel rolloutRules(List<RolloutRuleModel> rolloutRules) {
+    this.rolloutRules = rolloutRules;
+    return this;
+  }
+
+  public ConfigSettingValueModel addRolloutRulesItem(RolloutRuleModel rolloutRulesItem) {
+    if (this.rolloutRules == null) {
+      this.rolloutRules = new ArrayList<>();
+    }
+    this.rolloutRules.add(rolloutRulesItem);
+    return this;
+  }
+
+  /**
+   * The targeting rule collection.
+   * @return rolloutRules
+   */
+  @javax.annotation.Nonnull
+  public List<RolloutRuleModel> getRolloutRules() {
+    return rolloutRules;
+  }
+
+  public void setRolloutRules(List<RolloutRuleModel> rolloutRules) {
+    this.rolloutRules = rolloutRules;
+  }
+
+
+  public ConfigSettingValueModel rolloutPercentageItems(List<RolloutPercentageItemModel> rolloutPercentageItems) {
+    this.rolloutPercentageItems = rolloutPercentageItems;
+    return this;
+  }
+
+  public ConfigSettingValueModel addRolloutPercentageItemsItem(RolloutPercentageItemModel rolloutPercentageItemsItem) {
+    if (this.rolloutPercentageItems == null) {
+      this.rolloutPercentageItems = new ArrayList<>();
+    }
+    this.rolloutPercentageItems.add(rolloutPercentageItemsItem);
+    return this;
+  }
+
+  /**
+   * The percentage rule collection.
+   * @return rolloutPercentageItems
+   */
+  @javax.annotation.Nonnull
+  public List<RolloutPercentageItemModel> getRolloutPercentageItems() {
+    return rolloutPercentageItems;
+  }
+
+  public void setRolloutPercentageItems(List<RolloutPercentageItemModel> rolloutPercentageItems) {
+    this.rolloutPercentageItems = rolloutPercentageItems;
+  }
+
+
+  public ConfigSettingValueModel value(SettingValueType value) {
+    this.value = value;
+    return this;
+  }
+
+  /**
+   * The value to serve. It must respect the setting type. In some generated clients for strictly typed languages you may use double/float properties to handle integer values.
+   * @return value
+   */
+  @javax.annotation.Nonnull
+  public SettingValueType getValue() {
+    return value;
+  }
+
+  public void setValue(SettingValueType value) {
+    this.value = value;
   }
 
   /**
@@ -356,47 +356,36 @@ public class ConfigSettingValueModel {
       return false;
     }
     ConfigSettingValueModel configSettingValueModel = (ConfigSettingValueModel) o;
-    return Objects.equals(this.rolloutRules, configSettingValueModel.rolloutRules) &&
-        Objects.equals(this.rolloutPercentageItems, configSettingValueModel.rolloutPercentageItems) &&
-        Objects.equals(this.value, configSettingValueModel.value) &&
-        Objects.equals(this.setting, configSettingValueModel.setting) &&
+    return Objects.equals(this.setting, configSettingValueModel.setting) &&
         Objects.equals(this.updatedAt, configSettingValueModel.updatedAt) &&
         Objects.equals(this.lastUpdaterUserEmail, configSettingValueModel.lastUpdaterUserEmail) &&
         Objects.equals(this.lastUpdaterUserFullName, configSettingValueModel.lastUpdaterUserFullName) &&
         Objects.equals(this.integrationLinks, configSettingValueModel.integrationLinks) &&
-        Objects.equals(this.settingTags, configSettingValueModel.settingTags)&&
+        Objects.equals(this.settingTags, configSettingValueModel.settingTags) &&
+        Objects.equals(this.rolloutRules, configSettingValueModel.rolloutRules) &&
+        Objects.equals(this.rolloutPercentageItems, configSettingValueModel.rolloutPercentageItems) &&
+        Objects.equals(this.value, configSettingValueModel.value)&&
         Objects.equals(this.additionalProperties, configSettingValueModel.additionalProperties);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(rolloutRules, rolloutPercentageItems, value, setting, updatedAt, lastUpdaterUserEmail, lastUpdaterUserFullName, integrationLinks, settingTags, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(setting, updatedAt, lastUpdaterUserEmail, lastUpdaterUserFullName, integrationLinks, settingTags, rolloutRules, rolloutPercentageItems, value, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ConfigSettingValueModel {\n");
-    sb.append("    rolloutRules: ").append(toIndentedString(rolloutRules)).append("\n");
-    sb.append("    rolloutPercentageItems: ").append(toIndentedString(rolloutPercentageItems)).append("\n");
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    setting: ").append(toIndentedString(setting)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    lastUpdaterUserEmail: ").append(toIndentedString(lastUpdaterUserEmail)).append("\n");
     sb.append("    lastUpdaterUserFullName: ").append(toIndentedString(lastUpdaterUserFullName)).append("\n");
     sb.append("    integrationLinks: ").append(toIndentedString(integrationLinks)).append("\n");
     sb.append("    settingTags: ").append(toIndentedString(settingTags)).append("\n");
+    sb.append("    rolloutRules: ").append(toIndentedString(rolloutRules)).append("\n");
+    sb.append("    rolloutPercentageItems: ").append(toIndentedString(rolloutPercentageItems)).append("\n");
+    sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -420,18 +409,27 @@ public class ConfigSettingValueModel {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("rolloutRules");
-    openapiFields.add("rolloutPercentageItems");
-    openapiFields.add("value");
     openapiFields.add("setting");
     openapiFields.add("updatedAt");
     openapiFields.add("lastUpdaterUserEmail");
     openapiFields.add("lastUpdaterUserFullName");
     openapiFields.add("integrationLinks");
     openapiFields.add("settingTags");
+    openapiFields.add("rolloutRules");
+    openapiFields.add("rolloutPercentageItems");
+    openapiFields.add("value");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("setting");
+    openapiRequiredFields.add("updatedAt");
+    openapiRequiredFields.add("lastUpdaterUserEmail");
+    openapiRequiredFields.add("lastUpdaterUserFullName");
+    openapiRequiredFields.add("integrationLinks");
+    openapiRequiredFields.add("settingTags");
+    openapiRequiredFields.add("rolloutRules");
+    openapiRequiredFields.add("rolloutPercentageItems");
+    openapiRequiredFields.add("value");
   }
 
   /**
@@ -446,73 +444,64 @@ public class ConfigSettingValueModel {
           throw new IllegalArgumentException(String.format("The required field(s) %s in ConfigSettingValueModel is not found in the empty JSON string", ConfigSettingValueModel.openapiRequiredFields.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ConfigSettingValueModel.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (jsonObj.get("rolloutRules") != null && !jsonObj.get("rolloutRules").isJsonNull()) {
-        JsonArray jsonArrayrolloutRules = jsonObj.getAsJsonArray("rolloutRules");
-        if (jsonArrayrolloutRules != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("rolloutRules").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `rolloutRules` to be an array in the JSON string but got `%s`", jsonObj.get("rolloutRules").toString()));
-          }
-
-          // validate the optional field `rolloutRules` (array)
-          for (int i = 0; i < jsonArrayrolloutRules.size(); i++) {
-            RolloutRuleModel.validateJsonElement(jsonArrayrolloutRules.get(i));
-          };
-        }
-      }
-      if (jsonObj.get("rolloutPercentageItems") != null && !jsonObj.get("rolloutPercentageItems").isJsonNull()) {
-        JsonArray jsonArrayrolloutPercentageItems = jsonObj.getAsJsonArray("rolloutPercentageItems");
-        if (jsonArrayrolloutPercentageItems != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("rolloutPercentageItems").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `rolloutPercentageItems` to be an array in the JSON string but got `%s`", jsonObj.get("rolloutPercentageItems").toString()));
-          }
-
-          // validate the optional field `rolloutPercentageItems` (array)
-          for (int i = 0; i < jsonArrayrolloutPercentageItems.size(); i++) {
-            RolloutPercentageItemModel.validateJsonElement(jsonArrayrolloutPercentageItems.get(i));
-          };
-        }
-      }
-      // validate the optional field `setting`
-      if (jsonObj.get("setting") != null && !jsonObj.get("setting").isJsonNull()) {
-        SettingDataModel.validateJsonElement(jsonObj.get("setting"));
-      }
+      // validate the required field `setting`
+      SettingDataModel.validateJsonElement(jsonObj.get("setting"));
       if ((jsonObj.get("lastUpdaterUserEmail") != null && !jsonObj.get("lastUpdaterUserEmail").isJsonNull()) && !jsonObj.get("lastUpdaterUserEmail").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `lastUpdaterUserEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lastUpdaterUserEmail").toString()));
       }
       if ((jsonObj.get("lastUpdaterUserFullName") != null && !jsonObj.get("lastUpdaterUserFullName").isJsonNull()) && !jsonObj.get("lastUpdaterUserFullName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `lastUpdaterUserFullName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lastUpdaterUserFullName").toString()));
       }
-      if (jsonObj.get("integrationLinks") != null && !jsonObj.get("integrationLinks").isJsonNull()) {
-        JsonArray jsonArrayintegrationLinks = jsonObj.getAsJsonArray("integrationLinks");
-        if (jsonArrayintegrationLinks != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("integrationLinks").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `integrationLinks` to be an array in the JSON string but got `%s`", jsonObj.get("integrationLinks").toString()));
-          }
-
-          // validate the optional field `integrationLinks` (array)
-          for (int i = 0; i < jsonArrayintegrationLinks.size(); i++) {
-            IntegrationLinkModel.validateJsonElement(jsonArrayintegrationLinks.get(i));
-          };
-        }
+      // ensure the json data is an array
+      if (!jsonObj.get("integrationLinks").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `integrationLinks` to be an array in the JSON string but got `%s`", jsonObj.get("integrationLinks").toString()));
       }
-      if (jsonObj.get("settingTags") != null && !jsonObj.get("settingTags").isJsonNull()) {
-        JsonArray jsonArraysettingTags = jsonObj.getAsJsonArray("settingTags");
-        if (jsonArraysettingTags != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("settingTags").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `settingTags` to be an array in the JSON string but got `%s`", jsonObj.get("settingTags").toString()));
-          }
 
-          // validate the optional field `settingTags` (array)
-          for (int i = 0; i < jsonArraysettingTags.size(); i++) {
-            SettingTagModel.validateJsonElement(jsonArraysettingTags.get(i));
-          };
-        }
+      JsonArray jsonArrayintegrationLinks = jsonObj.getAsJsonArray("integrationLinks");
+      // validate the required field `integrationLinks` (array)
+      for (int i = 0; i < jsonArrayintegrationLinks.size(); i++) {
+        IntegrationLinkModel.validateJsonElement(jsonArrayintegrationLinks.get(i));
+      };
+      // ensure the json data is an array
+      if (!jsonObj.get("settingTags").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `settingTags` to be an array in the JSON string but got `%s`", jsonObj.get("settingTags").toString()));
       }
+
+      JsonArray jsonArraysettingTags = jsonObj.getAsJsonArray("settingTags");
+      // validate the required field `settingTags` (array)
+      for (int i = 0; i < jsonArraysettingTags.size(); i++) {
+        SettingTagModel.validateJsonElement(jsonArraysettingTags.get(i));
+      };
+      // ensure the json data is an array
+      if (!jsonObj.get("rolloutRules").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `rolloutRules` to be an array in the JSON string but got `%s`", jsonObj.get("rolloutRules").toString()));
+      }
+
+      JsonArray jsonArrayrolloutRules = jsonObj.getAsJsonArray("rolloutRules");
+      // validate the required field `rolloutRules` (array)
+      for (int i = 0; i < jsonArrayrolloutRules.size(); i++) {
+        RolloutRuleModel.validateJsonElement(jsonArrayrolloutRules.get(i));
+      };
+      // ensure the json data is an array
+      if (!jsonObj.get("rolloutPercentageItems").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `rolloutPercentageItems` to be an array in the JSON string but got `%s`", jsonObj.get("rolloutPercentageItems").toString()));
+      }
+
+      JsonArray jsonArrayrolloutPercentageItems = jsonObj.getAsJsonArray("rolloutPercentageItems");
+      // validate the required field `rolloutPercentageItems` (array)
+      for (int i = 0; i < jsonArrayrolloutPercentageItems.size(); i++) {
+        RolloutPercentageItemModel.validateJsonElement(jsonArrayrolloutPercentageItems.get(i));
+      };
+      // validate the required field `value`
+      SettingValueType.validateJsonElement(jsonObj.get("value"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

@@ -14,7 +14,7 @@
 package com.configcat.publicapi.java.client.model;
 
 import java.util.Objects;
-import com.configcat.publicapi.java.client.model.ReferenceLines;
+import com.configcat.publicapi.java.client.model.ReferenceLinesRequest;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -52,7 +52,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * FlagReference
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class FlagReference {
   public static final String SERIALIZED_NAME_SETTING_ID = "settingId";
   @SerializedName(SERIALIZED_NAME_SETTING_ID)
@@ -60,7 +60,7 @@ public class FlagReference {
 
   public static final String SERIALIZED_NAME_REFERENCES = "references";
   @SerializedName(SERIALIZED_NAME_REFERENCES)
-  private List<ReferenceLines> references = new ArrayList<>();
+  private List<ReferenceLinesRequest> references = new ArrayList<>();
 
   public FlagReference() {
   }
@@ -84,12 +84,12 @@ public class FlagReference {
   }
 
 
-  public FlagReference references(List<ReferenceLines> references) {
+  public FlagReference references(List<ReferenceLinesRequest> references) {
     this.references = references;
     return this;
   }
 
-  public FlagReference addReferencesItem(ReferenceLines referencesItem) {
+  public FlagReference addReferencesItem(ReferenceLinesRequest referencesItem) {
     if (this.references == null) {
       this.references = new ArrayList<>();
     }
@@ -102,11 +102,11 @@ public class FlagReference {
    * @return references
    */
   @javax.annotation.Nonnull
-  public List<ReferenceLines> getReferences() {
+  public List<ReferenceLinesRequest> getReferences() {
     return references;
   }
 
-  public void setReferences(List<ReferenceLines> references) {
+  public void setReferences(List<ReferenceLinesRequest> references) {
     this.references = references;
   }
 
@@ -241,7 +241,7 @@ public class FlagReference {
       JsonArray jsonArrayreferences = jsonObj.getAsJsonArray("references");
       // validate the required field `references` (array)
       for (int i = 0; i < jsonArrayreferences.size(); i++) {
-        ReferenceLines.validateJsonElement(jsonArrayreferences.get(i));
+        ReferenceLinesRequest.validateJsonElement(jsonArrayreferences.get(i));
       };
   }
 

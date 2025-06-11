@@ -7,10 +7,10 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**settingTagId** | **Long** |  |  [optional] |
-|**tagId** | **Long** |  |  [optional] |
-|**name** | **String** |  |  [optional] |
-|**color** | **String** |  |  [optional] |
+|**settingTagId** | **Long** |  |  |
+|**tagId** | **Long** |  |  |
+|**name** | **String** |  |  |
+|**color** | **String** |  |  |
 
 
 

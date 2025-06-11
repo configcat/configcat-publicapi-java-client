@@ -54,7 +54,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * CreateSettingInitialValues
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class CreateSettingInitialValues {
   public static final String SERIALIZED_NAME_HINT = "hint";
   @SerializedName(SERIALIZED_NAME_HINT)
@@ -83,6 +83,10 @@ public class CreateSettingInitialValues {
   public static final String SERIALIZED_NAME_INITIAL_VALUES = "initialValues";
   @SerializedName(SERIALIZED_NAME_INITIAL_VALUES)
   private List<InitialValue> initialValues;
+
+  public static final String SERIALIZED_NAME_SETTING_ID_TO_INIT_FROM = "settingIdToInitFrom";
+  @SerializedName(SERIALIZED_NAME_SETTING_ID_TO_INIT_FROM)
+  private Integer settingIdToInitFrom;
 
   public CreateSettingInitialValues() {
   }
@@ -139,7 +143,7 @@ public class CreateSettingInitialValues {
   }
 
   /**
-   * The order of the Setting represented on the ConfigCat Dashboard.  Determined from an ascending sequence of integers.
+   * The order of the Setting represented on the ConfigCat Dashboard. Determined from an ascending sequence of integers.
    * @return order
    */
   @javax.annotation.Nullable
@@ -223,7 +227,7 @@ public class CreateSettingInitialValues {
   }
 
   /**
-   * Optional, initial value of the Feature Flag or Setting in the given Environments.
+   * Optional, initial value of the Feature Flag or Setting in the given Environments. Only one of the SettingIdToInitFrom or the InitialValues properties can be set.
    * @return initialValues
    */
   @javax.annotation.Nullable
@@ -233,6 +237,25 @@ public class CreateSettingInitialValues {
 
   public void setInitialValues(List<InitialValue> initialValues) {
     this.initialValues = initialValues;
+  }
+
+
+  public CreateSettingInitialValues settingIdToInitFrom(Integer settingIdToInitFrom) {
+    this.settingIdToInitFrom = settingIdToInitFrom;
+    return this;
+  }
+
+  /**
+   * Optional, the SettingId to initialize the values and tags of the Feature Flag or Setting from. Only can be set if you have at least ReadOnly access in all the Environments. Only one of the SettingIdToInitFrom or the InitialValues properties can be set.
+   * @return settingIdToInitFrom
+   */
+  @javax.annotation.Nullable
+  public Integer getSettingIdToInitFrom() {
+    return settingIdToInitFrom;
+  }
+
+  public void setSettingIdToInitFrom(Integer settingIdToInitFrom) {
+    this.settingIdToInitFrom = settingIdToInitFrom;
   }
 
   /**
@@ -296,7 +319,8 @@ public class CreateSettingInitialValues {
         Objects.equals(this.key, createSettingInitialValues.key) &&
         Objects.equals(this.name, createSettingInitialValues.name) &&
         Objects.equals(this.settingType, createSettingInitialValues.settingType) &&
-        Objects.equals(this.initialValues, createSettingInitialValues.initialValues)&&
+        Objects.equals(this.initialValues, createSettingInitialValues.initialValues) &&
+        Objects.equals(this.settingIdToInitFrom, createSettingInitialValues.settingIdToInitFrom)&&
         Objects.equals(this.additionalProperties, createSettingInitialValues.additionalProperties);
   }
 
@@ -306,7 +330,7 @@ public class CreateSettingInitialValues {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hint, tags, order, key, name, settingType, initialValues, additionalProperties);
+    return Objects.hash(hint, tags, order, key, name, settingType, initialValues, settingIdToInitFrom, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -327,6 +351,7 @@ public class CreateSettingInitialValues {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    settingType: ").append(toIndentedString(settingType)).append("\n");
     sb.append("    initialValues: ").append(toIndentedString(initialValues)).append("\n");
+    sb.append("    settingIdToInitFrom: ").append(toIndentedString(settingIdToInitFrom)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -357,6 +382,7 @@ public class CreateSettingInitialValues {
     openapiFields.add("name");
     openapiFields.add("settingType");
     openapiFields.add("initialValues");
+    openapiFields.add("settingIdToInitFrom");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

@@ -23,7 +23,6 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.UUID;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,7 +51,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * Details of the Environment.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class EnvironmentModel {
   public static final String SERIALIZED_NAME_PRODUCT = "product";
   @SerializedName(SERIALIZED_NAME_PRODUCT)
@@ -94,7 +93,7 @@ public class EnvironmentModel {
    * Get product
    * @return product
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ProductModel getProduct() {
     return product;
   }
@@ -113,7 +112,7 @@ public class EnvironmentModel {
    * Identifier of the Environment.
    * @return environmentId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public UUID getEnvironmentId() {
     return environmentId;
   }
@@ -132,7 +131,7 @@ public class EnvironmentModel {
    * Name of the Environment.
    * @return name
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
@@ -189,7 +188,7 @@ public class EnvironmentModel {
    * The order of the Environment represented on the ConfigCat Dashboard.
    * @return order
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Integer getOrder() {
     return order;
   }
@@ -208,7 +207,7 @@ public class EnvironmentModel {
    * Determines whether a mandatory reason must be given every time when the Feature Flags or Settings in the given Environment are saved.
    * @return reasonRequired
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getReasonRequired() {
     return reasonRequired;
   }
@@ -282,20 +281,9 @@ public class EnvironmentModel {
         Objects.equals(this.additionalProperties, environmentModel.additionalProperties);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(product, environmentId, name, color, description, order, reasonRequired, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -342,6 +330,13 @@ public class EnvironmentModel {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("product");
+    openapiRequiredFields.add("environmentId");
+    openapiRequiredFields.add("name");
+    openapiRequiredFields.add("color");
+    openapiRequiredFields.add("description");
+    openapiRequiredFields.add("order");
+    openapiRequiredFields.add("reasonRequired");
   }
 
   /**
@@ -356,15 +351,20 @@ public class EnvironmentModel {
           throw new IllegalArgumentException(String.format("The required field(s) %s in EnvironmentModel is not found in the empty JSON string", EnvironmentModel.openapiRequiredFields.toString()));
         }
       }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `product`
-      if (jsonObj.get("product") != null && !jsonObj.get("product").isJsonNull()) {
-        ProductModel.validateJsonElement(jsonObj.get("product"));
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : EnvironmentModel.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
       }
-      if ((jsonObj.get("environmentId") != null && !jsonObj.get("environmentId").isJsonNull()) && !jsonObj.get("environmentId").isJsonPrimitive()) {
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `product`
+      ProductModel.validateJsonElement(jsonObj.get("product"));
+      if (!jsonObj.get("environmentId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
       }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+      if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("color") != null && !jsonObj.get("color").isJsonNull()) && !jsonObj.get("color").isJsonPrimitive()) {

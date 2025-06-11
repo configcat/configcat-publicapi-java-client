@@ -14,17 +14,13 @@
 package com.configcat.publicapi.java.client.model;
 
 import java.util.Objects;
-import com.configcat.publicapi.java.client.model.WebHookHttpMethod;
-import com.configcat.publicapi.java.client.model.WebhookHeaderModel;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
@@ -52,110 +48,56 @@ import java.util.Set;
 import com.configcat.publicapi.java.client.JSON;
 
 /**
- * WebHookRequest
+ * Determines a code reference line.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
-public class WebHookRequest {
-  public static final String SERIALIZED_NAME_URL = "url";
-  @SerializedName(SERIALIZED_NAME_URL)
-  private String url;
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+public class ReferenceLineRequest {
+  public static final String SERIALIZED_NAME_LINE_TEXT = "lineText";
+  @SerializedName(SERIALIZED_NAME_LINE_TEXT)
+  private String lineText;
 
-  public static final String SERIALIZED_NAME_CONTENT = "content";
-  @SerializedName(SERIALIZED_NAME_CONTENT)
-  private String content;
+  public static final String SERIALIZED_NAME_LINE_NUMBER = "lineNumber";
+  @SerializedName(SERIALIZED_NAME_LINE_NUMBER)
+  private Integer lineNumber;
 
-  public static final String SERIALIZED_NAME_HTTP_METHOD = "httpMethod";
-  @SerializedName(SERIALIZED_NAME_HTTP_METHOD)
-  private WebHookHttpMethod httpMethod;
-
-  public static final String SERIALIZED_NAME_WEB_HOOK_HEADERS = "webHookHeaders";
-  @SerializedName(SERIALIZED_NAME_WEB_HOOK_HEADERS)
-  private List<WebhookHeaderModel> webHookHeaders;
-
-  public WebHookRequest() {
+  public ReferenceLineRequest() {
   }
 
-  public WebHookRequest url(String url) {
-    this.url = url;
+  public ReferenceLineRequest lineText(String lineText) {
+    this.lineText = lineText;
     return this;
   }
 
   /**
-   * The URL of the Webhook.
-   * @return url
+   * The content of the reference line.
+   * @return lineText
+   */
+  @javax.annotation.Nullable
+  public String getLineText() {
+    return lineText;
+  }
+
+  public void setLineText(String lineText) {
+    this.lineText = lineText;
+  }
+
+
+  public ReferenceLineRequest lineNumber(Integer lineNumber) {
+    this.lineNumber = lineNumber;
+    return this;
+  }
+
+  /**
+   * The line number.
+   * @return lineNumber
    */
   @javax.annotation.Nonnull
-  public String getUrl() {
-    return url;
+  public Integer getLineNumber() {
+    return lineNumber;
   }
 
-  public void setUrl(String url) {
-    this.url = url;
-  }
-
-
-  public WebHookRequest content(String content) {
-    this.content = content;
-    return this;
-  }
-
-  /**
-   * The HTTP body content.
-   * @return content
-   */
-  @javax.annotation.Nullable
-  public String getContent() {
-    return content;
-  }
-
-  public void setContent(String content) {
-    this.content = content;
-  }
-
-
-  public WebHookRequest httpMethod(WebHookHttpMethod httpMethod) {
-    this.httpMethod = httpMethod;
-    return this;
-  }
-
-  /**
-   * Get httpMethod
-   * @return httpMethod
-   */
-  @javax.annotation.Nullable
-  public WebHookHttpMethod getHttpMethod() {
-    return httpMethod;
-  }
-
-  public void setHttpMethod(WebHookHttpMethod httpMethod) {
-    this.httpMethod = httpMethod;
-  }
-
-
-  public WebHookRequest webHookHeaders(List<WebhookHeaderModel> webHookHeaders) {
-    this.webHookHeaders = webHookHeaders;
-    return this;
-  }
-
-  public WebHookRequest addWebHookHeadersItem(WebhookHeaderModel webHookHeadersItem) {
-    if (this.webHookHeaders == null) {
-      this.webHookHeaders = new ArrayList<>();
-    }
-    this.webHookHeaders.add(webHookHeadersItem);
-    return this;
-  }
-
-  /**
-   * List of HTTP headers.
-   * @return webHookHeaders
-   */
-  @javax.annotation.Nullable
-  public List<WebhookHeaderModel> getWebHookHeaders() {
-    return webHookHeaders;
-  }
-
-  public void setWebHookHeaders(List<WebhookHeaderModel> webHookHeaders) {
-    this.webHookHeaders = webHookHeaders;
+  public void setLineNumber(Integer lineNumber) {
+    this.lineNumber = lineNumber;
   }
 
   /**
@@ -171,9 +113,9 @@ public class WebHookRequest {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the WebHookRequest instance itself
+   * @return the ReferenceLineRequest instance itself
    */
-  public WebHookRequest putAdditionalProperty(String key, Object value) {
+  public ReferenceLineRequest putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -212,12 +154,10 @@ public class WebHookRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    WebHookRequest webHookRequest = (WebHookRequest) o;
-    return Objects.equals(this.url, webHookRequest.url) &&
-        Objects.equals(this.content, webHookRequest.content) &&
-        Objects.equals(this.httpMethod, webHookRequest.httpMethod) &&
-        Objects.equals(this.webHookHeaders, webHookRequest.webHookHeaders)&&
-        Objects.equals(this.additionalProperties, webHookRequest.additionalProperties);
+    ReferenceLineRequest referenceLineRequest = (ReferenceLineRequest) o;
+    return Objects.equals(this.lineText, referenceLineRequest.lineText) &&
+        Objects.equals(this.lineNumber, referenceLineRequest.lineNumber)&&
+        Objects.equals(this.additionalProperties, referenceLineRequest.additionalProperties);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -226,7 +166,7 @@ public class WebHookRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(url, content, httpMethod, webHookHeaders, additionalProperties);
+    return Objects.hash(lineText, lineNumber, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -239,11 +179,9 @@ public class WebHookRequest {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class WebHookRequest {\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    content: ").append(toIndentedString(content)).append("\n");
-    sb.append("    httpMethod: ").append(toIndentedString(httpMethod)).append("\n");
-    sb.append("    webHookHeaders: ").append(toIndentedString(webHookHeaders)).append("\n");
+    sb.append("class ReferenceLineRequest {\n");
+    sb.append("    lineText: ").append(toIndentedString(lineText)).append("\n");
+    sb.append("    lineNumber: ").append(toIndentedString(lineNumber)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -267,59 +205,36 @@ public class WebHookRequest {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("url");
-    openapiFields.add("content");
-    openapiFields.add("httpMethod");
-    openapiFields.add("webHookHeaders");
+    openapiFields.add("lineText");
+    openapiFields.add("lineNumber");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("url");
+    openapiRequiredFields.add("lineNumber");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to WebHookRequest
+   * @throws IOException if the JSON Element is invalid with respect to ReferenceLineRequest
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!WebHookRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in WebHookRequest is not found in the empty JSON string", WebHookRequest.openapiRequiredFields.toString()));
+        if (!ReferenceLineRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ReferenceLineRequest is not found in the empty JSON string", ReferenceLineRequest.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : WebHookRequest.openapiRequiredFields) {
+      for (String requiredField : ReferenceLineRequest.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
-      }
-      if ((jsonObj.get("content") != null && !jsonObj.get("content").isJsonNull()) && !jsonObj.get("content").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `content` to be a primitive type in the JSON string but got `%s`", jsonObj.get("content").toString()));
-      }
-      // validate the optional field `httpMethod`
-      if (jsonObj.get("httpMethod") != null && !jsonObj.get("httpMethod").isJsonNull()) {
-        WebHookHttpMethod.validateJsonElement(jsonObj.get("httpMethod"));
-      }
-      if (jsonObj.get("webHookHeaders") != null && !jsonObj.get("webHookHeaders").isJsonNull()) {
-        JsonArray jsonArraywebHookHeaders = jsonObj.getAsJsonArray("webHookHeaders");
-        if (jsonArraywebHookHeaders != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("webHookHeaders").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `webHookHeaders` to be an array in the JSON string but got `%s`", jsonObj.get("webHookHeaders").toString()));
-          }
-
-          // validate the optional field `webHookHeaders` (array)
-          for (int i = 0; i < jsonArraywebHookHeaders.size(); i++) {
-            WebhookHeaderModel.validateJsonElement(jsonArraywebHookHeaders.get(i));
-          };
-        }
+      if ((jsonObj.get("lineText") != null && !jsonObj.get("lineText").isJsonNull()) && !jsonObj.get("lineText").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `lineText` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lineText").toString()));
       }
   }
 
@@ -327,16 +242,16 @@ public class WebHookRequest {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!WebHookRequest.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'WebHookRequest' and its subtypes
+       if (!ReferenceLineRequest.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ReferenceLineRequest' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<WebHookRequest> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(WebHookRequest.class));
+       final TypeAdapter<ReferenceLineRequest> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ReferenceLineRequest.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<WebHookRequest>() {
+       return (TypeAdapter<T>) new TypeAdapter<ReferenceLineRequest>() {
            @Override
-           public void write(JsonWriter out, WebHookRequest value) throws IOException {
+           public void write(JsonWriter out, ReferenceLineRequest value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additional properties
@@ -364,12 +279,12 @@ public class WebHookRequest {
            }
 
            @Override
-           public WebHookRequest read(JsonReader in) throws IOException {
+           public ReferenceLineRequest read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              JsonObject jsonObj = jsonElement.getAsJsonObject();
              // store additional fields in the deserialized instance
-             WebHookRequest instance = thisAdapter.fromJsonTree(jsonObj);
+             ReferenceLineRequest instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -396,18 +311,18 @@ public class WebHookRequest {
   }
 
   /**
-   * Create an instance of WebHookRequest given an JSON string
+   * Create an instance of ReferenceLineRequest given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of WebHookRequest
-   * @throws IOException if the JSON string is invalid with respect to WebHookRequest
+   * @return An instance of ReferenceLineRequest
+   * @throws IOException if the JSON string is invalid with respect to ReferenceLineRequest
    */
-  public static WebHookRequest fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, WebHookRequest.class);
+  public static ReferenceLineRequest fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ReferenceLineRequest.class);
   }
 
   /**
-   * Convert an instance of WebHookRequest to an JSON string
+   * Convert an instance of ReferenceLineRequest to an JSON string
    *
    * @return JSON string
    */

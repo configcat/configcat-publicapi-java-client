@@ -8,8 +8,8 @@ Describes the Member's permission.
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**product** | [**OrganizationProductModel**](OrganizationProductModel.md) |  |  [optional] |
-|**permissionGroup** | [**OrganizationPermissionGroupModel**](OrganizationPermissionGroupModel.md) |  |  [optional] |
+|**product** | [**OrganizationProductModel**](OrganizationProductModel.md) |  |  |
+|**permissionGroup** | [**OrganizationPermissionGroupModel**](OrganizationPermissionGroupModel.md) |  |  |
 
 
 

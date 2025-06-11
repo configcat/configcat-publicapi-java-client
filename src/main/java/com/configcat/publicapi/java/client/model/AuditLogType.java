@@ -205,7 +205,13 @@ public enum AuditLogType {
   
   AWS_CONNECTED("awsConnected"),
   
-  AWS_DISCONNECTED("awsDisconnected");
+  AWS_DISCONNECTED("awsDisconnected"),
+  
+  USER_ENABLED("userEnabled"),
+  
+  SYNC_USER_DELETED("syncUserDeleted"),
+  
+  SYNC_GROUP_DELETED("syncGroupDeleted");
 
   private String value;
 

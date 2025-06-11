@@ -7,10 +7,10 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**key** | **String** |  |  [optional] |
-|**description** | **String** |  |  [optional] |
-|**integrationLinkType** | **IntegrationLinkType** |  |  [optional] |
-|**url** | **String** |  |  [optional] |
+|**key** | **String** |  |  |
+|**description** | **String** |  |  |
+|**integrationLinkType** | **IntegrationLinkType** |  |  |
+|**url** | **String** |  |  |
 
 
 

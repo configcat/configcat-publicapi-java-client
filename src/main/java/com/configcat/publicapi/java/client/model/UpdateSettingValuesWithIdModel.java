@@ -24,7 +24,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -53,11 +52,11 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * UpdateSettingValuesWithIdModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class UpdateSettingValuesWithIdModel {
   public static final String SERIALIZED_NAME_SETTING_VALUES = "settingValues";
   @SerializedName(SERIALIZED_NAME_SETTING_VALUES)
-  private List<UpdateSettingValueWithSettingIdModel> settingValues;
+  private List<UpdateSettingValueWithSettingIdModel> settingValues = new ArrayList<>();
 
   public UpdateSettingValuesWithIdModel() {
   }
@@ -147,20 +146,9 @@ public class UpdateSettingValuesWithIdModel {
         Objects.equals(this.additionalProperties, updateSettingValuesWithIdModel.additionalProperties);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(settingValues, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

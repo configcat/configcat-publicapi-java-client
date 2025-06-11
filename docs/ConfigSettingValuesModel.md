@@ -7,11 +7,11 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**config** | [**ConfigModel**](ConfigModel.md) |  |  [optional] |
-|**environment** | [**EnvironmentModel**](EnvironmentModel.md) |  |  [optional] |
-|**readOnly** | **Boolean** |  |  [optional] |
-|**settingValues** | [**List&lt;ConfigSettingValueModel&gt;**](ConfigSettingValueModel.md) |  |  [optional] |
-|**featureFlagLimitations** | [**FeatureFlagLimitations**](FeatureFlagLimitations.md) |  |  [optional] |
+|**config** | [**ConfigModel**](ConfigModel.md) |  |  |
+|**environment** | [**EnvironmentModel**](EnvironmentModel.md) |  |  |
+|**readOnly** | **Boolean** |  |  |
+|**settingValues** | [**List&lt;ConfigSettingValueModel&gt;**](ConfigSettingValueModel.md) |  |  |
+|**featureFlagLimitations** | [**FeatureFlagLimitations**](FeatureFlagLimitations.md) |  |  |
 
 
 

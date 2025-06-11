@@ -23,7 +23,6 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,7 +51,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * Metadata of a Feature Flag or Setting.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class SettingDataModel {
   public static final String SERIALIZED_NAME_SETTING_ID = "settingId";
   @SerializedName(SERIALIZED_NAME_SETTING_ID)
@@ -106,7 +105,7 @@ public class SettingDataModel {
    * Identifier of the Feature Flag or Setting.
    * @return settingId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Integer getSettingId() {
     return settingId;
   }
@@ -125,7 +124,7 @@ public class SettingDataModel {
    * Key of the Feature Flag or Setting.
    * @return key
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getKey() {
     return key;
   }
@@ -144,7 +143,7 @@ public class SettingDataModel {
    * Name of the Feature Flag or Setting.
    * @return name
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
@@ -182,7 +181,7 @@ public class SettingDataModel {
    * Get settingType
    * @return settingType
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public SettingType getSettingType() {
     return settingType;
   }
@@ -201,7 +200,7 @@ public class SettingDataModel {
    * The order of the Feature Flag or Setting represented on the ConfigCat Dashboard.
    * @return order
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Integer getOrder() {
     return order;
   }
@@ -277,7 +276,7 @@ public class SettingDataModel {
    * Get isWatching
    * @return isWatching
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getIsWatching() {
     return isWatching;
   }
@@ -354,20 +353,9 @@ public class SettingDataModel {
         Objects.equals(this.additionalProperties, settingDataModel.additionalProperties);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(settingId, key, name, hint, settingType, order, createdAt, creatorEmail, creatorFullName, isWatching, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -420,6 +408,16 @@ public class SettingDataModel {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("settingId");
+    openapiRequiredFields.add("key");
+    openapiRequiredFields.add("name");
+    openapiRequiredFields.add("hint");
+    openapiRequiredFields.add("settingType");
+    openapiRequiredFields.add("order");
+    openapiRequiredFields.add("createdAt");
+    openapiRequiredFields.add("creatorEmail");
+    openapiRequiredFields.add("creatorFullName");
+    openapiRequiredFields.add("isWatching");
   }
 
   /**
@@ -434,20 +432,25 @@ public class SettingDataModel {
           throw new IllegalArgumentException(String.format("The required field(s) %s in SettingDataModel is not found in the empty JSON string", SettingDataModel.openapiRequiredFields.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : SettingDataModel.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("key") != null && !jsonObj.get("key").isJsonNull()) && !jsonObj.get("key").isJsonPrimitive()) {
+      if (!jsonObj.get("key").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+      if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("hint") != null && !jsonObj.get("hint").isJsonNull()) && !jsonObj.get("hint").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `hint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hint").toString()));
       }
-      // validate the optional field `settingType`
-      if (jsonObj.get("settingType") != null && !jsonObj.get("settingType").isJsonNull()) {
-        SettingType.validateJsonElement(jsonObj.get("settingType"));
-      }
+      // validate the required field `settingType`
+      SettingType.validateJsonElement(jsonObj.get("settingType"));
       if ((jsonObj.get("creatorEmail") != null && !jsonObj.get("creatorEmail").isJsonNull()) && !jsonObj.get("creatorEmail").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `creatorEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("creatorEmail").toString()));
       }

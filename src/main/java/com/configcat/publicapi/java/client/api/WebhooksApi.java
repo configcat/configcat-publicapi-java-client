@@ -29,8 +29,8 @@ import java.io.IOException;
 
 import com.configcat.publicapi.java.client.model.JsonPatchOperation;
 import java.util.UUID;
-import com.configcat.publicapi.java.client.model.WebHookRequest;
-import com.configcat.publicapi.java.client.model.WebhookModel;
+import com.configcat.publicapi.java.client.model.WebHookRequestModel;
+import com.configcat.publicapi.java.client.model.WebhookResponseModel;
 import com.configcat.publicapi.java.client.model.WebhookSigningKeysModel;
 
 import java.lang.reflect.Type;
@@ -80,7 +80,7 @@ public class WebhooksApi {
      * Build call for createWebhook
      * @param configId The identifier of the Config. (required)
      * @param environmentId The identifier of the Environment. (required)
-     * @param webHookRequest  (required)
+     * @param webHookRequestModel  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -93,7 +93,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createWebhookCall(UUID configId, UUID environmentId, WebHookRequest webHookRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createWebhookCall(UUID configId, UUID environmentId, WebHookRequestModel webHookRequestModel, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -107,7 +107,7 @@ public class WebhooksApi {
             basePath = null;
         }
 
-        Object localVarPostBody = webHookRequest;
+        Object localVarPostBody = webHookRequestModel;
 
         // create path and map variables
         String localVarPath = "/v1/configs/{configId}/environments/{environmentId}/webhooks"
@@ -143,7 +143,7 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createWebhookValidateBeforeCall(UUID configId, UUID environmentId, WebHookRequest webHookRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createWebhookValidateBeforeCall(UUID configId, UUID environmentId, WebHookRequestModel webHookRequestModel, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'configId' is set
         if (configId == null) {
             throw new ApiException("Missing the required parameter 'configId' when calling createWebhook(Async)");
@@ -154,12 +154,12 @@ public class WebhooksApi {
             throw new ApiException("Missing the required parameter 'environmentId' when calling createWebhook(Async)");
         }
 
-        // verify the required parameter 'webHookRequest' is set
-        if (webHookRequest == null) {
-            throw new ApiException("Missing the required parameter 'webHookRequest' when calling createWebhook(Async)");
+        // verify the required parameter 'webHookRequestModel' is set
+        if (webHookRequestModel == null) {
+            throw new ApiException("Missing the required parameter 'webHookRequestModel' when calling createWebhook(Async)");
         }
 
-        return createWebhookCall(configId, environmentId, webHookRequest, _callback);
+        return createWebhookCall(configId, environmentId, webHookRequestModel, _callback);
 
     }
 
@@ -168,8 +168,8 @@ public class WebhooksApi {
      * This endpoint creates a new Webhook in a specified Product identified by the &#x60;productId&#x60; parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.
      * @param configId The identifier of the Config. (required)
      * @param environmentId The identifier of the Environment. (required)
-     * @param webHookRequest  (required)
-     * @return WebhookModel
+     * @param webHookRequestModel  (required)
+     * @return WebhookResponseModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -180,8 +180,8 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public WebhookModel createWebhook(UUID configId, UUID environmentId, WebHookRequest webHookRequest) throws ApiException {
-        ApiResponse<WebhookModel> localVarResp = createWebhookWithHttpInfo(configId, environmentId, webHookRequest);
+    public WebhookResponseModel createWebhook(UUID configId, UUID environmentId, WebHookRequestModel webHookRequestModel) throws ApiException {
+        ApiResponse<WebhookResponseModel> localVarResp = createWebhookWithHttpInfo(configId, environmentId, webHookRequestModel);
         return localVarResp.getData();
     }
 
@@ -190,8 +190,8 @@ public class WebhooksApi {
      * This endpoint creates a new Webhook in a specified Product identified by the &#x60;productId&#x60; parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.
      * @param configId The identifier of the Config. (required)
      * @param environmentId The identifier of the Environment. (required)
-     * @param webHookRequest  (required)
-     * @return ApiResponse&lt;WebhookModel&gt;
+     * @param webHookRequestModel  (required)
+     * @return ApiResponse&lt;WebhookResponseModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -202,9 +202,9 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebhookModel> createWebhookWithHttpInfo(UUID configId, UUID environmentId, WebHookRequest webHookRequest) throws ApiException {
-        okhttp3.Call localVarCall = createWebhookValidateBeforeCall(configId, environmentId, webHookRequest, null);
-        Type localVarReturnType = new TypeToken<WebhookModel>(){}.getType();
+    public ApiResponse<WebhookResponseModel> createWebhookWithHttpInfo(UUID configId, UUID environmentId, WebHookRequestModel webHookRequestModel) throws ApiException {
+        okhttp3.Call localVarCall = createWebhookValidateBeforeCall(configId, environmentId, webHookRequestModel, null);
+        Type localVarReturnType = new TypeToken<WebhookResponseModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -213,7 +213,7 @@ public class WebhooksApi {
      * This endpoint creates a new Webhook in a specified Product identified by the &#x60;productId&#x60; parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.
      * @param configId The identifier of the Config. (required)
      * @param environmentId The identifier of the Environment. (required)
-     * @param webHookRequest  (required)
+     * @param webHookRequestModel  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -226,10 +226,10 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createWebhookAsync(UUID configId, UUID environmentId, WebHookRequest webHookRequest, final ApiCallback<WebhookModel> _callback) throws ApiException {
+    public okhttp3.Call createWebhookAsync(UUID configId, UUID environmentId, WebHookRequestModel webHookRequestModel, final ApiCallback<WebhookResponseModel> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createWebhookValidateBeforeCall(configId, environmentId, webHookRequest, _callback);
-        Type localVarReturnType = new TypeToken<WebhookModel>(){}.getType();
+        okhttp3.Call localVarCall = createWebhookValidateBeforeCall(configId, environmentId, webHookRequestModel, _callback);
+        Type localVarReturnType = new TypeToken<WebhookResponseModel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -438,7 +438,7 @@ public class WebhooksApi {
      * Get Webhook
      * This endpoint returns the metadata of a Webhook  identified by the &#x60;webhookId&#x60;.
      * @param webhookId The identifier of the Webhook. (required)
-     * @return WebhookModel
+     * @return WebhookResponseModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -449,8 +449,8 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public WebhookModel getWebhook(Integer webhookId) throws ApiException {
-        ApiResponse<WebhookModel> localVarResp = getWebhookWithHttpInfo(webhookId);
+    public WebhookResponseModel getWebhook(Integer webhookId) throws ApiException {
+        ApiResponse<WebhookResponseModel> localVarResp = getWebhookWithHttpInfo(webhookId);
         return localVarResp.getData();
     }
 
@@ -458,7 +458,7 @@ public class WebhooksApi {
      * Get Webhook
      * This endpoint returns the metadata of a Webhook  identified by the &#x60;webhookId&#x60;.
      * @param webhookId The identifier of the Webhook. (required)
-     * @return ApiResponse&lt;WebhookModel&gt;
+     * @return ApiResponse&lt;WebhookResponseModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -469,9 +469,9 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebhookModel> getWebhookWithHttpInfo(Integer webhookId) throws ApiException {
+    public ApiResponse<WebhookResponseModel> getWebhookWithHttpInfo(Integer webhookId) throws ApiException {
         okhttp3.Call localVarCall = getWebhookValidateBeforeCall(webhookId, null);
-        Type localVarReturnType = new TypeToken<WebhookModel>(){}.getType();
+        Type localVarReturnType = new TypeToken<WebhookResponseModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -491,10 +491,10 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWebhookAsync(Integer webhookId, final ApiCallback<WebhookModel> _callback) throws ApiException {
+    public okhttp3.Call getWebhookAsync(Integer webhookId, final ApiCallback<WebhookResponseModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getWebhookValidateBeforeCall(webhookId, _callback);
-        Type localVarReturnType = new TypeToken<WebhookModel>(){}.getType();
+        Type localVarReturnType = new TypeToken<WebhookResponseModel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -706,7 +706,7 @@ public class WebhooksApi {
      * List Webhooks
      * This endpoint returns the list of the Webhooks that belongs to the given Product identified by the &#x60;productId&#x60; parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.
      * @param productId The identifier of the Product. (required)
-     * @return List&lt;WebhookModel&gt;
+     * @return List&lt;WebhookResponseModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -715,8 +715,8 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public List<WebhookModel> getWebhooks(UUID productId) throws ApiException {
-        ApiResponse<List<WebhookModel>> localVarResp = getWebhooksWithHttpInfo(productId);
+    public List<WebhookResponseModel> getWebhooks(UUID productId) throws ApiException {
+        ApiResponse<List<WebhookResponseModel>> localVarResp = getWebhooksWithHttpInfo(productId);
         return localVarResp.getData();
     }
 
@@ -724,7 +724,7 @@ public class WebhooksApi {
      * List Webhooks
      * This endpoint returns the list of the Webhooks that belongs to the given Product identified by the &#x60;productId&#x60; parameter, which can be obtained from the [List Products](#operation/get-products) endpoint.
      * @param productId The identifier of the Product. (required)
-     * @return ApiResponse&lt;List&lt;WebhookModel&gt;&gt;
+     * @return ApiResponse&lt;List&lt;WebhookResponseModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -733,9 +733,9 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<WebhookModel>> getWebhooksWithHttpInfo(UUID productId) throws ApiException {
+    public ApiResponse<List<WebhookResponseModel>> getWebhooksWithHttpInfo(UUID productId) throws ApiException {
         okhttp3.Call localVarCall = getWebhooksValidateBeforeCall(productId, null);
-        Type localVarReturnType = new TypeToken<List<WebhookModel>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<WebhookResponseModel>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -753,17 +753,17 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWebhooksAsync(UUID productId, final ApiCallback<List<WebhookModel>> _callback) throws ApiException {
+    public okhttp3.Call getWebhooksAsync(UUID productId, final ApiCallback<List<WebhookResponseModel>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getWebhooksValidateBeforeCall(productId, _callback);
-        Type localVarReturnType = new TypeToken<List<WebhookModel>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<WebhookResponseModel>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for replaceWebhook
      * @param webhookId The identifier of the Webhook. (required)
-     * @param webHookRequest  (required)
+     * @param webHookRequestModel  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -776,7 +776,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call replaceWebhookCall(Integer webhookId, WebHookRequest webHookRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call replaceWebhookCall(Integer webhookId, WebHookRequestModel webHookRequestModel, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -790,7 +790,7 @@ public class WebhooksApi {
             basePath = null;
         }
 
-        Object localVarPostBody = webHookRequest;
+        Object localVarPostBody = webHookRequestModel;
 
         // create path and map variables
         String localVarPath = "/v1/webhooks/{webhookId}"
@@ -825,18 +825,18 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call replaceWebhookValidateBeforeCall(Integer webhookId, WebHookRequest webHookRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call replaceWebhookValidateBeforeCall(Integer webhookId, WebHookRequestModel webHookRequestModel, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'webhookId' is set
         if (webhookId == null) {
             throw new ApiException("Missing the required parameter 'webhookId' when calling replaceWebhook(Async)");
         }
 
-        // verify the required parameter 'webHookRequest' is set
-        if (webHookRequest == null) {
-            throw new ApiException("Missing the required parameter 'webHookRequest' when calling replaceWebhook(Async)");
+        // verify the required parameter 'webHookRequestModel' is set
+        if (webHookRequestModel == null) {
+            throw new ApiException("Missing the required parameter 'webHookRequestModel' when calling replaceWebhook(Async)");
         }
 
-        return replaceWebhookCall(webhookId, webHookRequest, _callback);
+        return replaceWebhookCall(webhookId, webHookRequestModel, _callback);
 
     }
 
@@ -844,8 +844,8 @@ public class WebhooksApi {
      * Replace Webhook
      * This endpoint replaces the whole value of a Webhook identified by the &#x60;webhookId&#x60; parameter.  **Important:** As this endpoint is doing a complete replace, it&#39;s important to set every other attribute that you don&#39;t want to change in its original state. Not listing one means it will reset.
      * @param webhookId The identifier of the Webhook. (required)
-     * @param webHookRequest  (required)
-     * @return WebhookModel
+     * @param webHookRequestModel  (required)
+     * @return WebhookResponseModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -856,8 +856,8 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public WebhookModel replaceWebhook(Integer webhookId, WebHookRequest webHookRequest) throws ApiException {
-        ApiResponse<WebhookModel> localVarResp = replaceWebhookWithHttpInfo(webhookId, webHookRequest);
+    public WebhookResponseModel replaceWebhook(Integer webhookId, WebHookRequestModel webHookRequestModel) throws ApiException {
+        ApiResponse<WebhookResponseModel> localVarResp = replaceWebhookWithHttpInfo(webhookId, webHookRequestModel);
         return localVarResp.getData();
     }
 
@@ -865,8 +865,8 @@ public class WebhooksApi {
      * Replace Webhook
      * This endpoint replaces the whole value of a Webhook identified by the &#x60;webhookId&#x60; parameter.  **Important:** As this endpoint is doing a complete replace, it&#39;s important to set every other attribute that you don&#39;t want to change in its original state. Not listing one means it will reset.
      * @param webhookId The identifier of the Webhook. (required)
-     * @param webHookRequest  (required)
-     * @return ApiResponse&lt;WebhookModel&gt;
+     * @param webHookRequestModel  (required)
+     * @return ApiResponse&lt;WebhookResponseModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -877,9 +877,9 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebhookModel> replaceWebhookWithHttpInfo(Integer webhookId, WebHookRequest webHookRequest) throws ApiException {
-        okhttp3.Call localVarCall = replaceWebhookValidateBeforeCall(webhookId, webHookRequest, null);
-        Type localVarReturnType = new TypeToken<WebhookModel>(){}.getType();
+    public ApiResponse<WebhookResponseModel> replaceWebhookWithHttpInfo(Integer webhookId, WebHookRequestModel webHookRequestModel) throws ApiException {
+        okhttp3.Call localVarCall = replaceWebhookValidateBeforeCall(webhookId, webHookRequestModel, null);
+        Type localVarReturnType = new TypeToken<WebhookResponseModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -887,7 +887,7 @@ public class WebhooksApi {
      * Replace Webhook (asynchronously)
      * This endpoint replaces the whole value of a Webhook identified by the &#x60;webhookId&#x60; parameter.  **Important:** As this endpoint is doing a complete replace, it&#39;s important to set every other attribute that you don&#39;t want to change in its original state. Not listing one means it will reset.
      * @param webhookId The identifier of the Webhook. (required)
-     * @param webHookRequest  (required)
+     * @param webHookRequestModel  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -900,10 +900,10 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call replaceWebhookAsync(Integer webhookId, WebHookRequest webHookRequest, final ApiCallback<WebhookModel> _callback) throws ApiException {
+    public okhttp3.Call replaceWebhookAsync(Integer webhookId, WebHookRequestModel webHookRequestModel, final ApiCallback<WebhookResponseModel> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = replaceWebhookValidateBeforeCall(webhookId, webHookRequest, _callback);
-        Type localVarReturnType = new TypeToken<WebhookModel>(){}.getType();
+        okhttp3.Call localVarCall = replaceWebhookValidateBeforeCall(webhookId, webHookRequestModel, _callback);
+        Type localVarReturnType = new TypeToken<WebhookResponseModel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -992,7 +992,7 @@ public class WebhooksApi {
      * This endpoint updates a Webhook identified by the &#x60;webhookId&#x60; parameter with a collection of [JSON Patch](https://jsonpatch.com) operations.  The advantage of using JSON Patch is that you can describe individual update operations on a resource without touching attributes that you don&#39;t want to change.  For example: We have the following resource. &#x60;&#x60;&#x60;json {   \&quot;webhookId\&quot;: 6,   \&quot;url\&quot;: \&quot;https://example.com/hook\&quot;,   \&quot;httpMethod\&quot;: \&quot;post\&quot;,   \&quot;content\&quot;: \&quot;null\&quot;,   \&quot;webHookHeaders\&quot;: [] } &#x60;&#x60;&#x60; If we send an update request body as below (it changes the &#x60;content&#x60; field and adds a new HTTP header): &#x60;&#x60;&#x60;json [   {     \&quot;op\&quot;: \&quot;replace\&quot;,      \&quot;path\&quot;: \&quot;/content\&quot;,      \&quot;value\&quot;: \&quot;Some webhook content.\&quot;   },    {     \&quot;op\&quot;: \&quot;add\&quot;,      \&quot;path\&quot;: \&quot;/webHookHeaders/-\&quot;,      \&quot;value\&quot;: {       \&quot;key\&quot;: \&quot;X-Custom-Header\&quot;,        \&quot;value\&quot;: \&quot;Custom header value\&quot;     }   } ] &#x60;&#x60;&#x60; Only the &#x60;content&#x60; and &#x60;webHookHeaders&#x60; are updated and all the other attributes remain unchanged. So we get a response like this: &#x60;&#x60;&#x60;json {   \&quot;webhookId\&quot;: 6,   \&quot;url\&quot;: \&quot;https://example.com/hook\&quot;,   \&quot;httpMethod\&quot;: \&quot;post\&quot;,    \&quot;content\&quot;: \&quot;Some webhook content.\&quot;,    \&quot;webHookHeaders\&quot;: [     {       \&quot;key\&quot;: \&quot;X-Custom-Header\&quot;,        \&quot;value\&quot;: \&quot;Custom header value\&quot;,        \&quot;isSecure\&quot;: false     }   ] } &#x60;&#x60;&#x60;
      * @param webhookId The identifier of the Webhook. (required)
      * @param jsonPatchOperation  (required)
-     * @return WebhookModel
+     * @return WebhookResponseModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1003,8 +1003,8 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public WebhookModel updateWebhook(Integer webhookId, List<JsonPatchOperation> jsonPatchOperation) throws ApiException {
-        ApiResponse<WebhookModel> localVarResp = updateWebhookWithHttpInfo(webhookId, jsonPatchOperation);
+    public WebhookResponseModel updateWebhook(Integer webhookId, List<JsonPatchOperation> jsonPatchOperation) throws ApiException {
+        ApiResponse<WebhookResponseModel> localVarResp = updateWebhookWithHttpInfo(webhookId, jsonPatchOperation);
         return localVarResp.getData();
     }
 
@@ -1013,7 +1013,7 @@ public class WebhooksApi {
      * This endpoint updates a Webhook identified by the &#x60;webhookId&#x60; parameter with a collection of [JSON Patch](https://jsonpatch.com) operations.  The advantage of using JSON Patch is that you can describe individual update operations on a resource without touching attributes that you don&#39;t want to change.  For example: We have the following resource. &#x60;&#x60;&#x60;json {   \&quot;webhookId\&quot;: 6,   \&quot;url\&quot;: \&quot;https://example.com/hook\&quot;,   \&quot;httpMethod\&quot;: \&quot;post\&quot;,   \&quot;content\&quot;: \&quot;null\&quot;,   \&quot;webHookHeaders\&quot;: [] } &#x60;&#x60;&#x60; If we send an update request body as below (it changes the &#x60;content&#x60; field and adds a new HTTP header): &#x60;&#x60;&#x60;json [   {     \&quot;op\&quot;: \&quot;replace\&quot;,      \&quot;path\&quot;: \&quot;/content\&quot;,      \&quot;value\&quot;: \&quot;Some webhook content.\&quot;   },    {     \&quot;op\&quot;: \&quot;add\&quot;,      \&quot;path\&quot;: \&quot;/webHookHeaders/-\&quot;,      \&quot;value\&quot;: {       \&quot;key\&quot;: \&quot;X-Custom-Header\&quot;,        \&quot;value\&quot;: \&quot;Custom header value\&quot;     }   } ] &#x60;&#x60;&#x60; Only the &#x60;content&#x60; and &#x60;webHookHeaders&#x60; are updated and all the other attributes remain unchanged. So we get a response like this: &#x60;&#x60;&#x60;json {   \&quot;webhookId\&quot;: 6,   \&quot;url\&quot;: \&quot;https://example.com/hook\&quot;,   \&quot;httpMethod\&quot;: \&quot;post\&quot;,    \&quot;content\&quot;: \&quot;Some webhook content.\&quot;,    \&quot;webHookHeaders\&quot;: [     {       \&quot;key\&quot;: \&quot;X-Custom-Header\&quot;,        \&quot;value\&quot;: \&quot;Custom header value\&quot;,        \&quot;isSecure\&quot;: false     }   ] } &#x60;&#x60;&#x60;
      * @param webhookId The identifier of the Webhook. (required)
      * @param jsonPatchOperation  (required)
-     * @return ApiResponse&lt;WebhookModel&gt;
+     * @return ApiResponse&lt;WebhookResponseModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1024,9 +1024,9 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebhookModel> updateWebhookWithHttpInfo(Integer webhookId, List<JsonPatchOperation> jsonPatchOperation) throws ApiException {
+    public ApiResponse<WebhookResponseModel> updateWebhookWithHttpInfo(Integer webhookId, List<JsonPatchOperation> jsonPatchOperation) throws ApiException {
         okhttp3.Call localVarCall = updateWebhookValidateBeforeCall(webhookId, jsonPatchOperation, null);
-        Type localVarReturnType = new TypeToken<WebhookModel>(){}.getType();
+        Type localVarReturnType = new TypeToken<WebhookResponseModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1047,10 +1047,10 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateWebhookAsync(Integer webhookId, List<JsonPatchOperation> jsonPatchOperation, final ApiCallback<WebhookModel> _callback) throws ApiException {
+    public okhttp3.Call updateWebhookAsync(Integer webhookId, List<JsonPatchOperation> jsonPatchOperation, final ApiCallback<WebhookResponseModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateWebhookValidateBeforeCall(webhookId, jsonPatchOperation, _callback);
-        Type localVarReturnType = new TypeToken<WebhookModel>(){}.getType();
+        Type localVarReturnType = new TypeToken<WebhookResponseModel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

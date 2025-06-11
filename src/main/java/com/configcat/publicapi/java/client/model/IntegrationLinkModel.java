@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,7 +50,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * IntegrationLinkModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class IntegrationLinkModel {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
@@ -119,7 +118,7 @@ public class IntegrationLinkModel {
    * Get integrationLinkType
    * @return integrationLinkType
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public IntegrationLinkType getIntegrationLinkType() {
     return integrationLinkType;
   }
@@ -209,20 +208,9 @@ public class IntegrationLinkModel {
         Objects.equals(this.additionalProperties, integrationLinkModel.additionalProperties);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(key, description, integrationLinkType, url, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -263,6 +251,10 @@ public class IntegrationLinkModel {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("key");
+    openapiRequiredFields.add("description");
+    openapiRequiredFields.add("integrationLinkType");
+    openapiRequiredFields.add("url");
   }
 
   /**
@@ -277,6 +269,13 @@ public class IntegrationLinkModel {
           throw new IllegalArgumentException(String.format("The required field(s) %s in IntegrationLinkModel is not found in the empty JSON string", IntegrationLinkModel.openapiRequiredFields.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : IntegrationLinkModel.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("key") != null && !jsonObj.get("key").isJsonNull()) && !jsonObj.get("key").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
@@ -284,10 +283,8 @@ public class IntegrationLinkModel {
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
-      // validate the optional field `integrationLinkType`
-      if (jsonObj.get("integrationLinkType") != null && !jsonObj.get("integrationLinkType").isJsonNull()) {
-        IntegrationLinkType.validateJsonElement(jsonObj.get("integrationLinkType"));
-      }
+      // validate the required field `integrationLinkType`
+      IntegrationLinkType.validateJsonElement(jsonObj.get("integrationLinkType"));
       if ((jsonObj.get("url") != null && !jsonObj.get("url").isJsonNull()) && !jsonObj.get("url").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
       }

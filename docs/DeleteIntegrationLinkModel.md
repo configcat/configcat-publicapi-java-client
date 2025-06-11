@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**hasRemainingIntegrationLink** | **Boolean** |  |  [optional] |
+|**hasRemainingIntegrationLink** | **Boolean** |  |  |
 
 
 

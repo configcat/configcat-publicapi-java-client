@@ -25,7 +25,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -54,19 +53,19 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * OrganizationMembersModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class OrganizationMembersModel {
   public static final String SERIALIZED_NAME_ADMINS = "admins";
   @SerializedName(SERIALIZED_NAME_ADMINS)
-  private List<OrganizationAdminModel> admins;
+  private List<OrganizationAdminModel> admins = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_BILLING_MANAGERS = "billingManagers";
   @SerializedName(SERIALIZED_NAME_BILLING_MANAGERS)
-  private List<OrganizationAdminModel> billingManagers;
+  private List<OrganizationAdminModel> billingManagers = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_MEMBERS = "members";
   @SerializedName(SERIALIZED_NAME_MEMBERS)
-  private List<OrganizationMemberModel> members;
+  private List<OrganizationMemberModel> members = new ArrayList<>();
 
   public OrganizationMembersModel() {
   }
@@ -88,7 +87,7 @@ public class OrganizationMembersModel {
    * List of Organization Admins.
    * @return admins
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public List<OrganizationAdminModel> getAdmins() {
     return admins;
   }
@@ -115,7 +114,7 @@ public class OrganizationMembersModel {
    * List of Billing Managers.
    * @return billingManagers
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public List<OrganizationAdminModel> getBillingManagers() {
     return billingManagers;
   }
@@ -142,7 +141,7 @@ public class OrganizationMembersModel {
    * List of Organization Members.
    * @return members
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public List<OrganizationMemberModel> getMembers() {
     return members;
   }
@@ -212,20 +211,9 @@ public class OrganizationMembersModel {
         Objects.equals(this.additionalProperties, organizationMembersModel.additionalProperties);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(admins, billingManagers, members, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -264,6 +252,9 @@ public class OrganizationMembersModel {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("admins");
+    openapiRequiredFields.add("billingManagers");
+    openapiRequiredFields.add("members");
   }
 
   /**
@@ -278,49 +269,44 @@ public class OrganizationMembersModel {
           throw new IllegalArgumentException(String.format("The required field(s) %s in OrganizationMembersModel is not found in the empty JSON string", OrganizationMembersModel.openapiRequiredFields.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : OrganizationMembersModel.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (jsonObj.get("admins") != null && !jsonObj.get("admins").isJsonNull()) {
-        JsonArray jsonArrayadmins = jsonObj.getAsJsonArray("admins");
-        if (jsonArrayadmins != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("admins").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `admins` to be an array in the JSON string but got `%s`", jsonObj.get("admins").toString()));
-          }
-
-          // validate the optional field `admins` (array)
-          for (int i = 0; i < jsonArrayadmins.size(); i++) {
-            OrganizationAdminModel.validateJsonElement(jsonArrayadmins.get(i));
-          };
-        }
+      // ensure the json data is an array
+      if (!jsonObj.get("admins").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `admins` to be an array in the JSON string but got `%s`", jsonObj.get("admins").toString()));
       }
-      if (jsonObj.get("billingManagers") != null && !jsonObj.get("billingManagers").isJsonNull()) {
-        JsonArray jsonArraybillingManagers = jsonObj.getAsJsonArray("billingManagers");
-        if (jsonArraybillingManagers != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("billingManagers").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `billingManagers` to be an array in the JSON string but got `%s`", jsonObj.get("billingManagers").toString()));
-          }
 
-          // validate the optional field `billingManagers` (array)
-          for (int i = 0; i < jsonArraybillingManagers.size(); i++) {
-            OrganizationAdminModel.validateJsonElement(jsonArraybillingManagers.get(i));
-          };
-        }
+      JsonArray jsonArrayadmins = jsonObj.getAsJsonArray("admins");
+      // validate the required field `admins` (array)
+      for (int i = 0; i < jsonArrayadmins.size(); i++) {
+        OrganizationAdminModel.validateJsonElement(jsonArrayadmins.get(i));
+      };
+      // ensure the json data is an array
+      if (!jsonObj.get("billingManagers").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `billingManagers` to be an array in the JSON string but got `%s`", jsonObj.get("billingManagers").toString()));
       }
-      if (jsonObj.get("members") != null && !jsonObj.get("members").isJsonNull()) {
-        JsonArray jsonArraymembers = jsonObj.getAsJsonArray("members");
-        if (jsonArraymembers != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("members").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `members` to be an array in the JSON string but got `%s`", jsonObj.get("members").toString()));
-          }
 
-          // validate the optional field `members` (array)
-          for (int i = 0; i < jsonArraymembers.size(); i++) {
-            OrganizationMemberModel.validateJsonElement(jsonArraymembers.get(i));
-          };
-        }
+      JsonArray jsonArraybillingManagers = jsonObj.getAsJsonArray("billingManagers");
+      // validate the required field `billingManagers` (array)
+      for (int i = 0; i < jsonArraybillingManagers.size(); i++) {
+        OrganizationAdminModel.validateJsonElement(jsonArraybillingManagers.get(i));
+      };
+      // ensure the json data is an array
+      if (!jsonObj.get("members").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `members` to be an array in the JSON string but got `%s`", jsonObj.get("members").toString()));
       }
+
+      JsonArray jsonArraymembers = jsonObj.getAsJsonArray("members");
+      // validate the required field `members` (array)
+      for (int i = 0; i < jsonArraymembers.size(); i++) {
+        OrganizationMemberModel.validateJsonElement(jsonArraymembers.get(i));
+      };
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

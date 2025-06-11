@@ -14,6 +14,7 @@
 package com.configcat.publicapi.java.client.model;
 
 import java.util.Objects;
+import com.configcat.publicapi.java.client.model.SettingValueType;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -21,7 +22,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,7 +50,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * RolloutPercentageItemModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class RolloutPercentageItemModel {
   public static final String SERIALIZED_NAME_PERCENTAGE = "percentage";
   @SerializedName(SERIALIZED_NAME_PERCENTAGE)
@@ -58,7 +58,7 @@ public class RolloutPercentageItemModel {
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  private Object value = null;
+  private SettingValueType value;
 
   public RolloutPercentageItemModel() {
   }
@@ -82,21 +82,21 @@ public class RolloutPercentageItemModel {
   }
 
 
-  public RolloutPercentageItemModel value(Object value) {
+  public RolloutPercentageItemModel value(SettingValueType value) {
     this.value = value;
     return this;
   }
 
   /**
-   * The value to serve when the user falls in the percentage rule. It must respect the setting type.
+   * The value to serve when the user falls in the percentage rule. It must respect the setting type. In some generated clients for strictly typed languages you may use double/float properties to handle integer values.
    * @return value
    */
-  @javax.annotation.Nullable
-  public Object getValue() {
+  @javax.annotation.Nonnull
+  public SettingValueType getValue() {
     return value;
   }
 
-  public void setValue(Object value) {
+  public void setValue(SettingValueType value) {
     this.value = value;
   }
 
@@ -160,20 +160,9 @@ public class RolloutPercentageItemModel {
         Objects.equals(this.additionalProperties, rolloutPercentageItemModel.additionalProperties);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(percentage, value, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -211,6 +200,7 @@ public class RolloutPercentageItemModel {
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
     openapiRequiredFields.add("percentage");
+    openapiRequiredFields.add("value");
   }
 
   /**
@@ -233,6 +223,8 @@ public class RolloutPercentageItemModel {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `value`
+      SettingValueType.validateJsonElement(jsonObj.get("value"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

@@ -21,7 +21,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,7 +49,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * Describes an Organization Admin.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class OrganizationAdminModel {
   public static final String SERIALIZED_NAME_USER_ID = "userId";
   @SerializedName(SERIALIZED_NAME_USER_ID)
@@ -80,7 +79,7 @@ public class OrganizationAdminModel {
    * Identifier of the Organization Admin.
    * @return userId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getUserId() {
     return userId;
   }
@@ -99,7 +98,7 @@ public class OrganizationAdminModel {
    * Name of the Organization Admin.
    * @return fullName
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getFullName() {
     return fullName;
   }
@@ -118,7 +117,7 @@ public class OrganizationAdminModel {
    * Email of the OrganizationAdmin.
    * @return email
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getEmail() {
     return email;
   }
@@ -137,7 +136,7 @@ public class OrganizationAdminModel {
    * Determines whether 2FA is enabled for the Organization Admin.
    * @return twoFactorEnabled
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getTwoFactorEnabled() {
     return twoFactorEnabled;
   }
@@ -208,20 +207,9 @@ public class OrganizationAdminModel {
         Objects.equals(this.additionalProperties, organizationAdminModel.additionalProperties);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(userId, fullName, email, twoFactorEnabled, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -262,6 +250,10 @@ public class OrganizationAdminModel {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("userId");
+    openapiRequiredFields.add("fullName");
+    openapiRequiredFields.add("email");
+    openapiRequiredFields.add("twoFactorEnabled");
   }
 
   /**
@@ -276,14 +268,21 @@ public class OrganizationAdminModel {
           throw new IllegalArgumentException(String.format("The required field(s) %s in OrganizationAdminModel is not found in the empty JSON string", OrganizationAdminModel.openapiRequiredFields.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : OrganizationAdminModel.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("userId") != null && !jsonObj.get("userId").isJsonNull()) && !jsonObj.get("userId").isJsonPrimitive()) {
+      if (!jsonObj.get("userId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `userId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("userId").toString()));
       }
-      if ((jsonObj.get("fullName") != null && !jsonObj.get("fullName").isJsonNull()) && !jsonObj.get("fullName").isJsonPrimitive()) {
+      if (!jsonObj.get("fullName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `fullName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("fullName").toString()));
       }
-      if ((jsonObj.get("email") != null && !jsonObj.get("email").isJsonNull()) && !jsonObj.get("email").isJsonPrimitive()) {
+      if (!jsonObj.get("email").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
       }
   }

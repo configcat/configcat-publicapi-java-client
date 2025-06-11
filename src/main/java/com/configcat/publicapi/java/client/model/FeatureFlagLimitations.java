@@ -49,7 +49,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * Subscription limitations regarding Feature flag or Setting values and targeting.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class FeatureFlagLimitations {
   public static final String SERIALIZED_NAME_MAX_PERCENTAGE_OPTION_COUNT = "maxPercentageOptionCount";
   @SerializedName(SERIALIZED_NAME_MAX_PERCENTAGE_OPTION_COUNT)
@@ -91,7 +91,7 @@ public class FeatureFlagLimitations {
    * Maximum number of percentage options a Feature Flag or Setting can have within a targeting rule.
    * @return maxPercentageOptionCount
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Integer getMaxPercentageOptionCount() {
     return maxPercentageOptionCount;
   }
@@ -110,7 +110,7 @@ public class FeatureFlagLimitations {
    * Maximum number of targeting rules a Feature Flag or Setting can have.
    * @return maxTargetingRuleCount
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Integer getMaxTargetingRuleCount() {
     return maxTargetingRuleCount;
   }
@@ -129,7 +129,7 @@ public class FeatureFlagLimitations {
    * Maximum length of a text comparison value.
    * @return maxComparisonValueLength
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Integer getMaxComparisonValueLength() {
     return maxComparisonValueLength;
   }
@@ -148,7 +148,7 @@ public class FeatureFlagLimitations {
    * Maximum item count of a list comparison value.
    * @return maxComparisonValueListLength
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Integer getMaxComparisonValueListLength() {
     return maxComparisonValueListLength;
   }
@@ -167,7 +167,7 @@ public class FeatureFlagLimitations {
    * Maximum length of a list comparison value&#39;s item.
    * @return maxComparisonValueListItemLength
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Integer getMaxComparisonValueListItemLength() {
     return maxComparisonValueListItemLength;
   }
@@ -186,7 +186,7 @@ public class FeatureFlagLimitations {
    * Maximum length of a text Setting&#39;s value.
    * @return maxStringFlagValueLength
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Integer getMaxStringFlagValueLength() {
     return maxStringFlagValueLength;
   }
@@ -205,7 +205,7 @@ public class FeatureFlagLimitations {
    * Maximum number of &#x60;AND&#x60; conditions a Feature Flag or Setting can have within a targeting rule.
    * @return maxConditionPerTargetingRuleCount
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Integer getMaxConditionPerTargetingRuleCount() {
     return maxConditionPerTargetingRuleCount;
   }
@@ -328,6 +328,13 @@ public class FeatureFlagLimitations {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("maxPercentageOptionCount");
+    openapiRequiredFields.add("maxTargetingRuleCount");
+    openapiRequiredFields.add("maxComparisonValueLength");
+    openapiRequiredFields.add("maxComparisonValueListLength");
+    openapiRequiredFields.add("maxComparisonValueListItemLength");
+    openapiRequiredFields.add("maxStringFlagValueLength");
+    openapiRequiredFields.add("maxConditionPerTargetingRuleCount");
   }
 
   /**
@@ -340,6 +347,13 @@ public class FeatureFlagLimitations {
       if (jsonElement == null) {
         if (!FeatureFlagLimitations.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
           throw new IllegalArgumentException(String.format("The required field(s) %s in FeatureFlagLimitations is not found in the empty JSON string", FeatureFlagLimitations.openapiRequiredFields.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : FeatureFlagLimitations.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();

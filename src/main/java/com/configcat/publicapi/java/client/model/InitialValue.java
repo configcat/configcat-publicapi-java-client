@@ -14,6 +14,7 @@
 package com.configcat.publicapi.java.client.model;
 
 import java.util.Objects;
+import com.configcat.publicapi.java.client.model.SettingValueType;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,7 +23,6 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.UUID;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,7 +51,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * InitialValue
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class InitialValue {
   public static final String SERIALIZED_NAME_ENVIRONMENT_ID = "environmentId";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_ID)
@@ -59,7 +59,7 @@ public class InitialValue {
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  private Object value = null;
+  private SettingValueType value;
 
   public InitialValue() {
   }
@@ -83,21 +83,21 @@ public class InitialValue {
   }
 
 
-  public InitialValue value(Object value) {
+  public InitialValue value(SettingValueType value) {
     this.value = value;
     return this;
   }
 
   /**
-   * The initial value in the given Environment. It must respect the setting type.
+   * The initial value in the given Environment. It must respect the setting type. In some generated clients for strictly typed languages you may use double/float properties to handle integer values.
    * @return value
    */
-  @javax.annotation.Nullable
-  public Object getValue() {
+  @javax.annotation.Nonnull
+  public SettingValueType getValue() {
     return value;
   }
 
-  public void setValue(Object value) {
+  public void setValue(SettingValueType value) {
     this.value = value;
   }
 
@@ -161,20 +161,9 @@ public class InitialValue {
         Objects.equals(this.additionalProperties, initialValue.additionalProperties);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(environmentId, value, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -211,6 +200,7 @@ public class InitialValue {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("value");
   }
 
   /**
@@ -225,10 +215,19 @@ public class InitialValue {
           throw new IllegalArgumentException(String.format("The required field(s) %s in InitialValue is not found in the empty JSON string", InitialValue.openapiRequiredFields.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : InitialValue.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("environmentId") != null && !jsonObj.get("environmentId").isJsonNull()) && !jsonObj.get("environmentId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
       }
+      // validate the required field `value`
+      SettingValueType.validateJsonElement(jsonObj.get("value"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

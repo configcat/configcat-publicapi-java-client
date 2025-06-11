@@ -28,7 +28,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -57,7 +56,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * Details of the Integration.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class IntegrationModel {
   public static final String SERIALIZED_NAME_PRODUCT = "product";
   @SerializedName(SERIALIZED_NAME_PRODUCT)
@@ -81,11 +80,11 @@ public class IntegrationModel {
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_IDS = "environmentIds";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_IDS)
-  private List<UUID> environmentIds;
+  private List<UUID> environmentIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CONFIG_IDS = "configIds";
   @SerializedName(SERIALIZED_NAME_CONFIG_IDS)
-  private List<UUID> configIds;
+  private List<UUID> configIds = new ArrayList<>();
 
   public IntegrationModel() {
   }
@@ -99,7 +98,7 @@ public class IntegrationModel {
    * Get product
    * @return product
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ProductModel getProduct() {
     return product;
   }
@@ -118,7 +117,7 @@ public class IntegrationModel {
    * Identifier of the Integration.
    * @return integrationId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public UUID getIntegrationId() {
     return integrationId;
   }
@@ -137,7 +136,7 @@ public class IntegrationModel {
    * Name of the Integration.
    * @return name
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
@@ -156,7 +155,7 @@ public class IntegrationModel {
    * Get integrationType
    * @return integrationType
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public IntegrationType getIntegrationType() {
     return integrationType;
   }
@@ -210,7 +209,7 @@ public class IntegrationModel {
    * List of Environment IDs that are connected with this Integration. If the list is empty, all of the Environments are connected.
    * @return environmentIds
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public List<UUID> getEnvironmentIds() {
     return environmentIds;
   }
@@ -237,7 +236,7 @@ public class IntegrationModel {
    * List of Config IDs that are connected with this Integration. If the list is empty, all of the Configs are connected.
    * @return configIds
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public List<UUID> getConfigIds() {
     return configIds;
   }
@@ -311,20 +310,9 @@ public class IntegrationModel {
         Objects.equals(this.additionalProperties, integrationModel.additionalProperties);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(product, integrationId, name, integrationType, parameters, environmentIds, configIds, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -371,6 +359,13 @@ public class IntegrationModel {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("product");
+    openapiRequiredFields.add("integrationId");
+    openapiRequiredFields.add("name");
+    openapiRequiredFields.add("integrationType");
+    openapiRequiredFields.add("parameters");
+    openapiRequiredFields.add("environmentIds");
+    openapiRequiredFields.add("configIds");
   }
 
   /**
@@ -385,27 +380,34 @@ public class IntegrationModel {
           throw new IllegalArgumentException(String.format("The required field(s) %s in IntegrationModel is not found in the empty JSON string", IntegrationModel.openapiRequiredFields.toString()));
         }
       }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `product`
-      if (jsonObj.get("product") != null && !jsonObj.get("product").isJsonNull()) {
-        ProductModel.validateJsonElement(jsonObj.get("product"));
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : IntegrationModel.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
       }
-      if ((jsonObj.get("integrationId") != null && !jsonObj.get("integrationId").isJsonNull()) && !jsonObj.get("integrationId").isJsonPrimitive()) {
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `product`
+      ProductModel.validateJsonElement(jsonObj.get("product"));
+      if (!jsonObj.get("integrationId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `integrationId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("integrationId").toString()));
       }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+      if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
-      // validate the optional field `integrationType`
-      if (jsonObj.get("integrationType") != null && !jsonObj.get("integrationType").isJsonNull()) {
-        IntegrationType.validateJsonElement(jsonObj.get("integrationType"));
-      }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("environmentIds") != null && !jsonObj.get("environmentIds").isJsonNull() && !jsonObj.get("environmentIds").isJsonArray()) {
+      // validate the required field `integrationType`
+      IntegrationType.validateJsonElement(jsonObj.get("integrationType"));
+      // ensure the required json array is present
+      if (jsonObj.get("environmentIds") == null) {
+        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
+      } else if (!jsonObj.get("environmentIds").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `environmentIds` to be an array in the JSON string but got `%s`", jsonObj.get("environmentIds").toString()));
       }
-      // ensure the optional json data is an array if present
-      if (jsonObj.get("configIds") != null && !jsonObj.get("configIds").isJsonNull() && !jsonObj.get("configIds").isJsonArray()) {
+      // ensure the required json array is present
+      if (jsonObj.get("configIds") == null) {
+        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
+      } else if (!jsonObj.get("configIds").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `configIds` to be an array in the JSON string but got `%s`", jsonObj.get("configIds").toString()));
       }
   }

@@ -21,7 +21,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,7 +49,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * Describes the Member&#39;s Permission Group within a Product.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class OrganizationPermissionGroupModel {
   public static final String SERIALIZED_NAME_PERMISSION_GROUP_ID = "permissionGroupId";
   @SerializedName(SERIALIZED_NAME_PERMISSION_GROUP_ID)
@@ -72,7 +71,7 @@ public class OrganizationPermissionGroupModel {
    * Identifier of the Member&#39;s Permission Group.
    * @return permissionGroupId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Long getPermissionGroupId() {
     return permissionGroupId;
   }
@@ -91,7 +90,7 @@ public class OrganizationPermissionGroupModel {
    * Name of the Member&#39;s Permission Group.
    * @return name
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
@@ -160,20 +159,9 @@ public class OrganizationPermissionGroupModel {
         Objects.equals(this.additionalProperties, organizationPermissionGroupModel.additionalProperties);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(permissionGroupId, name, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -210,6 +198,8 @@ public class OrganizationPermissionGroupModel {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("permissionGroupId");
+    openapiRequiredFields.add("name");
   }
 
   /**
@@ -224,8 +214,15 @@ public class OrganizationPermissionGroupModel {
           throw new IllegalArgumentException(String.format("The required field(s) %s in OrganizationPermissionGroupModel is not found in the empty JSON string", OrganizationPermissionGroupModel.openapiRequiredFields.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : OrganizationPermissionGroupModel.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+      if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
   }

@@ -24,7 +24,6 @@ import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
 import java.util.UUID;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -53,7 +52,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * SegmentListModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class SegmentListModel {
   public static final String SERIALIZED_NAME_PRODUCT = "product";
   @SerializedName(SERIALIZED_NAME_PRODUCT)
@@ -111,7 +110,7 @@ public class SegmentListModel {
    * Get product
    * @return product
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public ProductModel getProduct() {
     return product;
   }
@@ -130,7 +129,7 @@ public class SegmentListModel {
    * Identifier of the Segment.
    * @return segmentId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public UUID getSegmentId() {
     return segmentId;
   }
@@ -149,7 +148,7 @@ public class SegmentListModel {
    * Name of the Segment.
    * @return name
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
@@ -225,7 +224,7 @@ public class SegmentListModel {
    * The date and time when the Segment was created.
    * @return createdAt
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
@@ -282,7 +281,7 @@ public class SegmentListModel {
    * The date and time when the Segment was last updated.
    * @return updatedAt
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public OffsetDateTime getUpdatedAt() {
     return updatedAt;
   }
@@ -301,7 +300,7 @@ public class SegmentListModel {
    * Determines how many Feature Flags and Settings are using the Segment.
    * @return usage
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Integer getUsage() {
     return usage;
   }
@@ -379,20 +378,9 @@ public class SegmentListModel {
         Objects.equals(this.additionalProperties, segmentListModel.additionalProperties);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(product, segmentId, name, description, creatorEmail, creatorFullName, createdAt, lastUpdaterEmail, lastUpdaterFullName, updatedAt, usage, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -447,6 +435,17 @@ public class SegmentListModel {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("product");
+    openapiRequiredFields.add("segmentId");
+    openapiRequiredFields.add("name");
+    openapiRequiredFields.add("description");
+    openapiRequiredFields.add("creatorEmail");
+    openapiRequiredFields.add("creatorFullName");
+    openapiRequiredFields.add("createdAt");
+    openapiRequiredFields.add("lastUpdaterEmail");
+    openapiRequiredFields.add("lastUpdaterFullName");
+    openapiRequiredFields.add("updatedAt");
+    openapiRequiredFields.add("usage");
   }
 
   /**
@@ -461,15 +460,20 @@ public class SegmentListModel {
           throw new IllegalArgumentException(String.format("The required field(s) %s in SegmentListModel is not found in the empty JSON string", SegmentListModel.openapiRequiredFields.toString()));
         }
       }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `product`
-      if (jsonObj.get("product") != null && !jsonObj.get("product").isJsonNull()) {
-        ProductModel.validateJsonElement(jsonObj.get("product"));
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : SegmentListModel.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
       }
-      if ((jsonObj.get("segmentId") != null && !jsonObj.get("segmentId").isJsonNull()) && !jsonObj.get("segmentId").isJsonPrimitive()) {
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `product`
+      ProductModel.validateJsonElement(jsonObj.get("product"));
+      if (!jsonObj.get("segmentId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `segmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("segmentId").toString()));
       }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+      if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {

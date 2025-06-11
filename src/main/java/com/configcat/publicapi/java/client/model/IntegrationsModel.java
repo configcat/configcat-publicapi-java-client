@@ -24,7 +24,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -53,7 +52,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * IntegrationsModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class IntegrationsModel {
   public static final String SERIALIZED_NAME_INTEGRATIONS = "integrations";
   @SerializedName(SERIALIZED_NAME_INTEGRATIONS)
@@ -147,20 +146,9 @@ public class IntegrationsModel {
         Objects.equals(this.additionalProperties, integrationsModel.additionalProperties);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(integrations, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -195,6 +183,7 @@ public class IntegrationsModel {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("integrations");
   }
 
   /**
@@ -209,21 +198,24 @@ public class IntegrationsModel {
           throw new IllegalArgumentException(String.format("The required field(s) %s in IntegrationsModel is not found in the empty JSON string", IntegrationsModel.openapiRequiredFields.toString()));
         }
       }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (jsonObj.get("integrations") != null && !jsonObj.get("integrations").isJsonNull()) {
-        JsonArray jsonArrayintegrations = jsonObj.getAsJsonArray("integrations");
-        if (jsonArrayintegrations != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("integrations").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `integrations` to be an array in the JSON string but got `%s`", jsonObj.get("integrations").toString()));
-          }
 
-          // validate the optional field `integrations` (array)
-          for (int i = 0; i < jsonArrayintegrations.size(); i++) {
-            IntegrationModel.validateJsonElement(jsonArrayintegrations.get(i));
-          };
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : IntegrationsModel.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // ensure the json data is an array
+      if (!jsonObj.get("integrations").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `integrations` to be an array in the JSON string but got `%s`", jsonObj.get("integrations").toString()));
+      }
+
+      JsonArray jsonArrayintegrations = jsonObj.getAsJsonArray("integrations");
+      // validate the required field `integrations` (array)
+      for (int i = 0; i < jsonArrayintegrations.size(); i++) {
+        IntegrationModel.validateJsonElement(jsonArrayintegrations.get(i));
+      };
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

@@ -15,7 +15,7 @@ All URIs are relative to *https://api.configcat.com*
 
 <a id="createWebhook"></a>
 # **createWebhook**
-> WebhookModel createWebhook(configId, environmentId, webHookRequest)
+> WebhookResponseModel createWebhook(configId, environmentId, webHookRequestModel)
 
 Create Webhook
 
@@ -44,9 +44,9 @@ public class Example {
     WebhooksApi apiInstance = new WebhooksApi(defaultClient);
     UUID configId = UUID.randomUUID(); // UUID | The identifier of the Config.
     UUID environmentId = UUID.randomUUID(); // UUID | The identifier of the Environment.
-    WebHookRequest webHookRequest = new WebHookRequest(); // WebHookRequest | 
+    WebHookRequestModel webHookRequestModel = new WebHookRequestModel(); // WebHookRequestModel | 
     try {
-      WebhookModel result = apiInstance.createWebhook(configId, environmentId, webHookRequest);
+      WebhookResponseModel result = apiInstance.createWebhook(configId, environmentId, webHookRequestModel);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WebhooksApi#createWebhook");
@@ -65,11 +65,11 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **configId** | **UUID**| The identifier of the Config. | |
 | **environmentId** | **UUID**| The identifier of the Environment. | |
-| **webHookRequest** | [**WebHookRequest**](WebHookRequest.md)|  | |
+| **webHookRequestModel** | [**WebHookRequestModel**](WebHookRequestModel.md)|  | |
 
 ### Return type
 
-[**WebhookModel**](WebhookModel.md)
+[**WebhookResponseModel**](WebhookResponseModel.md)
 
 ### Authorization
 
@@ -160,7 +160,7 @@ null (empty response body)
 
 <a id="getWebhook"></a>
 # **getWebhook**
-> WebhookModel getWebhook(webhookId)
+> WebhookResponseModel getWebhook(webhookId)
 
 Get Webhook
 
@@ -189,7 +189,7 @@ public class Example {
     WebhooksApi apiInstance = new WebhooksApi(defaultClient);
     Integer webhookId = 56; // Integer | The identifier of the Webhook.
     try {
-      WebhookModel result = apiInstance.getWebhook(webhookId);
+      WebhookResponseModel result = apiInstance.getWebhook(webhookId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WebhooksApi#getWebhook");
@@ -210,7 +210,7 @@ public class Example {
 
 ### Return type
 
-[**WebhookModel**](WebhookModel.md)
+[**WebhookResponseModel**](WebhookResponseModel.md)
 
 ### Authorization
 
@@ -302,7 +302,7 @@ public class Example {
 
 <a id="getWebhooks"></a>
 # **getWebhooks**
-> List&lt;WebhookModel&gt; getWebhooks(productId)
+> List&lt;WebhookResponseModel&gt; getWebhooks(productId)
 
 List Webhooks
 
@@ -331,7 +331,7 @@ public class Example {
     WebhooksApi apiInstance = new WebhooksApi(defaultClient);
     UUID productId = UUID.randomUUID(); // UUID | The identifier of the Product.
     try {
-      List<WebhookModel> result = apiInstance.getWebhooks(productId);
+      List<WebhookResponseModel> result = apiInstance.getWebhooks(productId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WebhooksApi#getWebhooks");
@@ -352,7 +352,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;WebhookModel&gt;**](WebhookModel.md)
+[**List&lt;WebhookResponseModel&gt;**](WebhookResponseModel.md)
 
 ### Authorization
 
@@ -371,7 +371,7 @@ public class Example {
 
 <a id="replaceWebhook"></a>
 # **replaceWebhook**
-> WebhookModel replaceWebhook(webhookId, webHookRequest)
+> WebhookResponseModel replaceWebhook(webhookId, webHookRequestModel)
 
 Replace Webhook
 
@@ -399,9 +399,9 @@ public class Example {
 
     WebhooksApi apiInstance = new WebhooksApi(defaultClient);
     Integer webhookId = 56; // Integer | The identifier of the Webhook.
-    WebHookRequest webHookRequest = new WebHookRequest(); // WebHookRequest | 
+    WebHookRequestModel webHookRequestModel = new WebHookRequestModel(); // WebHookRequestModel | 
     try {
-      WebhookModel result = apiInstance.replaceWebhook(webhookId, webHookRequest);
+      WebhookResponseModel result = apiInstance.replaceWebhook(webhookId, webHookRequestModel);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WebhooksApi#replaceWebhook");
@@ -419,11 +419,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **webhookId** | **Integer**| The identifier of the Webhook. | |
-| **webHookRequest** | [**WebHookRequest**](WebHookRequest.md)|  | |
+| **webHookRequestModel** | [**WebHookRequestModel**](WebHookRequestModel.md)|  | |
 
 ### Return type
 
-[**WebhookModel**](WebhookModel.md)
+[**WebhookResponseModel**](WebhookResponseModel.md)
 
 ### Authorization
 
@@ -444,7 +444,7 @@ public class Example {
 
 <a id="updateWebhook"></a>
 # **updateWebhook**
-> WebhookModel updateWebhook(webhookId, jsonPatchOperation)
+> WebhookResponseModel updateWebhook(webhookId, jsonPatchOperation)
 
 Update Webhook
 
@@ -474,7 +474,7 @@ public class Example {
     Integer webhookId = 56; // Integer | The identifier of the Webhook.
     List<JsonPatchOperation> jsonPatchOperation = Arrays.asList(); // List<JsonPatchOperation> | 
     try {
-      WebhookModel result = apiInstance.updateWebhook(webhookId, jsonPatchOperation);
+      WebhookResponseModel result = apiInstance.updateWebhook(webhookId, jsonPatchOperation);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling WebhooksApi#updateWebhook");
@@ -496,7 +496,7 @@ public class Example {
 
 ### Return type
 
-[**WebhookModel**](WebhookModel.md)
+[**WebhookResponseModel**](WebhookResponseModel.md)
 
 ### Authorization
 

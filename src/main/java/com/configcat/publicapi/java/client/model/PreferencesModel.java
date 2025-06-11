@@ -25,7 +25,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -54,7 +53,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * PreferencesModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-20T16:55:24.304297906Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class PreferencesModel {
   public static final String SERIALIZED_NAME_REASON_REQUIRED = "reasonRequired";
   @SerializedName(SERIALIZED_NAME_REASON_REQUIRED)
@@ -88,7 +87,7 @@ public class PreferencesModel {
    * Indicates that a mandatory note required for saving and publishing.
    * @return reasonRequired
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getReasonRequired() {
     return reasonRequired;
   }
@@ -107,7 +106,7 @@ public class PreferencesModel {
    * Get keyGenerationMode
    * @return keyGenerationMode
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public KeyGenerationMode getKeyGenerationMode() {
     return keyGenerationMode;
   }
@@ -126,7 +125,7 @@ public class PreferencesModel {
    * Indicates whether a variation ID&#39;s must be shown on the ConfigCat Dashboard.
    * @return showVariationId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getShowVariationId() {
     return showVariationId;
   }
@@ -172,7 +171,7 @@ public class PreferencesModel {
    * Indicates whether Feature flags and Settings must have a hint.
    * @return mandatorySettingHint
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public Boolean getMandatorySettingHint() {
     return mandatorySettingHint;
   }
@@ -244,20 +243,9 @@ public class PreferencesModel {
         Objects.equals(this.additionalProperties, preferencesModel.additionalProperties);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(reasonRequired, keyGenerationMode, showVariationId, reasonRequiredEnvironments, mandatorySettingHint, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -300,6 +288,11 @@ public class PreferencesModel {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("reasonRequired");
+    openapiRequiredFields.add("keyGenerationMode");
+    openapiRequiredFields.add("showVariationId");
+    openapiRequiredFields.add("reasonRequiredEnvironments");
+    openapiRequiredFields.add("mandatorySettingHint");
   }
 
   /**
@@ -314,25 +307,26 @@ public class PreferencesModel {
           throw new IllegalArgumentException(String.format("The required field(s) %s in PreferencesModel is not found in the empty JSON string", PreferencesModel.openapiRequiredFields.toString()));
         }
       }
-        JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the optional field `keyGenerationMode`
-      if (jsonObj.get("keyGenerationMode") != null && !jsonObj.get("keyGenerationMode").isJsonNull()) {
-        KeyGenerationMode.validateJsonElement(jsonObj.get("keyGenerationMode"));
-      }
-      if (jsonObj.get("reasonRequiredEnvironments") != null && !jsonObj.get("reasonRequiredEnvironments").isJsonNull()) {
-        JsonArray jsonArrayreasonRequiredEnvironments = jsonObj.getAsJsonArray("reasonRequiredEnvironments");
-        if (jsonArrayreasonRequiredEnvironments != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("reasonRequiredEnvironments").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `reasonRequiredEnvironments` to be an array in the JSON string but got `%s`", jsonObj.get("reasonRequiredEnvironments").toString()));
-          }
 
-          // validate the optional field `reasonRequiredEnvironments` (array)
-          for (int i = 0; i < jsonArrayreasonRequiredEnvironments.size(); i++) {
-            ReasonRequiredEnvironmentModel.validateJsonElement(jsonArrayreasonRequiredEnvironments.get(i));
-          };
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : PreferencesModel.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the required field `keyGenerationMode`
+      KeyGenerationMode.validateJsonElement(jsonObj.get("keyGenerationMode"));
+      // ensure the json data is an array
+      if (!jsonObj.get("reasonRequiredEnvironments").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `reasonRequiredEnvironments` to be an array in the JSON string but got `%s`", jsonObj.get("reasonRequiredEnvironments").toString()));
+      }
+
+      JsonArray jsonArrayreasonRequiredEnvironments = jsonObj.getAsJsonArray("reasonRequiredEnvironments");
+      // validate the required field `reasonRequiredEnvironments` (array)
+      for (int i = 0; i < jsonArrayreasonRequiredEnvironments.size(); i++) {
+        ReasonRequiredEnvironmentModel.validateJsonElement(jsonArrayreasonRequiredEnvironments.get(i));
+      };
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
