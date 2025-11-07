@@ -51,7 +51,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * InitialValue
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-07T15:32:06.171915713Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class InitialValue {
   public static final String SERIALIZED_NAME_ENVIRONMENT_ID = "environmentId";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_ID)
@@ -89,7 +89,7 @@ public class InitialValue {
   }
 
   /**
-   * The initial value in the given Environment. It must respect the setting type. In some generated clients for strictly typed languages you may use double/float properties to handle integer values.
+   * The initial value in the given Environment. It must respect the setting type. In some generated clients for strictly typed languages, you may use double/float properties to handle integer values. In case of a Feature Flag with predefined variations, the value must match one of the predefined variations&#39; value.
    * @return value
    */
   @javax.annotation.Nonnull

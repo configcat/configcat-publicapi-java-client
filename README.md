@@ -2,7 +2,7 @@
 
 ConfigCat Public Management API
 - API version: v1
-  - Build date: 2025-06-10T21:25:35.532049258Z[Etc/UTC]
+  - Build date: 2025-11-07T15:32:06.171915713Z[Etc/UTC]
   - Generator version: 7.7.0
 
 The purpose of this API is to access the ConfigCat platform programmatically.
@@ -199,6 +199,7 @@ Class | Method | HTTP request | Description
 *FeatureFlagsSettingsApi* | [**getSetting**](docs/FeatureFlagsSettingsApi.md#getSetting) | **GET** /v1/settings/{settingId} | Get Flag
 *FeatureFlagsSettingsApi* | [**getSettings**](docs/FeatureFlagsSettingsApi.md#getSettings) | **GET** /v1/configs/{configId}/settings | List Flags
 *FeatureFlagsSettingsApi* | [**replaceSetting**](docs/FeatureFlagsSettingsApi.md#replaceSetting) | **PUT** /v1/settings/{settingId} | Replace Flag
+*FeatureFlagsSettingsApi* | [**updatePredefinedVariations**](docs/FeatureFlagsSettingsApi.md#updatePredefinedVariations) | **PUT** /v1/settings/{settingId}/predefined-variations | Update predefined variations (Beta)
 *FeatureFlagsSettingsApi* | [**updateSetting**](docs/FeatureFlagsSettingsApi.md#updateSetting) | **PATCH** /v1/settings/{settingId} | Update Flag
 *IntegrationLinksApi* | [**addOrUpdateIntegrationLink**](docs/IntegrationLinksApi.md#addOrUpdateIntegrationLink) | **POST** /v1/environments/{environmentId}/settings/{settingId}/integrationLinks/{integrationLinkType}/{key} | Add or update Integration link
 *IntegrationLinksApi* | [**deleteIntegrationLink**](docs/IntegrationLinksApi.md#deleteIntegrationLink) | **DELETE** /v1/environments/{environmentId}/settings/{settingId}/integrationLinks/{integrationLinkType}/{key} | Delete Integration link
@@ -279,6 +280,8 @@ Class | Method | HTTP request | Description
  - [CreateIntegrationModel](docs/CreateIntegrationModel.md)
  - [CreateOrUpdateEnvironmentAccessModel](docs/CreateOrUpdateEnvironmentAccessModel.md)
  - [CreatePermissionGroupRequest](docs/CreatePermissionGroupRequest.md)
+ - [CreatePredefinedVariationModel](docs/CreatePredefinedVariationModel.md)
+ - [CreatePredefinedVariationValueModel](docs/CreatePredefinedVariationValueModel.md)
  - [CreateProductRequest](docs/CreateProductRequest.md)
  - [CreateSegmentModel](docs/CreateSegmentModel.md)
  - [CreateSettingInitialValues](docs/CreateSettingInitialValues.md)
@@ -318,6 +321,8 @@ Class | Method | HTTP request | Description
  - [OrganizationProductModel](docs/OrganizationProductModel.md)
  - [PercentageOptionModel](docs/PercentageOptionModel.md)
  - [PermissionGroupModel](docs/PermissionGroupModel.md)
+ - [PredefinedVariationModel](docs/PredefinedVariationModel.md)
+ - [PredefinedVariationValueModel](docs/PredefinedVariationValueModel.md)
  - [PreferencesModel](docs/PreferencesModel.md)
  - [PrerequisiteComparator](docs/PrerequisiteComparator.md)
  - [PrerequisiteFlagConditionModel](docs/PrerequisiteFlagConditionModel.md)
@@ -337,6 +342,7 @@ Class | Method | HTTP request | Description
  - [SegmentListModel](docs/SegmentListModel.md)
  - [SegmentModel](docs/SegmentModel.md)
  - [SettingDataModel](docs/SettingDataModel.md)
+ - [SettingDataV2Model](docs/SettingDataV2Model.md)
  - [SettingFormulaModel](docs/SettingFormulaModel.md)
  - [SettingModel](docs/SettingModel.md)
  - [SettingTagModel](docs/SettingTagModel.md)
@@ -364,6 +370,9 @@ Class | Method | HTTP request | Description
  - [UpdateMemberPermissionsRequest](docs/UpdateMemberPermissionsRequest.md)
  - [UpdatePercentageOptionModel](docs/UpdatePercentageOptionModel.md)
  - [UpdatePermissionGroupRequest](docs/UpdatePermissionGroupRequest.md)
+ - [UpdatePredefinedVariationModel](docs/UpdatePredefinedVariationModel.md)
+ - [UpdatePredefinedVariationValueModel](docs/UpdatePredefinedVariationValueModel.md)
+ - [UpdatePredefinedVariationsRequest](docs/UpdatePredefinedVariationsRequest.md)
  - [UpdatePreferencesRequest](docs/UpdatePreferencesRequest.md)
  - [UpdatePrerequisiteFlagConditionModel](docs/UpdatePrerequisiteFlagConditionModel.md)
  - [UpdateProductRequest](docs/UpdateProductRequest.md)

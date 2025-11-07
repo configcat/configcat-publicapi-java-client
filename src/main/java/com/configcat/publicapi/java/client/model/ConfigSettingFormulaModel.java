@@ -15,7 +15,7 @@ package com.configcat.publicapi.java.client.model;
 
 import java.util.Objects;
 import com.configcat.publicapi.java.client.model.IntegrationLinkModel;
-import com.configcat.publicapi.java.client.model.SettingDataModel;
+import com.configcat.publicapi.java.client.model.SettingDataV2Model;
 import com.configcat.publicapi.java.client.model.SettingTagModel;
 import com.configcat.publicapi.java.client.model.TargetingRuleModel;
 import com.configcat.publicapi.java.client.model.ValueModel;
@@ -58,7 +58,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * ConfigSettingFormulaModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-07T15:32:06.171915713Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class ConfigSettingFormulaModel {
   public static final String SERIALIZED_NAME_LAST_VERSION_ID = "lastVersionId";
   @SerializedName(SERIALIZED_NAME_LAST_VERSION_ID)
@@ -74,7 +74,7 @@ public class ConfigSettingFormulaModel {
 
   public static final String SERIALIZED_NAME_SETTING = "setting";
   @SerializedName(SERIALIZED_NAME_SETTING)
-  private SettingDataModel setting;
+  private SettingDataV2Model setting;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updatedAt";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
@@ -172,7 +172,7 @@ public class ConfigSettingFormulaModel {
   }
 
 
-  public ConfigSettingFormulaModel setting(SettingDataModel setting) {
+  public ConfigSettingFormulaModel setting(SettingDataV2Model setting) {
     this.setting = setting;
     return this;
   }
@@ -182,11 +182,11 @@ public class ConfigSettingFormulaModel {
    * @return setting
    */
   @javax.annotation.Nonnull
-  public SettingDataModel getSetting() {
+  public SettingDataV2Model getSetting() {
     return setting;
   }
 
-  public void setSetting(SettingDataModel setting) {
+  public void setSetting(SettingDataV2Model setting) {
     this.setting = setting;
   }
 
@@ -522,7 +522,7 @@ public class ConfigSettingFormulaModel {
         TargetingRuleModel.validateJsonElement(jsonArraytargetingRules.get(i));
       };
       // validate the required field `setting`
-      SettingDataModel.validateJsonElement(jsonObj.get("setting"));
+      SettingDataV2Model.validateJsonElement(jsonObj.get("setting"));
       if ((jsonObj.get("percentageEvaluationAttribute") != null && !jsonObj.get("percentageEvaluationAttribute").isJsonNull()) && !jsonObj.get("percentageEvaluationAttribute").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `percentageEvaluationAttribute` to be a primitive type in the JSON string but got `%s`", jsonObj.get("percentageEvaluationAttribute").toString()));
       }

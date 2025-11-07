@@ -81,6 +81,12 @@ public enum AuditLogType {
   
   SETTINGS_REORDERED("settingsReordered"),
   
+  PREDEFINED_VARIATIONS_CHANGED("predefinedVariationsChanged"),
+  
+  SETTING_CONVERTED_TO_PREDEFINED_VARIATIONS("settingConvertedToPredefinedVariations"),
+  
+  SETTING_CONVERTED_TO_CUSTOM_VALUES("settingConvertedToCustomValues"),
+  
   SETTING_VALUE_CHANGED("settingValueChanged"),
   
   WEB_HOOK_CREATED("webHookCreated"),
@@ -211,7 +217,23 @@ public enum AuditLogType {
   
   SYNC_USER_DELETED("syncUserDeleted"),
   
-  SYNC_GROUP_DELETED("syncGroupDeleted");
+  SYNC_GROUP_DELETED("syncGroupDeleted"),
+  
+  PROXY_CONFIGURATION_CREATED("proxyConfigurationCreated"),
+  
+  PROXY_CONFIGURATION_CHANGED("proxyConfigurationChanged"),
+  
+  PROXY_CONFIGURATION_DELETED("proxyConfigurationDeleted"),
+  
+  PROXY_CONFIGURATION_SECRET_REGENERATED("proxyConfigurationSecretRegenerated"),
+  
+  PROXY_NOTIFICATION_SETTINGS_UPDATED("proxyNotificationSettingsUpdated"),
+  
+  PROXY_NOTIFICATION_SETTINGS_DELETED("proxyNotificationSettingsDeleted"),
+  
+  PROXY_NOTIFICATION_SIGNING_KEY_ADDED("proxyNotificationSigningKeyAdded"),
+  
+  PROXY_NOTIFICATION_SIGNING_KEY_DELETED("proxyNotificationSigningKeyDeleted");
 
   private String value;
 

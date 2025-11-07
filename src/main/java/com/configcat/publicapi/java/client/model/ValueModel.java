@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.UUID;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,7 +50,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * Represents the value of a Feature Flag or Setting.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-07T15:32:06.171915713Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class ValueModel {
   public static final String SERIALIZED_NAME_BOOL_VALUE = "boolValue";
   @SerializedName(SERIALIZED_NAME_BOOL_VALUE)
@@ -66,6 +67,10 @@ public class ValueModel {
   public static final String SERIALIZED_NAME_DOUBLE_VALUE = "doubleValue";
   @SerializedName(SERIALIZED_NAME_DOUBLE_VALUE)
   private Double doubleValue;
+
+  public static final String SERIALIZED_NAME_PREDEFINED_VARIATION_ID = "predefinedVariationId";
+  @SerializedName(SERIALIZED_NAME_PREDEFINED_VARIATION_ID)
+  private UUID predefinedVariationId;
 
   public ValueModel() {
   }
@@ -145,6 +150,25 @@ public class ValueModel {
     this.doubleValue = doubleValue;
   }
 
+
+  public ValueModel predefinedVariationId(UUID predefinedVariationId) {
+    this.predefinedVariationId = predefinedVariationId;
+    return this;
+  }
+
+  /**
+   * The served Variation&#39;s identifier.
+   * @return predefinedVariationId
+   */
+  @javax.annotation.Nullable
+  public UUID getPredefinedVariationId() {
+    return predefinedVariationId;
+  }
+
+  public void setPredefinedVariationId(UUID predefinedVariationId) {
+    this.predefinedVariationId = predefinedVariationId;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -203,13 +227,14 @@ public class ValueModel {
     return Objects.equals(this.boolValue, valueModel.boolValue) &&
         Objects.equals(this.stringValue, valueModel.stringValue) &&
         Objects.equals(this.intValue, valueModel.intValue) &&
-        Objects.equals(this.doubleValue, valueModel.doubleValue)&&
+        Objects.equals(this.doubleValue, valueModel.doubleValue) &&
+        Objects.equals(this.predefinedVariationId, valueModel.predefinedVariationId)&&
         Objects.equals(this.additionalProperties, valueModel.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(boolValue, stringValue, intValue, doubleValue, additionalProperties);
+    return Objects.hash(boolValue, stringValue, intValue, doubleValue, predefinedVariationId, additionalProperties);
   }
 
   @Override
@@ -220,6 +245,7 @@ public class ValueModel {
     sb.append("    stringValue: ").append(toIndentedString(stringValue)).append("\n");
     sb.append("    intValue: ").append(toIndentedString(intValue)).append("\n");
     sb.append("    doubleValue: ").append(toIndentedString(doubleValue)).append("\n");
+    sb.append("    predefinedVariationId: ").append(toIndentedString(predefinedVariationId)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -247,6 +273,7 @@ public class ValueModel {
     openapiFields.add("stringValue");
     openapiFields.add("intValue");
     openapiFields.add("doubleValue");
+    openapiFields.add("predefinedVariationId");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -254,6 +281,7 @@ public class ValueModel {
     openapiRequiredFields.add("stringValue");
     openapiRequiredFields.add("intValue");
     openapiRequiredFields.add("doubleValue");
+    openapiRequiredFields.add("predefinedVariationId");
   }
 
   /**
@@ -278,6 +306,9 @@ public class ValueModel {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("stringValue") != null && !jsonObj.get("stringValue").isJsonNull()) && !jsonObj.get("stringValue").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `stringValue` to be a primitive type in the JSON string but got `%s`", jsonObj.get("stringValue").toString()));
+      }
+      if ((jsonObj.get("predefinedVariationId") != null && !jsonObj.get("predefinedVariationId").isJsonNull()) && !jsonObj.get("predefinedVariationId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `predefinedVariationId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("predefinedVariationId").toString()));
       }
   }
 

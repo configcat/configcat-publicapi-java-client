@@ -18,6 +18,7 @@ Metadata of a Feature Flag or Setting.
 |**configName** | **String** | Name of the Feature Flag&#39;s Config. |  |
 |**createdAt** | **OffsetDateTime** | The creation time of the Feature Flag or Setting. |  |
 |**tags** | [**List&lt;TagModel&gt;**](TagModel.md) | The tags attached to the Feature Flag or Setting. |  |
+|**predefinedVariations** | [**List&lt;PredefinedVariationModel&gt;**](PredefinedVariationModel.md) | The Feature Flag or Setting&#39;s Variations. |  |
 
 
 

@@ -10,7 +10,7 @@
 |**lastVersionId** | **UUID** |  |  |
 |**defaultValue** | [**ValueModel**](ValueModel.md) |  |  |
 |**targetingRules** | [**List&lt;TargetingRuleModel&gt;**](TargetingRuleModel.md) | The targeting rules of the Feature Flag or Setting. |  |
-|**setting** | [**SettingDataModel**](SettingDataModel.md) |  |  |
+|**setting** | [**SettingDataV2Model**](SettingDataV2Model.md) |  |  |
 |**updatedAt** | **OffsetDateTime** | The last updated date and time when the Feature Flag or Setting. |  |
 |**percentageEvaluationAttribute** | **String** | The user attribute used for percentage evaluation. If not set, it defaults to the &#x60;Identifier&#x60; user object attribute. |  |
 |**lastUpdaterUserEmail** | **String** | The email of the user who last updated the Feature Flag or Setting. |  |

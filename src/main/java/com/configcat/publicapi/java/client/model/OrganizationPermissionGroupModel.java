@@ -49,7 +49,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * Describes the Member&#39;s Permission Group within a Product.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-07T15:32:06.171915713Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class OrganizationPermissionGroupModel {
   public static final String SERIALIZED_NAME_PERMISSION_GROUP_ID = "permissionGroupId";
   @SerializedName(SERIALIZED_NAME_PERMISSION_GROUP_ID)
