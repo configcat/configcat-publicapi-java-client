@@ -9,6 +9,7 @@ All URIs are relative to *https://api.configcat.com*
 | [**getSetting**](FeatureFlagsSettingsApi.md#getSetting) | **GET** /v1/settings/{settingId} | Get Flag |
 | [**getSettings**](FeatureFlagsSettingsApi.md#getSettings) | **GET** /v1/configs/{configId}/settings | List Flags |
 | [**replaceSetting**](FeatureFlagsSettingsApi.md#replaceSetting) | **PUT** /v1/settings/{settingId} | Replace Flag |
+| [**updatePredefinedVariations**](FeatureFlagsSettingsApi.md#updatePredefinedVariations) | **PUT** /v1/settings/{settingId}/predefined-variations | Update predefined variations (Beta) |
 | [**updateSetting**](FeatureFlagsSettingsApi.md#updateSetting) | **PATCH** /v1/settings/{settingId} | Update Flag |
 
 
@@ -366,6 +367,79 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | When the replace was successful. |  -  |
+| **400** | Bad request. |  -  |
+| **404** | Not found. |  -  |
+| **429** | Too many requests. In case of the request rate exceeds the rate limits. |  -  |
+
+<a id="updatePredefinedVariations"></a>
+# **updatePredefinedVariations**
+> SettingModel updatePredefinedVariations(settingId, updatePredefinedVariationsRequest)
+
+Update predefined variations (Beta)
+
+This endpoint updates the predefined variations for a Feature Flag or Setting identified by the &#x60;settingId&#x60; parameter.  **Important:** You can only update a predefined variation&#39;s value if it is not used anywhere in your feature flags.  **Beta feature:** The feature is currently in closed beta state and cannot be used.
+
+### Example
+```java
+// Import classes:
+import com.configcat.publicapi.java.client.ApiClient;
+import com.configcat.publicapi.java.client.ApiException;
+import com.configcat.publicapi.java.client.Configuration;
+import com.configcat.publicapi.java.client.auth.*;
+import com.configcat.publicapi.java.client.models.*;
+import com.configcat.publicapi.java.client.api.FeatureFlagsSettingsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.configcat.com");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
+    FeatureFlagsSettingsApi apiInstance = new FeatureFlagsSettingsApi(defaultClient);
+    Integer settingId = 56; // Integer | The identifier of the Setting.
+    UpdatePredefinedVariationsRequest updatePredefinedVariationsRequest = new UpdatePredefinedVariationsRequest(); // UpdatePredefinedVariationsRequest | 
+    try {
+      SettingModel result = apiInstance.updatePredefinedVariations(settingId, updatePredefinedVariationsRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling FeatureFlagsSettingsApi#updatePredefinedVariations");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **settingId** | **Integer**| The identifier of the Setting. | |
+| **updatePredefinedVariationsRequest** | [**UpdatePredefinedVariationsRequest**](UpdatePredefinedVariationsRequest.md)|  | |
+
+### Return type
+
+[**SettingModel**](SettingModel.md)
+
+### Authorization
+
+[Basic](../README.md#Basic)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/*+json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | When the update was successful. |  -  |
 | **400** | Bad request. |  -  |
 | **404** | Not found. |  -  |
 | **429** | Too many requests. In case of the request rate exceeds the rate limits. |  -  |

@@ -14,6 +14,7 @@
 package com.configcat.publicapi.java.client.model;
 
 import java.util.Objects;
+import com.configcat.publicapi.java.client.model.PredefinedVariationModel;
 import com.configcat.publicapi.java.client.model.SettingType;
 import com.configcat.publicapi.java.client.model.TagModel;
 import com.google.gson.TypeAdapter;
@@ -55,7 +56,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * Metadata of a Feature Flag or Setting.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-07T15:32:06.171915713Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class SettingModel {
   public static final String SERIALIZED_NAME_SETTING_ID = "settingId";
   @SerializedName(SERIALIZED_NAME_SETTING_ID)
@@ -96,6 +97,10 @@ public class SettingModel {
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
   private List<TagModel> tags = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_PREDEFINED_VARIATIONS = "predefinedVariations";
+  @SerializedName(SERIALIZED_NAME_PREDEFINED_VARIATIONS)
+  private List<PredefinedVariationModel> predefinedVariations = new ArrayList<>();
 
   public SettingModel() {
   }
@@ -297,6 +302,33 @@ public class SettingModel {
     this.tags = tags;
   }
 
+
+  public SettingModel predefinedVariations(List<PredefinedVariationModel> predefinedVariations) {
+    this.predefinedVariations = predefinedVariations;
+    return this;
+  }
+
+  public SettingModel addPredefinedVariationsItem(PredefinedVariationModel predefinedVariationsItem) {
+    if (this.predefinedVariations == null) {
+      this.predefinedVariations = new ArrayList<>();
+    }
+    this.predefinedVariations.add(predefinedVariationsItem);
+    return this;
+  }
+
+  /**
+   * The Feature Flag or Setting&#39;s Variations.
+   * @return predefinedVariations
+   */
+  @javax.annotation.Nonnull
+  public List<PredefinedVariationModel> getPredefinedVariations() {
+    return predefinedVariations;
+  }
+
+  public void setPredefinedVariations(List<PredefinedVariationModel> predefinedVariations) {
+    this.predefinedVariations = predefinedVariations;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -361,13 +393,14 @@ public class SettingModel {
         Objects.equals(this.configId, settingModel.configId) &&
         Objects.equals(this.configName, settingModel.configName) &&
         Objects.equals(this.createdAt, settingModel.createdAt) &&
-        Objects.equals(this.tags, settingModel.tags)&&
+        Objects.equals(this.tags, settingModel.tags) &&
+        Objects.equals(this.predefinedVariations, settingModel.predefinedVariations)&&
         Objects.equals(this.additionalProperties, settingModel.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(settingId, key, name, hint, order, settingType, configId, configName, createdAt, tags, additionalProperties);
+    return Objects.hash(settingId, key, name, hint, order, settingType, configId, configName, createdAt, tags, predefinedVariations, additionalProperties);
   }
 
   @Override
@@ -384,6 +417,7 @@ public class SettingModel {
     sb.append("    configName: ").append(toIndentedString(configName)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+    sb.append("    predefinedVariations: ").append(toIndentedString(predefinedVariations)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -417,6 +451,7 @@ public class SettingModel {
     openapiFields.add("configName");
     openapiFields.add("createdAt");
     openapiFields.add("tags");
+    openapiFields.add("predefinedVariations");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -430,6 +465,7 @@ public class SettingModel {
     openapiRequiredFields.add("configName");
     openapiRequiredFields.add("createdAt");
     openapiRequiredFields.add("tags");
+    openapiRequiredFields.add("predefinedVariations");
   }
 
   /**
@@ -478,6 +514,16 @@ public class SettingModel {
       // validate the required field `tags` (array)
       for (int i = 0; i < jsonArraytags.size(); i++) {
         TagModel.validateJsonElement(jsonArraytags.get(i));
+      };
+      // ensure the json data is an array
+      if (!jsonObj.get("predefinedVariations").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `predefinedVariations` to be an array in the JSON string but got `%s`", jsonObj.get("predefinedVariations").toString()));
+      }
+
+      JsonArray jsonArraypredefinedVariations = jsonObj.getAsJsonArray("predefinedVariations");
+      // validate the required field `predefinedVariations` (array)
+      for (int i = 0; i < jsonArraypredefinedVariations.size(); i++) {
+        PredefinedVariationModel.validateJsonElement(jsonArraypredefinedVariations.get(i));
       };
   }
 

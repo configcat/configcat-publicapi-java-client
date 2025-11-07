@@ -112,6 +112,8 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.CreateIntegrationModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.CreateOrUpdateEnvironmentAccessModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.CreatePermissionGroupRequest.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.CreatePredefinedVariationModel.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.CreatePredefinedVariationValueModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.CreateProductRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.CreateSegmentModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.CreateSettingInitialValues.CustomTypeAdapterFactory());
@@ -145,6 +147,8 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.OrganizationProductModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.PercentageOptionModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.PermissionGroupModel.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.PredefinedVariationModel.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.PredefinedVariationValueModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.PreferencesModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.PrerequisiteFlagConditionModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.ProductModel.CustomTypeAdapterFactory());
@@ -161,6 +165,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.SegmentListModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.SegmentModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.SettingDataModel.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.SettingDataV2Model.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.SettingFormulaModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.SettingModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.SettingTagModel.CustomTypeAdapterFactory());
@@ -185,6 +190,9 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.UpdateMemberPermissionsRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.UpdatePercentageOptionModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.UpdatePermissionGroupRequest.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.UpdatePredefinedVariationModel.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.UpdatePredefinedVariationValueModel.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.UpdatePredefinedVariationsRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.UpdatePreferencesRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.UpdatePrerequisiteFlagConditionModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.UpdateProductRequest.CustomTypeAdapterFactory());

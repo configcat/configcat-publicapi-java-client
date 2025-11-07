@@ -24,7 +24,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -53,7 +52,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * The value that the user object&#39;s attribute is compared to.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-07T15:32:06.171915713Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class ComparisonValueModel {
   public static final String SERIALIZED_NAME_STRING_VALUE = "stringValue";
   @SerializedName(SERIALIZED_NAME_STRING_VALUE)
@@ -195,20 +194,9 @@ public class ComparisonValueModel {
         Objects.equals(this.additionalProperties, comparisonValueModel.additionalProperties);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(stringValue, doubleValue, listValue, additionalProperties);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -247,6 +235,9 @@ public class ComparisonValueModel {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("stringValue");
+    openapiRequiredFields.add("doubleValue");
+    openapiRequiredFields.add("listValue");
   }
 
   /**
@@ -261,24 +252,27 @@ public class ComparisonValueModel {
           throw new IllegalArgumentException(String.format("The required field(s) %s in ComparisonValueModel is not found in the empty JSON string", ComparisonValueModel.openapiRequiredFields.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ComparisonValueModel.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("stringValue") != null && !jsonObj.get("stringValue").isJsonNull()) && !jsonObj.get("stringValue").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `stringValue` to be a primitive type in the JSON string but got `%s`", jsonObj.get("stringValue").toString()));
       }
-      if (jsonObj.get("listValue") != null && !jsonObj.get("listValue").isJsonNull()) {
-        JsonArray jsonArraylistValue = jsonObj.getAsJsonArray("listValue");
-        if (jsonArraylistValue != null) {
-          // ensure the json data is an array
-          if (!jsonObj.get("listValue").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `listValue` to be an array in the JSON string but got `%s`", jsonObj.get("listValue").toString()));
-          }
-
-          // validate the optional field `listValue` (array)
-          for (int i = 0; i < jsonArraylistValue.size(); i++) {
-            ComparisonValueListModel.validateJsonElement(jsonArraylistValue.get(i));
-          };
-        }
+      // ensure the json data is an array
+      if (!jsonObj.get("listValue").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `listValue` to be an array in the JSON string but got `%s`", jsonObj.get("listValue").toString()));
       }
+
+      JsonArray jsonArraylistValue = jsonObj.getAsJsonArray("listValue");
+      // validate the required field `listValue` (array)
+      for (int i = 0; i < jsonArraylistValue.size(); i++) {
+        ComparisonValueListModel.validateJsonElement(jsonArraylistValue.get(i));
+      };
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

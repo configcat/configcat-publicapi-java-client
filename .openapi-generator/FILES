@@ -25,6 +25,8 @@ docs/CreateEnvironmentModel.md
 docs/CreateIntegrationModel.md
 docs/CreateOrUpdateEnvironmentAccessModel.md
 docs/CreatePermissionGroupRequest.md
+docs/CreatePredefinedVariationModel.md
+docs/CreatePredefinedVariationValueModel.md
 docs/CreateProductRequest.md
 docs/CreateSegmentModel.md
 docs/CreateSettingInitialValues.md
@@ -76,6 +78,8 @@ docs/OrganizationsApi.md
 docs/PercentageOptionModel.md
 docs/PermissionGroupModel.md
 docs/PermissionGroupsApi.md
+docs/PredefinedVariationModel.md
+docs/PredefinedVariationValueModel.md
 docs/PreferencesModel.md
 docs/PrerequisiteComparator.md
 docs/PrerequisiteFlagConditionModel.md
@@ -98,6 +102,7 @@ docs/SegmentListModel.md
 docs/SegmentModel.md
 docs/SegmentsApi.md
 docs/SettingDataModel.md
+docs/SettingDataV2Model.md
 docs/SettingFormulaModel.md
 docs/SettingModel.md
 docs/SettingTagModel.md
@@ -126,6 +131,9 @@ docs/UpdateEvaluationFormulasModel.md
 docs/UpdateMemberPermissionsRequest.md
 docs/UpdatePercentageOptionModel.md
 docs/UpdatePermissionGroupRequest.md
+docs/UpdatePredefinedVariationModel.md
+docs/UpdatePredefinedVariationValueModel.md
+docs/UpdatePredefinedVariationsRequest.md
 docs/UpdatePreferencesRequest.md
 docs/UpdatePrerequisiteFlagConditionModel.md
 docs/UpdateProductRequest.md
@@ -223,6 +231,8 @@ src/main/java/com/configcat/publicapi/java/client/model/CreateEnvironmentModel.j
 src/main/java/com/configcat/publicapi/java/client/model/CreateIntegrationModel.java
 src/main/java/com/configcat/publicapi/java/client/model/CreateOrUpdateEnvironmentAccessModel.java
 src/main/java/com/configcat/publicapi/java/client/model/CreatePermissionGroupRequest.java
+src/main/java/com/configcat/publicapi/java/client/model/CreatePredefinedVariationModel.java
+src/main/java/com/configcat/publicapi/java/client/model/CreatePredefinedVariationValueModel.java
 src/main/java/com/configcat/publicapi/java/client/model/CreateProductRequest.java
 src/main/java/com/configcat/publicapi/java/client/model/CreateSegmentModel.java
 src/main/java/com/configcat/publicapi/java/client/model/CreateSettingInitialValues.java
@@ -262,6 +272,8 @@ src/main/java/com/configcat/publicapi/java/client/model/OrganizationPermissionMo
 src/main/java/com/configcat/publicapi/java/client/model/OrganizationProductModel.java
 src/main/java/com/configcat/publicapi/java/client/model/PercentageOptionModel.java
 src/main/java/com/configcat/publicapi/java/client/model/PermissionGroupModel.java
+src/main/java/com/configcat/publicapi/java/client/model/PredefinedVariationModel.java
+src/main/java/com/configcat/publicapi/java/client/model/PredefinedVariationValueModel.java
 src/main/java/com/configcat/publicapi/java/client/model/PreferencesModel.java
 src/main/java/com/configcat/publicapi/java/client/model/PrerequisiteComparator.java
 src/main/java/com/configcat/publicapi/java/client/model/PrerequisiteFlagConditionModel.java
@@ -281,6 +293,7 @@ src/main/java/com/configcat/publicapi/java/client/model/SegmentConditionModel.ja
 src/main/java/com/configcat/publicapi/java/client/model/SegmentListModel.java
 src/main/java/com/configcat/publicapi/java/client/model/SegmentModel.java
 src/main/java/com/configcat/publicapi/java/client/model/SettingDataModel.java
+src/main/java/com/configcat/publicapi/java/client/model/SettingDataV2Model.java
 src/main/java/com/configcat/publicapi/java/client/model/SettingFormulaModel.java
 src/main/java/com/configcat/publicapi/java/client/model/SettingModel.java
 src/main/java/com/configcat/publicapi/java/client/model/SettingTagModel.java
@@ -308,6 +321,9 @@ src/main/java/com/configcat/publicapi/java/client/model/UpdateEvaluationFormulas
 src/main/java/com/configcat/publicapi/java/client/model/UpdateMemberPermissionsRequest.java
 src/main/java/com/configcat/publicapi/java/client/model/UpdatePercentageOptionModel.java
 src/main/java/com/configcat/publicapi/java/client/model/UpdatePermissionGroupRequest.java
+src/main/java/com/configcat/publicapi/java/client/model/UpdatePredefinedVariationModel.java
+src/main/java/com/configcat/publicapi/java/client/model/UpdatePredefinedVariationValueModel.java
+src/main/java/com/configcat/publicapi/java/client/model/UpdatePredefinedVariationsRequest.java
 src/main/java/com/configcat/publicapi/java/client/model/UpdatePreferencesRequest.java
 src/main/java/com/configcat/publicapi/java/client/model/UpdatePrerequisiteFlagConditionModel.java
 src/main/java/com/configcat/publicapi/java/client/model/UpdateProductRequest.java

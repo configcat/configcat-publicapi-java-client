@@ -12,6 +12,7 @@ Represents the value of a Feature Flag or Setting.
 |**stringValue** | **String** | The served value in case of a text Setting. |  |
 |**intValue** | **Integer** | The served value in case of a whole number Setting. |  |
 |**doubleValue** | **Double** | The served value in case of a decimal number Setting. |  |
+|**predefinedVariationId** | **UUID** | The served Variation&#39;s identifier. |  |
 
 
 

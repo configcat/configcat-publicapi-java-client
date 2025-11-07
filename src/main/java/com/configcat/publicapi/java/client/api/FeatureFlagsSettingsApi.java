@@ -32,6 +32,7 @@ import com.configcat.publicapi.java.client.model.JsonPatchOperation;
 import com.configcat.publicapi.java.client.model.ReplaceSettingModel;
 import com.configcat.publicapi.java.client.model.SettingModel;
 import java.util.UUID;
+import com.configcat.publicapi.java.client.model.UpdatePredefinedVariationsRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -766,6 +767,153 @@ public class FeatureFlagsSettingsApi {
     public okhttp3.Call replaceSettingAsync(Integer settingId, ReplaceSettingModel replaceSettingModel, final ApiCallback<SettingModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = replaceSettingValidateBeforeCall(settingId, replaceSettingModel, _callback);
+        Type localVarReturnType = new TypeToken<SettingModel>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for updatePredefinedVariations
+     * @param settingId The identifier of the Setting. (required)
+     * @param updatePredefinedVariationsRequest  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When the update was successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call updatePredefinedVariationsCall(Integer settingId, UpdatePredefinedVariationsRequest updatePredefinedVariationsRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = updatePredefinedVariationsRequest;
+
+        // create path and map variables
+        String localVarPath = "/v1/settings/{settingId}/predefined-variations"
+            .replace("{" + "settingId" + "}", localVarApiClient.escapeString(settingId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json",
+            "text/json",
+            "application/*+json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "Basic" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call updatePredefinedVariationsValidateBeforeCall(Integer settingId, UpdatePredefinedVariationsRequest updatePredefinedVariationsRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'settingId' is set
+        if (settingId == null) {
+            throw new ApiException("Missing the required parameter 'settingId' when calling updatePredefinedVariations(Async)");
+        }
+
+        // verify the required parameter 'updatePredefinedVariationsRequest' is set
+        if (updatePredefinedVariationsRequest == null) {
+            throw new ApiException("Missing the required parameter 'updatePredefinedVariationsRequest' when calling updatePredefinedVariations(Async)");
+        }
+
+        return updatePredefinedVariationsCall(settingId, updatePredefinedVariationsRequest, _callback);
+
+    }
+
+    /**
+     * Update predefined variations (Beta)
+     * This endpoint updates the predefined variations for a Feature Flag or Setting identified by the &#x60;settingId&#x60; parameter.  **Important:** You can only update a predefined variation&#39;s value if it is not used anywhere in your feature flags.  **Beta feature:** The feature is currently in closed beta state and cannot be used.
+     * @param settingId The identifier of the Setting. (required)
+     * @param updatePredefinedVariationsRequest  (required)
+     * @return SettingModel
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When the update was successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
+     */
+    public SettingModel updatePredefinedVariations(Integer settingId, UpdatePredefinedVariationsRequest updatePredefinedVariationsRequest) throws ApiException {
+        ApiResponse<SettingModel> localVarResp = updatePredefinedVariationsWithHttpInfo(settingId, updatePredefinedVariationsRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Update predefined variations (Beta)
+     * This endpoint updates the predefined variations for a Feature Flag or Setting identified by the &#x60;settingId&#x60; parameter.  **Important:** You can only update a predefined variation&#39;s value if it is not used anywhere in your feature flags.  **Beta feature:** The feature is currently in closed beta state and cannot be used.
+     * @param settingId The identifier of the Setting. (required)
+     * @param updatePredefinedVariationsRequest  (required)
+     * @return ApiResponse&lt;SettingModel&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When the update was successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<SettingModel> updatePredefinedVariationsWithHttpInfo(Integer settingId, UpdatePredefinedVariationsRequest updatePredefinedVariationsRequest) throws ApiException {
+        okhttp3.Call localVarCall = updatePredefinedVariationsValidateBeforeCall(settingId, updatePredefinedVariationsRequest, null);
+        Type localVarReturnType = new TypeToken<SettingModel>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Update predefined variations (Beta) (asynchronously)
+     * This endpoint updates the predefined variations for a Feature Flag or Setting identified by the &#x60;settingId&#x60; parameter.  **Important:** You can only update a predefined variation&#39;s value if it is not used anywhere in your feature flags.  **Beta feature:** The feature is currently in closed beta state and cannot be used.
+     * @param settingId The identifier of the Setting. (required)
+     * @param updatePredefinedVariationsRequest  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> When the update was successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call updatePredefinedVariationsAsync(Integer settingId, UpdatePredefinedVariationsRequest updatePredefinedVariationsRequest, final ApiCallback<SettingModel> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = updatePredefinedVariationsValidateBeforeCall(settingId, updatePredefinedVariationsRequest, _callback);
         Type localVarReturnType = new TypeToken<SettingModel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

@@ -52,8 +52,12 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * ReplaceSettingModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-10T21:25:35.532049258Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-07T15:32:06.171915713Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class ReplaceSettingModel {
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  private String name;
+
   public static final String SERIALIZED_NAME_HINT = "hint";
   @SerializedName(SERIALIZED_NAME_HINT)
   private String hint;
@@ -66,12 +70,27 @@ public class ReplaceSettingModel {
   @SerializedName(SERIALIZED_NAME_ORDER)
   private Integer order;
 
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  private String name;
-
   public ReplaceSettingModel() {
   }
+
+  public ReplaceSettingModel name(String name) {
+    this.name = name;
+    return this;
+  }
+
+  /**
+   * The name of the Feature Flag or Setting.
+   * @return name
+   */
+  @javax.annotation.Nonnull
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
 
   public ReplaceSettingModel hint(String hint) {
     this.hint = hint;
@@ -137,25 +156,6 @@ public class ReplaceSettingModel {
     this.order = order;
   }
 
-
-  public ReplaceSettingModel name(String name) {
-    this.name = name;
-    return this;
-  }
-
-  /**
-   * The name of the Feature Flag or Setting.
-   * @return name
-   */
-  @javax.annotation.Nullable
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -211,10 +211,10 @@ public class ReplaceSettingModel {
       return false;
     }
     ReplaceSettingModel replaceSettingModel = (ReplaceSettingModel) o;
-    return Objects.equals(this.hint, replaceSettingModel.hint) &&
+    return Objects.equals(this.name, replaceSettingModel.name) &&
+        Objects.equals(this.hint, replaceSettingModel.hint) &&
         Objects.equals(this.tags, replaceSettingModel.tags) &&
-        Objects.equals(this.order, replaceSettingModel.order) &&
-        Objects.equals(this.name, replaceSettingModel.name)&&
+        Objects.equals(this.order, replaceSettingModel.order)&&
         Objects.equals(this.additionalProperties, replaceSettingModel.additionalProperties);
   }
 
@@ -224,7 +224,7 @@ public class ReplaceSettingModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(hint, tags, order, name, additionalProperties);
+    return Objects.hash(name, hint, tags, order, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -238,10 +238,10 @@ public class ReplaceSettingModel {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReplaceSettingModel {\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    hint: ").append(toIndentedString(hint)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    order: ").append(toIndentedString(order)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -265,13 +265,14 @@ public class ReplaceSettingModel {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("name");
     openapiFields.add("hint");
     openapiFields.add("tags");
     openapiFields.add("order");
-    openapiFields.add("name");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("name");
   }
 
   /**
@@ -286,16 +287,23 @@ public class ReplaceSettingModel {
           throw new IllegalArgumentException(String.format("The required field(s) %s in ReplaceSettingModel is not found in the empty JSON string", ReplaceSettingModel.openapiRequiredFields.toString()));
         }
       }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ReplaceSettingModel.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if (!jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
       if ((jsonObj.get("hint") != null && !jsonObj.get("hint").isJsonNull()) && !jsonObj.get("hint").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `hint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hint").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
-      }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
   }
 
