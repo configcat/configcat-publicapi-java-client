@@ -29,6 +29,7 @@ import java.io.IOException;
 
 import com.configcat.publicapi.java.client.model.CreateSettingInitialValues;
 import com.configcat.publicapi.java.client.model.JsonPatchOperation;
+import com.configcat.publicapi.java.client.model.PredefinedVariationsModel;
 import com.configcat.publicapi.java.client.model.ReplaceSettingModel;
 import com.configcat.publicapi.java.client.model.SettingModel;
 import java.util.UUID;
@@ -856,7 +857,7 @@ public class FeatureFlagsSettingsApi {
      * This endpoint updates the predefined variations for a Feature Flag or Setting identified by the &#x60;settingId&#x60; parameter.  **Important:** You can only update a predefined variation&#39;s value if it is not used anywhere in your feature flags.  **Beta feature:** The feature is currently in closed beta state and cannot be used.
      * @param settingId The identifier of the Setting. (required)
      * @param updatePredefinedVariationsRequest  (required)
-     * @return SettingModel
+     * @return PredefinedVariationsModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -867,8 +868,8 @@ public class FeatureFlagsSettingsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public SettingModel updatePredefinedVariations(Integer settingId, UpdatePredefinedVariationsRequest updatePredefinedVariationsRequest) throws ApiException {
-        ApiResponse<SettingModel> localVarResp = updatePredefinedVariationsWithHttpInfo(settingId, updatePredefinedVariationsRequest);
+    public PredefinedVariationsModel updatePredefinedVariations(Integer settingId, UpdatePredefinedVariationsRequest updatePredefinedVariationsRequest) throws ApiException {
+        ApiResponse<PredefinedVariationsModel> localVarResp = updatePredefinedVariationsWithHttpInfo(settingId, updatePredefinedVariationsRequest);
         return localVarResp.getData();
     }
 
@@ -877,7 +878,7 @@ public class FeatureFlagsSettingsApi {
      * This endpoint updates the predefined variations for a Feature Flag or Setting identified by the &#x60;settingId&#x60; parameter.  **Important:** You can only update a predefined variation&#39;s value if it is not used anywhere in your feature flags.  **Beta feature:** The feature is currently in closed beta state and cannot be used.
      * @param settingId The identifier of the Setting. (required)
      * @param updatePredefinedVariationsRequest  (required)
-     * @return ApiResponse&lt;SettingModel&gt;
+     * @return ApiResponse&lt;PredefinedVariationsModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -888,9 +889,9 @@ public class FeatureFlagsSettingsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SettingModel> updatePredefinedVariationsWithHttpInfo(Integer settingId, UpdatePredefinedVariationsRequest updatePredefinedVariationsRequest) throws ApiException {
+    public ApiResponse<PredefinedVariationsModel> updatePredefinedVariationsWithHttpInfo(Integer settingId, UpdatePredefinedVariationsRequest updatePredefinedVariationsRequest) throws ApiException {
         okhttp3.Call localVarCall = updatePredefinedVariationsValidateBeforeCall(settingId, updatePredefinedVariationsRequest, null);
-        Type localVarReturnType = new TypeToken<SettingModel>(){}.getType();
+        Type localVarReturnType = new TypeToken<PredefinedVariationsModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -911,10 +912,10 @@ public class FeatureFlagsSettingsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePredefinedVariationsAsync(Integer settingId, UpdatePredefinedVariationsRequest updatePredefinedVariationsRequest, final ApiCallback<SettingModel> _callback) throws ApiException {
+    public okhttp3.Call updatePredefinedVariationsAsync(Integer settingId, UpdatePredefinedVariationsRequest updatePredefinedVariationsRequest, final ApiCallback<PredefinedVariationsModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updatePredefinedVariationsValidateBeforeCall(settingId, updatePredefinedVariationsRequest, _callback);
-        Type localVarReturnType = new TypeToken<SettingModel>(){}.getType();
+        Type localVarReturnType = new TypeToken<PredefinedVariationsModel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

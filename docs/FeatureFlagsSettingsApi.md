@@ -373,7 +373,7 @@ public class Example {
 
 <a id="updatePredefinedVariations"></a>
 # **updatePredefinedVariations**
-> SettingModel updatePredefinedVariations(settingId, updatePredefinedVariationsRequest)
+> PredefinedVariationsModel updatePredefinedVariations(settingId, updatePredefinedVariationsRequest)
 
 Update predefined variations (Beta)
 
@@ -403,7 +403,7 @@ public class Example {
     Integer settingId = 56; // Integer | The identifier of the Setting.
     UpdatePredefinedVariationsRequest updatePredefinedVariationsRequest = new UpdatePredefinedVariationsRequest(); // UpdatePredefinedVariationsRequest | 
     try {
-      SettingModel result = apiInstance.updatePredefinedVariations(settingId, updatePredefinedVariationsRequest);
+      PredefinedVariationsModel result = apiInstance.updatePredefinedVariations(settingId, updatePredefinedVariationsRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FeatureFlagsSettingsApi#updatePredefinedVariations");
@@ -425,7 +425,7 @@ public class Example {
 
 ### Return type
 
-[**SettingModel**](SettingModel.md)
+[**PredefinedVariationsModel**](PredefinedVariationsModel.md)
 
 ### Authorization
 

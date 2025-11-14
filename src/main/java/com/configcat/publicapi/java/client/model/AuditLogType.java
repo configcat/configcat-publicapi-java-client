@@ -85,7 +85,7 @@ public enum AuditLogType {
   
   SETTING_CONVERTED_TO_PREDEFINED_VARIATIONS("settingConvertedToPredefinedVariations"),
   
-  SETTING_CONVERTED_TO_CUSTOM_VALUES("settingConvertedToCustomValues"),
+  SETTING_CONVERTED_TO_FREE_FORM_VALUES("settingConvertedToFreeFormValues"),
   
   SETTING_VALUE_CHANGED("settingValueChanged"),
   
