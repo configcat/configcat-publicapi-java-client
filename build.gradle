@@ -22,7 +22,7 @@ plugins {
 }
 
 group = 'com.configcat'
-version = '2.1.0'
+version = '2.1.1'
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
