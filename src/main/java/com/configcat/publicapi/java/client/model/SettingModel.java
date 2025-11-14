@@ -56,7 +56,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * Metadata of a Feature Flag or Setting.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-07T15:32:06.171915713Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-14T09:20:16.892643418Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class SettingModel {
   public static final String SERIALIZED_NAME_SETTING_ID = "settingId";
   @SerializedName(SERIALIZED_NAME_SETTING_ID)
