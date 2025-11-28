@@ -2,7 +2,7 @@
 
 ConfigCat Public Management API
 - API version: v1
-  - Build date: 2025-11-14T09:20:16.892643418Z[Etc/UTC]
+  - Build date: 2025-11-28T09:20:10.031721056Z[Etc/UTC]
   - Generator version: 7.7.0
 
 The purpose of this API is to access the ConfigCat platform programmatically.
@@ -196,6 +196,7 @@ Class | Method | HTTP request | Description
 *FeatureFlagSettingValuesV2Api* | [**updateSettingValueV2**](docs/FeatureFlagSettingValuesV2Api.md#updateSettingValueV2) | **PATCH** /v2/environments/{environmentId}/settings/{settingId}/value | Update value
 *FeatureFlagsSettingsApi* | [**createSetting**](docs/FeatureFlagsSettingsApi.md#createSetting) | **POST** /v1/configs/{configId}/settings | Create Flag
 *FeatureFlagsSettingsApi* | [**deleteSetting**](docs/FeatureFlagsSettingsApi.md#deleteSetting) | **DELETE** /v1/settings/{settingId} | Delete Flag
+*FeatureFlagsSettingsApi* | [**getPredefinedVariations**](docs/FeatureFlagsSettingsApi.md#getPredefinedVariations) | **GET** /v1/settings/{settingId}/predefined-variations | Get predefined variations (Beta)
 *FeatureFlagsSettingsApi* | [**getSetting**](docs/FeatureFlagsSettingsApi.md#getSetting) | **GET** /v1/settings/{settingId} | Get Flag
 *FeatureFlagsSettingsApi* | [**getSettings**](docs/FeatureFlagsSettingsApi.md#getSettings) | **GET** /v1/configs/{configId}/settings | List Flags
 *FeatureFlagsSettingsApi* | [**replaceSetting**](docs/FeatureFlagsSettingsApi.md#replaceSetting) | **PUT** /v1/settings/{settingId} | Replace Flag
@@ -222,6 +223,7 @@ Class | Method | HTTP request | Description
 *MembersApi* | [**getPendingInvitationsOrg**](docs/MembersApi.md#getPendingInvitationsOrg) | **GET** /v1/organizations/{organizationId}/invitations | List Pending Invitations in Organization
 *MembersApi* | [**getProductMembers**](docs/MembersApi.md#getProductMembers) | **GET** /v1/products/{productId}/members | List Product Members
 *MembersApi* | [**inviteMember**](docs/MembersApi.md#inviteMember) | **POST** /v1/products/{productId}/members/invite | Invite Member
+*OrganizationsApi* | [**getOrganizationLimitations**](docs/OrganizationsApi.md#getOrganizationLimitations) | **GET** /v1/organizations/{organizationId}/organization-limitations | Get Organization limitations
 *OrganizationsApi* | [**getOrganizations**](docs/OrganizationsApi.md#getOrganizations) | **GET** /v1/organizations | List Organizations
 *PermissionGroupsApi* | [**createPermissionGroup**](docs/PermissionGroupsApi.md#createPermissionGroup) | **POST** /v1/products/{productId}/permissions | Create Permission Group
 *PermissionGroupsApi* | [**deletePermissionGroup**](docs/PermissionGroupsApi.md#deletePermissionGroup) | **DELETE** /v1/permissions/{permissionGroupId} | Delete Permission Group
@@ -327,6 +329,7 @@ Class | Method | HTTP request | Description
  - [OperationType](docs/OperationType.md)
  - [OrganizationAdminModel](docs/OrganizationAdminModel.md)
  - [OrganizationInvitationModel](docs/OrganizationInvitationModel.md)
+ - [OrganizationLimitations](docs/OrganizationLimitations.md)
  - [OrganizationMemberModel](docs/OrganizationMemberModel.md)
  - [OrganizationMembersModel](docs/OrganizationMembersModel.md)
  - [OrganizationModel](docs/OrganizationModel.md)
@@ -335,9 +338,13 @@ Class | Method | HTTP request | Description
  - [OrganizationProductModel](docs/OrganizationProductModel.md)
  - [PercentageOptionModel](docs/PercentageOptionModel.md)
  - [PermissionGroupModel](docs/PermissionGroupModel.md)
+ - [PredefinedVariationEnvironmentModel](docs/PredefinedVariationEnvironmentModel.md)
  - [PredefinedVariationModel](docs/PredefinedVariationModel.md)
+ - [PredefinedVariationUsageModel](docs/PredefinedVariationUsageModel.md)
  - [PredefinedVariationValueModel](docs/PredefinedVariationValueModel.md)
+ - [PredefinedVariationWithUsagesModel](docs/PredefinedVariationWithUsagesModel.md)
  - [PredefinedVariationsModel](docs/PredefinedVariationsModel.md)
+ - [PredefinedVariationsWithUsagesModel](docs/PredefinedVariationsWithUsagesModel.md)
  - [PreferencesModel](docs/PreferencesModel.md)
  - [PrerequisiteComparator](docs/PrerequisiteComparator.md)
  - [PrerequisiteFlagConditionModel](docs/PrerequisiteFlagConditionModel.md)

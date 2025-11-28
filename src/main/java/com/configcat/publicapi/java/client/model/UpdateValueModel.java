@@ -51,7 +51,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * Represents the value of a Feature Flag or Setting.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-14T09:20:16.892643418Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class UpdateValueModel {
   public static final String SERIALIZED_NAME_BOOL_VALUE = "boolValue";
   @SerializedName(SERIALIZED_NAME_BOOL_VALUE)

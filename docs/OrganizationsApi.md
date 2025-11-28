@@ -4,8 +4,78 @@ All URIs are relative to *https://api.configcat.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
+| [**getOrganizationLimitations**](OrganizationsApi.md#getOrganizationLimitations) | **GET** /v1/organizations/{organizationId}/organization-limitations | Get Organization limitations |
 | [**getOrganizations**](OrganizationsApi.md#getOrganizations) | **GET** /v1/organizations | List Organizations |
 
+
+<a id="getOrganizationLimitations"></a>
+# **getOrganizationLimitations**
+> OrganizationLimitations getOrganizationLimitations(organizationId)
+
+Get Organization limitations
+
+This endpoint returns the limitations of an Organization identified by the &#x60;organizationId&#x60;.
+
+### Example
+```java
+// Import classes:
+import com.configcat.publicapi.java.client.ApiClient;
+import com.configcat.publicapi.java.client.ApiException;
+import com.configcat.publicapi.java.client.Configuration;
+import com.configcat.publicapi.java.client.auth.*;
+import com.configcat.publicapi.java.client.models.*;
+import com.configcat.publicapi.java.client.api.OrganizationsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.configcat.com");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
+    OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
+    UUID organizationId = UUID.randomUUID(); // UUID | The identifier of the Organization.
+    try {
+      OrganizationLimitations result = apiInstance.getOrganizationLimitations(organizationId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling OrganizationsApi#getOrganizationLimitations");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **organizationId** | **UUID**| The identifier of the Organization. | |
+
+### Return type
+
+[**OrganizationLimitations**](OrganizationLimitations.md)
+
+### Authorization
+
+[Basic](../README.md#Basic)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+| **429** | Too many requests. In case of the request rate exceeds the rate limits. |  -  |
 
 <a id="getOrganizations"></a>
 # **getOrganizations**

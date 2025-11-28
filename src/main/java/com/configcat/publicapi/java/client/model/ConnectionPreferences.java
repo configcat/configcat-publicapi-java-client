@@ -50,7 +50,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * The connection preferences for the proxy profile, including SDK poll interval and webhook proxy URL.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-14T09:20:16.892643418Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class ConnectionPreferences {
   public static final String SERIALIZED_NAME_SDK_POLL_INTERVAL = "sdkPollInterval";
   @SerializedName(SERIALIZED_NAME_SDK_POLL_INTERVAL)
