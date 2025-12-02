@@ -51,7 +51,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * EnvironmentAccessModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-14T09:20:16.892643418Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class EnvironmentAccessModel {
   public static final String SERIALIZED_NAME_ENVIRONMENT_ID = "environmentId";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_ID)
@@ -112,7 +112,7 @@ public class EnvironmentAccessModel {
    * Name of the Environment.
    * @return name
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
@@ -362,7 +362,7 @@ public class EnvironmentAccessModel {
       if (!jsonObj.get("environmentId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
       }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+      if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("color") != null && !jsonObj.get("color").isJsonNull()) && !jsonObj.get("color").isJsonPrimitive()) {
