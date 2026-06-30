@@ -85,7 +85,8 @@ public class WebhooksApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -93,7 +94,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createWebhookCall(UUID configId, UUID environmentId, WebHookRequestModel webHookRequestModel, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createWebhookCall(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull WebHookRequestModel webHookRequestModel, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -143,7 +144,7 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createWebhookValidateBeforeCall(UUID configId, UUID environmentId, WebHookRequestModel webHookRequestModel, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createWebhookValidateBeforeCall(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull WebHookRequestModel webHookRequestModel, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'configId' is set
         if (configId == null) {
             throw new ApiException("Missing the required parameter 'configId' when calling createWebhook(Async)");
@@ -172,7 +173,8 @@ public class WebhooksApi {
      * @return WebhookResponseModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -180,7 +182,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public WebhookResponseModel createWebhook(UUID configId, UUID environmentId, WebHookRequestModel webHookRequestModel) throws ApiException {
+    public WebhookResponseModel createWebhook(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull WebHookRequestModel webHookRequestModel) throws ApiException {
         ApiResponse<WebhookResponseModel> localVarResp = createWebhookWithHttpInfo(configId, environmentId, webHookRequestModel);
         return localVarResp.getData();
     }
@@ -194,7 +196,8 @@ public class WebhooksApi {
      * @return ApiResponse&lt;WebhookResponseModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -202,7 +205,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebhookResponseModel> createWebhookWithHttpInfo(UUID configId, UUID environmentId, WebHookRequestModel webHookRequestModel) throws ApiException {
+    public ApiResponse<WebhookResponseModel> createWebhookWithHttpInfo(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull WebHookRequestModel webHookRequestModel) throws ApiException {
         okhttp3.Call localVarCall = createWebhookValidateBeforeCall(configId, environmentId, webHookRequestModel, null);
         Type localVarReturnType = new TypeToken<WebhookResponseModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -218,7 +221,8 @@ public class WebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -226,7 +230,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createWebhookAsync(UUID configId, UUID environmentId, WebHookRequestModel webHookRequestModel, final ApiCallback<WebhookResponseModel> _callback) throws ApiException {
+    public okhttp3.Call createWebhookAsync(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull WebHookRequestModel webHookRequestModel, final ApiCallback<WebhookResponseModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createWebhookValidateBeforeCall(configId, environmentId, webHookRequestModel, _callback);
         Type localVarReturnType = new TypeToken<WebhookResponseModel>(){}.getType();
@@ -240,7 +244,8 @@ public class WebhooksApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -248,7 +253,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteWebhookCall(Integer webhookId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteWebhookCall(@javax.annotation.Nonnull Integer webhookId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -293,7 +298,7 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteWebhookValidateBeforeCall(Integer webhookId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteWebhookValidateBeforeCall(@javax.annotation.Nonnull Integer webhookId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'webhookId' is set
         if (webhookId == null) {
             throw new ApiException("Missing the required parameter 'webhookId' when calling deleteWebhook(Async)");
@@ -309,7 +314,8 @@ public class WebhooksApi {
      * @param webhookId The identifier of the Webhook. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -317,7 +323,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteWebhook(Integer webhookId) throws ApiException {
+    public void deleteWebhook(@javax.annotation.Nonnull Integer webhookId) throws ApiException {
         deleteWebhookWithHttpInfo(webhookId);
     }
 
@@ -328,7 +334,8 @@ public class WebhooksApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -336,7 +343,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteWebhookWithHttpInfo(Integer webhookId) throws ApiException {
+    public ApiResponse<Void> deleteWebhookWithHttpInfo(@javax.annotation.Nonnull Integer webhookId) throws ApiException {
         okhttp3.Call localVarCall = deleteWebhookValidateBeforeCall(webhookId, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -349,7 +356,8 @@ public class WebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -357,7 +365,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteWebhookAsync(Integer webhookId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteWebhookAsync(@javax.annotation.Nonnull Integer webhookId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteWebhookValidateBeforeCall(webhookId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -370,7 +378,8 @@ public class WebhooksApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the webhook data is returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -378,7 +387,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWebhookCall(Integer webhookId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getWebhookCall(@javax.annotation.Nonnull Integer webhookId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -424,7 +433,7 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getWebhookValidateBeforeCall(Integer webhookId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getWebhookValidateBeforeCall(@javax.annotation.Nonnull Integer webhookId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'webhookId' is set
         if (webhookId == null) {
             throw new ApiException("Missing the required parameter 'webhookId' when calling getWebhook(Async)");
@@ -441,7 +450,8 @@ public class WebhooksApi {
      * @return WebhookResponseModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the webhook data is returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -449,7 +459,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public WebhookResponseModel getWebhook(Integer webhookId) throws ApiException {
+    public WebhookResponseModel getWebhook(@javax.annotation.Nonnull Integer webhookId) throws ApiException {
         ApiResponse<WebhookResponseModel> localVarResp = getWebhookWithHttpInfo(webhookId);
         return localVarResp.getData();
     }
@@ -461,7 +471,8 @@ public class WebhooksApi {
      * @return ApiResponse&lt;WebhookResponseModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the webhook data is returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -469,7 +480,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebhookResponseModel> getWebhookWithHttpInfo(Integer webhookId) throws ApiException {
+    public ApiResponse<WebhookResponseModel> getWebhookWithHttpInfo(@javax.annotation.Nonnull Integer webhookId) throws ApiException {
         okhttp3.Call localVarCall = getWebhookValidateBeforeCall(webhookId, null);
         Type localVarReturnType = new TypeToken<WebhookResponseModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -483,7 +494,8 @@ public class WebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the webhook data is returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -491,7 +503,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWebhookAsync(Integer webhookId, final ApiCallback<WebhookResponseModel> _callback) throws ApiException {
+    public okhttp3.Call getWebhookAsync(@javax.annotation.Nonnull Integer webhookId, final ApiCallback<WebhookResponseModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getWebhookValidateBeforeCall(webhookId, _callback);
         Type localVarReturnType = new TypeToken<WebhookResponseModel>(){}.getType();
@@ -505,7 +517,8 @@ public class WebhooksApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the webhook signing keys are returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -513,7 +526,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWebhookSigningKeysCall(Integer webhookId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getWebhookSigningKeysCall(@javax.annotation.Nonnull Integer webhookId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -559,7 +572,7 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getWebhookSigningKeysValidateBeforeCall(Integer webhookId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getWebhookSigningKeysValidateBeforeCall(@javax.annotation.Nonnull Integer webhookId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'webhookId' is set
         if (webhookId == null) {
             throw new ApiException("Missing the required parameter 'webhookId' when calling getWebhookSigningKeys(Async)");
@@ -576,7 +589,8 @@ public class WebhooksApi {
      * @return WebhookSigningKeysModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the webhook signing keys are returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -584,7 +598,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public WebhookSigningKeysModel getWebhookSigningKeys(Integer webhookId) throws ApiException {
+    public WebhookSigningKeysModel getWebhookSigningKeys(@javax.annotation.Nonnull Integer webhookId) throws ApiException {
         ApiResponse<WebhookSigningKeysModel> localVarResp = getWebhookSigningKeysWithHttpInfo(webhookId);
         return localVarResp.getData();
     }
@@ -596,7 +610,8 @@ public class WebhooksApi {
      * @return ApiResponse&lt;WebhookSigningKeysModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the webhook signing keys are returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -604,7 +619,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebhookSigningKeysModel> getWebhookSigningKeysWithHttpInfo(Integer webhookId) throws ApiException {
+    public ApiResponse<WebhookSigningKeysModel> getWebhookSigningKeysWithHttpInfo(@javax.annotation.Nonnull Integer webhookId) throws ApiException {
         okhttp3.Call localVarCall = getWebhookSigningKeysValidateBeforeCall(webhookId, null);
         Type localVarReturnType = new TypeToken<WebhookSigningKeysModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -618,7 +633,8 @@ public class WebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the webhook signing keys are returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -626,7 +642,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWebhookSigningKeysAsync(Integer webhookId, final ApiCallback<WebhookSigningKeysModel> _callback) throws ApiException {
+    public okhttp3.Call getWebhookSigningKeysAsync(@javax.annotation.Nonnull Integer webhookId, final ApiCallback<WebhookSigningKeysModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getWebhookSigningKeysValidateBeforeCall(webhookId, _callback);
         Type localVarReturnType = new TypeToken<WebhookSigningKeysModel>(){}.getType();
@@ -640,13 +656,14 @@ public class WebhooksApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWebhooksCall(UUID productId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getWebhooksCall(@javax.annotation.Nonnull UUID productId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -692,7 +709,7 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getWebhooksValidateBeforeCall(UUID productId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getWebhooksValidateBeforeCall(@javax.annotation.Nonnull UUID productId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'productId' is set
         if (productId == null) {
             throw new ApiException("Missing the required parameter 'productId' when calling getWebhooks(Async)");
@@ -709,13 +726,14 @@ public class WebhooksApi {
      * @return List&lt;WebhookResponseModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public List<WebhookResponseModel> getWebhooks(UUID productId) throws ApiException {
+    public List<WebhookResponseModel> getWebhooks(@javax.annotation.Nonnull UUID productId) throws ApiException {
         ApiResponse<List<WebhookResponseModel>> localVarResp = getWebhooksWithHttpInfo(productId);
         return localVarResp.getData();
     }
@@ -727,13 +745,14 @@ public class WebhooksApi {
      * @return ApiResponse&lt;List&lt;WebhookResponseModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<WebhookResponseModel>> getWebhooksWithHttpInfo(UUID productId) throws ApiException {
+    public ApiResponse<List<WebhookResponseModel>> getWebhooksWithHttpInfo(@javax.annotation.Nonnull UUID productId) throws ApiException {
         okhttp3.Call localVarCall = getWebhooksValidateBeforeCall(productId, null);
         Type localVarReturnType = new TypeToken<List<WebhookResponseModel>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -747,13 +766,14 @@ public class WebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getWebhooksAsync(UUID productId, final ApiCallback<List<WebhookResponseModel>> _callback) throws ApiException {
+    public okhttp3.Call getWebhooksAsync(@javax.annotation.Nonnull UUID productId, final ApiCallback<List<WebhookResponseModel>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getWebhooksValidateBeforeCall(productId, _callback);
         Type localVarReturnType = new TypeToken<List<WebhookResponseModel>>(){}.getType();
@@ -768,7 +788,8 @@ public class WebhooksApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the replace was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -776,7 +797,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call replaceWebhookCall(Integer webhookId, WebHookRequestModel webHookRequestModel, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call replaceWebhookCall(@javax.annotation.Nonnull Integer webhookId, @javax.annotation.Nonnull WebHookRequestModel webHookRequestModel, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -825,7 +846,7 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call replaceWebhookValidateBeforeCall(Integer webhookId, WebHookRequestModel webHookRequestModel, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call replaceWebhookValidateBeforeCall(@javax.annotation.Nonnull Integer webhookId, @javax.annotation.Nonnull WebHookRequestModel webHookRequestModel, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'webhookId' is set
         if (webhookId == null) {
             throw new ApiException("Missing the required parameter 'webhookId' when calling replaceWebhook(Async)");
@@ -848,7 +869,8 @@ public class WebhooksApi {
      * @return WebhookResponseModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the replace was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -856,7 +878,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public WebhookResponseModel replaceWebhook(Integer webhookId, WebHookRequestModel webHookRequestModel) throws ApiException {
+    public WebhookResponseModel replaceWebhook(@javax.annotation.Nonnull Integer webhookId, @javax.annotation.Nonnull WebHookRequestModel webHookRequestModel) throws ApiException {
         ApiResponse<WebhookResponseModel> localVarResp = replaceWebhookWithHttpInfo(webhookId, webHookRequestModel);
         return localVarResp.getData();
     }
@@ -869,7 +891,8 @@ public class WebhooksApi {
      * @return ApiResponse&lt;WebhookResponseModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the replace was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -877,7 +900,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebhookResponseModel> replaceWebhookWithHttpInfo(Integer webhookId, WebHookRequestModel webHookRequestModel) throws ApiException {
+    public ApiResponse<WebhookResponseModel> replaceWebhookWithHttpInfo(@javax.annotation.Nonnull Integer webhookId, @javax.annotation.Nonnull WebHookRequestModel webHookRequestModel) throws ApiException {
         okhttp3.Call localVarCall = replaceWebhookValidateBeforeCall(webhookId, webHookRequestModel, null);
         Type localVarReturnType = new TypeToken<WebhookResponseModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -892,7 +915,8 @@ public class WebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the replace was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -900,7 +924,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call replaceWebhookAsync(Integer webhookId, WebHookRequestModel webHookRequestModel, final ApiCallback<WebhookResponseModel> _callback) throws ApiException {
+    public okhttp3.Call replaceWebhookAsync(@javax.annotation.Nonnull Integer webhookId, @javax.annotation.Nonnull WebHookRequestModel webHookRequestModel, final ApiCallback<WebhookResponseModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = replaceWebhookValidateBeforeCall(webhookId, webHookRequestModel, _callback);
         Type localVarReturnType = new TypeToken<WebhookResponseModel>(){}.getType();
@@ -915,7 +939,8 @@ public class WebhooksApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the update was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -923,7 +948,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateWebhookCall(Integer webhookId, List<JsonPatchOperation> jsonPatchOperation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateWebhookCall(@javax.annotation.Nonnull Integer webhookId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -972,7 +997,7 @@ public class WebhooksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateWebhookValidateBeforeCall(Integer webhookId, List<JsonPatchOperation> jsonPatchOperation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateWebhookValidateBeforeCall(@javax.annotation.Nonnull Integer webhookId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'webhookId' is set
         if (webhookId == null) {
             throw new ApiException("Missing the required parameter 'webhookId' when calling updateWebhook(Async)");
@@ -995,7 +1020,8 @@ public class WebhooksApi {
      * @return WebhookResponseModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the update was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1003,7 +1029,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public WebhookResponseModel updateWebhook(Integer webhookId, List<JsonPatchOperation> jsonPatchOperation) throws ApiException {
+    public WebhookResponseModel updateWebhook(@javax.annotation.Nonnull Integer webhookId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation) throws ApiException {
         ApiResponse<WebhookResponseModel> localVarResp = updateWebhookWithHttpInfo(webhookId, jsonPatchOperation);
         return localVarResp.getData();
     }
@@ -1016,7 +1042,8 @@ public class WebhooksApi {
      * @return ApiResponse&lt;WebhookResponseModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the update was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1024,7 +1051,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<WebhookResponseModel> updateWebhookWithHttpInfo(Integer webhookId, List<JsonPatchOperation> jsonPatchOperation) throws ApiException {
+    public ApiResponse<WebhookResponseModel> updateWebhookWithHttpInfo(@javax.annotation.Nonnull Integer webhookId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation) throws ApiException {
         okhttp3.Call localVarCall = updateWebhookValidateBeforeCall(webhookId, jsonPatchOperation, null);
         Type localVarReturnType = new TypeToken<WebhookResponseModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1039,7 +1066,8 @@ public class WebhooksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the update was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1047,7 +1075,7 @@ public class WebhooksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateWebhookAsync(Integer webhookId, List<JsonPatchOperation> jsonPatchOperation, final ApiCallback<WebhookResponseModel> _callback) throws ApiException {
+    public okhttp3.Call updateWebhookAsync(@javax.annotation.Nonnull Integer webhookId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, final ApiCallback<WebhookResponseModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateWebhookValidateBeforeCall(webhookId, jsonPatchOperation, _callback);
         Type localVarReturnType = new TypeToken<WebhookResponseModel>(){}.getType();

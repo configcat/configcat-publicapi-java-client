@@ -41,7 +41,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -53,36 +52,42 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * IntegrationLinkDetail
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class IntegrationLinkDetail {
   public static final String SERIALIZED_NAME_PRODUCT = "product";
   @SerializedName(SERIALIZED_NAME_PRODUCT)
+  @javax.annotation.Nonnull
   private ProductModel product;
 
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
+  @javax.annotation.Nonnull
   private ConfigModel config;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT = "environment";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT)
+  @javax.annotation.Nonnull
   private EnvironmentModel environment;
 
   public static final String SERIALIZED_NAME_SETTING = "setting";
   @SerializedName(SERIALIZED_NAME_SETTING)
+  @javax.annotation.Nonnull
   private SettingDataModel setting;
 
   public static final String SERIALIZED_NAME_READ_ONLY = "readOnly";
   @SerializedName(SERIALIZED_NAME_READ_ONLY)
+  @javax.annotation.Nonnull
   private Boolean readOnly;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nonnull
   private String status;
 
   public IntegrationLinkDetail() {
   }
 
-  public IntegrationLinkDetail product(ProductModel product) {
+  public IntegrationLinkDetail product(@javax.annotation.Nonnull ProductModel product) {
     this.product = product;
     return this;
   }
@@ -96,12 +101,12 @@ public class IntegrationLinkDetail {
     return product;
   }
 
-  public void setProduct(ProductModel product) {
+  public void setProduct(@javax.annotation.Nonnull ProductModel product) {
     this.product = product;
   }
 
 
-  public IntegrationLinkDetail config(ConfigModel config) {
+  public IntegrationLinkDetail config(@javax.annotation.Nonnull ConfigModel config) {
     this.config = config;
     return this;
   }
@@ -115,12 +120,12 @@ public class IntegrationLinkDetail {
     return config;
   }
 
-  public void setConfig(ConfigModel config) {
+  public void setConfig(@javax.annotation.Nonnull ConfigModel config) {
     this.config = config;
   }
 
 
-  public IntegrationLinkDetail environment(EnvironmentModel environment) {
+  public IntegrationLinkDetail environment(@javax.annotation.Nonnull EnvironmentModel environment) {
     this.environment = environment;
     return this;
   }
@@ -134,12 +139,12 @@ public class IntegrationLinkDetail {
     return environment;
   }
 
-  public void setEnvironment(EnvironmentModel environment) {
+  public void setEnvironment(@javax.annotation.Nonnull EnvironmentModel environment) {
     this.environment = environment;
   }
 
 
-  public IntegrationLinkDetail setting(SettingDataModel setting) {
+  public IntegrationLinkDetail setting(@javax.annotation.Nonnull SettingDataModel setting) {
     this.setting = setting;
     return this;
   }
@@ -153,12 +158,12 @@ public class IntegrationLinkDetail {
     return setting;
   }
 
-  public void setSetting(SettingDataModel setting) {
+  public void setSetting(@javax.annotation.Nonnull SettingDataModel setting) {
     this.setting = setting;
   }
 
 
-  public IntegrationLinkDetail readOnly(Boolean readOnly) {
+  public IntegrationLinkDetail readOnly(@javax.annotation.Nonnull Boolean readOnly) {
     this.readOnly = readOnly;
     return this;
   }
@@ -172,12 +177,12 @@ public class IntegrationLinkDetail {
     return readOnly;
   }
 
-  public void setReadOnly(Boolean readOnly) {
+  public void setReadOnly(@javax.annotation.Nonnull Boolean readOnly) {
     this.readOnly = readOnly;
   }
 
 
-  public IntegrationLinkDetail status(String status) {
+  public IntegrationLinkDetail status(@javax.annotation.Nonnull String status) {
     this.status = status;
     return this;
   }
@@ -191,7 +196,7 @@ public class IntegrationLinkDetail {
     return status;
   }
 
-  public void setStatus(String status) {
+  public void setStatus(@javax.annotation.Nonnull String status) {
     this.status = status;
   }
 
@@ -284,10 +289,7 @@ public class IntegrationLinkDetail {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -296,22 +298,10 @@ public class IntegrationLinkDetail {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("product");
-    openapiFields.add("config");
-    openapiFields.add("environment");
-    openapiFields.add("setting");
-    openapiFields.add("readOnly");
-    openapiFields.add("status");
+    openapiFields = new HashSet<String>(Arrays.asList("product", "config", "environment", "setting", "readOnly", "status"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("product");
-    openapiRequiredFields.add("config");
-    openapiRequiredFields.add("environment");
-    openapiRequiredFields.add("setting");
-    openapiRequiredFields.add("readOnly");
-    openapiRequiredFields.add("status");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("product", "config", "environment", "setting", "readOnly", "status"));
   }
 
   /**
@@ -323,14 +313,14 @@ public class IntegrationLinkDetail {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!IntegrationLinkDetail.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in IntegrationLinkDetail is not found in the empty JSON string", IntegrationLinkDetail.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in IntegrationLinkDetail is not found in the empty JSON string", IntegrationLinkDetail.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : IntegrationLinkDetail.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -343,7 +333,7 @@ public class IntegrationLinkDetail {
       // validate the required field `setting`
       SettingDataModel.validateJsonElement(jsonObj.get("setting"));
       if (!jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
   }
 
@@ -404,7 +394,7 @@ public class IntegrationLinkDetail {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

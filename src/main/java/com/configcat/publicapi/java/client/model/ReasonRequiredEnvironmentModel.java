@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,24 +49,27 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * ReasonRequiredEnvironmentModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class ReasonRequiredEnvironmentModel {
   public static final String SERIALIZED_NAME_ENVIRONMENT_ID = "environmentId";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_ID)
+  @javax.annotation.Nonnull
   private UUID environmentId;
 
   public static final String SERIALIZED_NAME_REASON_REQUIRED = "reasonRequired";
   @SerializedName(SERIALIZED_NAME_REASON_REQUIRED)
+  @javax.annotation.Nonnull
   private Boolean reasonRequired;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_NAME = "environmentName";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_NAME)
+  @javax.annotation.Nullable
   private String environmentName;
 
   public ReasonRequiredEnvironmentModel() {
   }
 
-  public ReasonRequiredEnvironmentModel environmentId(UUID environmentId) {
+  public ReasonRequiredEnvironmentModel environmentId(@javax.annotation.Nonnull UUID environmentId) {
     this.environmentId = environmentId;
     return this;
   }
@@ -81,12 +83,12 @@ public class ReasonRequiredEnvironmentModel {
     return environmentId;
   }
 
-  public void setEnvironmentId(UUID environmentId) {
+  public void setEnvironmentId(@javax.annotation.Nonnull UUID environmentId) {
     this.environmentId = environmentId;
   }
 
 
-  public ReasonRequiredEnvironmentModel reasonRequired(Boolean reasonRequired) {
+  public ReasonRequiredEnvironmentModel reasonRequired(@javax.annotation.Nonnull Boolean reasonRequired) {
     this.reasonRequired = reasonRequired;
     return this;
   }
@@ -100,12 +102,12 @@ public class ReasonRequiredEnvironmentModel {
     return reasonRequired;
   }
 
-  public void setReasonRequired(Boolean reasonRequired) {
+  public void setReasonRequired(@javax.annotation.Nonnull Boolean reasonRequired) {
     this.reasonRequired = reasonRequired;
   }
 
 
-  public ReasonRequiredEnvironmentModel environmentName(String environmentName) {
+  public ReasonRequiredEnvironmentModel environmentName(@javax.annotation.Nullable String environmentName) {
     this.environmentName = environmentName;
     return this;
   }
@@ -119,7 +121,7 @@ public class ReasonRequiredEnvironmentModel {
     return environmentName;
   }
 
-  public void setEnvironmentName(String environmentName) {
+  public void setEnvironmentName(@javax.annotation.Nullable String environmentName) {
     this.environmentName = environmentName;
   }
 
@@ -206,10 +208,7 @@ public class ReasonRequiredEnvironmentModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -218,16 +217,10 @@ public class ReasonRequiredEnvironmentModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("environmentId");
-    openapiFields.add("reasonRequired");
-    openapiFields.add("environmentName");
+    openapiFields = new HashSet<String>(Arrays.asList("environmentId", "reasonRequired", "environmentName"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("environmentId");
-    openapiRequiredFields.add("reasonRequired");
-    openapiRequiredFields.add("environmentName");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("environmentId", "reasonRequired", "environmentName"));
   }
 
   /**
@@ -239,22 +232,22 @@ public class ReasonRequiredEnvironmentModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ReasonRequiredEnvironmentModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ReasonRequiredEnvironmentModel is not found in the empty JSON string", ReasonRequiredEnvironmentModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ReasonRequiredEnvironmentModel is not found in the empty JSON string", ReasonRequiredEnvironmentModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ReasonRequiredEnvironmentModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("environmentId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
       }
       if ((jsonObj.get("environmentName") != null && !jsonObj.get("environmentName").isJsonNull()) && !jsonObj.get("environmentName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environmentName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentName").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `environmentName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentName").toString()));
       }
   }
 
@@ -315,7 +308,7 @@ public class ReasonRequiredEnvironmentModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

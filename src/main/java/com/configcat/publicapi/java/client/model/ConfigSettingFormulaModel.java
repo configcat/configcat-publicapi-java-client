@@ -46,7 +46,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -58,56 +57,72 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * ConfigSettingFormulaModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class ConfigSettingFormulaModel {
   public static final String SERIALIZED_NAME_LAST_VERSION_ID = "lastVersionId";
   @SerializedName(SERIALIZED_NAME_LAST_VERSION_ID)
+  @javax.annotation.Nonnull
   private UUID lastVersionId;
 
   public static final String SERIALIZED_NAME_DEFAULT_VALUE = "defaultValue";
   @SerializedName(SERIALIZED_NAME_DEFAULT_VALUE)
+  @javax.annotation.Nonnull
   private ValueModel defaultValue;
 
   public static final String SERIALIZED_NAME_TARGETING_RULES = "targetingRules";
   @SerializedName(SERIALIZED_NAME_TARGETING_RULES)
+  @javax.annotation.Nonnull
   private List<TargetingRuleModel> targetingRules = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SETTING = "setting";
   @SerializedName(SERIALIZED_NAME_SETTING)
+  @javax.annotation.Nonnull
   private SettingDataV2Model setting;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updatedAt";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime updatedAt;
 
   public static final String SERIALIZED_NAME_PERCENTAGE_EVALUATION_ATTRIBUTE = "percentageEvaluationAttribute";
   @SerializedName(SERIALIZED_NAME_PERCENTAGE_EVALUATION_ATTRIBUTE)
+  @javax.annotation.Nullable
   private String percentageEvaluationAttribute;
 
   public static final String SERIALIZED_NAME_LAST_UPDATER_USER_EMAIL = "lastUpdaterUserEmail";
   @SerializedName(SERIALIZED_NAME_LAST_UPDATER_USER_EMAIL)
+  @javax.annotation.Nullable
   private String lastUpdaterUserEmail;
 
   public static final String SERIALIZED_NAME_LAST_UPDATER_USER_FULL_NAME = "lastUpdaterUserFullName";
   @SerializedName(SERIALIZED_NAME_LAST_UPDATER_USER_FULL_NAME)
+  @javax.annotation.Nullable
   private String lastUpdaterUserFullName;
 
   public static final String SERIALIZED_NAME_INTEGRATION_LINKS = "integrationLinks";
   @SerializedName(SERIALIZED_NAME_INTEGRATION_LINKS)
+  @javax.annotation.Nonnull
   private List<IntegrationLinkModel> integrationLinks = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SETTING_TAGS = "settingTags";
   @SerializedName(SERIALIZED_NAME_SETTING_TAGS)
+  @javax.annotation.Nonnull
   private List<SettingTagModel> settingTags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SETTING_IDS_WHERE_PREREQUISITE = "settingIdsWherePrerequisite";
   @SerializedName(SERIALIZED_NAME_SETTING_IDS_WHERE_PREREQUISITE)
+  @javax.annotation.Nonnull
   private List<Integer> settingIdsWherePrerequisite = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_CHANGE_REQUEST_COUNT = "changeRequestCount";
+  @SerializedName(SERIALIZED_NAME_CHANGE_REQUEST_COUNT)
+  @javax.annotation.Nonnull
+  private Integer changeRequestCount;
 
   public ConfigSettingFormulaModel() {
   }
 
-  public ConfigSettingFormulaModel lastVersionId(UUID lastVersionId) {
+  public ConfigSettingFormulaModel lastVersionId(@javax.annotation.Nonnull UUID lastVersionId) {
     this.lastVersionId = lastVersionId;
     return this;
   }
@@ -121,12 +136,12 @@ public class ConfigSettingFormulaModel {
     return lastVersionId;
   }
 
-  public void setLastVersionId(UUID lastVersionId) {
+  public void setLastVersionId(@javax.annotation.Nonnull UUID lastVersionId) {
     this.lastVersionId = lastVersionId;
   }
 
 
-  public ConfigSettingFormulaModel defaultValue(ValueModel defaultValue) {
+  public ConfigSettingFormulaModel defaultValue(@javax.annotation.Nonnull ValueModel defaultValue) {
     this.defaultValue = defaultValue;
     return this;
   }
@@ -140,12 +155,12 @@ public class ConfigSettingFormulaModel {
     return defaultValue;
   }
 
-  public void setDefaultValue(ValueModel defaultValue) {
+  public void setDefaultValue(@javax.annotation.Nonnull ValueModel defaultValue) {
     this.defaultValue = defaultValue;
   }
 
 
-  public ConfigSettingFormulaModel targetingRules(List<TargetingRuleModel> targetingRules) {
+  public ConfigSettingFormulaModel targetingRules(@javax.annotation.Nonnull List<TargetingRuleModel> targetingRules) {
     this.targetingRules = targetingRules;
     return this;
   }
@@ -167,12 +182,12 @@ public class ConfigSettingFormulaModel {
     return targetingRules;
   }
 
-  public void setTargetingRules(List<TargetingRuleModel> targetingRules) {
+  public void setTargetingRules(@javax.annotation.Nonnull List<TargetingRuleModel> targetingRules) {
     this.targetingRules = targetingRules;
   }
 
 
-  public ConfigSettingFormulaModel setting(SettingDataV2Model setting) {
+  public ConfigSettingFormulaModel setting(@javax.annotation.Nonnull SettingDataV2Model setting) {
     this.setting = setting;
     return this;
   }
@@ -186,12 +201,12 @@ public class ConfigSettingFormulaModel {
     return setting;
   }
 
-  public void setSetting(SettingDataV2Model setting) {
+  public void setSetting(@javax.annotation.Nonnull SettingDataV2Model setting) {
     this.setting = setting;
   }
 
 
-  public ConfigSettingFormulaModel updatedAt(OffsetDateTime updatedAt) {
+  public ConfigSettingFormulaModel updatedAt(@javax.annotation.Nullable OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -205,12 +220,12 @@ public class ConfigSettingFormulaModel {
     return updatedAt;
   }
 
-  public void setUpdatedAt(OffsetDateTime updatedAt) {
+  public void setUpdatedAt(@javax.annotation.Nullable OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
   }
 
 
-  public ConfigSettingFormulaModel percentageEvaluationAttribute(String percentageEvaluationAttribute) {
+  public ConfigSettingFormulaModel percentageEvaluationAttribute(@javax.annotation.Nullable String percentageEvaluationAttribute) {
     this.percentageEvaluationAttribute = percentageEvaluationAttribute;
     return this;
   }
@@ -224,12 +239,12 @@ public class ConfigSettingFormulaModel {
     return percentageEvaluationAttribute;
   }
 
-  public void setPercentageEvaluationAttribute(String percentageEvaluationAttribute) {
+  public void setPercentageEvaluationAttribute(@javax.annotation.Nullable String percentageEvaluationAttribute) {
     this.percentageEvaluationAttribute = percentageEvaluationAttribute;
   }
 
 
-  public ConfigSettingFormulaModel lastUpdaterUserEmail(String lastUpdaterUserEmail) {
+  public ConfigSettingFormulaModel lastUpdaterUserEmail(@javax.annotation.Nullable String lastUpdaterUserEmail) {
     this.lastUpdaterUserEmail = lastUpdaterUserEmail;
     return this;
   }
@@ -243,12 +258,12 @@ public class ConfigSettingFormulaModel {
     return lastUpdaterUserEmail;
   }
 
-  public void setLastUpdaterUserEmail(String lastUpdaterUserEmail) {
+  public void setLastUpdaterUserEmail(@javax.annotation.Nullable String lastUpdaterUserEmail) {
     this.lastUpdaterUserEmail = lastUpdaterUserEmail;
   }
 
 
-  public ConfigSettingFormulaModel lastUpdaterUserFullName(String lastUpdaterUserFullName) {
+  public ConfigSettingFormulaModel lastUpdaterUserFullName(@javax.annotation.Nullable String lastUpdaterUserFullName) {
     this.lastUpdaterUserFullName = lastUpdaterUserFullName;
     return this;
   }
@@ -262,12 +277,12 @@ public class ConfigSettingFormulaModel {
     return lastUpdaterUserFullName;
   }
 
-  public void setLastUpdaterUserFullName(String lastUpdaterUserFullName) {
+  public void setLastUpdaterUserFullName(@javax.annotation.Nullable String lastUpdaterUserFullName) {
     this.lastUpdaterUserFullName = lastUpdaterUserFullName;
   }
 
 
-  public ConfigSettingFormulaModel integrationLinks(List<IntegrationLinkModel> integrationLinks) {
+  public ConfigSettingFormulaModel integrationLinks(@javax.annotation.Nonnull List<IntegrationLinkModel> integrationLinks) {
     this.integrationLinks = integrationLinks;
     return this;
   }
@@ -289,12 +304,12 @@ public class ConfigSettingFormulaModel {
     return integrationLinks;
   }
 
-  public void setIntegrationLinks(List<IntegrationLinkModel> integrationLinks) {
+  public void setIntegrationLinks(@javax.annotation.Nonnull List<IntegrationLinkModel> integrationLinks) {
     this.integrationLinks = integrationLinks;
   }
 
 
-  public ConfigSettingFormulaModel settingTags(List<SettingTagModel> settingTags) {
+  public ConfigSettingFormulaModel settingTags(@javax.annotation.Nonnull List<SettingTagModel> settingTags) {
     this.settingTags = settingTags;
     return this;
   }
@@ -316,12 +331,12 @@ public class ConfigSettingFormulaModel {
     return settingTags;
   }
 
-  public void setSettingTags(List<SettingTagModel> settingTags) {
+  public void setSettingTags(@javax.annotation.Nonnull List<SettingTagModel> settingTags) {
     this.settingTags = settingTags;
   }
 
 
-  public ConfigSettingFormulaModel settingIdsWherePrerequisite(List<Integer> settingIdsWherePrerequisite) {
+  public ConfigSettingFormulaModel settingIdsWherePrerequisite(@javax.annotation.Nonnull List<Integer> settingIdsWherePrerequisite) {
     this.settingIdsWherePrerequisite = settingIdsWherePrerequisite;
     return this;
   }
@@ -343,8 +358,27 @@ public class ConfigSettingFormulaModel {
     return settingIdsWherePrerequisite;
   }
 
-  public void setSettingIdsWherePrerequisite(List<Integer> settingIdsWherePrerequisite) {
+  public void setSettingIdsWherePrerequisite(@javax.annotation.Nonnull List<Integer> settingIdsWherePrerequisite) {
     this.settingIdsWherePrerequisite = settingIdsWherePrerequisite;
+  }
+
+
+  public ConfigSettingFormulaModel changeRequestCount(@javax.annotation.Nonnull Integer changeRequestCount) {
+    this.changeRequestCount = changeRequestCount;
+    return this;
+  }
+
+  /**
+   * The number of change requests for the Feature Flag or Setting.
+   * @return changeRequestCount
+   */
+  @javax.annotation.Nonnull
+  public Integer getChangeRequestCount() {
+    return changeRequestCount;
+  }
+
+  public void setChangeRequestCount(@javax.annotation.Nonnull Integer changeRequestCount) {
+    this.changeRequestCount = changeRequestCount;
   }
 
   /**
@@ -412,13 +446,14 @@ public class ConfigSettingFormulaModel {
         Objects.equals(this.lastUpdaterUserFullName, configSettingFormulaModel.lastUpdaterUserFullName) &&
         Objects.equals(this.integrationLinks, configSettingFormulaModel.integrationLinks) &&
         Objects.equals(this.settingTags, configSettingFormulaModel.settingTags) &&
-        Objects.equals(this.settingIdsWherePrerequisite, configSettingFormulaModel.settingIdsWherePrerequisite)&&
+        Objects.equals(this.settingIdsWherePrerequisite, configSettingFormulaModel.settingIdsWherePrerequisite) &&
+        Objects.equals(this.changeRequestCount, configSettingFormulaModel.changeRequestCount)&&
         Objects.equals(this.additionalProperties, configSettingFormulaModel.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(lastVersionId, defaultValue, targetingRules, setting, updatedAt, percentageEvaluationAttribute, lastUpdaterUserEmail, lastUpdaterUserFullName, integrationLinks, settingTags, settingIdsWherePrerequisite, additionalProperties);
+    return Objects.hash(lastVersionId, defaultValue, targetingRules, setting, updatedAt, percentageEvaluationAttribute, lastUpdaterUserEmail, lastUpdaterUserFullName, integrationLinks, settingTags, settingIdsWherePrerequisite, changeRequestCount, additionalProperties);
   }
 
   @Override
@@ -436,6 +471,7 @@ public class ConfigSettingFormulaModel {
     sb.append("    integrationLinks: ").append(toIndentedString(integrationLinks)).append("\n");
     sb.append("    settingTags: ").append(toIndentedString(settingTags)).append("\n");
     sb.append("    settingIdsWherePrerequisite: ").append(toIndentedString(settingIdsWherePrerequisite)).append("\n");
+    sb.append("    changeRequestCount: ").append(toIndentedString(changeRequestCount)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -446,10 +482,7 @@ public class ConfigSettingFormulaModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -458,32 +491,10 @@ public class ConfigSettingFormulaModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("lastVersionId");
-    openapiFields.add("defaultValue");
-    openapiFields.add("targetingRules");
-    openapiFields.add("setting");
-    openapiFields.add("updatedAt");
-    openapiFields.add("percentageEvaluationAttribute");
-    openapiFields.add("lastUpdaterUserEmail");
-    openapiFields.add("lastUpdaterUserFullName");
-    openapiFields.add("integrationLinks");
-    openapiFields.add("settingTags");
-    openapiFields.add("settingIdsWherePrerequisite");
+    openapiFields = new HashSet<String>(Arrays.asList("lastVersionId", "defaultValue", "targetingRules", "setting", "updatedAt", "percentageEvaluationAttribute", "lastUpdaterUserEmail", "lastUpdaterUserFullName", "integrationLinks", "settingTags", "settingIdsWherePrerequisite", "changeRequestCount"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("lastVersionId");
-    openapiRequiredFields.add("defaultValue");
-    openapiRequiredFields.add("targetingRules");
-    openapiRequiredFields.add("setting");
-    openapiRequiredFields.add("updatedAt");
-    openapiRequiredFields.add("percentageEvaluationAttribute");
-    openapiRequiredFields.add("lastUpdaterUserEmail");
-    openapiRequiredFields.add("lastUpdaterUserFullName");
-    openapiRequiredFields.add("integrationLinks");
-    openapiRequiredFields.add("settingTags");
-    openapiRequiredFields.add("settingIdsWherePrerequisite");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("lastVersionId", "defaultValue", "targetingRules", "setting", "updatedAt", "percentageEvaluationAttribute", "lastUpdaterUserEmail", "lastUpdaterUserFullName", "integrationLinks", "settingTags", "settingIdsWherePrerequisite", "changeRequestCount"));
   }
 
   /**
@@ -495,68 +506,68 @@ public class ConfigSettingFormulaModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ConfigSettingFormulaModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ConfigSettingFormulaModel is not found in the empty JSON string", ConfigSettingFormulaModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ConfigSettingFormulaModel is not found in the empty JSON string", ConfigSettingFormulaModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ConfigSettingFormulaModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("lastVersionId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `lastVersionId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lastVersionId").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `lastVersionId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lastVersionId").toString()));
       }
       // validate the required field `defaultValue`
       ValueModel.validateJsonElement(jsonObj.get("defaultValue"));
-      // ensure the json data is an array
-      if (!jsonObj.get("targetingRules").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `targetingRules` to be an array in the JSON string but got `%s`", jsonObj.get("targetingRules").toString()));
+      if (jsonObj.get("targetingRules") != null) {
+        if (!jsonObj.get("targetingRules").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `targetingRules` to be an array in the JSON string but got `%s`", jsonObj.get("targetingRules").toString()));
+        }
+        JsonArray jsonArraytargetingRules = jsonObj.getAsJsonArray("targetingRules");
+        // validate the required field `targetingRules` (array)
+        for (int i = 0; i < jsonArraytargetingRules.size(); i++) {
+          TargetingRuleModel.validateJsonElement(jsonArraytargetingRules.get(i));
+        }
       }
-
-      JsonArray jsonArraytargetingRules = jsonObj.getAsJsonArray("targetingRules");
-      // validate the required field `targetingRules` (array)
-      for (int i = 0; i < jsonArraytargetingRules.size(); i++) {
-        TargetingRuleModel.validateJsonElement(jsonArraytargetingRules.get(i));
-      };
       // validate the required field `setting`
       SettingDataV2Model.validateJsonElement(jsonObj.get("setting"));
       if ((jsonObj.get("percentageEvaluationAttribute") != null && !jsonObj.get("percentageEvaluationAttribute").isJsonNull()) && !jsonObj.get("percentageEvaluationAttribute").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `percentageEvaluationAttribute` to be a primitive type in the JSON string but got `%s`", jsonObj.get("percentageEvaluationAttribute").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `percentageEvaluationAttribute` to be a primitive type in the JSON string but got `%s`", jsonObj.get("percentageEvaluationAttribute").toString()));
       }
       if ((jsonObj.get("lastUpdaterUserEmail") != null && !jsonObj.get("lastUpdaterUserEmail").isJsonNull()) && !jsonObj.get("lastUpdaterUserEmail").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `lastUpdaterUserEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lastUpdaterUserEmail").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `lastUpdaterUserEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lastUpdaterUserEmail").toString()));
       }
       if ((jsonObj.get("lastUpdaterUserFullName") != null && !jsonObj.get("lastUpdaterUserFullName").isJsonNull()) && !jsonObj.get("lastUpdaterUserFullName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `lastUpdaterUserFullName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lastUpdaterUserFullName").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `lastUpdaterUserFullName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lastUpdaterUserFullName").toString()));
       }
-      // ensure the json data is an array
-      if (!jsonObj.get("integrationLinks").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `integrationLinks` to be an array in the JSON string but got `%s`", jsonObj.get("integrationLinks").toString()));
+      if (jsonObj.get("integrationLinks") != null) {
+        if (!jsonObj.get("integrationLinks").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `integrationLinks` to be an array in the JSON string but got `%s`", jsonObj.get("integrationLinks").toString()));
+        }
+        JsonArray jsonArrayintegrationLinks = jsonObj.getAsJsonArray("integrationLinks");
+        // validate the required field `integrationLinks` (array)
+        for (int i = 0; i < jsonArrayintegrationLinks.size(); i++) {
+          IntegrationLinkModel.validateJsonElement(jsonArrayintegrationLinks.get(i));
+        }
       }
-
-      JsonArray jsonArrayintegrationLinks = jsonObj.getAsJsonArray("integrationLinks");
-      // validate the required field `integrationLinks` (array)
-      for (int i = 0; i < jsonArrayintegrationLinks.size(); i++) {
-        IntegrationLinkModel.validateJsonElement(jsonArrayintegrationLinks.get(i));
-      };
-      // ensure the json data is an array
-      if (!jsonObj.get("settingTags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `settingTags` to be an array in the JSON string but got `%s`", jsonObj.get("settingTags").toString()));
+      if (jsonObj.get("settingTags") != null) {
+        if (!jsonObj.get("settingTags").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `settingTags` to be an array in the JSON string but got `%s`", jsonObj.get("settingTags").toString()));
+        }
+        JsonArray jsonArraysettingTags = jsonObj.getAsJsonArray("settingTags");
+        // validate the required field `settingTags` (array)
+        for (int i = 0; i < jsonArraysettingTags.size(); i++) {
+          SettingTagModel.validateJsonElement(jsonArraysettingTags.get(i));
+        }
       }
-
-      JsonArray jsonArraysettingTags = jsonObj.getAsJsonArray("settingTags");
-      // validate the required field `settingTags` (array)
-      for (int i = 0; i < jsonArraysettingTags.size(); i++) {
-        SettingTagModel.validateJsonElement(jsonArraysettingTags.get(i));
-      };
       // ensure the required json array is present
       if (jsonObj.get("settingIdsWherePrerequisite") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("settingIdsWherePrerequisite").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `settingIdsWherePrerequisite` to be an array in the JSON string but got `%s`", jsonObj.get("settingIdsWherePrerequisite").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `settingIdsWherePrerequisite` to be an array in the JSON string but got `%s`", jsonObj.get("settingIdsWherePrerequisite").toString()));
       }
   }
 
@@ -617,7 +628,7 @@ public class ConfigSettingFormulaModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

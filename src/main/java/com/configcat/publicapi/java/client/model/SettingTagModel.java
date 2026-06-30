@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,28 +48,32 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * SettingTagModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class SettingTagModel {
   public static final String SERIALIZED_NAME_SETTING_TAG_ID = "settingTagId";
   @SerializedName(SERIALIZED_NAME_SETTING_TAG_ID)
+  @javax.annotation.Nonnull
   private Long settingTagId;
 
   public static final String SERIALIZED_NAME_TAG_ID = "tagId";
   @SerializedName(SERIALIZED_NAME_TAG_ID)
+  @javax.annotation.Nonnull
   private Long tagId;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_COLOR = "color";
   @SerializedName(SERIALIZED_NAME_COLOR)
+  @javax.annotation.Nullable
   private String color;
 
   public SettingTagModel() {
   }
 
-  public SettingTagModel settingTagId(Long settingTagId) {
+  public SettingTagModel settingTagId(@javax.annotation.Nonnull Long settingTagId) {
     this.settingTagId = settingTagId;
     return this;
   }
@@ -84,12 +87,12 @@ public class SettingTagModel {
     return settingTagId;
   }
 
-  public void setSettingTagId(Long settingTagId) {
+  public void setSettingTagId(@javax.annotation.Nonnull Long settingTagId) {
     this.settingTagId = settingTagId;
   }
 
 
-  public SettingTagModel tagId(Long tagId) {
+  public SettingTagModel tagId(@javax.annotation.Nonnull Long tagId) {
     this.tagId = tagId;
     return this;
   }
@@ -103,12 +106,12 @@ public class SettingTagModel {
     return tagId;
   }
 
-  public void setTagId(Long tagId) {
+  public void setTagId(@javax.annotation.Nonnull Long tagId) {
     this.tagId = tagId;
   }
 
 
-  public SettingTagModel name(String name) {
+  public SettingTagModel name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -122,12 +125,12 @@ public class SettingTagModel {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public SettingTagModel color(String color) {
+  public SettingTagModel color(@javax.annotation.Nullable String color) {
     this.color = color;
     return this;
   }
@@ -141,7 +144,7 @@ public class SettingTagModel {
     return color;
   }
 
-  public void setColor(String color) {
+  public void setColor(@javax.annotation.Nullable String color) {
     this.color = color;
   }
 
@@ -230,10 +233,7 @@ public class SettingTagModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -242,18 +242,10 @@ public class SettingTagModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("settingTagId");
-    openapiFields.add("tagId");
-    openapiFields.add("name");
-    openapiFields.add("color");
+    openapiFields = new HashSet<String>(Arrays.asList("settingTagId", "tagId", "name", "color"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("settingTagId");
-    openapiRequiredFields.add("tagId");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("color");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("settingTagId", "tagId", "name", "color"));
   }
 
   /**
@@ -265,22 +257,22 @@ public class SettingTagModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SettingTagModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SettingTagModel is not found in the empty JSON string", SettingTagModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in SettingTagModel is not found in the empty JSON string", SettingTagModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : SettingTagModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("color") != null && !jsonObj.get("color").isJsonNull()) && !jsonObj.get("color").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `color` to be a primitive type in the JSON string but got `%s`", jsonObj.get("color").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `color` to be a primitive type in the JSON string but got `%s`", jsonObj.get("color").toString()));
       }
   }
 
@@ -341,7 +333,7 @@ public class SettingTagModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

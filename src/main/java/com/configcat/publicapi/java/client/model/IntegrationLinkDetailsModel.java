@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,14 +51,16 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * IntegrationLinkDetailsModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class IntegrationLinkDetailsModel {
   public static final String SERIALIZED_NAME_DETAILS = "details";
   @SerializedName(SERIALIZED_NAME_DETAILS)
+  @javax.annotation.Nullable
   private List<IntegrationLinkDetail> details;
 
   public static final String SERIALIZED_NAME_ALL_INTEGRATION_LINK_COUNT = "allIntegrationLinkCount";
   @SerializedName(SERIALIZED_NAME_ALL_INTEGRATION_LINK_COUNT)
+  @javax.annotation.Nonnull
   private Integer allIntegrationLinkCount;
 
   public IntegrationLinkDetailsModel() {
@@ -83,7 +84,7 @@ public class IntegrationLinkDetailsModel {
 
 
 
-  public IntegrationLinkDetailsModel allIntegrationLinkCount(Integer allIntegrationLinkCount) {
+  public IntegrationLinkDetailsModel allIntegrationLinkCount(@javax.annotation.Nonnull Integer allIntegrationLinkCount) {
     this.allIntegrationLinkCount = allIntegrationLinkCount;
     return this;
   }
@@ -97,7 +98,7 @@ public class IntegrationLinkDetailsModel {
     return allIntegrationLinkCount;
   }
 
-  public void setAllIntegrationLinkCount(Integer allIntegrationLinkCount) {
+  public void setAllIntegrationLinkCount(@javax.annotation.Nonnull Integer allIntegrationLinkCount) {
     this.allIntegrationLinkCount = allIntegrationLinkCount;
   }
 
@@ -182,10 +183,7 @@ public class IntegrationLinkDetailsModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -194,14 +192,10 @@ public class IntegrationLinkDetailsModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("details");
-    openapiFields.add("allIntegrationLinkCount");
+    openapiFields = new HashSet<String>(Arrays.asList("details", "allIntegrationLinkCount"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("details");
-    openapiRequiredFields.add("allIntegrationLinkCount");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("details", "allIntegrationLinkCount"));
   }
 
   /**
@@ -213,27 +207,27 @@ public class IntegrationLinkDetailsModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!IntegrationLinkDetailsModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in IntegrationLinkDetailsModel is not found in the empty JSON string", IntegrationLinkDetailsModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in IntegrationLinkDetailsModel is not found in the empty JSON string", IntegrationLinkDetailsModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : IntegrationLinkDetailsModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // ensure the json data is an array
-      if (!jsonObj.get("details").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `details` to be an array in the JSON string but got `%s`", jsonObj.get("details").toString()));
+      if (jsonObj.get("details") != null && !jsonObj.get("details").isJsonNull()) {
+        if (!jsonObj.get("details").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `details` to be an array in the JSON string but got `%s`", jsonObj.get("details").toString()));
+        }
+        JsonArray jsonArraydetails = jsonObj.getAsJsonArray("details");
+        // validate the required field `details` (array)
+        for (int i = 0; i < jsonArraydetails.size(); i++) {
+          IntegrationLinkDetail.validateJsonElement(jsonArraydetails.get(i));
+        }
       }
-
-      JsonArray jsonArraydetails = jsonObj.getAsJsonArray("details");
-      // validate the required field `details` (array)
-      for (int i = 0; i < jsonArraydetails.size(); i++) {
-        IntegrationLinkDetail.validateJsonElement(jsonArraydetails.get(i));
-      };
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -293,7 +287,7 @@ public class IntegrationLinkDetailsModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

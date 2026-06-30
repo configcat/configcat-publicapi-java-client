@@ -9,11 +9,11 @@
 
 * `PRODUCT_CHANGED` (value: `"productChanged"`)
 
-* `PRODUCT_OWNERSHIP_TRANSFERRED` (value: `"productOwnershipTransferred"`)
-
 * `PRODUCT_DELETED` (value: `"productDeleted"`)
 
 * `PRODUCTS_REORDERED` (value: `"productsReordered"`)
+
+* `PRODUCT_PREFERENCES_UPDATED` (value: `"productPreferencesUpdated"`)
 
 * `TEAM_MEMBER_INVITED` (value: `"teamMemberInvited"`)
 
@@ -32,6 +32,8 @@
 * `TEAM_MEMBER_INVITATION_RESENT` (value: `"teamMemberInvitationResent"`)
 
 * `TEAM_MEMBER_INVITATION_REJECTED` (value: `"teamMemberInvitationRejected"`)
+
+* `TEAM_MEMBER_ADDED_TO_PRODUCT` (value: `"teamMemberAddedToProduct"`)
 
 * `CONFIG_CREATED` (value: `"configCreated"`)
 
@@ -97,8 +99,6 @@
 
 * `ORGANIZATION_ADDED` (value: `"organizationAdded"`)
 
-* `ORGANIZATION_REMOVED` (value: `"organizationRemoved"`)
-
 * `ORGANIZATION_CHANGED` (value: `"organizationChanged"`)
 
 * `ORGANIZATION_SUBSCRIPTION_TYPE_CHANGED` (value: `"organizationSubscriptionTypeChanged"`)
@@ -128,10 +128,6 @@
 * `DOMAIN_VERIFIED` (value: `"domainVerified"`)
 
 * `DOMAIN_REMOVED` (value: `"domainRemoved"`)
-
-* `DOMAIN_SAML_CONFIGURED` (value: `"domainSamlConfigured"`)
-
-* `DOMAIN_SAML_DELETED` (value: `"domainSamlDeleted"`)
 
 * `AUTO_PROVISIONING_CONFIGURATION_CHANGED` (value: `"autoProvisioningConfigurationChanged"`)
 
@@ -210,6 +206,36 @@
 * `PROXY_NOTIFICATION_SIGNING_KEY_ADDED` (value: `"proxyNotificationSigningKeyAdded"`)
 
 * `PROXY_NOTIFICATION_SIGNING_KEY_DELETED` (value: `"proxyNotificationSigningKeyDeleted"`)
+
+* `CHANGE_REQUEST_CREATED` (value: `"changeRequestCreated"`)
+
+* `CHANGE_REQUEST_UPDATED` (value: `"changeRequestUpdated"`)
+
+* `CHANGE_REQUEST_SETTING_VALUES_UPDATED` (value: `"changeRequestSettingValuesUpdated"`)
+
+* `CHANGE_REQUEST_SETTING_VALUE_REBASED` (value: `"changeRequestSettingValueRebased"`)
+
+* `CHANGE_REQUEST_APPROVED` (value: `"changeRequestApproved"`)
+
+* `CHANGE_REQUEST_APPROVAL_DISMISSED` (value: `"changeRequestApprovalDismissed"`)
+
+* `CHANGE_REQUEST_APPLIED` (value: `"changeRequestApplied"`)
+
+* `CHANGE_REQUEST_APPLIED_ON_SCHEDULE` (value: `"changeRequestAppliedOnSchedule"`)
+
+* `CHANGE_REQUEST_CLOSED` (value: `"changeRequestClosed"`)
+
+* `CHANGE_REQUEST_NEEDS_ATTENTION` (value: `"changeRequestNeedsAttention"`)
+
+* `CHANGE_REQUEST_COMMENT_ADDED` (value: `"changeRequestCommentAdded"`)
+
+* `CHANGE_REQUEST_COMMENT_EDITED` (value: `"changeRequestCommentEdited"`)
+
+* `CHANGE_REQUEST_COMMENT_DELETED` (value: `"changeRequestCommentDeleted"`)
+
+* `CHANGE_REQUEST_SETTING_DELETED` (value: `"changeRequestSettingDeleted"`)
+
+* `CHANGE_REQUEST_NEEDS_ATTENTION_FIXED` (value: `"changeRequestNeedsAttentionFixed"`)
 
 
 

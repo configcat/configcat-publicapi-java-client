@@ -2,8 +2,8 @@
 
 ConfigCat Public Management API
 - API version: v1
-  - Build date: 2025-11-28T09:20:10.031721056Z[Etc/UTC]
-  - Generator version: 7.7.0
+  - Build date: 2026-06-30T14:53:36.301118746Z[Etc/UTC]
+  - Generator version: 7.23.0
 
 The purpose of this API is to access the ConfigCat platform programmatically.
 You can **Create**, **Read**, **Update** and **Delete** any entities like **Feature Flags, Configs, Environments** or **Products** within ConfigCat.
@@ -121,7 +121,7 @@ import com.configcat.publicapi.java.client.ApiClient;
 import com.configcat.publicapi.java.client.ApiException;
 import com.configcat.publicapi.java.client.Configuration;
 import com.configcat.publicapi.java.client.auth.*;
-import com.configcat.publicapi.java.client.models.*;
+import com.configcat.publicapi.java.client.model.*;
 import com.configcat.publicapi.java.client.api.AuditLogsApi;
 
 public class Example {
@@ -163,8 +163,10 @@ All URIs are relative to *https://api.configcat.com*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AuditLogsApi* | [**getAuditlogs**](docs/AuditLogsApi.md#getAuditlogs) | **GET** /v1/products/{productId}/auditlogs | List Audit log items for Product
+*AuditLogsApi* | [**getAuditlogsV2**](docs/AuditLogsApi.md#getAuditlogsV2) | **GET** /v2/products/{productId}/auditlogs | List Audit log items for Product (V2)
 *AuditLogsApi* | [**getDeletedSettings**](docs/AuditLogsApi.md#getDeletedSettings) | **GET** /v1/configs/{configId}/deleted-settings | List Deleted Settings
 *AuditLogsApi* | [**getOrganizationAuditlogs**](docs/AuditLogsApi.md#getOrganizationAuditlogs) | **GET** /v1/organizations/{organizationId}/auditlogs | List Audit log items for Organization
+*AuditLogsApi* | [**getOrganizationAuditlogsV2**](docs/AuditLogsApi.md#getOrganizationAuditlogsV2) | **GET** /v2/organizations/{organizationId}/auditlogs | List Audit log items for Organization (V2)
 *CodeReferencesApi* | [**v1CodeReferencesDeleteReportsPost**](docs/CodeReferencesApi.md#v1CodeReferencesDeleteReportsPost) | **POST** /v1/code-references/delete-reports | Delete Reference reports
 *CodeReferencesApi* | [**v1CodeReferencesPost**](docs/CodeReferencesApi.md#v1CodeReferencesPost) | **POST** /v1/code-references | Upload References
 *CodeReferencesApi* | [**v1SettingsSettingIdCodeReferencesGet**](docs/CodeReferencesApi.md#v1SettingsSettingIdCodeReferencesGet) | **GET** /v1/settings/{settingId}/code-references | Get References for Feature Flag or Setting
@@ -196,11 +198,11 @@ Class | Method | HTTP request | Description
 *FeatureFlagSettingValuesV2Api* | [**updateSettingValueV2**](docs/FeatureFlagSettingValuesV2Api.md#updateSettingValueV2) | **PATCH** /v2/environments/{environmentId}/settings/{settingId}/value | Update value
 *FeatureFlagsSettingsApi* | [**createSetting**](docs/FeatureFlagsSettingsApi.md#createSetting) | **POST** /v1/configs/{configId}/settings | Create Flag
 *FeatureFlagsSettingsApi* | [**deleteSetting**](docs/FeatureFlagsSettingsApi.md#deleteSetting) | **DELETE** /v1/settings/{settingId} | Delete Flag
-*FeatureFlagsSettingsApi* | [**getPredefinedVariations**](docs/FeatureFlagsSettingsApi.md#getPredefinedVariations) | **GET** /v1/settings/{settingId}/predefined-variations | Get predefined variations (Beta)
+*FeatureFlagsSettingsApi* | [**getPredefinedVariations**](docs/FeatureFlagsSettingsApi.md#getPredefinedVariations) | **GET** /v1/settings/{settingId}/predefined-variations | Get predefined variations
 *FeatureFlagsSettingsApi* | [**getSetting**](docs/FeatureFlagsSettingsApi.md#getSetting) | **GET** /v1/settings/{settingId} | Get Flag
 *FeatureFlagsSettingsApi* | [**getSettings**](docs/FeatureFlagsSettingsApi.md#getSettings) | **GET** /v1/configs/{configId}/settings | List Flags
 *FeatureFlagsSettingsApi* | [**replaceSetting**](docs/FeatureFlagsSettingsApi.md#replaceSetting) | **PUT** /v1/settings/{settingId} | Replace Flag
-*FeatureFlagsSettingsApi* | [**updatePredefinedVariations**](docs/FeatureFlagsSettingsApi.md#updatePredefinedVariations) | **PUT** /v1/settings/{settingId}/predefined-variations | Update predefined variations (Beta)
+*FeatureFlagsSettingsApi* | [**updatePredefinedVariations**](docs/FeatureFlagsSettingsApi.md#updatePredefinedVariations) | **PUT** /v1/settings/{settingId}/predefined-variations | Update predefined variations
 *FeatureFlagsSettingsApi* | [**updateSetting**](docs/FeatureFlagsSettingsApi.md#updateSetting) | **PATCH** /v1/settings/{settingId} | Update Flag
 *IntegrationLinksApi* | [**addOrUpdateIntegrationLink**](docs/IntegrationLinksApi.md#addOrUpdateIntegrationLink) | **POST** /v1/environments/{environmentId}/settings/{settingId}/integrationLinks/{integrationLinkType}/{key} | Add or update Integration link
 *IntegrationLinksApi* | [**deleteIntegrationLink**](docs/IntegrationLinksApi.md#deleteIntegrationLink) | **DELETE** /v1/environments/{environmentId}/settings/{settingId}/integrationLinks/{integrationLinkType}/{key} | Delete Integration link
@@ -274,7 +276,10 @@ Class | Method | HTTP request | Description
  - [AccessType](docs/AccessType.md)
  - [AddOrUpdateIntegrationLinkModel](docs/AddOrUpdateIntegrationLinkModel.md)
  - [AddOrUpdateJiraIntegrationLinkModel](docs/AddOrUpdateJiraIntegrationLinkModel.md)
+ - [ApprovalPermissionType](docs/ApprovalPermissionType.md)
+ - [ApproveRequiredEnvironmentModel](docs/ApproveRequiredEnvironmentModel.md)
  - [AuditLogItemModel](docs/AuditLogItemModel.md)
+ - [AuditLogItemModelPagedList](docs/AuditLogItemModelPagedList.md)
  - [AuditLogType](docs/AuditLogType.md)
  - [CodeReferenceModel](docs/CodeReferenceModel.md)
  - [CodeReferenceRequest](docs/CodeReferenceRequest.md)
@@ -293,6 +298,7 @@ Class | Method | HTTP request | Description
  - [CreateIntegrationModel](docs/CreateIntegrationModel.md)
  - [CreateOrUpdateConnectionPreferences](docs/CreateOrUpdateConnectionPreferences.md)
  - [CreateOrUpdateEnvironmentAccessModel](docs/CreateOrUpdateEnvironmentAccessModel.md)
+ - [CreateOrUpdateEnvironmentApprovalPermissionModel](docs/CreateOrUpdateEnvironmentApprovalPermissionModel.md)
  - [CreateOrUpdateProxyProfileRequest](docs/CreateOrUpdateProxyProfileRequest.md)
  - [CreateOrUpdateWebhookNotification](docs/CreateOrUpdateWebhookNotification.md)
  - [CreatePermissionGroupRequest](docs/CreatePermissionGroupRequest.md)
@@ -305,8 +311,8 @@ Class | Method | HTTP request | Description
  - [DeleteIntegrationLinkModel](docs/DeleteIntegrationLinkModel.md)
  - [DeleteRepositoryReportsRequest](docs/DeleteRepositoryReportsRequest.md)
  - [DeletedSettingModel](docs/DeletedSettingModel.md)
- - [EnvironmentAccessModel](docs/EnvironmentAccessModel.md)
  - [EnvironmentAccessType](docs/EnvironmentAccessType.md)
+ - [EnvironmentApprovalPermissionType](docs/EnvironmentApprovalPermissionType.md)
  - [EnvironmentModel](docs/EnvironmentModel.md)
  - [EvaluationVersion](docs/EvaluationVersion.md)
  - [FeatureFlagLimitations](docs/FeatureFlagLimitations.md)
@@ -336,8 +342,12 @@ Class | Method | HTTP request | Description
  - [OrganizationPermissionGroupModel](docs/OrganizationPermissionGroupModel.md)
  - [OrganizationPermissionModel](docs/OrganizationPermissionModel.md)
  - [OrganizationProductModel](docs/OrganizationProductModel.md)
+ - [PagingResponseInfo](docs/PagingResponseInfo.md)
  - [PercentageOptionModel](docs/PercentageOptionModel.md)
+ - [PermissionGroupEnvironmentAccessModel](docs/PermissionGroupEnvironmentAccessModel.md)
+ - [PermissionGroupEnvironmentApprovalPermissionModel](docs/PermissionGroupEnvironmentApprovalPermissionModel.md)
  - [PermissionGroupModel](docs/PermissionGroupModel.md)
+ - [PredefinedVariationChangeRequestUsageModel](docs/PredefinedVariationChangeRequestUsageModel.md)
  - [PredefinedVariationEnvironmentModel](docs/PredefinedVariationEnvironmentModel.md)
  - [PredefinedVariationModel](docs/PredefinedVariationModel.md)
  - [PredefinedVariationUsageModel](docs/PredefinedVariationUsageModel.md)
@@ -390,6 +400,7 @@ Class | Method | HTTP request | Description
  - [StaleFlagStaleInEnvironmentsType](docs/StaleFlagStaleInEnvironmentsType.md)
  - [TagModel](docs/TagModel.md)
  - [TargetingRuleModel](docs/TargetingRuleModel.md)
+ - [UpdateApproveRequiredEnvironmentModel](docs/UpdateApproveRequiredEnvironmentModel.md)
  - [UpdateComparisonValueListModel](docs/UpdateComparisonValueListModel.md)
  - [UpdateComparisonValueModel](docs/UpdateComparisonValueModel.md)
  - [UpdateConditionModel](docs/UpdateConditionModel.md)

@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,20 +48,22 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * ConnectRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class ConnectRequest {
   public static final String SERIALIZED_NAME_CLIENT_KEY = "clientKey";
   @SerializedName(SERIALIZED_NAME_CLIENT_KEY)
+  @javax.annotation.Nonnull
   private String clientKey;
 
   public static final String SERIALIZED_NAME_JIRA_JWT_TOKEN = "jiraJwtToken";
   @SerializedName(SERIALIZED_NAME_JIRA_JWT_TOKEN)
+  @javax.annotation.Nonnull
   private String jiraJwtToken;
 
   public ConnectRequest() {
   }
 
-  public ConnectRequest clientKey(String clientKey) {
+  public ConnectRequest clientKey(@javax.annotation.Nonnull String clientKey) {
     this.clientKey = clientKey;
     return this;
   }
@@ -76,12 +77,12 @@ public class ConnectRequest {
     return clientKey;
   }
 
-  public void setClientKey(String clientKey) {
+  public void setClientKey(@javax.annotation.Nonnull String clientKey) {
     this.clientKey = clientKey;
   }
 
 
-  public ConnectRequest jiraJwtToken(String jiraJwtToken) {
+  public ConnectRequest jiraJwtToken(@javax.annotation.Nonnull String jiraJwtToken) {
     this.jiraJwtToken = jiraJwtToken;
     return this;
   }
@@ -95,7 +96,7 @@ public class ConnectRequest {
     return jiraJwtToken;
   }
 
-  public void setJiraJwtToken(String jiraJwtToken) {
+  public void setJiraJwtToken(@javax.annotation.Nonnull String jiraJwtToken) {
     this.jiraJwtToken = jiraJwtToken;
   }
 
@@ -180,10 +181,7 @@ public class ConnectRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -192,14 +190,10 @@ public class ConnectRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("clientKey");
-    openapiFields.add("jiraJwtToken");
+    openapiFields = new HashSet<String>(Arrays.asList("clientKey", "jiraJwtToken"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("clientKey");
-    openapiRequiredFields.add("jiraJwtToken");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("clientKey", "jiraJwtToken"));
   }
 
   /**
@@ -211,22 +205,22 @@ public class ConnectRequest {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ConnectRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ConnectRequest is not found in the empty JSON string", ConnectRequest.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ConnectRequest is not found in the empty JSON string", ConnectRequest.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ConnectRequest.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("clientKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `clientKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("clientKey").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `clientKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("clientKey").toString()));
       }
       if (!jsonObj.get("jiraJwtToken").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `jiraJwtToken` to be a primitive type in the JSON string but got `%s`", jsonObj.get("jiraJwtToken").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `jiraJwtToken` to be a primitive type in the JSON string but got `%s`", jsonObj.get("jiraJwtToken").toString()));
       }
   }
 
@@ -287,7 +281,7 @@ public class ConnectRequest {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

@@ -33,11 +33,11 @@ public enum AuditLogType {
   
   PRODUCT_CHANGED("productChanged"),
   
-  PRODUCT_OWNERSHIP_TRANSFERRED("productOwnershipTransferred"),
-  
   PRODUCT_DELETED("productDeleted"),
   
   PRODUCTS_REORDERED("productsReordered"),
+  
+  PRODUCT_PREFERENCES_UPDATED("productPreferencesUpdated"),
   
   TEAM_MEMBER_INVITED("teamMemberInvited"),
   
@@ -56,6 +56,8 @@ public enum AuditLogType {
   TEAM_MEMBER_INVITATION_RESENT("teamMemberInvitationResent"),
   
   TEAM_MEMBER_INVITATION_REJECTED("teamMemberInvitationRejected"),
+  
+  TEAM_MEMBER_ADDED_TO_PRODUCT("teamMemberAddedToProduct"),
   
   CONFIG_CREATED("configCreated"),
   
@@ -121,8 +123,6 @@ public enum AuditLogType {
   
   ORGANIZATION_ADDED("organizationAdded"),
   
-  ORGANIZATION_REMOVED("organizationRemoved"),
-  
   ORGANIZATION_CHANGED("organizationChanged"),
   
   ORGANIZATION_SUBSCRIPTION_TYPE_CHANGED("organizationSubscriptionTypeChanged"),
@@ -152,10 +152,6 @@ public enum AuditLogType {
   DOMAIN_VERIFIED("domainVerified"),
   
   DOMAIN_REMOVED("domainRemoved"),
-  
-  DOMAIN_SAML_CONFIGURED("domainSamlConfigured"),
-  
-  DOMAIN_SAML_DELETED("domainSamlDeleted"),
   
   AUTO_PROVISIONING_CONFIGURATION_CHANGED("autoProvisioningConfigurationChanged"),
   
@@ -233,7 +229,37 @@ public enum AuditLogType {
   
   PROXY_NOTIFICATION_SIGNING_KEY_ADDED("proxyNotificationSigningKeyAdded"),
   
-  PROXY_NOTIFICATION_SIGNING_KEY_DELETED("proxyNotificationSigningKeyDeleted");
+  PROXY_NOTIFICATION_SIGNING_KEY_DELETED("proxyNotificationSigningKeyDeleted"),
+  
+  CHANGE_REQUEST_CREATED("changeRequestCreated"),
+  
+  CHANGE_REQUEST_UPDATED("changeRequestUpdated"),
+  
+  CHANGE_REQUEST_SETTING_VALUES_UPDATED("changeRequestSettingValuesUpdated"),
+  
+  CHANGE_REQUEST_SETTING_VALUE_REBASED("changeRequestSettingValueRebased"),
+  
+  CHANGE_REQUEST_APPROVED("changeRequestApproved"),
+  
+  CHANGE_REQUEST_APPROVAL_DISMISSED("changeRequestApprovalDismissed"),
+  
+  CHANGE_REQUEST_APPLIED("changeRequestApplied"),
+  
+  CHANGE_REQUEST_APPLIED_ON_SCHEDULE("changeRequestAppliedOnSchedule"),
+  
+  CHANGE_REQUEST_CLOSED("changeRequestClosed"),
+  
+  CHANGE_REQUEST_NEEDS_ATTENTION("changeRequestNeedsAttention"),
+  
+  CHANGE_REQUEST_COMMENT_ADDED("changeRequestCommentAdded"),
+  
+  CHANGE_REQUEST_COMMENT_EDITED("changeRequestCommentEdited"),
+  
+  CHANGE_REQUEST_COMMENT_DELETED("changeRequestCommentDeleted"),
+  
+  CHANGE_REQUEST_SETTING_DELETED("changeRequestSettingDeleted"),
+  
+  CHANGE_REQUEST_NEEDS_ATTENTION_FIXED("changeRequestNeedsAttentionFixed");
 
   private String value;
 

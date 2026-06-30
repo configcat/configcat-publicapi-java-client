@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,24 +50,27 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * Describes a condition that is based on a prerequisite flag.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class UpdatePrerequisiteFlagConditionModel {
   public static final String SERIALIZED_NAME_PREREQUISITE_SETTING_ID = "prerequisiteSettingId";
   @SerializedName(SERIALIZED_NAME_PREREQUISITE_SETTING_ID)
+  @javax.annotation.Nonnull
   private Integer prerequisiteSettingId;
 
   public static final String SERIALIZED_NAME_COMPARATOR = "comparator";
   @SerializedName(SERIALIZED_NAME_COMPARATOR)
+  @javax.annotation.Nonnull
   private PrerequisiteComparator comparator;
 
   public static final String SERIALIZED_NAME_PREREQUISITE_COMPARISON_VALUE = "prerequisiteComparisonValue";
   @SerializedName(SERIALIZED_NAME_PREREQUISITE_COMPARISON_VALUE)
+  @javax.annotation.Nonnull
   private UpdateValueModel prerequisiteComparisonValue;
 
   public UpdatePrerequisiteFlagConditionModel() {
   }
 
-  public UpdatePrerequisiteFlagConditionModel prerequisiteSettingId(Integer prerequisiteSettingId) {
+  public UpdatePrerequisiteFlagConditionModel prerequisiteSettingId(@javax.annotation.Nonnull Integer prerequisiteSettingId) {
     this.prerequisiteSettingId = prerequisiteSettingId;
     return this;
   }
@@ -82,12 +84,12 @@ public class UpdatePrerequisiteFlagConditionModel {
     return prerequisiteSettingId;
   }
 
-  public void setPrerequisiteSettingId(Integer prerequisiteSettingId) {
+  public void setPrerequisiteSettingId(@javax.annotation.Nonnull Integer prerequisiteSettingId) {
     this.prerequisiteSettingId = prerequisiteSettingId;
   }
 
 
-  public UpdatePrerequisiteFlagConditionModel comparator(PrerequisiteComparator comparator) {
+  public UpdatePrerequisiteFlagConditionModel comparator(@javax.annotation.Nonnull PrerequisiteComparator comparator) {
     this.comparator = comparator;
     return this;
   }
@@ -101,12 +103,12 @@ public class UpdatePrerequisiteFlagConditionModel {
     return comparator;
   }
 
-  public void setComparator(PrerequisiteComparator comparator) {
+  public void setComparator(@javax.annotation.Nonnull PrerequisiteComparator comparator) {
     this.comparator = comparator;
   }
 
 
-  public UpdatePrerequisiteFlagConditionModel prerequisiteComparisonValue(UpdateValueModel prerequisiteComparisonValue) {
+  public UpdatePrerequisiteFlagConditionModel prerequisiteComparisonValue(@javax.annotation.Nonnull UpdateValueModel prerequisiteComparisonValue) {
     this.prerequisiteComparisonValue = prerequisiteComparisonValue;
     return this;
   }
@@ -120,7 +122,7 @@ public class UpdatePrerequisiteFlagConditionModel {
     return prerequisiteComparisonValue;
   }
 
-  public void setPrerequisiteComparisonValue(UpdateValueModel prerequisiteComparisonValue) {
+  public void setPrerequisiteComparisonValue(@javax.annotation.Nonnull UpdateValueModel prerequisiteComparisonValue) {
     this.prerequisiteComparisonValue = prerequisiteComparisonValue;
   }
 
@@ -207,10 +209,7 @@ public class UpdatePrerequisiteFlagConditionModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -219,16 +218,10 @@ public class UpdatePrerequisiteFlagConditionModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("prerequisiteSettingId");
-    openapiFields.add("comparator");
-    openapiFields.add("prerequisiteComparisonValue");
+    openapiFields = new HashSet<String>(Arrays.asList("prerequisiteSettingId", "comparator", "prerequisiteComparisonValue"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("prerequisiteSettingId");
-    openapiRequiredFields.add("comparator");
-    openapiRequiredFields.add("prerequisiteComparisonValue");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("prerequisiteSettingId", "comparator", "prerequisiteComparisonValue"));
   }
 
   /**
@@ -240,14 +233,14 @@ public class UpdatePrerequisiteFlagConditionModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!UpdatePrerequisiteFlagConditionModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdatePrerequisiteFlagConditionModel is not found in the empty JSON string", UpdatePrerequisiteFlagConditionModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in UpdatePrerequisiteFlagConditionModel is not found in the empty JSON string", UpdatePrerequisiteFlagConditionModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : UpdatePrerequisiteFlagConditionModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -314,7 +307,7 @@ public class UpdatePrerequisiteFlagConditionModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

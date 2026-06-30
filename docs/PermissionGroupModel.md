@@ -32,8 +32,11 @@
 |**canDisable2FA** | **Boolean** | Group members can disable two-factor authentication for other members. |  |
 |**accessType** | **AccessType** |  |  |
 |**newEnvironmentAccessType** | **EnvironmentAccessType** |  |  |
-|**environmentAccesses** | [**List&lt;EnvironmentAccessModel&gt;**](EnvironmentAccessModel.md) | List of environment specific permissions. |  |
+|**environmentAccesses** | [**List&lt;PermissionGroupEnvironmentAccessModel&gt;**](PermissionGroupEnvironmentAccessModel.md) | List of environment specific permissions. |  |
 |**product** | [**ProductModel**](ProductModel.md) |  |  |
+|**approvalPermissionType** | **ApprovalPermissionType** |  |  |
+|**newEnvironmentApprovalPermissionType** | **EnvironmentApprovalPermissionType** |  |  |
+|**environmentApprovalPermissions** | [**List&lt;PermissionGroupEnvironmentApprovalPermissionModel&gt;**](PermissionGroupEnvironmentApprovalPermissionModel.md) | List of environment specific approval permissions. |  |
 
 
 

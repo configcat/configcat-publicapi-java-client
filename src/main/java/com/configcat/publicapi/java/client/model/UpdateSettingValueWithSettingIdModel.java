@@ -42,7 +42,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -54,28 +53,32 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * UpdateSettingValueWithSettingIdModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class UpdateSettingValueWithSettingIdModel {
   public static final String SERIALIZED_NAME_ROLLOUT_RULES = "rolloutRules";
   @SerializedName(SERIALIZED_NAME_ROLLOUT_RULES)
+  @javax.annotation.Nullable
   private List<UpdateRolloutRuleModel> rolloutRules = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ROLLOUT_PERCENTAGE_ITEMS = "rolloutPercentageItems";
   @SerializedName(SERIALIZED_NAME_ROLLOUT_PERCENTAGE_ITEMS)
+  @javax.annotation.Nullable
   private List<UpdateRolloutPercentageItemModel> rolloutPercentageItems = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
+  @javax.annotation.Nonnull
   private SettingValueType value;
 
   public static final String SERIALIZED_NAME_SETTING_ID = "settingId";
   @SerializedName(SERIALIZED_NAME_SETTING_ID)
+  @javax.annotation.Nullable
   private Integer settingId;
 
   public UpdateSettingValueWithSettingIdModel() {
   }
 
-  public UpdateSettingValueWithSettingIdModel rolloutRules(List<UpdateRolloutRuleModel> rolloutRules) {
+  public UpdateSettingValueWithSettingIdModel rolloutRules(@javax.annotation.Nullable List<UpdateRolloutRuleModel> rolloutRules) {
     this.rolloutRules = rolloutRules;
     return this;
   }
@@ -97,12 +100,12 @@ public class UpdateSettingValueWithSettingIdModel {
     return rolloutRules;
   }
 
-  public void setRolloutRules(List<UpdateRolloutRuleModel> rolloutRules) {
+  public void setRolloutRules(@javax.annotation.Nullable List<UpdateRolloutRuleModel> rolloutRules) {
     this.rolloutRules = rolloutRules;
   }
 
 
-  public UpdateSettingValueWithSettingIdModel rolloutPercentageItems(List<UpdateRolloutPercentageItemModel> rolloutPercentageItems) {
+  public UpdateSettingValueWithSettingIdModel rolloutPercentageItems(@javax.annotation.Nullable List<UpdateRolloutPercentageItemModel> rolloutPercentageItems) {
     this.rolloutPercentageItems = rolloutPercentageItems;
     return this;
   }
@@ -124,12 +127,12 @@ public class UpdateSettingValueWithSettingIdModel {
     return rolloutPercentageItems;
   }
 
-  public void setRolloutPercentageItems(List<UpdateRolloutPercentageItemModel> rolloutPercentageItems) {
+  public void setRolloutPercentageItems(@javax.annotation.Nullable List<UpdateRolloutPercentageItemModel> rolloutPercentageItems) {
     this.rolloutPercentageItems = rolloutPercentageItems;
   }
 
 
-  public UpdateSettingValueWithSettingIdModel value(SettingValueType value) {
+  public UpdateSettingValueWithSettingIdModel value(@javax.annotation.Nonnull SettingValueType value) {
     this.value = value;
     return this;
   }
@@ -143,12 +146,12 @@ public class UpdateSettingValueWithSettingIdModel {
     return value;
   }
 
-  public void setValue(SettingValueType value) {
+  public void setValue(@javax.annotation.Nonnull SettingValueType value) {
     this.value = value;
   }
 
 
-  public UpdateSettingValueWithSettingIdModel settingId(Integer settingId) {
+  public UpdateSettingValueWithSettingIdModel settingId(@javax.annotation.Nullable Integer settingId) {
     this.settingId = settingId;
     return this;
   }
@@ -162,7 +165,7 @@ public class UpdateSettingValueWithSettingIdModel {
     return settingId;
   }
 
-  public void setSettingId(Integer settingId) {
+  public void setSettingId(@javax.annotation.Nullable Integer settingId) {
     this.settingId = settingId;
   }
 
@@ -251,10 +254,7 @@ public class UpdateSettingValueWithSettingIdModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -263,15 +263,10 @@ public class UpdateSettingValueWithSettingIdModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("rolloutRules");
-    openapiFields.add("rolloutPercentageItems");
-    openapiFields.add("value");
-    openapiFields.add("settingId");
+    openapiFields = new HashSet<String>(Arrays.asList("rolloutRules", "rolloutPercentageItems", "value", "settingId"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("value");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("value"));
   }
 
   /**
@@ -283,14 +278,14 @@ public class UpdateSettingValueWithSettingIdModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!UpdateSettingValueWithSettingIdModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdateSettingValueWithSettingIdModel is not found in the empty JSON string", UpdateSettingValueWithSettingIdModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in UpdateSettingValueWithSettingIdModel is not found in the empty JSON string", UpdateSettingValueWithSettingIdModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : UpdateSettingValueWithSettingIdModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -299,7 +294,7 @@ public class UpdateSettingValueWithSettingIdModel {
         if (jsonArrayrolloutRules != null) {
           // ensure the json data is an array
           if (!jsonObj.get("rolloutRules").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `rolloutRules` to be an array in the JSON string but got `%s`", jsonObj.get("rolloutRules").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `rolloutRules` to be an array in the JSON string but got `%s`", jsonObj.get("rolloutRules").toString()));
           }
 
           // validate the optional field `rolloutRules` (array)
@@ -313,7 +308,7 @@ public class UpdateSettingValueWithSettingIdModel {
         if (jsonArrayrolloutPercentageItems != null) {
           // ensure the json data is an array
           if (!jsonObj.get("rolloutPercentageItems").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `rolloutPercentageItems` to be an array in the JSON string but got `%s`", jsonObj.get("rolloutPercentageItems").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `rolloutPercentageItems` to be an array in the JSON string but got `%s`", jsonObj.get("rolloutPercentageItems").toString()));
           }
 
           // validate the optional field `rolloutPercentageItems` (array)
@@ -383,7 +378,7 @@ public class UpdateSettingValueWithSettingIdModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

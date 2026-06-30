@@ -28,6 +28,7 @@ import java.io.IOException;
 
 
 import com.configcat.publicapi.java.client.model.AuditLogItemModel;
+import com.configcat.publicapi.java.client.model.AuditLogItemModelPagedList;
 import com.configcat.publicapi.java.client.model.AuditLogType;
 import com.configcat.publicapi.java.client.model.DeletedSettingModel;
 import java.time.OffsetDateTime;
@@ -88,15 +89,18 @@ public class AuditLogsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
-    public okhttp3.Call getAuditlogsCall(UUID productId, UUID configId, UUID environmentId, AuditLogType auditLogType, OffsetDateTime fromUtcDateTime, OffsetDateTime toUtcDateTime, final ApiCallback _callback) throws ApiException {
+    @Deprecated
+    public okhttp3.Call getAuditlogsCall(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nullable UUID configId, @javax.annotation.Nullable UUID environmentId, @javax.annotation.Nullable AuditLogType auditLogType, @javax.annotation.Nullable OffsetDateTime fromUtcDateTime, @javax.annotation.Nullable OffsetDateTime toUtcDateTime, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -161,8 +165,9 @@ public class AuditLogsApi {
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
+    @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getAuditlogsValidateBeforeCall(UUID productId, UUID configId, UUID environmentId, AuditLogType auditLogType, OffsetDateTime fromUtcDateTime, OffsetDateTime toUtcDateTime, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getAuditlogsValidateBeforeCall(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nullable UUID configId, @javax.annotation.Nullable UUID environmentId, @javax.annotation.Nullable AuditLogType auditLogType, @javax.annotation.Nullable OffsetDateTime fromUtcDateTime, @javax.annotation.Nullable OffsetDateTime toUtcDateTime, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'productId' is set
         if (productId == null) {
             throw new ApiException("Missing the required parameter 'productId' when calling getAuditlogs(Async)");
@@ -174,7 +179,7 @@ public class AuditLogsApi {
 
     /**
      * List Audit log items for Product
-     * This endpoint returns the list of Audit log items for a given Product  and the result can be optionally filtered by Config and/or Environment.  If neither &#x60;fromUtcDateTime&#x60; nor &#x60;toUtcDateTime&#x60; is set, the audit logs for the **last 7 days** will be returned.  The distance between &#x60;fromUtcDateTime&#x60; and &#x60;toUtcDateTime&#x60; cannot exceed **30 days**.
+     * This endpoint returns the list of Audit log items for a given Product and the result can be optionally filtered by Config and/or Environment.  If neither &#x60;fromUtcDateTime&#x60; nor &#x60;toUtcDateTime&#x60; is set, the audit logs for the **last 7 days** will be returned.  The distance between &#x60;fromUtcDateTime&#x60; and &#x60;toUtcDateTime&#x60; cannot exceed **30 days**.  **Important:** This endpoint is deprecated. Use the **List Audit log items for Product (V2)** endpoint instead. In the future, this endpoint will be redirected to the V2 version with default pagination parameters.
      * @param productId The identifier of the Product. (required)
      * @param configId The identifier of the Config. (optional)
      * @param environmentId The identifier of the Environment. (optional)
@@ -184,22 +189,25 @@ public class AuditLogsApi {
      * @return List&lt;AuditLogItemModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
-    public List<AuditLogItemModel> getAuditlogs(UUID productId, UUID configId, UUID environmentId, AuditLogType auditLogType, OffsetDateTime fromUtcDateTime, OffsetDateTime toUtcDateTime) throws ApiException {
+    @Deprecated
+    public List<AuditLogItemModel> getAuditlogs(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nullable UUID configId, @javax.annotation.Nullable UUID environmentId, @javax.annotation.Nullable AuditLogType auditLogType, @javax.annotation.Nullable OffsetDateTime fromUtcDateTime, @javax.annotation.Nullable OffsetDateTime toUtcDateTime) throws ApiException {
         ApiResponse<List<AuditLogItemModel>> localVarResp = getAuditlogsWithHttpInfo(productId, configId, environmentId, auditLogType, fromUtcDateTime, toUtcDateTime);
         return localVarResp.getData();
     }
 
     /**
      * List Audit log items for Product
-     * This endpoint returns the list of Audit log items for a given Product  and the result can be optionally filtered by Config and/or Environment.  If neither &#x60;fromUtcDateTime&#x60; nor &#x60;toUtcDateTime&#x60; is set, the audit logs for the **last 7 days** will be returned.  The distance between &#x60;fromUtcDateTime&#x60; and &#x60;toUtcDateTime&#x60; cannot exceed **30 days**.
+     * This endpoint returns the list of Audit log items for a given Product and the result can be optionally filtered by Config and/or Environment.  If neither &#x60;fromUtcDateTime&#x60; nor &#x60;toUtcDateTime&#x60; is set, the audit logs for the **last 7 days** will be returned.  The distance between &#x60;fromUtcDateTime&#x60; and &#x60;toUtcDateTime&#x60; cannot exceed **30 days**.  **Important:** This endpoint is deprecated. Use the **List Audit log items for Product (V2)** endpoint instead. In the future, this endpoint will be redirected to the V2 version with default pagination parameters.
      * @param productId The identifier of the Product. (required)
      * @param configId The identifier of the Config. (optional)
      * @param environmentId The identifier of the Environment. (optional)
@@ -209,15 +217,18 @@ public class AuditLogsApi {
      * @return ApiResponse&lt;List&lt;AuditLogItemModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
-    public ApiResponse<List<AuditLogItemModel>> getAuditlogsWithHttpInfo(UUID productId, UUID configId, UUID environmentId, AuditLogType auditLogType, OffsetDateTime fromUtcDateTime, OffsetDateTime toUtcDateTime) throws ApiException {
+    @Deprecated
+    public ApiResponse<List<AuditLogItemModel>> getAuditlogsWithHttpInfo(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nullable UUID configId, @javax.annotation.Nullable UUID environmentId, @javax.annotation.Nullable AuditLogType auditLogType, @javax.annotation.Nullable OffsetDateTime fromUtcDateTime, @javax.annotation.Nullable OffsetDateTime toUtcDateTime) throws ApiException {
         okhttp3.Call localVarCall = getAuditlogsValidateBeforeCall(productId, configId, environmentId, auditLogType, fromUtcDateTime, toUtcDateTime, null);
         Type localVarReturnType = new TypeToken<List<AuditLogItemModel>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -225,7 +236,7 @@ public class AuditLogsApi {
 
     /**
      * List Audit log items for Product (asynchronously)
-     * This endpoint returns the list of Audit log items for a given Product  and the result can be optionally filtered by Config and/or Environment.  If neither &#x60;fromUtcDateTime&#x60; nor &#x60;toUtcDateTime&#x60; is set, the audit logs for the **last 7 days** will be returned.  The distance between &#x60;fromUtcDateTime&#x60; and &#x60;toUtcDateTime&#x60; cannot exceed **30 days**.
+     * This endpoint returns the list of Audit log items for a given Product and the result can be optionally filtered by Config and/or Environment.  If neither &#x60;fromUtcDateTime&#x60; nor &#x60;toUtcDateTime&#x60; is set, the audit logs for the **last 7 days** will be returned.  The distance between &#x60;fromUtcDateTime&#x60; and &#x60;toUtcDateTime&#x60; cannot exceed **30 days**.  **Important:** This endpoint is deprecated. Use the **List Audit log items for Product (V2)** endpoint instead. In the future, this endpoint will be redirected to the V2 version with default pagination parameters.
      * @param productId The identifier of the Product. (required)
      * @param configId The identifier of the Config. (optional)
      * @param environmentId The identifier of the Environment. (optional)
@@ -236,7 +247,40 @@ public class AuditLogsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
+     * @deprecated
+     */
+    @Deprecated
+    public okhttp3.Call getAuditlogsAsync(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nullable UUID configId, @javax.annotation.Nullable UUID environmentId, @javax.annotation.Nullable AuditLogType auditLogType, @javax.annotation.Nullable OffsetDateTime fromUtcDateTime, @javax.annotation.Nullable OffsetDateTime toUtcDateTime, final ApiCallback<List<AuditLogItemModel>> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getAuditlogsValidateBeforeCall(productId, configId, environmentId, auditLogType, fromUtcDateTime, toUtcDateTime, _callback);
+        Type localVarReturnType = new TypeToken<List<AuditLogItemModel>>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getAuditlogsV2
+     * @param productId The identifier of the Product. (required)
+     * @param configId The identifier of the Config. (optional)
+     * @param environmentId The identifier of the Environment. (optional)
+     * @param auditLogType Filter Audit logs by Audit log type. (optional)
+     * @param fromUtcDateTime Filter Audit logs by starting UTC date. (optional)
+     * @param toUtcDateTime Filter Audit logs by ending UTC date. (optional)
+     * @param pageNumber Page number (min: 1). (optional, default to 1)
+     * @param pageSize Page size (min: 1, max: 100). (optional, default to 100)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -244,10 +288,175 @@ public class AuditLogsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getAuditlogsAsync(UUID productId, UUID configId, UUID environmentId, AuditLogType auditLogType, OffsetDateTime fromUtcDateTime, OffsetDateTime toUtcDateTime, final ApiCallback<List<AuditLogItemModel>> _callback) throws ApiException {
+    public okhttp3.Call getAuditlogsV2Call(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nullable UUID configId, @javax.annotation.Nullable UUID environmentId, @javax.annotation.Nullable AuditLogType auditLogType, @javax.annotation.Nullable OffsetDateTime fromUtcDateTime, @javax.annotation.Nullable OffsetDateTime toUtcDateTime, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
 
-        okhttp3.Call localVarCall = getAuditlogsValidateBeforeCall(productId, configId, environmentId, auditLogType, fromUtcDateTime, toUtcDateTime, _callback);
-        Type localVarReturnType = new TypeToken<List<AuditLogItemModel>>(){}.getType();
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v2/products/{productId}/auditlogs"
+            .replace("{" + "productId" + "}", localVarApiClient.escapeString(productId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (configId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("configId", configId));
+        }
+
+        if (environmentId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("environmentId", environmentId));
+        }
+
+        if (auditLogType != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("auditLogType", auditLogType));
+        }
+
+        if (fromUtcDateTime != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("fromUtcDateTime", fromUtcDateTime));
+        }
+
+        if (toUtcDateTime != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("toUtcDateTime", toUtcDateTime));
+        }
+
+        if (pageNumber != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("pageNumber", pageNumber));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("pageSize", pageSize));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "Basic" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getAuditlogsV2ValidateBeforeCall(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nullable UUID configId, @javax.annotation.Nullable UUID environmentId, @javax.annotation.Nullable AuditLogType auditLogType, @javax.annotation.Nullable OffsetDateTime fromUtcDateTime, @javax.annotation.Nullable OffsetDateTime toUtcDateTime, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'productId' is set
+        if (productId == null) {
+            throw new ApiException("Missing the required parameter 'productId' when calling getAuditlogsV2(Async)");
+        }
+
+        return getAuditlogsV2Call(productId, configId, environmentId, auditLogType, fromUtcDateTime, toUtcDateTime, pageNumber, pageSize, _callback);
+
+    }
+
+    /**
+     * List Audit log items for Product (V2)
+     * This endpoint returns the list of Audit log items for a given Product and the result can be optionally filtered by Config and/or Environment.
+     * @param productId The identifier of the Product. (required)
+     * @param configId The identifier of the Config. (optional)
+     * @param environmentId The identifier of the Environment. (optional)
+     * @param auditLogType Filter Audit logs by Audit log type. (optional)
+     * @param fromUtcDateTime Filter Audit logs by starting UTC date. (optional)
+     * @param toUtcDateTime Filter Audit logs by ending UTC date. (optional)
+     * @param pageNumber Page number (min: 1). (optional, default to 1)
+     * @param pageSize Page size (min: 1, max: 100). (optional, default to 100)
+     * @return AuditLogItemModelPagedList
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
+     */
+    public AuditLogItemModelPagedList getAuditlogsV2(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nullable UUID configId, @javax.annotation.Nullable UUID environmentId, @javax.annotation.Nullable AuditLogType auditLogType, @javax.annotation.Nullable OffsetDateTime fromUtcDateTime, @javax.annotation.Nullable OffsetDateTime toUtcDateTime, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+        ApiResponse<AuditLogItemModelPagedList> localVarResp = getAuditlogsV2WithHttpInfo(productId, configId, environmentId, auditLogType, fromUtcDateTime, toUtcDateTime, pageNumber, pageSize);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List Audit log items for Product (V2)
+     * This endpoint returns the list of Audit log items for a given Product and the result can be optionally filtered by Config and/or Environment.
+     * @param productId The identifier of the Product. (required)
+     * @param configId The identifier of the Config. (optional)
+     * @param environmentId The identifier of the Environment. (optional)
+     * @param auditLogType Filter Audit logs by Audit log type. (optional)
+     * @param fromUtcDateTime Filter Audit logs by starting UTC date. (optional)
+     * @param toUtcDateTime Filter Audit logs by ending UTC date. (optional)
+     * @param pageNumber Page number (min: 1). (optional, default to 1)
+     * @param pageSize Page size (min: 1, max: 100). (optional, default to 100)
+     * @return ApiResponse&lt;AuditLogItemModelPagedList&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<AuditLogItemModelPagedList> getAuditlogsV2WithHttpInfo(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nullable UUID configId, @javax.annotation.Nullable UUID environmentId, @javax.annotation.Nullable AuditLogType auditLogType, @javax.annotation.Nullable OffsetDateTime fromUtcDateTime, @javax.annotation.Nullable OffsetDateTime toUtcDateTime, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+        okhttp3.Call localVarCall = getAuditlogsV2ValidateBeforeCall(productId, configId, environmentId, auditLogType, fromUtcDateTime, toUtcDateTime, pageNumber, pageSize, null);
+        Type localVarReturnType = new TypeToken<AuditLogItemModelPagedList>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List Audit log items for Product (V2) (asynchronously)
+     * This endpoint returns the list of Audit log items for a given Product and the result can be optionally filtered by Config and/or Environment.
+     * @param productId The identifier of the Product. (required)
+     * @param configId The identifier of the Config. (optional)
+     * @param environmentId The identifier of the Environment. (optional)
+     * @param auditLogType Filter Audit logs by Audit log type. (optional)
+     * @param fromUtcDateTime Filter Audit logs by starting UTC date. (optional)
+     * @param toUtcDateTime Filter Audit logs by ending UTC date. (optional)
+     * @param pageNumber Page number (min: 1). (optional, default to 1)
+     * @param pageSize Page size (min: 1, max: 100). (optional, default to 100)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getAuditlogsV2Async(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nullable UUID configId, @javax.annotation.Nullable UUID environmentId, @javax.annotation.Nullable AuditLogType auditLogType, @javax.annotation.Nullable OffsetDateTime fromUtcDateTime, @javax.annotation.Nullable OffsetDateTime toUtcDateTime, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback<AuditLogItemModelPagedList> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getAuditlogsV2ValidateBeforeCall(productId, configId, environmentId, auditLogType, fromUtcDateTime, toUtcDateTime, pageNumber, pageSize, _callback);
+        Type localVarReturnType = new TypeToken<AuditLogItemModelPagedList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -258,7 +467,8 @@ public class AuditLogsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -266,7 +476,7 @@ public class AuditLogsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDeletedSettingsCall(UUID configId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getDeletedSettingsCall(@javax.annotation.Nonnull UUID configId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -312,7 +522,7 @@ public class AuditLogsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getDeletedSettingsValidateBeforeCall(UUID configId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getDeletedSettingsValidateBeforeCall(@javax.annotation.Nonnull UUID configId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'configId' is set
         if (configId == null) {
             throw new ApiException("Missing the required parameter 'configId' when calling getDeletedSettings(Async)");
@@ -329,7 +539,8 @@ public class AuditLogsApi {
      * @return List&lt;DeletedSettingModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -337,7 +548,7 @@ public class AuditLogsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public List<DeletedSettingModel> getDeletedSettings(UUID configId) throws ApiException {
+    public List<DeletedSettingModel> getDeletedSettings(@javax.annotation.Nonnull UUID configId) throws ApiException {
         ApiResponse<List<DeletedSettingModel>> localVarResp = getDeletedSettingsWithHttpInfo(configId);
         return localVarResp.getData();
     }
@@ -349,7 +560,8 @@ public class AuditLogsApi {
      * @return ApiResponse&lt;List&lt;DeletedSettingModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -357,7 +569,7 @@ public class AuditLogsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<DeletedSettingModel>> getDeletedSettingsWithHttpInfo(UUID configId) throws ApiException {
+    public ApiResponse<List<DeletedSettingModel>> getDeletedSettingsWithHttpInfo(@javax.annotation.Nonnull UUID configId) throws ApiException {
         okhttp3.Call localVarCall = getDeletedSettingsValidateBeforeCall(configId, null);
         Type localVarReturnType = new TypeToken<List<DeletedSettingModel>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -371,7 +583,8 @@ public class AuditLogsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -379,7 +592,7 @@ public class AuditLogsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDeletedSettingsAsync(UUID configId, final ApiCallback<List<DeletedSettingModel>> _callback) throws ApiException {
+    public okhttp3.Call getDeletedSettingsAsync(@javax.annotation.Nonnull UUID configId, final ApiCallback<List<DeletedSettingModel>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getDeletedSettingsValidateBeforeCall(configId, _callback);
         Type localVarReturnType = new TypeToken<List<DeletedSettingModel>>(){}.getType();
@@ -399,15 +612,18 @@ public class AuditLogsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
-    public okhttp3.Call getOrganizationAuditlogsCall(UUID organizationId, UUID productId, UUID configId, UUID environmentId, AuditLogType auditLogType, OffsetDateTime fromUtcDateTime, OffsetDateTime toUtcDateTime, final ApiCallback _callback) throws ApiException {
+    @Deprecated
+    public okhttp3.Call getOrganizationAuditlogsCall(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nullable UUID productId, @javax.annotation.Nullable UUID configId, @javax.annotation.Nullable UUID environmentId, @javax.annotation.Nullable AuditLogType auditLogType, @javax.annotation.Nullable OffsetDateTime fromUtcDateTime, @javax.annotation.Nullable OffsetDateTime toUtcDateTime, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -476,8 +692,9 @@ public class AuditLogsApi {
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
+    @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getOrganizationAuditlogsValidateBeforeCall(UUID organizationId, UUID productId, UUID configId, UUID environmentId, AuditLogType auditLogType, OffsetDateTime fromUtcDateTime, OffsetDateTime toUtcDateTime, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getOrganizationAuditlogsValidateBeforeCall(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nullable UUID productId, @javax.annotation.Nullable UUID configId, @javax.annotation.Nullable UUID environmentId, @javax.annotation.Nullable AuditLogType auditLogType, @javax.annotation.Nullable OffsetDateTime fromUtcDateTime, @javax.annotation.Nullable OffsetDateTime toUtcDateTime, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling getOrganizationAuditlogs(Async)");
@@ -489,7 +706,7 @@ public class AuditLogsApi {
 
     /**
      * List Audit log items for Organization
-     * This endpoint returns the list of Audit log items for a given Organization  and the result can be optionally filtered by Product and/or Config and/or Environment.  If neither &#x60;fromUtcDateTime&#x60; nor &#x60;toUtcDateTime&#x60; is set, the audit logs for the **last 7 days** will be returned.  The distance between &#x60;fromUtcDateTime&#x60; and &#x60;toUtcDateTime&#x60; cannot exceed **30 days**.
+     * This endpoint returns the list of Audit log items for a given Organization and the result can be optionally filtered by Product and/or Config and/or Environment.  If neither &#x60;fromUtcDateTime&#x60; nor &#x60;toUtcDateTime&#x60; is set, the audit logs for the **last 7 days** will be returned.  The distance between &#x60;fromUtcDateTime&#x60; and &#x60;toUtcDateTime&#x60; cannot exceed **30 days**.  **Important:** This endpoint is deprecated. Use the **List Audit log items for Organization (V2)** endpoint instead. In the future, this endpoint will be redirected to the V2 version with default pagination parameters.
      * @param organizationId The identifier of the Organization. (required)
      * @param productId The identifier of the Product. (optional)
      * @param configId The identifier of the Config. (optional)
@@ -500,22 +717,25 @@ public class AuditLogsApi {
      * @return List&lt;AuditLogItemModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
-    public List<AuditLogItemModel> getOrganizationAuditlogs(UUID organizationId, UUID productId, UUID configId, UUID environmentId, AuditLogType auditLogType, OffsetDateTime fromUtcDateTime, OffsetDateTime toUtcDateTime) throws ApiException {
+    @Deprecated
+    public List<AuditLogItemModel> getOrganizationAuditlogs(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nullable UUID productId, @javax.annotation.Nullable UUID configId, @javax.annotation.Nullable UUID environmentId, @javax.annotation.Nullable AuditLogType auditLogType, @javax.annotation.Nullable OffsetDateTime fromUtcDateTime, @javax.annotation.Nullable OffsetDateTime toUtcDateTime) throws ApiException {
         ApiResponse<List<AuditLogItemModel>> localVarResp = getOrganizationAuditlogsWithHttpInfo(organizationId, productId, configId, environmentId, auditLogType, fromUtcDateTime, toUtcDateTime);
         return localVarResp.getData();
     }
 
     /**
      * List Audit log items for Organization
-     * This endpoint returns the list of Audit log items for a given Organization  and the result can be optionally filtered by Product and/or Config and/or Environment.  If neither &#x60;fromUtcDateTime&#x60; nor &#x60;toUtcDateTime&#x60; is set, the audit logs for the **last 7 days** will be returned.  The distance between &#x60;fromUtcDateTime&#x60; and &#x60;toUtcDateTime&#x60; cannot exceed **30 days**.
+     * This endpoint returns the list of Audit log items for a given Organization and the result can be optionally filtered by Product and/or Config and/or Environment.  If neither &#x60;fromUtcDateTime&#x60; nor &#x60;toUtcDateTime&#x60; is set, the audit logs for the **last 7 days** will be returned.  The distance between &#x60;fromUtcDateTime&#x60; and &#x60;toUtcDateTime&#x60; cannot exceed **30 days**.  **Important:** This endpoint is deprecated. Use the **List Audit log items for Organization (V2)** endpoint instead. In the future, this endpoint will be redirected to the V2 version with default pagination parameters.
      * @param organizationId The identifier of the Organization. (required)
      * @param productId The identifier of the Product. (optional)
      * @param configId The identifier of the Config. (optional)
@@ -526,15 +746,18 @@ public class AuditLogsApi {
      * @return ApiResponse&lt;List&lt;AuditLogItemModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
+     * @deprecated
      */
-    public ApiResponse<List<AuditLogItemModel>> getOrganizationAuditlogsWithHttpInfo(UUID organizationId, UUID productId, UUID configId, UUID environmentId, AuditLogType auditLogType, OffsetDateTime fromUtcDateTime, OffsetDateTime toUtcDateTime) throws ApiException {
+    @Deprecated
+    public ApiResponse<List<AuditLogItemModel>> getOrganizationAuditlogsWithHttpInfo(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nullable UUID productId, @javax.annotation.Nullable UUID configId, @javax.annotation.Nullable UUID environmentId, @javax.annotation.Nullable AuditLogType auditLogType, @javax.annotation.Nullable OffsetDateTime fromUtcDateTime, @javax.annotation.Nullable OffsetDateTime toUtcDateTime) throws ApiException {
         okhttp3.Call localVarCall = getOrganizationAuditlogsValidateBeforeCall(organizationId, productId, configId, environmentId, auditLogType, fromUtcDateTime, toUtcDateTime, null);
         Type localVarReturnType = new TypeToken<List<AuditLogItemModel>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -542,7 +765,7 @@ public class AuditLogsApi {
 
     /**
      * List Audit log items for Organization (asynchronously)
-     * This endpoint returns the list of Audit log items for a given Organization  and the result can be optionally filtered by Product and/or Config and/or Environment.  If neither &#x60;fromUtcDateTime&#x60; nor &#x60;toUtcDateTime&#x60; is set, the audit logs for the **last 7 days** will be returned.  The distance between &#x60;fromUtcDateTime&#x60; and &#x60;toUtcDateTime&#x60; cannot exceed **30 days**.
+     * This endpoint returns the list of Audit log items for a given Organization and the result can be optionally filtered by Product and/or Config and/or Environment.  If neither &#x60;fromUtcDateTime&#x60; nor &#x60;toUtcDateTime&#x60; is set, the audit logs for the **last 7 days** will be returned.  The distance between &#x60;fromUtcDateTime&#x60; and &#x60;toUtcDateTime&#x60; cannot exceed **30 days**.  **Important:** This endpoint is deprecated. Use the **List Audit log items for Organization (V2)** endpoint instead. In the future, this endpoint will be redirected to the V2 version with default pagination parameters.
      * @param organizationId The identifier of the Organization. (required)
      * @param productId The identifier of the Product. (optional)
      * @param configId The identifier of the Config. (optional)
@@ -554,7 +777,41 @@ public class AuditLogsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
+     * @deprecated
+     */
+    @Deprecated
+    public okhttp3.Call getOrganizationAuditlogsAsync(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nullable UUID productId, @javax.annotation.Nullable UUID configId, @javax.annotation.Nullable UUID environmentId, @javax.annotation.Nullable AuditLogType auditLogType, @javax.annotation.Nullable OffsetDateTime fromUtcDateTime, @javax.annotation.Nullable OffsetDateTime toUtcDateTime, final ApiCallback<List<AuditLogItemModel>> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getOrganizationAuditlogsValidateBeforeCall(organizationId, productId, configId, environmentId, auditLogType, fromUtcDateTime, toUtcDateTime, _callback);
+        Type localVarReturnType = new TypeToken<List<AuditLogItemModel>>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getOrganizationAuditlogsV2
+     * @param organizationId The identifier of the Organization. (required)
+     * @param productId The identifier of the Product. (optional)
+     * @param configId The identifier of the Config. (optional)
+     * @param environmentId The identifier of the Environment. (optional)
+     * @param auditLogType Filter Audit logs by Audit log type. (optional)
+     * @param fromUtcDateTime Filter Audit logs by starting UTC date. (optional)
+     * @param toUtcDateTime Filter Audit logs by ending UTC date. (optional)
+     * @param pageNumber Page number (min: 1). (optional, default to 1)
+     * @param pageSize Page size (min: 1, max: 100). (optional, default to 100)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -562,10 +819,182 @@ public class AuditLogsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getOrganizationAuditlogsAsync(UUID organizationId, UUID productId, UUID configId, UUID environmentId, AuditLogType auditLogType, OffsetDateTime fromUtcDateTime, OffsetDateTime toUtcDateTime, final ApiCallback<List<AuditLogItemModel>> _callback) throws ApiException {
+    public okhttp3.Call getOrganizationAuditlogsV2Call(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nullable UUID productId, @javax.annotation.Nullable UUID configId, @javax.annotation.Nullable UUID environmentId, @javax.annotation.Nullable AuditLogType auditLogType, @javax.annotation.Nullable OffsetDateTime fromUtcDateTime, @javax.annotation.Nullable OffsetDateTime toUtcDateTime, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
 
-        okhttp3.Call localVarCall = getOrganizationAuditlogsValidateBeforeCall(organizationId, productId, configId, environmentId, auditLogType, fromUtcDateTime, toUtcDateTime, _callback);
-        Type localVarReturnType = new TypeToken<List<AuditLogItemModel>>(){}.getType();
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v2/organizations/{organizationId}/auditlogs"
+            .replace("{" + "organizationId" + "}", localVarApiClient.escapeString(organizationId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (productId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("productId", productId));
+        }
+
+        if (configId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("configId", configId));
+        }
+
+        if (environmentId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("environmentId", environmentId));
+        }
+
+        if (auditLogType != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("auditLogType", auditLogType));
+        }
+
+        if (fromUtcDateTime != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("fromUtcDateTime", fromUtcDateTime));
+        }
+
+        if (toUtcDateTime != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("toUtcDateTime", toUtcDateTime));
+        }
+
+        if (pageNumber != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("pageNumber", pageNumber));
+        }
+
+        if (pageSize != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("pageSize", pageSize));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "Basic" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getOrganizationAuditlogsV2ValidateBeforeCall(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nullable UUID productId, @javax.annotation.Nullable UUID configId, @javax.annotation.Nullable UUID environmentId, @javax.annotation.Nullable AuditLogType auditLogType, @javax.annotation.Nullable OffsetDateTime fromUtcDateTime, @javax.annotation.Nullable OffsetDateTime toUtcDateTime, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling getOrganizationAuditlogsV2(Async)");
+        }
+
+        return getOrganizationAuditlogsV2Call(organizationId, productId, configId, environmentId, auditLogType, fromUtcDateTime, toUtcDateTime, pageNumber, pageSize, _callback);
+
+    }
+
+    /**
+     * List Audit log items for Organization (V2)
+     * This endpoint returns the list of Audit log items for a given Organization and the result can be optionally filtered by Product and/or Config and/or Environment.
+     * @param organizationId The identifier of the Organization. (required)
+     * @param productId The identifier of the Product. (optional)
+     * @param configId The identifier of the Config. (optional)
+     * @param environmentId The identifier of the Environment. (optional)
+     * @param auditLogType Filter Audit logs by Audit log type. (optional)
+     * @param fromUtcDateTime Filter Audit logs by starting UTC date. (optional)
+     * @param toUtcDateTime Filter Audit logs by ending UTC date. (optional)
+     * @param pageNumber Page number (min: 1). (optional, default to 1)
+     * @param pageSize Page size (min: 1, max: 100). (optional, default to 100)
+     * @return AuditLogItemModelPagedList
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
+     */
+    public AuditLogItemModelPagedList getOrganizationAuditlogsV2(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nullable UUID productId, @javax.annotation.Nullable UUID configId, @javax.annotation.Nullable UUID environmentId, @javax.annotation.Nullable AuditLogType auditLogType, @javax.annotation.Nullable OffsetDateTime fromUtcDateTime, @javax.annotation.Nullable OffsetDateTime toUtcDateTime, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+        ApiResponse<AuditLogItemModelPagedList> localVarResp = getOrganizationAuditlogsV2WithHttpInfo(organizationId, productId, configId, environmentId, auditLogType, fromUtcDateTime, toUtcDateTime, pageNumber, pageSize);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List Audit log items for Organization (V2)
+     * This endpoint returns the list of Audit log items for a given Organization and the result can be optionally filtered by Product and/or Config and/or Environment.
+     * @param organizationId The identifier of the Organization. (required)
+     * @param productId The identifier of the Product. (optional)
+     * @param configId The identifier of the Config. (optional)
+     * @param environmentId The identifier of the Environment. (optional)
+     * @param auditLogType Filter Audit logs by Audit log type. (optional)
+     * @param fromUtcDateTime Filter Audit logs by starting UTC date. (optional)
+     * @param toUtcDateTime Filter Audit logs by ending UTC date. (optional)
+     * @param pageNumber Page number (min: 1). (optional, default to 1)
+     * @param pageSize Page size (min: 1, max: 100). (optional, default to 100)
+     * @return ApiResponse&lt;AuditLogItemModelPagedList&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<AuditLogItemModelPagedList> getOrganizationAuditlogsV2WithHttpInfo(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nullable UUID productId, @javax.annotation.Nullable UUID configId, @javax.annotation.Nullable UUID environmentId, @javax.annotation.Nullable AuditLogType auditLogType, @javax.annotation.Nullable OffsetDateTime fromUtcDateTime, @javax.annotation.Nullable OffsetDateTime toUtcDateTime, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize) throws ApiException {
+        okhttp3.Call localVarCall = getOrganizationAuditlogsV2ValidateBeforeCall(organizationId, productId, configId, environmentId, auditLogType, fromUtcDateTime, toUtcDateTime, pageNumber, pageSize, null);
+        Type localVarReturnType = new TypeToken<AuditLogItemModelPagedList>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List Audit log items for Organization (V2) (asynchronously)
+     * This endpoint returns the list of Audit log items for a given Organization and the result can be optionally filtered by Product and/or Config and/or Environment.
+     * @param organizationId The identifier of the Organization. (required)
+     * @param productId The identifier of the Product. (optional)
+     * @param configId The identifier of the Config. (optional)
+     * @param environmentId The identifier of the Environment. (optional)
+     * @param auditLogType Filter Audit logs by Audit log type. (optional)
+     * @param fromUtcDateTime Filter Audit logs by starting UTC date. (optional)
+     * @param toUtcDateTime Filter Audit logs by ending UTC date. (optional)
+     * @param pageNumber Page number (min: 1). (optional, default to 1)
+     * @param pageSize Page size (min: 1, max: 100). (optional, default to 100)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not found. </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getOrganizationAuditlogsV2Async(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nullable UUID productId, @javax.annotation.Nullable UUID configId, @javax.annotation.Nullable UUID environmentId, @javax.annotation.Nullable AuditLogType auditLogType, @javax.annotation.Nullable OffsetDateTime fromUtcDateTime, @javax.annotation.Nullable OffsetDateTime toUtcDateTime, @javax.annotation.Nullable Integer pageNumber, @javax.annotation.Nullable Integer pageSize, final ApiCallback<AuditLogItemModelPagedList> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getOrganizationAuditlogsV2ValidateBeforeCall(organizationId, productId, configId, environmentId, auditLogType, fromUtcDateTime, toUtcDateTime, pageNumber, pageSize, _callback);
+        Type localVarReturnType = new TypeToken<AuditLogItemModelPagedList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

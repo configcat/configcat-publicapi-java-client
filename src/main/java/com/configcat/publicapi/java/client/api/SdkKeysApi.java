@@ -81,7 +81,8 @@ public class SdkKeysApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -89,7 +90,7 @@ public class SdkKeysApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSdkKeysCall(UUID configId, UUID environmentId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getSdkKeysCall(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -136,7 +137,7 @@ public class SdkKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSdkKeysValidateBeforeCall(UUID configId, UUID environmentId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getSdkKeysValidateBeforeCall(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'configId' is set
         if (configId == null) {
             throw new ApiException("Missing the required parameter 'configId' when calling getSdkKeys(Async)");
@@ -159,7 +160,8 @@ public class SdkKeysApi {
      * @return SdkKeysModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -167,7 +169,7 @@ public class SdkKeysApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public SdkKeysModel getSdkKeys(UUID configId, UUID environmentId) throws ApiException {
+    public SdkKeysModel getSdkKeys(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId) throws ApiException {
         ApiResponse<SdkKeysModel> localVarResp = getSdkKeysWithHttpInfo(configId, environmentId);
         return localVarResp.getData();
     }
@@ -180,7 +182,8 @@ public class SdkKeysApi {
      * @return ApiResponse&lt;SdkKeysModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -188,7 +191,7 @@ public class SdkKeysApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SdkKeysModel> getSdkKeysWithHttpInfo(UUID configId, UUID environmentId) throws ApiException {
+    public ApiResponse<SdkKeysModel> getSdkKeysWithHttpInfo(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId) throws ApiException {
         okhttp3.Call localVarCall = getSdkKeysValidateBeforeCall(configId, environmentId, null);
         Type localVarReturnType = new TypeToken<SdkKeysModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -203,7 +206,8 @@ public class SdkKeysApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -211,7 +215,7 @@ public class SdkKeysApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSdkKeysAsync(UUID configId, UUID environmentId, final ApiCallback<SdkKeysModel> _callback) throws ApiException {
+    public okhttp3.Call getSdkKeysAsync(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, final ApiCallback<SdkKeysModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getSdkKeysValidateBeforeCall(configId, environmentId, _callback);
         Type localVarReturnType = new TypeToken<SdkKeysModel>(){}.getType();

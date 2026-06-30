@@ -43,7 +43,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -55,48 +54,62 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * CreateSettingInitialValues
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class CreateSettingInitialValues {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_HINT = "hint";
   @SerializedName(SERIALIZED_NAME_HINT)
+  @javax.annotation.Nullable
   private String hint;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
   private List<Long> tags;
 
   public static final String SERIALIZED_NAME_ORDER = "order";
   @SerializedName(SERIALIZED_NAME_ORDER)
+  @javax.annotation.Nullable
   private Integer order;
+
+  public static final String SERIALIZED_NAME_IS_JSON = "isJson";
+  @SerializedName(SERIALIZED_NAME_IS_JSON)
+  @javax.annotation.Nullable
+  private Boolean isJson;
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   public static final String SERIALIZED_NAME_SETTING_TYPE = "settingType";
   @SerializedName(SERIALIZED_NAME_SETTING_TYPE)
+  @javax.annotation.Nonnull
   private SettingType settingType;
 
   public static final String SERIALIZED_NAME_PREDEFINED_VARIATIONS = "predefinedVariations";
   @SerializedName(SERIALIZED_NAME_PREDEFINED_VARIATIONS)
+  @javax.annotation.Nullable
   private List<CreatePredefinedVariationModel> predefinedVariations;
 
   public static final String SERIALIZED_NAME_INITIAL_VALUES = "initialValues";
   @SerializedName(SERIALIZED_NAME_INITIAL_VALUES)
+  @javax.annotation.Nullable
   private List<InitialValue> initialValues;
 
   public static final String SERIALIZED_NAME_SETTING_ID_TO_INIT_FROM = "settingIdToInitFrom";
   @SerializedName(SERIALIZED_NAME_SETTING_ID_TO_INIT_FROM)
+  @javax.annotation.Nullable
   private Integer settingIdToInitFrom;
 
   public CreateSettingInitialValues() {
   }
 
-  public CreateSettingInitialValues name(String name) {
+  public CreateSettingInitialValues name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -110,12 +123,12 @@ public class CreateSettingInitialValues {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public CreateSettingInitialValues hint(String hint) {
+  public CreateSettingInitialValues hint(@javax.annotation.Nullable String hint) {
     this.hint = hint;
     return this;
   }
@@ -129,12 +142,12 @@ public class CreateSettingInitialValues {
     return hint;
   }
 
-  public void setHint(String hint) {
+  public void setHint(@javax.annotation.Nullable String hint) {
     this.hint = hint;
   }
 
 
-  public CreateSettingInitialValues tags(List<Long> tags) {
+  public CreateSettingInitialValues tags(@javax.annotation.Nullable List<Long> tags) {
     this.tags = tags;
     return this;
   }
@@ -156,12 +169,12 @@ public class CreateSettingInitialValues {
     return tags;
   }
 
-  public void setTags(List<Long> tags) {
+  public void setTags(@javax.annotation.Nullable List<Long> tags) {
     this.tags = tags;
   }
 
 
-  public CreateSettingInitialValues order(Integer order) {
+  public CreateSettingInitialValues order(@javax.annotation.Nullable Integer order) {
     this.order = order;
     return this;
   }
@@ -175,12 +188,31 @@ public class CreateSettingInitialValues {
     return order;
   }
 
-  public void setOrder(Integer order) {
+  public void setOrder(@javax.annotation.Nullable Integer order) {
     this.order = order;
   }
 
 
-  public CreateSettingInitialValues key(String key) {
+  public CreateSettingInitialValues isJson(@javax.annotation.Nullable Boolean isJson) {
+    this.isJson = isJson;
+    return this;
+  }
+
+  /**
+   * Indicates whether this setting should validate string values as JSON values.
+   * @return isJson
+   */
+  @javax.annotation.Nullable
+  public Boolean getIsJson() {
+    return isJson;
+  }
+
+  public void setIsJson(@javax.annotation.Nullable Boolean isJson) {
+    this.isJson = isJson;
+  }
+
+
+  public CreateSettingInitialValues key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
@@ -194,12 +226,12 @@ public class CreateSettingInitialValues {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
 
-  public CreateSettingInitialValues settingType(SettingType settingType) {
+  public CreateSettingInitialValues settingType(@javax.annotation.Nonnull SettingType settingType) {
     this.settingType = settingType;
     return this;
   }
@@ -213,12 +245,12 @@ public class CreateSettingInitialValues {
     return settingType;
   }
 
-  public void setSettingType(SettingType settingType) {
+  public void setSettingType(@javax.annotation.Nonnull SettingType settingType) {
     this.settingType = settingType;
   }
 
 
-  public CreateSettingInitialValues predefinedVariations(List<CreatePredefinedVariationModel> predefinedVariations) {
+  public CreateSettingInitialValues predefinedVariations(@javax.annotation.Nullable List<CreatePredefinedVariationModel> predefinedVariations) {
     this.predefinedVariations = predefinedVariations;
     return this;
   }
@@ -240,12 +272,12 @@ public class CreateSettingInitialValues {
     return predefinedVariations;
   }
 
-  public void setPredefinedVariations(List<CreatePredefinedVariationModel> predefinedVariations) {
+  public void setPredefinedVariations(@javax.annotation.Nullable List<CreatePredefinedVariationModel> predefinedVariations) {
     this.predefinedVariations = predefinedVariations;
   }
 
 
-  public CreateSettingInitialValues initialValues(List<InitialValue> initialValues) {
+  public CreateSettingInitialValues initialValues(@javax.annotation.Nullable List<InitialValue> initialValues) {
     this.initialValues = initialValues;
     return this;
   }
@@ -267,12 +299,12 @@ public class CreateSettingInitialValues {
     return initialValues;
   }
 
-  public void setInitialValues(List<InitialValue> initialValues) {
+  public void setInitialValues(@javax.annotation.Nullable List<InitialValue> initialValues) {
     this.initialValues = initialValues;
   }
 
 
-  public CreateSettingInitialValues settingIdToInitFrom(Integer settingIdToInitFrom) {
+  public CreateSettingInitialValues settingIdToInitFrom(@javax.annotation.Nullable Integer settingIdToInitFrom) {
     this.settingIdToInitFrom = settingIdToInitFrom;
     return this;
   }
@@ -286,7 +318,7 @@ public class CreateSettingInitialValues {
     return settingIdToInitFrom;
   }
 
-  public void setSettingIdToInitFrom(Integer settingIdToInitFrom) {
+  public void setSettingIdToInitFrom(@javax.annotation.Nullable Integer settingIdToInitFrom) {
     this.settingIdToInitFrom = settingIdToInitFrom;
   }
 
@@ -349,6 +381,7 @@ public class CreateSettingInitialValues {
         Objects.equals(this.hint, createSettingInitialValues.hint) &&
         Objects.equals(this.tags, createSettingInitialValues.tags) &&
         Objects.equals(this.order, createSettingInitialValues.order) &&
+        Objects.equals(this.isJson, createSettingInitialValues.isJson) &&
         Objects.equals(this.key, createSettingInitialValues.key) &&
         Objects.equals(this.settingType, createSettingInitialValues.settingType) &&
         Objects.equals(this.predefinedVariations, createSettingInitialValues.predefinedVariations) &&
@@ -363,7 +396,7 @@ public class CreateSettingInitialValues {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, hint, tags, order, key, settingType, predefinedVariations, initialValues, settingIdToInitFrom, additionalProperties);
+    return Objects.hash(name, hint, tags, order, isJson, key, settingType, predefinedVariations, initialValues, settingIdToInitFrom, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -381,6 +414,7 @@ public class CreateSettingInitialValues {
     sb.append("    hint: ").append(toIndentedString(hint)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    order: ").append(toIndentedString(order)).append("\n");
+    sb.append("    isJson: ").append(toIndentedString(isJson)).append("\n");
     sb.append("    key: ").append(toIndentedString(key)).append("\n");
     sb.append("    settingType: ").append(toIndentedString(settingType)).append("\n");
     sb.append("    predefinedVariations: ").append(toIndentedString(predefinedVariations)).append("\n");
@@ -396,10 +430,7 @@ public class CreateSettingInitialValues {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -408,22 +439,10 @@ public class CreateSettingInitialValues {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("hint");
-    openapiFields.add("tags");
-    openapiFields.add("order");
-    openapiFields.add("key");
-    openapiFields.add("settingType");
-    openapiFields.add("predefinedVariations");
-    openapiFields.add("initialValues");
-    openapiFields.add("settingIdToInitFrom");
+    openapiFields = new HashSet<String>(Arrays.asList("name", "hint", "tags", "order", "isJson", "key", "settingType", "predefinedVariations", "initialValues", "settingIdToInitFrom"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("key");
-    openapiRequiredFields.add("settingType");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("name", "key", "settingType"));
   }
 
   /**
@@ -435,29 +454,29 @@ public class CreateSettingInitialValues {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CreateSettingInitialValues.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in CreateSettingInitialValues is not found in the empty JSON string", CreateSettingInitialValues.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in CreateSettingInitialValues is not found in the empty JSON string", CreateSettingInitialValues.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : CreateSettingInitialValues.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("hint") != null && !jsonObj.get("hint").isJsonNull()) && !jsonObj.get("hint").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `hint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hint").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `hint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hint").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
       if (!jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       // validate the required field `settingType`
       SettingType.validateJsonElement(jsonObj.get("settingType"));
@@ -466,7 +485,7 @@ public class CreateSettingInitialValues {
         if (jsonArraypredefinedVariations != null) {
           // ensure the json data is an array
           if (!jsonObj.get("predefinedVariations").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `predefinedVariations` to be an array in the JSON string but got `%s`", jsonObj.get("predefinedVariations").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `predefinedVariations` to be an array in the JSON string but got `%s`", jsonObj.get("predefinedVariations").toString()));
           }
 
           // validate the optional field `predefinedVariations` (array)
@@ -480,7 +499,7 @@ public class CreateSettingInitialValues {
         if (jsonArrayinitialValues != null) {
           // ensure the json data is an array
           if (!jsonObj.get("initialValues").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `initialValues` to be an array in the JSON string but got `%s`", jsonObj.get("initialValues").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `initialValues` to be an array in the JSON string but got `%s`", jsonObj.get("initialValues").toString()));
           }
 
           // validate the optional field `initialValues` (array)
@@ -548,7 +567,7 @@ public class CreateSettingInitialValues {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

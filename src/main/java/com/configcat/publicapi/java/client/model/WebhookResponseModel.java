@@ -43,7 +43,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -55,40 +54,47 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * WebhookResponseModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class WebhookResponseModel {
   public static final String SERIALIZED_NAME_WEBHOOK_ID = "webhookId";
   @SerializedName(SERIALIZED_NAME_WEBHOOK_ID)
+  @javax.annotation.Nonnull
   private Integer webhookId;
 
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
+  @javax.annotation.Nonnull
   private String url;
 
   public static final String SERIALIZED_NAME_HTTP_METHOD = "httpMethod";
   @SerializedName(SERIALIZED_NAME_HTTP_METHOD)
+  @javax.annotation.Nonnull
   private WebHookHttpMethod httpMethod;
 
   public static final String SERIALIZED_NAME_CONTENT = "content";
   @SerializedName(SERIALIZED_NAME_CONTENT)
+  @javax.annotation.Nullable
   private String content;
 
   public static final String SERIALIZED_NAME_WEB_HOOK_HEADERS = "webHookHeaders";
   @SerializedName(SERIALIZED_NAME_WEB_HOOK_HEADERS)
+  @javax.annotation.Nonnull
   private List<WebhookHeaderResponseModel> webHookHeaders = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
+  @javax.annotation.Nonnull
   private WebhookConfig config;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT = "environment";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT)
+  @javax.annotation.Nonnull
   private WebhookEnvironment environment;
 
   public WebhookResponseModel() {
   }
 
-  public WebhookResponseModel webhookId(Integer webhookId) {
+  public WebhookResponseModel webhookId(@javax.annotation.Nonnull Integer webhookId) {
     this.webhookId = webhookId;
     return this;
   }
@@ -102,12 +108,12 @@ public class WebhookResponseModel {
     return webhookId;
   }
 
-  public void setWebhookId(Integer webhookId) {
+  public void setWebhookId(@javax.annotation.Nonnull Integer webhookId) {
     this.webhookId = webhookId;
   }
 
 
-  public WebhookResponseModel url(String url) {
+  public WebhookResponseModel url(@javax.annotation.Nonnull String url) {
     this.url = url;
     return this;
   }
@@ -121,12 +127,12 @@ public class WebhookResponseModel {
     return url;
   }
 
-  public void setUrl(String url) {
+  public void setUrl(@javax.annotation.Nonnull String url) {
     this.url = url;
   }
 
 
-  public WebhookResponseModel httpMethod(WebHookHttpMethod httpMethod) {
+  public WebhookResponseModel httpMethod(@javax.annotation.Nonnull WebHookHttpMethod httpMethod) {
     this.httpMethod = httpMethod;
     return this;
   }
@@ -140,12 +146,12 @@ public class WebhookResponseModel {
     return httpMethod;
   }
 
-  public void setHttpMethod(WebHookHttpMethod httpMethod) {
+  public void setHttpMethod(@javax.annotation.Nonnull WebHookHttpMethod httpMethod) {
     this.httpMethod = httpMethod;
   }
 
 
-  public WebhookResponseModel content(String content) {
+  public WebhookResponseModel content(@javax.annotation.Nullable String content) {
     this.content = content;
     return this;
   }
@@ -159,12 +165,12 @@ public class WebhookResponseModel {
     return content;
   }
 
-  public void setContent(String content) {
+  public void setContent(@javax.annotation.Nullable String content) {
     this.content = content;
   }
 
 
-  public WebhookResponseModel webHookHeaders(List<WebhookHeaderResponseModel> webHookHeaders) {
+  public WebhookResponseModel webHookHeaders(@javax.annotation.Nonnull List<WebhookHeaderResponseModel> webHookHeaders) {
     this.webHookHeaders = webHookHeaders;
     return this;
   }
@@ -186,12 +192,12 @@ public class WebhookResponseModel {
     return webHookHeaders;
   }
 
-  public void setWebHookHeaders(List<WebhookHeaderResponseModel> webHookHeaders) {
+  public void setWebHookHeaders(@javax.annotation.Nonnull List<WebhookHeaderResponseModel> webHookHeaders) {
     this.webHookHeaders = webHookHeaders;
   }
 
 
-  public WebhookResponseModel config(WebhookConfig config) {
+  public WebhookResponseModel config(@javax.annotation.Nonnull WebhookConfig config) {
     this.config = config;
     return this;
   }
@@ -205,12 +211,12 @@ public class WebhookResponseModel {
     return config;
   }
 
-  public void setConfig(WebhookConfig config) {
+  public void setConfig(@javax.annotation.Nonnull WebhookConfig config) {
     this.config = config;
   }
 
 
-  public WebhookResponseModel environment(WebhookEnvironment environment) {
+  public WebhookResponseModel environment(@javax.annotation.Nonnull WebhookEnvironment environment) {
     this.environment = environment;
     return this;
   }
@@ -224,7 +230,7 @@ public class WebhookResponseModel {
     return environment;
   }
 
-  public void setEnvironment(WebhookEnvironment environment) {
+  public void setEnvironment(@javax.annotation.Nonnull WebhookEnvironment environment) {
     this.environment = environment;
   }
 
@@ -319,10 +325,7 @@ public class WebhookResponseModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -331,24 +334,10 @@ public class WebhookResponseModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("webhookId");
-    openapiFields.add("url");
-    openapiFields.add("httpMethod");
-    openapiFields.add("content");
-    openapiFields.add("webHookHeaders");
-    openapiFields.add("config");
-    openapiFields.add("environment");
+    openapiFields = new HashSet<String>(Arrays.asList("webhookId", "url", "httpMethod", "content", "webHookHeaders", "config", "environment"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("webhookId");
-    openapiRequiredFields.add("url");
-    openapiRequiredFields.add("httpMethod");
-    openapiRequiredFields.add("content");
-    openapiRequiredFields.add("webHookHeaders");
-    openapiRequiredFields.add("config");
-    openapiRequiredFields.add("environment");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("webhookId", "url", "httpMethod", "content", "webHookHeaders", "config", "environment"));
   }
 
   /**
@@ -360,35 +349,35 @@ public class WebhookResponseModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WebhookResponseModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in WebhookResponseModel is not found in the empty JSON string", WebhookResponseModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in WebhookResponseModel is not found in the empty JSON string", WebhookResponseModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : WebhookResponseModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
       }
       // validate the required field `httpMethod`
       WebHookHttpMethod.validateJsonElement(jsonObj.get("httpMethod"));
       if ((jsonObj.get("content") != null && !jsonObj.get("content").isJsonNull()) && !jsonObj.get("content").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `content` to be a primitive type in the JSON string but got `%s`", jsonObj.get("content").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `content` to be a primitive type in the JSON string but got `%s`", jsonObj.get("content").toString()));
       }
-      // ensure the json data is an array
-      if (!jsonObj.get("webHookHeaders").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `webHookHeaders` to be an array in the JSON string but got `%s`", jsonObj.get("webHookHeaders").toString()));
+      if (jsonObj.get("webHookHeaders") != null) {
+        if (!jsonObj.get("webHookHeaders").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `webHookHeaders` to be an array in the JSON string but got `%s`", jsonObj.get("webHookHeaders").toString()));
+        }
+        JsonArray jsonArraywebHookHeaders = jsonObj.getAsJsonArray("webHookHeaders");
+        // validate the required field `webHookHeaders` (array)
+        for (int i = 0; i < jsonArraywebHookHeaders.size(); i++) {
+          WebhookHeaderResponseModel.validateJsonElement(jsonArraywebHookHeaders.get(i));
+        }
       }
-
-      JsonArray jsonArraywebHookHeaders = jsonObj.getAsJsonArray("webHookHeaders");
-      // validate the required field `webHookHeaders` (array)
-      for (int i = 0; i < jsonArraywebHookHeaders.size(); i++) {
-        WebhookHeaderResponseModel.validateJsonElement(jsonArraywebHookHeaders.get(i));
-      };
       // validate the required field `config`
       WebhookConfig.validateJsonElement(jsonObj.get("config"));
       // validate the required field `environment`
@@ -452,7 +441,7 @@ public class WebhookResponseModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

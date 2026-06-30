@@ -87,7 +87,8 @@ public class ProxyProfilesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -95,7 +96,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createProxyProfileCall(UUID organizationId, CreateOrUpdateProxyProfileRequest createOrUpdateProxyProfileRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createProxyProfileCall(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull CreateOrUpdateProxyProfileRequest createOrUpdateProxyProfileRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -144,7 +145,7 @@ public class ProxyProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createProxyProfileValidateBeforeCall(UUID organizationId, CreateOrUpdateProxyProfileRequest createOrUpdateProxyProfileRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createProxyProfileValidateBeforeCall(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull CreateOrUpdateProxyProfileRequest createOrUpdateProxyProfileRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling createProxyProfile(Async)");
@@ -167,7 +168,8 @@ public class ProxyProfilesApi {
      * @return ProxyProfileModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -175,7 +177,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ProxyProfileModel createProxyProfile(UUID organizationId, CreateOrUpdateProxyProfileRequest createOrUpdateProxyProfileRequest) throws ApiException {
+    public ProxyProfileModel createProxyProfile(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull CreateOrUpdateProxyProfileRequest createOrUpdateProxyProfileRequest) throws ApiException {
         ApiResponse<ProxyProfileModel> localVarResp = createProxyProfileWithHttpInfo(organizationId, createOrUpdateProxyProfileRequest);
         return localVarResp.getData();
     }
@@ -188,7 +190,8 @@ public class ProxyProfilesApi {
      * @return ApiResponse&lt;ProxyProfileModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -196,7 +199,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProxyProfileModel> createProxyProfileWithHttpInfo(UUID organizationId, CreateOrUpdateProxyProfileRequest createOrUpdateProxyProfileRequest) throws ApiException {
+    public ApiResponse<ProxyProfileModel> createProxyProfileWithHttpInfo(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull CreateOrUpdateProxyProfileRequest createOrUpdateProxyProfileRequest) throws ApiException {
         okhttp3.Call localVarCall = createProxyProfileValidateBeforeCall(organizationId, createOrUpdateProxyProfileRequest, null);
         Type localVarReturnType = new TypeToken<ProxyProfileModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -211,7 +214,8 @@ public class ProxyProfilesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -219,7 +223,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createProxyProfileAsync(UUID organizationId, CreateOrUpdateProxyProfileRequest createOrUpdateProxyProfileRequest, final ApiCallback<ProxyProfileModel> _callback) throws ApiException {
+    public okhttp3.Call createProxyProfileAsync(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull CreateOrUpdateProxyProfileRequest createOrUpdateProxyProfileRequest, final ApiCallback<ProxyProfileModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createProxyProfileValidateBeforeCall(organizationId, createOrUpdateProxyProfileRequest, _callback);
         Type localVarReturnType = new TypeToken<ProxyProfileModel>(){}.getType();
@@ -233,7 +237,8 @@ public class ProxyProfilesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -241,7 +246,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteProxyProfileCall(UUID proxyProfileId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteProxyProfileCall(@javax.annotation.Nonnull UUID proxyProfileId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -286,7 +291,7 @@ public class ProxyProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteProxyProfileValidateBeforeCall(UUID proxyProfileId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteProxyProfileValidateBeforeCall(@javax.annotation.Nonnull UUID proxyProfileId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'proxyProfileId' is set
         if (proxyProfileId == null) {
             throw new ApiException("Missing the required parameter 'proxyProfileId' when calling deleteProxyProfile(Async)");
@@ -302,7 +307,8 @@ public class ProxyProfilesApi {
      * @param proxyProfileId The identifier of the Proxy Profile. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -310,7 +316,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteProxyProfile(UUID proxyProfileId) throws ApiException {
+    public void deleteProxyProfile(@javax.annotation.Nonnull UUID proxyProfileId) throws ApiException {
         deleteProxyProfileWithHttpInfo(proxyProfileId);
     }
 
@@ -321,7 +327,8 @@ public class ProxyProfilesApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -329,7 +336,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteProxyProfileWithHttpInfo(UUID proxyProfileId) throws ApiException {
+    public ApiResponse<Void> deleteProxyProfileWithHttpInfo(@javax.annotation.Nonnull UUID proxyProfileId) throws ApiException {
         okhttp3.Call localVarCall = deleteProxyProfileValidateBeforeCall(proxyProfileId, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -342,7 +349,8 @@ public class ProxyProfilesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -350,7 +358,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteProxyProfileAsync(UUID proxyProfileId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteProxyProfileAsync(@javax.annotation.Nonnull UUID proxyProfileId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteProxyProfileValidateBeforeCall(proxyProfileId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -364,7 +372,8 @@ public class ProxyProfilesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the deselection was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -373,7 +382,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deselectProxyProfileSdkKeysCall(UUID proxyProfileId, ProxyProfileSdkKeysRequest proxyProfileSdkKeysRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deselectProxyProfileSdkKeysCall(@javax.annotation.Nonnull UUID proxyProfileId, @javax.annotation.Nonnull ProxyProfileSdkKeysRequest proxyProfileSdkKeysRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -422,7 +431,7 @@ public class ProxyProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deselectProxyProfileSdkKeysValidateBeforeCall(UUID proxyProfileId, ProxyProfileSdkKeysRequest proxyProfileSdkKeysRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deselectProxyProfileSdkKeysValidateBeforeCall(@javax.annotation.Nonnull UUID proxyProfileId, @javax.annotation.Nonnull ProxyProfileSdkKeysRequest proxyProfileSdkKeysRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'proxyProfileId' is set
         if (proxyProfileId == null) {
             throw new ApiException("Missing the required parameter 'proxyProfileId' when calling deselectProxyProfileSdkKeys(Async)");
@@ -445,7 +454,8 @@ public class ProxyProfilesApi {
      * @return ProxyProfileSdkKeysListModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the deselection was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -454,7 +464,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ProxyProfileSdkKeysListModel deselectProxyProfileSdkKeys(UUID proxyProfileId, ProxyProfileSdkKeysRequest proxyProfileSdkKeysRequest) throws ApiException {
+    public ProxyProfileSdkKeysListModel deselectProxyProfileSdkKeys(@javax.annotation.Nonnull UUID proxyProfileId, @javax.annotation.Nonnull ProxyProfileSdkKeysRequest proxyProfileSdkKeysRequest) throws ApiException {
         ApiResponse<ProxyProfileSdkKeysListModel> localVarResp = deselectProxyProfileSdkKeysWithHttpInfo(proxyProfileId, proxyProfileSdkKeysRequest);
         return localVarResp.getData();
     }
@@ -467,7 +477,8 @@ public class ProxyProfilesApi {
      * @return ApiResponse&lt;ProxyProfileSdkKeysListModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the deselection was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -476,7 +487,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProxyProfileSdkKeysListModel> deselectProxyProfileSdkKeysWithHttpInfo(UUID proxyProfileId, ProxyProfileSdkKeysRequest proxyProfileSdkKeysRequest) throws ApiException {
+    public ApiResponse<ProxyProfileSdkKeysListModel> deselectProxyProfileSdkKeysWithHttpInfo(@javax.annotation.Nonnull UUID proxyProfileId, @javax.annotation.Nonnull ProxyProfileSdkKeysRequest proxyProfileSdkKeysRequest) throws ApiException {
         okhttp3.Call localVarCall = deselectProxyProfileSdkKeysValidateBeforeCall(proxyProfileId, proxyProfileSdkKeysRequest, null);
         Type localVarReturnType = new TypeToken<ProxyProfileSdkKeysListModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -491,7 +502,8 @@ public class ProxyProfilesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the deselection was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -500,7 +512,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deselectProxyProfileSdkKeysAsync(UUID proxyProfileId, ProxyProfileSdkKeysRequest proxyProfileSdkKeysRequest, final ApiCallback<ProxyProfileSdkKeysListModel> _callback) throws ApiException {
+    public okhttp3.Call deselectProxyProfileSdkKeysAsync(@javax.annotation.Nonnull UUID proxyProfileId, @javax.annotation.Nonnull ProxyProfileSdkKeysRequest proxyProfileSdkKeysRequest, final ApiCallback<ProxyProfileSdkKeysListModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deselectProxyProfileSdkKeysValidateBeforeCall(proxyProfileId, proxyProfileSdkKeysRequest, _callback);
         Type localVarReturnType = new TypeToken<ProxyProfileSdkKeysListModel>(){}.getType();
@@ -514,7 +526,8 @@ public class ProxyProfilesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the generation was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -522,7 +535,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call generateProxyProfileSecretCall(UUID proxyProfileId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call generateProxyProfileSecretCall(@javax.annotation.Nonnull UUID proxyProfileId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -568,7 +581,7 @@ public class ProxyProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call generateProxyProfileSecretValidateBeforeCall(UUID proxyProfileId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call generateProxyProfileSecretValidateBeforeCall(@javax.annotation.Nonnull UUID proxyProfileId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'proxyProfileId' is set
         if (proxyProfileId == null) {
             throw new ApiException("Missing the required parameter 'proxyProfileId' when calling generateProxyProfileSecret(Async)");
@@ -585,7 +598,8 @@ public class ProxyProfilesApi {
      * @return ProxyProfileSecretModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the generation was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -593,7 +607,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ProxyProfileSecretModel generateProxyProfileSecret(UUID proxyProfileId) throws ApiException {
+    public ProxyProfileSecretModel generateProxyProfileSecret(@javax.annotation.Nonnull UUID proxyProfileId) throws ApiException {
         ApiResponse<ProxyProfileSecretModel> localVarResp = generateProxyProfileSecretWithHttpInfo(proxyProfileId);
         return localVarResp.getData();
     }
@@ -605,7 +619,8 @@ public class ProxyProfilesApi {
      * @return ApiResponse&lt;ProxyProfileSecretModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the generation was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -613,7 +628,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProxyProfileSecretModel> generateProxyProfileSecretWithHttpInfo(UUID proxyProfileId) throws ApiException {
+    public ApiResponse<ProxyProfileSecretModel> generateProxyProfileSecretWithHttpInfo(@javax.annotation.Nonnull UUID proxyProfileId) throws ApiException {
         okhttp3.Call localVarCall = generateProxyProfileSecretValidateBeforeCall(proxyProfileId, null);
         Type localVarReturnType = new TypeToken<ProxyProfileSecretModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -627,7 +642,8 @@ public class ProxyProfilesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the generation was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -635,7 +651,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call generateProxyProfileSecretAsync(UUID proxyProfileId, final ApiCallback<ProxyProfileSecretModel> _callback) throws ApiException {
+    public okhttp3.Call generateProxyProfileSecretAsync(@javax.annotation.Nonnull UUID proxyProfileId, final ApiCallback<ProxyProfileSecretModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = generateProxyProfileSecretValidateBeforeCall(proxyProfileId, _callback);
         Type localVarReturnType = new TypeToken<ProxyProfileSecretModel>(){}.getType();
@@ -649,7 +665,8 @@ public class ProxyProfilesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the Proxy Profile is returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -657,7 +674,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProxyProfileCall(UUID proxyProfileId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getProxyProfileCall(@javax.annotation.Nonnull UUID proxyProfileId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -703,7 +720,7 @@ public class ProxyProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getProxyProfileValidateBeforeCall(UUID proxyProfileId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getProxyProfileValidateBeforeCall(@javax.annotation.Nonnull UUID proxyProfileId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'proxyProfileId' is set
         if (proxyProfileId == null) {
             throw new ApiException("Missing the required parameter 'proxyProfileId' when calling getProxyProfile(Async)");
@@ -720,7 +737,8 @@ public class ProxyProfilesApi {
      * @return ProxyProfileModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the Proxy Profile is returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -728,7 +746,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ProxyProfileModel getProxyProfile(UUID proxyProfileId) throws ApiException {
+    public ProxyProfileModel getProxyProfile(@javax.annotation.Nonnull UUID proxyProfileId) throws ApiException {
         ApiResponse<ProxyProfileModel> localVarResp = getProxyProfileWithHttpInfo(proxyProfileId);
         return localVarResp.getData();
     }
@@ -740,7 +758,8 @@ public class ProxyProfilesApi {
      * @return ApiResponse&lt;ProxyProfileModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the Proxy Profile is returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -748,7 +767,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProxyProfileModel> getProxyProfileWithHttpInfo(UUID proxyProfileId) throws ApiException {
+    public ApiResponse<ProxyProfileModel> getProxyProfileWithHttpInfo(@javax.annotation.Nonnull UUID proxyProfileId) throws ApiException {
         okhttp3.Call localVarCall = getProxyProfileValidateBeforeCall(proxyProfileId, null);
         Type localVarReturnType = new TypeToken<ProxyProfileModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -762,7 +781,8 @@ public class ProxyProfilesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the Proxy Profile is returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -770,7 +790,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProxyProfileAsync(UUID proxyProfileId, final ApiCallback<ProxyProfileModel> _callback) throws ApiException {
+    public okhttp3.Call getProxyProfileAsync(@javax.annotation.Nonnull UUID proxyProfileId, final ApiCallback<ProxyProfileModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getProxyProfileValidateBeforeCall(proxyProfileId, _callback);
         Type localVarReturnType = new TypeToken<ProxyProfileModel>(){}.getType();
@@ -784,7 +804,8 @@ public class ProxyProfilesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the SDK keys selected for the Proxy Profile are returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -792,7 +813,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProxyProfileSdkKeysCall(UUID proxyProfileId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getProxyProfileSdkKeysCall(@javax.annotation.Nonnull UUID proxyProfileId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -838,7 +859,7 @@ public class ProxyProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getProxyProfileSdkKeysValidateBeforeCall(UUID proxyProfileId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getProxyProfileSdkKeysValidateBeforeCall(@javax.annotation.Nonnull UUID proxyProfileId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'proxyProfileId' is set
         if (proxyProfileId == null) {
             throw new ApiException("Missing the required parameter 'proxyProfileId' when calling getProxyProfileSdkKeys(Async)");
@@ -855,7 +876,8 @@ public class ProxyProfilesApi {
      * @return ProxyProfileSdkKeysListModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the SDK keys selected for the Proxy Profile are returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -863,7 +885,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ProxyProfileSdkKeysListModel getProxyProfileSdkKeys(UUID proxyProfileId) throws ApiException {
+    public ProxyProfileSdkKeysListModel getProxyProfileSdkKeys(@javax.annotation.Nonnull UUID proxyProfileId) throws ApiException {
         ApiResponse<ProxyProfileSdkKeysListModel> localVarResp = getProxyProfileSdkKeysWithHttpInfo(proxyProfileId);
         return localVarResp.getData();
     }
@@ -875,7 +897,8 @@ public class ProxyProfilesApi {
      * @return ApiResponse&lt;ProxyProfileSdkKeysListModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the SDK keys selected for the Proxy Profile are returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -883,7 +906,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProxyProfileSdkKeysListModel> getProxyProfileSdkKeysWithHttpInfo(UUID proxyProfileId) throws ApiException {
+    public ApiResponse<ProxyProfileSdkKeysListModel> getProxyProfileSdkKeysWithHttpInfo(@javax.annotation.Nonnull UUID proxyProfileId) throws ApiException {
         okhttp3.Call localVarCall = getProxyProfileSdkKeysValidateBeforeCall(proxyProfileId, null);
         Type localVarReturnType = new TypeToken<ProxyProfileSdkKeysListModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -897,7 +920,8 @@ public class ProxyProfilesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the SDK keys selected for the Proxy Profile are returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -905,7 +929,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProxyProfileSdkKeysAsync(UUID proxyProfileId, final ApiCallback<ProxyProfileSdkKeysListModel> _callback) throws ApiException {
+    public okhttp3.Call getProxyProfileSdkKeysAsync(@javax.annotation.Nonnull UUID proxyProfileId, final ApiCallback<ProxyProfileSdkKeysListModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getProxyProfileSdkKeysValidateBeforeCall(proxyProfileId, _callback);
         Type localVarReturnType = new TypeToken<ProxyProfileSdkKeysListModel>(){}.getType();
@@ -919,7 +943,8 @@ public class ProxyProfilesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -927,7 +952,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProxyProfilesCall(UUID organizationId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getProxyProfilesCall(@javax.annotation.Nonnull UUID organizationId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -973,7 +998,7 @@ public class ProxyProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getProxyProfilesValidateBeforeCall(UUID organizationId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getProxyProfilesValidateBeforeCall(@javax.annotation.Nonnull UUID organizationId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling getProxyProfiles(Async)");
@@ -990,7 +1015,8 @@ public class ProxyProfilesApi {
      * @return ProxyProfileListModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -998,7 +1024,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ProxyProfileListModel getProxyProfiles(UUID organizationId) throws ApiException {
+    public ProxyProfileListModel getProxyProfiles(@javax.annotation.Nonnull UUID organizationId) throws ApiException {
         ApiResponse<ProxyProfileListModel> localVarResp = getProxyProfilesWithHttpInfo(organizationId);
         return localVarResp.getData();
     }
@@ -1010,7 +1036,8 @@ public class ProxyProfilesApi {
      * @return ApiResponse&lt;ProxyProfileListModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1018,7 +1045,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProxyProfileListModel> getProxyProfilesWithHttpInfo(UUID organizationId) throws ApiException {
+    public ApiResponse<ProxyProfileListModel> getProxyProfilesWithHttpInfo(@javax.annotation.Nonnull UUID organizationId) throws ApiException {
         okhttp3.Call localVarCall = getProxyProfilesValidateBeforeCall(organizationId, null);
         Type localVarReturnType = new TypeToken<ProxyProfileListModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1032,7 +1059,8 @@ public class ProxyProfilesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1040,7 +1068,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProxyProfilesAsync(UUID organizationId, final ApiCallback<ProxyProfileListModel> _callback) throws ApiException {
+    public okhttp3.Call getProxyProfilesAsync(@javax.annotation.Nonnull UUID organizationId, final ApiCallback<ProxyProfileListModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getProxyProfilesValidateBeforeCall(organizationId, _callback);
         Type localVarReturnType = new TypeToken<ProxyProfileListModel>(){}.getType();
@@ -1055,7 +1083,8 @@ public class ProxyProfilesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the replace was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1063,7 +1092,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call replaceProxyProfileCall(UUID proxyProfileId, CreateOrUpdateProxyProfileRequest createOrUpdateProxyProfileRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call replaceProxyProfileCall(@javax.annotation.Nonnull UUID proxyProfileId, @javax.annotation.Nonnull CreateOrUpdateProxyProfileRequest createOrUpdateProxyProfileRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1112,7 +1141,7 @@ public class ProxyProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call replaceProxyProfileValidateBeforeCall(UUID proxyProfileId, CreateOrUpdateProxyProfileRequest createOrUpdateProxyProfileRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call replaceProxyProfileValidateBeforeCall(@javax.annotation.Nonnull UUID proxyProfileId, @javax.annotation.Nonnull CreateOrUpdateProxyProfileRequest createOrUpdateProxyProfileRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'proxyProfileId' is set
         if (proxyProfileId == null) {
             throw new ApiException("Missing the required parameter 'proxyProfileId' when calling replaceProxyProfile(Async)");
@@ -1135,7 +1164,8 @@ public class ProxyProfilesApi {
      * @return ProxyProfileModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the replace was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1143,7 +1173,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ProxyProfileModel replaceProxyProfile(UUID proxyProfileId, CreateOrUpdateProxyProfileRequest createOrUpdateProxyProfileRequest) throws ApiException {
+    public ProxyProfileModel replaceProxyProfile(@javax.annotation.Nonnull UUID proxyProfileId, @javax.annotation.Nonnull CreateOrUpdateProxyProfileRequest createOrUpdateProxyProfileRequest) throws ApiException {
         ApiResponse<ProxyProfileModel> localVarResp = replaceProxyProfileWithHttpInfo(proxyProfileId, createOrUpdateProxyProfileRequest);
         return localVarResp.getData();
     }
@@ -1156,7 +1186,8 @@ public class ProxyProfilesApi {
      * @return ApiResponse&lt;ProxyProfileModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the replace was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1164,7 +1195,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProxyProfileModel> replaceProxyProfileWithHttpInfo(UUID proxyProfileId, CreateOrUpdateProxyProfileRequest createOrUpdateProxyProfileRequest) throws ApiException {
+    public ApiResponse<ProxyProfileModel> replaceProxyProfileWithHttpInfo(@javax.annotation.Nonnull UUID proxyProfileId, @javax.annotation.Nonnull CreateOrUpdateProxyProfileRequest createOrUpdateProxyProfileRequest) throws ApiException {
         okhttp3.Call localVarCall = replaceProxyProfileValidateBeforeCall(proxyProfileId, createOrUpdateProxyProfileRequest, null);
         Type localVarReturnType = new TypeToken<ProxyProfileModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1179,7 +1210,8 @@ public class ProxyProfilesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the replace was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1187,7 +1219,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call replaceProxyProfileAsync(UUID proxyProfileId, CreateOrUpdateProxyProfileRequest createOrUpdateProxyProfileRequest, final ApiCallback<ProxyProfileModel> _callback) throws ApiException {
+    public okhttp3.Call replaceProxyProfileAsync(@javax.annotation.Nonnull UUID proxyProfileId, @javax.annotation.Nonnull CreateOrUpdateProxyProfileRequest createOrUpdateProxyProfileRequest, final ApiCallback<ProxyProfileModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = replaceProxyProfileValidateBeforeCall(proxyProfileId, createOrUpdateProxyProfileRequest, _callback);
         Type localVarReturnType = new TypeToken<ProxyProfileModel>(){}.getType();
@@ -1202,7 +1234,8 @@ public class ProxyProfilesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the selection was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1211,7 +1244,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call selectProxyProfileSdkKeysCall(UUID proxyProfileId, ProxyProfileSdkKeysRequest proxyProfileSdkKeysRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call selectProxyProfileSdkKeysCall(@javax.annotation.Nonnull UUID proxyProfileId, @javax.annotation.Nonnull ProxyProfileSdkKeysRequest proxyProfileSdkKeysRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1260,7 +1293,7 @@ public class ProxyProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call selectProxyProfileSdkKeysValidateBeforeCall(UUID proxyProfileId, ProxyProfileSdkKeysRequest proxyProfileSdkKeysRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call selectProxyProfileSdkKeysValidateBeforeCall(@javax.annotation.Nonnull UUID proxyProfileId, @javax.annotation.Nonnull ProxyProfileSdkKeysRequest proxyProfileSdkKeysRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'proxyProfileId' is set
         if (proxyProfileId == null) {
             throw new ApiException("Missing the required parameter 'proxyProfileId' when calling selectProxyProfileSdkKeys(Async)");
@@ -1283,7 +1316,8 @@ public class ProxyProfilesApi {
      * @return ProxyProfileSdkKeysListModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the selection was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1292,7 +1326,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ProxyProfileSdkKeysListModel selectProxyProfileSdkKeys(UUID proxyProfileId, ProxyProfileSdkKeysRequest proxyProfileSdkKeysRequest) throws ApiException {
+    public ProxyProfileSdkKeysListModel selectProxyProfileSdkKeys(@javax.annotation.Nonnull UUID proxyProfileId, @javax.annotation.Nonnull ProxyProfileSdkKeysRequest proxyProfileSdkKeysRequest) throws ApiException {
         ApiResponse<ProxyProfileSdkKeysListModel> localVarResp = selectProxyProfileSdkKeysWithHttpInfo(proxyProfileId, proxyProfileSdkKeysRequest);
         return localVarResp.getData();
     }
@@ -1305,7 +1339,8 @@ public class ProxyProfilesApi {
      * @return ApiResponse&lt;ProxyProfileSdkKeysListModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the selection was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1314,7 +1349,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProxyProfileSdkKeysListModel> selectProxyProfileSdkKeysWithHttpInfo(UUID proxyProfileId, ProxyProfileSdkKeysRequest proxyProfileSdkKeysRequest) throws ApiException {
+    public ApiResponse<ProxyProfileSdkKeysListModel> selectProxyProfileSdkKeysWithHttpInfo(@javax.annotation.Nonnull UUID proxyProfileId, @javax.annotation.Nonnull ProxyProfileSdkKeysRequest proxyProfileSdkKeysRequest) throws ApiException {
         okhttp3.Call localVarCall = selectProxyProfileSdkKeysValidateBeforeCall(proxyProfileId, proxyProfileSdkKeysRequest, null);
         Type localVarReturnType = new TypeToken<ProxyProfileSdkKeysListModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1329,7 +1364,8 @@ public class ProxyProfilesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the selection was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1338,7 +1374,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call selectProxyProfileSdkKeysAsync(UUID proxyProfileId, ProxyProfileSdkKeysRequest proxyProfileSdkKeysRequest, final ApiCallback<ProxyProfileSdkKeysListModel> _callback) throws ApiException {
+    public okhttp3.Call selectProxyProfileSdkKeysAsync(@javax.annotation.Nonnull UUID proxyProfileId, @javax.annotation.Nonnull ProxyProfileSdkKeysRequest proxyProfileSdkKeysRequest, final ApiCallback<ProxyProfileSdkKeysListModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = selectProxyProfileSdkKeysValidateBeforeCall(proxyProfileId, proxyProfileSdkKeysRequest, _callback);
         Type localVarReturnType = new TypeToken<ProxyProfileSdkKeysListModel>(){}.getType();
@@ -1353,7 +1389,8 @@ public class ProxyProfilesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the update was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1361,7 +1398,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateProxyProfileCall(UUID proxyProfileId, List<JsonPatchOperation> jsonPatchOperation, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateProxyProfileCall(@javax.annotation.Nonnull UUID proxyProfileId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1410,7 +1447,7 @@ public class ProxyProfilesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateProxyProfileValidateBeforeCall(UUID proxyProfileId, List<JsonPatchOperation> jsonPatchOperation, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateProxyProfileValidateBeforeCall(@javax.annotation.Nonnull UUID proxyProfileId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'proxyProfileId' is set
         if (proxyProfileId == null) {
             throw new ApiException("Missing the required parameter 'proxyProfileId' when calling updateProxyProfile(Async)");
@@ -1433,7 +1470,8 @@ public class ProxyProfilesApi {
      * @return ProxyProfileModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the update was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1441,7 +1479,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ProxyProfileModel updateProxyProfile(UUID proxyProfileId, List<JsonPatchOperation> jsonPatchOperation) throws ApiException {
+    public ProxyProfileModel updateProxyProfile(@javax.annotation.Nonnull UUID proxyProfileId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation) throws ApiException {
         ApiResponse<ProxyProfileModel> localVarResp = updateProxyProfileWithHttpInfo(proxyProfileId, jsonPatchOperation);
         return localVarResp.getData();
     }
@@ -1454,7 +1492,8 @@ public class ProxyProfilesApi {
      * @return ApiResponse&lt;ProxyProfileModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the update was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1462,7 +1501,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProxyProfileModel> updateProxyProfileWithHttpInfo(UUID proxyProfileId, List<JsonPatchOperation> jsonPatchOperation) throws ApiException {
+    public ApiResponse<ProxyProfileModel> updateProxyProfileWithHttpInfo(@javax.annotation.Nonnull UUID proxyProfileId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation) throws ApiException {
         okhttp3.Call localVarCall = updateProxyProfileValidateBeforeCall(proxyProfileId, jsonPatchOperation, null);
         Type localVarReturnType = new TypeToken<ProxyProfileModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1477,7 +1516,8 @@ public class ProxyProfilesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the update was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1485,7 +1525,7 @@ public class ProxyProfilesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateProxyProfileAsync(UUID proxyProfileId, List<JsonPatchOperation> jsonPatchOperation, final ApiCallback<ProxyProfileModel> _callback) throws ApiException {
+    public okhttp3.Call updateProxyProfileAsync(@javax.annotation.Nonnull UUID proxyProfileId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, final ApiCallback<ProxyProfileModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateProxyProfileValidateBeforeCall(proxyProfileId, jsonPatchOperation, _callback);
         Type localVarReturnType = new TypeToken<ProxyProfileModel>(){}.getType();

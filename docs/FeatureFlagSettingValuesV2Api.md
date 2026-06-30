@@ -159,7 +159,7 @@ public class Example {
 
 <a id="postSettingValuesV2"></a>
 # **postSettingValuesV2**
-> ConfigSettingFormulasModel postSettingValuesV2(configId, environmentId, updateEvaluationFormulasModel, reason)
+> ConfigSettingFormulasModel postSettingValuesV2(configId, environmentId, updateEvaluationFormulasModel, reason, bypassApproval)
 
 Post values
 
@@ -190,8 +190,9 @@ public class Example {
     UUID environmentId = UUID.randomUUID(); // UUID | The identifier of the Environment.
     UpdateEvaluationFormulasModel updateEvaluationFormulasModel = new UpdateEvaluationFormulasModel(); // UpdateEvaluationFormulasModel | 
     String reason = "reason_example"; // String | The reason note for the Audit Log if the Product's \"Config changes require a reason\" preference is turned on.
+    Boolean bypassApproval = true; // Boolean | Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission.
     try {
-      ConfigSettingFormulasModel result = apiInstance.postSettingValuesV2(configId, environmentId, updateEvaluationFormulasModel, reason);
+      ConfigSettingFormulasModel result = apiInstance.postSettingValuesV2(configId, environmentId, updateEvaluationFormulasModel, reason, bypassApproval);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FeatureFlagSettingValuesV2Api#postSettingValuesV2");
@@ -212,6 +213,7 @@ public class Example {
 | **environmentId** | **UUID**| The identifier of the Environment. | |
 | **updateEvaluationFormulasModel** | [**UpdateEvaluationFormulasModel**](UpdateEvaluationFormulasModel.md)|  | |
 | **reason** | **String**| The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. | [optional] |
+| **bypassApproval** | **Boolean**| Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. | [optional] |
 
 ### Return type
 
@@ -236,7 +238,7 @@ public class Example {
 
 <a id="replaceSettingValueV2"></a>
 # **replaceSettingValueV2**
-> SettingFormulaModel replaceSettingValueV2(environmentId, settingId, updateEvaluationFormulaModel, reason)
+> SettingFormulaModel replaceSettingValueV2(environmentId, settingId, updateEvaluationFormulaModel, reason, bypassApproval)
 
 Replace value
 
@@ -267,8 +269,9 @@ public class Example {
     Integer settingId = 56; // Integer | The id of the Setting.
     UpdateEvaluationFormulaModel updateEvaluationFormulaModel = new UpdateEvaluationFormulaModel(); // UpdateEvaluationFormulaModel | 
     String reason = "reason_example"; // String | The reason note for the Audit Log if the Product's \"Config changes require a reason\" preference is turned on.
+    Boolean bypassApproval = true; // Boolean | Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission.
     try {
-      SettingFormulaModel result = apiInstance.replaceSettingValueV2(environmentId, settingId, updateEvaluationFormulaModel, reason);
+      SettingFormulaModel result = apiInstance.replaceSettingValueV2(environmentId, settingId, updateEvaluationFormulaModel, reason, bypassApproval);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FeatureFlagSettingValuesV2Api#replaceSettingValueV2");
@@ -289,6 +292,7 @@ public class Example {
 | **settingId** | **Integer**| The id of the Setting. | |
 | **updateEvaluationFormulaModel** | [**UpdateEvaluationFormulaModel**](UpdateEvaluationFormulaModel.md)|  | |
 | **reason** | **String**| The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. | [optional] |
+| **bypassApproval** | **Boolean**| Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. | [optional] |
 
 ### Return type
 
@@ -313,7 +317,7 @@ public class Example {
 
 <a id="updateSettingValueV2"></a>
 # **updateSettingValueV2**
-> SettingFormulaModel updateSettingValueV2(environmentId, settingId, jsonPatchOperation, reason)
+> SettingFormulaModel updateSettingValueV2(environmentId, settingId, jsonPatchOperation, reason, bypassApproval)
 
 Update value
 
@@ -344,8 +348,9 @@ public class Example {
     Integer settingId = 56; // Integer | The id of the Setting.
     List<JsonPatchOperation> jsonPatchOperation = Arrays.asList(); // List<JsonPatchOperation> | 
     String reason = "reason_example"; // String | The reason note for the Audit Log if the Product's \"Config changes require a reason\" preference is turned on.
+    Boolean bypassApproval = true; // Boolean | Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission.
     try {
-      SettingFormulaModel result = apiInstance.updateSettingValueV2(environmentId, settingId, jsonPatchOperation, reason);
+      SettingFormulaModel result = apiInstance.updateSettingValueV2(environmentId, settingId, jsonPatchOperation, reason, bypassApproval);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FeatureFlagSettingValuesV2Api#updateSettingValueV2");
@@ -366,6 +371,7 @@ public class Example {
 | **settingId** | **Integer**| The id of the Setting. | |
 | **jsonPatchOperation** | [**List&lt;JsonPatchOperation&gt;**](JsonPatchOperation.md)|  | |
 | **reason** | **String**| The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. | [optional] |
+| **bypassApproval** | **Boolean**| Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. | [optional] |
 
 ### Return type
 

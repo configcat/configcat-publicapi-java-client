@@ -85,7 +85,8 @@ public class ProductsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -93,7 +94,7 @@ public class ProductsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createProductCall(UUID organizationId, CreateProductRequest createProductRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createProductCall(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull CreateProductRequest createProductRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -142,7 +143,7 @@ public class ProductsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createProductValidateBeforeCall(UUID organizationId, CreateProductRequest createProductRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createProductValidateBeforeCall(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull CreateProductRequest createProductRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling createProduct(Async)");
@@ -165,7 +166,8 @@ public class ProductsApi {
      * @return ProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -173,7 +175,7 @@ public class ProductsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ProductModel createProduct(UUID organizationId, CreateProductRequest createProductRequest) throws ApiException {
+    public ProductModel createProduct(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull CreateProductRequest createProductRequest) throws ApiException {
         ApiResponse<ProductModel> localVarResp = createProductWithHttpInfo(organizationId, createProductRequest);
         return localVarResp.getData();
     }
@@ -186,7 +188,8 @@ public class ProductsApi {
      * @return ApiResponse&lt;ProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -194,7 +197,7 @@ public class ProductsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProductModel> createProductWithHttpInfo(UUID organizationId, CreateProductRequest createProductRequest) throws ApiException {
+    public ApiResponse<ProductModel> createProductWithHttpInfo(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull CreateProductRequest createProductRequest) throws ApiException {
         okhttp3.Call localVarCall = createProductValidateBeforeCall(organizationId, createProductRequest, null);
         Type localVarReturnType = new TypeToken<ProductModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -209,7 +212,8 @@ public class ProductsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -217,7 +221,7 @@ public class ProductsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createProductAsync(UUID organizationId, CreateProductRequest createProductRequest, final ApiCallback<ProductModel> _callback) throws ApiException {
+    public okhttp3.Call createProductAsync(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull CreateProductRequest createProductRequest, final ApiCallback<ProductModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createProductValidateBeforeCall(organizationId, createProductRequest, _callback);
         Type localVarReturnType = new TypeToken<ProductModel>(){}.getType();
@@ -231,7 +235,8 @@ public class ProductsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -239,7 +244,7 @@ public class ProductsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteProductCall(UUID productId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteProductCall(@javax.annotation.Nonnull UUID productId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -284,7 +289,7 @@ public class ProductsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteProductValidateBeforeCall(UUID productId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteProductValidateBeforeCall(@javax.annotation.Nonnull UUID productId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'productId' is set
         if (productId == null) {
             throw new ApiException("Missing the required parameter 'productId' when calling deleteProduct(Async)");
@@ -300,7 +305,8 @@ public class ProductsApi {
      * @param productId The identifier of the Product. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -308,7 +314,7 @@ public class ProductsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteProduct(UUID productId) throws ApiException {
+    public void deleteProduct(@javax.annotation.Nonnull UUID productId) throws ApiException {
         deleteProductWithHttpInfo(productId);
     }
 
@@ -319,7 +325,8 @@ public class ProductsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -327,7 +334,7 @@ public class ProductsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteProductWithHttpInfo(UUID productId) throws ApiException {
+    public ApiResponse<Void> deleteProductWithHttpInfo(@javax.annotation.Nonnull UUID productId) throws ApiException {
         okhttp3.Call localVarCall = deleteProductValidateBeforeCall(productId, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -340,7 +347,8 @@ public class ProductsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -348,7 +356,7 @@ public class ProductsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteProductAsync(UUID productId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteProductAsync(@javax.annotation.Nonnull UUID productId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteProductValidateBeforeCall(productId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -361,7 +369,8 @@ public class ProductsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the product data is returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -369,7 +378,7 @@ public class ProductsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProductCall(UUID productId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getProductCall(@javax.annotation.Nonnull UUID productId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -415,7 +424,7 @@ public class ProductsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getProductValidateBeforeCall(UUID productId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getProductValidateBeforeCall(@javax.annotation.Nonnull UUID productId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'productId' is set
         if (productId == null) {
             throw new ApiException("Missing the required parameter 'productId' when calling getProduct(Async)");
@@ -432,7 +441,8 @@ public class ProductsApi {
      * @return ProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the product data is returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -440,7 +450,7 @@ public class ProductsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ProductModel getProduct(UUID productId) throws ApiException {
+    public ProductModel getProduct(@javax.annotation.Nonnull UUID productId) throws ApiException {
         ApiResponse<ProductModel> localVarResp = getProductWithHttpInfo(productId);
         return localVarResp.getData();
     }
@@ -452,7 +462,8 @@ public class ProductsApi {
      * @return ApiResponse&lt;ProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the product data is returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -460,7 +471,7 @@ public class ProductsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProductModel> getProductWithHttpInfo(UUID productId) throws ApiException {
+    public ApiResponse<ProductModel> getProductWithHttpInfo(@javax.annotation.Nonnull UUID productId) throws ApiException {
         okhttp3.Call localVarCall = getProductValidateBeforeCall(productId, null);
         Type localVarReturnType = new TypeToken<ProductModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -474,7 +485,8 @@ public class ProductsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the product data is returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -482,7 +494,7 @@ public class ProductsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProductAsync(UUID productId, final ApiCallback<ProductModel> _callback) throws ApiException {
+    public okhttp3.Call getProductAsync(@javax.annotation.Nonnull UUID productId, final ApiCallback<ProductModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getProductValidateBeforeCall(productId, _callback);
         Type localVarReturnType = new TypeToken<ProductModel>(){}.getType();
@@ -496,7 +508,8 @@ public class ProductsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the product preferences data is returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -504,7 +517,7 @@ public class ProductsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProductPreferencesCall(UUID productId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getProductPreferencesCall(@javax.annotation.Nonnull UUID productId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -550,7 +563,7 @@ public class ProductsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getProductPreferencesValidateBeforeCall(UUID productId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getProductPreferencesValidateBeforeCall(@javax.annotation.Nonnull UUID productId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'productId' is set
         if (productId == null) {
             throw new ApiException("Missing the required parameter 'productId' when calling getProductPreferences(Async)");
@@ -567,7 +580,8 @@ public class ProductsApi {
      * @return PreferencesModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the product preferences data is returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -575,7 +589,7 @@ public class ProductsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public PreferencesModel getProductPreferences(UUID productId) throws ApiException {
+    public PreferencesModel getProductPreferences(@javax.annotation.Nonnull UUID productId) throws ApiException {
         ApiResponse<PreferencesModel> localVarResp = getProductPreferencesWithHttpInfo(productId);
         return localVarResp.getData();
     }
@@ -587,7 +601,8 @@ public class ProductsApi {
      * @return ApiResponse&lt;PreferencesModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the product preferences data is returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -595,7 +610,7 @@ public class ProductsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PreferencesModel> getProductPreferencesWithHttpInfo(UUID productId) throws ApiException {
+    public ApiResponse<PreferencesModel> getProductPreferencesWithHttpInfo(@javax.annotation.Nonnull UUID productId) throws ApiException {
         okhttp3.Call localVarCall = getProductPreferencesValidateBeforeCall(productId, null);
         Type localVarReturnType = new TypeToken<PreferencesModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -609,7 +624,8 @@ public class ProductsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the product preferences data is returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -617,7 +633,7 @@ public class ProductsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProductPreferencesAsync(UUID productId, final ApiCallback<PreferencesModel> _callback) throws ApiException {
+    public okhttp3.Call getProductPreferencesAsync(@javax.annotation.Nonnull UUID productId, final ApiCallback<PreferencesModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getProductPreferencesValidateBeforeCall(productId, _callback);
         Type localVarReturnType = new TypeToken<PreferencesModel>(){}.getType();
@@ -630,7 +646,8 @@ public class ProductsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
@@ -692,7 +709,8 @@ public class ProductsApi {
      * @return List&lt;ProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
@@ -709,7 +727,8 @@ public class ProductsApi {
      * @return ApiResponse&lt;List&lt;ProductModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
@@ -728,7 +747,8 @@ public class ProductsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
@@ -749,7 +769,8 @@ public class ProductsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -757,7 +778,7 @@ public class ProductsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateProductCall(UUID productId, UpdateProductRequest updateProductRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateProductCall(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull UpdateProductRequest updateProductRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -806,7 +827,7 @@ public class ProductsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateProductValidateBeforeCall(UUID productId, UpdateProductRequest updateProductRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateProductValidateBeforeCall(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull UpdateProductRequest updateProductRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'productId' is set
         if (productId == null) {
             throw new ApiException("Missing the required parameter 'productId' when calling updateProduct(Async)");
@@ -829,7 +850,8 @@ public class ProductsApi {
      * @return ProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -837,7 +859,7 @@ public class ProductsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ProductModel updateProduct(UUID productId, UpdateProductRequest updateProductRequest) throws ApiException {
+    public ProductModel updateProduct(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull UpdateProductRequest updateProductRequest) throws ApiException {
         ApiResponse<ProductModel> localVarResp = updateProductWithHttpInfo(productId, updateProductRequest);
         return localVarResp.getData();
     }
@@ -850,7 +872,8 @@ public class ProductsApi {
      * @return ApiResponse&lt;ProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -858,7 +881,7 @@ public class ProductsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProductModel> updateProductWithHttpInfo(UUID productId, UpdateProductRequest updateProductRequest) throws ApiException {
+    public ApiResponse<ProductModel> updateProductWithHttpInfo(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull UpdateProductRequest updateProductRequest) throws ApiException {
         okhttp3.Call localVarCall = updateProductValidateBeforeCall(productId, updateProductRequest, null);
         Type localVarReturnType = new TypeToken<ProductModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -873,7 +896,8 @@ public class ProductsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -881,7 +905,7 @@ public class ProductsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateProductAsync(UUID productId, UpdateProductRequest updateProductRequest, final ApiCallback<ProductModel> _callback) throws ApiException {
+    public okhttp3.Call updateProductAsync(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull UpdateProductRequest updateProductRequest, final ApiCallback<ProductModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateProductValidateBeforeCall(productId, updateProductRequest, _callback);
         Type localVarReturnType = new TypeToken<ProductModel>(){}.getType();
@@ -896,7 +920,8 @@ public class ProductsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the update was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -904,7 +929,7 @@ public class ProductsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateProductPreferencesCall(UUID productId, UpdatePreferencesRequest updatePreferencesRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateProductPreferencesCall(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull UpdatePreferencesRequest updatePreferencesRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -953,7 +978,7 @@ public class ProductsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateProductPreferencesValidateBeforeCall(UUID productId, UpdatePreferencesRequest updatePreferencesRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateProductPreferencesValidateBeforeCall(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull UpdatePreferencesRequest updatePreferencesRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'productId' is set
         if (productId == null) {
             throw new ApiException("Missing the required parameter 'productId' when calling updateProductPreferences(Async)");
@@ -976,7 +1001,8 @@ public class ProductsApi {
      * @return PreferencesModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the update was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -984,7 +1010,7 @@ public class ProductsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public PreferencesModel updateProductPreferences(UUID productId, UpdatePreferencesRequest updatePreferencesRequest) throws ApiException {
+    public PreferencesModel updateProductPreferences(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull UpdatePreferencesRequest updatePreferencesRequest) throws ApiException {
         ApiResponse<PreferencesModel> localVarResp = updateProductPreferencesWithHttpInfo(productId, updatePreferencesRequest);
         return localVarResp.getData();
     }
@@ -997,7 +1023,8 @@ public class ProductsApi {
      * @return ApiResponse&lt;PreferencesModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the update was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1005,7 +1032,7 @@ public class ProductsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PreferencesModel> updateProductPreferencesWithHttpInfo(UUID productId, UpdatePreferencesRequest updatePreferencesRequest) throws ApiException {
+    public ApiResponse<PreferencesModel> updateProductPreferencesWithHttpInfo(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull UpdatePreferencesRequest updatePreferencesRequest) throws ApiException {
         okhttp3.Call localVarCall = updateProductPreferencesValidateBeforeCall(productId, updatePreferencesRequest, null);
         Type localVarReturnType = new TypeToken<PreferencesModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1020,7 +1047,8 @@ public class ProductsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the update was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1028,7 +1056,7 @@ public class ProductsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateProductPreferencesAsync(UUID productId, UpdatePreferencesRequest updatePreferencesRequest, final ApiCallback<PreferencesModel> _callback) throws ApiException {
+    public okhttp3.Call updateProductPreferencesAsync(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull UpdatePreferencesRequest updatePreferencesRequest, final ApiCallback<PreferencesModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateProductPreferencesValidateBeforeCall(productId, updatePreferencesRequest, _callback);
         Type localVarReturnType = new TypeToken<PreferencesModel>(){}.getType();

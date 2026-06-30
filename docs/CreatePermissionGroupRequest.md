@@ -31,6 +31,9 @@
 |**accessType** | **AccessType** |  |  [optional] |
 |**newEnvironmentAccessType** | **EnvironmentAccessType** |  |  [optional] |
 |**environmentAccesses** | [**List&lt;CreateOrUpdateEnvironmentAccessModel&gt;**](CreateOrUpdateEnvironmentAccessModel.md) | List of environment specific permissions. |  [optional] |
+|**approvalPermissionType** | **ApprovalPermissionType** |  |  [optional] |
+|**newEnvironmentApprovalPermissionType** | **EnvironmentApprovalPermissionType** |  |  [optional] |
+|**environmentApprovalPermissions** | [**List&lt;CreateOrUpdateEnvironmentApprovalPermissionModel&gt;**](CreateOrUpdateEnvironmentApprovalPermissionModel.md) | List of environment specific change request approval permissions. |  [optional] |
 |**canDisable2FA** | **Boolean** | Group members can disable two-factor authentication for other members. |  [optional] |
 
 

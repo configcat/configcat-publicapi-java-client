@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,40 +50,52 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * Details of the Environment.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class EnvironmentModel {
   public static final String SERIALIZED_NAME_PRODUCT = "product";
   @SerializedName(SERIALIZED_NAME_PRODUCT)
+  @javax.annotation.Nonnull
   private ProductModel product;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_ID = "environmentId";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_ID)
+  @javax.annotation.Nonnull
   private UUID environmentId;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_COLOR = "color";
   @SerializedName(SERIALIZED_NAME_COLOR)
+  @javax.annotation.Nullable
   private String color;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_ORDER = "order";
   @SerializedName(SERIALIZED_NAME_ORDER)
+  @javax.annotation.Nonnull
   private Integer order;
 
   public static final String SERIALIZED_NAME_REASON_REQUIRED = "reasonRequired";
   @SerializedName(SERIALIZED_NAME_REASON_REQUIRED)
+  @javax.annotation.Nonnull
   private Boolean reasonRequired;
+
+  public static final String SERIALIZED_NAME_APPROVE_REQUIRED = "approveRequired";
+  @SerializedName(SERIALIZED_NAME_APPROVE_REQUIRED)
+  @javax.annotation.Nonnull
+  private Boolean approveRequired;
 
   public EnvironmentModel() {
   }
 
-  public EnvironmentModel product(ProductModel product) {
+  public EnvironmentModel product(@javax.annotation.Nonnull ProductModel product) {
     this.product = product;
     return this;
   }
@@ -98,12 +109,12 @@ public class EnvironmentModel {
     return product;
   }
 
-  public void setProduct(ProductModel product) {
+  public void setProduct(@javax.annotation.Nonnull ProductModel product) {
     this.product = product;
   }
 
 
-  public EnvironmentModel environmentId(UUID environmentId) {
+  public EnvironmentModel environmentId(@javax.annotation.Nonnull UUID environmentId) {
     this.environmentId = environmentId;
     return this;
   }
@@ -117,12 +128,12 @@ public class EnvironmentModel {
     return environmentId;
   }
 
-  public void setEnvironmentId(UUID environmentId) {
+  public void setEnvironmentId(@javax.annotation.Nonnull UUID environmentId) {
     this.environmentId = environmentId;
   }
 
 
-  public EnvironmentModel name(String name) {
+  public EnvironmentModel name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -136,12 +147,12 @@ public class EnvironmentModel {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public EnvironmentModel color(String color) {
+  public EnvironmentModel color(@javax.annotation.Nullable String color) {
     this.color = color;
     return this;
   }
@@ -155,12 +166,12 @@ public class EnvironmentModel {
     return color;
   }
 
-  public void setColor(String color) {
+  public void setColor(@javax.annotation.Nullable String color) {
     this.color = color;
   }
 
 
-  public EnvironmentModel description(String description) {
+  public EnvironmentModel description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -174,12 +185,12 @@ public class EnvironmentModel {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public EnvironmentModel order(Integer order) {
+  public EnvironmentModel order(@javax.annotation.Nonnull Integer order) {
     this.order = order;
     return this;
   }
@@ -193,12 +204,12 @@ public class EnvironmentModel {
     return order;
   }
 
-  public void setOrder(Integer order) {
+  public void setOrder(@javax.annotation.Nonnull Integer order) {
     this.order = order;
   }
 
 
-  public EnvironmentModel reasonRequired(Boolean reasonRequired) {
+  public EnvironmentModel reasonRequired(@javax.annotation.Nonnull Boolean reasonRequired) {
     this.reasonRequired = reasonRequired;
     return this;
   }
@@ -212,8 +223,27 @@ public class EnvironmentModel {
     return reasonRequired;
   }
 
-  public void setReasonRequired(Boolean reasonRequired) {
+  public void setReasonRequired(@javax.annotation.Nonnull Boolean reasonRequired) {
     this.reasonRequired = reasonRequired;
+  }
+
+
+  public EnvironmentModel approveRequired(@javax.annotation.Nonnull Boolean approveRequired) {
+    this.approveRequired = approveRequired;
+    return this;
+  }
+
+  /**
+   * Determines whether changes must be approved before they are applied in the given Environment.
+   * @return approveRequired
+   */
+  @javax.annotation.Nonnull
+  public Boolean getApproveRequired() {
+    return approveRequired;
+  }
+
+  public void setApproveRequired(@javax.annotation.Nonnull Boolean approveRequired) {
+    this.approveRequired = approveRequired;
   }
 
   /**
@@ -277,13 +307,14 @@ public class EnvironmentModel {
         Objects.equals(this.color, environmentModel.color) &&
         Objects.equals(this.description, environmentModel.description) &&
         Objects.equals(this.order, environmentModel.order) &&
-        Objects.equals(this.reasonRequired, environmentModel.reasonRequired)&&
+        Objects.equals(this.reasonRequired, environmentModel.reasonRequired) &&
+        Objects.equals(this.approveRequired, environmentModel.approveRequired)&&
         Objects.equals(this.additionalProperties, environmentModel.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(product, environmentId, name, color, description, order, reasonRequired, additionalProperties);
+    return Objects.hash(product, environmentId, name, color, description, order, reasonRequired, approveRequired, additionalProperties);
   }
 
   @Override
@@ -297,6 +328,7 @@ public class EnvironmentModel {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    order: ").append(toIndentedString(order)).append("\n");
     sb.append("    reasonRequired: ").append(toIndentedString(reasonRequired)).append("\n");
+    sb.append("    approveRequired: ").append(toIndentedString(approveRequired)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -307,10 +339,7 @@ public class EnvironmentModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -319,24 +348,10 @@ public class EnvironmentModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("product");
-    openapiFields.add("environmentId");
-    openapiFields.add("name");
-    openapiFields.add("color");
-    openapiFields.add("description");
-    openapiFields.add("order");
-    openapiFields.add("reasonRequired");
+    openapiFields = new HashSet<String>(Arrays.asList("product", "environmentId", "name", "color", "description", "order", "reasonRequired", "approveRequired"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("product");
-    openapiRequiredFields.add("environmentId");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("color");
-    openapiRequiredFields.add("description");
-    openapiRequiredFields.add("order");
-    openapiRequiredFields.add("reasonRequired");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("product", "environmentId", "name", "color", "description", "order", "reasonRequired", "approveRequired"));
   }
 
   /**
@@ -348,30 +363,30 @@ public class EnvironmentModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!EnvironmentModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in EnvironmentModel is not found in the empty JSON string", EnvironmentModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in EnvironmentModel is not found in the empty JSON string", EnvironmentModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : EnvironmentModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the required field `product`
       ProductModel.validateJsonElement(jsonObj.get("product"));
       if (!jsonObj.get("environmentId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("color") != null && !jsonObj.get("color").isJsonNull()) && !jsonObj.get("color").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `color` to be a primitive type in the JSON string but got `%s`", jsonObj.get("color").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `color` to be a primitive type in the JSON string but got `%s`", jsonObj.get("color").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
   }
 
@@ -432,7 +447,7 @@ public class EnvironmentModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

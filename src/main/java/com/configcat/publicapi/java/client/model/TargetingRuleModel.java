@@ -42,7 +42,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -54,24 +53,27 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * TargetingRuleModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class TargetingRuleModel {
   public static final String SERIALIZED_NAME_CONDITIONS = "conditions";
   @SerializedName(SERIALIZED_NAME_CONDITIONS)
+  @javax.annotation.Nonnull
   private List<ConditionModel> conditions = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PERCENTAGE_OPTIONS = "percentageOptions";
   @SerializedName(SERIALIZED_NAME_PERCENTAGE_OPTIONS)
+  @javax.annotation.Nonnull
   private List<PercentageOptionModel> percentageOptions = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
+  @javax.annotation.Nullable
   private ValueModel value;
 
   public TargetingRuleModel() {
   }
 
-  public TargetingRuleModel conditions(List<ConditionModel> conditions) {
+  public TargetingRuleModel conditions(@javax.annotation.Nonnull List<ConditionModel> conditions) {
     this.conditions = conditions;
     return this;
   }
@@ -93,12 +95,12 @@ public class TargetingRuleModel {
     return conditions;
   }
 
-  public void setConditions(List<ConditionModel> conditions) {
+  public void setConditions(@javax.annotation.Nonnull List<ConditionModel> conditions) {
     this.conditions = conditions;
   }
 
 
-  public TargetingRuleModel percentageOptions(List<PercentageOptionModel> percentageOptions) {
+  public TargetingRuleModel percentageOptions(@javax.annotation.Nonnull List<PercentageOptionModel> percentageOptions) {
     this.percentageOptions = percentageOptions;
     return this;
   }
@@ -120,12 +122,12 @@ public class TargetingRuleModel {
     return percentageOptions;
   }
 
-  public void setPercentageOptions(List<PercentageOptionModel> percentageOptions) {
+  public void setPercentageOptions(@javax.annotation.Nonnull List<PercentageOptionModel> percentageOptions) {
     this.percentageOptions = percentageOptions;
   }
 
 
-  public TargetingRuleModel value(ValueModel value) {
+  public TargetingRuleModel value(@javax.annotation.Nullable ValueModel value) {
     this.value = value;
     return this;
   }
@@ -139,7 +141,7 @@ public class TargetingRuleModel {
     return value;
   }
 
-  public void setValue(ValueModel value) {
+  public void setValue(@javax.annotation.Nullable ValueModel value) {
     this.value = value;
   }
 
@@ -226,10 +228,7 @@ public class TargetingRuleModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -238,16 +237,10 @@ public class TargetingRuleModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("conditions");
-    openapiFields.add("percentageOptions");
-    openapiFields.add("value");
+    openapiFields = new HashSet<String>(Arrays.asList("conditions", "percentageOptions", "value"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("conditions");
-    openapiRequiredFields.add("percentageOptions");
-    openapiRequiredFields.add("value");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("conditions", "percentageOptions", "value"));
   }
 
   /**
@@ -259,39 +252,41 @@ public class TargetingRuleModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!TargetingRuleModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in TargetingRuleModel is not found in the empty JSON string", TargetingRuleModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in TargetingRuleModel is not found in the empty JSON string", TargetingRuleModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : TargetingRuleModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // ensure the json data is an array
-      if (!jsonObj.get("conditions").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `conditions` to be an array in the JSON string but got `%s`", jsonObj.get("conditions").toString()));
+      if (jsonObj.get("conditions") != null) {
+        if (!jsonObj.get("conditions").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `conditions` to be an array in the JSON string but got `%s`", jsonObj.get("conditions").toString()));
+        }
+        JsonArray jsonArrayconditions = jsonObj.getAsJsonArray("conditions");
+        // validate the required field `conditions` (array)
+        for (int i = 0; i < jsonArrayconditions.size(); i++) {
+          ConditionModel.validateJsonElement(jsonArrayconditions.get(i));
+        }
       }
-
-      JsonArray jsonArrayconditions = jsonObj.getAsJsonArray("conditions");
-      // validate the required field `conditions` (array)
-      for (int i = 0; i < jsonArrayconditions.size(); i++) {
-        ConditionModel.validateJsonElement(jsonArrayconditions.get(i));
-      };
-      // ensure the json data is an array
-      if (!jsonObj.get("percentageOptions").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `percentageOptions` to be an array in the JSON string but got `%s`", jsonObj.get("percentageOptions").toString()));
+      if (jsonObj.get("percentageOptions") != null) {
+        if (!jsonObj.get("percentageOptions").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `percentageOptions` to be an array in the JSON string but got `%s`", jsonObj.get("percentageOptions").toString()));
+        }
+        JsonArray jsonArraypercentageOptions = jsonObj.getAsJsonArray("percentageOptions");
+        // validate the required field `percentageOptions` (array)
+        for (int i = 0; i < jsonArraypercentageOptions.size(); i++) {
+          PercentageOptionModel.validateJsonElement(jsonArraypercentageOptions.get(i));
+        }
       }
-
-      JsonArray jsonArraypercentageOptions = jsonObj.getAsJsonArray("percentageOptions");
-      // validate the required field `percentageOptions` (array)
-      for (int i = 0; i < jsonArraypercentageOptions.size(); i++) {
-        PercentageOptionModel.validateJsonElement(jsonArraypercentageOptions.get(i));
-      };
+      if (jsonObj.get("value") != null && !jsonObj.get("value").isJsonNull()) {
       // validate the required field `value`
       ValueModel.validateJsonElement(jsonObj.get("value"));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -351,7 +346,7 @@ public class TargetingRuleModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

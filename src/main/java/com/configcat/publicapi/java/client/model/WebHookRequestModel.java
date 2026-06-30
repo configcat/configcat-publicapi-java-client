@@ -42,7 +42,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -54,28 +53,32 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * WebHookRequestModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class WebHookRequestModel {
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
+  @javax.annotation.Nonnull
   private String url;
 
   public static final String SERIALIZED_NAME_CONTENT = "content";
   @SerializedName(SERIALIZED_NAME_CONTENT)
+  @javax.annotation.Nullable
   private String content;
 
   public static final String SERIALIZED_NAME_HTTP_METHOD = "httpMethod";
   @SerializedName(SERIALIZED_NAME_HTTP_METHOD)
+  @javax.annotation.Nullable
   private WebHookHttpMethod httpMethod;
 
   public static final String SERIALIZED_NAME_WEB_HOOK_HEADERS = "webHookHeaders";
   @SerializedName(SERIALIZED_NAME_WEB_HOOK_HEADERS)
+  @javax.annotation.Nullable
   private List<WebhookHeaderModel> webHookHeaders;
 
   public WebHookRequestModel() {
   }
 
-  public WebHookRequestModel url(String url) {
+  public WebHookRequestModel url(@javax.annotation.Nonnull String url) {
     this.url = url;
     return this;
   }
@@ -89,12 +92,12 @@ public class WebHookRequestModel {
     return url;
   }
 
-  public void setUrl(String url) {
+  public void setUrl(@javax.annotation.Nonnull String url) {
     this.url = url;
   }
 
 
-  public WebHookRequestModel content(String content) {
+  public WebHookRequestModel content(@javax.annotation.Nullable String content) {
     this.content = content;
     return this;
   }
@@ -108,12 +111,12 @@ public class WebHookRequestModel {
     return content;
   }
 
-  public void setContent(String content) {
+  public void setContent(@javax.annotation.Nullable String content) {
     this.content = content;
   }
 
 
-  public WebHookRequestModel httpMethod(WebHookHttpMethod httpMethod) {
+  public WebHookRequestModel httpMethod(@javax.annotation.Nullable WebHookHttpMethod httpMethod) {
     this.httpMethod = httpMethod;
     return this;
   }
@@ -127,12 +130,12 @@ public class WebHookRequestModel {
     return httpMethod;
   }
 
-  public void setHttpMethod(WebHookHttpMethod httpMethod) {
+  public void setHttpMethod(@javax.annotation.Nullable WebHookHttpMethod httpMethod) {
     this.httpMethod = httpMethod;
   }
 
 
-  public WebHookRequestModel webHookHeaders(List<WebhookHeaderModel> webHookHeaders) {
+  public WebHookRequestModel webHookHeaders(@javax.annotation.Nullable List<WebhookHeaderModel> webHookHeaders) {
     this.webHookHeaders = webHookHeaders;
     return this;
   }
@@ -154,7 +157,7 @@ public class WebHookRequestModel {
     return webHookHeaders;
   }
 
-  public void setWebHookHeaders(List<WebhookHeaderModel> webHookHeaders) {
+  public void setWebHookHeaders(@javax.annotation.Nullable List<WebhookHeaderModel> webHookHeaders) {
     this.webHookHeaders = webHookHeaders;
   }
 
@@ -254,10 +257,7 @@ public class WebHookRequestModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -266,15 +266,10 @@ public class WebHookRequestModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("url");
-    openapiFields.add("content");
-    openapiFields.add("httpMethod");
-    openapiFields.add("webHookHeaders");
+    openapiFields = new HashSet<String>(Arrays.asList("url", "content", "httpMethod", "webHookHeaders"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("url");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("url"));
   }
 
   /**
@@ -286,22 +281,22 @@ public class WebHookRequestModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WebHookRequestModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in WebHookRequestModel is not found in the empty JSON string", WebHookRequestModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in WebHookRequestModel is not found in the empty JSON string", WebHookRequestModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : WebHookRequestModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
       }
       if ((jsonObj.get("content") != null && !jsonObj.get("content").isJsonNull()) && !jsonObj.get("content").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `content` to be a primitive type in the JSON string but got `%s`", jsonObj.get("content").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `content` to be a primitive type in the JSON string but got `%s`", jsonObj.get("content").toString()));
       }
       // validate the optional field `httpMethod`
       if (jsonObj.get("httpMethod") != null && !jsonObj.get("httpMethod").isJsonNull()) {
@@ -312,7 +307,7 @@ public class WebHookRequestModel {
         if (jsonArraywebHookHeaders != null) {
           // ensure the json data is an array
           if (!jsonObj.get("webHookHeaders").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `webHookHeaders` to be an array in the JSON string but got `%s`", jsonObj.get("webHookHeaders").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `webHookHeaders` to be an array in the JSON string but got `%s`", jsonObj.get("webHookHeaders").toString()));
           }
 
           // validate the optional field `webHookHeaders` (array)
@@ -380,7 +375,7 @@ public class WebHookRequestModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,24 +50,27 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * PredefinedVariationEnvironmentModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class PredefinedVariationEnvironmentModel {
   public static final String SERIALIZED_NAME_ENVIRONMENT_ID = "environmentId";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_ID)
+  @javax.annotation.Nonnull
   private UUID environmentId;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_ACCESS_TYPE = "accessType";
   @SerializedName(SERIALIZED_NAME_ACCESS_TYPE)
+  @javax.annotation.Nonnull
   private EnvironmentAccessType accessType;
 
   public PredefinedVariationEnvironmentModel() {
   }
 
-  public PredefinedVariationEnvironmentModel environmentId(UUID environmentId) {
+  public PredefinedVariationEnvironmentModel environmentId(@javax.annotation.Nonnull UUID environmentId) {
     this.environmentId = environmentId;
     return this;
   }
@@ -82,12 +84,12 @@ public class PredefinedVariationEnvironmentModel {
     return environmentId;
   }
 
-  public void setEnvironmentId(UUID environmentId) {
+  public void setEnvironmentId(@javax.annotation.Nonnull UUID environmentId) {
     this.environmentId = environmentId;
   }
 
 
-  public PredefinedVariationEnvironmentModel name(String name) {
+  public PredefinedVariationEnvironmentModel name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -101,12 +103,12 @@ public class PredefinedVariationEnvironmentModel {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public PredefinedVariationEnvironmentModel accessType(EnvironmentAccessType accessType) {
+  public PredefinedVariationEnvironmentModel accessType(@javax.annotation.Nonnull EnvironmentAccessType accessType) {
     this.accessType = accessType;
     return this;
   }
@@ -120,7 +122,7 @@ public class PredefinedVariationEnvironmentModel {
     return accessType;
   }
 
-  public void setAccessType(EnvironmentAccessType accessType) {
+  public void setAccessType(@javax.annotation.Nonnull EnvironmentAccessType accessType) {
     this.accessType = accessType;
   }
 
@@ -207,10 +209,7 @@ public class PredefinedVariationEnvironmentModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -219,16 +218,10 @@ public class PredefinedVariationEnvironmentModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("environmentId");
-    openapiFields.add("name");
-    openapiFields.add("accessType");
+    openapiFields = new HashSet<String>(Arrays.asList("environmentId", "name", "accessType"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("environmentId");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("accessType");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("environmentId", "name", "accessType"));
   }
 
   /**
@@ -240,22 +233,22 @@ public class PredefinedVariationEnvironmentModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PredefinedVariationEnvironmentModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PredefinedVariationEnvironmentModel is not found in the empty JSON string", PredefinedVariationEnvironmentModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in PredefinedVariationEnvironmentModel is not found in the empty JSON string", PredefinedVariationEnvironmentModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : PredefinedVariationEnvironmentModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("environmentId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       // validate the required field `accessType`
       EnvironmentAccessType.validateJsonElement(jsonObj.get("accessType"));
@@ -318,7 +311,7 @@ public class PredefinedVariationEnvironmentModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

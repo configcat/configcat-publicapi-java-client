@@ -83,7 +83,8 @@ public class PermissionGroupsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -91,7 +92,7 @@ public class PermissionGroupsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createPermissionGroupCall(UUID productId, CreatePermissionGroupRequest createPermissionGroupRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createPermissionGroupCall(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull CreatePermissionGroupRequest createPermissionGroupRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -140,7 +141,7 @@ public class PermissionGroupsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createPermissionGroupValidateBeforeCall(UUID productId, CreatePermissionGroupRequest createPermissionGroupRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createPermissionGroupValidateBeforeCall(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull CreatePermissionGroupRequest createPermissionGroupRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'productId' is set
         if (productId == null) {
             throw new ApiException("Missing the required parameter 'productId' when calling createPermissionGroup(Async)");
@@ -163,7 +164,8 @@ public class PermissionGroupsApi {
      * @return PermissionGroupModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -171,7 +173,7 @@ public class PermissionGroupsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public PermissionGroupModel createPermissionGroup(UUID productId, CreatePermissionGroupRequest createPermissionGroupRequest) throws ApiException {
+    public PermissionGroupModel createPermissionGroup(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull CreatePermissionGroupRequest createPermissionGroupRequest) throws ApiException {
         ApiResponse<PermissionGroupModel> localVarResp = createPermissionGroupWithHttpInfo(productId, createPermissionGroupRequest);
         return localVarResp.getData();
     }
@@ -184,7 +186,8 @@ public class PermissionGroupsApi {
      * @return ApiResponse&lt;PermissionGroupModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -192,7 +195,7 @@ public class PermissionGroupsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PermissionGroupModel> createPermissionGroupWithHttpInfo(UUID productId, CreatePermissionGroupRequest createPermissionGroupRequest) throws ApiException {
+    public ApiResponse<PermissionGroupModel> createPermissionGroupWithHttpInfo(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull CreatePermissionGroupRequest createPermissionGroupRequest) throws ApiException {
         okhttp3.Call localVarCall = createPermissionGroupValidateBeforeCall(productId, createPermissionGroupRequest, null);
         Type localVarReturnType = new TypeToken<PermissionGroupModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -207,7 +210,8 @@ public class PermissionGroupsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -215,7 +219,7 @@ public class PermissionGroupsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createPermissionGroupAsync(UUID productId, CreatePermissionGroupRequest createPermissionGroupRequest, final ApiCallback<PermissionGroupModel> _callback) throws ApiException {
+    public okhttp3.Call createPermissionGroupAsync(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull CreatePermissionGroupRequest createPermissionGroupRequest, final ApiCallback<PermissionGroupModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createPermissionGroupValidateBeforeCall(productId, createPermissionGroupRequest, _callback);
         Type localVarReturnType = new TypeToken<PermissionGroupModel>(){}.getType();
@@ -229,7 +233,8 @@ public class PermissionGroupsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -237,7 +242,7 @@ public class PermissionGroupsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deletePermissionGroupCall(Long permissionGroupId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deletePermissionGroupCall(@javax.annotation.Nonnull Long permissionGroupId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -282,7 +287,7 @@ public class PermissionGroupsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deletePermissionGroupValidateBeforeCall(Long permissionGroupId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deletePermissionGroupValidateBeforeCall(@javax.annotation.Nonnull Long permissionGroupId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'permissionGroupId' is set
         if (permissionGroupId == null) {
             throw new ApiException("Missing the required parameter 'permissionGroupId' when calling deletePermissionGroup(Async)");
@@ -298,7 +303,8 @@ public class PermissionGroupsApi {
      * @param permissionGroupId The identifier of the Permission Group. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -306,7 +312,7 @@ public class PermissionGroupsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public void deletePermissionGroup(Long permissionGroupId) throws ApiException {
+    public void deletePermissionGroup(@javax.annotation.Nonnull Long permissionGroupId) throws ApiException {
         deletePermissionGroupWithHttpInfo(permissionGroupId);
     }
 
@@ -317,7 +323,8 @@ public class PermissionGroupsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -325,7 +332,7 @@ public class PermissionGroupsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deletePermissionGroupWithHttpInfo(Long permissionGroupId) throws ApiException {
+    public ApiResponse<Void> deletePermissionGroupWithHttpInfo(@javax.annotation.Nonnull Long permissionGroupId) throws ApiException {
         okhttp3.Call localVarCall = deletePermissionGroupValidateBeforeCall(permissionGroupId, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -338,7 +345,8 @@ public class PermissionGroupsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -346,7 +354,7 @@ public class PermissionGroupsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deletePermissionGroupAsync(Long permissionGroupId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deletePermissionGroupAsync(@javax.annotation.Nonnull Long permissionGroupId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deletePermissionGroupValidateBeforeCall(permissionGroupId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -359,7 +367,8 @@ public class PermissionGroupsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the permission group data returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -367,7 +376,7 @@ public class PermissionGroupsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPermissionGroupCall(Long permissionGroupId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getPermissionGroupCall(@javax.annotation.Nonnull Long permissionGroupId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -413,7 +422,7 @@ public class PermissionGroupsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getPermissionGroupValidateBeforeCall(Long permissionGroupId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getPermissionGroupValidateBeforeCall(@javax.annotation.Nonnull Long permissionGroupId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'permissionGroupId' is set
         if (permissionGroupId == null) {
             throw new ApiException("Missing the required parameter 'permissionGroupId' when calling getPermissionGroup(Async)");
@@ -430,7 +439,8 @@ public class PermissionGroupsApi {
      * @return PermissionGroupModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the permission group data returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -438,7 +448,7 @@ public class PermissionGroupsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public PermissionGroupModel getPermissionGroup(Long permissionGroupId) throws ApiException {
+    public PermissionGroupModel getPermissionGroup(@javax.annotation.Nonnull Long permissionGroupId) throws ApiException {
         ApiResponse<PermissionGroupModel> localVarResp = getPermissionGroupWithHttpInfo(permissionGroupId);
         return localVarResp.getData();
     }
@@ -450,7 +460,8 @@ public class PermissionGroupsApi {
      * @return ApiResponse&lt;PermissionGroupModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the permission group data returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -458,7 +469,7 @@ public class PermissionGroupsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PermissionGroupModel> getPermissionGroupWithHttpInfo(Long permissionGroupId) throws ApiException {
+    public ApiResponse<PermissionGroupModel> getPermissionGroupWithHttpInfo(@javax.annotation.Nonnull Long permissionGroupId) throws ApiException {
         okhttp3.Call localVarCall = getPermissionGroupValidateBeforeCall(permissionGroupId, null);
         Type localVarReturnType = new TypeToken<PermissionGroupModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -472,7 +483,8 @@ public class PermissionGroupsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the permission group data returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -480,7 +492,7 @@ public class PermissionGroupsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPermissionGroupAsync(Long permissionGroupId, final ApiCallback<PermissionGroupModel> _callback) throws ApiException {
+    public okhttp3.Call getPermissionGroupAsync(@javax.annotation.Nonnull Long permissionGroupId, final ApiCallback<PermissionGroupModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getPermissionGroupValidateBeforeCall(permissionGroupId, _callback);
         Type localVarReturnType = new TypeToken<PermissionGroupModel>(){}.getType();
@@ -494,7 +506,8 @@ public class PermissionGroupsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -502,7 +515,7 @@ public class PermissionGroupsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPermissionGroupsCall(UUID productId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getPermissionGroupsCall(@javax.annotation.Nonnull UUID productId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -548,7 +561,7 @@ public class PermissionGroupsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getPermissionGroupsValidateBeforeCall(UUID productId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getPermissionGroupsValidateBeforeCall(@javax.annotation.Nonnull UUID productId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'productId' is set
         if (productId == null) {
             throw new ApiException("Missing the required parameter 'productId' when calling getPermissionGroups(Async)");
@@ -565,7 +578,8 @@ public class PermissionGroupsApi {
      * @return List&lt;PermissionGroupModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -573,7 +587,7 @@ public class PermissionGroupsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public List<PermissionGroupModel> getPermissionGroups(UUID productId) throws ApiException {
+    public List<PermissionGroupModel> getPermissionGroups(@javax.annotation.Nonnull UUID productId) throws ApiException {
         ApiResponse<List<PermissionGroupModel>> localVarResp = getPermissionGroupsWithHttpInfo(productId);
         return localVarResp.getData();
     }
@@ -585,7 +599,8 @@ public class PermissionGroupsApi {
      * @return ApiResponse&lt;List&lt;PermissionGroupModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -593,7 +608,7 @@ public class PermissionGroupsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<PermissionGroupModel>> getPermissionGroupsWithHttpInfo(UUID productId) throws ApiException {
+    public ApiResponse<List<PermissionGroupModel>> getPermissionGroupsWithHttpInfo(@javax.annotation.Nonnull UUID productId) throws ApiException {
         okhttp3.Call localVarCall = getPermissionGroupsValidateBeforeCall(productId, null);
         Type localVarReturnType = new TypeToken<List<PermissionGroupModel>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -607,7 +622,8 @@ public class PermissionGroupsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -615,7 +631,7 @@ public class PermissionGroupsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPermissionGroupsAsync(UUID productId, final ApiCallback<List<PermissionGroupModel>> _callback) throws ApiException {
+    public okhttp3.Call getPermissionGroupsAsync(@javax.annotation.Nonnull UUID productId, final ApiCallback<List<PermissionGroupModel>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getPermissionGroupsValidateBeforeCall(productId, _callback);
         Type localVarReturnType = new TypeToken<List<PermissionGroupModel>>(){}.getType();
@@ -630,7 +646,8 @@ public class PermissionGroupsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -638,7 +655,7 @@ public class PermissionGroupsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePermissionGroupCall(Long permissionGroupId, UpdatePermissionGroupRequest updatePermissionGroupRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updatePermissionGroupCall(@javax.annotation.Nonnull Long permissionGroupId, @javax.annotation.Nonnull UpdatePermissionGroupRequest updatePermissionGroupRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -687,7 +704,7 @@ public class PermissionGroupsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updatePermissionGroupValidateBeforeCall(Long permissionGroupId, UpdatePermissionGroupRequest updatePermissionGroupRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updatePermissionGroupValidateBeforeCall(@javax.annotation.Nonnull Long permissionGroupId, @javax.annotation.Nonnull UpdatePermissionGroupRequest updatePermissionGroupRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'permissionGroupId' is set
         if (permissionGroupId == null) {
             throw new ApiException("Missing the required parameter 'permissionGroupId' when calling updatePermissionGroup(Async)");
@@ -710,7 +727,8 @@ public class PermissionGroupsApi {
      * @return PermissionGroupModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -718,7 +736,7 @@ public class PermissionGroupsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public PermissionGroupModel updatePermissionGroup(Long permissionGroupId, UpdatePermissionGroupRequest updatePermissionGroupRequest) throws ApiException {
+    public PermissionGroupModel updatePermissionGroup(@javax.annotation.Nonnull Long permissionGroupId, @javax.annotation.Nonnull UpdatePermissionGroupRequest updatePermissionGroupRequest) throws ApiException {
         ApiResponse<PermissionGroupModel> localVarResp = updatePermissionGroupWithHttpInfo(permissionGroupId, updatePermissionGroupRequest);
         return localVarResp.getData();
     }
@@ -731,7 +749,8 @@ public class PermissionGroupsApi {
      * @return ApiResponse&lt;PermissionGroupModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -739,7 +758,7 @@ public class PermissionGroupsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<PermissionGroupModel> updatePermissionGroupWithHttpInfo(Long permissionGroupId, UpdatePermissionGroupRequest updatePermissionGroupRequest) throws ApiException {
+    public ApiResponse<PermissionGroupModel> updatePermissionGroupWithHttpInfo(@javax.annotation.Nonnull Long permissionGroupId, @javax.annotation.Nonnull UpdatePermissionGroupRequest updatePermissionGroupRequest) throws ApiException {
         okhttp3.Call localVarCall = updatePermissionGroupValidateBeforeCall(permissionGroupId, updatePermissionGroupRequest, null);
         Type localVarReturnType = new TypeToken<PermissionGroupModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -754,7 +773,8 @@ public class PermissionGroupsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -762,7 +782,7 @@ public class PermissionGroupsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updatePermissionGroupAsync(Long permissionGroupId, UpdatePermissionGroupRequest updatePermissionGroupRequest, final ApiCallback<PermissionGroupModel> _callback) throws ApiException {
+    public okhttp3.Call updatePermissionGroupAsync(@javax.annotation.Nonnull Long permissionGroupId, @javax.annotation.Nonnull UpdatePermissionGroupRequest updatePermissionGroupRequest, final ApiCallback<PermissionGroupModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updatePermissionGroupValidateBeforeCall(permissionGroupId, updatePermissionGroupRequest, _callback);
         Type localVarReturnType = new TypeToken<PermissionGroupModel>(){}.getType();

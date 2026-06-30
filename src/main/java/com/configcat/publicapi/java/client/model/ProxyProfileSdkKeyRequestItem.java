@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,20 +50,22 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * ProxyProfileSdkKeyRequestItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class ProxyProfileSdkKeyRequestItem {
   public static final String SERIALIZED_NAME_CONFIG_ID = "configId";
   @SerializedName(SERIALIZED_NAME_CONFIG_ID)
+  @javax.annotation.Nullable
   private UUID configId;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_ID = "environmentId";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_ID)
+  @javax.annotation.Nullable
   private UUID environmentId;
 
   public ProxyProfileSdkKeyRequestItem() {
   }
 
-  public ProxyProfileSdkKeyRequestItem configId(UUID configId) {
+  public ProxyProfileSdkKeyRequestItem configId(@javax.annotation.Nullable UUID configId) {
     this.configId = configId;
     return this;
   }
@@ -78,12 +79,12 @@ public class ProxyProfileSdkKeyRequestItem {
     return configId;
   }
 
-  public void setConfigId(UUID configId) {
+  public void setConfigId(@javax.annotation.Nullable UUID configId) {
     this.configId = configId;
   }
 
 
-  public ProxyProfileSdkKeyRequestItem environmentId(UUID environmentId) {
+  public ProxyProfileSdkKeyRequestItem environmentId(@javax.annotation.Nullable UUID environmentId) {
     this.environmentId = environmentId;
     return this;
   }
@@ -97,7 +98,7 @@ public class ProxyProfileSdkKeyRequestItem {
     return environmentId;
   }
 
-  public void setEnvironmentId(UUID environmentId) {
+  public void setEnvironmentId(@javax.annotation.Nullable UUID environmentId) {
     this.environmentId = environmentId;
   }
 
@@ -193,10 +194,7 @@ public class ProxyProfileSdkKeyRequestItem {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -205,12 +203,10 @@ public class ProxyProfileSdkKeyRequestItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("configId");
-    openapiFields.add("environmentId");
+    openapiFields = new HashSet<String>(Arrays.asList("configId", "environmentId"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -222,15 +218,15 @@ public class ProxyProfileSdkKeyRequestItem {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ProxyProfileSdkKeyRequestItem.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ProxyProfileSdkKeyRequestItem is not found in the empty JSON string", ProxyProfileSdkKeyRequestItem.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ProxyProfileSdkKeyRequestItem is not found in the empty JSON string", ProxyProfileSdkKeyRequestItem.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("configId") != null && !jsonObj.get("configId").isJsonNull()) && !jsonObj.get("configId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `configId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("configId").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `configId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("configId").toString()));
       }
       if ((jsonObj.get("environmentId") != null && !jsonObj.get("environmentId").isJsonNull()) && !jsonObj.get("environmentId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
       }
   }
 
@@ -291,7 +287,7 @@ public class ProxyProfileSdkKeyRequestItem {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

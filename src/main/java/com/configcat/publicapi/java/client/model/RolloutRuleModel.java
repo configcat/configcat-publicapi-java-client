@@ -41,7 +41,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -53,36 +52,42 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * RolloutRuleModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class RolloutRuleModel {
   public static final String SERIALIZED_NAME_COMPARISON_ATTRIBUTE = "comparisonAttribute";
   @SerializedName(SERIALIZED_NAME_COMPARISON_ATTRIBUTE)
+  @javax.annotation.Nullable
   private String comparisonAttribute;
 
   public static final String SERIALIZED_NAME_COMPARATOR = "comparator";
   @SerializedName(SERIALIZED_NAME_COMPARATOR)
+  @javax.annotation.Nullable
   private RolloutRuleComparator comparator;
 
   public static final String SERIALIZED_NAME_COMPARISON_VALUE = "comparisonValue";
   @SerializedName(SERIALIZED_NAME_COMPARISON_VALUE)
+  @javax.annotation.Nullable
   private String comparisonValue;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
+  @javax.annotation.Nonnull
   private SettingValueType value;
 
   public static final String SERIALIZED_NAME_SEGMENT_COMPARATOR = "segmentComparator";
   @SerializedName(SERIALIZED_NAME_SEGMENT_COMPARATOR)
+  @javax.annotation.Nullable
   private SegmentComparator segmentComparator;
 
   public static final String SERIALIZED_NAME_SEGMENT_ID = "segmentId";
   @SerializedName(SERIALIZED_NAME_SEGMENT_ID)
+  @javax.annotation.Nullable
   private UUID segmentId;
 
   public RolloutRuleModel() {
   }
 
-  public RolloutRuleModel comparisonAttribute(String comparisonAttribute) {
+  public RolloutRuleModel comparisonAttribute(@javax.annotation.Nullable String comparisonAttribute) {
     this.comparisonAttribute = comparisonAttribute;
     return this;
   }
@@ -96,12 +101,12 @@ public class RolloutRuleModel {
     return comparisonAttribute;
   }
 
-  public void setComparisonAttribute(String comparisonAttribute) {
+  public void setComparisonAttribute(@javax.annotation.Nullable String comparisonAttribute) {
     this.comparisonAttribute = comparisonAttribute;
   }
 
 
-  public RolloutRuleModel comparator(RolloutRuleComparator comparator) {
+  public RolloutRuleModel comparator(@javax.annotation.Nullable RolloutRuleComparator comparator) {
     this.comparator = comparator;
     return this;
   }
@@ -115,12 +120,12 @@ public class RolloutRuleModel {
     return comparator;
   }
 
-  public void setComparator(RolloutRuleComparator comparator) {
+  public void setComparator(@javax.annotation.Nullable RolloutRuleComparator comparator) {
     this.comparator = comparator;
   }
 
 
-  public RolloutRuleModel comparisonValue(String comparisonValue) {
+  public RolloutRuleModel comparisonValue(@javax.annotation.Nullable String comparisonValue) {
     this.comparisonValue = comparisonValue;
     return this;
   }
@@ -134,12 +139,12 @@ public class RolloutRuleModel {
     return comparisonValue;
   }
 
-  public void setComparisonValue(String comparisonValue) {
+  public void setComparisonValue(@javax.annotation.Nullable String comparisonValue) {
     this.comparisonValue = comparisonValue;
   }
 
 
-  public RolloutRuleModel value(SettingValueType value) {
+  public RolloutRuleModel value(@javax.annotation.Nonnull SettingValueType value) {
     this.value = value;
     return this;
   }
@@ -153,12 +158,12 @@ public class RolloutRuleModel {
     return value;
   }
 
-  public void setValue(SettingValueType value) {
+  public void setValue(@javax.annotation.Nonnull SettingValueType value) {
     this.value = value;
   }
 
 
-  public RolloutRuleModel segmentComparator(SegmentComparator segmentComparator) {
+  public RolloutRuleModel segmentComparator(@javax.annotation.Nullable SegmentComparator segmentComparator) {
     this.segmentComparator = segmentComparator;
     return this;
   }
@@ -172,12 +177,12 @@ public class RolloutRuleModel {
     return segmentComparator;
   }
 
-  public void setSegmentComparator(SegmentComparator segmentComparator) {
+  public void setSegmentComparator(@javax.annotation.Nullable SegmentComparator segmentComparator) {
     this.segmentComparator = segmentComparator;
   }
 
 
-  public RolloutRuleModel segmentId(UUID segmentId) {
+  public RolloutRuleModel segmentId(@javax.annotation.Nullable UUID segmentId) {
     this.segmentId = segmentId;
     return this;
   }
@@ -191,7 +196,7 @@ public class RolloutRuleModel {
     return segmentId;
   }
 
-  public void setSegmentId(UUID segmentId) {
+  public void setSegmentId(@javax.annotation.Nullable UUID segmentId) {
     this.segmentId = segmentId;
   }
 
@@ -284,10 +289,7 @@ public class RolloutRuleModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -296,22 +298,10 @@ public class RolloutRuleModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("comparisonAttribute");
-    openapiFields.add("comparator");
-    openapiFields.add("comparisonValue");
-    openapiFields.add("value");
-    openapiFields.add("segmentComparator");
-    openapiFields.add("segmentId");
+    openapiFields = new HashSet<String>(Arrays.asList("comparisonAttribute", "comparator", "comparisonValue", "value", "segmentComparator", "segmentId"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("comparisonAttribute");
-    openapiRequiredFields.add("comparator");
-    openapiRequiredFields.add("comparisonValue");
-    openapiRequiredFields.add("value");
-    openapiRequiredFields.add("segmentComparator");
-    openapiRequiredFields.add("segmentId");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("comparisonAttribute", "comparator", "comparisonValue", "value", "segmentComparator", "segmentId"));
   }
 
   /**
@@ -323,31 +313,35 @@ public class RolloutRuleModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!RolloutRuleModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in RolloutRuleModel is not found in the empty JSON string", RolloutRuleModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in RolloutRuleModel is not found in the empty JSON string", RolloutRuleModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : RolloutRuleModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("comparisonAttribute") != null && !jsonObj.get("comparisonAttribute").isJsonNull()) && !jsonObj.get("comparisonAttribute").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `comparisonAttribute` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comparisonAttribute").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `comparisonAttribute` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comparisonAttribute").toString()));
       }
+      if (jsonObj.get("comparator") != null && !jsonObj.get("comparator").isJsonNull()) {
       // validate the required field `comparator`
       RolloutRuleComparator.validateJsonElement(jsonObj.get("comparator"));
+      }
       if ((jsonObj.get("comparisonValue") != null && !jsonObj.get("comparisonValue").isJsonNull()) && !jsonObj.get("comparisonValue").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `comparisonValue` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comparisonValue").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `comparisonValue` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comparisonValue").toString()));
       }
       // validate the required field `value`
       SettingValueType.validateJsonElement(jsonObj.get("value"));
+      if (jsonObj.get("segmentComparator") != null && !jsonObj.get("segmentComparator").isJsonNull()) {
       // validate the required field `segmentComparator`
       SegmentComparator.validateJsonElement(jsonObj.get("segmentComparator"));
+      }
       if ((jsonObj.get("segmentId") != null && !jsonObj.get("segmentId").isJsonNull()) && !jsonObj.get("segmentId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `segmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("segmentId").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `segmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("segmentId").toString()));
       }
   }
 
@@ -408,7 +402,7 @@ public class RolloutRuleModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

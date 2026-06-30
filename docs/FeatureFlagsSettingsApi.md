@@ -6,11 +6,11 @@ All URIs are relative to *https://api.configcat.com*
 |------------- | ------------- | -------------|
 | [**createSetting**](FeatureFlagsSettingsApi.md#createSetting) | **POST** /v1/configs/{configId}/settings | Create Flag |
 | [**deleteSetting**](FeatureFlagsSettingsApi.md#deleteSetting) | **DELETE** /v1/settings/{settingId} | Delete Flag |
-| [**getPredefinedVariations**](FeatureFlagsSettingsApi.md#getPredefinedVariations) | **GET** /v1/settings/{settingId}/predefined-variations | Get predefined variations (Beta) |
+| [**getPredefinedVariations**](FeatureFlagsSettingsApi.md#getPredefinedVariations) | **GET** /v1/settings/{settingId}/predefined-variations | Get predefined variations |
 | [**getSetting**](FeatureFlagsSettingsApi.md#getSetting) | **GET** /v1/settings/{settingId} | Get Flag |
 | [**getSettings**](FeatureFlagsSettingsApi.md#getSettings) | **GET** /v1/configs/{configId}/settings | List Flags |
 | [**replaceSetting**](FeatureFlagsSettingsApi.md#replaceSetting) | **PUT** /v1/settings/{settingId} | Replace Flag |
-| [**updatePredefinedVariations**](FeatureFlagsSettingsApi.md#updatePredefinedVariations) | **PUT** /v1/settings/{settingId}/predefined-variations | Update predefined variations (Beta) |
+| [**updatePredefinedVariations**](FeatureFlagsSettingsApi.md#updatePredefinedVariations) | **PUT** /v1/settings/{settingId}/predefined-variations | Update predefined variations |
 | [**updateSetting**](FeatureFlagsSettingsApi.md#updateSetting) | **PATCH** /v1/settings/{settingId} | Update Flag |
 
 
@@ -161,9 +161,9 @@ null (empty response body)
 # **getPredefinedVariations**
 > PredefinedVariationsWithUsagesModel getPredefinedVariations(settingId)
 
-Get predefined variations (Beta)
+Get predefined variations
 
-This endpoint returns the predefined variations along with their usages in the Environments for a Feature Flag or Setting identified by the &#x60;settingId&#x60; parameter.  **Beta feature:** The feature is currently in closed beta state and cannot be used.
+This endpoint returns the predefined variations along with their usages in the Environments for a Feature Flag or Setting identified by the &#x60;settingId&#x60; parameter.
 
 ### Example
 ```java
@@ -447,9 +447,9 @@ public class Example {
 # **updatePredefinedVariations**
 > PredefinedVariationsModel updatePredefinedVariations(settingId, updatePredefinedVariationsRequest)
 
-Update predefined variations (Beta)
+Update predefined variations
 
-This endpoint updates the predefined variations for a Feature Flag or Setting identified by the &#x60;settingId&#x60; parameter.  **Important:** You can only update a predefined variation&#39;s value if it is not used anywhere in your feature flags.  **Beta feature:** The feature is currently in closed beta state and cannot be used.
+This endpoint updates the predefined variations for a Feature Flag or Setting identified by the &#x60;settingId&#x60; parameter.  **Important:** You can only update a predefined variation&#39;s value if it is not used anywhere in your feature flags.
 
 ### Example
 ```java

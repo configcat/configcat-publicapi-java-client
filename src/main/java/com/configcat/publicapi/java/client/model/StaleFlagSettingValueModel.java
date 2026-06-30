@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,24 +50,27 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * StaleFlagSettingValueModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class StaleFlagSettingValueModel {
   public static final String SERIALIZED_NAME_ENVIRONMENT_ID = "environmentId";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_ID)
+  @javax.annotation.Nonnull
   private UUID environmentId;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updatedAt";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime updatedAt;
 
   public static final String SERIALIZED_NAME_IS_STALE = "isStale";
   @SerializedName(SERIALIZED_NAME_IS_STALE)
+  @javax.annotation.Nonnull
   private Boolean isStale;
 
   public StaleFlagSettingValueModel() {
   }
 
-  public StaleFlagSettingValueModel environmentId(UUID environmentId) {
+  public StaleFlagSettingValueModel environmentId(@javax.annotation.Nonnull UUID environmentId) {
     this.environmentId = environmentId;
     return this;
   }
@@ -82,12 +84,12 @@ public class StaleFlagSettingValueModel {
     return environmentId;
   }
 
-  public void setEnvironmentId(UUID environmentId) {
+  public void setEnvironmentId(@javax.annotation.Nonnull UUID environmentId) {
     this.environmentId = environmentId;
   }
 
 
-  public StaleFlagSettingValueModel updatedAt(OffsetDateTime updatedAt) {
+  public StaleFlagSettingValueModel updatedAt(@javax.annotation.Nullable OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -101,12 +103,12 @@ public class StaleFlagSettingValueModel {
     return updatedAt;
   }
 
-  public void setUpdatedAt(OffsetDateTime updatedAt) {
+  public void setUpdatedAt(@javax.annotation.Nullable OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
   }
 
 
-  public StaleFlagSettingValueModel isStale(Boolean isStale) {
+  public StaleFlagSettingValueModel isStale(@javax.annotation.Nonnull Boolean isStale) {
     this.isStale = isStale;
     return this;
   }
@@ -120,7 +122,7 @@ public class StaleFlagSettingValueModel {
     return isStale;
   }
 
-  public void setIsStale(Boolean isStale) {
+  public void setIsStale(@javax.annotation.Nonnull Boolean isStale) {
     this.isStale = isStale;
   }
 
@@ -207,10 +209,7 @@ public class StaleFlagSettingValueModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -219,16 +218,10 @@ public class StaleFlagSettingValueModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("environmentId");
-    openapiFields.add("updatedAt");
-    openapiFields.add("isStale");
+    openapiFields = new HashSet<String>(Arrays.asList("environmentId", "updatedAt", "isStale"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("environmentId");
-    openapiRequiredFields.add("updatedAt");
-    openapiRequiredFields.add("isStale");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("environmentId", "updatedAt", "isStale"));
   }
 
   /**
@@ -240,19 +233,19 @@ public class StaleFlagSettingValueModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!StaleFlagSettingValueModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in StaleFlagSettingValueModel is not found in the empty JSON string", StaleFlagSettingValueModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in StaleFlagSettingValueModel is not found in the empty JSON string", StaleFlagSettingValueModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : StaleFlagSettingValueModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("environmentId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
       }
   }
 
@@ -313,7 +306,7 @@ public class StaleFlagSettingValueModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

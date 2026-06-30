@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,24 +51,27 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * ConditionModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class ConditionModel {
   public static final String SERIALIZED_NAME_USER_CONDITION = "userCondition";
   @SerializedName(SERIALIZED_NAME_USER_CONDITION)
+  @javax.annotation.Nullable
   private UserConditionModel userCondition;
 
   public static final String SERIALIZED_NAME_SEGMENT_CONDITION = "segmentCondition";
   @SerializedName(SERIALIZED_NAME_SEGMENT_CONDITION)
+  @javax.annotation.Nullable
   private SegmentConditionModel segmentCondition;
 
   public static final String SERIALIZED_NAME_PREREQUISITE_FLAG_CONDITION = "prerequisiteFlagCondition";
   @SerializedName(SERIALIZED_NAME_PREREQUISITE_FLAG_CONDITION)
+  @javax.annotation.Nullable
   private PrerequisiteFlagConditionModel prerequisiteFlagCondition;
 
   public ConditionModel() {
   }
 
-  public ConditionModel userCondition(UserConditionModel userCondition) {
+  public ConditionModel userCondition(@javax.annotation.Nullable UserConditionModel userCondition) {
     this.userCondition = userCondition;
     return this;
   }
@@ -83,12 +85,12 @@ public class ConditionModel {
     return userCondition;
   }
 
-  public void setUserCondition(UserConditionModel userCondition) {
+  public void setUserCondition(@javax.annotation.Nullable UserConditionModel userCondition) {
     this.userCondition = userCondition;
   }
 
 
-  public ConditionModel segmentCondition(SegmentConditionModel segmentCondition) {
+  public ConditionModel segmentCondition(@javax.annotation.Nullable SegmentConditionModel segmentCondition) {
     this.segmentCondition = segmentCondition;
     return this;
   }
@@ -102,12 +104,12 @@ public class ConditionModel {
     return segmentCondition;
   }
 
-  public void setSegmentCondition(SegmentConditionModel segmentCondition) {
+  public void setSegmentCondition(@javax.annotation.Nullable SegmentConditionModel segmentCondition) {
     this.segmentCondition = segmentCondition;
   }
 
 
-  public ConditionModel prerequisiteFlagCondition(PrerequisiteFlagConditionModel prerequisiteFlagCondition) {
+  public ConditionModel prerequisiteFlagCondition(@javax.annotation.Nullable PrerequisiteFlagConditionModel prerequisiteFlagCondition) {
     this.prerequisiteFlagCondition = prerequisiteFlagCondition;
     return this;
   }
@@ -121,7 +123,7 @@ public class ConditionModel {
     return prerequisiteFlagCondition;
   }
 
-  public void setPrerequisiteFlagCondition(PrerequisiteFlagConditionModel prerequisiteFlagCondition) {
+  public void setPrerequisiteFlagCondition(@javax.annotation.Nullable PrerequisiteFlagConditionModel prerequisiteFlagCondition) {
     this.prerequisiteFlagCondition = prerequisiteFlagCondition;
   }
 
@@ -208,10 +210,7 @@ public class ConditionModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -220,16 +219,10 @@ public class ConditionModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("userCondition");
-    openapiFields.add("segmentCondition");
-    openapiFields.add("prerequisiteFlagCondition");
+    openapiFields = new HashSet<String>(Arrays.asList("userCondition", "segmentCondition", "prerequisiteFlagCondition"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("userCondition");
-    openapiRequiredFields.add("segmentCondition");
-    openapiRequiredFields.add("prerequisiteFlagCondition");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("userCondition", "segmentCondition", "prerequisiteFlagCondition"));
   }
 
   /**
@@ -241,23 +234,29 @@ public class ConditionModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ConditionModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ConditionModel is not found in the empty JSON string", ConditionModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ConditionModel is not found in the empty JSON string", ConditionModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ConditionModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if (jsonObj.get("userCondition") != null && !jsonObj.get("userCondition").isJsonNull()) {
       // validate the required field `userCondition`
       UserConditionModel.validateJsonElement(jsonObj.get("userCondition"));
+      }
+      if (jsonObj.get("segmentCondition") != null && !jsonObj.get("segmentCondition").isJsonNull()) {
       // validate the required field `segmentCondition`
       SegmentConditionModel.validateJsonElement(jsonObj.get("segmentCondition"));
+      }
+      if (jsonObj.get("prerequisiteFlagCondition") != null && !jsonObj.get("prerequisiteFlagCondition").isJsonNull()) {
       // validate the required field `prerequisiteFlagCondition`
       PrerequisiteFlagConditionModel.validateJsonElement(jsonObj.get("prerequisiteFlagCondition"));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -317,7 +316,7 @@ public class ConditionModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,28 +51,37 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * ReplaceSettingModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class ReplaceSettingModel {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_HINT = "hint";
   @SerializedName(SERIALIZED_NAME_HINT)
+  @javax.annotation.Nullable
   private String hint;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nullable
   private List<Long> tags;
 
   public static final String SERIALIZED_NAME_ORDER = "order";
   @SerializedName(SERIALIZED_NAME_ORDER)
+  @javax.annotation.Nullable
   private Integer order;
+
+  public static final String SERIALIZED_NAME_IS_JSON = "isJson";
+  @SerializedName(SERIALIZED_NAME_IS_JSON)
+  @javax.annotation.Nullable
+  private Boolean isJson;
 
   public ReplaceSettingModel() {
   }
 
-  public ReplaceSettingModel name(String name) {
+  public ReplaceSettingModel name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -87,12 +95,12 @@ public class ReplaceSettingModel {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public ReplaceSettingModel hint(String hint) {
+  public ReplaceSettingModel hint(@javax.annotation.Nullable String hint) {
     this.hint = hint;
     return this;
   }
@@ -106,12 +114,12 @@ public class ReplaceSettingModel {
     return hint;
   }
 
-  public void setHint(String hint) {
+  public void setHint(@javax.annotation.Nullable String hint) {
     this.hint = hint;
   }
 
 
-  public ReplaceSettingModel tags(List<Long> tags) {
+  public ReplaceSettingModel tags(@javax.annotation.Nullable List<Long> tags) {
     this.tags = tags;
     return this;
   }
@@ -133,12 +141,12 @@ public class ReplaceSettingModel {
     return tags;
   }
 
-  public void setTags(List<Long> tags) {
+  public void setTags(@javax.annotation.Nullable List<Long> tags) {
     this.tags = tags;
   }
 
 
-  public ReplaceSettingModel order(Integer order) {
+  public ReplaceSettingModel order(@javax.annotation.Nullable Integer order) {
     this.order = order;
     return this;
   }
@@ -152,8 +160,27 @@ public class ReplaceSettingModel {
     return order;
   }
 
-  public void setOrder(Integer order) {
+  public void setOrder(@javax.annotation.Nullable Integer order) {
     this.order = order;
+  }
+
+
+  public ReplaceSettingModel isJson(@javax.annotation.Nullable Boolean isJson) {
+    this.isJson = isJson;
+    return this;
+  }
+
+  /**
+   * Indicates whether this setting should validate string values as JSON values.
+   * @return isJson
+   */
+  @javax.annotation.Nullable
+  public Boolean getIsJson() {
+    return isJson;
+  }
+
+  public void setIsJson(@javax.annotation.Nullable Boolean isJson) {
+    this.isJson = isJson;
   }
 
   /**
@@ -214,7 +241,8 @@ public class ReplaceSettingModel {
     return Objects.equals(this.name, replaceSettingModel.name) &&
         Objects.equals(this.hint, replaceSettingModel.hint) &&
         Objects.equals(this.tags, replaceSettingModel.tags) &&
-        Objects.equals(this.order, replaceSettingModel.order)&&
+        Objects.equals(this.order, replaceSettingModel.order) &&
+        Objects.equals(this.isJson, replaceSettingModel.isJson)&&
         Objects.equals(this.additionalProperties, replaceSettingModel.additionalProperties);
   }
 
@@ -224,7 +252,7 @@ public class ReplaceSettingModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, hint, tags, order, additionalProperties);
+    return Objects.hash(name, hint, tags, order, isJson, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -242,6 +270,7 @@ public class ReplaceSettingModel {
     sb.append("    hint: ").append(toIndentedString(hint)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    order: ").append(toIndentedString(order)).append("\n");
+    sb.append("    isJson: ").append(toIndentedString(isJson)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -252,10 +281,7 @@ public class ReplaceSettingModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -264,15 +290,10 @@ public class ReplaceSettingModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("hint");
-    openapiFields.add("tags");
-    openapiFields.add("order");
+    openapiFields = new HashSet<String>(Arrays.asList("name", "hint", "tags", "order", "isJson"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("name");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("name"));
   }
 
   /**
@@ -284,26 +305,26 @@ public class ReplaceSettingModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ReplaceSettingModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ReplaceSettingModel is not found in the empty JSON string", ReplaceSettingModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ReplaceSettingModel is not found in the empty JSON string", ReplaceSettingModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ReplaceSettingModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("hint") != null && !jsonObj.get("hint").isJsonNull()) && !jsonObj.get("hint").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `hint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hint").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `hint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hint").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("tags") != null && !jsonObj.get("tags").isJsonNull() && !jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
       }
   }
 
@@ -364,7 +385,7 @@ public class ReplaceSettingModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

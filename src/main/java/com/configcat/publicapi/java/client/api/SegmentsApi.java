@@ -84,7 +84,8 @@ public class SegmentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -92,7 +93,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createSegmentCall(UUID productId, CreateSegmentModel createSegmentModel, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createSegmentCall(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull CreateSegmentModel createSegmentModel, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -141,7 +142,7 @@ public class SegmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createSegmentValidateBeforeCall(UUID productId, CreateSegmentModel createSegmentModel, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createSegmentValidateBeforeCall(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull CreateSegmentModel createSegmentModel, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'productId' is set
         if (productId == null) {
             throw new ApiException("Missing the required parameter 'productId' when calling createSegment(Async)");
@@ -164,7 +165,8 @@ public class SegmentsApi {
      * @return SegmentModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -172,7 +174,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public SegmentModel createSegment(UUID productId, CreateSegmentModel createSegmentModel) throws ApiException {
+    public SegmentModel createSegment(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull CreateSegmentModel createSegmentModel) throws ApiException {
         ApiResponse<SegmentModel> localVarResp = createSegmentWithHttpInfo(productId, createSegmentModel);
         return localVarResp.getData();
     }
@@ -185,7 +187,8 @@ public class SegmentsApi {
      * @return ApiResponse&lt;SegmentModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -193,7 +196,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SegmentModel> createSegmentWithHttpInfo(UUID productId, CreateSegmentModel createSegmentModel) throws ApiException {
+    public ApiResponse<SegmentModel> createSegmentWithHttpInfo(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull CreateSegmentModel createSegmentModel) throws ApiException {
         okhttp3.Call localVarCall = createSegmentValidateBeforeCall(productId, createSegmentModel, null);
         Type localVarReturnType = new TypeToken<SegmentModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -208,7 +211,8 @@ public class SegmentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -216,7 +220,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createSegmentAsync(UUID productId, CreateSegmentModel createSegmentModel, final ApiCallback<SegmentModel> _callback) throws ApiException {
+    public okhttp3.Call createSegmentAsync(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull CreateSegmentModel createSegmentModel, final ApiCallback<SegmentModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createSegmentValidateBeforeCall(productId, createSegmentModel, _callback);
         Type localVarReturnType = new TypeToken<SegmentModel>(){}.getType();
@@ -230,7 +234,8 @@ public class SegmentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -238,7 +243,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteSegmentCall(UUID segmentId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteSegmentCall(@javax.annotation.Nonnull UUID segmentId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -283,7 +288,7 @@ public class SegmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteSegmentValidateBeforeCall(UUID segmentId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteSegmentValidateBeforeCall(@javax.annotation.Nonnull UUID segmentId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'segmentId' is set
         if (segmentId == null) {
             throw new ApiException("Missing the required parameter 'segmentId' when calling deleteSegment(Async)");
@@ -299,7 +304,8 @@ public class SegmentsApi {
      * @param segmentId The identifier of the Segment. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -307,7 +313,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteSegment(UUID segmentId) throws ApiException {
+    public void deleteSegment(@javax.annotation.Nonnull UUID segmentId) throws ApiException {
         deleteSegmentWithHttpInfo(segmentId);
     }
 
@@ -318,7 +324,8 @@ public class SegmentsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -326,7 +333,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteSegmentWithHttpInfo(UUID segmentId) throws ApiException {
+    public ApiResponse<Void> deleteSegmentWithHttpInfo(@javax.annotation.Nonnull UUID segmentId) throws ApiException {
         okhttp3.Call localVarCall = deleteSegmentValidateBeforeCall(segmentId, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -339,7 +346,8 @@ public class SegmentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -347,7 +355,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteSegmentAsync(UUID segmentId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteSegmentAsync(@javax.annotation.Nonnull UUID segmentId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteSegmentValidateBeforeCall(segmentId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -360,7 +368,8 @@ public class SegmentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the config data returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -368,7 +377,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSegmentCall(UUID segmentId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getSegmentCall(@javax.annotation.Nonnull UUID segmentId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -414,7 +423,7 @@ public class SegmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSegmentValidateBeforeCall(UUID segmentId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getSegmentValidateBeforeCall(@javax.annotation.Nonnull UUID segmentId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'segmentId' is set
         if (segmentId == null) {
             throw new ApiException("Missing the required parameter 'segmentId' when calling getSegment(Async)");
@@ -431,7 +440,8 @@ public class SegmentsApi {
      * @return SegmentModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the config data returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -439,7 +449,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public SegmentModel getSegment(UUID segmentId) throws ApiException {
+    public SegmentModel getSegment(@javax.annotation.Nonnull UUID segmentId) throws ApiException {
         ApiResponse<SegmentModel> localVarResp = getSegmentWithHttpInfo(segmentId);
         return localVarResp.getData();
     }
@@ -451,7 +461,8 @@ public class SegmentsApi {
      * @return ApiResponse&lt;SegmentModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the config data returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -459,7 +470,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SegmentModel> getSegmentWithHttpInfo(UUID segmentId) throws ApiException {
+    public ApiResponse<SegmentModel> getSegmentWithHttpInfo(@javax.annotation.Nonnull UUID segmentId) throws ApiException {
         okhttp3.Call localVarCall = getSegmentValidateBeforeCall(segmentId, null);
         Type localVarReturnType = new TypeToken<SegmentModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -473,7 +484,8 @@ public class SegmentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the config data returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -481,7 +493,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSegmentAsync(UUID segmentId, final ApiCallback<SegmentModel> _callback) throws ApiException {
+    public okhttp3.Call getSegmentAsync(@javax.annotation.Nonnull UUID segmentId, final ApiCallback<SegmentModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getSegmentValidateBeforeCall(segmentId, _callback);
         Type localVarReturnType = new TypeToken<SegmentModel>(){}.getType();
@@ -495,7 +507,8 @@ public class SegmentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -503,7 +516,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSegmentsCall(UUID productId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getSegmentsCall(@javax.annotation.Nonnull UUID productId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -549,7 +562,7 @@ public class SegmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSegmentsValidateBeforeCall(UUID productId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getSegmentsValidateBeforeCall(@javax.annotation.Nonnull UUID productId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'productId' is set
         if (productId == null) {
             throw new ApiException("Missing the required parameter 'productId' when calling getSegments(Async)");
@@ -566,7 +579,8 @@ public class SegmentsApi {
      * @return List&lt;SegmentListModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -574,7 +588,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public List<SegmentListModel> getSegments(UUID productId) throws ApiException {
+    public List<SegmentListModel> getSegments(@javax.annotation.Nonnull UUID productId) throws ApiException {
         ApiResponse<List<SegmentListModel>> localVarResp = getSegmentsWithHttpInfo(productId);
         return localVarResp.getData();
     }
@@ -586,7 +600,8 @@ public class SegmentsApi {
      * @return ApiResponse&lt;List&lt;SegmentListModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -594,7 +609,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<SegmentListModel>> getSegmentsWithHttpInfo(UUID productId) throws ApiException {
+    public ApiResponse<List<SegmentListModel>> getSegmentsWithHttpInfo(@javax.annotation.Nonnull UUID productId) throws ApiException {
         okhttp3.Call localVarCall = getSegmentsValidateBeforeCall(productId, null);
         Type localVarReturnType = new TypeToken<List<SegmentListModel>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -608,7 +623,8 @@ public class SegmentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -616,7 +632,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSegmentsAsync(UUID productId, final ApiCallback<List<SegmentListModel>> _callback) throws ApiException {
+    public okhttp3.Call getSegmentsAsync(@javax.annotation.Nonnull UUID productId, final ApiCallback<List<SegmentListModel>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getSegmentsValidateBeforeCall(productId, _callback);
         Type localVarReturnType = new TypeToken<List<SegmentListModel>>(){}.getType();
@@ -631,7 +647,8 @@ public class SegmentsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -639,7 +656,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateSegmentCall(UUID segmentId, UpdateSegmentModel updateSegmentModel, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateSegmentCall(@javax.annotation.Nonnull UUID segmentId, @javax.annotation.Nonnull UpdateSegmentModel updateSegmentModel, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -688,7 +705,7 @@ public class SegmentsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateSegmentValidateBeforeCall(UUID segmentId, UpdateSegmentModel updateSegmentModel, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateSegmentValidateBeforeCall(@javax.annotation.Nonnull UUID segmentId, @javax.annotation.Nonnull UpdateSegmentModel updateSegmentModel, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'segmentId' is set
         if (segmentId == null) {
             throw new ApiException("Missing the required parameter 'segmentId' when calling updateSegment(Async)");
@@ -711,7 +728,8 @@ public class SegmentsApi {
      * @return SegmentModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -719,7 +737,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public SegmentModel updateSegment(UUID segmentId, UpdateSegmentModel updateSegmentModel) throws ApiException {
+    public SegmentModel updateSegment(@javax.annotation.Nonnull UUID segmentId, @javax.annotation.Nonnull UpdateSegmentModel updateSegmentModel) throws ApiException {
         ApiResponse<SegmentModel> localVarResp = updateSegmentWithHttpInfo(segmentId, updateSegmentModel);
         return localVarResp.getData();
     }
@@ -732,7 +750,8 @@ public class SegmentsApi {
      * @return ApiResponse&lt;SegmentModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -740,7 +759,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SegmentModel> updateSegmentWithHttpInfo(UUID segmentId, UpdateSegmentModel updateSegmentModel) throws ApiException {
+    public ApiResponse<SegmentModel> updateSegmentWithHttpInfo(@javax.annotation.Nonnull UUID segmentId, @javax.annotation.Nonnull UpdateSegmentModel updateSegmentModel) throws ApiException {
         okhttp3.Call localVarCall = updateSegmentValidateBeforeCall(segmentId, updateSegmentModel, null);
         Type localVarReturnType = new TypeToken<SegmentModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -755,7 +774,8 @@ public class SegmentsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -763,7 +783,7 @@ public class SegmentsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateSegmentAsync(UUID segmentId, UpdateSegmentModel updateSegmentModel, final ApiCallback<SegmentModel> _callback) throws ApiException {
+    public okhttp3.Call updateSegmentAsync(@javax.annotation.Nonnull UUID segmentId, @javax.annotation.Nonnull UpdateSegmentModel updateSegmentModel, final ApiCallback<SegmentModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateSegmentValidateBeforeCall(segmentId, updateSegmentModel, _callback);
         Type localVarReturnType = new TypeToken<SegmentModel>(){}.getType();

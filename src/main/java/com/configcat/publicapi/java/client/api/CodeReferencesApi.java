@@ -81,7 +81,8 @@ public class CodeReferencesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -89,7 +90,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1CodeReferencesDeleteReportsPostCall(DeleteRepositoryReportsRequest deleteRepositoryReportsRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1CodeReferencesDeleteReportsPostCall(@javax.annotation.Nonnull DeleteRepositoryReportsRequest deleteRepositoryReportsRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -136,7 +137,7 @@ public class CodeReferencesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1CodeReferencesDeleteReportsPostValidateBeforeCall(DeleteRepositoryReportsRequest deleteRepositoryReportsRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1CodeReferencesDeleteReportsPostValidateBeforeCall(@javax.annotation.Nonnull DeleteRepositoryReportsRequest deleteRepositoryReportsRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'deleteRepositoryReportsRequest' is set
         if (deleteRepositoryReportsRequest == null) {
             throw new ApiException("Missing the required parameter 'deleteRepositoryReportsRequest' when calling v1CodeReferencesDeleteReportsPost(Async)");
@@ -152,7 +153,8 @@ public class CodeReferencesApi {
      * @param deleteRepositoryReportsRequest  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -160,7 +162,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public void v1CodeReferencesDeleteReportsPost(DeleteRepositoryReportsRequest deleteRepositoryReportsRequest) throws ApiException {
+    public void v1CodeReferencesDeleteReportsPost(@javax.annotation.Nonnull DeleteRepositoryReportsRequest deleteRepositoryReportsRequest) throws ApiException {
         v1CodeReferencesDeleteReportsPostWithHttpInfo(deleteRepositoryReportsRequest);
     }
 
@@ -171,7 +173,8 @@ public class CodeReferencesApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -179,7 +182,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> v1CodeReferencesDeleteReportsPostWithHttpInfo(DeleteRepositoryReportsRequest deleteRepositoryReportsRequest) throws ApiException {
+    public ApiResponse<Void> v1CodeReferencesDeleteReportsPostWithHttpInfo(@javax.annotation.Nonnull DeleteRepositoryReportsRequest deleteRepositoryReportsRequest) throws ApiException {
         okhttp3.Call localVarCall = v1CodeReferencesDeleteReportsPostValidateBeforeCall(deleteRepositoryReportsRequest, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -192,7 +195,8 @@ public class CodeReferencesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -200,7 +204,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1CodeReferencesDeleteReportsPostAsync(DeleteRepositoryReportsRequest deleteRepositoryReportsRequest, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call v1CodeReferencesDeleteReportsPostAsync(@javax.annotation.Nonnull DeleteRepositoryReportsRequest deleteRepositoryReportsRequest, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1CodeReferencesDeleteReportsPostValidateBeforeCall(deleteRepositoryReportsRequest, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -213,7 +217,8 @@ public class CodeReferencesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -221,7 +226,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1CodeReferencesPostCall(CodeReferenceRequest codeReferenceRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1CodeReferencesPostCall(@javax.annotation.Nonnull CodeReferenceRequest codeReferenceRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -268,7 +273,7 @@ public class CodeReferencesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1CodeReferencesPostValidateBeforeCall(CodeReferenceRequest codeReferenceRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1CodeReferencesPostValidateBeforeCall(@javax.annotation.Nonnull CodeReferenceRequest codeReferenceRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'codeReferenceRequest' is set
         if (codeReferenceRequest == null) {
             throw new ApiException("Missing the required parameter 'codeReferenceRequest' when calling v1CodeReferencesPost(Async)");
@@ -284,7 +289,8 @@ public class CodeReferencesApi {
      * @param codeReferenceRequest  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -292,7 +298,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public void v1CodeReferencesPost(CodeReferenceRequest codeReferenceRequest) throws ApiException {
+    public void v1CodeReferencesPost(@javax.annotation.Nonnull CodeReferenceRequest codeReferenceRequest) throws ApiException {
         v1CodeReferencesPostWithHttpInfo(codeReferenceRequest);
     }
 
@@ -303,7 +309,8 @@ public class CodeReferencesApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -311,7 +318,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> v1CodeReferencesPostWithHttpInfo(CodeReferenceRequest codeReferenceRequest) throws ApiException {
+    public ApiResponse<Void> v1CodeReferencesPostWithHttpInfo(@javax.annotation.Nonnull CodeReferenceRequest codeReferenceRequest) throws ApiException {
         okhttp3.Call localVarCall = v1CodeReferencesPostValidateBeforeCall(codeReferenceRequest, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -324,7 +331,8 @@ public class CodeReferencesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -332,7 +340,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1CodeReferencesPostAsync(CodeReferenceRequest codeReferenceRequest, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call v1CodeReferencesPostAsync(@javax.annotation.Nonnull CodeReferenceRequest codeReferenceRequest, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1CodeReferencesPostValidateBeforeCall(codeReferenceRequest, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -345,7 +353,8 @@ public class CodeReferencesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -353,7 +362,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1SettingsSettingIdCodeReferencesGetCall(Integer settingId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1SettingsSettingIdCodeReferencesGetCall(@javax.annotation.Nonnull Integer settingId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -399,7 +408,7 @@ public class CodeReferencesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1SettingsSettingIdCodeReferencesGetValidateBeforeCall(Integer settingId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1SettingsSettingIdCodeReferencesGetValidateBeforeCall(@javax.annotation.Nonnull Integer settingId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'settingId' is set
         if (settingId == null) {
             throw new ApiException("Missing the required parameter 'settingId' when calling v1SettingsSettingIdCodeReferencesGet(Async)");
@@ -416,7 +425,8 @@ public class CodeReferencesApi {
      * @return List&lt;CodeReferenceModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -424,7 +434,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public List<CodeReferenceModel> v1SettingsSettingIdCodeReferencesGet(Integer settingId) throws ApiException {
+    public List<CodeReferenceModel> v1SettingsSettingIdCodeReferencesGet(@javax.annotation.Nonnull Integer settingId) throws ApiException {
         ApiResponse<List<CodeReferenceModel>> localVarResp = v1SettingsSettingIdCodeReferencesGetWithHttpInfo(settingId);
         return localVarResp.getData();
     }
@@ -436,7 +446,8 @@ public class CodeReferencesApi {
      * @return ApiResponse&lt;List&lt;CodeReferenceModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -444,7 +455,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<CodeReferenceModel>> v1SettingsSettingIdCodeReferencesGetWithHttpInfo(Integer settingId) throws ApiException {
+    public ApiResponse<List<CodeReferenceModel>> v1SettingsSettingIdCodeReferencesGetWithHttpInfo(@javax.annotation.Nonnull Integer settingId) throws ApiException {
         okhttp3.Call localVarCall = v1SettingsSettingIdCodeReferencesGetValidateBeforeCall(settingId, null);
         Type localVarReturnType = new TypeToken<List<CodeReferenceModel>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -458,7 +469,8 @@ public class CodeReferencesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -466,7 +478,7 @@ public class CodeReferencesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1SettingsSettingIdCodeReferencesGetAsync(Integer settingId, final ApiCallback<List<CodeReferenceModel>> _callback) throws ApiException {
+    public okhttp3.Call v1SettingsSettingIdCodeReferencesGetAsync(@javax.annotation.Nonnull Integer settingId, final ApiCallback<List<CodeReferenceModel>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1SettingsSettingIdCodeReferencesGetValidateBeforeCall(settingId, _callback);
         Type localVarReturnType = new TypeToken<List<CodeReferenceModel>>(){}.getType();

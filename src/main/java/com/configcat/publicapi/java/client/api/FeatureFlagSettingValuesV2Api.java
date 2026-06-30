@@ -85,7 +85,8 @@ public class FeatureFlagSettingValuesV2Api {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the setting value data returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -93,7 +94,7 @@ public class FeatureFlagSettingValuesV2Api {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSettingValueV2Call(UUID environmentId, Integer settingId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getSettingValueV2Call(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -140,7 +141,7 @@ public class FeatureFlagSettingValuesV2Api {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSettingValueV2ValidateBeforeCall(UUID environmentId, Integer settingId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getSettingValueV2ValidateBeforeCall(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'environmentId' is set
         if (environmentId == null) {
             throw new ApiException("Missing the required parameter 'environmentId' when calling getSettingValueV2(Async)");
@@ -163,7 +164,8 @@ public class FeatureFlagSettingValuesV2Api {
      * @return SettingFormulaModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the setting value data returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -171,7 +173,7 @@ public class FeatureFlagSettingValuesV2Api {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public SettingFormulaModel getSettingValueV2(UUID environmentId, Integer settingId) throws ApiException {
+    public SettingFormulaModel getSettingValueV2(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId) throws ApiException {
         ApiResponse<SettingFormulaModel> localVarResp = getSettingValueV2WithHttpInfo(environmentId, settingId);
         return localVarResp.getData();
     }
@@ -184,7 +186,8 @@ public class FeatureFlagSettingValuesV2Api {
      * @return ApiResponse&lt;SettingFormulaModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the setting value data returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -192,7 +195,7 @@ public class FeatureFlagSettingValuesV2Api {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SettingFormulaModel> getSettingValueV2WithHttpInfo(UUID environmentId, Integer settingId) throws ApiException {
+    public ApiResponse<SettingFormulaModel> getSettingValueV2WithHttpInfo(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId) throws ApiException {
         okhttp3.Call localVarCall = getSettingValueV2ValidateBeforeCall(environmentId, settingId, null);
         Type localVarReturnType = new TypeToken<SettingFormulaModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -207,7 +210,8 @@ public class FeatureFlagSettingValuesV2Api {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the setting value data returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -215,7 +219,7 @@ public class FeatureFlagSettingValuesV2Api {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSettingValueV2Async(UUID environmentId, Integer settingId, final ApiCallback<SettingFormulaModel> _callback) throws ApiException {
+    public okhttp3.Call getSettingValueV2Async(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, final ApiCallback<SettingFormulaModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getSettingValueV2ValidateBeforeCall(environmentId, settingId, _callback);
         Type localVarReturnType = new TypeToken<SettingFormulaModel>(){}.getType();
@@ -230,7 +234,8 @@ public class FeatureFlagSettingValuesV2Api {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the setting values returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -238,7 +243,7 @@ public class FeatureFlagSettingValuesV2Api {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSettingValuesV2Call(UUID configId, UUID environmentId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getSettingValuesV2Call(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -285,7 +290,7 @@ public class FeatureFlagSettingValuesV2Api {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSettingValuesV2ValidateBeforeCall(UUID configId, UUID environmentId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getSettingValuesV2ValidateBeforeCall(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'configId' is set
         if (configId == null) {
             throw new ApiException("Missing the required parameter 'configId' when calling getSettingValuesV2(Async)");
@@ -308,7 +313,8 @@ public class FeatureFlagSettingValuesV2Api {
      * @return ConfigSettingFormulasModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the setting values returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -316,7 +322,7 @@ public class FeatureFlagSettingValuesV2Api {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ConfigSettingFormulasModel getSettingValuesV2(UUID configId, UUID environmentId) throws ApiException {
+    public ConfigSettingFormulasModel getSettingValuesV2(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId) throws ApiException {
         ApiResponse<ConfigSettingFormulasModel> localVarResp = getSettingValuesV2WithHttpInfo(configId, environmentId);
         return localVarResp.getData();
     }
@@ -329,7 +335,8 @@ public class FeatureFlagSettingValuesV2Api {
      * @return ApiResponse&lt;ConfigSettingFormulasModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the setting values returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -337,7 +344,7 @@ public class FeatureFlagSettingValuesV2Api {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ConfigSettingFormulasModel> getSettingValuesV2WithHttpInfo(UUID configId, UUID environmentId) throws ApiException {
+    public ApiResponse<ConfigSettingFormulasModel> getSettingValuesV2WithHttpInfo(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId) throws ApiException {
         okhttp3.Call localVarCall = getSettingValuesV2ValidateBeforeCall(configId, environmentId, null);
         Type localVarReturnType = new TypeToken<ConfigSettingFormulasModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -352,7 +359,8 @@ public class FeatureFlagSettingValuesV2Api {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the setting values returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -360,7 +368,7 @@ public class FeatureFlagSettingValuesV2Api {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSettingValuesV2Async(UUID configId, UUID environmentId, final ApiCallback<ConfigSettingFormulasModel> _callback) throws ApiException {
+    public okhttp3.Call getSettingValuesV2Async(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, final ApiCallback<ConfigSettingFormulasModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getSettingValuesV2ValidateBeforeCall(configId, environmentId, _callback);
         Type localVarReturnType = new TypeToken<ConfigSettingFormulasModel>(){}.getType();
@@ -373,11 +381,13 @@ public class FeatureFlagSettingValuesV2Api {
      * @param environmentId The identifier of the Environment. (required)
      * @param updateEvaluationFormulasModel  (required)
      * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
+     * @param bypassApproval Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the updated setting values returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -385,7 +395,7 @@ public class FeatureFlagSettingValuesV2Api {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postSettingValuesV2Call(UUID configId, UUID environmentId, UpdateEvaluationFormulasModel updateEvaluationFormulasModel, String reason, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postSettingValuesV2Call(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull UpdateEvaluationFormulasModel updateEvaluationFormulasModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -416,6 +426,10 @@ public class FeatureFlagSettingValuesV2Api {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("reason", reason));
         }
 
+        if (bypassApproval != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("bypassApproval", bypassApproval));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -439,7 +453,7 @@ public class FeatureFlagSettingValuesV2Api {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postSettingValuesV2ValidateBeforeCall(UUID configId, UUID environmentId, UpdateEvaluationFormulasModel updateEvaluationFormulasModel, String reason, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postSettingValuesV2ValidateBeforeCall(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull UpdateEvaluationFormulasModel updateEvaluationFormulasModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'configId' is set
         if (configId == null) {
             throw new ApiException("Missing the required parameter 'configId' when calling postSettingValuesV2(Async)");
@@ -455,7 +469,7 @@ public class FeatureFlagSettingValuesV2Api {
             throw new ApiException("Missing the required parameter 'updateEvaluationFormulasModel' when calling postSettingValuesV2(Async)");
         }
 
-        return postSettingValuesV2Call(configId, environmentId, updateEvaluationFormulasModel, reason, _callback);
+        return postSettingValuesV2Call(configId, environmentId, updateEvaluationFormulasModel, reason, bypassApproval, _callback);
 
     }
 
@@ -466,10 +480,12 @@ public class FeatureFlagSettingValuesV2Api {
      * @param environmentId The identifier of the Environment. (required)
      * @param updateEvaluationFormulasModel  (required)
      * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
+     * @param bypassApproval Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. (optional)
      * @return ConfigSettingFormulasModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the updated setting values returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -477,8 +493,8 @@ public class FeatureFlagSettingValuesV2Api {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ConfigSettingFormulasModel postSettingValuesV2(UUID configId, UUID environmentId, UpdateEvaluationFormulasModel updateEvaluationFormulasModel, String reason) throws ApiException {
-        ApiResponse<ConfigSettingFormulasModel> localVarResp = postSettingValuesV2WithHttpInfo(configId, environmentId, updateEvaluationFormulasModel, reason);
+    public ConfigSettingFormulasModel postSettingValuesV2(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull UpdateEvaluationFormulasModel updateEvaluationFormulasModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval) throws ApiException {
+        ApiResponse<ConfigSettingFormulasModel> localVarResp = postSettingValuesV2WithHttpInfo(configId, environmentId, updateEvaluationFormulasModel, reason, bypassApproval);
         return localVarResp.getData();
     }
 
@@ -489,10 +505,12 @@ public class FeatureFlagSettingValuesV2Api {
      * @param environmentId The identifier of the Environment. (required)
      * @param updateEvaluationFormulasModel  (required)
      * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
+     * @param bypassApproval Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. (optional)
      * @return ApiResponse&lt;ConfigSettingFormulasModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the updated setting values returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -500,8 +518,8 @@ public class FeatureFlagSettingValuesV2Api {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ConfigSettingFormulasModel> postSettingValuesV2WithHttpInfo(UUID configId, UUID environmentId, UpdateEvaluationFormulasModel updateEvaluationFormulasModel, String reason) throws ApiException {
-        okhttp3.Call localVarCall = postSettingValuesV2ValidateBeforeCall(configId, environmentId, updateEvaluationFormulasModel, reason, null);
+    public ApiResponse<ConfigSettingFormulasModel> postSettingValuesV2WithHttpInfo(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull UpdateEvaluationFormulasModel updateEvaluationFormulasModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval) throws ApiException {
+        okhttp3.Call localVarCall = postSettingValuesV2ValidateBeforeCall(configId, environmentId, updateEvaluationFormulasModel, reason, bypassApproval, null);
         Type localVarReturnType = new TypeToken<ConfigSettingFormulasModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -513,11 +531,13 @@ public class FeatureFlagSettingValuesV2Api {
      * @param environmentId The identifier of the Environment. (required)
      * @param updateEvaluationFormulasModel  (required)
      * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
+     * @param bypassApproval Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the updated setting values returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -525,9 +545,9 @@ public class FeatureFlagSettingValuesV2Api {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postSettingValuesV2Async(UUID configId, UUID environmentId, UpdateEvaluationFormulasModel updateEvaluationFormulasModel, String reason, final ApiCallback<ConfigSettingFormulasModel> _callback) throws ApiException {
+    public okhttp3.Call postSettingValuesV2Async(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull UpdateEvaluationFormulasModel updateEvaluationFormulasModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, final ApiCallback<ConfigSettingFormulasModel> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = postSettingValuesV2ValidateBeforeCall(configId, environmentId, updateEvaluationFormulasModel, reason, _callback);
+        okhttp3.Call localVarCall = postSettingValuesV2ValidateBeforeCall(configId, environmentId, updateEvaluationFormulasModel, reason, bypassApproval, _callback);
         Type localVarReturnType = new TypeToken<ConfigSettingFormulasModel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -538,11 +558,13 @@ public class FeatureFlagSettingValuesV2Api {
      * @param settingId The id of the Setting. (required)
      * @param updateEvaluationFormulaModel  (required)
      * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
+     * @param bypassApproval Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -550,7 +572,7 @@ public class FeatureFlagSettingValuesV2Api {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call replaceSettingValueV2Call(UUID environmentId, Integer settingId, UpdateEvaluationFormulaModel updateEvaluationFormulaModel, String reason, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call replaceSettingValueV2Call(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull UpdateEvaluationFormulaModel updateEvaluationFormulaModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -581,6 +603,10 @@ public class FeatureFlagSettingValuesV2Api {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("reason", reason));
         }
 
+        if (bypassApproval != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("bypassApproval", bypassApproval));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -604,7 +630,7 @@ public class FeatureFlagSettingValuesV2Api {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call replaceSettingValueV2ValidateBeforeCall(UUID environmentId, Integer settingId, UpdateEvaluationFormulaModel updateEvaluationFormulaModel, String reason, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call replaceSettingValueV2ValidateBeforeCall(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull UpdateEvaluationFormulaModel updateEvaluationFormulaModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'environmentId' is set
         if (environmentId == null) {
             throw new ApiException("Missing the required parameter 'environmentId' when calling replaceSettingValueV2(Async)");
@@ -620,7 +646,7 @@ public class FeatureFlagSettingValuesV2Api {
             throw new ApiException("Missing the required parameter 'updateEvaluationFormulaModel' when calling replaceSettingValueV2(Async)");
         }
 
-        return replaceSettingValueV2Call(environmentId, settingId, updateEvaluationFormulaModel, reason, _callback);
+        return replaceSettingValueV2Call(environmentId, settingId, updateEvaluationFormulaModel, reason, bypassApproval, _callback);
 
     }
 
@@ -631,10 +657,12 @@ public class FeatureFlagSettingValuesV2Api {
      * @param settingId The id of the Setting. (required)
      * @param updateEvaluationFormulaModel  (required)
      * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
+     * @param bypassApproval Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. (optional)
      * @return SettingFormulaModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -642,8 +670,8 @@ public class FeatureFlagSettingValuesV2Api {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public SettingFormulaModel replaceSettingValueV2(UUID environmentId, Integer settingId, UpdateEvaluationFormulaModel updateEvaluationFormulaModel, String reason) throws ApiException {
-        ApiResponse<SettingFormulaModel> localVarResp = replaceSettingValueV2WithHttpInfo(environmentId, settingId, updateEvaluationFormulaModel, reason);
+    public SettingFormulaModel replaceSettingValueV2(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull UpdateEvaluationFormulaModel updateEvaluationFormulaModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval) throws ApiException {
+        ApiResponse<SettingFormulaModel> localVarResp = replaceSettingValueV2WithHttpInfo(environmentId, settingId, updateEvaluationFormulaModel, reason, bypassApproval);
         return localVarResp.getData();
     }
 
@@ -654,10 +682,12 @@ public class FeatureFlagSettingValuesV2Api {
      * @param settingId The id of the Setting. (required)
      * @param updateEvaluationFormulaModel  (required)
      * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
+     * @param bypassApproval Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. (optional)
      * @return ApiResponse&lt;SettingFormulaModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -665,8 +695,8 @@ public class FeatureFlagSettingValuesV2Api {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SettingFormulaModel> replaceSettingValueV2WithHttpInfo(UUID environmentId, Integer settingId, UpdateEvaluationFormulaModel updateEvaluationFormulaModel, String reason) throws ApiException {
-        okhttp3.Call localVarCall = replaceSettingValueV2ValidateBeforeCall(environmentId, settingId, updateEvaluationFormulaModel, reason, null);
+    public ApiResponse<SettingFormulaModel> replaceSettingValueV2WithHttpInfo(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull UpdateEvaluationFormulaModel updateEvaluationFormulaModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval) throws ApiException {
+        okhttp3.Call localVarCall = replaceSettingValueV2ValidateBeforeCall(environmentId, settingId, updateEvaluationFormulaModel, reason, bypassApproval, null);
         Type localVarReturnType = new TypeToken<SettingFormulaModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -678,11 +708,13 @@ public class FeatureFlagSettingValuesV2Api {
      * @param settingId The id of the Setting. (required)
      * @param updateEvaluationFormulaModel  (required)
      * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
+     * @param bypassApproval Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -690,9 +722,9 @@ public class FeatureFlagSettingValuesV2Api {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call replaceSettingValueV2Async(UUID environmentId, Integer settingId, UpdateEvaluationFormulaModel updateEvaluationFormulaModel, String reason, final ApiCallback<SettingFormulaModel> _callback) throws ApiException {
+    public okhttp3.Call replaceSettingValueV2Async(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull UpdateEvaluationFormulaModel updateEvaluationFormulaModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, final ApiCallback<SettingFormulaModel> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = replaceSettingValueV2ValidateBeforeCall(environmentId, settingId, updateEvaluationFormulaModel, reason, _callback);
+        okhttp3.Call localVarCall = replaceSettingValueV2ValidateBeforeCall(environmentId, settingId, updateEvaluationFormulaModel, reason, bypassApproval, _callback);
         Type localVarReturnType = new TypeToken<SettingFormulaModel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -703,11 +735,13 @@ public class FeatureFlagSettingValuesV2Api {
      * @param settingId The id of the Setting. (required)
      * @param jsonPatchOperation  (required)
      * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
+     * @param bypassApproval Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the patch was successful. </td><td>  -  </td></tr>
         <tr><td> 204 </td><td> When no change applied on the resource. </td><td>  -  </td></tr>
@@ -716,7 +750,7 @@ public class FeatureFlagSettingValuesV2Api {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateSettingValueV2Call(UUID environmentId, Integer settingId, List<JsonPatchOperation> jsonPatchOperation, String reason, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateSettingValueV2Call(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -747,6 +781,10 @@ public class FeatureFlagSettingValuesV2Api {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("reason", reason));
         }
 
+        if (bypassApproval != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("bypassApproval", bypassApproval));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -770,7 +808,7 @@ public class FeatureFlagSettingValuesV2Api {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateSettingValueV2ValidateBeforeCall(UUID environmentId, Integer settingId, List<JsonPatchOperation> jsonPatchOperation, String reason, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateSettingValueV2ValidateBeforeCall(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'environmentId' is set
         if (environmentId == null) {
             throw new ApiException("Missing the required parameter 'environmentId' when calling updateSettingValueV2(Async)");
@@ -786,7 +824,7 @@ public class FeatureFlagSettingValuesV2Api {
             throw new ApiException("Missing the required parameter 'jsonPatchOperation' when calling updateSettingValueV2(Async)");
         }
 
-        return updateSettingValueV2Call(environmentId, settingId, jsonPatchOperation, reason, _callback);
+        return updateSettingValueV2Call(environmentId, settingId, jsonPatchOperation, reason, bypassApproval, _callback);
 
     }
 
@@ -797,10 +835,12 @@ public class FeatureFlagSettingValuesV2Api {
      * @param settingId The id of the Setting. (required)
      * @param jsonPatchOperation  (required)
      * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
+     * @param bypassApproval Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. (optional)
      * @return SettingFormulaModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the patch was successful. </td><td>  -  </td></tr>
         <tr><td> 204 </td><td> When no change applied on the resource. </td><td>  -  </td></tr>
@@ -809,8 +849,8 @@ public class FeatureFlagSettingValuesV2Api {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public SettingFormulaModel updateSettingValueV2(UUID environmentId, Integer settingId, List<JsonPatchOperation> jsonPatchOperation, String reason) throws ApiException {
-        ApiResponse<SettingFormulaModel> localVarResp = updateSettingValueV2WithHttpInfo(environmentId, settingId, jsonPatchOperation, reason);
+    public SettingFormulaModel updateSettingValueV2(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval) throws ApiException {
+        ApiResponse<SettingFormulaModel> localVarResp = updateSettingValueV2WithHttpInfo(environmentId, settingId, jsonPatchOperation, reason, bypassApproval);
         return localVarResp.getData();
     }
 
@@ -821,10 +861,12 @@ public class FeatureFlagSettingValuesV2Api {
      * @param settingId The id of the Setting. (required)
      * @param jsonPatchOperation  (required)
      * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
+     * @param bypassApproval Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. (optional)
      * @return ApiResponse&lt;SettingFormulaModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the patch was successful. </td><td>  -  </td></tr>
         <tr><td> 204 </td><td> When no change applied on the resource. </td><td>  -  </td></tr>
@@ -833,8 +875,8 @@ public class FeatureFlagSettingValuesV2Api {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SettingFormulaModel> updateSettingValueV2WithHttpInfo(UUID environmentId, Integer settingId, List<JsonPatchOperation> jsonPatchOperation, String reason) throws ApiException {
-        okhttp3.Call localVarCall = updateSettingValueV2ValidateBeforeCall(environmentId, settingId, jsonPatchOperation, reason, null);
+    public ApiResponse<SettingFormulaModel> updateSettingValueV2WithHttpInfo(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval) throws ApiException {
+        okhttp3.Call localVarCall = updateSettingValueV2ValidateBeforeCall(environmentId, settingId, jsonPatchOperation, reason, bypassApproval, null);
         Type localVarReturnType = new TypeToken<SettingFormulaModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -846,11 +888,13 @@ public class FeatureFlagSettingValuesV2Api {
      * @param settingId The id of the Setting. (required)
      * @param jsonPatchOperation  (required)
      * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
+     * @param bypassApproval Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the patch was successful. </td><td>  -  </td></tr>
         <tr><td> 204 </td><td> When no change applied on the resource. </td><td>  -  </td></tr>
@@ -859,9 +903,9 @@ public class FeatureFlagSettingValuesV2Api {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateSettingValueV2Async(UUID environmentId, Integer settingId, List<JsonPatchOperation> jsonPatchOperation, String reason, final ApiCallback<SettingFormulaModel> _callback) throws ApiException {
+    public okhttp3.Call updateSettingValueV2Async(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, final ApiCallback<SettingFormulaModel> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateSettingValueV2ValidateBeforeCall(environmentId, settingId, jsonPatchOperation, reason, _callback);
+        okhttp3.Call localVarCall = updateSettingValueV2ValidateBeforeCall(environmentId, settingId, jsonPatchOperation, reason, bypassApproval, _callback);
         Type localVarReturnType = new TypeToken<SettingFormulaModel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

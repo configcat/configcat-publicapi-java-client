@@ -14,6 +14,7 @@
 package com.configcat.publicapi.java.client.model;
 
 import java.util.Objects;
+import com.configcat.publicapi.java.client.model.PredefinedVariationChangeRequestUsageModel;
 import com.configcat.publicapi.java.client.model.PredefinedVariationUsageModel;
 import com.configcat.publicapi.java.client.model.PredefinedVariationValueModel;
 import com.google.gson.TypeAdapter;
@@ -42,7 +43,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -54,36 +54,52 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * PredefinedVariationWithUsagesModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class PredefinedVariationWithUsagesModel {
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
+  @javax.annotation.Nonnull
   private PredefinedVariationValueModel value;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_HINT = "hint";
   @SerializedName(SERIALIZED_NAME_HINT)
+  @javax.annotation.Nullable
   private String hint;
 
   public static final String SERIALIZED_NAME_PREDEFINED_VARIATION_ID = "predefinedVariationId";
   @SerializedName(SERIALIZED_NAME_PREDEFINED_VARIATION_ID)
+  @javax.annotation.Nonnull
   private UUID predefinedVariationId;
 
   public static final String SERIALIZED_NAME_USAGES = "usages";
   @SerializedName(SERIALIZED_NAME_USAGES)
+  @javax.annotation.Nonnull
   private List<PredefinedVariationUsageModel> usages = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_USAGES_IN_OTHER_ENVIRONMENTS = "usagesInOtherEnvironments";
   @SerializedName(SERIALIZED_NAME_USAGES_IN_OTHER_ENVIRONMENTS)
+  @javax.annotation.Nonnull
   private Integer usagesInOtherEnvironments;
+
+  public static final String SERIALIZED_NAME_CHANGE_REQUEST_USAGES = "changeRequestUsages";
+  @SerializedName(SERIALIZED_NAME_CHANGE_REQUEST_USAGES)
+  @javax.annotation.Nonnull
+  private List<PredefinedVariationChangeRequestUsageModel> changeRequestUsages = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_CHANGE_REQUEST_USAGES_IN_OTHER_ENVIRONMENTS = "changeRequestUsagesInOtherEnvironments";
+  @SerializedName(SERIALIZED_NAME_CHANGE_REQUEST_USAGES_IN_OTHER_ENVIRONMENTS)
+  @javax.annotation.Nonnull
+  private Integer changeRequestUsagesInOtherEnvironments;
 
   public PredefinedVariationWithUsagesModel() {
   }
 
-  public PredefinedVariationWithUsagesModel value(PredefinedVariationValueModel value) {
+  public PredefinedVariationWithUsagesModel value(@javax.annotation.Nonnull PredefinedVariationValueModel value) {
     this.value = value;
     return this;
   }
@@ -97,18 +113,18 @@ public class PredefinedVariationWithUsagesModel {
     return value;
   }
 
-  public void setValue(PredefinedVariationValueModel value) {
+  public void setValue(@javax.annotation.Nonnull PredefinedVariationValueModel value) {
     this.value = value;
   }
 
 
-  public PredefinedVariationWithUsagesModel name(String name) {
+  public PredefinedVariationWithUsagesModel name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
   /**
-   * The name of the Feature Flag or Predefined Variation, shown on the Dashboard UI. If not set, the Value will be shown.
+   * The name of the Predefined Variation, shown on the Dashboard UI. If not set, the Value will be shown.
    * @return name
    */
   @javax.annotation.Nullable
@@ -116,18 +132,18 @@ public class PredefinedVariationWithUsagesModel {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public PredefinedVariationWithUsagesModel hint(String hint) {
+  public PredefinedVariationWithUsagesModel hint(@javax.annotation.Nullable String hint) {
     this.hint = hint;
     return this;
   }
 
   /**
-   * The name of the Feature Flag or Predefined Variation, shown on the Dashboard UI. If not set, the Value will be shown.
+   * The name of the Predefined Variation, shown on the Dashboard UI. If not set, the Value will be shown.
    * @return hint
    */
   @javax.annotation.Nullable
@@ -135,18 +151,18 @@ public class PredefinedVariationWithUsagesModel {
     return hint;
   }
 
-  public void setHint(String hint) {
+  public void setHint(@javax.annotation.Nullable String hint) {
     this.hint = hint;
   }
 
 
-  public PredefinedVariationWithUsagesModel predefinedVariationId(UUID predefinedVariationId) {
+  public PredefinedVariationWithUsagesModel predefinedVariationId(@javax.annotation.Nonnull UUID predefinedVariationId) {
     this.predefinedVariationId = predefinedVariationId;
     return this;
   }
 
   /**
-   * The Feature Flag or Predefined Variation&#39;s identifier.
+   * The Predefined Variation&#39;s identifier.
    * @return predefinedVariationId
    */
   @javax.annotation.Nonnull
@@ -154,12 +170,12 @@ public class PredefinedVariationWithUsagesModel {
     return predefinedVariationId;
   }
 
-  public void setPredefinedVariationId(UUID predefinedVariationId) {
+  public void setPredefinedVariationId(@javax.annotation.Nonnull UUID predefinedVariationId) {
     this.predefinedVariationId = predefinedVariationId;
   }
 
 
-  public PredefinedVariationWithUsagesModel usages(List<PredefinedVariationUsageModel> usages) {
+  public PredefinedVariationWithUsagesModel usages(@javax.annotation.Nonnull List<PredefinedVariationUsageModel> usages) {
     this.usages = usages;
     return this;
   }
@@ -181,12 +197,12 @@ public class PredefinedVariationWithUsagesModel {
     return usages;
   }
 
-  public void setUsages(List<PredefinedVariationUsageModel> usages) {
+  public void setUsages(@javax.annotation.Nonnull List<PredefinedVariationUsageModel> usages) {
     this.usages = usages;
   }
 
 
-  public PredefinedVariationWithUsagesModel usagesInOtherEnvironments(Integer usagesInOtherEnvironments) {
+  public PredefinedVariationWithUsagesModel usagesInOtherEnvironments(@javax.annotation.Nonnull Integer usagesInOtherEnvironments) {
     this.usagesInOtherEnvironments = usagesInOtherEnvironments;
     return this;
   }
@@ -200,8 +216,54 @@ public class PredefinedVariationWithUsagesModel {
     return usagesInOtherEnvironments;
   }
 
-  public void setUsagesInOtherEnvironments(Integer usagesInOtherEnvironments) {
+  public void setUsagesInOtherEnvironments(@javax.annotation.Nonnull Integer usagesInOtherEnvironments) {
     this.usagesInOtherEnvironments = usagesInOtherEnvironments;
+  }
+
+
+  public PredefinedVariationWithUsagesModel changeRequestUsages(@javax.annotation.Nonnull List<PredefinedVariationChangeRequestUsageModel> changeRequestUsages) {
+    this.changeRequestUsages = changeRequestUsages;
+    return this;
+  }
+
+  public PredefinedVariationWithUsagesModel addChangeRequestUsagesItem(PredefinedVariationChangeRequestUsageModel changeRequestUsagesItem) {
+    if (this.changeRequestUsages == null) {
+      this.changeRequestUsages = new ArrayList<>();
+    }
+    this.changeRequestUsages.add(changeRequestUsagesItem);
+    return this;
+  }
+
+  /**
+   * The Feature Flag or Setting Variation&#39;s usages in the given Change Requests.
+   * @return changeRequestUsages
+   */
+  @javax.annotation.Nonnull
+  public List<PredefinedVariationChangeRequestUsageModel> getChangeRequestUsages() {
+    return changeRequestUsages;
+  }
+
+  public void setChangeRequestUsages(@javax.annotation.Nonnull List<PredefinedVariationChangeRequestUsageModel> changeRequestUsages) {
+    this.changeRequestUsages = changeRequestUsages;
+  }
+
+
+  public PredefinedVariationWithUsagesModel changeRequestUsagesInOtherEnvironments(@javax.annotation.Nonnull Integer changeRequestUsagesInOtherEnvironments) {
+    this.changeRequestUsagesInOtherEnvironments = changeRequestUsagesInOtherEnvironments;
+    return this;
+  }
+
+  /**
+   * The Feature Flag or Setting Variation&#39;s usages in the Change Requests you don&#39;t have access to.
+   * @return changeRequestUsagesInOtherEnvironments
+   */
+  @javax.annotation.Nonnull
+  public Integer getChangeRequestUsagesInOtherEnvironments() {
+    return changeRequestUsagesInOtherEnvironments;
+  }
+
+  public void setChangeRequestUsagesInOtherEnvironments(@javax.annotation.Nonnull Integer changeRequestUsagesInOtherEnvironments) {
+    this.changeRequestUsagesInOtherEnvironments = changeRequestUsagesInOtherEnvironments;
   }
 
   /**
@@ -264,13 +326,15 @@ public class PredefinedVariationWithUsagesModel {
         Objects.equals(this.hint, predefinedVariationWithUsagesModel.hint) &&
         Objects.equals(this.predefinedVariationId, predefinedVariationWithUsagesModel.predefinedVariationId) &&
         Objects.equals(this.usages, predefinedVariationWithUsagesModel.usages) &&
-        Objects.equals(this.usagesInOtherEnvironments, predefinedVariationWithUsagesModel.usagesInOtherEnvironments)&&
+        Objects.equals(this.usagesInOtherEnvironments, predefinedVariationWithUsagesModel.usagesInOtherEnvironments) &&
+        Objects.equals(this.changeRequestUsages, predefinedVariationWithUsagesModel.changeRequestUsages) &&
+        Objects.equals(this.changeRequestUsagesInOtherEnvironments, predefinedVariationWithUsagesModel.changeRequestUsagesInOtherEnvironments)&&
         Objects.equals(this.additionalProperties, predefinedVariationWithUsagesModel.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(value, name, hint, predefinedVariationId, usages, usagesInOtherEnvironments, additionalProperties);
+    return Objects.hash(value, name, hint, predefinedVariationId, usages, usagesInOtherEnvironments, changeRequestUsages, changeRequestUsagesInOtherEnvironments, additionalProperties);
   }
 
   @Override
@@ -283,6 +347,8 @@ public class PredefinedVariationWithUsagesModel {
     sb.append("    predefinedVariationId: ").append(toIndentedString(predefinedVariationId)).append("\n");
     sb.append("    usages: ").append(toIndentedString(usages)).append("\n");
     sb.append("    usagesInOtherEnvironments: ").append(toIndentedString(usagesInOtherEnvironments)).append("\n");
+    sb.append("    changeRequestUsages: ").append(toIndentedString(changeRequestUsages)).append("\n");
+    sb.append("    changeRequestUsagesInOtherEnvironments: ").append(toIndentedString(changeRequestUsagesInOtherEnvironments)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -293,10 +359,7 @@ public class PredefinedVariationWithUsagesModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -305,22 +368,10 @@ public class PredefinedVariationWithUsagesModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("value");
-    openapiFields.add("name");
-    openapiFields.add("hint");
-    openapiFields.add("predefinedVariationId");
-    openapiFields.add("usages");
-    openapiFields.add("usagesInOtherEnvironments");
+    openapiFields = new HashSet<String>(Arrays.asList("value", "name", "hint", "predefinedVariationId", "usages", "usagesInOtherEnvironments", "changeRequestUsages", "changeRequestUsagesInOtherEnvironments"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("value");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("hint");
-    openapiRequiredFields.add("predefinedVariationId");
-    openapiRequiredFields.add("usages");
-    openapiRequiredFields.add("usagesInOtherEnvironments");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("value", "name", "hint", "predefinedVariationId", "usages", "usagesInOtherEnvironments", "changeRequestUsages", "changeRequestUsagesInOtherEnvironments"));
   }
 
   /**
@@ -332,38 +383,48 @@ public class PredefinedVariationWithUsagesModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PredefinedVariationWithUsagesModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PredefinedVariationWithUsagesModel is not found in the empty JSON string", PredefinedVariationWithUsagesModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in PredefinedVariationWithUsagesModel is not found in the empty JSON string", PredefinedVariationWithUsagesModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : PredefinedVariationWithUsagesModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the required field `value`
       PredefinedVariationValueModel.validateJsonElement(jsonObj.get("value"));
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("hint") != null && !jsonObj.get("hint").isJsonNull()) && !jsonObj.get("hint").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `hint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hint").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `hint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hint").toString()));
       }
       if (!jsonObj.get("predefinedVariationId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `predefinedVariationId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("predefinedVariationId").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `predefinedVariationId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("predefinedVariationId").toString()));
       }
-      // ensure the json data is an array
-      if (!jsonObj.get("usages").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `usages` to be an array in the JSON string but got `%s`", jsonObj.get("usages").toString()));
+      if (jsonObj.get("usages") != null) {
+        if (!jsonObj.get("usages").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `usages` to be an array in the JSON string but got `%s`", jsonObj.get("usages").toString()));
+        }
+        JsonArray jsonArrayusages = jsonObj.getAsJsonArray("usages");
+        // validate the required field `usages` (array)
+        for (int i = 0; i < jsonArrayusages.size(); i++) {
+          PredefinedVariationUsageModel.validateJsonElement(jsonArrayusages.get(i));
+        }
       }
-
-      JsonArray jsonArrayusages = jsonObj.getAsJsonArray("usages");
-      // validate the required field `usages` (array)
-      for (int i = 0; i < jsonArrayusages.size(); i++) {
-        PredefinedVariationUsageModel.validateJsonElement(jsonArrayusages.get(i));
-      };
+      if (jsonObj.get("changeRequestUsages") != null) {
+        if (!jsonObj.get("changeRequestUsages").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `changeRequestUsages` to be an array in the JSON string but got `%s`", jsonObj.get("changeRequestUsages").toString()));
+        }
+        JsonArray jsonArraychangeRequestUsages = jsonObj.getAsJsonArray("changeRequestUsages");
+        // validate the required field `changeRequestUsages` (array)
+        for (int i = 0; i < jsonArraychangeRequestUsages.size(); i++) {
+          PredefinedVariationChangeRequestUsageModel.validateJsonElement(jsonArraychangeRequestUsages.get(i));
+        }
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -423,7 +484,7 @@ public class PredefinedVariationWithUsagesModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

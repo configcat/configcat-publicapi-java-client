@@ -42,7 +42,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -54,28 +53,32 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * ModifyIntegrationRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class ModifyIntegrationRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_PARAMETERS = "parameters";
   @SerializedName(SERIALIZED_NAME_PARAMETERS)
+  @javax.annotation.Nonnull
   private Map<String, String> parameters = new HashMap<>();
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_IDS = "environmentIds";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_IDS)
+  @javax.annotation.Nonnull
   private List<UUID> environmentIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CONFIG_IDS = "configIds";
   @SerializedName(SERIALIZED_NAME_CONFIG_IDS)
+  @javax.annotation.Nonnull
   private List<UUID> configIds = new ArrayList<>();
 
   public ModifyIntegrationRequest() {
   }
 
-  public ModifyIntegrationRequest name(String name) {
+  public ModifyIntegrationRequest name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -89,12 +92,12 @@ public class ModifyIntegrationRequest {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public ModifyIntegrationRequest parameters(Map<String, String> parameters) {
+  public ModifyIntegrationRequest parameters(@javax.annotation.Nonnull Map<String, String> parameters) {
     this.parameters = parameters;
     return this;
   }
@@ -116,12 +119,12 @@ public class ModifyIntegrationRequest {
     return parameters;
   }
 
-  public void setParameters(Map<String, String> parameters) {
+  public void setParameters(@javax.annotation.Nonnull Map<String, String> parameters) {
     this.parameters = parameters;
   }
 
 
-  public ModifyIntegrationRequest environmentIds(List<UUID> environmentIds) {
+  public ModifyIntegrationRequest environmentIds(@javax.annotation.Nonnull List<UUID> environmentIds) {
     this.environmentIds = environmentIds;
     return this;
   }
@@ -135,7 +138,7 @@ public class ModifyIntegrationRequest {
   }
 
   /**
-   * List of Environment IDs that are connected with this Integration. If the list is empty, all of the Environments are connected.
+   * List of Environment IDs that are connected with this Integration. If the list is empty, all the Environments are connected.
    * @return environmentIds
    */
   @javax.annotation.Nonnull
@@ -143,12 +146,12 @@ public class ModifyIntegrationRequest {
     return environmentIds;
   }
 
-  public void setEnvironmentIds(List<UUID> environmentIds) {
+  public void setEnvironmentIds(@javax.annotation.Nonnull List<UUID> environmentIds) {
     this.environmentIds = environmentIds;
   }
 
 
-  public ModifyIntegrationRequest configIds(List<UUID> configIds) {
+  public ModifyIntegrationRequest configIds(@javax.annotation.Nonnull List<UUID> configIds) {
     this.configIds = configIds;
     return this;
   }
@@ -162,7 +165,7 @@ public class ModifyIntegrationRequest {
   }
 
   /**
-   * List of Config IDs that are connected with this Integration. If the list is empty, all of the Configs are connected.
+   * List of Config IDs that are connected with this Integration. If the list is empty, all the Configs are connected.
    * @return configIds
    */
   @javax.annotation.Nonnull
@@ -170,7 +173,7 @@ public class ModifyIntegrationRequest {
     return configIds;
   }
 
-  public void setConfigIds(List<UUID> configIds) {
+  public void setConfigIds(@javax.annotation.Nonnull List<UUID> configIds) {
     this.configIds = configIds;
   }
 
@@ -259,10 +262,7 @@ public class ModifyIntegrationRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -271,18 +271,10 @@ public class ModifyIntegrationRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("parameters");
-    openapiFields.add("environmentIds");
-    openapiFields.add("configIds");
+    openapiFields = new HashSet<String>(Arrays.asList("name", "parameters", "environmentIds", "configIds"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("parameters");
-    openapiRequiredFields.add("environmentIds");
-    openapiRequiredFields.add("configIds");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("name", "parameters", "environmentIds", "configIds"));
   }
 
   /**
@@ -294,31 +286,31 @@ public class ModifyIntegrationRequest {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ModifyIntegrationRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ModifyIntegrationRequest is not found in the empty JSON string", ModifyIntegrationRequest.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ModifyIntegrationRequest is not found in the empty JSON string", ModifyIntegrationRequest.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ModifyIntegrationRequest.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       // ensure the required json array is present
       if (jsonObj.get("environmentIds") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("environmentIds").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environmentIds` to be an array in the JSON string but got `%s`", jsonObj.get("environmentIds").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `environmentIds` to be an array in the JSON string but got `%s`", jsonObj.get("environmentIds").toString()));
       }
       // ensure the required json array is present
       if (jsonObj.get("configIds") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("configIds").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `configIds` to be an array in the JSON string but got `%s`", jsonObj.get("configIds").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `configIds` to be an array in the JSON string but got `%s`", jsonObj.get("configIds").toString()));
       }
   }
 
@@ -379,7 +371,7 @@ public class ModifyIntegrationRequest {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

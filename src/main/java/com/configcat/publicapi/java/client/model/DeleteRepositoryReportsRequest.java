@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,28 +50,32 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * DeleteRepositoryReportsRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class DeleteRepositoryReportsRequest {
   public static final String SERIALIZED_NAME_CONFIG_ID = "configId";
   @SerializedName(SERIALIZED_NAME_CONFIG_ID)
+  @javax.annotation.Nonnull
   private UUID configId;
 
   public static final String SERIALIZED_NAME_REPOSITORY = "repository";
   @SerializedName(SERIALIZED_NAME_REPOSITORY)
+  @javax.annotation.Nonnull
   private String repository;
 
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
+  @javax.annotation.Nullable
   private String branch;
 
   public static final String SERIALIZED_NAME_SETTING_ID = "settingId";
   @SerializedName(SERIALIZED_NAME_SETTING_ID)
+  @javax.annotation.Nullable
   private Integer settingId;
 
   public DeleteRepositoryReportsRequest() {
   }
 
-  public DeleteRepositoryReportsRequest configId(UUID configId) {
+  public DeleteRepositoryReportsRequest configId(@javax.annotation.Nonnull UUID configId) {
     this.configId = configId;
     return this;
   }
@@ -86,12 +89,12 @@ public class DeleteRepositoryReportsRequest {
     return configId;
   }
 
-  public void setConfigId(UUID configId) {
+  public void setConfigId(@javax.annotation.Nonnull UUID configId) {
     this.configId = configId;
   }
 
 
-  public DeleteRepositoryReportsRequest repository(String repository) {
+  public DeleteRepositoryReportsRequest repository(@javax.annotation.Nonnull String repository) {
     this.repository = repository;
     return this;
   }
@@ -105,12 +108,12 @@ public class DeleteRepositoryReportsRequest {
     return repository;
   }
 
-  public void setRepository(String repository) {
+  public void setRepository(@javax.annotation.Nonnull String repository) {
     this.repository = repository;
   }
 
 
-  public DeleteRepositoryReportsRequest branch(String branch) {
+  public DeleteRepositoryReportsRequest branch(@javax.annotation.Nullable String branch) {
     this.branch = branch;
     return this;
   }
@@ -124,12 +127,12 @@ public class DeleteRepositoryReportsRequest {
     return branch;
   }
 
-  public void setBranch(String branch) {
+  public void setBranch(@javax.annotation.Nullable String branch) {
     this.branch = branch;
   }
 
 
-  public DeleteRepositoryReportsRequest settingId(Integer settingId) {
+  public DeleteRepositoryReportsRequest settingId(@javax.annotation.Nullable Integer settingId) {
     this.settingId = settingId;
     return this;
   }
@@ -143,7 +146,7 @@ public class DeleteRepositoryReportsRequest {
     return settingId;
   }
 
-  public void setSettingId(Integer settingId) {
+  public void setSettingId(@javax.annotation.Nullable Integer settingId) {
     this.settingId = settingId;
   }
 
@@ -243,10 +246,7 @@ public class DeleteRepositoryReportsRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -255,16 +255,10 @@ public class DeleteRepositoryReportsRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("configId");
-    openapiFields.add("repository");
-    openapiFields.add("branch");
-    openapiFields.add("settingId");
+    openapiFields = new HashSet<String>(Arrays.asList("configId", "repository", "branch", "settingId"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("configId");
-    openapiRequiredFields.add("repository");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("configId", "repository"));
   }
 
   /**
@@ -276,25 +270,25 @@ public class DeleteRepositoryReportsRequest {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DeleteRepositoryReportsRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in DeleteRepositoryReportsRequest is not found in the empty JSON string", DeleteRepositoryReportsRequest.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in DeleteRepositoryReportsRequest is not found in the empty JSON string", DeleteRepositoryReportsRequest.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : DeleteRepositoryReportsRequest.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("configId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `configId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("configId").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `configId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("configId").toString()));
       }
       if (!jsonObj.get("repository").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `repository` to be a primitive type in the JSON string but got `%s`", jsonObj.get("repository").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `repository` to be a primitive type in the JSON string but got `%s`", jsonObj.get("repository").toString()));
       }
       if ((jsonObj.get("branch") != null && !jsonObj.get("branch").isJsonNull()) && !jsonObj.get("branch").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `branch` to be a primitive type in the JSON string but got `%s`", jsonObj.get("branch").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `branch` to be a primitive type in the JSON string but got `%s`", jsonObj.get("branch").toString()));
       }
   }
 
@@ -355,7 +349,7 @@ public class DeleteRepositoryReportsRequest {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

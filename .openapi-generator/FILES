@@ -4,7 +4,10 @@ api/openapi.yaml
 docs/AccessType.md
 docs/AddOrUpdateIntegrationLinkModel.md
 docs/AddOrUpdateJiraIntegrationLinkModel.md
+docs/ApprovalPermissionType.md
+docs/ApproveRequiredEnvironmentModel.md
 docs/AuditLogItemModel.md
+docs/AuditLogItemModelPagedList.md
 docs/AuditLogType.md
 docs/AuditLogsApi.md
 docs/CodeReferenceModel.md
@@ -26,6 +29,7 @@ docs/CreateEnvironmentModel.md
 docs/CreateIntegrationModel.md
 docs/CreateOrUpdateConnectionPreferences.md
 docs/CreateOrUpdateEnvironmentAccessModel.md
+docs/CreateOrUpdateEnvironmentApprovalPermissionModel.md
 docs/CreateOrUpdateProxyProfileRequest.md
 docs/CreateOrUpdateWebhookNotification.md
 docs/CreatePermissionGroupRequest.md
@@ -38,8 +42,8 @@ docs/CreateTagModel.md
 docs/DeleteIntegrationLinkModel.md
 docs/DeleteRepositoryReportsRequest.md
 docs/DeletedSettingModel.md
-docs/EnvironmentAccessModel.md
 docs/EnvironmentAccessType.md
+docs/EnvironmentApprovalPermissionType.md
 docs/EnvironmentModel.md
 docs/EnvironmentsApi.md
 docs/EvaluationVersion.md
@@ -80,9 +84,13 @@ docs/OrganizationPermissionGroupModel.md
 docs/OrganizationPermissionModel.md
 docs/OrganizationProductModel.md
 docs/OrganizationsApi.md
+docs/PagingResponseInfo.md
 docs/PercentageOptionModel.md
+docs/PermissionGroupEnvironmentAccessModel.md
+docs/PermissionGroupEnvironmentApprovalPermissionModel.md
 docs/PermissionGroupModel.md
 docs/PermissionGroupsApi.md
+docs/PredefinedVariationChangeRequestUsageModel.md
 docs/PredefinedVariationEnvironmentModel.md
 docs/PredefinedVariationModel.md
 docs/PredefinedVariationUsageModel.md
@@ -140,6 +148,7 @@ docs/StaleFlagStaleInEnvironmentsType.md
 docs/TagModel.md
 docs/TagsApi.md
 docs/TargetingRuleModel.md
+docs/UpdateApproveRequiredEnvironmentModel.md
 docs/UpdateComparisonValueListModel.md
 docs/UpdateComparisonValueModel.md
 docs/UpdateConditionModel.md
@@ -236,7 +245,10 @@ src/main/java/com/configcat/publicapi/java/client/model/AbstractOpenApiSchema.ja
 src/main/java/com/configcat/publicapi/java/client/model/AccessType.java
 src/main/java/com/configcat/publicapi/java/client/model/AddOrUpdateIntegrationLinkModel.java
 src/main/java/com/configcat/publicapi/java/client/model/AddOrUpdateJiraIntegrationLinkModel.java
+src/main/java/com/configcat/publicapi/java/client/model/ApprovalPermissionType.java
+src/main/java/com/configcat/publicapi/java/client/model/ApproveRequiredEnvironmentModel.java
 src/main/java/com/configcat/publicapi/java/client/model/AuditLogItemModel.java
+src/main/java/com/configcat/publicapi/java/client/model/AuditLogItemModelPagedList.java
 src/main/java/com/configcat/publicapi/java/client/model/AuditLogType.java
 src/main/java/com/configcat/publicapi/java/client/model/CodeReferenceModel.java
 src/main/java/com/configcat/publicapi/java/client/model/CodeReferenceRequest.java
@@ -255,6 +267,7 @@ src/main/java/com/configcat/publicapi/java/client/model/CreateEnvironmentModel.j
 src/main/java/com/configcat/publicapi/java/client/model/CreateIntegrationModel.java
 src/main/java/com/configcat/publicapi/java/client/model/CreateOrUpdateConnectionPreferences.java
 src/main/java/com/configcat/publicapi/java/client/model/CreateOrUpdateEnvironmentAccessModel.java
+src/main/java/com/configcat/publicapi/java/client/model/CreateOrUpdateEnvironmentApprovalPermissionModel.java
 src/main/java/com/configcat/publicapi/java/client/model/CreateOrUpdateProxyProfileRequest.java
 src/main/java/com/configcat/publicapi/java/client/model/CreateOrUpdateWebhookNotification.java
 src/main/java/com/configcat/publicapi/java/client/model/CreatePermissionGroupRequest.java
@@ -267,8 +280,8 @@ src/main/java/com/configcat/publicapi/java/client/model/CreateTagModel.java
 src/main/java/com/configcat/publicapi/java/client/model/DeleteIntegrationLinkModel.java
 src/main/java/com/configcat/publicapi/java/client/model/DeleteRepositoryReportsRequest.java
 src/main/java/com/configcat/publicapi/java/client/model/DeletedSettingModel.java
-src/main/java/com/configcat/publicapi/java/client/model/EnvironmentAccessModel.java
 src/main/java/com/configcat/publicapi/java/client/model/EnvironmentAccessType.java
+src/main/java/com/configcat/publicapi/java/client/model/EnvironmentApprovalPermissionType.java
 src/main/java/com/configcat/publicapi/java/client/model/EnvironmentModel.java
 src/main/java/com/configcat/publicapi/java/client/model/EvaluationVersion.java
 src/main/java/com/configcat/publicapi/java/client/model/FeatureFlagLimitations.java
@@ -298,8 +311,12 @@ src/main/java/com/configcat/publicapi/java/client/model/OrganizationModel.java
 src/main/java/com/configcat/publicapi/java/client/model/OrganizationPermissionGroupModel.java
 src/main/java/com/configcat/publicapi/java/client/model/OrganizationPermissionModel.java
 src/main/java/com/configcat/publicapi/java/client/model/OrganizationProductModel.java
+src/main/java/com/configcat/publicapi/java/client/model/PagingResponseInfo.java
 src/main/java/com/configcat/publicapi/java/client/model/PercentageOptionModel.java
+src/main/java/com/configcat/publicapi/java/client/model/PermissionGroupEnvironmentAccessModel.java
+src/main/java/com/configcat/publicapi/java/client/model/PermissionGroupEnvironmentApprovalPermissionModel.java
 src/main/java/com/configcat/publicapi/java/client/model/PermissionGroupModel.java
+src/main/java/com/configcat/publicapi/java/client/model/PredefinedVariationChangeRequestUsageModel.java
 src/main/java/com/configcat/publicapi/java/client/model/PredefinedVariationEnvironmentModel.java
 src/main/java/com/configcat/publicapi/java/client/model/PredefinedVariationModel.java
 src/main/java/com/configcat/publicapi/java/client/model/PredefinedVariationUsageModel.java
@@ -352,6 +369,7 @@ src/main/java/com/configcat/publicapi/java/client/model/StaleFlagSettingValueMod
 src/main/java/com/configcat/publicapi/java/client/model/StaleFlagStaleInEnvironmentsType.java
 src/main/java/com/configcat/publicapi/java/client/model/TagModel.java
 src/main/java/com/configcat/publicapi/java/client/model/TargetingRuleModel.java
+src/main/java/com/configcat/publicapi/java/client/model/UpdateApproveRequiredEnvironmentModel.java
 src/main/java/com/configcat/publicapi/java/client/model/UpdateComparisonValueListModel.java
 src/main/java/com/configcat/publicapi/java/client/model/UpdateComparisonValueModel.java
 src/main/java/com/configcat/publicapi/java/client/model/UpdateConditionModel.java

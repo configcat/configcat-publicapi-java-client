@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,24 +48,27 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * The webhook notification settings, including the proxy URL and signing keys.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class WebhookNotification {
   public static final String SERIALIZED_NAME_WEBHOOK_PROXY_URL = "webhookProxyUrl";
   @SerializedName(SERIALIZED_NAME_WEBHOOK_PROXY_URL)
+  @javax.annotation.Nonnull
   private String webhookProxyUrl;
 
   public static final String SERIALIZED_NAME_SIGNING_KEY1 = "signingKey1";
   @SerializedName(SERIALIZED_NAME_SIGNING_KEY1)
+  @javax.annotation.Nonnull
   private String signingKey1;
 
   public static final String SERIALIZED_NAME_SIGNING_KEY2 = "signingKey2";
   @SerializedName(SERIALIZED_NAME_SIGNING_KEY2)
+  @javax.annotation.Nullable
   private String signingKey2;
 
   public WebhookNotification() {
   }
 
-  public WebhookNotification webhookProxyUrl(String webhookProxyUrl) {
+  public WebhookNotification webhookProxyUrl(@javax.annotation.Nonnull String webhookProxyUrl) {
     this.webhookProxyUrl = webhookProxyUrl;
     return this;
   }
@@ -80,12 +82,12 @@ public class WebhookNotification {
     return webhookProxyUrl;
   }
 
-  public void setWebhookProxyUrl(String webhookProxyUrl) {
+  public void setWebhookProxyUrl(@javax.annotation.Nonnull String webhookProxyUrl) {
     this.webhookProxyUrl = webhookProxyUrl;
   }
 
 
-  public WebhookNotification signingKey1(String signingKey1) {
+  public WebhookNotification signingKey1(@javax.annotation.Nonnull String signingKey1) {
     this.signingKey1 = signingKey1;
     return this;
   }
@@ -99,12 +101,12 @@ public class WebhookNotification {
     return signingKey1;
   }
 
-  public void setSigningKey1(String signingKey1) {
+  public void setSigningKey1(@javax.annotation.Nonnull String signingKey1) {
     this.signingKey1 = signingKey1;
   }
 
 
-  public WebhookNotification signingKey2(String signingKey2) {
+  public WebhookNotification signingKey2(@javax.annotation.Nullable String signingKey2) {
     this.signingKey2 = signingKey2;
     return this;
   }
@@ -118,7 +120,7 @@ public class WebhookNotification {
     return signingKey2;
   }
 
-  public void setSigningKey2(String signingKey2) {
+  public void setSigningKey2(@javax.annotation.Nullable String signingKey2) {
     this.signingKey2 = signingKey2;
   }
 
@@ -205,10 +207,7 @@ public class WebhookNotification {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -217,16 +216,10 @@ public class WebhookNotification {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("webhookProxyUrl");
-    openapiFields.add("signingKey1");
-    openapiFields.add("signingKey2");
+    openapiFields = new HashSet<String>(Arrays.asList("webhookProxyUrl", "signingKey1", "signingKey2"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("webhookProxyUrl");
-    openapiRequiredFields.add("signingKey1");
-    openapiRequiredFields.add("signingKey2");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("webhookProxyUrl", "signingKey1", "signingKey2"));
   }
 
   /**
@@ -238,25 +231,25 @@ public class WebhookNotification {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WebhookNotification.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in WebhookNotification is not found in the empty JSON string", WebhookNotification.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in WebhookNotification is not found in the empty JSON string", WebhookNotification.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : WebhookNotification.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("webhookProxyUrl").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `webhookProxyUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("webhookProxyUrl").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `webhookProxyUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("webhookProxyUrl").toString()));
       }
       if (!jsonObj.get("signingKey1").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `signingKey1` to be a primitive type in the JSON string but got `%s`", jsonObj.get("signingKey1").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `signingKey1` to be a primitive type in the JSON string but got `%s`", jsonObj.get("signingKey1").toString()));
       }
       if ((jsonObj.get("signingKey2") != null && !jsonObj.get("signingKey2").isJsonNull()) && !jsonObj.get("signingKey2").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `signingKey2` to be a primitive type in the JSON string but got `%s`", jsonObj.get("signingKey2").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `signingKey2` to be a primitive type in the JSON string but got `%s`", jsonObj.get("signingKey2").toString()));
       }
   }
 
@@ -317,7 +310,7 @@ public class WebhookNotification {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

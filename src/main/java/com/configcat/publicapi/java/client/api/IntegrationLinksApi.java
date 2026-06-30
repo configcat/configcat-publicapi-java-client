@@ -90,7 +90,8 @@ public class IntegrationLinksApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the integration link data returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -98,7 +99,7 @@ public class IntegrationLinksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addOrUpdateIntegrationLinkCall(UUID environmentId, Integer settingId, IntegrationLinkType integrationLinkType, String key, AddOrUpdateIntegrationLinkModel addOrUpdateIntegrationLinkModel, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call addOrUpdateIntegrationLinkCall(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull IntegrationLinkType integrationLinkType, @javax.annotation.Nonnull String key, @javax.annotation.Nullable AddOrUpdateIntegrationLinkModel addOrUpdateIntegrationLinkModel, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -150,7 +151,7 @@ public class IntegrationLinksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call addOrUpdateIntegrationLinkValidateBeforeCall(UUID environmentId, Integer settingId, IntegrationLinkType integrationLinkType, String key, AddOrUpdateIntegrationLinkModel addOrUpdateIntegrationLinkModel, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call addOrUpdateIntegrationLinkValidateBeforeCall(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull IntegrationLinkType integrationLinkType, @javax.annotation.Nonnull String key, @javax.annotation.Nullable AddOrUpdateIntegrationLinkModel addOrUpdateIntegrationLinkModel, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'environmentId' is set
         if (environmentId == null) {
             throw new ApiException("Missing the required parameter 'environmentId' when calling addOrUpdateIntegrationLink(Async)");
@@ -186,7 +187,8 @@ public class IntegrationLinksApi {
      * @return IntegrationLinkModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the integration link data returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -194,7 +196,7 @@ public class IntegrationLinksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public IntegrationLinkModel addOrUpdateIntegrationLink(UUID environmentId, Integer settingId, IntegrationLinkType integrationLinkType, String key, AddOrUpdateIntegrationLinkModel addOrUpdateIntegrationLinkModel) throws ApiException {
+    public IntegrationLinkModel addOrUpdateIntegrationLink(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull IntegrationLinkType integrationLinkType, @javax.annotation.Nonnull String key, @javax.annotation.Nullable AddOrUpdateIntegrationLinkModel addOrUpdateIntegrationLinkModel) throws ApiException {
         ApiResponse<IntegrationLinkModel> localVarResp = addOrUpdateIntegrationLinkWithHttpInfo(environmentId, settingId, integrationLinkType, key, addOrUpdateIntegrationLinkModel);
         return localVarResp.getData();
     }
@@ -210,7 +212,8 @@ public class IntegrationLinksApi {
      * @return ApiResponse&lt;IntegrationLinkModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the integration link data returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -218,7 +221,7 @@ public class IntegrationLinksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IntegrationLinkModel> addOrUpdateIntegrationLinkWithHttpInfo(UUID environmentId, Integer settingId, IntegrationLinkType integrationLinkType, String key, AddOrUpdateIntegrationLinkModel addOrUpdateIntegrationLinkModel) throws ApiException {
+    public ApiResponse<IntegrationLinkModel> addOrUpdateIntegrationLinkWithHttpInfo(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull IntegrationLinkType integrationLinkType, @javax.annotation.Nonnull String key, @javax.annotation.Nullable AddOrUpdateIntegrationLinkModel addOrUpdateIntegrationLinkModel) throws ApiException {
         okhttp3.Call localVarCall = addOrUpdateIntegrationLinkValidateBeforeCall(environmentId, settingId, integrationLinkType, key, addOrUpdateIntegrationLinkModel, null);
         Type localVarReturnType = new TypeToken<IntegrationLinkModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -236,7 +239,8 @@ public class IntegrationLinksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the integration link data returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -244,7 +248,7 @@ public class IntegrationLinksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addOrUpdateIntegrationLinkAsync(UUID environmentId, Integer settingId, IntegrationLinkType integrationLinkType, String key, AddOrUpdateIntegrationLinkModel addOrUpdateIntegrationLinkModel, final ApiCallback<IntegrationLinkModel> _callback) throws ApiException {
+    public okhttp3.Call addOrUpdateIntegrationLinkAsync(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull IntegrationLinkType integrationLinkType, @javax.annotation.Nonnull String key, @javax.annotation.Nullable AddOrUpdateIntegrationLinkModel addOrUpdateIntegrationLinkModel, final ApiCallback<IntegrationLinkModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = addOrUpdateIntegrationLinkValidateBeforeCall(environmentId, settingId, integrationLinkType, key, addOrUpdateIntegrationLinkModel, _callback);
         Type localVarReturnType = new TypeToken<IntegrationLinkModel>(){}.getType();
@@ -261,7 +265,8 @@ public class IntegrationLinksApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -269,7 +274,7 @@ public class IntegrationLinksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteIntegrationLinkCall(UUID environmentId, Integer settingId, IntegrationLinkType integrationLinkType, String key, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteIntegrationLinkCall(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull IntegrationLinkType integrationLinkType, @javax.annotation.Nonnull String key, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -318,7 +323,7 @@ public class IntegrationLinksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteIntegrationLinkValidateBeforeCall(UUID environmentId, Integer settingId, IntegrationLinkType integrationLinkType, String key, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteIntegrationLinkValidateBeforeCall(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull IntegrationLinkType integrationLinkType, @javax.annotation.Nonnull String key, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'environmentId' is set
         if (environmentId == null) {
             throw new ApiException("Missing the required parameter 'environmentId' when calling deleteIntegrationLink(Async)");
@@ -353,7 +358,8 @@ public class IntegrationLinksApi {
      * @return DeleteIntegrationLinkModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -361,7 +367,7 @@ public class IntegrationLinksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public DeleteIntegrationLinkModel deleteIntegrationLink(UUID environmentId, Integer settingId, IntegrationLinkType integrationLinkType, String key) throws ApiException {
+    public DeleteIntegrationLinkModel deleteIntegrationLink(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull IntegrationLinkType integrationLinkType, @javax.annotation.Nonnull String key) throws ApiException {
         ApiResponse<DeleteIntegrationLinkModel> localVarResp = deleteIntegrationLinkWithHttpInfo(environmentId, settingId, integrationLinkType, key);
         return localVarResp.getData();
     }
@@ -376,7 +382,8 @@ public class IntegrationLinksApi {
      * @return ApiResponse&lt;DeleteIntegrationLinkModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -384,7 +391,7 @@ public class IntegrationLinksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<DeleteIntegrationLinkModel> deleteIntegrationLinkWithHttpInfo(UUID environmentId, Integer settingId, IntegrationLinkType integrationLinkType, String key) throws ApiException {
+    public ApiResponse<DeleteIntegrationLinkModel> deleteIntegrationLinkWithHttpInfo(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull IntegrationLinkType integrationLinkType, @javax.annotation.Nonnull String key) throws ApiException {
         okhttp3.Call localVarCall = deleteIntegrationLinkValidateBeforeCall(environmentId, settingId, integrationLinkType, key, null);
         Type localVarReturnType = new TypeToken<DeleteIntegrationLinkModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -401,7 +408,8 @@ public class IntegrationLinksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -409,7 +417,7 @@ public class IntegrationLinksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteIntegrationLinkAsync(UUID environmentId, Integer settingId, IntegrationLinkType integrationLinkType, String key, final ApiCallback<DeleteIntegrationLinkModel> _callback) throws ApiException {
+    public okhttp3.Call deleteIntegrationLinkAsync(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull IntegrationLinkType integrationLinkType, @javax.annotation.Nonnull String key, final ApiCallback<DeleteIntegrationLinkModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteIntegrationLinkValidateBeforeCall(environmentId, settingId, integrationLinkType, key, _callback);
         Type localVarReturnType = new TypeToken<DeleteIntegrationLinkModel>(){}.getType();
@@ -424,7 +432,8 @@ public class IntegrationLinksApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the details for the integration link returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -432,7 +441,7 @@ public class IntegrationLinksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getIntegrationLinkDetailsCall(IntegrationLinkType integrationLinkType, String key, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getIntegrationLinkDetailsCall(@javax.annotation.Nonnull IntegrationLinkType integrationLinkType, @javax.annotation.Nonnull String key, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -479,7 +488,7 @@ public class IntegrationLinksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getIntegrationLinkDetailsValidateBeforeCall(IntegrationLinkType integrationLinkType, String key, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getIntegrationLinkDetailsValidateBeforeCall(@javax.annotation.Nonnull IntegrationLinkType integrationLinkType, @javax.annotation.Nonnull String key, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'integrationLinkType' is set
         if (integrationLinkType == null) {
             throw new ApiException("Missing the required parameter 'integrationLinkType' when calling getIntegrationLinkDetails(Async)");
@@ -502,7 +511,8 @@ public class IntegrationLinksApi {
      * @return IntegrationLinkDetailsModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the details for the integration link returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -510,7 +520,7 @@ public class IntegrationLinksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public IntegrationLinkDetailsModel getIntegrationLinkDetails(IntegrationLinkType integrationLinkType, String key) throws ApiException {
+    public IntegrationLinkDetailsModel getIntegrationLinkDetails(@javax.annotation.Nonnull IntegrationLinkType integrationLinkType, @javax.annotation.Nonnull String key) throws ApiException {
         ApiResponse<IntegrationLinkDetailsModel> localVarResp = getIntegrationLinkDetailsWithHttpInfo(integrationLinkType, key);
         return localVarResp.getData();
     }
@@ -523,7 +533,8 @@ public class IntegrationLinksApi {
      * @return ApiResponse&lt;IntegrationLinkDetailsModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the details for the integration link returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -531,7 +542,7 @@ public class IntegrationLinksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IntegrationLinkDetailsModel> getIntegrationLinkDetailsWithHttpInfo(IntegrationLinkType integrationLinkType, String key) throws ApiException {
+    public ApiResponse<IntegrationLinkDetailsModel> getIntegrationLinkDetailsWithHttpInfo(@javax.annotation.Nonnull IntegrationLinkType integrationLinkType, @javax.annotation.Nonnull String key) throws ApiException {
         okhttp3.Call localVarCall = getIntegrationLinkDetailsValidateBeforeCall(integrationLinkType, key, null);
         Type localVarReturnType = new TypeToken<IntegrationLinkDetailsModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -546,7 +557,8 @@ public class IntegrationLinksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the details for the integration link returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -554,7 +566,7 @@ public class IntegrationLinksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getIntegrationLinkDetailsAsync(IntegrationLinkType integrationLinkType, String key, final ApiCallback<IntegrationLinkDetailsModel> _callback) throws ApiException {
+    public okhttp3.Call getIntegrationLinkDetailsAsync(@javax.annotation.Nonnull IntegrationLinkType integrationLinkType, @javax.annotation.Nonnull String key, final ApiCallback<IntegrationLinkDetailsModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getIntegrationLinkDetailsValidateBeforeCall(integrationLinkType, key, _callback);
         Type localVarReturnType = new TypeToken<IntegrationLinkDetailsModel>(){}.getType();
@@ -571,7 +583,8 @@ public class IntegrationLinksApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the integration link data returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -579,7 +592,7 @@ public class IntegrationLinksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call jiraAddOrUpdateIntegrationLinkCall(UUID environmentId, Integer settingId, String key, AddOrUpdateJiraIntegrationLinkModel addOrUpdateJiraIntegrationLinkModel, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call jiraAddOrUpdateIntegrationLinkCall(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull String key, @javax.annotation.Nullable AddOrUpdateJiraIntegrationLinkModel addOrUpdateJiraIntegrationLinkModel, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -630,7 +643,7 @@ public class IntegrationLinksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call jiraAddOrUpdateIntegrationLinkValidateBeforeCall(UUID environmentId, Integer settingId, String key, AddOrUpdateJiraIntegrationLinkModel addOrUpdateJiraIntegrationLinkModel, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call jiraAddOrUpdateIntegrationLinkValidateBeforeCall(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull String key, @javax.annotation.Nullable AddOrUpdateJiraIntegrationLinkModel addOrUpdateJiraIntegrationLinkModel, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'environmentId' is set
         if (environmentId == null) {
             throw new ApiException("Missing the required parameter 'environmentId' when calling jiraAddOrUpdateIntegrationLink(Async)");
@@ -660,7 +673,8 @@ public class IntegrationLinksApi {
      * @return IntegrationLinkModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the integration link data returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -668,7 +682,7 @@ public class IntegrationLinksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public IntegrationLinkModel jiraAddOrUpdateIntegrationLink(UUID environmentId, Integer settingId, String key, AddOrUpdateJiraIntegrationLinkModel addOrUpdateJiraIntegrationLinkModel) throws ApiException {
+    public IntegrationLinkModel jiraAddOrUpdateIntegrationLink(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull String key, @javax.annotation.Nullable AddOrUpdateJiraIntegrationLinkModel addOrUpdateJiraIntegrationLinkModel) throws ApiException {
         ApiResponse<IntegrationLinkModel> localVarResp = jiraAddOrUpdateIntegrationLinkWithHttpInfo(environmentId, settingId, key, addOrUpdateJiraIntegrationLinkModel);
         return localVarResp.getData();
     }
@@ -683,7 +697,8 @@ public class IntegrationLinksApi {
      * @return ApiResponse&lt;IntegrationLinkModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the integration link data returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -691,7 +706,7 @@ public class IntegrationLinksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IntegrationLinkModel> jiraAddOrUpdateIntegrationLinkWithHttpInfo(UUID environmentId, Integer settingId, String key, AddOrUpdateJiraIntegrationLinkModel addOrUpdateJiraIntegrationLinkModel) throws ApiException {
+    public ApiResponse<IntegrationLinkModel> jiraAddOrUpdateIntegrationLinkWithHttpInfo(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull String key, @javax.annotation.Nullable AddOrUpdateJiraIntegrationLinkModel addOrUpdateJiraIntegrationLinkModel) throws ApiException {
         okhttp3.Call localVarCall = jiraAddOrUpdateIntegrationLinkValidateBeforeCall(environmentId, settingId, key, addOrUpdateJiraIntegrationLinkModel, null);
         Type localVarReturnType = new TypeToken<IntegrationLinkModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -708,7 +723,8 @@ public class IntegrationLinksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the integration link data returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -716,7 +732,7 @@ public class IntegrationLinksApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call jiraAddOrUpdateIntegrationLinkAsync(UUID environmentId, Integer settingId, String key, AddOrUpdateJiraIntegrationLinkModel addOrUpdateJiraIntegrationLinkModel, final ApiCallback<IntegrationLinkModel> _callback) throws ApiException {
+    public okhttp3.Call jiraAddOrUpdateIntegrationLinkAsync(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull String key, @javax.annotation.Nullable AddOrUpdateJiraIntegrationLinkModel addOrUpdateJiraIntegrationLinkModel, final ApiCallback<IntegrationLinkModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = jiraAddOrUpdateIntegrationLinkValidateBeforeCall(environmentId, settingId, key, addOrUpdateJiraIntegrationLinkModel, _callback);
         Type localVarReturnType = new TypeToken<IntegrationLinkModel>(){}.getType();
@@ -730,13 +746,14 @@ public class IntegrationLinksApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call jiraConnectCall(ConnectRequest connectRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call jiraConnectCall(@javax.annotation.Nullable ConnectRequest connectRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -783,7 +800,7 @@ public class IntegrationLinksApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call jiraConnectValidateBeforeCall(ConnectRequest connectRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call jiraConnectValidateBeforeCall(@javax.annotation.Nullable ConnectRequest connectRequest, final ApiCallback _callback) throws ApiException {
         return jiraConnectCall(connectRequest, _callback);
 
     }
@@ -794,13 +811,14 @@ public class IntegrationLinksApi {
      * @param connectRequest  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public void jiraConnect(ConnectRequest connectRequest) throws ApiException {
+    public void jiraConnect(@javax.annotation.Nullable ConnectRequest connectRequest) throws ApiException {
         jiraConnectWithHttpInfo(connectRequest);
     }
 
@@ -811,13 +829,14 @@ public class IntegrationLinksApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> jiraConnectWithHttpInfo(ConnectRequest connectRequest) throws ApiException {
+    public ApiResponse<Void> jiraConnectWithHttpInfo(@javax.annotation.Nullable ConnectRequest connectRequest) throws ApiException {
         okhttp3.Call localVarCall = jiraConnectValidateBeforeCall(connectRequest, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -830,13 +849,14 @@ public class IntegrationLinksApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call jiraConnectAsync(ConnectRequest connectRequest, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call jiraConnectAsync(@javax.annotation.Nullable ConnectRequest connectRequest, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = jiraConnectValidateBeforeCall(connectRequest, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);

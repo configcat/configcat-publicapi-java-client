@@ -42,7 +42,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -54,28 +53,32 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * StaleFlagProductModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class StaleFlagProductModel {
   public static final String SERIALIZED_NAME_PRODUCT_ID = "productId";
   @SerializedName(SERIALIZED_NAME_PRODUCT_ID)
+  @javax.annotation.Nonnull
   private UUID productId;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_CONFIGS = "configs";
   @SerializedName(SERIALIZED_NAME_CONFIGS)
+  @javax.annotation.Nonnull
   private List<StaleFlagConfigModel> configs = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ENVIRONMENTS = "environments";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENTS)
+  @javax.annotation.Nonnull
   private List<StaleFlagEnvironmentModel> environments = new ArrayList<>();
 
   public StaleFlagProductModel() {
   }
 
-  public StaleFlagProductModel productId(UUID productId) {
+  public StaleFlagProductModel productId(@javax.annotation.Nonnull UUID productId) {
     this.productId = productId;
     return this;
   }
@@ -89,12 +92,12 @@ public class StaleFlagProductModel {
     return productId;
   }
 
-  public void setProductId(UUID productId) {
+  public void setProductId(@javax.annotation.Nonnull UUID productId) {
     this.productId = productId;
   }
 
 
-  public StaleFlagProductModel name(String name) {
+  public StaleFlagProductModel name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -108,12 +111,12 @@ public class StaleFlagProductModel {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public StaleFlagProductModel configs(List<StaleFlagConfigModel> configs) {
+  public StaleFlagProductModel configs(@javax.annotation.Nonnull List<StaleFlagConfigModel> configs) {
     this.configs = configs;
     return this;
   }
@@ -135,12 +138,12 @@ public class StaleFlagProductModel {
     return configs;
   }
 
-  public void setConfigs(List<StaleFlagConfigModel> configs) {
+  public void setConfigs(@javax.annotation.Nonnull List<StaleFlagConfigModel> configs) {
     this.configs = configs;
   }
 
 
-  public StaleFlagProductModel environments(List<StaleFlagEnvironmentModel> environments) {
+  public StaleFlagProductModel environments(@javax.annotation.Nonnull List<StaleFlagEnvironmentModel> environments) {
     this.environments = environments;
     return this;
   }
@@ -162,7 +165,7 @@ public class StaleFlagProductModel {
     return environments;
   }
 
-  public void setEnvironments(List<StaleFlagEnvironmentModel> environments) {
+  public void setEnvironments(@javax.annotation.Nonnull List<StaleFlagEnvironmentModel> environments) {
     this.environments = environments;
   }
 
@@ -251,10 +254,7 @@ public class StaleFlagProductModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -263,18 +263,10 @@ public class StaleFlagProductModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("productId");
-    openapiFields.add("name");
-    openapiFields.add("configs");
-    openapiFields.add("environments");
+    openapiFields = new HashSet<String>(Arrays.asList("productId", "name", "configs", "environments"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("productId");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("configs");
-    openapiRequiredFields.add("environments");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("productId", "name", "configs", "environments"));
   }
 
   /**
@@ -286,43 +278,43 @@ public class StaleFlagProductModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!StaleFlagProductModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in StaleFlagProductModel is not found in the empty JSON string", StaleFlagProductModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in StaleFlagProductModel is not found in the empty JSON string", StaleFlagProductModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : StaleFlagProductModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("productId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `productId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("productId").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `productId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("productId").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
-      // ensure the json data is an array
-      if (!jsonObj.get("configs").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `configs` to be an array in the JSON string but got `%s`", jsonObj.get("configs").toString()));
+      if (jsonObj.get("configs") != null) {
+        if (!jsonObj.get("configs").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `configs` to be an array in the JSON string but got `%s`", jsonObj.get("configs").toString()));
+        }
+        JsonArray jsonArrayconfigs = jsonObj.getAsJsonArray("configs");
+        // validate the required field `configs` (array)
+        for (int i = 0; i < jsonArrayconfigs.size(); i++) {
+          StaleFlagConfigModel.validateJsonElement(jsonArrayconfigs.get(i));
+        }
       }
-
-      JsonArray jsonArrayconfigs = jsonObj.getAsJsonArray("configs");
-      // validate the required field `configs` (array)
-      for (int i = 0; i < jsonArrayconfigs.size(); i++) {
-        StaleFlagConfigModel.validateJsonElement(jsonArrayconfigs.get(i));
-      };
-      // ensure the json data is an array
-      if (!jsonObj.get("environments").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environments` to be an array in the JSON string but got `%s`", jsonObj.get("environments").toString()));
+      if (jsonObj.get("environments") != null) {
+        if (!jsonObj.get("environments").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `environments` to be an array in the JSON string but got `%s`", jsonObj.get("environments").toString()));
+        }
+        JsonArray jsonArrayenvironments = jsonObj.getAsJsonArray("environments");
+        // validate the required field `environments` (array)
+        for (int i = 0; i < jsonArrayenvironments.size(); i++) {
+          StaleFlagEnvironmentModel.validateJsonElement(jsonArrayenvironments.get(i));
+        }
       }
-
-      JsonArray jsonArrayenvironments = jsonObj.getAsJsonArray("environments");
-      // validate the required field `environments` (array)
-      for (int i = 0; i < jsonArrayenvironments.size(); i++) {
-        StaleFlagEnvironmentModel.validateJsonElement(jsonArrayenvironments.get(i));
-      };
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -382,7 +374,7 @@ public class StaleFlagProductModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

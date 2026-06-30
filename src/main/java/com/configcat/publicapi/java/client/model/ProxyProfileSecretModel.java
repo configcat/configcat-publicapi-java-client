@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,16 +48,17 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * ProxyProfileSecretModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class ProxyProfileSecretModel {
   public static final String SERIALIZED_NAME_SECRET_TOKEN = "secretToken";
   @SerializedName(SERIALIZED_NAME_SECRET_TOKEN)
+  @javax.annotation.Nonnull
   private String secretToken;
 
   public ProxyProfileSecretModel() {
   }
 
-  public ProxyProfileSecretModel secretToken(String secretToken) {
+  public ProxyProfileSecretModel secretToken(@javax.annotation.Nonnull String secretToken) {
     this.secretToken = secretToken;
     return this;
   }
@@ -72,7 +72,7 @@ public class ProxyProfileSecretModel {
     return secretToken;
   }
 
-  public void setSecretToken(String secretToken) {
+  public void setSecretToken(@javax.annotation.Nonnull String secretToken) {
     this.secretToken = secretToken;
   }
 
@@ -155,10 +155,7 @@ public class ProxyProfileSecretModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -167,12 +164,10 @@ public class ProxyProfileSecretModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("secretToken");
+    openapiFields = new HashSet<String>(Arrays.asList("secretToken"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("secretToken");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("secretToken"));
   }
 
   /**
@@ -184,19 +179,19 @@ public class ProxyProfileSecretModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ProxyProfileSecretModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ProxyProfileSecretModel is not found in the empty JSON string", ProxyProfileSecretModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ProxyProfileSecretModel is not found in the empty JSON string", ProxyProfileSecretModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ProxyProfileSecretModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("secretToken").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `secretToken` to be a primitive type in the JSON string but got `%s`", jsonObj.get("secretToken").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `secretToken` to be a primitive type in the JSON string but got `%s`", jsonObj.get("secretToken").toString()));
       }
   }
 
@@ -257,7 +252,7 @@ public class ProxyProfileSecretModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

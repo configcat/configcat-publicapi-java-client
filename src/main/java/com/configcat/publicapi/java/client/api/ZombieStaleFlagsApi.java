@@ -87,7 +87,8 @@ public class ZombieStaleFlagsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -95,7 +96,7 @@ public class ZombieStaleFlagsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStaleflagsCall(UUID productId, StaleFlagReminderScope scope, Integer staleFlagAgeDays, StaleFlagStaleInEnvironmentsType staleFlagStaleInEnvironmentsType, List<UUID> ignoredEnvironmentIds, List<Long> ignoredTagIds, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getStaleflagsCall(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nullable StaleFlagReminderScope scope, @javax.annotation.Nullable Integer staleFlagAgeDays, @javax.annotation.Nullable StaleFlagStaleInEnvironmentsType staleFlagStaleInEnvironmentsType, @javax.annotation.Nullable List<UUID> ignoredEnvironmentIds, @javax.annotation.Nullable List<Long> ignoredTagIds, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -161,7 +162,7 @@ public class ZombieStaleFlagsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getStaleflagsValidateBeforeCall(UUID productId, StaleFlagReminderScope scope, Integer staleFlagAgeDays, StaleFlagStaleInEnvironmentsType staleFlagStaleInEnvironmentsType, List<UUID> ignoredEnvironmentIds, List<Long> ignoredTagIds, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getStaleflagsValidateBeforeCall(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nullable StaleFlagReminderScope scope, @javax.annotation.Nullable Integer staleFlagAgeDays, @javax.annotation.Nullable StaleFlagStaleInEnvironmentsType staleFlagStaleInEnvironmentsType, @javax.annotation.Nullable List<UUID> ignoredEnvironmentIds, @javax.annotation.Nullable List<Long> ignoredTagIds, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'productId' is set
         if (productId == null) {
             throw new ApiException("Missing the required parameter 'productId' when calling getStaleflags(Async)");
@@ -183,7 +184,8 @@ public class ZombieStaleFlagsApi {
      * @return StaleFlagProductModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -191,7 +193,7 @@ public class ZombieStaleFlagsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public StaleFlagProductModel getStaleflags(UUID productId, StaleFlagReminderScope scope, Integer staleFlagAgeDays, StaleFlagStaleInEnvironmentsType staleFlagStaleInEnvironmentsType, List<UUID> ignoredEnvironmentIds, List<Long> ignoredTagIds) throws ApiException {
+    public StaleFlagProductModel getStaleflags(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nullable StaleFlagReminderScope scope, @javax.annotation.Nullable Integer staleFlagAgeDays, @javax.annotation.Nullable StaleFlagStaleInEnvironmentsType staleFlagStaleInEnvironmentsType, @javax.annotation.Nullable List<UUID> ignoredEnvironmentIds, @javax.annotation.Nullable List<Long> ignoredTagIds) throws ApiException {
         ApiResponse<StaleFlagProductModel> localVarResp = getStaleflagsWithHttpInfo(productId, scope, staleFlagAgeDays, staleFlagStaleInEnvironmentsType, ignoredEnvironmentIds, ignoredTagIds);
         return localVarResp.getData();
     }
@@ -208,7 +210,8 @@ public class ZombieStaleFlagsApi {
      * @return ApiResponse&lt;StaleFlagProductModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -216,7 +219,7 @@ public class ZombieStaleFlagsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StaleFlagProductModel> getStaleflagsWithHttpInfo(UUID productId, StaleFlagReminderScope scope, Integer staleFlagAgeDays, StaleFlagStaleInEnvironmentsType staleFlagStaleInEnvironmentsType, List<UUID> ignoredEnvironmentIds, List<Long> ignoredTagIds) throws ApiException {
+    public ApiResponse<StaleFlagProductModel> getStaleflagsWithHttpInfo(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nullable StaleFlagReminderScope scope, @javax.annotation.Nullable Integer staleFlagAgeDays, @javax.annotation.Nullable StaleFlagStaleInEnvironmentsType staleFlagStaleInEnvironmentsType, @javax.annotation.Nullable List<UUID> ignoredEnvironmentIds, @javax.annotation.Nullable List<Long> ignoredTagIds) throws ApiException {
         okhttp3.Call localVarCall = getStaleflagsValidateBeforeCall(productId, scope, staleFlagAgeDays, staleFlagStaleInEnvironmentsType, ignoredEnvironmentIds, ignoredTagIds, null);
         Type localVarReturnType = new TypeToken<StaleFlagProductModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -235,7 +238,8 @@ public class ZombieStaleFlagsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -243,7 +247,7 @@ public class ZombieStaleFlagsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStaleflagsAsync(UUID productId, StaleFlagReminderScope scope, Integer staleFlagAgeDays, StaleFlagStaleInEnvironmentsType staleFlagStaleInEnvironmentsType, List<UUID> ignoredEnvironmentIds, List<Long> ignoredTagIds, final ApiCallback<StaleFlagProductModel> _callback) throws ApiException {
+    public okhttp3.Call getStaleflagsAsync(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nullable StaleFlagReminderScope scope, @javax.annotation.Nullable Integer staleFlagAgeDays, @javax.annotation.Nullable StaleFlagStaleInEnvironmentsType staleFlagStaleInEnvironmentsType, @javax.annotation.Nullable List<UUID> ignoredEnvironmentIds, @javax.annotation.Nullable List<Long> ignoredTagIds, final ApiCallback<StaleFlagProductModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getStaleflagsValidateBeforeCall(productId, scope, staleFlagAgeDays, staleFlagStaleInEnvironmentsType, ignoredEnvironmentIds, ignoredTagIds, _callback);
         Type localVarReturnType = new TypeToken<StaleFlagProductModel>(){}.getType();

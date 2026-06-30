@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,30 +48,34 @@ import java.util.Set;
 import com.configcat.publicapi.java.client.JSON;
 
 /**
- * A Feature Flag or Predefined Variation.
+ * A Predefined Variation.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class PredefinedVariationModel {
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
+  @javax.annotation.Nonnull
   private PredefinedVariationValueModel value;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_HINT = "hint";
   @SerializedName(SERIALIZED_NAME_HINT)
+  @javax.annotation.Nullable
   private String hint;
 
   public static final String SERIALIZED_NAME_PREDEFINED_VARIATION_ID = "predefinedVariationId";
   @SerializedName(SERIALIZED_NAME_PREDEFINED_VARIATION_ID)
+  @javax.annotation.Nonnull
   private UUID predefinedVariationId;
 
   public PredefinedVariationModel() {
   }
 
-  public PredefinedVariationModel value(PredefinedVariationValueModel value) {
+  public PredefinedVariationModel value(@javax.annotation.Nonnull PredefinedVariationValueModel value) {
     this.value = value;
     return this;
   }
@@ -86,18 +89,18 @@ public class PredefinedVariationModel {
     return value;
   }
 
-  public void setValue(PredefinedVariationValueModel value) {
+  public void setValue(@javax.annotation.Nonnull PredefinedVariationValueModel value) {
     this.value = value;
   }
 
 
-  public PredefinedVariationModel name(String name) {
+  public PredefinedVariationModel name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
   /**
-   * The name of the Feature Flag or Predefined Variation, shown on the Dashboard UI. If not set, the Value will be shown.
+   * The name of the Predefined Variation, shown on the Dashboard UI. If not set, the Value will be shown.
    * @return name
    */
   @javax.annotation.Nullable
@@ -105,18 +108,18 @@ public class PredefinedVariationModel {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public PredefinedVariationModel hint(String hint) {
+  public PredefinedVariationModel hint(@javax.annotation.Nullable String hint) {
     this.hint = hint;
     return this;
   }
 
   /**
-   * The name of the Feature Flag or Predefined Variation, shown on the Dashboard UI. If not set, the Value will be shown.
+   * The name of the Predefined Variation, shown on the Dashboard UI. If not set, the Value will be shown.
    * @return hint
    */
   @javax.annotation.Nullable
@@ -124,18 +127,18 @@ public class PredefinedVariationModel {
     return hint;
   }
 
-  public void setHint(String hint) {
+  public void setHint(@javax.annotation.Nullable String hint) {
     this.hint = hint;
   }
 
 
-  public PredefinedVariationModel predefinedVariationId(UUID predefinedVariationId) {
+  public PredefinedVariationModel predefinedVariationId(@javax.annotation.Nonnull UUID predefinedVariationId) {
     this.predefinedVariationId = predefinedVariationId;
     return this;
   }
 
   /**
-   * The Feature Flag or Predefined Variation&#39;s identifier.
+   * The Predefined Variation&#39;s identifier.
    * @return predefinedVariationId
    */
   @javax.annotation.Nonnull
@@ -143,7 +146,7 @@ public class PredefinedVariationModel {
     return predefinedVariationId;
   }
 
-  public void setPredefinedVariationId(UUID predefinedVariationId) {
+  public void setPredefinedVariationId(@javax.annotation.Nonnull UUID predefinedVariationId) {
     this.predefinedVariationId = predefinedVariationId;
   }
 
@@ -232,10 +235,7 @@ public class PredefinedVariationModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -244,18 +244,10 @@ public class PredefinedVariationModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("value");
-    openapiFields.add("name");
-    openapiFields.add("hint");
-    openapiFields.add("predefinedVariationId");
+    openapiFields = new HashSet<String>(Arrays.asList("value", "name", "hint", "predefinedVariationId"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("value");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("hint");
-    openapiRequiredFields.add("predefinedVariationId");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("value", "name", "hint", "predefinedVariationId"));
   }
 
   /**
@@ -267,27 +259,27 @@ public class PredefinedVariationModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PredefinedVariationModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PredefinedVariationModel is not found in the empty JSON string", PredefinedVariationModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in PredefinedVariationModel is not found in the empty JSON string", PredefinedVariationModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : PredefinedVariationModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the required field `value`
       PredefinedVariationValueModel.validateJsonElement(jsonObj.get("value"));
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("hint") != null && !jsonObj.get("hint").isJsonNull()) && !jsonObj.get("hint").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `hint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hint").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `hint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hint").toString()));
       }
       if (!jsonObj.get("predefinedVariationId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `predefinedVariationId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("predefinedVariationId").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `predefinedVariationId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("predefinedVariationId").toString()));
       }
   }
 
@@ -348,7 +340,7 @@ public class PredefinedVariationModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

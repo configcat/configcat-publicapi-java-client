@@ -27,8 +27,11 @@ import io.gsonfire.TypeSelector;
 import okio.ByteString;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.lang.reflect.Type;
+import java.nio.charset.StandardCharsets;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.ParsePosition;
@@ -95,7 +98,9 @@ public class JSON {
         gsonBuilder.registerTypeAdapter(byte[].class, byteArrayAdapter);
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.AddOrUpdateIntegrationLinkModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.AddOrUpdateJiraIntegrationLinkModel.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.ApproveRequiredEnvironmentModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.AuditLogItemModel.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.AuditLogItemModelPagedList.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.CodeReferenceModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.CodeReferenceRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.ComparisonValueListModel.CustomTypeAdapterFactory());
@@ -113,6 +118,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.CreateIntegrationModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.CreateOrUpdateConnectionPreferences.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.CreateOrUpdateEnvironmentAccessModel.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.CreateOrUpdateEnvironmentApprovalPermissionModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.CreateOrUpdateProxyProfileRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.CreateOrUpdateWebhookNotification.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.CreatePermissionGroupRequest.CustomTypeAdapterFactory());
@@ -125,7 +131,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.DeleteIntegrationLinkModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.DeleteRepositoryReportsRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.DeletedSettingModel.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.EnvironmentAccessModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.EnvironmentModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.FeatureFlagLimitations.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.FlagReference.CustomTypeAdapterFactory());
@@ -150,8 +155,12 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.OrganizationPermissionGroupModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.OrganizationPermissionModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.OrganizationProductModel.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.PagingResponseInfo.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.PercentageOptionModel.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.PermissionGroupEnvironmentAccessModel.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.PermissionGroupEnvironmentApprovalPermissionModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.PermissionGroupModel.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.PredefinedVariationChangeRequestUsageModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.PredefinedVariationEnvironmentModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.PredefinedVariationModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.PredefinedVariationUsageModel.CustomTypeAdapterFactory());
@@ -197,6 +206,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.StaleFlagSettingValueModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.TagModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.TargetingRuleModel.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.UpdateApproveRequiredEnvironmentModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.UpdateComparisonValueListModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.UpdateComparisonValueModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.UpdateConditionModel.CustomTypeAdapterFactory());
@@ -299,6 +309,28 @@ public class JSON {
                 return (T) body;
             } else {
                 throw (e);
+            }
+        }
+    }
+
+    /**
+    * Deserialize the given JSON InputStream to a Java object.
+    *
+    * @param <T>         Type
+    * @param inputStream The JSON InputStream
+    * @param returnType  The type to deserialize into
+    * @return The deserialized Java object
+    */
+    @SuppressWarnings("unchecked")
+    public static <T> T deserialize(InputStream inputStream, Type returnType) throws IOException {
+        try (InputStreamReader reader = new InputStreamReader(inputStream, StandardCharsets.UTF_8)) {
+        if (isLenientOnJson) {
+            // see https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/stream/JsonReader.html#setLenient(boolean)
+            JsonReader jsonReader = new JsonReader(reader);
+            jsonReader.setLenient(true);
+            return gson.fromJson(jsonReader, returnType);
+            } else {
+                return gson.fromJson(reader, returnType);
             }
         }
     }

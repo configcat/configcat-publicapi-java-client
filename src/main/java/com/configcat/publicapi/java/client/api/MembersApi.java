@@ -88,7 +88,8 @@ public class MembersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the update was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -96,7 +97,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addMemberToGroupCall(UUID organizationId, String userId, UpdateMemberPermissionsRequest updateMemberPermissionsRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call addMemberToGroupCall(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull String userId, @javax.annotation.Nonnull UpdateMemberPermissionsRequest updateMemberPermissionsRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -145,7 +146,7 @@ public class MembersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call addMemberToGroupValidateBeforeCall(UUID organizationId, String userId, UpdateMemberPermissionsRequest updateMemberPermissionsRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call addMemberToGroupValidateBeforeCall(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull String userId, @javax.annotation.Nonnull UpdateMemberPermissionsRequest updateMemberPermissionsRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling addMemberToGroup(Async)");
@@ -173,7 +174,8 @@ public class MembersApi {
      * @param updateMemberPermissionsRequest  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the update was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -181,7 +183,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public void addMemberToGroup(UUID organizationId, String userId, UpdateMemberPermissionsRequest updateMemberPermissionsRequest) throws ApiException {
+    public void addMemberToGroup(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull String userId, @javax.annotation.Nonnull UpdateMemberPermissionsRequest updateMemberPermissionsRequest) throws ApiException {
         addMemberToGroupWithHttpInfo(organizationId, userId, updateMemberPermissionsRequest);
     }
 
@@ -194,7 +196,8 @@ public class MembersApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the update was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -202,7 +205,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> addMemberToGroupWithHttpInfo(UUID organizationId, String userId, UpdateMemberPermissionsRequest updateMemberPermissionsRequest) throws ApiException {
+    public ApiResponse<Void> addMemberToGroupWithHttpInfo(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull String userId, @javax.annotation.Nonnull UpdateMemberPermissionsRequest updateMemberPermissionsRequest) throws ApiException {
         okhttp3.Call localVarCall = addMemberToGroupValidateBeforeCall(organizationId, userId, updateMemberPermissionsRequest, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -217,7 +220,8 @@ public class MembersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the update was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -225,7 +229,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addMemberToGroupAsync(UUID organizationId, String userId, UpdateMemberPermissionsRequest updateMemberPermissionsRequest, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call addMemberToGroupAsync(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull String userId, @javax.annotation.Nonnull UpdateMemberPermissionsRequest updateMemberPermissionsRequest, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = addMemberToGroupValidateBeforeCall(organizationId, userId, updateMemberPermissionsRequest, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -238,7 +242,8 @@ public class MembersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -246,7 +251,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteInvitationCall(UUID invitationId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteInvitationCall(@javax.annotation.Nonnull UUID invitationId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -291,7 +296,7 @@ public class MembersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteInvitationValidateBeforeCall(UUID invitationId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteInvitationValidateBeforeCall(@javax.annotation.Nonnull UUID invitationId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'invitationId' is set
         if (invitationId == null) {
             throw new ApiException("Missing the required parameter 'invitationId' when calling deleteInvitation(Async)");
@@ -307,7 +312,8 @@ public class MembersApi {
      * @param invitationId The identifier of the Invitation. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -315,7 +321,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteInvitation(UUID invitationId) throws ApiException {
+    public void deleteInvitation(@javax.annotation.Nonnull UUID invitationId) throws ApiException {
         deleteInvitationWithHttpInfo(invitationId);
     }
 
@@ -326,7 +332,8 @@ public class MembersApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -334,7 +341,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteInvitationWithHttpInfo(UUID invitationId) throws ApiException {
+    public ApiResponse<Void> deleteInvitationWithHttpInfo(@javax.annotation.Nonnull UUID invitationId) throws ApiException {
         okhttp3.Call localVarCall = deleteInvitationValidateBeforeCall(invitationId, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -347,7 +354,8 @@ public class MembersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -355,7 +363,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteInvitationAsync(UUID invitationId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteInvitationAsync(@javax.annotation.Nonnull UUID invitationId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteInvitationValidateBeforeCall(invitationId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -369,7 +377,8 @@ public class MembersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -377,7 +386,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteOrganizationMemberCall(UUID organizationId, String userId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteOrganizationMemberCall(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -423,7 +432,7 @@ public class MembersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteOrganizationMemberValidateBeforeCall(UUID organizationId, String userId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteOrganizationMemberValidateBeforeCall(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling deleteOrganizationMember(Async)");
@@ -445,7 +454,8 @@ public class MembersApi {
      * @param userId The identifier of the Member. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -453,7 +463,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteOrganizationMember(UUID organizationId, String userId) throws ApiException {
+    public void deleteOrganizationMember(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull String userId) throws ApiException {
         deleteOrganizationMemberWithHttpInfo(organizationId, userId);
     }
 
@@ -465,7 +475,8 @@ public class MembersApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -473,7 +484,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteOrganizationMemberWithHttpInfo(UUID organizationId, String userId) throws ApiException {
+    public ApiResponse<Void> deleteOrganizationMemberWithHttpInfo(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull String userId) throws ApiException {
         okhttp3.Call localVarCall = deleteOrganizationMemberValidateBeforeCall(organizationId, userId, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -487,7 +498,8 @@ public class MembersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -495,7 +507,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteOrganizationMemberAsync(UUID organizationId, String userId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteOrganizationMemberAsync(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull String userId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteOrganizationMemberValidateBeforeCall(organizationId, userId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -509,7 +521,8 @@ public class MembersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -517,7 +530,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteProductMemberCall(UUID productId, String userId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteProductMemberCall(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -563,7 +576,7 @@ public class MembersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteProductMemberValidateBeforeCall(UUID productId, String userId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteProductMemberValidateBeforeCall(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull String userId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'productId' is set
         if (productId == null) {
             throw new ApiException("Missing the required parameter 'productId' when calling deleteProductMember(Async)");
@@ -585,7 +598,8 @@ public class MembersApi {
      * @param userId The identifier of the Member. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -593,7 +607,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteProductMember(UUID productId, String userId) throws ApiException {
+    public void deleteProductMember(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull String userId) throws ApiException {
         deleteProductMemberWithHttpInfo(productId, userId);
     }
 
@@ -605,7 +619,8 @@ public class MembersApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -613,7 +628,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteProductMemberWithHttpInfo(UUID productId, String userId) throws ApiException {
+    public ApiResponse<Void> deleteProductMemberWithHttpInfo(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull String userId) throws ApiException {
         okhttp3.Call localVarCall = deleteProductMemberValidateBeforeCall(productId, userId, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -627,7 +642,8 @@ public class MembersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -635,7 +651,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteProductMemberAsync(UUID productId, String userId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteProductMemberAsync(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull String userId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteProductMemberValidateBeforeCall(productId, userId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -648,7 +664,8 @@ public class MembersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -658,7 +675,7 @@ public class MembersApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call getOrganizationMembersCall(UUID organizationId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getOrganizationMembersCall(@javax.annotation.Nonnull UUID organizationId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -705,7 +722,7 @@ public class MembersApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getOrganizationMembersValidateBeforeCall(UUID organizationId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getOrganizationMembersValidateBeforeCall(@javax.annotation.Nonnull UUID organizationId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling getOrganizationMembers(Async)");
@@ -722,7 +739,8 @@ public class MembersApi {
      * @return List&lt;UserModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -732,7 +750,7 @@ public class MembersApi {
      * @deprecated
      */
     @Deprecated
-    public List<UserModel> getOrganizationMembers(UUID organizationId) throws ApiException {
+    public List<UserModel> getOrganizationMembers(@javax.annotation.Nonnull UUID organizationId) throws ApiException {
         ApiResponse<List<UserModel>> localVarResp = getOrganizationMembersWithHttpInfo(organizationId);
         return localVarResp.getData();
     }
@@ -744,7 +762,8 @@ public class MembersApi {
      * @return ApiResponse&lt;List&lt;UserModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -754,7 +773,7 @@ public class MembersApi {
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<List<UserModel>> getOrganizationMembersWithHttpInfo(UUID organizationId) throws ApiException {
+    public ApiResponse<List<UserModel>> getOrganizationMembersWithHttpInfo(@javax.annotation.Nonnull UUID organizationId) throws ApiException {
         okhttp3.Call localVarCall = getOrganizationMembersValidateBeforeCall(organizationId, null);
         Type localVarReturnType = new TypeToken<List<UserModel>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -768,7 +787,8 @@ public class MembersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -778,7 +798,7 @@ public class MembersApi {
      * @deprecated
      */
     @Deprecated
-    public okhttp3.Call getOrganizationMembersAsync(UUID organizationId, final ApiCallback<List<UserModel>> _callback) throws ApiException {
+    public okhttp3.Call getOrganizationMembersAsync(@javax.annotation.Nonnull UUID organizationId, final ApiCallback<List<UserModel>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getOrganizationMembersValidateBeforeCall(organizationId, _callback);
         Type localVarReturnType = new TypeToken<List<UserModel>>(){}.getType();
@@ -792,7 +812,8 @@ public class MembersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -800,7 +821,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getOrganizationMembersV2Call(UUID organizationId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getOrganizationMembersV2Call(@javax.annotation.Nonnull UUID organizationId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -846,7 +867,7 @@ public class MembersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getOrganizationMembersV2ValidateBeforeCall(UUID organizationId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getOrganizationMembersV2ValidateBeforeCall(@javax.annotation.Nonnull UUID organizationId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling getOrganizationMembersV2(Async)");
@@ -863,7 +884,8 @@ public class MembersApi {
      * @return OrganizationMembersModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -871,7 +893,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public OrganizationMembersModel getOrganizationMembersV2(UUID organizationId) throws ApiException {
+    public OrganizationMembersModel getOrganizationMembersV2(@javax.annotation.Nonnull UUID organizationId) throws ApiException {
         ApiResponse<OrganizationMembersModel> localVarResp = getOrganizationMembersV2WithHttpInfo(organizationId);
         return localVarResp.getData();
     }
@@ -883,7 +905,8 @@ public class MembersApi {
      * @return ApiResponse&lt;OrganizationMembersModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -891,7 +914,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OrganizationMembersModel> getOrganizationMembersV2WithHttpInfo(UUID organizationId) throws ApiException {
+    public ApiResponse<OrganizationMembersModel> getOrganizationMembersV2WithHttpInfo(@javax.annotation.Nonnull UUID organizationId) throws ApiException {
         okhttp3.Call localVarCall = getOrganizationMembersV2ValidateBeforeCall(organizationId, null);
         Type localVarReturnType = new TypeToken<OrganizationMembersModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -905,7 +928,8 @@ public class MembersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -913,7 +937,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getOrganizationMembersV2Async(UUID organizationId, final ApiCallback<OrganizationMembersModel> _callback) throws ApiException {
+    public okhttp3.Call getOrganizationMembersV2Async(@javax.annotation.Nonnull UUID organizationId, final ApiCallback<OrganizationMembersModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getOrganizationMembersV2ValidateBeforeCall(organizationId, _callback);
         Type localVarReturnType = new TypeToken<OrganizationMembersModel>(){}.getType();
@@ -927,7 +951,8 @@ public class MembersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -935,7 +960,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPendingInvitationsCall(UUID productId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getPendingInvitationsCall(@javax.annotation.Nonnull UUID productId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -981,7 +1006,7 @@ public class MembersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getPendingInvitationsValidateBeforeCall(UUID productId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getPendingInvitationsValidateBeforeCall(@javax.annotation.Nonnull UUID productId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'productId' is set
         if (productId == null) {
             throw new ApiException("Missing the required parameter 'productId' when calling getPendingInvitations(Async)");
@@ -998,7 +1023,8 @@ public class MembersApi {
      * @return List&lt;InvitationModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1006,7 +1032,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public List<InvitationModel> getPendingInvitations(UUID productId) throws ApiException {
+    public List<InvitationModel> getPendingInvitations(@javax.annotation.Nonnull UUID productId) throws ApiException {
         ApiResponse<List<InvitationModel>> localVarResp = getPendingInvitationsWithHttpInfo(productId);
         return localVarResp.getData();
     }
@@ -1018,7 +1044,8 @@ public class MembersApi {
      * @return ApiResponse&lt;List&lt;InvitationModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1026,7 +1053,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<InvitationModel>> getPendingInvitationsWithHttpInfo(UUID productId) throws ApiException {
+    public ApiResponse<List<InvitationModel>> getPendingInvitationsWithHttpInfo(@javax.annotation.Nonnull UUID productId) throws ApiException {
         okhttp3.Call localVarCall = getPendingInvitationsValidateBeforeCall(productId, null);
         Type localVarReturnType = new TypeToken<List<InvitationModel>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1040,7 +1067,8 @@ public class MembersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1048,7 +1076,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPendingInvitationsAsync(UUID productId, final ApiCallback<List<InvitationModel>> _callback) throws ApiException {
+    public okhttp3.Call getPendingInvitationsAsync(@javax.annotation.Nonnull UUID productId, final ApiCallback<List<InvitationModel>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getPendingInvitationsValidateBeforeCall(productId, _callback);
         Type localVarReturnType = new TypeToken<List<InvitationModel>>(){}.getType();
@@ -1062,7 +1090,8 @@ public class MembersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1070,7 +1099,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPendingInvitationsOrgCall(UUID organizationId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getPendingInvitationsOrgCall(@javax.annotation.Nonnull UUID organizationId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1116,7 +1145,7 @@ public class MembersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getPendingInvitationsOrgValidateBeforeCall(UUID organizationId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getPendingInvitationsOrgValidateBeforeCall(@javax.annotation.Nonnull UUID organizationId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling getPendingInvitationsOrg(Async)");
@@ -1133,7 +1162,8 @@ public class MembersApi {
      * @return List&lt;OrganizationInvitationModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1141,7 +1171,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public List<OrganizationInvitationModel> getPendingInvitationsOrg(UUID organizationId) throws ApiException {
+    public List<OrganizationInvitationModel> getPendingInvitationsOrg(@javax.annotation.Nonnull UUID organizationId) throws ApiException {
         ApiResponse<List<OrganizationInvitationModel>> localVarResp = getPendingInvitationsOrgWithHttpInfo(organizationId);
         return localVarResp.getData();
     }
@@ -1153,7 +1183,8 @@ public class MembersApi {
      * @return ApiResponse&lt;List&lt;OrganizationInvitationModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1161,7 +1192,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<OrganizationInvitationModel>> getPendingInvitationsOrgWithHttpInfo(UUID organizationId) throws ApiException {
+    public ApiResponse<List<OrganizationInvitationModel>> getPendingInvitationsOrgWithHttpInfo(@javax.annotation.Nonnull UUID organizationId) throws ApiException {
         okhttp3.Call localVarCall = getPendingInvitationsOrgValidateBeforeCall(organizationId, null);
         Type localVarReturnType = new TypeToken<List<OrganizationInvitationModel>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1175,7 +1206,8 @@ public class MembersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1183,7 +1215,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getPendingInvitationsOrgAsync(UUID organizationId, final ApiCallback<List<OrganizationInvitationModel>> _callback) throws ApiException {
+    public okhttp3.Call getPendingInvitationsOrgAsync(@javax.annotation.Nonnull UUID organizationId, final ApiCallback<List<OrganizationInvitationModel>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getPendingInvitationsOrgValidateBeforeCall(organizationId, _callback);
         Type localVarReturnType = new TypeToken<List<OrganizationInvitationModel>>(){}.getType();
@@ -1197,7 +1229,8 @@ public class MembersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1205,7 +1238,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProductMembersCall(UUID productId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getProductMembersCall(@javax.annotation.Nonnull UUID productId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1251,7 +1284,7 @@ public class MembersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getProductMembersValidateBeforeCall(UUID productId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getProductMembersValidateBeforeCall(@javax.annotation.Nonnull UUID productId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'productId' is set
         if (productId == null) {
             throw new ApiException("Missing the required parameter 'productId' when calling getProductMembers(Async)");
@@ -1268,7 +1301,8 @@ public class MembersApi {
      * @return List&lt;MemberModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1276,7 +1310,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public List<MemberModel> getProductMembers(UUID productId) throws ApiException {
+    public List<MemberModel> getProductMembers(@javax.annotation.Nonnull UUID productId) throws ApiException {
         ApiResponse<List<MemberModel>> localVarResp = getProductMembersWithHttpInfo(productId);
         return localVarResp.getData();
     }
@@ -1288,7 +1322,8 @@ public class MembersApi {
      * @return ApiResponse&lt;List&lt;MemberModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1296,7 +1331,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<MemberModel>> getProductMembersWithHttpInfo(UUID productId) throws ApiException {
+    public ApiResponse<List<MemberModel>> getProductMembersWithHttpInfo(@javax.annotation.Nonnull UUID productId) throws ApiException {
         okhttp3.Call localVarCall = getProductMembersValidateBeforeCall(productId, null);
         Type localVarReturnType = new TypeToken<List<MemberModel>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1310,7 +1345,8 @@ public class MembersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1318,7 +1354,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProductMembersAsync(UUID productId, final ApiCallback<List<MemberModel>> _callback) throws ApiException {
+    public okhttp3.Call getProductMembersAsync(@javax.annotation.Nonnull UUID productId, final ApiCallback<List<MemberModel>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getProductMembersValidateBeforeCall(productId, _callback);
         Type localVarReturnType = new TypeToken<List<MemberModel>>(){}.getType();
@@ -1333,7 +1369,8 @@ public class MembersApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the invite was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1341,7 +1378,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call inviteMemberCall(UUID productId, InviteMembersRequest inviteMembersRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call inviteMemberCall(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull InviteMembersRequest inviteMembersRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1389,7 +1426,7 @@ public class MembersApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call inviteMemberValidateBeforeCall(UUID productId, InviteMembersRequest inviteMembersRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call inviteMemberValidateBeforeCall(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull InviteMembersRequest inviteMembersRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'productId' is set
         if (productId == null) {
             throw new ApiException("Missing the required parameter 'productId' when calling inviteMember(Async)");
@@ -1411,7 +1448,8 @@ public class MembersApi {
      * @param inviteMembersRequest  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the invite was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1419,7 +1457,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public void inviteMember(UUID productId, InviteMembersRequest inviteMembersRequest) throws ApiException {
+    public void inviteMember(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull InviteMembersRequest inviteMembersRequest) throws ApiException {
         inviteMemberWithHttpInfo(productId, inviteMembersRequest);
     }
 
@@ -1431,7 +1469,8 @@ public class MembersApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the invite was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1439,7 +1478,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> inviteMemberWithHttpInfo(UUID productId, InviteMembersRequest inviteMembersRequest) throws ApiException {
+    public ApiResponse<Void> inviteMemberWithHttpInfo(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull InviteMembersRequest inviteMembersRequest) throws ApiException {
         okhttp3.Call localVarCall = inviteMemberValidateBeforeCall(productId, inviteMembersRequest, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -1453,7 +1492,8 @@ public class MembersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the invite was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -1461,7 +1501,7 @@ public class MembersApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call inviteMemberAsync(UUID productId, InviteMembersRequest inviteMembersRequest, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call inviteMemberAsync(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull InviteMembersRequest inviteMembersRequest, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = inviteMemberValidateBeforeCall(productId, inviteMembersRequest, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);

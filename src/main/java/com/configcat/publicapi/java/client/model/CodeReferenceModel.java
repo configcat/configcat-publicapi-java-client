@@ -42,7 +42,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -54,44 +53,52 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * CodeReferenceModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class CodeReferenceModel {
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
+  @javax.annotation.Nullable
   private String branch;
 
   public static final String SERIALIZED_NAME_REFERENCES = "references";
   @SerializedName(SERIALIZED_NAME_REFERENCES)
+  @javax.annotation.Nullable
   private List<ReferenceLinesModel> references;
 
   public static final String SERIALIZED_NAME_COMMIT_URL = "commitUrl";
   @SerializedName(SERIALIZED_NAME_COMMIT_URL)
+  @javax.annotation.Nullable
   private String commitUrl;
 
   public static final String SERIALIZED_NAME_COMMIT_HASH = "commitHash";
   @SerializedName(SERIALIZED_NAME_COMMIT_HASH)
+  @javax.annotation.Nullable
   private String commitHash;
 
   public static final String SERIALIZED_NAME_SYNCED_AT = "syncedAt";
   @SerializedName(SERIALIZED_NAME_SYNCED_AT)
+  @javax.annotation.Nonnull
   private OffsetDateTime syncedAt;
 
   public static final String SERIALIZED_NAME_REPOSITORY = "repository";
   @SerializedName(SERIALIZED_NAME_REPOSITORY)
+  @javax.annotation.Nullable
   private String repository;
 
   public static final String SERIALIZED_NAME_CODE_REFERENCE_ID = "codeReferenceId";
   @SerializedName(SERIALIZED_NAME_CODE_REFERENCE_ID)
+  @javax.annotation.Nonnull
   private UUID codeReferenceId;
 
   public static final String SERIALIZED_NAME_UPLOADER = "uploader";
   @SerializedName(SERIALIZED_NAME_UPLOADER)
+  @javax.annotation.Nullable
   private String uploader;
 
   public CodeReferenceModel() {
   }
 
-  public CodeReferenceModel branch(String branch) {
+  public CodeReferenceModel branch(@javax.annotation.Nullable String branch) {
     this.branch = branch;
     return this;
   }
@@ -105,12 +112,12 @@ public class CodeReferenceModel {
     return branch;
   }
 
-  public void setBranch(String branch) {
+  public void setBranch(@javax.annotation.Nullable String branch) {
     this.branch = branch;
   }
 
 
-  public CodeReferenceModel references(List<ReferenceLinesModel> references) {
+  public CodeReferenceModel references(@javax.annotation.Nullable List<ReferenceLinesModel> references) {
     this.references = references;
     return this;
   }
@@ -132,12 +139,12 @@ public class CodeReferenceModel {
     return references;
   }
 
-  public void setReferences(List<ReferenceLinesModel> references) {
+  public void setReferences(@javax.annotation.Nullable List<ReferenceLinesModel> references) {
     this.references = references;
   }
 
 
-  public CodeReferenceModel commitUrl(String commitUrl) {
+  public CodeReferenceModel commitUrl(@javax.annotation.Nullable String commitUrl) {
     this.commitUrl = commitUrl;
     return this;
   }
@@ -151,12 +158,12 @@ public class CodeReferenceModel {
     return commitUrl;
   }
 
-  public void setCommitUrl(String commitUrl) {
+  public void setCommitUrl(@javax.annotation.Nullable String commitUrl) {
     this.commitUrl = commitUrl;
   }
 
 
-  public CodeReferenceModel commitHash(String commitHash) {
+  public CodeReferenceModel commitHash(@javax.annotation.Nullable String commitHash) {
     this.commitHash = commitHash;
     return this;
   }
@@ -170,12 +177,12 @@ public class CodeReferenceModel {
     return commitHash;
   }
 
-  public void setCommitHash(String commitHash) {
+  public void setCommitHash(@javax.annotation.Nullable String commitHash) {
     this.commitHash = commitHash;
   }
 
 
-  public CodeReferenceModel syncedAt(OffsetDateTime syncedAt) {
+  public CodeReferenceModel syncedAt(@javax.annotation.Nonnull OffsetDateTime syncedAt) {
     this.syncedAt = syncedAt;
     return this;
   }
@@ -189,12 +196,12 @@ public class CodeReferenceModel {
     return syncedAt;
   }
 
-  public void setSyncedAt(OffsetDateTime syncedAt) {
+  public void setSyncedAt(@javax.annotation.Nonnull OffsetDateTime syncedAt) {
     this.syncedAt = syncedAt;
   }
 
 
-  public CodeReferenceModel repository(String repository) {
+  public CodeReferenceModel repository(@javax.annotation.Nullable String repository) {
     this.repository = repository;
     return this;
   }
@@ -208,12 +215,12 @@ public class CodeReferenceModel {
     return repository;
   }
 
-  public void setRepository(String repository) {
+  public void setRepository(@javax.annotation.Nullable String repository) {
     this.repository = repository;
   }
 
 
-  public CodeReferenceModel codeReferenceId(UUID codeReferenceId) {
+  public CodeReferenceModel codeReferenceId(@javax.annotation.Nonnull UUID codeReferenceId) {
     this.codeReferenceId = codeReferenceId;
     return this;
   }
@@ -227,12 +234,12 @@ public class CodeReferenceModel {
     return codeReferenceId;
   }
 
-  public void setCodeReferenceId(UUID codeReferenceId) {
+  public void setCodeReferenceId(@javax.annotation.Nonnull UUID codeReferenceId) {
     this.codeReferenceId = codeReferenceId;
   }
 
 
-  public CodeReferenceModel uploader(String uploader) {
+  public CodeReferenceModel uploader(@javax.annotation.Nullable String uploader) {
     this.uploader = uploader;
     return this;
   }
@@ -246,7 +253,7 @@ public class CodeReferenceModel {
     return uploader;
   }
 
-  public void setUploader(String uploader) {
+  public void setUploader(@javax.annotation.Nullable String uploader) {
     this.uploader = uploader;
   }
 
@@ -343,10 +350,7 @@ public class CodeReferenceModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -355,26 +359,10 @@ public class CodeReferenceModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("branch");
-    openapiFields.add("references");
-    openapiFields.add("commitUrl");
-    openapiFields.add("commitHash");
-    openapiFields.add("syncedAt");
-    openapiFields.add("repository");
-    openapiFields.add("codeReferenceId");
-    openapiFields.add("uploader");
+    openapiFields = new HashSet<String>(Arrays.asList("branch", "references", "commitUrl", "commitHash", "syncedAt", "repository", "codeReferenceId", "uploader"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("branch");
-    openapiRequiredFields.add("references");
-    openapiRequiredFields.add("commitUrl");
-    openapiRequiredFields.add("commitHash");
-    openapiRequiredFields.add("syncedAt");
-    openapiRequiredFields.add("repository");
-    openapiRequiredFields.add("codeReferenceId");
-    openapiRequiredFields.add("uploader");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("branch", "references", "commitUrl", "commitHash", "syncedAt", "repository", "codeReferenceId", "uploader"));
   }
 
   /**
@@ -386,44 +374,44 @@ public class CodeReferenceModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CodeReferenceModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in CodeReferenceModel is not found in the empty JSON string", CodeReferenceModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in CodeReferenceModel is not found in the empty JSON string", CodeReferenceModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : CodeReferenceModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("branch") != null && !jsonObj.get("branch").isJsonNull()) && !jsonObj.get("branch").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `branch` to be a primitive type in the JSON string but got `%s`", jsonObj.get("branch").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `branch` to be a primitive type in the JSON string but got `%s`", jsonObj.get("branch").toString()));
       }
-      // ensure the json data is an array
-      if (!jsonObj.get("references").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `references` to be an array in the JSON string but got `%s`", jsonObj.get("references").toString()));
+      if (jsonObj.get("references") != null && !jsonObj.get("references").isJsonNull()) {
+        if (!jsonObj.get("references").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `references` to be an array in the JSON string but got `%s`", jsonObj.get("references").toString()));
+        }
+        JsonArray jsonArrayreferences = jsonObj.getAsJsonArray("references");
+        // validate the required field `references` (array)
+        for (int i = 0; i < jsonArrayreferences.size(); i++) {
+          ReferenceLinesModel.validateJsonElement(jsonArrayreferences.get(i));
+        }
       }
-
-      JsonArray jsonArrayreferences = jsonObj.getAsJsonArray("references");
-      // validate the required field `references` (array)
-      for (int i = 0; i < jsonArrayreferences.size(); i++) {
-        ReferenceLinesModel.validateJsonElement(jsonArrayreferences.get(i));
-      };
       if ((jsonObj.get("commitUrl") != null && !jsonObj.get("commitUrl").isJsonNull()) && !jsonObj.get("commitUrl").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `commitUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("commitUrl").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `commitUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("commitUrl").toString()));
       }
       if ((jsonObj.get("commitHash") != null && !jsonObj.get("commitHash").isJsonNull()) && !jsonObj.get("commitHash").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `commitHash` to be a primitive type in the JSON string but got `%s`", jsonObj.get("commitHash").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `commitHash` to be a primitive type in the JSON string but got `%s`", jsonObj.get("commitHash").toString()));
       }
       if ((jsonObj.get("repository") != null && !jsonObj.get("repository").isJsonNull()) && !jsonObj.get("repository").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `repository` to be a primitive type in the JSON string but got `%s`", jsonObj.get("repository").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `repository` to be a primitive type in the JSON string but got `%s`", jsonObj.get("repository").toString()));
       }
       if (!jsonObj.get("codeReferenceId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `codeReferenceId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("codeReferenceId").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `codeReferenceId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("codeReferenceId").toString()));
       }
       if ((jsonObj.get("uploader") != null && !jsonObj.get("uploader").isJsonNull()) && !jsonObj.get("uploader").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `uploader` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uploader").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `uploader` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uploader").toString()));
       }
   }
 
@@ -484,7 +472,7 @@ public class CodeReferenceModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

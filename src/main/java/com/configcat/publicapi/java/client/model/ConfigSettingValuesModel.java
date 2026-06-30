@@ -43,7 +43,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -55,32 +54,37 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * ConfigSettingValuesModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class ConfigSettingValuesModel {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
+  @javax.annotation.Nonnull
   private ConfigModel config;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT = "environment";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT)
+  @javax.annotation.Nonnull
   private EnvironmentModel environment;
 
   public static final String SERIALIZED_NAME_READ_ONLY = "readOnly";
   @SerializedName(SERIALIZED_NAME_READ_ONLY)
+  @javax.annotation.Nonnull
   private Boolean readOnly;
 
   public static final String SERIALIZED_NAME_SETTING_VALUES = "settingValues";
   @SerializedName(SERIALIZED_NAME_SETTING_VALUES)
+  @javax.annotation.Nonnull
   private List<ConfigSettingValueModel> settingValues = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_FEATURE_FLAG_LIMITATIONS = "featureFlagLimitations";
   @SerializedName(SERIALIZED_NAME_FEATURE_FLAG_LIMITATIONS)
+  @javax.annotation.Nonnull
   private FeatureFlagLimitations featureFlagLimitations;
 
   public ConfigSettingValuesModel() {
   }
 
-  public ConfigSettingValuesModel config(ConfigModel config) {
+  public ConfigSettingValuesModel config(@javax.annotation.Nonnull ConfigModel config) {
     this.config = config;
     return this;
   }
@@ -94,12 +98,12 @@ public class ConfigSettingValuesModel {
     return config;
   }
 
-  public void setConfig(ConfigModel config) {
+  public void setConfig(@javax.annotation.Nonnull ConfigModel config) {
     this.config = config;
   }
 
 
-  public ConfigSettingValuesModel environment(EnvironmentModel environment) {
+  public ConfigSettingValuesModel environment(@javax.annotation.Nonnull EnvironmentModel environment) {
     this.environment = environment;
     return this;
   }
@@ -113,12 +117,12 @@ public class ConfigSettingValuesModel {
     return environment;
   }
 
-  public void setEnvironment(EnvironmentModel environment) {
+  public void setEnvironment(@javax.annotation.Nonnull EnvironmentModel environment) {
     this.environment = environment;
   }
 
 
-  public ConfigSettingValuesModel readOnly(Boolean readOnly) {
+  public ConfigSettingValuesModel readOnly(@javax.annotation.Nonnull Boolean readOnly) {
     this.readOnly = readOnly;
     return this;
   }
@@ -132,12 +136,12 @@ public class ConfigSettingValuesModel {
     return readOnly;
   }
 
-  public void setReadOnly(Boolean readOnly) {
+  public void setReadOnly(@javax.annotation.Nonnull Boolean readOnly) {
     this.readOnly = readOnly;
   }
 
 
-  public ConfigSettingValuesModel settingValues(List<ConfigSettingValueModel> settingValues) {
+  public ConfigSettingValuesModel settingValues(@javax.annotation.Nonnull List<ConfigSettingValueModel> settingValues) {
     this.settingValues = settingValues;
     return this;
   }
@@ -159,12 +163,12 @@ public class ConfigSettingValuesModel {
     return settingValues;
   }
 
-  public void setSettingValues(List<ConfigSettingValueModel> settingValues) {
+  public void setSettingValues(@javax.annotation.Nonnull List<ConfigSettingValueModel> settingValues) {
     this.settingValues = settingValues;
   }
 
 
-  public ConfigSettingValuesModel featureFlagLimitations(FeatureFlagLimitations featureFlagLimitations) {
+  public ConfigSettingValuesModel featureFlagLimitations(@javax.annotation.Nonnull FeatureFlagLimitations featureFlagLimitations) {
     this.featureFlagLimitations = featureFlagLimitations;
     return this;
   }
@@ -178,7 +182,7 @@ public class ConfigSettingValuesModel {
     return featureFlagLimitations;
   }
 
-  public void setFeatureFlagLimitations(FeatureFlagLimitations featureFlagLimitations) {
+  public void setFeatureFlagLimitations(@javax.annotation.Nonnull FeatureFlagLimitations featureFlagLimitations) {
     this.featureFlagLimitations = featureFlagLimitations;
   }
 
@@ -269,10 +273,7 @@ public class ConfigSettingValuesModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -281,20 +282,10 @@ public class ConfigSettingValuesModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("config");
-    openapiFields.add("environment");
-    openapiFields.add("readOnly");
-    openapiFields.add("settingValues");
-    openapiFields.add("featureFlagLimitations");
+    openapiFields = new HashSet<String>(Arrays.asList("config", "environment", "readOnly", "settingValues", "featureFlagLimitations"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("config");
-    openapiRequiredFields.add("environment");
-    openapiRequiredFields.add("readOnly");
-    openapiRequiredFields.add("settingValues");
-    openapiRequiredFields.add("featureFlagLimitations");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("config", "environment", "readOnly", "settingValues", "featureFlagLimitations"));
   }
 
   /**
@@ -306,14 +297,14 @@ public class ConfigSettingValuesModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ConfigSettingValuesModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ConfigSettingValuesModel is not found in the empty JSON string", ConfigSettingValuesModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ConfigSettingValuesModel is not found in the empty JSON string", ConfigSettingValuesModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ConfigSettingValuesModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -321,16 +312,16 @@ public class ConfigSettingValuesModel {
       ConfigModel.validateJsonElement(jsonObj.get("config"));
       // validate the required field `environment`
       EnvironmentModel.validateJsonElement(jsonObj.get("environment"));
-      // ensure the json data is an array
-      if (!jsonObj.get("settingValues").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `settingValues` to be an array in the JSON string but got `%s`", jsonObj.get("settingValues").toString()));
+      if (jsonObj.get("settingValues") != null) {
+        if (!jsonObj.get("settingValues").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `settingValues` to be an array in the JSON string but got `%s`", jsonObj.get("settingValues").toString()));
+        }
+        JsonArray jsonArraysettingValues = jsonObj.getAsJsonArray("settingValues");
+        // validate the required field `settingValues` (array)
+        for (int i = 0; i < jsonArraysettingValues.size(); i++) {
+          ConfigSettingValueModel.validateJsonElement(jsonArraysettingValues.get(i));
+        }
       }
-
-      JsonArray jsonArraysettingValues = jsonObj.getAsJsonArray("settingValues");
-      // validate the required field `settingValues` (array)
-      for (int i = 0; i < jsonArraysettingValues.size(); i++) {
-        ConfigSettingValueModel.validateJsonElement(jsonArraysettingValues.get(i));
-      };
       // validate the required field `featureFlagLimitations`
       FeatureFlagLimitations.validateJsonElement(jsonObj.get("featureFlagLimitations"));
   }
@@ -392,7 +383,7 @@ public class ConfigSettingValuesModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

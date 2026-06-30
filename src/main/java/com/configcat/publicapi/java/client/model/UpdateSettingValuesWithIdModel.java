@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,16 +51,17 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * UpdateSettingValuesWithIdModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class UpdateSettingValuesWithIdModel {
   public static final String SERIALIZED_NAME_SETTING_VALUES = "settingValues";
   @SerializedName(SERIALIZED_NAME_SETTING_VALUES)
+  @javax.annotation.Nullable
   private List<UpdateSettingValueWithSettingIdModel> settingValues = new ArrayList<>();
 
   public UpdateSettingValuesWithIdModel() {
   }
 
-  public UpdateSettingValuesWithIdModel settingValues(List<UpdateSettingValueWithSettingIdModel> settingValues) {
+  public UpdateSettingValuesWithIdModel settingValues(@javax.annotation.Nullable List<UpdateSettingValueWithSettingIdModel> settingValues) {
     this.settingValues = settingValues;
     return this;
   }
@@ -83,7 +83,7 @@ public class UpdateSettingValuesWithIdModel {
     return settingValues;
   }
 
-  public void setSettingValues(List<UpdateSettingValueWithSettingIdModel> settingValues) {
+  public void setSettingValues(@javax.annotation.Nullable List<UpdateSettingValueWithSettingIdModel> settingValues) {
     this.settingValues = settingValues;
   }
 
@@ -166,10 +166,7 @@ public class UpdateSettingValuesWithIdModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -178,11 +175,10 @@ public class UpdateSettingValuesWithIdModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("settingValues");
+    openapiFields = new HashSet<String>(Arrays.asList("settingValues"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -194,7 +190,7 @@ public class UpdateSettingValuesWithIdModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!UpdateSettingValuesWithIdModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdateSettingValuesWithIdModel is not found in the empty JSON string", UpdateSettingValuesWithIdModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in UpdateSettingValuesWithIdModel is not found in the empty JSON string", UpdateSettingValuesWithIdModel.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -203,7 +199,7 @@ public class UpdateSettingValuesWithIdModel {
         if (jsonArraysettingValues != null) {
           // ensure the json data is an array
           if (!jsonObj.get("settingValues").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `settingValues` to be an array in the JSON string but got `%s`", jsonObj.get("settingValues").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `settingValues` to be an array in the JSON string but got `%s`", jsonObj.get("settingValues").toString()));
           }
 
           // validate the optional field `settingValues` (array)
@@ -271,7 +267,7 @@ public class UpdateSettingValuesWithIdModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
