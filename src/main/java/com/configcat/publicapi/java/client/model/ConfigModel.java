@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,40 +51,47 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * Details of the Config.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class ConfigModel {
   public static final String SERIALIZED_NAME_PRODUCT = "product";
   @SerializedName(SERIALIZED_NAME_PRODUCT)
+  @javax.annotation.Nonnull
   private ProductModel product;
 
   public static final String SERIALIZED_NAME_CONFIG_ID = "configId";
   @SerializedName(SERIALIZED_NAME_CONFIG_ID)
+  @javax.annotation.Nonnull
   private UUID configId;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_ORDER = "order";
   @SerializedName(SERIALIZED_NAME_ORDER)
+  @javax.annotation.Nonnull
   private Integer order;
 
   public static final String SERIALIZED_NAME_MIGRATED_CONFIG_ID = "migratedConfigId";
   @SerializedName(SERIALIZED_NAME_MIGRATED_CONFIG_ID)
+  @javax.annotation.Nullable
   private UUID migratedConfigId;
 
   public static final String SERIALIZED_NAME_EVALUATION_VERSION = "evaluationVersion";
   @SerializedName(SERIALIZED_NAME_EVALUATION_VERSION)
+  @javax.annotation.Nonnull
   private EvaluationVersion evaluationVersion;
 
   public ConfigModel() {
   }
 
-  public ConfigModel product(ProductModel product) {
+  public ConfigModel product(@javax.annotation.Nonnull ProductModel product) {
     this.product = product;
     return this;
   }
@@ -99,12 +105,12 @@ public class ConfigModel {
     return product;
   }
 
-  public void setProduct(ProductModel product) {
+  public void setProduct(@javax.annotation.Nonnull ProductModel product) {
     this.product = product;
   }
 
 
-  public ConfigModel configId(UUID configId) {
+  public ConfigModel configId(@javax.annotation.Nonnull UUID configId) {
     this.configId = configId;
     return this;
   }
@@ -118,12 +124,12 @@ public class ConfigModel {
     return configId;
   }
 
-  public void setConfigId(UUID configId) {
+  public void setConfigId(@javax.annotation.Nonnull UUID configId) {
     this.configId = configId;
   }
 
 
-  public ConfigModel name(String name) {
+  public ConfigModel name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -137,12 +143,12 @@ public class ConfigModel {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public ConfigModel description(String description) {
+  public ConfigModel description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -156,12 +162,12 @@ public class ConfigModel {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public ConfigModel order(Integer order) {
+  public ConfigModel order(@javax.annotation.Nonnull Integer order) {
     this.order = order;
     return this;
   }
@@ -175,12 +181,12 @@ public class ConfigModel {
     return order;
   }
 
-  public void setOrder(Integer order) {
+  public void setOrder(@javax.annotation.Nonnull Integer order) {
     this.order = order;
   }
 
 
-  public ConfigModel migratedConfigId(UUID migratedConfigId) {
+  public ConfigModel migratedConfigId(@javax.annotation.Nullable UUID migratedConfigId) {
     this.migratedConfigId = migratedConfigId;
     return this;
   }
@@ -194,12 +200,12 @@ public class ConfigModel {
     return migratedConfigId;
   }
 
-  public void setMigratedConfigId(UUID migratedConfigId) {
+  public void setMigratedConfigId(@javax.annotation.Nullable UUID migratedConfigId) {
     this.migratedConfigId = migratedConfigId;
   }
 
 
-  public ConfigModel evaluationVersion(EvaluationVersion evaluationVersion) {
+  public ConfigModel evaluationVersion(@javax.annotation.Nonnull EvaluationVersion evaluationVersion) {
     this.evaluationVersion = evaluationVersion;
     return this;
   }
@@ -213,7 +219,7 @@ public class ConfigModel {
     return evaluationVersion;
   }
 
-  public void setEvaluationVersion(EvaluationVersion evaluationVersion) {
+  public void setEvaluationVersion(@javax.annotation.Nonnull EvaluationVersion evaluationVersion) {
     this.evaluationVersion = evaluationVersion;
   }
 
@@ -308,10 +314,7 @@ public class ConfigModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -320,24 +323,10 @@ public class ConfigModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("product");
-    openapiFields.add("configId");
-    openapiFields.add("name");
-    openapiFields.add("description");
-    openapiFields.add("order");
-    openapiFields.add("migratedConfigId");
-    openapiFields.add("evaluationVersion");
+    openapiFields = new HashSet<String>(Arrays.asList("product", "configId", "name", "description", "order", "migratedConfigId", "evaluationVersion"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("product");
-    openapiRequiredFields.add("configId");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("description");
-    openapiRequiredFields.add("order");
-    openapiRequiredFields.add("migratedConfigId");
-    openapiRequiredFields.add("evaluationVersion");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("product", "configId", "name", "description", "order", "migratedConfigId", "evaluationVersion"));
   }
 
   /**
@@ -349,30 +338,30 @@ public class ConfigModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ConfigModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ConfigModel is not found in the empty JSON string", ConfigModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ConfigModel is not found in the empty JSON string", ConfigModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ConfigModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the required field `product`
       ProductModel.validateJsonElement(jsonObj.get("product"));
       if (!jsonObj.get("configId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `configId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("configId").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `configId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("configId").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if ((jsonObj.get("migratedConfigId") != null && !jsonObj.get("migratedConfigId").isJsonNull()) && !jsonObj.get("migratedConfigId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `migratedConfigId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("migratedConfigId").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `migratedConfigId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("migratedConfigId").toString()));
       }
       // validate the required field `evaluationVersion`
       EvaluationVersion.validateJsonElement(jsonObj.get("evaluationVersion"));
@@ -435,7 +424,7 @@ public class ConfigModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

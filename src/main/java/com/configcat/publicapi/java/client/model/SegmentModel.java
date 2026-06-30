@@ -41,7 +41,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -53,64 +52,77 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * SegmentModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class SegmentModel {
   public static final String SERIALIZED_NAME_PRODUCT = "product";
   @SerializedName(SERIALIZED_NAME_PRODUCT)
+  @javax.annotation.Nonnull
   private ProductModel product;
 
   public static final String SERIALIZED_NAME_SEGMENT_ID = "segmentId";
   @SerializedName(SERIALIZED_NAME_SEGMENT_ID)
+  @javax.annotation.Nonnull
   private UUID segmentId;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_CREATOR_EMAIL = "creatorEmail";
   @SerializedName(SERIALIZED_NAME_CREATOR_EMAIL)
+  @javax.annotation.Nullable
   private String creatorEmail;
 
   public static final String SERIALIZED_NAME_CREATOR_FULL_NAME = "creatorFullName";
   @SerializedName(SERIALIZED_NAME_CREATOR_FULL_NAME)
+  @javax.annotation.Nullable
   private String creatorFullName;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "createdAt";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nonnull
   private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_LAST_UPDATER_EMAIL = "lastUpdaterEmail";
   @SerializedName(SERIALIZED_NAME_LAST_UPDATER_EMAIL)
+  @javax.annotation.Nullable
   private String lastUpdaterEmail;
 
   public static final String SERIALIZED_NAME_LAST_UPDATER_FULL_NAME = "lastUpdaterFullName";
   @SerializedName(SERIALIZED_NAME_LAST_UPDATER_FULL_NAME)
+  @javax.annotation.Nullable
   private String lastUpdaterFullName;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updatedAt";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
+  @javax.annotation.Nonnull
   private OffsetDateTime updatedAt;
 
   public static final String SERIALIZED_NAME_COMPARISON_ATTRIBUTE = "comparisonAttribute";
   @SerializedName(SERIALIZED_NAME_COMPARISON_ATTRIBUTE)
+  @javax.annotation.Nonnull
   private String comparisonAttribute;
 
   public static final String SERIALIZED_NAME_COMPARATOR = "comparator";
   @SerializedName(SERIALIZED_NAME_COMPARATOR)
+  @javax.annotation.Nonnull
   private RolloutRuleComparator comparator;
 
   public static final String SERIALIZED_NAME_COMPARISON_VALUE = "comparisonValue";
   @SerializedName(SERIALIZED_NAME_COMPARISON_VALUE)
+  @javax.annotation.Nonnull
   private String comparisonValue;
 
   public SegmentModel() {
   }
 
-  public SegmentModel product(ProductModel product) {
+  public SegmentModel product(@javax.annotation.Nonnull ProductModel product) {
     this.product = product;
     return this;
   }
@@ -124,12 +136,12 @@ public class SegmentModel {
     return product;
   }
 
-  public void setProduct(ProductModel product) {
+  public void setProduct(@javax.annotation.Nonnull ProductModel product) {
     this.product = product;
   }
 
 
-  public SegmentModel segmentId(UUID segmentId) {
+  public SegmentModel segmentId(@javax.annotation.Nonnull UUID segmentId) {
     this.segmentId = segmentId;
     return this;
   }
@@ -143,12 +155,12 @@ public class SegmentModel {
     return segmentId;
   }
 
-  public void setSegmentId(UUID segmentId) {
+  public void setSegmentId(@javax.annotation.Nonnull UUID segmentId) {
     this.segmentId = segmentId;
   }
 
 
-  public SegmentModel name(String name) {
+  public SegmentModel name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -162,12 +174,12 @@ public class SegmentModel {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public SegmentModel description(String description) {
+  public SegmentModel description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -181,12 +193,12 @@ public class SegmentModel {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public SegmentModel creatorEmail(String creatorEmail) {
+  public SegmentModel creatorEmail(@javax.annotation.Nullable String creatorEmail) {
     this.creatorEmail = creatorEmail;
     return this;
   }
@@ -200,12 +212,12 @@ public class SegmentModel {
     return creatorEmail;
   }
 
-  public void setCreatorEmail(String creatorEmail) {
+  public void setCreatorEmail(@javax.annotation.Nullable String creatorEmail) {
     this.creatorEmail = creatorEmail;
   }
 
 
-  public SegmentModel creatorFullName(String creatorFullName) {
+  public SegmentModel creatorFullName(@javax.annotation.Nullable String creatorFullName) {
     this.creatorFullName = creatorFullName;
     return this;
   }
@@ -219,12 +231,12 @@ public class SegmentModel {
     return creatorFullName;
   }
 
-  public void setCreatorFullName(String creatorFullName) {
+  public void setCreatorFullName(@javax.annotation.Nullable String creatorFullName) {
     this.creatorFullName = creatorFullName;
   }
 
 
-  public SegmentModel createdAt(OffsetDateTime createdAt) {
+  public SegmentModel createdAt(@javax.annotation.Nonnull OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -238,12 +250,12 @@ public class SegmentModel {
     return createdAt;
   }
 
-  public void setCreatedAt(OffsetDateTime createdAt) {
+  public void setCreatedAt(@javax.annotation.Nonnull OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public SegmentModel lastUpdaterEmail(String lastUpdaterEmail) {
+  public SegmentModel lastUpdaterEmail(@javax.annotation.Nullable String lastUpdaterEmail) {
     this.lastUpdaterEmail = lastUpdaterEmail;
     return this;
   }
@@ -257,12 +269,12 @@ public class SegmentModel {
     return lastUpdaterEmail;
   }
 
-  public void setLastUpdaterEmail(String lastUpdaterEmail) {
+  public void setLastUpdaterEmail(@javax.annotation.Nullable String lastUpdaterEmail) {
     this.lastUpdaterEmail = lastUpdaterEmail;
   }
 
 
-  public SegmentModel lastUpdaterFullName(String lastUpdaterFullName) {
+  public SegmentModel lastUpdaterFullName(@javax.annotation.Nullable String lastUpdaterFullName) {
     this.lastUpdaterFullName = lastUpdaterFullName;
     return this;
   }
@@ -276,12 +288,12 @@ public class SegmentModel {
     return lastUpdaterFullName;
   }
 
-  public void setLastUpdaterFullName(String lastUpdaterFullName) {
+  public void setLastUpdaterFullName(@javax.annotation.Nullable String lastUpdaterFullName) {
     this.lastUpdaterFullName = lastUpdaterFullName;
   }
 
 
-  public SegmentModel updatedAt(OffsetDateTime updatedAt) {
+  public SegmentModel updatedAt(@javax.annotation.Nonnull OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -295,12 +307,12 @@ public class SegmentModel {
     return updatedAt;
   }
 
-  public void setUpdatedAt(OffsetDateTime updatedAt) {
+  public void setUpdatedAt(@javax.annotation.Nonnull OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
   }
 
 
-  public SegmentModel comparisonAttribute(String comparisonAttribute) {
+  public SegmentModel comparisonAttribute(@javax.annotation.Nonnull String comparisonAttribute) {
     this.comparisonAttribute = comparisonAttribute;
     return this;
   }
@@ -314,12 +326,12 @@ public class SegmentModel {
     return comparisonAttribute;
   }
 
-  public void setComparisonAttribute(String comparisonAttribute) {
+  public void setComparisonAttribute(@javax.annotation.Nonnull String comparisonAttribute) {
     this.comparisonAttribute = comparisonAttribute;
   }
 
 
-  public SegmentModel comparator(RolloutRuleComparator comparator) {
+  public SegmentModel comparator(@javax.annotation.Nonnull RolloutRuleComparator comparator) {
     this.comparator = comparator;
     return this;
   }
@@ -333,12 +345,12 @@ public class SegmentModel {
     return comparator;
   }
 
-  public void setComparator(RolloutRuleComparator comparator) {
+  public void setComparator(@javax.annotation.Nonnull RolloutRuleComparator comparator) {
     this.comparator = comparator;
   }
 
 
-  public SegmentModel comparisonValue(String comparisonValue) {
+  public SegmentModel comparisonValue(@javax.annotation.Nonnull String comparisonValue) {
     this.comparisonValue = comparisonValue;
     return this;
   }
@@ -352,7 +364,7 @@ public class SegmentModel {
     return comparisonValue;
   }
 
-  public void setComparisonValue(String comparisonValue) {
+  public void setComparisonValue(@javax.annotation.Nonnull String comparisonValue) {
     this.comparisonValue = comparisonValue;
   }
 
@@ -459,10 +471,7 @@ public class SegmentModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -471,36 +480,10 @@ public class SegmentModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("product");
-    openapiFields.add("segmentId");
-    openapiFields.add("name");
-    openapiFields.add("description");
-    openapiFields.add("creatorEmail");
-    openapiFields.add("creatorFullName");
-    openapiFields.add("createdAt");
-    openapiFields.add("lastUpdaterEmail");
-    openapiFields.add("lastUpdaterFullName");
-    openapiFields.add("updatedAt");
-    openapiFields.add("comparisonAttribute");
-    openapiFields.add("comparator");
-    openapiFields.add("comparisonValue");
+    openapiFields = new HashSet<String>(Arrays.asList("product", "segmentId", "name", "description", "creatorEmail", "creatorFullName", "createdAt", "lastUpdaterEmail", "lastUpdaterFullName", "updatedAt", "comparisonAttribute", "comparator", "comparisonValue"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("product");
-    openapiRequiredFields.add("segmentId");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("description");
-    openapiRequiredFields.add("creatorEmail");
-    openapiRequiredFields.add("creatorFullName");
-    openapiRequiredFields.add("createdAt");
-    openapiRequiredFields.add("lastUpdaterEmail");
-    openapiRequiredFields.add("lastUpdaterFullName");
-    openapiRequiredFields.add("updatedAt");
-    openapiRequiredFields.add("comparisonAttribute");
-    openapiRequiredFields.add("comparator");
-    openapiRequiredFields.add("comparisonValue");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("product", "segmentId", "name", "description", "creatorEmail", "creatorFullName", "createdAt", "lastUpdaterEmail", "lastUpdaterFullName", "updatedAt", "comparisonAttribute", "comparator", "comparisonValue"));
   }
 
   /**
@@ -512,47 +495,47 @@ public class SegmentModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SegmentModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SegmentModel is not found in the empty JSON string", SegmentModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in SegmentModel is not found in the empty JSON string", SegmentModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : SegmentModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the required field `product`
       ProductModel.validateJsonElement(jsonObj.get("product"));
       if (!jsonObj.get("segmentId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `segmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("segmentId").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `segmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("segmentId").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if ((jsonObj.get("creatorEmail") != null && !jsonObj.get("creatorEmail").isJsonNull()) && !jsonObj.get("creatorEmail").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `creatorEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("creatorEmail").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `creatorEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("creatorEmail").toString()));
       }
       if ((jsonObj.get("creatorFullName") != null && !jsonObj.get("creatorFullName").isJsonNull()) && !jsonObj.get("creatorFullName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `creatorFullName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("creatorFullName").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `creatorFullName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("creatorFullName").toString()));
       }
       if ((jsonObj.get("lastUpdaterEmail") != null && !jsonObj.get("lastUpdaterEmail").isJsonNull()) && !jsonObj.get("lastUpdaterEmail").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `lastUpdaterEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lastUpdaterEmail").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `lastUpdaterEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lastUpdaterEmail").toString()));
       }
       if ((jsonObj.get("lastUpdaterFullName") != null && !jsonObj.get("lastUpdaterFullName").isJsonNull()) && !jsonObj.get("lastUpdaterFullName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `lastUpdaterFullName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lastUpdaterFullName").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `lastUpdaterFullName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lastUpdaterFullName").toString()));
       }
       if (!jsonObj.get("comparisonAttribute").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `comparisonAttribute` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comparisonAttribute").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `comparisonAttribute` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comparisonAttribute").toString()));
       }
       // validate the required field `comparator`
       RolloutRuleComparator.validateJsonElement(jsonObj.get("comparator"));
       if (!jsonObj.get("comparisonValue").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `comparisonValue` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comparisonValue").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `comparisonValue` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comparisonValue").toString()));
       }
   }
 
@@ -613,7 +596,7 @@ public class SegmentModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

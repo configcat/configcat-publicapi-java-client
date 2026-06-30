@@ -12,6 +12,8 @@
 |**showVariationId** | **Boolean** | Indicates whether a variation ID&#39;s must be shown on the ConfigCat Dashboard. |  [optional] |
 |**mandatorySettingHint** | **Boolean** | Indicates whether Feature flags and Settings must have a hint. |  [optional] |
 |**reasonRequiredEnvironments** | [**List&lt;UpdateReasonRequiredEnvironmentModel&gt;**](UpdateReasonRequiredEnvironmentModel.md) | List of Environments where mandatory note must be set before saving and publishing. |  [optional] |
+|**approveRequired** | **Boolean** | Indicates that a mandatory approval is required before changes are applied. |  [optional] |
+|**approveRequiredEnvironments** | [**List&lt;UpdateApproveRequiredEnvironmentModel&gt;**](UpdateApproveRequiredEnvironmentModel.md) | List of Environments where mandatory approval must be given before changes are applied. |  [optional] |
 
 
 

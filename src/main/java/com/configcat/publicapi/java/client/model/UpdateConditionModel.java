@@ -41,7 +41,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -53,24 +52,27 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * UpdateConditionModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class UpdateConditionModel {
   public static final String SERIALIZED_NAME_USER_CONDITION = "userCondition";
   @SerializedName(SERIALIZED_NAME_USER_CONDITION)
+  @javax.annotation.Nullable
   private UpdateUserConditionModel userCondition;
 
   public static final String SERIALIZED_NAME_SEGMENT_CONDITION = "segmentCondition";
   @SerializedName(SERIALIZED_NAME_SEGMENT_CONDITION)
+  @javax.annotation.Nullable
   private UpdateSegmentConditionModel segmentCondition;
 
   public static final String SERIALIZED_NAME_PREREQUISITE_FLAG_CONDITION = "prerequisiteFlagCondition";
   @SerializedName(SERIALIZED_NAME_PREREQUISITE_FLAG_CONDITION)
+  @javax.annotation.Nullable
   private UpdatePrerequisiteFlagConditionModel prerequisiteFlagCondition;
 
   public UpdateConditionModel() {
   }
 
-  public UpdateConditionModel userCondition(UpdateUserConditionModel userCondition) {
+  public UpdateConditionModel userCondition(@javax.annotation.Nullable UpdateUserConditionModel userCondition) {
     this.userCondition = userCondition;
     return this;
   }
@@ -84,12 +86,12 @@ public class UpdateConditionModel {
     return userCondition;
   }
 
-  public void setUserCondition(UpdateUserConditionModel userCondition) {
+  public void setUserCondition(@javax.annotation.Nullable UpdateUserConditionModel userCondition) {
     this.userCondition = userCondition;
   }
 
 
-  public UpdateConditionModel segmentCondition(UpdateSegmentConditionModel segmentCondition) {
+  public UpdateConditionModel segmentCondition(@javax.annotation.Nullable UpdateSegmentConditionModel segmentCondition) {
     this.segmentCondition = segmentCondition;
     return this;
   }
@@ -103,12 +105,12 @@ public class UpdateConditionModel {
     return segmentCondition;
   }
 
-  public void setSegmentCondition(UpdateSegmentConditionModel segmentCondition) {
+  public void setSegmentCondition(@javax.annotation.Nullable UpdateSegmentConditionModel segmentCondition) {
     this.segmentCondition = segmentCondition;
   }
 
 
-  public UpdateConditionModel prerequisiteFlagCondition(UpdatePrerequisiteFlagConditionModel prerequisiteFlagCondition) {
+  public UpdateConditionModel prerequisiteFlagCondition(@javax.annotation.Nullable UpdatePrerequisiteFlagConditionModel prerequisiteFlagCondition) {
     this.prerequisiteFlagCondition = prerequisiteFlagCondition;
     return this;
   }
@@ -122,7 +124,7 @@ public class UpdateConditionModel {
     return prerequisiteFlagCondition;
   }
 
-  public void setPrerequisiteFlagCondition(UpdatePrerequisiteFlagConditionModel prerequisiteFlagCondition) {
+  public void setPrerequisiteFlagCondition(@javax.annotation.Nullable UpdatePrerequisiteFlagConditionModel prerequisiteFlagCondition) {
     this.prerequisiteFlagCondition = prerequisiteFlagCondition;
   }
 
@@ -220,10 +222,7 @@ public class UpdateConditionModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -232,13 +231,10 @@ public class UpdateConditionModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("userCondition");
-    openapiFields.add("segmentCondition");
-    openapiFields.add("prerequisiteFlagCondition");
+    openapiFields = new HashSet<String>(Arrays.asList("userCondition", "segmentCondition", "prerequisiteFlagCondition"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -250,7 +246,7 @@ public class UpdateConditionModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!UpdateConditionModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdateConditionModel is not found in the empty JSON string", UpdateConditionModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in UpdateConditionModel is not found in the empty JSON string", UpdateConditionModel.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -325,7 +321,7 @@ public class UpdateConditionModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

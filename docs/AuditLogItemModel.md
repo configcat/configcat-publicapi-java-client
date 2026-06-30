@@ -10,8 +10,8 @@
 |**auditLogId** | **Long** |  |  |
 |**auditLogDateTime** | **OffsetDateTime** |  |  |
 |**auditLogTypeEnum** | **AuditLogType** |  |  |
-|**changeSetId** | **UUID** |  |  |
 |**truncated** | **Boolean** |  |  |
+|**modelVersion** | **Integer** |  |  |
 |**auditLogType** | **String** |  |  |
 |**userEmail** | **String** |  |  |
 |**userName** | **String** |  |  |

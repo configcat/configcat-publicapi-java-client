@@ -83,7 +83,8 @@ public class ConfigsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -91,7 +92,7 @@ public class ConfigsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createConfigCall(UUID productId, CreateConfigRequest createConfigRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createConfigCall(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull CreateConfigRequest createConfigRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -140,7 +141,7 @@ public class ConfigsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createConfigValidateBeforeCall(UUID productId, CreateConfigRequest createConfigRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createConfigValidateBeforeCall(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull CreateConfigRequest createConfigRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'productId' is set
         if (productId == null) {
             throw new ApiException("Missing the required parameter 'productId' when calling createConfig(Async)");
@@ -163,7 +164,8 @@ public class ConfigsApi {
      * @return ConfigModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -171,7 +173,7 @@ public class ConfigsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ConfigModel createConfig(UUID productId, CreateConfigRequest createConfigRequest) throws ApiException {
+    public ConfigModel createConfig(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull CreateConfigRequest createConfigRequest) throws ApiException {
         ApiResponse<ConfigModel> localVarResp = createConfigWithHttpInfo(productId, createConfigRequest);
         return localVarResp.getData();
     }
@@ -184,7 +186,8 @@ public class ConfigsApi {
      * @return ApiResponse&lt;ConfigModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -192,7 +195,7 @@ public class ConfigsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ConfigModel> createConfigWithHttpInfo(UUID productId, CreateConfigRequest createConfigRequest) throws ApiException {
+    public ApiResponse<ConfigModel> createConfigWithHttpInfo(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull CreateConfigRequest createConfigRequest) throws ApiException {
         okhttp3.Call localVarCall = createConfigValidateBeforeCall(productId, createConfigRequest, null);
         Type localVarReturnType = new TypeToken<ConfigModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -207,7 +210,8 @@ public class ConfigsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> When the creation was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -215,7 +219,7 @@ public class ConfigsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createConfigAsync(UUID productId, CreateConfigRequest createConfigRequest, final ApiCallback<ConfigModel> _callback) throws ApiException {
+    public okhttp3.Call createConfigAsync(@javax.annotation.Nonnull UUID productId, @javax.annotation.Nonnull CreateConfigRequest createConfigRequest, final ApiCallback<ConfigModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createConfigValidateBeforeCall(productId, createConfigRequest, _callback);
         Type localVarReturnType = new TypeToken<ConfigModel>(){}.getType();
@@ -229,7 +233,8 @@ public class ConfigsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -237,7 +242,7 @@ public class ConfigsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteConfigCall(UUID configId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteConfigCall(@javax.annotation.Nonnull UUID configId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -282,7 +287,7 @@ public class ConfigsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteConfigValidateBeforeCall(UUID configId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteConfigValidateBeforeCall(@javax.annotation.Nonnull UUID configId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'configId' is set
         if (configId == null) {
             throw new ApiException("Missing the required parameter 'configId' when calling deleteConfig(Async)");
@@ -298,7 +303,8 @@ public class ConfigsApi {
      * @param configId The identifier of the Config. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -306,7 +312,7 @@ public class ConfigsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteConfig(UUID configId) throws ApiException {
+    public void deleteConfig(@javax.annotation.Nonnull UUID configId) throws ApiException {
         deleteConfigWithHttpInfo(configId);
     }
 
@@ -317,7 +323,8 @@ public class ConfigsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -325,7 +332,7 @@ public class ConfigsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteConfigWithHttpInfo(UUID configId) throws ApiException {
+    public ApiResponse<Void> deleteConfigWithHttpInfo(@javax.annotation.Nonnull UUID configId) throws ApiException {
         okhttp3.Call localVarCall = deleteConfigValidateBeforeCall(configId, null);
         return localVarApiClient.execute(localVarCall);
     }
@@ -338,7 +345,8 @@ public class ConfigsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 204 </td><td> When the delete was successful. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -346,7 +354,7 @@ public class ConfigsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteConfigAsync(UUID configId, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteConfigAsync(@javax.annotation.Nonnull UUID configId, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteConfigValidateBeforeCall(configId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
@@ -359,7 +367,8 @@ public class ConfigsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the config data returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -367,7 +376,7 @@ public class ConfigsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getConfigCall(UUID configId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getConfigCall(@javax.annotation.Nonnull UUID configId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -413,7 +422,7 @@ public class ConfigsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getConfigValidateBeforeCall(UUID configId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getConfigValidateBeforeCall(@javax.annotation.Nonnull UUID configId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'configId' is set
         if (configId == null) {
             throw new ApiException("Missing the required parameter 'configId' when calling getConfig(Async)");
@@ -430,7 +439,8 @@ public class ConfigsApi {
      * @return ConfigModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the config data returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -438,7 +448,7 @@ public class ConfigsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ConfigModel getConfig(UUID configId) throws ApiException {
+    public ConfigModel getConfig(@javax.annotation.Nonnull UUID configId) throws ApiException {
         ApiResponse<ConfigModel> localVarResp = getConfigWithHttpInfo(configId);
         return localVarResp.getData();
     }
@@ -450,7 +460,8 @@ public class ConfigsApi {
      * @return ApiResponse&lt;ConfigModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the config data returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -458,7 +469,7 @@ public class ConfigsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ConfigModel> getConfigWithHttpInfo(UUID configId) throws ApiException {
+    public ApiResponse<ConfigModel> getConfigWithHttpInfo(@javax.annotation.Nonnull UUID configId) throws ApiException {
         okhttp3.Call localVarCall = getConfigValidateBeforeCall(configId, null);
         Type localVarReturnType = new TypeToken<ConfigModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -472,7 +483,8 @@ public class ConfigsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the config data returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -480,7 +492,7 @@ public class ConfigsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getConfigAsync(UUID configId, final ApiCallback<ConfigModel> _callback) throws ApiException {
+    public okhttp3.Call getConfigAsync(@javax.annotation.Nonnull UUID configId, final ApiCallback<ConfigModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getConfigValidateBeforeCall(configId, _callback);
         Type localVarReturnType = new TypeToken<ConfigModel>(){}.getType();
@@ -494,7 +506,8 @@ public class ConfigsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -502,7 +515,7 @@ public class ConfigsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getConfigsCall(UUID productId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getConfigsCall(@javax.annotation.Nonnull UUID productId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -548,7 +561,7 @@ public class ConfigsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getConfigsValidateBeforeCall(UUID productId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getConfigsValidateBeforeCall(@javax.annotation.Nonnull UUID productId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'productId' is set
         if (productId == null) {
             throw new ApiException("Missing the required parameter 'productId' when calling getConfigs(Async)");
@@ -565,7 +578,8 @@ public class ConfigsApi {
      * @return List&lt;ConfigModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -573,7 +587,7 @@ public class ConfigsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public List<ConfigModel> getConfigs(UUID productId) throws ApiException {
+    public List<ConfigModel> getConfigs(@javax.annotation.Nonnull UUID productId) throws ApiException {
         ApiResponse<List<ConfigModel>> localVarResp = getConfigsWithHttpInfo(productId);
         return localVarResp.getData();
     }
@@ -585,7 +599,8 @@ public class ConfigsApi {
      * @return ApiResponse&lt;List&lt;ConfigModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -593,7 +608,7 @@ public class ConfigsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<ConfigModel>> getConfigsWithHttpInfo(UUID productId) throws ApiException {
+    public ApiResponse<List<ConfigModel>> getConfigsWithHttpInfo(@javax.annotation.Nonnull UUID productId) throws ApiException {
         okhttp3.Call localVarCall = getConfigsValidateBeforeCall(productId, null);
         Type localVarReturnType = new TypeToken<List<ConfigModel>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -607,7 +622,8 @@ public class ConfigsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -615,7 +631,7 @@ public class ConfigsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getConfigsAsync(UUID productId, final ApiCallback<List<ConfigModel>> _callback) throws ApiException {
+    public okhttp3.Call getConfigsAsync(@javax.annotation.Nonnull UUID productId, final ApiCallback<List<ConfigModel>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getConfigsValidateBeforeCall(productId, _callback);
         Type localVarReturnType = new TypeToken<List<ConfigModel>>(){}.getType();
@@ -630,7 +646,8 @@ public class ConfigsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -638,7 +655,7 @@ public class ConfigsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateConfigCall(UUID configId, UpdateConfigRequest updateConfigRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateConfigCall(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UpdateConfigRequest updateConfigRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -687,7 +704,7 @@ public class ConfigsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateConfigValidateBeforeCall(UUID configId, UpdateConfigRequest updateConfigRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateConfigValidateBeforeCall(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UpdateConfigRequest updateConfigRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'configId' is set
         if (configId == null) {
             throw new ApiException("Missing the required parameter 'configId' when calling updateConfig(Async)");
@@ -710,7 +727,8 @@ public class ConfigsApi {
      * @return ConfigModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -718,7 +736,7 @@ public class ConfigsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ConfigModel updateConfig(UUID configId, UpdateConfigRequest updateConfigRequest) throws ApiException {
+    public ConfigModel updateConfig(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UpdateConfigRequest updateConfigRequest) throws ApiException {
         ApiResponse<ConfigModel> localVarResp = updateConfigWithHttpInfo(configId, updateConfigRequest);
         return localVarResp.getData();
     }
@@ -731,7 +749,8 @@ public class ConfigsApi {
      * @return ApiResponse&lt;ConfigModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -739,7 +758,7 @@ public class ConfigsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ConfigModel> updateConfigWithHttpInfo(UUID configId, UpdateConfigRequest updateConfigRequest) throws ApiException {
+    public ApiResponse<ConfigModel> updateConfigWithHttpInfo(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UpdateConfigRequest updateConfigRequest) throws ApiException {
         okhttp3.Call localVarCall = updateConfigValidateBeforeCall(configId, updateConfigRequest, null);
         Type localVarReturnType = new TypeToken<ConfigModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -754,7 +773,8 @@ public class ConfigsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -762,7 +782,7 @@ public class ConfigsApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateConfigAsync(UUID configId, UpdateConfigRequest updateConfigRequest, final ApiCallback<ConfigModel> _callback) throws ApiException {
+    public okhttp3.Call updateConfigAsync(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UpdateConfigRequest updateConfigRequest, final ApiCallback<ConfigModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateConfigValidateBeforeCall(configId, updateConfigRequest, _callback);
         Type localVarReturnType = new TypeToken<ConfigModel>(){}.getType();

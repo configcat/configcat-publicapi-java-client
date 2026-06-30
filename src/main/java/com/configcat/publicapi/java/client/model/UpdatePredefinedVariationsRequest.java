@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,16 +51,17 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * UpdatePredefinedVariationsRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class UpdatePredefinedVariationsRequest {
   public static final String SERIALIZED_NAME_PREDEFINED_VARIATIONS = "predefinedVariations";
   @SerializedName(SERIALIZED_NAME_PREDEFINED_VARIATIONS)
+  @javax.annotation.Nonnull
   private List<UpdatePredefinedVariationModel> predefinedVariations = new ArrayList<>();
 
   public UpdatePredefinedVariationsRequest() {
   }
 
-  public UpdatePredefinedVariationsRequest predefinedVariations(List<UpdatePredefinedVariationModel> predefinedVariations) {
+  public UpdatePredefinedVariationsRequest predefinedVariations(@javax.annotation.Nonnull List<UpdatePredefinedVariationModel> predefinedVariations) {
     this.predefinedVariations = predefinedVariations;
     return this;
   }
@@ -75,7 +75,7 @@ public class UpdatePredefinedVariationsRequest {
   }
 
   /**
-   * A collection of Feature Flag or Predefined Variations.
+   * A collection of Predefined Variations.
    * @return predefinedVariations
    */
   @javax.annotation.Nonnull
@@ -83,7 +83,7 @@ public class UpdatePredefinedVariationsRequest {
     return predefinedVariations;
   }
 
-  public void setPredefinedVariations(List<UpdatePredefinedVariationModel> predefinedVariations) {
+  public void setPredefinedVariations(@javax.annotation.Nonnull List<UpdatePredefinedVariationModel> predefinedVariations) {
     this.predefinedVariations = predefinedVariations;
   }
 
@@ -166,10 +166,7 @@ public class UpdatePredefinedVariationsRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -178,12 +175,10 @@ public class UpdatePredefinedVariationsRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("predefinedVariations");
+    openapiFields = new HashSet<String>(Arrays.asList("predefinedVariations"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("predefinedVariations");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("predefinedVariations"));
   }
 
   /**
@@ -195,27 +190,27 @@ public class UpdatePredefinedVariationsRequest {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!UpdatePredefinedVariationsRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdatePredefinedVariationsRequest is not found in the empty JSON string", UpdatePredefinedVariationsRequest.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in UpdatePredefinedVariationsRequest is not found in the empty JSON string", UpdatePredefinedVariationsRequest.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : UpdatePredefinedVariationsRequest.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // ensure the json data is an array
-      if (!jsonObj.get("predefinedVariations").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `predefinedVariations` to be an array in the JSON string but got `%s`", jsonObj.get("predefinedVariations").toString()));
+      if (jsonObj.get("predefinedVariations") != null) {
+        if (!jsonObj.get("predefinedVariations").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `predefinedVariations` to be an array in the JSON string but got `%s`", jsonObj.get("predefinedVariations").toString()));
+        }
+        JsonArray jsonArraypredefinedVariations = jsonObj.getAsJsonArray("predefinedVariations");
+        // validate the required field `predefinedVariations` (array)
+        for (int i = 0; i < jsonArraypredefinedVariations.size(); i++) {
+          UpdatePredefinedVariationModel.validateJsonElement(jsonArraypredefinedVariations.get(i));
+        }
       }
-
-      JsonArray jsonArraypredefinedVariations = jsonObj.getAsJsonArray("predefinedVariations");
-      // validate the required field `predefinedVariations` (array)
-      for (int i = 0; i < jsonArraypredefinedVariations.size(); i++) {
-        UpdatePredefinedVariationModel.validateJsonElement(jsonArraypredefinedVariations.get(i));
-      };
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -275,7 +270,7 @@ public class UpdatePredefinedVariationsRequest {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

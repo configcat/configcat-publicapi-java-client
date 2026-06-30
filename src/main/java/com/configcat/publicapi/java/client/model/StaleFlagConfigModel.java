@@ -42,7 +42,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -54,32 +53,37 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * StaleFlagConfigModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class StaleFlagConfigModel {
   public static final String SERIALIZED_NAME_CONFIG_ID = "configId";
   @SerializedName(SERIALIZED_NAME_CONFIG_ID)
+  @javax.annotation.Nonnull
   private UUID configId;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_EVALUATION_VERSION = "evaluationVersion";
   @SerializedName(SERIALIZED_NAME_EVALUATION_VERSION)
+  @javax.annotation.Nonnull
   private EvaluationVersion evaluationVersion;
 
   public static final String SERIALIZED_NAME_HAS_CODE_REFERENCES = "hasCodeReferences";
   @SerializedName(SERIALIZED_NAME_HAS_CODE_REFERENCES)
+  @javax.annotation.Nonnull
   private Boolean hasCodeReferences;
 
   public static final String SERIALIZED_NAME_SETTINGS = "settings";
   @SerializedName(SERIALIZED_NAME_SETTINGS)
+  @javax.annotation.Nonnull
   private List<StaleFlagSettingModel> settings = new ArrayList<>();
 
   public StaleFlagConfigModel() {
   }
 
-  public StaleFlagConfigModel configId(UUID configId) {
+  public StaleFlagConfigModel configId(@javax.annotation.Nonnull UUID configId) {
     this.configId = configId;
     return this;
   }
@@ -93,12 +97,12 @@ public class StaleFlagConfigModel {
     return configId;
   }
 
-  public void setConfigId(UUID configId) {
+  public void setConfigId(@javax.annotation.Nonnull UUID configId) {
     this.configId = configId;
   }
 
 
-  public StaleFlagConfigModel name(String name) {
+  public StaleFlagConfigModel name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -112,12 +116,12 @@ public class StaleFlagConfigModel {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public StaleFlagConfigModel evaluationVersion(EvaluationVersion evaluationVersion) {
+  public StaleFlagConfigModel evaluationVersion(@javax.annotation.Nonnull EvaluationVersion evaluationVersion) {
     this.evaluationVersion = evaluationVersion;
     return this;
   }
@@ -131,12 +135,12 @@ public class StaleFlagConfigModel {
     return evaluationVersion;
   }
 
-  public void setEvaluationVersion(EvaluationVersion evaluationVersion) {
+  public void setEvaluationVersion(@javax.annotation.Nonnull EvaluationVersion evaluationVersion) {
     this.evaluationVersion = evaluationVersion;
   }
 
 
-  public StaleFlagConfigModel hasCodeReferences(Boolean hasCodeReferences) {
+  public StaleFlagConfigModel hasCodeReferences(@javax.annotation.Nonnull Boolean hasCodeReferences) {
     this.hasCodeReferences = hasCodeReferences;
     return this;
   }
@@ -150,12 +154,12 @@ public class StaleFlagConfigModel {
     return hasCodeReferences;
   }
 
-  public void setHasCodeReferences(Boolean hasCodeReferences) {
+  public void setHasCodeReferences(@javax.annotation.Nonnull Boolean hasCodeReferences) {
     this.hasCodeReferences = hasCodeReferences;
   }
 
 
-  public StaleFlagConfigModel settings(List<StaleFlagSettingModel> settings) {
+  public StaleFlagConfigModel settings(@javax.annotation.Nonnull List<StaleFlagSettingModel> settings) {
     this.settings = settings;
     return this;
   }
@@ -177,7 +181,7 @@ public class StaleFlagConfigModel {
     return settings;
   }
 
-  public void setSettings(List<StaleFlagSettingModel> settings) {
+  public void setSettings(@javax.annotation.Nonnull List<StaleFlagSettingModel> settings) {
     this.settings = settings;
   }
 
@@ -268,10 +272,7 @@ public class StaleFlagConfigModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -280,20 +281,10 @@ public class StaleFlagConfigModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("configId");
-    openapiFields.add("name");
-    openapiFields.add("evaluationVersion");
-    openapiFields.add("hasCodeReferences");
-    openapiFields.add("settings");
+    openapiFields = new HashSet<String>(Arrays.asList("configId", "name", "evaluationVersion", "hasCodeReferences", "settings"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("configId");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("evaluationVersion");
-    openapiRequiredFields.add("hasCodeReferences");
-    openapiRequiredFields.add("settings");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("configId", "name", "evaluationVersion", "hasCodeReferences", "settings"));
   }
 
   /**
@@ -305,35 +296,35 @@ public class StaleFlagConfigModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!StaleFlagConfigModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in StaleFlagConfigModel is not found in the empty JSON string", StaleFlagConfigModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in StaleFlagConfigModel is not found in the empty JSON string", StaleFlagConfigModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : StaleFlagConfigModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("configId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `configId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("configId").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `configId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("configId").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       // validate the required field `evaluationVersion`
       EvaluationVersion.validateJsonElement(jsonObj.get("evaluationVersion"));
-      // ensure the json data is an array
-      if (!jsonObj.get("settings").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `settings` to be an array in the JSON string but got `%s`", jsonObj.get("settings").toString()));
+      if (jsonObj.get("settings") != null) {
+        if (!jsonObj.get("settings").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `settings` to be an array in the JSON string but got `%s`", jsonObj.get("settings").toString()));
+        }
+        JsonArray jsonArraysettings = jsonObj.getAsJsonArray("settings");
+        // validate the required field `settings` (array)
+        for (int i = 0; i < jsonArraysettings.size(); i++) {
+          StaleFlagSettingModel.validateJsonElement(jsonArraysettings.get(i));
+        }
       }
-
-      JsonArray jsonArraysettings = jsonObj.getAsJsonArray("settings");
-      // validate the required field `settings` (array)
-      for (int i = 0; i < jsonArraysettings.size(); i++) {
-        StaleFlagSettingModel.validateJsonElement(jsonArraysettings.get(i));
-      };
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -393,7 +384,7 @@ public class StaleFlagConfigModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

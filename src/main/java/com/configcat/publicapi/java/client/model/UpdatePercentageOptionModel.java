@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,20 +49,22 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * UpdatePercentageOptionModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class UpdatePercentageOptionModel {
   public static final String SERIALIZED_NAME_PERCENTAGE = "percentage";
   @SerializedName(SERIALIZED_NAME_PERCENTAGE)
+  @javax.annotation.Nonnull
   private Integer percentage;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
+  @javax.annotation.Nonnull
   private UpdateValueModel value;
 
   public UpdatePercentageOptionModel() {
   }
 
-  public UpdatePercentageOptionModel percentage(Integer percentage) {
+  public UpdatePercentageOptionModel percentage(@javax.annotation.Nonnull Integer percentage) {
     this.percentage = percentage;
     return this;
   }
@@ -77,12 +78,12 @@ public class UpdatePercentageOptionModel {
     return percentage;
   }
 
-  public void setPercentage(Integer percentage) {
+  public void setPercentage(@javax.annotation.Nonnull Integer percentage) {
     this.percentage = percentage;
   }
 
 
-  public UpdatePercentageOptionModel value(UpdateValueModel value) {
+  public UpdatePercentageOptionModel value(@javax.annotation.Nonnull UpdateValueModel value) {
     this.value = value;
     return this;
   }
@@ -96,7 +97,7 @@ public class UpdatePercentageOptionModel {
     return value;
   }
 
-  public void setValue(UpdateValueModel value) {
+  public void setValue(@javax.annotation.Nonnull UpdateValueModel value) {
     this.value = value;
   }
 
@@ -181,10 +182,7 @@ public class UpdatePercentageOptionModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -193,14 +191,10 @@ public class UpdatePercentageOptionModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("percentage");
-    openapiFields.add("value");
+    openapiFields = new HashSet<String>(Arrays.asList("percentage", "value"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("percentage");
-    openapiRequiredFields.add("value");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("percentage", "value"));
   }
 
   /**
@@ -212,14 +206,14 @@ public class UpdatePercentageOptionModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!UpdatePercentageOptionModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdatePercentageOptionModel is not found in the empty JSON string", UpdatePercentageOptionModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in UpdatePercentageOptionModel is not found in the empty JSON string", UpdatePercentageOptionModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : UpdatePercentageOptionModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -284,7 +278,7 @@ public class UpdatePercentageOptionModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

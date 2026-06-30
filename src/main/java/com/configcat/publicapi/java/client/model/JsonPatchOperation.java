@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,28 +50,32 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * JsonPatchOperation
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class JsonPatchOperation {
   public static final String SERIALIZED_NAME_OP = "op";
   @SerializedName(SERIALIZED_NAME_OP)
+  @javax.annotation.Nonnull
   private OperationType op;
 
   public static final String SERIALIZED_NAME_PATH = "path";
   @SerializedName(SERIALIZED_NAME_PATH)
+  @javax.annotation.Nonnull
   private String path;
 
   public static final String SERIALIZED_NAME_FROM = "from";
   @SerializedName(SERIALIZED_NAME_FROM)
+  @javax.annotation.Nullable
   private String from;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
+  @javax.annotation.Nullable
   private Object value = null;
 
   public JsonPatchOperation() {
   }
 
-  public JsonPatchOperation op(OperationType op) {
+  public JsonPatchOperation op(@javax.annotation.Nonnull OperationType op) {
     this.op = op;
     return this;
   }
@@ -86,12 +89,12 @@ public class JsonPatchOperation {
     return op;
   }
 
-  public void setOp(OperationType op) {
+  public void setOp(@javax.annotation.Nonnull OperationType op) {
     this.op = op;
   }
 
 
-  public JsonPatchOperation path(String path) {
+  public JsonPatchOperation path(@javax.annotation.Nonnull String path) {
     this.path = path;
     return this;
   }
@@ -105,12 +108,12 @@ public class JsonPatchOperation {
     return path;
   }
 
-  public void setPath(String path) {
+  public void setPath(@javax.annotation.Nonnull String path) {
     this.path = path;
   }
 
 
-  public JsonPatchOperation from(String from) {
+  public JsonPatchOperation from(@javax.annotation.Nullable String from) {
     this.from = from;
     return this;
   }
@@ -124,12 +127,12 @@ public class JsonPatchOperation {
     return from;
   }
 
-  public void setFrom(String from) {
+  public void setFrom(@javax.annotation.Nullable String from) {
     this.from = from;
   }
 
 
-  public JsonPatchOperation value(Object value) {
+  public JsonPatchOperation value(@javax.annotation.Nullable Object value) {
     this.value = value;
     return this;
   }
@@ -143,7 +146,7 @@ public class JsonPatchOperation {
     return value;
   }
 
-  public void setValue(Object value) {
+  public void setValue(@javax.annotation.Nullable Object value) {
     this.value = value;
   }
 
@@ -243,10 +246,7 @@ public class JsonPatchOperation {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -255,16 +255,10 @@ public class JsonPatchOperation {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("op");
-    openapiFields.add("path");
-    openapiFields.add("from");
-    openapiFields.add("value");
+    openapiFields = new HashSet<String>(Arrays.asList("op", "path", "from", "value"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("op");
-    openapiRequiredFields.add("path");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("op", "path"));
   }
 
   /**
@@ -276,24 +270,24 @@ public class JsonPatchOperation {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!JsonPatchOperation.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in JsonPatchOperation is not found in the empty JSON string", JsonPatchOperation.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in JsonPatchOperation is not found in the empty JSON string", JsonPatchOperation.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : JsonPatchOperation.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the required field `op`
       OperationType.validateJsonElement(jsonObj.get("op"));
       if (!jsonObj.get("path").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `path` to be a primitive type in the JSON string but got `%s`", jsonObj.get("path").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `path` to be a primitive type in the JSON string but got `%s`", jsonObj.get("path").toString()));
       }
       if ((jsonObj.get("from") != null && !jsonObj.get("from").isJsonNull()) && !jsonObj.get("from").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `from` to be a primitive type in the JSON string but got `%s`", jsonObj.get("from").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `from` to be a primitive type in the JSON string but got `%s`", jsonObj.get("from").toString()));
       }
   }
 
@@ -354,7 +348,7 @@ public class JsonPatchOperation {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

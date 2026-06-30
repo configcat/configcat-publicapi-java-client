@@ -42,7 +42,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -54,44 +53,52 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * CodeReferenceRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class CodeReferenceRequest {
   public static final String SERIALIZED_NAME_CONFIG_ID = "configId";
   @SerializedName(SERIALIZED_NAME_CONFIG_ID)
+  @javax.annotation.Nonnull
   private UUID configId;
 
   public static final String SERIALIZED_NAME_REPOSITORY = "repository";
   @SerializedName(SERIALIZED_NAME_REPOSITORY)
+  @javax.annotation.Nonnull
   private String repository;
 
   public static final String SERIALIZED_NAME_BRANCH = "branch";
   @SerializedName(SERIALIZED_NAME_BRANCH)
+  @javax.annotation.Nonnull
   private String branch;
 
   public static final String SERIALIZED_NAME_COMMIT_URL = "commitUrl";
   @SerializedName(SERIALIZED_NAME_COMMIT_URL)
+  @javax.annotation.Nullable
   private String commitUrl;
 
   public static final String SERIALIZED_NAME_COMMIT_HASH = "commitHash";
   @SerializedName(SERIALIZED_NAME_COMMIT_HASH)
+  @javax.annotation.Nullable
   private String commitHash;
 
   public static final String SERIALIZED_NAME_UPLOADER = "uploader";
   @SerializedName(SERIALIZED_NAME_UPLOADER)
+  @javax.annotation.Nullable
   private String uploader;
 
   public static final String SERIALIZED_NAME_ACTIVE_BRANCHES = "activeBranches";
   @SerializedName(SERIALIZED_NAME_ACTIVE_BRANCHES)
+  @javax.annotation.Nullable
   private List<String> activeBranches = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_FLAG_REFERENCES = "flagReferences";
   @SerializedName(SERIALIZED_NAME_FLAG_REFERENCES)
+  @javax.annotation.Nullable
   private List<FlagReference> flagReferences = new ArrayList<>();
 
   public CodeReferenceRequest() {
   }
 
-  public CodeReferenceRequest configId(UUID configId) {
+  public CodeReferenceRequest configId(@javax.annotation.Nonnull UUID configId) {
     this.configId = configId;
     return this;
   }
@@ -105,12 +112,12 @@ public class CodeReferenceRequest {
     return configId;
   }
 
-  public void setConfigId(UUID configId) {
+  public void setConfigId(@javax.annotation.Nonnull UUID configId) {
     this.configId = configId;
   }
 
 
-  public CodeReferenceRequest repository(String repository) {
+  public CodeReferenceRequest repository(@javax.annotation.Nonnull String repository) {
     this.repository = repository;
     return this;
   }
@@ -124,12 +131,12 @@ public class CodeReferenceRequest {
     return repository;
   }
 
-  public void setRepository(String repository) {
+  public void setRepository(@javax.annotation.Nonnull String repository) {
     this.repository = repository;
   }
 
 
-  public CodeReferenceRequest branch(String branch) {
+  public CodeReferenceRequest branch(@javax.annotation.Nonnull String branch) {
     this.branch = branch;
     return this;
   }
@@ -143,12 +150,12 @@ public class CodeReferenceRequest {
     return branch;
   }
 
-  public void setBranch(String branch) {
+  public void setBranch(@javax.annotation.Nonnull String branch) {
     this.branch = branch;
   }
 
 
-  public CodeReferenceRequest commitUrl(String commitUrl) {
+  public CodeReferenceRequest commitUrl(@javax.annotation.Nullable String commitUrl) {
     this.commitUrl = commitUrl;
     return this;
   }
@@ -162,12 +169,12 @@ public class CodeReferenceRequest {
     return commitUrl;
   }
 
-  public void setCommitUrl(String commitUrl) {
+  public void setCommitUrl(@javax.annotation.Nullable String commitUrl) {
     this.commitUrl = commitUrl;
   }
 
 
-  public CodeReferenceRequest commitHash(String commitHash) {
+  public CodeReferenceRequest commitHash(@javax.annotation.Nullable String commitHash) {
     this.commitHash = commitHash;
     return this;
   }
@@ -181,12 +188,12 @@ public class CodeReferenceRequest {
     return commitHash;
   }
 
-  public void setCommitHash(String commitHash) {
+  public void setCommitHash(@javax.annotation.Nullable String commitHash) {
     this.commitHash = commitHash;
   }
 
 
-  public CodeReferenceRequest uploader(String uploader) {
+  public CodeReferenceRequest uploader(@javax.annotation.Nullable String uploader) {
     this.uploader = uploader;
     return this;
   }
@@ -200,12 +207,12 @@ public class CodeReferenceRequest {
     return uploader;
   }
 
-  public void setUploader(String uploader) {
+  public void setUploader(@javax.annotation.Nullable String uploader) {
     this.uploader = uploader;
   }
 
 
-  public CodeReferenceRequest activeBranches(List<String> activeBranches) {
+  public CodeReferenceRequest activeBranches(@javax.annotation.Nullable List<String> activeBranches) {
     this.activeBranches = activeBranches;
     return this;
   }
@@ -227,12 +234,12 @@ public class CodeReferenceRequest {
     return activeBranches;
   }
 
-  public void setActiveBranches(List<String> activeBranches) {
+  public void setActiveBranches(@javax.annotation.Nullable List<String> activeBranches) {
     this.activeBranches = activeBranches;
   }
 
 
-  public CodeReferenceRequest flagReferences(List<FlagReference> flagReferences) {
+  public CodeReferenceRequest flagReferences(@javax.annotation.Nullable List<FlagReference> flagReferences) {
     this.flagReferences = flagReferences;
     return this;
   }
@@ -254,7 +261,7 @@ public class CodeReferenceRequest {
     return flagReferences;
   }
 
-  public void setFlagReferences(List<FlagReference> flagReferences) {
+  public void setFlagReferences(@javax.annotation.Nullable List<FlagReference> flagReferences) {
     this.flagReferences = flagReferences;
   }
 
@@ -362,10 +369,7 @@ public class CodeReferenceRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -374,21 +378,10 @@ public class CodeReferenceRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("configId");
-    openapiFields.add("repository");
-    openapiFields.add("branch");
-    openapiFields.add("commitUrl");
-    openapiFields.add("commitHash");
-    openapiFields.add("uploader");
-    openapiFields.add("activeBranches");
-    openapiFields.add("flagReferences");
+    openapiFields = new HashSet<String>(Arrays.asList("configId", "repository", "branch", "commitUrl", "commitHash", "uploader", "activeBranches", "flagReferences"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("configId");
-    openapiRequiredFields.add("repository");
-    openapiRequiredFields.add("branch");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("configId", "repository", "branch"));
   }
 
   /**
@@ -400,45 +393,45 @@ public class CodeReferenceRequest {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CodeReferenceRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in CodeReferenceRequest is not found in the empty JSON string", CodeReferenceRequest.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in CodeReferenceRequest is not found in the empty JSON string", CodeReferenceRequest.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : CodeReferenceRequest.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("configId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `configId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("configId").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `configId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("configId").toString()));
       }
       if (!jsonObj.get("repository").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `repository` to be a primitive type in the JSON string but got `%s`", jsonObj.get("repository").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `repository` to be a primitive type in the JSON string but got `%s`", jsonObj.get("repository").toString()));
       }
       if (!jsonObj.get("branch").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `branch` to be a primitive type in the JSON string but got `%s`", jsonObj.get("branch").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `branch` to be a primitive type in the JSON string but got `%s`", jsonObj.get("branch").toString()));
       }
       if ((jsonObj.get("commitUrl") != null && !jsonObj.get("commitUrl").isJsonNull()) && !jsonObj.get("commitUrl").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `commitUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("commitUrl").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `commitUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("commitUrl").toString()));
       }
       if ((jsonObj.get("commitHash") != null && !jsonObj.get("commitHash").isJsonNull()) && !jsonObj.get("commitHash").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `commitHash` to be a primitive type in the JSON string but got `%s`", jsonObj.get("commitHash").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `commitHash` to be a primitive type in the JSON string but got `%s`", jsonObj.get("commitHash").toString()));
       }
       if ((jsonObj.get("uploader") != null && !jsonObj.get("uploader").isJsonNull()) && !jsonObj.get("uploader").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `uploader` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uploader").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `uploader` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uploader").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("activeBranches") != null && !jsonObj.get("activeBranches").isJsonNull() && !jsonObj.get("activeBranches").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `activeBranches` to be an array in the JSON string but got `%s`", jsonObj.get("activeBranches").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `activeBranches` to be an array in the JSON string but got `%s`", jsonObj.get("activeBranches").toString()));
       }
       if (jsonObj.get("flagReferences") != null && !jsonObj.get("flagReferences").isJsonNull()) {
         JsonArray jsonArrayflagReferences = jsonObj.getAsJsonArray("flagReferences");
         if (jsonArrayflagReferences != null) {
           // ensure the json data is an array
           if (!jsonObj.get("flagReferences").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `flagReferences` to be an array in the JSON string but got `%s`", jsonObj.get("flagReferences").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `flagReferences` to be an array in the JSON string but got `%s`", jsonObj.get("flagReferences").toString()));
           }
 
           // validate the optional field `flagReferences` (array)
@@ -506,7 +499,7 @@ public class CodeReferenceRequest {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

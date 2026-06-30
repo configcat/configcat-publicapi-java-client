@@ -41,7 +41,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -53,24 +52,27 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * OrganizationMembersModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class OrganizationMembersModel {
   public static final String SERIALIZED_NAME_ADMINS = "admins";
   @SerializedName(SERIALIZED_NAME_ADMINS)
+  @javax.annotation.Nonnull
   private List<OrganizationAdminModel> admins = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_BILLING_MANAGERS = "billingManagers";
   @SerializedName(SERIALIZED_NAME_BILLING_MANAGERS)
+  @javax.annotation.Nonnull
   private List<OrganizationAdminModel> billingManagers = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_MEMBERS = "members";
   @SerializedName(SERIALIZED_NAME_MEMBERS)
+  @javax.annotation.Nonnull
   private List<OrganizationMemberModel> members = new ArrayList<>();
 
   public OrganizationMembersModel() {
   }
 
-  public OrganizationMembersModel admins(List<OrganizationAdminModel> admins) {
+  public OrganizationMembersModel admins(@javax.annotation.Nonnull List<OrganizationAdminModel> admins) {
     this.admins = admins;
     return this;
   }
@@ -92,12 +94,12 @@ public class OrganizationMembersModel {
     return admins;
   }
 
-  public void setAdmins(List<OrganizationAdminModel> admins) {
+  public void setAdmins(@javax.annotation.Nonnull List<OrganizationAdminModel> admins) {
     this.admins = admins;
   }
 
 
-  public OrganizationMembersModel billingManagers(List<OrganizationAdminModel> billingManagers) {
+  public OrganizationMembersModel billingManagers(@javax.annotation.Nonnull List<OrganizationAdminModel> billingManagers) {
     this.billingManagers = billingManagers;
     return this;
   }
@@ -119,12 +121,12 @@ public class OrganizationMembersModel {
     return billingManagers;
   }
 
-  public void setBillingManagers(List<OrganizationAdminModel> billingManagers) {
+  public void setBillingManagers(@javax.annotation.Nonnull List<OrganizationAdminModel> billingManagers) {
     this.billingManagers = billingManagers;
   }
 
 
-  public OrganizationMembersModel members(List<OrganizationMemberModel> members) {
+  public OrganizationMembersModel members(@javax.annotation.Nonnull List<OrganizationMemberModel> members) {
     this.members = members;
     return this;
   }
@@ -146,7 +148,7 @@ public class OrganizationMembersModel {
     return members;
   }
 
-  public void setMembers(List<OrganizationMemberModel> members) {
+  public void setMembers(@javax.annotation.Nonnull List<OrganizationMemberModel> members) {
     this.members = members;
   }
 
@@ -233,10 +235,7 @@ public class OrganizationMembersModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -245,16 +244,10 @@ public class OrganizationMembersModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("admins");
-    openapiFields.add("billingManagers");
-    openapiFields.add("members");
+    openapiFields = new HashSet<String>(Arrays.asList("admins", "billingManagers", "members"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("admins");
-    openapiRequiredFields.add("billingManagers");
-    openapiRequiredFields.add("members");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("admins", "billingManagers", "members"));
   }
 
   /**
@@ -266,47 +259,47 @@ public class OrganizationMembersModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!OrganizationMembersModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in OrganizationMembersModel is not found in the empty JSON string", OrganizationMembersModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in OrganizationMembersModel is not found in the empty JSON string", OrganizationMembersModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : OrganizationMembersModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // ensure the json data is an array
-      if (!jsonObj.get("admins").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `admins` to be an array in the JSON string but got `%s`", jsonObj.get("admins").toString()));
+      if (jsonObj.get("admins") != null) {
+        if (!jsonObj.get("admins").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `admins` to be an array in the JSON string but got `%s`", jsonObj.get("admins").toString()));
+        }
+        JsonArray jsonArrayadmins = jsonObj.getAsJsonArray("admins");
+        // validate the required field `admins` (array)
+        for (int i = 0; i < jsonArrayadmins.size(); i++) {
+          OrganizationAdminModel.validateJsonElement(jsonArrayadmins.get(i));
+        }
       }
-
-      JsonArray jsonArrayadmins = jsonObj.getAsJsonArray("admins");
-      // validate the required field `admins` (array)
-      for (int i = 0; i < jsonArrayadmins.size(); i++) {
-        OrganizationAdminModel.validateJsonElement(jsonArrayadmins.get(i));
-      };
-      // ensure the json data is an array
-      if (!jsonObj.get("billingManagers").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `billingManagers` to be an array in the JSON string but got `%s`", jsonObj.get("billingManagers").toString()));
+      if (jsonObj.get("billingManagers") != null) {
+        if (!jsonObj.get("billingManagers").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `billingManagers` to be an array in the JSON string but got `%s`", jsonObj.get("billingManagers").toString()));
+        }
+        JsonArray jsonArraybillingManagers = jsonObj.getAsJsonArray("billingManagers");
+        // validate the required field `billingManagers` (array)
+        for (int i = 0; i < jsonArraybillingManagers.size(); i++) {
+          OrganizationAdminModel.validateJsonElement(jsonArraybillingManagers.get(i));
+        }
       }
-
-      JsonArray jsonArraybillingManagers = jsonObj.getAsJsonArray("billingManagers");
-      // validate the required field `billingManagers` (array)
-      for (int i = 0; i < jsonArraybillingManagers.size(); i++) {
-        OrganizationAdminModel.validateJsonElement(jsonArraybillingManagers.get(i));
-      };
-      // ensure the json data is an array
-      if (!jsonObj.get("members").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `members` to be an array in the JSON string but got `%s`", jsonObj.get("members").toString()));
+      if (jsonObj.get("members") != null) {
+        if (!jsonObj.get("members").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `members` to be an array in the JSON string but got `%s`", jsonObj.get("members").toString()));
+        }
+        JsonArray jsonArraymembers = jsonObj.getAsJsonArray("members");
+        // validate the required field `members` (array)
+        for (int i = 0; i < jsonArraymembers.size(); i++) {
+          OrganizationMemberModel.validateJsonElement(jsonArraymembers.get(i));
+        }
       }
-
-      JsonArray jsonArraymembers = jsonObj.getAsJsonArray("members");
-      // validate the required field `members` (array)
-      for (int i = 0; i < jsonArraymembers.size(); i++) {
-        OrganizationMemberModel.validateJsonElement(jsonArraymembers.get(i));
-      };
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -366,7 +359,7 @@ public class OrganizationMembersModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

@@ -44,7 +44,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -56,56 +55,72 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * Metadata of a Feature Flag or Setting.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class SettingModel {
   public static final String SERIALIZED_NAME_SETTING_ID = "settingId";
   @SerializedName(SERIALIZED_NAME_SETTING_ID)
+  @javax.annotation.Nonnull
   private Integer settingId;
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_HINT = "hint";
   @SerializedName(SERIALIZED_NAME_HINT)
+  @javax.annotation.Nullable
   private String hint;
 
   public static final String SERIALIZED_NAME_ORDER = "order";
   @SerializedName(SERIALIZED_NAME_ORDER)
+  @javax.annotation.Nonnull
   private Integer order;
 
   public static final String SERIALIZED_NAME_SETTING_TYPE = "settingType";
   @SerializedName(SERIALIZED_NAME_SETTING_TYPE)
+  @javax.annotation.Nonnull
   private SettingType settingType;
+
+  public static final String SERIALIZED_NAME_IS_JSON = "isJson";
+  @SerializedName(SERIALIZED_NAME_IS_JSON)
+  @javax.annotation.Nonnull
+  private Boolean isJson;
 
   public static final String SERIALIZED_NAME_CONFIG_ID = "configId";
   @SerializedName(SERIALIZED_NAME_CONFIG_ID)
+  @javax.annotation.Nonnull
   private UUID configId;
 
   public static final String SERIALIZED_NAME_CONFIG_NAME = "configName";
   @SerializedName(SERIALIZED_NAME_CONFIG_NAME)
+  @javax.annotation.Nonnull
   private String configName;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "createdAt";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
+  @javax.annotation.Nonnull
   private List<TagModel> tags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PREDEFINED_VARIATIONS = "predefinedVariations";
   @SerializedName(SERIALIZED_NAME_PREDEFINED_VARIATIONS)
+  @javax.annotation.Nonnull
   private List<PredefinedVariationModel> predefinedVariations = new ArrayList<>();
 
   public SettingModel() {
   }
 
-  public SettingModel settingId(Integer settingId) {
+  public SettingModel settingId(@javax.annotation.Nonnull Integer settingId) {
     this.settingId = settingId;
     return this;
   }
@@ -119,12 +134,12 @@ public class SettingModel {
     return settingId;
   }
 
-  public void setSettingId(Integer settingId) {
+  public void setSettingId(@javax.annotation.Nonnull Integer settingId) {
     this.settingId = settingId;
   }
 
 
-  public SettingModel key(String key) {
+  public SettingModel key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
@@ -138,12 +153,12 @@ public class SettingModel {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
 
-  public SettingModel name(String name) {
+  public SettingModel name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -157,12 +172,12 @@ public class SettingModel {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public SettingModel hint(String hint) {
+  public SettingModel hint(@javax.annotation.Nullable String hint) {
     this.hint = hint;
     return this;
   }
@@ -176,12 +191,12 @@ public class SettingModel {
     return hint;
   }
 
-  public void setHint(String hint) {
+  public void setHint(@javax.annotation.Nullable String hint) {
     this.hint = hint;
   }
 
 
-  public SettingModel order(Integer order) {
+  public SettingModel order(@javax.annotation.Nonnull Integer order) {
     this.order = order;
     return this;
   }
@@ -195,12 +210,12 @@ public class SettingModel {
     return order;
   }
 
-  public void setOrder(Integer order) {
+  public void setOrder(@javax.annotation.Nonnull Integer order) {
     this.order = order;
   }
 
 
-  public SettingModel settingType(SettingType settingType) {
+  public SettingModel settingType(@javax.annotation.Nonnull SettingType settingType) {
     this.settingType = settingType;
     return this;
   }
@@ -214,12 +229,31 @@ public class SettingModel {
     return settingType;
   }
 
-  public void setSettingType(SettingType settingType) {
+  public void setSettingType(@javax.annotation.Nonnull SettingType settingType) {
     this.settingType = settingType;
   }
 
 
-  public SettingModel configId(UUID configId) {
+  public SettingModel isJson(@javax.annotation.Nonnull Boolean isJson) {
+    this.isJson = isJson;
+    return this;
+  }
+
+  /**
+   * Get isJson
+   * @return isJson
+   */
+  @javax.annotation.Nonnull
+  public Boolean getIsJson() {
+    return isJson;
+  }
+
+  public void setIsJson(@javax.annotation.Nonnull Boolean isJson) {
+    this.isJson = isJson;
+  }
+
+
+  public SettingModel configId(@javax.annotation.Nonnull UUID configId) {
     this.configId = configId;
     return this;
   }
@@ -233,12 +267,12 @@ public class SettingModel {
     return configId;
   }
 
-  public void setConfigId(UUID configId) {
+  public void setConfigId(@javax.annotation.Nonnull UUID configId) {
     this.configId = configId;
   }
 
 
-  public SettingModel configName(String configName) {
+  public SettingModel configName(@javax.annotation.Nonnull String configName) {
     this.configName = configName;
     return this;
   }
@@ -252,12 +286,12 @@ public class SettingModel {
     return configName;
   }
 
-  public void setConfigName(String configName) {
+  public void setConfigName(@javax.annotation.Nonnull String configName) {
     this.configName = configName;
   }
 
 
-  public SettingModel createdAt(OffsetDateTime createdAt) {
+  public SettingModel createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -271,12 +305,12 @@ public class SettingModel {
     return createdAt;
   }
 
-  public void setCreatedAt(OffsetDateTime createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public SettingModel tags(List<TagModel> tags) {
+  public SettingModel tags(@javax.annotation.Nonnull List<TagModel> tags) {
     this.tags = tags;
     return this;
   }
@@ -298,12 +332,12 @@ public class SettingModel {
     return tags;
   }
 
-  public void setTags(List<TagModel> tags) {
+  public void setTags(@javax.annotation.Nonnull List<TagModel> tags) {
     this.tags = tags;
   }
 
 
-  public SettingModel predefinedVariations(List<PredefinedVariationModel> predefinedVariations) {
+  public SettingModel predefinedVariations(@javax.annotation.Nonnull List<PredefinedVariationModel> predefinedVariations) {
     this.predefinedVariations = predefinedVariations;
     return this;
   }
@@ -325,7 +359,7 @@ public class SettingModel {
     return predefinedVariations;
   }
 
-  public void setPredefinedVariations(List<PredefinedVariationModel> predefinedVariations) {
+  public void setPredefinedVariations(@javax.annotation.Nonnull List<PredefinedVariationModel> predefinedVariations) {
     this.predefinedVariations = predefinedVariations;
   }
 
@@ -390,6 +424,7 @@ public class SettingModel {
         Objects.equals(this.hint, settingModel.hint) &&
         Objects.equals(this.order, settingModel.order) &&
         Objects.equals(this.settingType, settingModel.settingType) &&
+        Objects.equals(this.isJson, settingModel.isJson) &&
         Objects.equals(this.configId, settingModel.configId) &&
         Objects.equals(this.configName, settingModel.configName) &&
         Objects.equals(this.createdAt, settingModel.createdAt) &&
@@ -400,7 +435,7 @@ public class SettingModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(settingId, key, name, hint, order, settingType, configId, configName, createdAt, tags, predefinedVariations, additionalProperties);
+    return Objects.hash(settingId, key, name, hint, order, settingType, isJson, configId, configName, createdAt, tags, predefinedVariations, additionalProperties);
   }
 
   @Override
@@ -413,6 +448,7 @@ public class SettingModel {
     sb.append("    hint: ").append(toIndentedString(hint)).append("\n");
     sb.append("    order: ").append(toIndentedString(order)).append("\n");
     sb.append("    settingType: ").append(toIndentedString(settingType)).append("\n");
+    sb.append("    isJson: ").append(toIndentedString(isJson)).append("\n");
     sb.append("    configId: ").append(toIndentedString(configId)).append("\n");
     sb.append("    configName: ").append(toIndentedString(configName)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
@@ -428,10 +464,7 @@ public class SettingModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -440,32 +473,10 @@ public class SettingModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("settingId");
-    openapiFields.add("key");
-    openapiFields.add("name");
-    openapiFields.add("hint");
-    openapiFields.add("order");
-    openapiFields.add("settingType");
-    openapiFields.add("configId");
-    openapiFields.add("configName");
-    openapiFields.add("createdAt");
-    openapiFields.add("tags");
-    openapiFields.add("predefinedVariations");
+    openapiFields = new HashSet<String>(Arrays.asList("settingId", "key", "name", "hint", "order", "settingType", "isJson", "configId", "configName", "createdAt", "tags", "predefinedVariations"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("settingId");
-    openapiRequiredFields.add("key");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("hint");
-    openapiRequiredFields.add("order");
-    openapiRequiredFields.add("settingType");
-    openapiRequiredFields.add("configId");
-    openapiRequiredFields.add("configName");
-    openapiRequiredFields.add("createdAt");
-    openapiRequiredFields.add("tags");
-    openapiRequiredFields.add("predefinedVariations");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("settingId", "key", "name", "hint", "order", "settingType", "isJson", "configId", "configName", "createdAt", "tags", "predefinedVariations"));
   }
 
   /**
@@ -477,54 +488,54 @@ public class SettingModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SettingModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SettingModel is not found in the empty JSON string", SettingModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in SettingModel is not found in the empty JSON string", SettingModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : SettingModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("hint") != null && !jsonObj.get("hint").isJsonNull()) && !jsonObj.get("hint").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `hint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hint").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `hint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hint").toString()));
       }
       // validate the required field `settingType`
       SettingType.validateJsonElement(jsonObj.get("settingType"));
       if (!jsonObj.get("configId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `configId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("configId").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `configId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("configId").toString()));
       }
       if (!jsonObj.get("configName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `configName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("configName").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `configName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("configName").toString()));
       }
-      // ensure the json data is an array
-      if (!jsonObj.get("tags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+      if (jsonObj.get("tags") != null) {
+        if (!jsonObj.get("tags").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `tags` to be an array in the JSON string but got `%s`", jsonObj.get("tags").toString()));
+        }
+        JsonArray jsonArraytags = jsonObj.getAsJsonArray("tags");
+        // validate the required field `tags` (array)
+        for (int i = 0; i < jsonArraytags.size(); i++) {
+          TagModel.validateJsonElement(jsonArraytags.get(i));
+        }
       }
-
-      JsonArray jsonArraytags = jsonObj.getAsJsonArray("tags");
-      // validate the required field `tags` (array)
-      for (int i = 0; i < jsonArraytags.size(); i++) {
-        TagModel.validateJsonElement(jsonArraytags.get(i));
-      };
-      // ensure the json data is an array
-      if (!jsonObj.get("predefinedVariations").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `predefinedVariations` to be an array in the JSON string but got `%s`", jsonObj.get("predefinedVariations").toString()));
+      if (jsonObj.get("predefinedVariations") != null) {
+        if (!jsonObj.get("predefinedVariations").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `predefinedVariations` to be an array in the JSON string but got `%s`", jsonObj.get("predefinedVariations").toString()));
+        }
+        JsonArray jsonArraypredefinedVariations = jsonObj.getAsJsonArray("predefinedVariations");
+        // validate the required field `predefinedVariations` (array)
+        for (int i = 0; i < jsonArraypredefinedVariations.size(); i++) {
+          PredefinedVariationModel.validateJsonElement(jsonArraypredefinedVariations.get(i));
+        }
       }
-
-      JsonArray jsonArraypredefinedVariations = jsonObj.getAsJsonArray("predefinedVariations");
-      // validate the required field `predefinedVariations` (array)
-      for (int i = 0; i < jsonArraypredefinedVariations.size(); i++) {
-        PredefinedVariationModel.validateJsonElement(jsonArraypredefinedVariations.get(i));
-      };
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -584,7 +595,7 @@ public class SettingModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

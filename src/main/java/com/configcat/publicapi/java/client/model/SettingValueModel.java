@@ -49,7 +49,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -61,64 +60,77 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * SettingValueModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class SettingValueModel {
   public static final String SERIALIZED_NAME_SETTING = "setting";
   @SerializedName(SERIALIZED_NAME_SETTING)
+  @javax.annotation.Nonnull
   private SettingDataModel setting;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updatedAt";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime updatedAt;
 
   public static final String SERIALIZED_NAME_LAST_UPDATER_USER_EMAIL = "lastUpdaterUserEmail";
   @SerializedName(SERIALIZED_NAME_LAST_UPDATER_USER_EMAIL)
+  @javax.annotation.Nullable
   private String lastUpdaterUserEmail;
 
   public static final String SERIALIZED_NAME_LAST_UPDATER_USER_FULL_NAME = "lastUpdaterUserFullName";
   @SerializedName(SERIALIZED_NAME_LAST_UPDATER_USER_FULL_NAME)
+  @javax.annotation.Nullable
   private String lastUpdaterUserFullName;
 
   public static final String SERIALIZED_NAME_INTEGRATION_LINKS = "integrationLinks";
   @SerializedName(SERIALIZED_NAME_INTEGRATION_LINKS)
+  @javax.annotation.Nonnull
   private List<IntegrationLinkModel> integrationLinks = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SETTING_TAGS = "settingTags";
   @SerializedName(SERIALIZED_NAME_SETTING_TAGS)
+  @javax.annotation.Nonnull
   private List<SettingTagModel> settingTags = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ROLLOUT_RULES = "rolloutRules";
   @SerializedName(SERIALIZED_NAME_ROLLOUT_RULES)
+  @javax.annotation.Nonnull
   private List<RolloutRuleModel> rolloutRules = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ROLLOUT_PERCENTAGE_ITEMS = "rolloutPercentageItems";
   @SerializedName(SERIALIZED_NAME_ROLLOUT_PERCENTAGE_ITEMS)
+  @javax.annotation.Nonnull
   private List<RolloutPercentageItemModel> rolloutPercentageItems = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
+  @javax.annotation.Nonnull
   private SettingValueType value;
 
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)
+  @javax.annotation.Nonnull
   private ConfigModel config;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT = "environment";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT)
+  @javax.annotation.Nonnull
   private EnvironmentModel environment;
 
   public static final String SERIALIZED_NAME_FEATURE_FLAG_LIMITATIONS = "featureFlagLimitations";
   @SerializedName(SERIALIZED_NAME_FEATURE_FLAG_LIMITATIONS)
+  @javax.annotation.Nonnull
   private FeatureFlagLimitations featureFlagLimitations;
 
   public static final String SERIALIZED_NAME_READ_ONLY = "readOnly";
   @SerializedName(SERIALIZED_NAME_READ_ONLY)
+  @javax.annotation.Nonnull
   private Boolean readOnly;
 
   public SettingValueModel() {
   }
 
-  public SettingValueModel setting(SettingDataModel setting) {
+  public SettingValueModel setting(@javax.annotation.Nonnull SettingDataModel setting) {
     this.setting = setting;
     return this;
   }
@@ -132,12 +144,12 @@ public class SettingValueModel {
     return setting;
   }
 
-  public void setSetting(SettingDataModel setting) {
+  public void setSetting(@javax.annotation.Nonnull SettingDataModel setting) {
     this.setting = setting;
   }
 
 
-  public SettingValueModel updatedAt(OffsetDateTime updatedAt) {
+  public SettingValueModel updatedAt(@javax.annotation.Nullable OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -151,12 +163,12 @@ public class SettingValueModel {
     return updatedAt;
   }
 
-  public void setUpdatedAt(OffsetDateTime updatedAt) {
+  public void setUpdatedAt(@javax.annotation.Nullable OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
   }
 
 
-  public SettingValueModel lastUpdaterUserEmail(String lastUpdaterUserEmail) {
+  public SettingValueModel lastUpdaterUserEmail(@javax.annotation.Nullable String lastUpdaterUserEmail) {
     this.lastUpdaterUserEmail = lastUpdaterUserEmail;
     return this;
   }
@@ -170,12 +182,12 @@ public class SettingValueModel {
     return lastUpdaterUserEmail;
   }
 
-  public void setLastUpdaterUserEmail(String lastUpdaterUserEmail) {
+  public void setLastUpdaterUserEmail(@javax.annotation.Nullable String lastUpdaterUserEmail) {
     this.lastUpdaterUserEmail = lastUpdaterUserEmail;
   }
 
 
-  public SettingValueModel lastUpdaterUserFullName(String lastUpdaterUserFullName) {
+  public SettingValueModel lastUpdaterUserFullName(@javax.annotation.Nullable String lastUpdaterUserFullName) {
     this.lastUpdaterUserFullName = lastUpdaterUserFullName;
     return this;
   }
@@ -189,12 +201,12 @@ public class SettingValueModel {
     return lastUpdaterUserFullName;
   }
 
-  public void setLastUpdaterUserFullName(String lastUpdaterUserFullName) {
+  public void setLastUpdaterUserFullName(@javax.annotation.Nullable String lastUpdaterUserFullName) {
     this.lastUpdaterUserFullName = lastUpdaterUserFullName;
   }
 
 
-  public SettingValueModel integrationLinks(List<IntegrationLinkModel> integrationLinks) {
+  public SettingValueModel integrationLinks(@javax.annotation.Nonnull List<IntegrationLinkModel> integrationLinks) {
     this.integrationLinks = integrationLinks;
     return this;
   }
@@ -216,12 +228,12 @@ public class SettingValueModel {
     return integrationLinks;
   }
 
-  public void setIntegrationLinks(List<IntegrationLinkModel> integrationLinks) {
+  public void setIntegrationLinks(@javax.annotation.Nonnull List<IntegrationLinkModel> integrationLinks) {
     this.integrationLinks = integrationLinks;
   }
 
 
-  public SettingValueModel settingTags(List<SettingTagModel> settingTags) {
+  public SettingValueModel settingTags(@javax.annotation.Nonnull List<SettingTagModel> settingTags) {
     this.settingTags = settingTags;
     return this;
   }
@@ -243,12 +255,12 @@ public class SettingValueModel {
     return settingTags;
   }
 
-  public void setSettingTags(List<SettingTagModel> settingTags) {
+  public void setSettingTags(@javax.annotation.Nonnull List<SettingTagModel> settingTags) {
     this.settingTags = settingTags;
   }
 
 
-  public SettingValueModel rolloutRules(List<RolloutRuleModel> rolloutRules) {
+  public SettingValueModel rolloutRules(@javax.annotation.Nonnull List<RolloutRuleModel> rolloutRules) {
     this.rolloutRules = rolloutRules;
     return this;
   }
@@ -270,12 +282,12 @@ public class SettingValueModel {
     return rolloutRules;
   }
 
-  public void setRolloutRules(List<RolloutRuleModel> rolloutRules) {
+  public void setRolloutRules(@javax.annotation.Nonnull List<RolloutRuleModel> rolloutRules) {
     this.rolloutRules = rolloutRules;
   }
 
 
-  public SettingValueModel rolloutPercentageItems(List<RolloutPercentageItemModel> rolloutPercentageItems) {
+  public SettingValueModel rolloutPercentageItems(@javax.annotation.Nonnull List<RolloutPercentageItemModel> rolloutPercentageItems) {
     this.rolloutPercentageItems = rolloutPercentageItems;
     return this;
   }
@@ -297,12 +309,12 @@ public class SettingValueModel {
     return rolloutPercentageItems;
   }
 
-  public void setRolloutPercentageItems(List<RolloutPercentageItemModel> rolloutPercentageItems) {
+  public void setRolloutPercentageItems(@javax.annotation.Nonnull List<RolloutPercentageItemModel> rolloutPercentageItems) {
     this.rolloutPercentageItems = rolloutPercentageItems;
   }
 
 
-  public SettingValueModel value(SettingValueType value) {
+  public SettingValueModel value(@javax.annotation.Nonnull SettingValueType value) {
     this.value = value;
     return this;
   }
@@ -316,12 +328,12 @@ public class SettingValueModel {
     return value;
   }
 
-  public void setValue(SettingValueType value) {
+  public void setValue(@javax.annotation.Nonnull SettingValueType value) {
     this.value = value;
   }
 
 
-  public SettingValueModel config(ConfigModel config) {
+  public SettingValueModel config(@javax.annotation.Nonnull ConfigModel config) {
     this.config = config;
     return this;
   }
@@ -335,12 +347,12 @@ public class SettingValueModel {
     return config;
   }
 
-  public void setConfig(ConfigModel config) {
+  public void setConfig(@javax.annotation.Nonnull ConfigModel config) {
     this.config = config;
   }
 
 
-  public SettingValueModel environment(EnvironmentModel environment) {
+  public SettingValueModel environment(@javax.annotation.Nonnull EnvironmentModel environment) {
     this.environment = environment;
     return this;
   }
@@ -354,12 +366,12 @@ public class SettingValueModel {
     return environment;
   }
 
-  public void setEnvironment(EnvironmentModel environment) {
+  public void setEnvironment(@javax.annotation.Nonnull EnvironmentModel environment) {
     this.environment = environment;
   }
 
 
-  public SettingValueModel featureFlagLimitations(FeatureFlagLimitations featureFlagLimitations) {
+  public SettingValueModel featureFlagLimitations(@javax.annotation.Nonnull FeatureFlagLimitations featureFlagLimitations) {
     this.featureFlagLimitations = featureFlagLimitations;
     return this;
   }
@@ -373,12 +385,12 @@ public class SettingValueModel {
     return featureFlagLimitations;
   }
 
-  public void setFeatureFlagLimitations(FeatureFlagLimitations featureFlagLimitations) {
+  public void setFeatureFlagLimitations(@javax.annotation.Nonnull FeatureFlagLimitations featureFlagLimitations) {
     this.featureFlagLimitations = featureFlagLimitations;
   }
 
 
-  public SettingValueModel readOnly(Boolean readOnly) {
+  public SettingValueModel readOnly(@javax.annotation.Nonnull Boolean readOnly) {
     this.readOnly = readOnly;
     return this;
   }
@@ -392,7 +404,7 @@ public class SettingValueModel {
     return readOnly;
   }
 
-  public void setReadOnly(Boolean readOnly) {
+  public void setReadOnly(@javax.annotation.Nonnull Boolean readOnly) {
     this.readOnly = readOnly;
   }
 
@@ -499,10 +511,7 @@ public class SettingValueModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -511,36 +520,10 @@ public class SettingValueModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("setting");
-    openapiFields.add("updatedAt");
-    openapiFields.add("lastUpdaterUserEmail");
-    openapiFields.add("lastUpdaterUserFullName");
-    openapiFields.add("integrationLinks");
-    openapiFields.add("settingTags");
-    openapiFields.add("rolloutRules");
-    openapiFields.add("rolloutPercentageItems");
-    openapiFields.add("value");
-    openapiFields.add("config");
-    openapiFields.add("environment");
-    openapiFields.add("featureFlagLimitations");
-    openapiFields.add("readOnly");
+    openapiFields = new HashSet<String>(Arrays.asList("setting", "updatedAt", "lastUpdaterUserEmail", "lastUpdaterUserFullName", "integrationLinks", "settingTags", "rolloutRules", "rolloutPercentageItems", "value", "config", "environment", "featureFlagLimitations", "readOnly"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("setting");
-    openapiRequiredFields.add("updatedAt");
-    openapiRequiredFields.add("lastUpdaterUserEmail");
-    openapiRequiredFields.add("lastUpdaterUserFullName");
-    openapiRequiredFields.add("integrationLinks");
-    openapiRequiredFields.add("settingTags");
-    openapiRequiredFields.add("rolloutRules");
-    openapiRequiredFields.add("rolloutPercentageItems");
-    openapiRequiredFields.add("value");
-    openapiRequiredFields.add("config");
-    openapiRequiredFields.add("environment");
-    openapiRequiredFields.add("featureFlagLimitations");
-    openapiRequiredFields.add("readOnly");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("setting", "updatedAt", "lastUpdaterUserEmail", "lastUpdaterUserFullName", "integrationLinks", "settingTags", "rolloutRules", "rolloutPercentageItems", "value", "config", "environment", "featureFlagLimitations", "readOnly"));
   }
 
   /**
@@ -552,65 +535,65 @@ public class SettingValueModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SettingValueModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SettingValueModel is not found in the empty JSON string", SettingValueModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in SettingValueModel is not found in the empty JSON string", SettingValueModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : SettingValueModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the required field `setting`
       SettingDataModel.validateJsonElement(jsonObj.get("setting"));
       if ((jsonObj.get("lastUpdaterUserEmail") != null && !jsonObj.get("lastUpdaterUserEmail").isJsonNull()) && !jsonObj.get("lastUpdaterUserEmail").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `lastUpdaterUserEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lastUpdaterUserEmail").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `lastUpdaterUserEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lastUpdaterUserEmail").toString()));
       }
       if ((jsonObj.get("lastUpdaterUserFullName") != null && !jsonObj.get("lastUpdaterUserFullName").isJsonNull()) && !jsonObj.get("lastUpdaterUserFullName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `lastUpdaterUserFullName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lastUpdaterUserFullName").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `lastUpdaterUserFullName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lastUpdaterUserFullName").toString()));
       }
-      // ensure the json data is an array
-      if (!jsonObj.get("integrationLinks").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `integrationLinks` to be an array in the JSON string but got `%s`", jsonObj.get("integrationLinks").toString()));
+      if (jsonObj.get("integrationLinks") != null) {
+        if (!jsonObj.get("integrationLinks").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `integrationLinks` to be an array in the JSON string but got `%s`", jsonObj.get("integrationLinks").toString()));
+        }
+        JsonArray jsonArrayintegrationLinks = jsonObj.getAsJsonArray("integrationLinks");
+        // validate the required field `integrationLinks` (array)
+        for (int i = 0; i < jsonArrayintegrationLinks.size(); i++) {
+          IntegrationLinkModel.validateJsonElement(jsonArrayintegrationLinks.get(i));
+        }
       }
-
-      JsonArray jsonArrayintegrationLinks = jsonObj.getAsJsonArray("integrationLinks");
-      // validate the required field `integrationLinks` (array)
-      for (int i = 0; i < jsonArrayintegrationLinks.size(); i++) {
-        IntegrationLinkModel.validateJsonElement(jsonArrayintegrationLinks.get(i));
-      };
-      // ensure the json data is an array
-      if (!jsonObj.get("settingTags").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `settingTags` to be an array in the JSON string but got `%s`", jsonObj.get("settingTags").toString()));
+      if (jsonObj.get("settingTags") != null) {
+        if (!jsonObj.get("settingTags").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `settingTags` to be an array in the JSON string but got `%s`", jsonObj.get("settingTags").toString()));
+        }
+        JsonArray jsonArraysettingTags = jsonObj.getAsJsonArray("settingTags");
+        // validate the required field `settingTags` (array)
+        for (int i = 0; i < jsonArraysettingTags.size(); i++) {
+          SettingTagModel.validateJsonElement(jsonArraysettingTags.get(i));
+        }
       }
-
-      JsonArray jsonArraysettingTags = jsonObj.getAsJsonArray("settingTags");
-      // validate the required field `settingTags` (array)
-      for (int i = 0; i < jsonArraysettingTags.size(); i++) {
-        SettingTagModel.validateJsonElement(jsonArraysettingTags.get(i));
-      };
-      // ensure the json data is an array
-      if (!jsonObj.get("rolloutRules").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `rolloutRules` to be an array in the JSON string but got `%s`", jsonObj.get("rolloutRules").toString()));
+      if (jsonObj.get("rolloutRules") != null) {
+        if (!jsonObj.get("rolloutRules").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `rolloutRules` to be an array in the JSON string but got `%s`", jsonObj.get("rolloutRules").toString()));
+        }
+        JsonArray jsonArrayrolloutRules = jsonObj.getAsJsonArray("rolloutRules");
+        // validate the required field `rolloutRules` (array)
+        for (int i = 0; i < jsonArrayrolloutRules.size(); i++) {
+          RolloutRuleModel.validateJsonElement(jsonArrayrolloutRules.get(i));
+        }
       }
-
-      JsonArray jsonArrayrolloutRules = jsonObj.getAsJsonArray("rolloutRules");
-      // validate the required field `rolloutRules` (array)
-      for (int i = 0; i < jsonArrayrolloutRules.size(); i++) {
-        RolloutRuleModel.validateJsonElement(jsonArrayrolloutRules.get(i));
-      };
-      // ensure the json data is an array
-      if (!jsonObj.get("rolloutPercentageItems").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `rolloutPercentageItems` to be an array in the JSON string but got `%s`", jsonObj.get("rolloutPercentageItems").toString()));
+      if (jsonObj.get("rolloutPercentageItems") != null) {
+        if (!jsonObj.get("rolloutPercentageItems").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `rolloutPercentageItems` to be an array in the JSON string but got `%s`", jsonObj.get("rolloutPercentageItems").toString()));
+        }
+        JsonArray jsonArrayrolloutPercentageItems = jsonObj.getAsJsonArray("rolloutPercentageItems");
+        // validate the required field `rolloutPercentageItems` (array)
+        for (int i = 0; i < jsonArrayrolloutPercentageItems.size(); i++) {
+          RolloutPercentageItemModel.validateJsonElement(jsonArrayrolloutPercentageItems.get(i));
+        }
       }
-
-      JsonArray jsonArrayrolloutPercentageItems = jsonObj.getAsJsonArray("rolloutPercentageItems");
-      // validate the required field `rolloutPercentageItems` (array)
-      for (int i = 0; i < jsonArrayrolloutPercentageItems.size(); i++) {
-        RolloutPercentageItemModel.validateJsonElement(jsonArrayrolloutPercentageItems.get(i));
-      };
       // validate the required field `value`
       SettingValueType.validateJsonElement(jsonObj.get("value"));
       // validate the required field `config`
@@ -678,7 +661,7 @@ public class SettingValueModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

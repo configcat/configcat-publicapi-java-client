@@ -42,7 +42,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -54,24 +53,27 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * UpdateEvaluationFormulaModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class UpdateEvaluationFormulaModel {
   public static final String SERIALIZED_NAME_DEFAULT_VALUE = "defaultValue";
   @SerializedName(SERIALIZED_NAME_DEFAULT_VALUE)
+  @javax.annotation.Nonnull
   private UpdateValueModel defaultValue;
 
   public static final String SERIALIZED_NAME_TARGETING_RULES = "targetingRules";
   @SerializedName(SERIALIZED_NAME_TARGETING_RULES)
+  @javax.annotation.Nullable
   private List<UpdateTargetingRuleModel> targetingRules;
 
   public static final String SERIALIZED_NAME_PERCENTAGE_EVALUATION_ATTRIBUTE = "percentageEvaluationAttribute";
   @SerializedName(SERIALIZED_NAME_PERCENTAGE_EVALUATION_ATTRIBUTE)
+  @javax.annotation.Nullable
   private String percentageEvaluationAttribute;
 
   public UpdateEvaluationFormulaModel() {
   }
 
-  public UpdateEvaluationFormulaModel defaultValue(UpdateValueModel defaultValue) {
+  public UpdateEvaluationFormulaModel defaultValue(@javax.annotation.Nonnull UpdateValueModel defaultValue) {
     this.defaultValue = defaultValue;
     return this;
   }
@@ -85,12 +87,12 @@ public class UpdateEvaluationFormulaModel {
     return defaultValue;
   }
 
-  public void setDefaultValue(UpdateValueModel defaultValue) {
+  public void setDefaultValue(@javax.annotation.Nonnull UpdateValueModel defaultValue) {
     this.defaultValue = defaultValue;
   }
 
 
-  public UpdateEvaluationFormulaModel targetingRules(List<UpdateTargetingRuleModel> targetingRules) {
+  public UpdateEvaluationFormulaModel targetingRules(@javax.annotation.Nullable List<UpdateTargetingRuleModel> targetingRules) {
     this.targetingRules = targetingRules;
     return this;
   }
@@ -112,12 +114,12 @@ public class UpdateEvaluationFormulaModel {
     return targetingRules;
   }
 
-  public void setTargetingRules(List<UpdateTargetingRuleModel> targetingRules) {
+  public void setTargetingRules(@javax.annotation.Nullable List<UpdateTargetingRuleModel> targetingRules) {
     this.targetingRules = targetingRules;
   }
 
 
-  public UpdateEvaluationFormulaModel percentageEvaluationAttribute(String percentageEvaluationAttribute) {
+  public UpdateEvaluationFormulaModel percentageEvaluationAttribute(@javax.annotation.Nullable String percentageEvaluationAttribute) {
     this.percentageEvaluationAttribute = percentageEvaluationAttribute;
     return this;
   }
@@ -131,7 +133,7 @@ public class UpdateEvaluationFormulaModel {
     return percentageEvaluationAttribute;
   }
 
-  public void setPercentageEvaluationAttribute(String percentageEvaluationAttribute) {
+  public void setPercentageEvaluationAttribute(@javax.annotation.Nullable String percentageEvaluationAttribute) {
     this.percentageEvaluationAttribute = percentageEvaluationAttribute;
   }
 
@@ -229,10 +231,7 @@ public class UpdateEvaluationFormulaModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -241,14 +240,10 @@ public class UpdateEvaluationFormulaModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("defaultValue");
-    openapiFields.add("targetingRules");
-    openapiFields.add("percentageEvaluationAttribute");
+    openapiFields = new HashSet<String>(Arrays.asList("defaultValue", "targetingRules", "percentageEvaluationAttribute"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("defaultValue");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("defaultValue"));
   }
 
   /**
@@ -260,14 +255,14 @@ public class UpdateEvaluationFormulaModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!UpdateEvaluationFormulaModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdateEvaluationFormulaModel is not found in the empty JSON string", UpdateEvaluationFormulaModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in UpdateEvaluationFormulaModel is not found in the empty JSON string", UpdateEvaluationFormulaModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : UpdateEvaluationFormulaModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -278,7 +273,7 @@ public class UpdateEvaluationFormulaModel {
         if (jsonArraytargetingRules != null) {
           // ensure the json data is an array
           if (!jsonObj.get("targetingRules").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `targetingRules` to be an array in the JSON string but got `%s`", jsonObj.get("targetingRules").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `targetingRules` to be an array in the JSON string but got `%s`", jsonObj.get("targetingRules").toString()));
           }
 
           // validate the optional field `targetingRules` (array)
@@ -288,7 +283,7 @@ public class UpdateEvaluationFormulaModel {
         }
       }
       if ((jsonObj.get("percentageEvaluationAttribute") != null && !jsonObj.get("percentageEvaluationAttribute").isJsonNull()) && !jsonObj.get("percentageEvaluationAttribute").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `percentageEvaluationAttribute` to be a primitive type in the JSON string but got `%s`", jsonObj.get("percentageEvaluationAttribute").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `percentageEvaluationAttribute` to be a primitive type in the JSON string but got `%s`", jsonObj.get("percentageEvaluationAttribute").toString()));
       }
   }
 
@@ -349,7 +344,7 @@ public class UpdateEvaluationFormulaModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

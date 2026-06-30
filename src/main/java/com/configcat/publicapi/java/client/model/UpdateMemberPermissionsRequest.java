@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,28 +51,32 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * UpdateMemberPermissionsRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class UpdateMemberPermissionsRequest {
   public static final String SERIALIZED_NAME_PERMISSION_GROUP_IDS = "permissionGroupIds";
   @SerializedName(SERIALIZED_NAME_PERMISSION_GROUP_IDS)
+  @javax.annotation.Nullable
   private List<Long> permissionGroupIds;
 
   public static final String SERIALIZED_NAME_IS_ADMIN = "isAdmin";
   @SerializedName(SERIALIZED_NAME_IS_ADMIN)
+  @javax.annotation.Nullable
   private Boolean isAdmin;
 
   public static final String SERIALIZED_NAME_IS_BILLING_MANAGER = "isBillingManager";
   @SerializedName(SERIALIZED_NAME_IS_BILLING_MANAGER)
+  @javax.annotation.Nullable
   private Boolean isBillingManager;
 
   public static final String SERIALIZED_NAME_REMOVE_FROM_PERMISSION_GROUPS_WHERE_ID_NOT_SET = "removeFromPermissionGroupsWhereIdNotSet";
   @SerializedName(SERIALIZED_NAME_REMOVE_FROM_PERMISSION_GROUPS_WHERE_ID_NOT_SET)
+  @javax.annotation.Nullable
   private Boolean removeFromPermissionGroupsWhereIdNotSet;
 
   public UpdateMemberPermissionsRequest() {
   }
 
-  public UpdateMemberPermissionsRequest permissionGroupIds(List<Long> permissionGroupIds) {
+  public UpdateMemberPermissionsRequest permissionGroupIds(@javax.annotation.Nullable List<Long> permissionGroupIds) {
     this.permissionGroupIds = permissionGroupIds;
     return this;
   }
@@ -95,12 +98,12 @@ public class UpdateMemberPermissionsRequest {
     return permissionGroupIds;
   }
 
-  public void setPermissionGroupIds(List<Long> permissionGroupIds) {
+  public void setPermissionGroupIds(@javax.annotation.Nullable List<Long> permissionGroupIds) {
     this.permissionGroupIds = permissionGroupIds;
   }
 
 
-  public UpdateMemberPermissionsRequest isAdmin(Boolean isAdmin) {
+  public UpdateMemberPermissionsRequest isAdmin(@javax.annotation.Nullable Boolean isAdmin) {
     this.isAdmin = isAdmin;
     return this;
   }
@@ -114,12 +117,12 @@ public class UpdateMemberPermissionsRequest {
     return isAdmin;
   }
 
-  public void setIsAdmin(Boolean isAdmin) {
+  public void setIsAdmin(@javax.annotation.Nullable Boolean isAdmin) {
     this.isAdmin = isAdmin;
   }
 
 
-  public UpdateMemberPermissionsRequest isBillingManager(Boolean isBillingManager) {
+  public UpdateMemberPermissionsRequest isBillingManager(@javax.annotation.Nullable Boolean isBillingManager) {
     this.isBillingManager = isBillingManager;
     return this;
   }
@@ -133,12 +136,12 @@ public class UpdateMemberPermissionsRequest {
     return isBillingManager;
   }
 
-  public void setIsBillingManager(Boolean isBillingManager) {
+  public void setIsBillingManager(@javax.annotation.Nullable Boolean isBillingManager) {
     this.isBillingManager = isBillingManager;
   }
 
 
-  public UpdateMemberPermissionsRequest removeFromPermissionGroupsWhereIdNotSet(Boolean removeFromPermissionGroupsWhereIdNotSet) {
+  public UpdateMemberPermissionsRequest removeFromPermissionGroupsWhereIdNotSet(@javax.annotation.Nullable Boolean removeFromPermissionGroupsWhereIdNotSet) {
     this.removeFromPermissionGroupsWhereIdNotSet = removeFromPermissionGroupsWhereIdNotSet;
     return this;
   }
@@ -152,7 +155,7 @@ public class UpdateMemberPermissionsRequest {
     return removeFromPermissionGroupsWhereIdNotSet;
   }
 
-  public void setRemoveFromPermissionGroupsWhereIdNotSet(Boolean removeFromPermissionGroupsWhereIdNotSet) {
+  public void setRemoveFromPermissionGroupsWhereIdNotSet(@javax.annotation.Nullable Boolean removeFromPermissionGroupsWhereIdNotSet) {
     this.removeFromPermissionGroupsWhereIdNotSet = removeFromPermissionGroupsWhereIdNotSet;
   }
 
@@ -252,10 +255,7 @@ public class UpdateMemberPermissionsRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -264,14 +264,10 @@ public class UpdateMemberPermissionsRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("permissionGroupIds");
-    openapiFields.add("isAdmin");
-    openapiFields.add("isBillingManager");
-    openapiFields.add("removeFromPermissionGroupsWhereIdNotSet");
+    openapiFields = new HashSet<String>(Arrays.asList("permissionGroupIds", "isAdmin", "isBillingManager", "removeFromPermissionGroupsWhereIdNotSet"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -283,13 +279,13 @@ public class UpdateMemberPermissionsRequest {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!UpdateMemberPermissionsRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdateMemberPermissionsRequest is not found in the empty JSON string", UpdateMemberPermissionsRequest.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in UpdateMemberPermissionsRequest is not found in the empty JSON string", UpdateMemberPermissionsRequest.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // ensure the optional json data is an array if present
       if (jsonObj.get("permissionGroupIds") != null && !jsonObj.get("permissionGroupIds").isJsonNull() && !jsonObj.get("permissionGroupIds").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `permissionGroupIds` to be an array in the JSON string but got `%s`", jsonObj.get("permissionGroupIds").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `permissionGroupIds` to be an array in the JSON string but got `%s`", jsonObj.get("permissionGroupIds").toString()));
       }
   }
 
@@ -350,7 +346,7 @@ public class UpdateMemberPermissionsRequest {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

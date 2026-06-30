@@ -11,6 +11,7 @@
 |**hint** | **String** | A short description for the setting, shown on the Dashboard UI. |  [optional] |
 |**tags** | **List&lt;Long&gt;** | The IDs of the tags which are attached to the setting. |  [optional] |
 |**order** | **Integer** | The order of the Setting represented on the ConfigCat Dashboard. Determined from an ascending sequence of integers. |  [optional] |
+|**isJson** | **Boolean** | Indicates whether this setting should validate string values as JSON values. |  [optional] |
 |**key** | **String** | The key of the Feature Flag or Setting. |  |
 |**settingType** | **SettingType** |  |  |
 |**predefinedVariations** | [**List&lt;CreatePredefinedVariationModel&gt;**](CreatePredefinedVariationModel.md) | The Feature Flag or Setting&#39;s Variations. |  [optional] |

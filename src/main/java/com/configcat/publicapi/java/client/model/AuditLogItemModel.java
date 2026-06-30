@@ -23,7 +23,6 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
-import java.util.UUID;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -40,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,60 +50,72 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * AuditLogItemModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class AuditLogItemModel {
   public static final String SERIALIZED_NAME_AUDIT_LOG_ID = "auditLogId";
   @SerializedName(SERIALIZED_NAME_AUDIT_LOG_ID)
+  @javax.annotation.Nonnull
   private Long auditLogId;
 
   public static final String SERIALIZED_NAME_AUDIT_LOG_DATE_TIME = "auditLogDateTime";
   @SerializedName(SERIALIZED_NAME_AUDIT_LOG_DATE_TIME)
+  @javax.annotation.Nonnull
   private OffsetDateTime auditLogDateTime;
 
   public static final String SERIALIZED_NAME_AUDIT_LOG_TYPE_ENUM = "auditLogTypeEnum";
   @SerializedName(SERIALIZED_NAME_AUDIT_LOG_TYPE_ENUM)
+  @javax.annotation.Nonnull
   private AuditLogType auditLogTypeEnum;
-
-  public static final String SERIALIZED_NAME_CHANGE_SET_ID = "changeSetId";
-  @SerializedName(SERIALIZED_NAME_CHANGE_SET_ID)
-  private UUID changeSetId;
 
   public static final String SERIALIZED_NAME_TRUNCATED = "truncated";
   @SerializedName(SERIALIZED_NAME_TRUNCATED)
+  @javax.annotation.Nonnull
   private Boolean truncated;
+
+  public static final String SERIALIZED_NAME_MODEL_VERSION = "modelVersion";
+  @SerializedName(SERIALIZED_NAME_MODEL_VERSION)
+  @javax.annotation.Nonnull
+  private Integer modelVersion;
 
   public static final String SERIALIZED_NAME_AUDIT_LOG_TYPE = "auditLogType";
   @SerializedName(SERIALIZED_NAME_AUDIT_LOG_TYPE)
+  @javax.annotation.Nonnull
   private String auditLogType;
 
   public static final String SERIALIZED_NAME_USER_EMAIL = "userEmail";
   @SerializedName(SERIALIZED_NAME_USER_EMAIL)
+  @javax.annotation.Nullable
   private String userEmail;
 
   public static final String SERIALIZED_NAME_USER_NAME = "userName";
   @SerializedName(SERIALIZED_NAME_USER_NAME)
+  @javax.annotation.Nonnull
   private String userName;
 
   public static final String SERIALIZED_NAME_WHERE = "where";
   @SerializedName(SERIALIZED_NAME_WHERE)
+  @javax.annotation.Nonnull
   private String where;
 
   public static final String SERIALIZED_NAME_WHY = "why";
   @SerializedName(SERIALIZED_NAME_WHY)
+  @javax.annotation.Nullable
   private String why;
 
   public static final String SERIALIZED_NAME_ACTION_TARGET = "actionTarget";
   @SerializedName(SERIALIZED_NAME_ACTION_TARGET)
+  @javax.annotation.Nonnull
   private String actionTarget;
 
   public static final String SERIALIZED_NAME_DETAILS = "details";
   @SerializedName(SERIALIZED_NAME_DETAILS)
+  @javax.annotation.Nonnull
   private String details;
 
   public AuditLogItemModel() {
   }
 
-  public AuditLogItemModel auditLogId(Long auditLogId) {
+  public AuditLogItemModel auditLogId(@javax.annotation.Nonnull Long auditLogId) {
     this.auditLogId = auditLogId;
     return this;
   }
@@ -119,12 +129,12 @@ public class AuditLogItemModel {
     return auditLogId;
   }
 
-  public void setAuditLogId(Long auditLogId) {
+  public void setAuditLogId(@javax.annotation.Nonnull Long auditLogId) {
     this.auditLogId = auditLogId;
   }
 
 
-  public AuditLogItemModel auditLogDateTime(OffsetDateTime auditLogDateTime) {
+  public AuditLogItemModel auditLogDateTime(@javax.annotation.Nonnull OffsetDateTime auditLogDateTime) {
     this.auditLogDateTime = auditLogDateTime;
     return this;
   }
@@ -138,12 +148,12 @@ public class AuditLogItemModel {
     return auditLogDateTime;
   }
 
-  public void setAuditLogDateTime(OffsetDateTime auditLogDateTime) {
+  public void setAuditLogDateTime(@javax.annotation.Nonnull OffsetDateTime auditLogDateTime) {
     this.auditLogDateTime = auditLogDateTime;
   }
 
 
-  public AuditLogItemModel auditLogTypeEnum(AuditLogType auditLogTypeEnum) {
+  public AuditLogItemModel auditLogTypeEnum(@javax.annotation.Nonnull AuditLogType auditLogTypeEnum) {
     this.auditLogTypeEnum = auditLogTypeEnum;
     return this;
   }
@@ -157,31 +167,12 @@ public class AuditLogItemModel {
     return auditLogTypeEnum;
   }
 
-  public void setAuditLogTypeEnum(AuditLogType auditLogTypeEnum) {
+  public void setAuditLogTypeEnum(@javax.annotation.Nonnull AuditLogType auditLogTypeEnum) {
     this.auditLogTypeEnum = auditLogTypeEnum;
   }
 
 
-  public AuditLogItemModel changeSetId(UUID changeSetId) {
-    this.changeSetId = changeSetId;
-    return this;
-  }
-
-  /**
-   * Get changeSetId
-   * @return changeSetId
-   */
-  @javax.annotation.Nullable
-  public UUID getChangeSetId() {
-    return changeSetId;
-  }
-
-  public void setChangeSetId(UUID changeSetId) {
-    this.changeSetId = changeSetId;
-  }
-
-
-  public AuditLogItemModel truncated(Boolean truncated) {
+  public AuditLogItemModel truncated(@javax.annotation.Nonnull Boolean truncated) {
     this.truncated = truncated;
     return this;
   }
@@ -195,12 +186,31 @@ public class AuditLogItemModel {
     return truncated;
   }
 
-  public void setTruncated(Boolean truncated) {
+  public void setTruncated(@javax.annotation.Nonnull Boolean truncated) {
     this.truncated = truncated;
   }
 
 
-  public AuditLogItemModel auditLogType(String auditLogType) {
+  public AuditLogItemModel modelVersion(@javax.annotation.Nonnull Integer modelVersion) {
+    this.modelVersion = modelVersion;
+    return this;
+  }
+
+  /**
+   * Get modelVersion
+   * @return modelVersion
+   */
+  @javax.annotation.Nonnull
+  public Integer getModelVersion() {
+    return modelVersion;
+  }
+
+  public void setModelVersion(@javax.annotation.Nonnull Integer modelVersion) {
+    this.modelVersion = modelVersion;
+  }
+
+
+  public AuditLogItemModel auditLogType(@javax.annotation.Nonnull String auditLogType) {
     this.auditLogType = auditLogType;
     return this;
   }
@@ -209,17 +219,17 @@ public class AuditLogItemModel {
    * Get auditLogType
    * @return auditLogType
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getAuditLogType() {
     return auditLogType;
   }
 
-  public void setAuditLogType(String auditLogType) {
+  public void setAuditLogType(@javax.annotation.Nonnull String auditLogType) {
     this.auditLogType = auditLogType;
   }
 
 
-  public AuditLogItemModel userEmail(String userEmail) {
+  public AuditLogItemModel userEmail(@javax.annotation.Nullable String userEmail) {
     this.userEmail = userEmail;
     return this;
   }
@@ -233,12 +243,12 @@ public class AuditLogItemModel {
     return userEmail;
   }
 
-  public void setUserEmail(String userEmail) {
+  public void setUserEmail(@javax.annotation.Nullable String userEmail) {
     this.userEmail = userEmail;
   }
 
 
-  public AuditLogItemModel userName(String userName) {
+  public AuditLogItemModel userName(@javax.annotation.Nonnull String userName) {
     this.userName = userName;
     return this;
   }
@@ -247,17 +257,17 @@ public class AuditLogItemModel {
    * Get userName
    * @return userName
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getUserName() {
     return userName;
   }
 
-  public void setUserName(String userName) {
+  public void setUserName(@javax.annotation.Nonnull String userName) {
     this.userName = userName;
   }
 
 
-  public AuditLogItemModel where(String where) {
+  public AuditLogItemModel where(@javax.annotation.Nonnull String where) {
     this.where = where;
     return this;
   }
@@ -266,17 +276,17 @@ public class AuditLogItemModel {
    * Get where
    * @return where
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getWhere() {
     return where;
   }
 
-  public void setWhere(String where) {
+  public void setWhere(@javax.annotation.Nonnull String where) {
     this.where = where;
   }
 
 
-  public AuditLogItemModel why(String why) {
+  public AuditLogItemModel why(@javax.annotation.Nullable String why) {
     this.why = why;
     return this;
   }
@@ -290,12 +300,12 @@ public class AuditLogItemModel {
     return why;
   }
 
-  public void setWhy(String why) {
+  public void setWhy(@javax.annotation.Nullable String why) {
     this.why = why;
   }
 
 
-  public AuditLogItemModel actionTarget(String actionTarget) {
+  public AuditLogItemModel actionTarget(@javax.annotation.Nonnull String actionTarget) {
     this.actionTarget = actionTarget;
     return this;
   }
@@ -304,17 +314,17 @@ public class AuditLogItemModel {
    * Get actionTarget
    * @return actionTarget
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getActionTarget() {
     return actionTarget;
   }
 
-  public void setActionTarget(String actionTarget) {
+  public void setActionTarget(@javax.annotation.Nonnull String actionTarget) {
     this.actionTarget = actionTarget;
   }
 
 
-  public AuditLogItemModel details(String details) {
+  public AuditLogItemModel details(@javax.annotation.Nonnull String details) {
     this.details = details;
     return this;
   }
@@ -323,12 +333,12 @@ public class AuditLogItemModel {
    * Get details
    * @return details
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getDetails() {
     return details;
   }
 
-  public void setDetails(String details) {
+  public void setDetails(@javax.annotation.Nonnull String details) {
     this.details = details;
   }
 
@@ -390,8 +400,8 @@ public class AuditLogItemModel {
     return Objects.equals(this.auditLogId, auditLogItemModel.auditLogId) &&
         Objects.equals(this.auditLogDateTime, auditLogItemModel.auditLogDateTime) &&
         Objects.equals(this.auditLogTypeEnum, auditLogItemModel.auditLogTypeEnum) &&
-        Objects.equals(this.changeSetId, auditLogItemModel.changeSetId) &&
         Objects.equals(this.truncated, auditLogItemModel.truncated) &&
+        Objects.equals(this.modelVersion, auditLogItemModel.modelVersion) &&
         Objects.equals(this.auditLogType, auditLogItemModel.auditLogType) &&
         Objects.equals(this.userEmail, auditLogItemModel.userEmail) &&
         Objects.equals(this.userName, auditLogItemModel.userName) &&
@@ -404,7 +414,7 @@ public class AuditLogItemModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(auditLogId, auditLogDateTime, auditLogTypeEnum, changeSetId, truncated, auditLogType, userEmail, userName, where, why, actionTarget, details, additionalProperties);
+    return Objects.hash(auditLogId, auditLogDateTime, auditLogTypeEnum, truncated, modelVersion, auditLogType, userEmail, userName, where, why, actionTarget, details, additionalProperties);
   }
 
   @Override
@@ -414,8 +424,8 @@ public class AuditLogItemModel {
     sb.append("    auditLogId: ").append(toIndentedString(auditLogId)).append("\n");
     sb.append("    auditLogDateTime: ").append(toIndentedString(auditLogDateTime)).append("\n");
     sb.append("    auditLogTypeEnum: ").append(toIndentedString(auditLogTypeEnum)).append("\n");
-    sb.append("    changeSetId: ").append(toIndentedString(changeSetId)).append("\n");
     sb.append("    truncated: ").append(toIndentedString(truncated)).append("\n");
+    sb.append("    modelVersion: ").append(toIndentedString(modelVersion)).append("\n");
     sb.append("    auditLogType: ").append(toIndentedString(auditLogType)).append("\n");
     sb.append("    userEmail: ").append(toIndentedString(userEmail)).append("\n");
     sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
@@ -433,10 +443,7 @@ public class AuditLogItemModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -445,34 +452,10 @@ public class AuditLogItemModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("auditLogId");
-    openapiFields.add("auditLogDateTime");
-    openapiFields.add("auditLogTypeEnum");
-    openapiFields.add("changeSetId");
-    openapiFields.add("truncated");
-    openapiFields.add("auditLogType");
-    openapiFields.add("userEmail");
-    openapiFields.add("userName");
-    openapiFields.add("where");
-    openapiFields.add("why");
-    openapiFields.add("actionTarget");
-    openapiFields.add("details");
+    openapiFields = new HashSet<String>(Arrays.asList("auditLogId", "auditLogDateTime", "auditLogTypeEnum", "truncated", "modelVersion", "auditLogType", "userEmail", "userName", "where", "why", "actionTarget", "details"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("auditLogId");
-    openapiRequiredFields.add("auditLogDateTime");
-    openapiRequiredFields.add("auditLogTypeEnum");
-    openapiRequiredFields.add("changeSetId");
-    openapiRequiredFields.add("truncated");
-    openapiRequiredFields.add("auditLogType");
-    openapiRequiredFields.add("userEmail");
-    openapiRequiredFields.add("userName");
-    openapiRequiredFields.add("where");
-    openapiRequiredFields.add("why");
-    openapiRequiredFields.add("actionTarget");
-    openapiRequiredFields.add("details");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("auditLogId", "auditLogDateTime", "auditLogTypeEnum", "truncated", "modelVersion", "auditLogType", "userEmail", "userName", "where", "why", "actionTarget", "details"));
   }
 
   /**
@@ -484,42 +467,39 @@ public class AuditLogItemModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!AuditLogItemModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AuditLogItemModel is not found in the empty JSON string", AuditLogItemModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in AuditLogItemModel is not found in the empty JSON string", AuditLogItemModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : AuditLogItemModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the required field `auditLogTypeEnum`
       AuditLogType.validateJsonElement(jsonObj.get("auditLogTypeEnum"));
-      if ((jsonObj.get("changeSetId") != null && !jsonObj.get("changeSetId").isJsonNull()) && !jsonObj.get("changeSetId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `changeSetId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("changeSetId").toString()));
-      }
-      if ((jsonObj.get("auditLogType") != null && !jsonObj.get("auditLogType").isJsonNull()) && !jsonObj.get("auditLogType").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `auditLogType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("auditLogType").toString()));
+      if (!jsonObj.get("auditLogType").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `auditLogType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("auditLogType").toString()));
       }
       if ((jsonObj.get("userEmail") != null && !jsonObj.get("userEmail").isJsonNull()) && !jsonObj.get("userEmail").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `userEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("userEmail").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `userEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("userEmail").toString()));
       }
-      if ((jsonObj.get("userName") != null && !jsonObj.get("userName").isJsonNull()) && !jsonObj.get("userName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `userName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("userName").toString()));
+      if (!jsonObj.get("userName").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `userName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("userName").toString()));
       }
-      if ((jsonObj.get("where") != null && !jsonObj.get("where").isJsonNull()) && !jsonObj.get("where").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `where` to be a primitive type in the JSON string but got `%s`", jsonObj.get("where").toString()));
+      if (!jsonObj.get("where").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `where` to be a primitive type in the JSON string but got `%s`", jsonObj.get("where").toString()));
       }
       if ((jsonObj.get("why") != null && !jsonObj.get("why").isJsonNull()) && !jsonObj.get("why").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `why` to be a primitive type in the JSON string but got `%s`", jsonObj.get("why").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `why` to be a primitive type in the JSON string but got `%s`", jsonObj.get("why").toString()));
       }
-      if ((jsonObj.get("actionTarget") != null && !jsonObj.get("actionTarget").isJsonNull()) && !jsonObj.get("actionTarget").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `actionTarget` to be a primitive type in the JSON string but got `%s`", jsonObj.get("actionTarget").toString()));
+      if (!jsonObj.get("actionTarget").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `actionTarget` to be a primitive type in the JSON string but got `%s`", jsonObj.get("actionTarget").toString()));
       }
-      if ((jsonObj.get("details") != null && !jsonObj.get("details").isJsonNull()) && !jsonObj.get("details").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `details` to be a primitive type in the JSON string but got `%s`", jsonObj.get("details").toString()));
+      if (!jsonObj.get("details").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `details` to be a primitive type in the JSON string but got `%s`", jsonObj.get("details").toString()));
       }
   }
 
@@ -580,7 +560,7 @@ public class AuditLogItemModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

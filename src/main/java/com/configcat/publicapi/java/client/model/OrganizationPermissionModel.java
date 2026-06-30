@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,20 +50,22 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * Describes the Member&#39;s permission.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class OrganizationPermissionModel {
   public static final String SERIALIZED_NAME_PRODUCT = "product";
   @SerializedName(SERIALIZED_NAME_PRODUCT)
+  @javax.annotation.Nonnull
   private OrganizationProductModel product;
 
   public static final String SERIALIZED_NAME_PERMISSION_GROUP = "permissionGroup";
   @SerializedName(SERIALIZED_NAME_PERMISSION_GROUP)
+  @javax.annotation.Nonnull
   private OrganizationPermissionGroupModel permissionGroup;
 
   public OrganizationPermissionModel() {
   }
 
-  public OrganizationPermissionModel product(OrganizationProductModel product) {
+  public OrganizationPermissionModel product(@javax.annotation.Nonnull OrganizationProductModel product) {
     this.product = product;
     return this;
   }
@@ -78,12 +79,12 @@ public class OrganizationPermissionModel {
     return product;
   }
 
-  public void setProduct(OrganizationProductModel product) {
+  public void setProduct(@javax.annotation.Nonnull OrganizationProductModel product) {
     this.product = product;
   }
 
 
-  public OrganizationPermissionModel permissionGroup(OrganizationPermissionGroupModel permissionGroup) {
+  public OrganizationPermissionModel permissionGroup(@javax.annotation.Nonnull OrganizationPermissionGroupModel permissionGroup) {
     this.permissionGroup = permissionGroup;
     return this;
   }
@@ -97,7 +98,7 @@ public class OrganizationPermissionModel {
     return permissionGroup;
   }
 
-  public void setPermissionGroup(OrganizationPermissionGroupModel permissionGroup) {
+  public void setPermissionGroup(@javax.annotation.Nonnull OrganizationPermissionGroupModel permissionGroup) {
     this.permissionGroup = permissionGroup;
   }
 
@@ -182,10 +183,7 @@ public class OrganizationPermissionModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -194,14 +192,10 @@ public class OrganizationPermissionModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("product");
-    openapiFields.add("permissionGroup");
+    openapiFields = new HashSet<String>(Arrays.asList("product", "permissionGroup"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("product");
-    openapiRequiredFields.add("permissionGroup");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("product", "permissionGroup"));
   }
 
   /**
@@ -213,14 +207,14 @@ public class OrganizationPermissionModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!OrganizationPermissionModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in OrganizationPermissionModel is not found in the empty JSON string", OrganizationPermissionModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in OrganizationPermissionModel is not found in the empty JSON string", OrganizationPermissionModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : OrganizationPermissionModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -287,7 +281,7 @@ public class OrganizationPermissionModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

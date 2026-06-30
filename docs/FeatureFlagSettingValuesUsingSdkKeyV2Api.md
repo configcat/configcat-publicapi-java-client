@@ -84,7 +84,7 @@ public class Example {
 
 <a id="replaceSettingValueBySdkkeyV2"></a>
 # **replaceSettingValueBySdkkeyV2**
-> SettingFormulaModel replaceSettingValueBySdkkeyV2(settingKeyOrId, updateEvaluationFormulaModel, reason, X_CONFIGCAT_SDKKEY)
+> SettingFormulaModel replaceSettingValueBySdkkeyV2(settingKeyOrId, updateEvaluationFormulaModel, reason, bypassApproval, X_CONFIGCAT_SDKKEY)
 
 Replace value
 
@@ -114,9 +114,10 @@ public class Example {
     String settingKeyOrId = "settingKeyOrId_example"; // String | The key or id of the Setting.
     UpdateEvaluationFormulaModel updateEvaluationFormulaModel = new UpdateEvaluationFormulaModel(); // UpdateEvaluationFormulaModel | 
     String reason = "reason_example"; // String | The reason note for the Audit Log if the Product's \"Config changes require a reason\" preference is turned on.
+    Boolean bypassApproval = true; // Boolean | Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission.
     String X_CONFIGCAT_SDKKEY = "X_CONFIGCAT_SDKKEY_example"; // String | The ConfigCat SDK Key. (https://app.configcat.com/sdkkey)
     try {
-      SettingFormulaModel result = apiInstance.replaceSettingValueBySdkkeyV2(settingKeyOrId, updateEvaluationFormulaModel, reason, X_CONFIGCAT_SDKKEY);
+      SettingFormulaModel result = apiInstance.replaceSettingValueBySdkkeyV2(settingKeyOrId, updateEvaluationFormulaModel, reason, bypassApproval, X_CONFIGCAT_SDKKEY);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FeatureFlagSettingValuesUsingSdkKeyV2Api#replaceSettingValueBySdkkeyV2");
@@ -136,6 +137,7 @@ public class Example {
 | **settingKeyOrId** | **String**| The key or id of the Setting. | |
 | **updateEvaluationFormulaModel** | [**UpdateEvaluationFormulaModel**](UpdateEvaluationFormulaModel.md)|  | |
 | **reason** | **String**| The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. | [optional] |
+| **bypassApproval** | **Boolean**| Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. | [optional] |
 | **X_CONFIGCAT_SDKKEY** | **String**| The ConfigCat SDK Key. (https://app.configcat.com/sdkkey) | [optional] |
 
 ### Return type
@@ -161,7 +163,7 @@ public class Example {
 
 <a id="updateSettingValueBySdkkeyV2"></a>
 # **updateSettingValueBySdkkeyV2**
-> SettingFormulaModel updateSettingValueBySdkkeyV2(settingKeyOrId, jsonPatchOperation, reason, X_CONFIGCAT_SDKKEY)
+> SettingFormulaModel updateSettingValueBySdkkeyV2(settingKeyOrId, jsonPatchOperation, reason, bypassApproval, X_CONFIGCAT_SDKKEY)
 
 Update value
 
@@ -191,9 +193,10 @@ public class Example {
     String settingKeyOrId = "settingKeyOrId_example"; // String | The key or id of the Setting.
     List<JsonPatchOperation> jsonPatchOperation = Arrays.asList(); // List<JsonPatchOperation> | 
     String reason = "reason_example"; // String | The reason note for the Audit Log if the Product's \"Config changes require a reason\" preference is turned on.
+    Boolean bypassApproval = true; // Boolean | Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission.
     String X_CONFIGCAT_SDKKEY = "X_CONFIGCAT_SDKKEY_example"; // String | The ConfigCat SDK Key. (https://app.configcat.com/sdkkey)
     try {
-      SettingFormulaModel result = apiInstance.updateSettingValueBySdkkeyV2(settingKeyOrId, jsonPatchOperation, reason, X_CONFIGCAT_SDKKEY);
+      SettingFormulaModel result = apiInstance.updateSettingValueBySdkkeyV2(settingKeyOrId, jsonPatchOperation, reason, bypassApproval, X_CONFIGCAT_SDKKEY);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FeatureFlagSettingValuesUsingSdkKeyV2Api#updateSettingValueBySdkkeyV2");
@@ -213,6 +216,7 @@ public class Example {
 | **settingKeyOrId** | **String**| The key or id of the Setting. | |
 | **jsonPatchOperation** | [**List&lt;JsonPatchOperation&gt;**](JsonPatchOperation.md)|  | |
 | **reason** | **String**| The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. | [optional] |
+| **bypassApproval** | **Boolean**| Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. | [optional] |
 | **X_CONFIGCAT_SDKKEY** | **String**| The ConfigCat SDK Key. (https://app.configcat.com/sdkkey) | [optional] |
 
 ### Return type

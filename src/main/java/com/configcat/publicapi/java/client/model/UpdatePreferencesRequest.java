@@ -15,6 +15,7 @@ package com.configcat.publicapi.java.client.model;
 
 import java.util.Objects;
 import com.configcat.publicapi.java.client.model.KeyGenerationMode;
+import com.configcat.publicapi.java.client.model.UpdateApproveRequiredEnvironmentModel;
 import com.configcat.publicapi.java.client.model.UpdateReasonRequiredEnvironmentModel;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -42,7 +43,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -54,32 +54,47 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * UpdatePreferencesRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class UpdatePreferencesRequest {
   public static final String SERIALIZED_NAME_REASON_REQUIRED = "reasonRequired";
   @SerializedName(SERIALIZED_NAME_REASON_REQUIRED)
+  @javax.annotation.Nullable
   private Boolean reasonRequired;
 
   public static final String SERIALIZED_NAME_KEY_GENERATION_MODE = "keyGenerationMode";
   @SerializedName(SERIALIZED_NAME_KEY_GENERATION_MODE)
+  @javax.annotation.Nullable
   private KeyGenerationMode keyGenerationMode;
 
   public static final String SERIALIZED_NAME_SHOW_VARIATION_ID = "showVariationId";
   @SerializedName(SERIALIZED_NAME_SHOW_VARIATION_ID)
+  @javax.annotation.Nullable
   private Boolean showVariationId;
 
   public static final String SERIALIZED_NAME_MANDATORY_SETTING_HINT = "mandatorySettingHint";
   @SerializedName(SERIALIZED_NAME_MANDATORY_SETTING_HINT)
+  @javax.annotation.Nullable
   private Boolean mandatorySettingHint;
 
   public static final String SERIALIZED_NAME_REASON_REQUIRED_ENVIRONMENTS = "reasonRequiredEnvironments";
   @SerializedName(SERIALIZED_NAME_REASON_REQUIRED_ENVIRONMENTS)
+  @javax.annotation.Nullable
   private List<UpdateReasonRequiredEnvironmentModel> reasonRequiredEnvironments;
+
+  public static final String SERIALIZED_NAME_APPROVE_REQUIRED = "approveRequired";
+  @SerializedName(SERIALIZED_NAME_APPROVE_REQUIRED)
+  @javax.annotation.Nullable
+  private Boolean approveRequired;
+
+  public static final String SERIALIZED_NAME_APPROVE_REQUIRED_ENVIRONMENTS = "approveRequiredEnvironments";
+  @SerializedName(SERIALIZED_NAME_APPROVE_REQUIRED_ENVIRONMENTS)
+  @javax.annotation.Nullable
+  private List<UpdateApproveRequiredEnvironmentModel> approveRequiredEnvironments;
 
   public UpdatePreferencesRequest() {
   }
 
-  public UpdatePreferencesRequest reasonRequired(Boolean reasonRequired) {
+  public UpdatePreferencesRequest reasonRequired(@javax.annotation.Nullable Boolean reasonRequired) {
     this.reasonRequired = reasonRequired;
     return this;
   }
@@ -93,12 +108,12 @@ public class UpdatePreferencesRequest {
     return reasonRequired;
   }
 
-  public void setReasonRequired(Boolean reasonRequired) {
+  public void setReasonRequired(@javax.annotation.Nullable Boolean reasonRequired) {
     this.reasonRequired = reasonRequired;
   }
 
 
-  public UpdatePreferencesRequest keyGenerationMode(KeyGenerationMode keyGenerationMode) {
+  public UpdatePreferencesRequest keyGenerationMode(@javax.annotation.Nullable KeyGenerationMode keyGenerationMode) {
     this.keyGenerationMode = keyGenerationMode;
     return this;
   }
@@ -112,12 +127,12 @@ public class UpdatePreferencesRequest {
     return keyGenerationMode;
   }
 
-  public void setKeyGenerationMode(KeyGenerationMode keyGenerationMode) {
+  public void setKeyGenerationMode(@javax.annotation.Nullable KeyGenerationMode keyGenerationMode) {
     this.keyGenerationMode = keyGenerationMode;
   }
 
 
-  public UpdatePreferencesRequest showVariationId(Boolean showVariationId) {
+  public UpdatePreferencesRequest showVariationId(@javax.annotation.Nullable Boolean showVariationId) {
     this.showVariationId = showVariationId;
     return this;
   }
@@ -131,12 +146,12 @@ public class UpdatePreferencesRequest {
     return showVariationId;
   }
 
-  public void setShowVariationId(Boolean showVariationId) {
+  public void setShowVariationId(@javax.annotation.Nullable Boolean showVariationId) {
     this.showVariationId = showVariationId;
   }
 
 
-  public UpdatePreferencesRequest mandatorySettingHint(Boolean mandatorySettingHint) {
+  public UpdatePreferencesRequest mandatorySettingHint(@javax.annotation.Nullable Boolean mandatorySettingHint) {
     this.mandatorySettingHint = mandatorySettingHint;
     return this;
   }
@@ -150,12 +165,12 @@ public class UpdatePreferencesRequest {
     return mandatorySettingHint;
   }
 
-  public void setMandatorySettingHint(Boolean mandatorySettingHint) {
+  public void setMandatorySettingHint(@javax.annotation.Nullable Boolean mandatorySettingHint) {
     this.mandatorySettingHint = mandatorySettingHint;
   }
 
 
-  public UpdatePreferencesRequest reasonRequiredEnvironments(List<UpdateReasonRequiredEnvironmentModel> reasonRequiredEnvironments) {
+  public UpdatePreferencesRequest reasonRequiredEnvironments(@javax.annotation.Nullable List<UpdateReasonRequiredEnvironmentModel> reasonRequiredEnvironments) {
     this.reasonRequiredEnvironments = reasonRequiredEnvironments;
     return this;
   }
@@ -177,8 +192,54 @@ public class UpdatePreferencesRequest {
     return reasonRequiredEnvironments;
   }
 
-  public void setReasonRequiredEnvironments(List<UpdateReasonRequiredEnvironmentModel> reasonRequiredEnvironments) {
+  public void setReasonRequiredEnvironments(@javax.annotation.Nullable List<UpdateReasonRequiredEnvironmentModel> reasonRequiredEnvironments) {
     this.reasonRequiredEnvironments = reasonRequiredEnvironments;
+  }
+
+
+  public UpdatePreferencesRequest approveRequired(@javax.annotation.Nullable Boolean approveRequired) {
+    this.approveRequired = approveRequired;
+    return this;
+  }
+
+  /**
+   * Indicates that a mandatory approval is required before changes are applied.
+   * @return approveRequired
+   */
+  @javax.annotation.Nullable
+  public Boolean getApproveRequired() {
+    return approveRequired;
+  }
+
+  public void setApproveRequired(@javax.annotation.Nullable Boolean approveRequired) {
+    this.approveRequired = approveRequired;
+  }
+
+
+  public UpdatePreferencesRequest approveRequiredEnvironments(@javax.annotation.Nullable List<UpdateApproveRequiredEnvironmentModel> approveRequiredEnvironments) {
+    this.approveRequiredEnvironments = approveRequiredEnvironments;
+    return this;
+  }
+
+  public UpdatePreferencesRequest addApproveRequiredEnvironmentsItem(UpdateApproveRequiredEnvironmentModel approveRequiredEnvironmentsItem) {
+    if (this.approveRequiredEnvironments == null) {
+      this.approveRequiredEnvironments = new ArrayList<>();
+    }
+    this.approveRequiredEnvironments.add(approveRequiredEnvironmentsItem);
+    return this;
+  }
+
+  /**
+   * List of Environments where mandatory approval must be given before changes are applied.
+   * @return approveRequiredEnvironments
+   */
+  @javax.annotation.Nullable
+  public List<UpdateApproveRequiredEnvironmentModel> getApproveRequiredEnvironments() {
+    return approveRequiredEnvironments;
+  }
+
+  public void setApproveRequiredEnvironments(@javax.annotation.Nullable List<UpdateApproveRequiredEnvironmentModel> approveRequiredEnvironments) {
+    this.approveRequiredEnvironments = approveRequiredEnvironments;
   }
 
   /**
@@ -240,7 +301,9 @@ public class UpdatePreferencesRequest {
         Objects.equals(this.keyGenerationMode, updatePreferencesRequest.keyGenerationMode) &&
         Objects.equals(this.showVariationId, updatePreferencesRequest.showVariationId) &&
         Objects.equals(this.mandatorySettingHint, updatePreferencesRequest.mandatorySettingHint) &&
-        Objects.equals(this.reasonRequiredEnvironments, updatePreferencesRequest.reasonRequiredEnvironments)&&
+        Objects.equals(this.reasonRequiredEnvironments, updatePreferencesRequest.reasonRequiredEnvironments) &&
+        Objects.equals(this.approveRequired, updatePreferencesRequest.approveRequired) &&
+        Objects.equals(this.approveRequiredEnvironments, updatePreferencesRequest.approveRequiredEnvironments)&&
         Objects.equals(this.additionalProperties, updatePreferencesRequest.additionalProperties);
   }
 
@@ -250,7 +313,7 @@ public class UpdatePreferencesRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(reasonRequired, keyGenerationMode, showVariationId, mandatorySettingHint, reasonRequiredEnvironments, additionalProperties);
+    return Objects.hash(reasonRequired, keyGenerationMode, showVariationId, mandatorySettingHint, reasonRequiredEnvironments, approveRequired, approveRequiredEnvironments, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -269,6 +332,8 @@ public class UpdatePreferencesRequest {
     sb.append("    showVariationId: ").append(toIndentedString(showVariationId)).append("\n");
     sb.append("    mandatorySettingHint: ").append(toIndentedString(mandatorySettingHint)).append("\n");
     sb.append("    reasonRequiredEnvironments: ").append(toIndentedString(reasonRequiredEnvironments)).append("\n");
+    sb.append("    approveRequired: ").append(toIndentedString(approveRequired)).append("\n");
+    sb.append("    approveRequiredEnvironments: ").append(toIndentedString(approveRequiredEnvironments)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -279,10 +344,7 @@ public class UpdatePreferencesRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -291,15 +353,10 @@ public class UpdatePreferencesRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("reasonRequired");
-    openapiFields.add("keyGenerationMode");
-    openapiFields.add("showVariationId");
-    openapiFields.add("mandatorySettingHint");
-    openapiFields.add("reasonRequiredEnvironments");
+    openapiFields = new HashSet<String>(Arrays.asList("reasonRequired", "keyGenerationMode", "showVariationId", "mandatorySettingHint", "reasonRequiredEnvironments", "approveRequired", "approveRequiredEnvironments"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -311,7 +368,7 @@ public class UpdatePreferencesRequest {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!UpdatePreferencesRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdatePreferencesRequest is not found in the empty JSON string", UpdatePreferencesRequest.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in UpdatePreferencesRequest is not found in the empty JSON string", UpdatePreferencesRequest.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -324,12 +381,26 @@ public class UpdatePreferencesRequest {
         if (jsonArrayreasonRequiredEnvironments != null) {
           // ensure the json data is an array
           if (!jsonObj.get("reasonRequiredEnvironments").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `reasonRequiredEnvironments` to be an array in the JSON string but got `%s`", jsonObj.get("reasonRequiredEnvironments").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `reasonRequiredEnvironments` to be an array in the JSON string but got `%s`", jsonObj.get("reasonRequiredEnvironments").toString()));
           }
 
           // validate the optional field `reasonRequiredEnvironments` (array)
           for (int i = 0; i < jsonArrayreasonRequiredEnvironments.size(); i++) {
             UpdateReasonRequiredEnvironmentModel.validateJsonElement(jsonArrayreasonRequiredEnvironments.get(i));
+          };
+        }
+      }
+      if (jsonObj.get("approveRequiredEnvironments") != null && !jsonObj.get("approveRequiredEnvironments").isJsonNull()) {
+        JsonArray jsonArrayapproveRequiredEnvironments = jsonObj.getAsJsonArray("approveRequiredEnvironments");
+        if (jsonArrayapproveRequiredEnvironments != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("approveRequiredEnvironments").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `approveRequiredEnvironments` to be an array in the JSON string but got `%s`", jsonObj.get("approveRequiredEnvironments").toString()));
+          }
+
+          // validate the optional field `approveRequiredEnvironments` (array)
+          for (int i = 0; i < jsonArrayapproveRequiredEnvironments.size(); i++) {
+            UpdateApproveRequiredEnvironmentModel.validateJsonElement(jsonArrayapproveRequiredEnvironments.get(i));
           };
         }
       }
@@ -392,7 +463,7 @@ public class UpdatePreferencesRequest {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

@@ -5,8 +5,10 @@ All URIs are relative to *https://api.configcat.com*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**getAuditlogs**](AuditLogsApi.md#getAuditlogs) | **GET** /v1/products/{productId}/auditlogs | List Audit log items for Product |
+| [**getAuditlogsV2**](AuditLogsApi.md#getAuditlogsV2) | **GET** /v2/products/{productId}/auditlogs | List Audit log items for Product (V2) |
 | [**getDeletedSettings**](AuditLogsApi.md#getDeletedSettings) | **GET** /v1/configs/{configId}/deleted-settings | List Deleted Settings |
 | [**getOrganizationAuditlogs**](AuditLogsApi.md#getOrganizationAuditlogs) | **GET** /v1/organizations/{organizationId}/auditlogs | List Audit log items for Organization |
+| [**getOrganizationAuditlogsV2**](AuditLogsApi.md#getOrganizationAuditlogsV2) | **GET** /v2/organizations/{organizationId}/auditlogs | List Audit log items for Organization (V2) |
 
 
 <a id="getAuditlogs"></a>
@@ -15,7 +17,7 @@ All URIs are relative to *https://api.configcat.com*
 
 List Audit log items for Product
 
-This endpoint returns the list of Audit log items for a given Product  and the result can be optionally filtered by Config and/or Environment.  If neither &#x60;fromUtcDateTime&#x60; nor &#x60;toUtcDateTime&#x60; is set, the audit logs for the **last 7 days** will be returned.  The distance between &#x60;fromUtcDateTime&#x60; and &#x60;toUtcDateTime&#x60; cannot exceed **30 days**.
+This endpoint returns the list of Audit log items for a given Product and the result can be optionally filtered by Config and/or Environment.  If neither &#x60;fromUtcDateTime&#x60; nor &#x60;toUtcDateTime&#x60; is set, the audit logs for the **last 7 days** will be returned.  The distance between &#x60;fromUtcDateTime&#x60; and &#x60;toUtcDateTime&#x60; cannot exceed **30 days**.  **Important:** This endpoint is deprecated. Use the **List Audit log items for Product (V2)** endpoint instead. In the future, this endpoint will be redirected to the V2 version with default pagination parameters.
 
 ### Example
 ```java
@@ -65,13 +67,98 @@ public class Example {
 | **productId** | **UUID**| The identifier of the Product. | |
 | **configId** | **UUID**| The identifier of the Config. | [optional] |
 | **environmentId** | **UUID**| The identifier of the Environment. | [optional] |
-| **auditLogType** | [**AuditLogType**](.md)| Filter Audit logs by Audit log type. | [optional] [enum: productCreated, productChanged, productOwnershipTransferred, productDeleted, productsReordered, teamMemberInvited, teamMemberInvitationRevoked, teamMemberJoined, teamMemberPermissionGroupChanged, teamMemberRemoved, teamMemberLeft, teamMemberInvitationChanged, teamMemberInvitationResent, teamMemberInvitationRejected, configCreated, configChanged, configDeleted, configsReordered, environmentCreated, environmentChanged, environmentDeleted, environmentsReordered, settingCreated, settingChanged, settingDeleted, settingsReordered, predefinedVariationsChanged, settingConvertedToPredefinedVariations, settingConvertedToFreeFormValues, settingValueChanged, webHookCreated, webHookChanged, webHookDeleted, permissionGroupCreated, permissionGroupChanged, permissionGroupDeleted, permissionGroupDefault, apiKeyAdded, apiKeyRemoved, integrationAdded, integrationChanged, integrationRemoved, apiKeyConnected, integrationLinkAdded, integrationLinkRemoved, organizationAdded, organizationRemoved, organizationChanged, organizationSubscriptionTypeChanged, organizationAdminChanged, organizationAdminLeft, twoFactorDisabledForMember, tagAdded, tagChanged, tagRemoved, settingTagAdded, settingTagRemoved, publicApiAccessTokenAdded, publicApiAccessTokenRemoved, domainAdded, domainVerified, domainRemoved, domainSamlConfigured, domainSamlDeleted, autoProvisioningConfigurationChanged, samlIdpConfigurationAdded, samlIdpConfigurationRemoved, samlIdpConfigurationUpdated, autoProvisioningEnabledChanged, organizationMemberJoined, organizationMemberProductJoinRequested, organizationMemberProductJoinRequestRejected, organizationMemberProductJoinRequestApproved, organizationMemberRemoved, codeReferencesUploaded, codeReferenceDeleted, codeReferenceStaleBranchDeleted, segmentCreated, segmentChanged, segmentDeleted, webhookSigningKeyDeleted, webhookSigningKeyCreated, userProvisioningConfigurationChanged, syncGroupProvisioningRuleChanged, syncGroupsReordered, syncUserProvisioningEnabled, syncUserProvisioningDisabled, userEmailChanged, userFullNameChanged, userDisabled, awsConnected, awsDisconnected, userEnabled, syncUserDeleted, syncGroupDeleted, proxyConfigurationCreated, proxyConfigurationChanged, proxyConfigurationDeleted, proxyConfigurationSecretRegenerated, proxyNotificationSettingsUpdated, proxyNotificationSettingsDeleted, proxyNotificationSigningKeyAdded, proxyNotificationSigningKeyDeleted] |
+| **auditLogType** | [**AuditLogType**](.md)| Filter Audit logs by Audit log type. | [optional] [enum: productCreated, productChanged, productDeleted, productsReordered, productPreferencesUpdated, teamMemberInvited, teamMemberInvitationRevoked, teamMemberJoined, teamMemberPermissionGroupChanged, teamMemberRemoved, teamMemberLeft, teamMemberInvitationChanged, teamMemberInvitationResent, teamMemberInvitationRejected, teamMemberAddedToProduct, configCreated, configChanged, configDeleted, configsReordered, environmentCreated, environmentChanged, environmentDeleted, environmentsReordered, settingCreated, settingChanged, settingDeleted, settingsReordered, predefinedVariationsChanged, settingConvertedToPredefinedVariations, settingConvertedToFreeFormValues, settingValueChanged, webHookCreated, webHookChanged, webHookDeleted, permissionGroupCreated, permissionGroupChanged, permissionGroupDeleted, permissionGroupDefault, apiKeyAdded, apiKeyRemoved, integrationAdded, integrationChanged, integrationRemoved, apiKeyConnected, integrationLinkAdded, integrationLinkRemoved, organizationAdded, organizationChanged, organizationSubscriptionTypeChanged, organizationAdminChanged, organizationAdminLeft, twoFactorDisabledForMember, tagAdded, tagChanged, tagRemoved, settingTagAdded, settingTagRemoved, publicApiAccessTokenAdded, publicApiAccessTokenRemoved, domainAdded, domainVerified, domainRemoved, autoProvisioningConfigurationChanged, samlIdpConfigurationAdded, samlIdpConfigurationRemoved, samlIdpConfigurationUpdated, autoProvisioningEnabledChanged, organizationMemberJoined, organizationMemberProductJoinRequested, organizationMemberProductJoinRequestRejected, organizationMemberProductJoinRequestApproved, organizationMemberRemoved, codeReferencesUploaded, codeReferenceDeleted, codeReferenceStaleBranchDeleted, segmentCreated, segmentChanged, segmentDeleted, webhookSigningKeyDeleted, webhookSigningKeyCreated, userProvisioningConfigurationChanged, syncGroupProvisioningRuleChanged, syncGroupsReordered, syncUserProvisioningEnabled, syncUserProvisioningDisabled, userEmailChanged, userFullNameChanged, userDisabled, awsConnected, awsDisconnected, userEnabled, syncUserDeleted, syncGroupDeleted, proxyConfigurationCreated, proxyConfigurationChanged, proxyConfigurationDeleted, proxyConfigurationSecretRegenerated, proxyNotificationSettingsUpdated, proxyNotificationSettingsDeleted, proxyNotificationSigningKeyAdded, proxyNotificationSigningKeyDeleted, changeRequestCreated, changeRequestUpdated, changeRequestSettingValuesUpdated, changeRequestSettingValueRebased, changeRequestApproved, changeRequestApprovalDismissed, changeRequestApplied, changeRequestAppliedOnSchedule, changeRequestClosed, changeRequestNeedsAttention, changeRequestCommentAdded, changeRequestCommentEdited, changeRequestCommentDeleted, changeRequestSettingDeleted, changeRequestNeedsAttentionFixed] |
 | **fromUtcDateTime** | **OffsetDateTime**| Filter Audit logs by starting UTC date. | [optional] |
 | **toUtcDateTime** | **OffsetDateTime**| Filter Audit logs by ending UTC date. | [optional] |
 
 ### Return type
 
 [**List&lt;AuditLogItemModel&gt;**](AuditLogItemModel.md)
+
+### Authorization
+
+[Basic](../README.md#Basic)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+| **400** | Bad request. |  -  |
+| **404** | Not found. |  -  |
+| **429** | Too many requests. In case of the request rate exceeds the rate limits. |  -  |
+
+<a id="getAuditlogsV2"></a>
+# **getAuditlogsV2**
+> AuditLogItemModelPagedList getAuditlogsV2(productId, configId, environmentId, auditLogType, fromUtcDateTime, toUtcDateTime, pageNumber, pageSize)
+
+List Audit log items for Product (V2)
+
+This endpoint returns the list of Audit log items for a given Product and the result can be optionally filtered by Config and/or Environment.
+
+### Example
+```java
+// Import classes:
+import com.configcat.publicapi.java.client.ApiClient;
+import com.configcat.publicapi.java.client.ApiException;
+import com.configcat.publicapi.java.client.Configuration;
+import com.configcat.publicapi.java.client.auth.*;
+import com.configcat.publicapi.java.client.models.*;
+import com.configcat.publicapi.java.client.api.AuditLogsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.configcat.com");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
+    AuditLogsApi apiInstance = new AuditLogsApi(defaultClient);
+    UUID productId = UUID.randomUUID(); // UUID | The identifier of the Product.
+    UUID configId = UUID.randomUUID(); // UUID | The identifier of the Config.
+    UUID environmentId = UUID.randomUUID(); // UUID | The identifier of the Environment.
+    AuditLogType auditLogType = AuditLogType.fromValue("productCreated"); // AuditLogType | Filter Audit logs by Audit log type.
+    OffsetDateTime fromUtcDateTime = OffsetDateTime.now(); // OffsetDateTime | Filter Audit logs by starting UTC date.
+    OffsetDateTime toUtcDateTime = OffsetDateTime.now(); // OffsetDateTime | Filter Audit logs by ending UTC date.
+    Integer pageNumber = 1; // Integer | Page number (min: 1).
+    Integer pageSize = 100; // Integer | Page size (min: 1, max: 100).
+    try {
+      AuditLogItemModelPagedList result = apiInstance.getAuditlogsV2(productId, configId, environmentId, auditLogType, fromUtcDateTime, toUtcDateTime, pageNumber, pageSize);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AuditLogsApi#getAuditlogsV2");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **productId** | **UUID**| The identifier of the Product. | |
+| **configId** | **UUID**| The identifier of the Config. | [optional] |
+| **environmentId** | **UUID**| The identifier of the Environment. | [optional] |
+| **auditLogType** | [**AuditLogType**](.md)| Filter Audit logs by Audit log type. | [optional] [enum: productCreated, productChanged, productDeleted, productsReordered, productPreferencesUpdated, teamMemberInvited, teamMemberInvitationRevoked, teamMemberJoined, teamMemberPermissionGroupChanged, teamMemberRemoved, teamMemberLeft, teamMemberInvitationChanged, teamMemberInvitationResent, teamMemberInvitationRejected, teamMemberAddedToProduct, configCreated, configChanged, configDeleted, configsReordered, environmentCreated, environmentChanged, environmentDeleted, environmentsReordered, settingCreated, settingChanged, settingDeleted, settingsReordered, predefinedVariationsChanged, settingConvertedToPredefinedVariations, settingConvertedToFreeFormValues, settingValueChanged, webHookCreated, webHookChanged, webHookDeleted, permissionGroupCreated, permissionGroupChanged, permissionGroupDeleted, permissionGroupDefault, apiKeyAdded, apiKeyRemoved, integrationAdded, integrationChanged, integrationRemoved, apiKeyConnected, integrationLinkAdded, integrationLinkRemoved, organizationAdded, organizationChanged, organizationSubscriptionTypeChanged, organizationAdminChanged, organizationAdminLeft, twoFactorDisabledForMember, tagAdded, tagChanged, tagRemoved, settingTagAdded, settingTagRemoved, publicApiAccessTokenAdded, publicApiAccessTokenRemoved, domainAdded, domainVerified, domainRemoved, autoProvisioningConfigurationChanged, samlIdpConfigurationAdded, samlIdpConfigurationRemoved, samlIdpConfigurationUpdated, autoProvisioningEnabledChanged, organizationMemberJoined, organizationMemberProductJoinRequested, organizationMemberProductJoinRequestRejected, organizationMemberProductJoinRequestApproved, organizationMemberRemoved, codeReferencesUploaded, codeReferenceDeleted, codeReferenceStaleBranchDeleted, segmentCreated, segmentChanged, segmentDeleted, webhookSigningKeyDeleted, webhookSigningKeyCreated, userProvisioningConfigurationChanged, syncGroupProvisioningRuleChanged, syncGroupsReordered, syncUserProvisioningEnabled, syncUserProvisioningDisabled, userEmailChanged, userFullNameChanged, userDisabled, awsConnected, awsDisconnected, userEnabled, syncUserDeleted, syncGroupDeleted, proxyConfigurationCreated, proxyConfigurationChanged, proxyConfigurationDeleted, proxyConfigurationSecretRegenerated, proxyNotificationSettingsUpdated, proxyNotificationSettingsDeleted, proxyNotificationSigningKeyAdded, proxyNotificationSigningKeyDeleted, changeRequestCreated, changeRequestUpdated, changeRequestSettingValuesUpdated, changeRequestSettingValueRebased, changeRequestApproved, changeRequestApprovalDismissed, changeRequestApplied, changeRequestAppliedOnSchedule, changeRequestClosed, changeRequestNeedsAttention, changeRequestCommentAdded, changeRequestCommentEdited, changeRequestCommentDeleted, changeRequestSettingDeleted, changeRequestNeedsAttentionFixed] |
+| **fromUtcDateTime** | **OffsetDateTime**| Filter Audit logs by starting UTC date. | [optional] |
+| **toUtcDateTime** | **OffsetDateTime**| Filter Audit logs by ending UTC date. | [optional] |
+| **pageNumber** | **Integer**| Page number (min: 1). | [optional] [default to 1] |
+| **pageSize** | **Integer**| Page size (min: 1, max: 100). | [optional] [default to 100] |
+
+### Return type
+
+[**AuditLogItemModelPagedList**](AuditLogItemModelPagedList.md)
 
 ### Authorization
 
@@ -167,7 +254,7 @@ public class Example {
 
 List Audit log items for Organization
 
-This endpoint returns the list of Audit log items for a given Organization  and the result can be optionally filtered by Product and/or Config and/or Environment.  If neither &#x60;fromUtcDateTime&#x60; nor &#x60;toUtcDateTime&#x60; is set, the audit logs for the **last 7 days** will be returned.  The distance between &#x60;fromUtcDateTime&#x60; and &#x60;toUtcDateTime&#x60; cannot exceed **30 days**.
+This endpoint returns the list of Audit log items for a given Organization and the result can be optionally filtered by Product and/or Config and/or Environment.  If neither &#x60;fromUtcDateTime&#x60; nor &#x60;toUtcDateTime&#x60; is set, the audit logs for the **last 7 days** will be returned.  The distance between &#x60;fromUtcDateTime&#x60; and &#x60;toUtcDateTime&#x60; cannot exceed **30 days**.  **Important:** This endpoint is deprecated. Use the **List Audit log items for Organization (V2)** endpoint instead. In the future, this endpoint will be redirected to the V2 version with default pagination parameters.
 
 ### Example
 ```java
@@ -219,13 +306,100 @@ public class Example {
 | **productId** | **UUID**| The identifier of the Product. | [optional] |
 | **configId** | **UUID**| The identifier of the Config. | [optional] |
 | **environmentId** | **UUID**| The identifier of the Environment. | [optional] |
-| **auditLogType** | [**AuditLogType**](.md)| Filter Audit logs by Audit log type. | [optional] [enum: productCreated, productChanged, productOwnershipTransferred, productDeleted, productsReordered, teamMemberInvited, teamMemberInvitationRevoked, teamMemberJoined, teamMemberPermissionGroupChanged, teamMemberRemoved, teamMemberLeft, teamMemberInvitationChanged, teamMemberInvitationResent, teamMemberInvitationRejected, configCreated, configChanged, configDeleted, configsReordered, environmentCreated, environmentChanged, environmentDeleted, environmentsReordered, settingCreated, settingChanged, settingDeleted, settingsReordered, predefinedVariationsChanged, settingConvertedToPredefinedVariations, settingConvertedToFreeFormValues, settingValueChanged, webHookCreated, webHookChanged, webHookDeleted, permissionGroupCreated, permissionGroupChanged, permissionGroupDeleted, permissionGroupDefault, apiKeyAdded, apiKeyRemoved, integrationAdded, integrationChanged, integrationRemoved, apiKeyConnected, integrationLinkAdded, integrationLinkRemoved, organizationAdded, organizationRemoved, organizationChanged, organizationSubscriptionTypeChanged, organizationAdminChanged, organizationAdminLeft, twoFactorDisabledForMember, tagAdded, tagChanged, tagRemoved, settingTagAdded, settingTagRemoved, publicApiAccessTokenAdded, publicApiAccessTokenRemoved, domainAdded, domainVerified, domainRemoved, domainSamlConfigured, domainSamlDeleted, autoProvisioningConfigurationChanged, samlIdpConfigurationAdded, samlIdpConfigurationRemoved, samlIdpConfigurationUpdated, autoProvisioningEnabledChanged, organizationMemberJoined, organizationMemberProductJoinRequested, organizationMemberProductJoinRequestRejected, organizationMemberProductJoinRequestApproved, organizationMemberRemoved, codeReferencesUploaded, codeReferenceDeleted, codeReferenceStaleBranchDeleted, segmentCreated, segmentChanged, segmentDeleted, webhookSigningKeyDeleted, webhookSigningKeyCreated, userProvisioningConfigurationChanged, syncGroupProvisioningRuleChanged, syncGroupsReordered, syncUserProvisioningEnabled, syncUserProvisioningDisabled, userEmailChanged, userFullNameChanged, userDisabled, awsConnected, awsDisconnected, userEnabled, syncUserDeleted, syncGroupDeleted, proxyConfigurationCreated, proxyConfigurationChanged, proxyConfigurationDeleted, proxyConfigurationSecretRegenerated, proxyNotificationSettingsUpdated, proxyNotificationSettingsDeleted, proxyNotificationSigningKeyAdded, proxyNotificationSigningKeyDeleted] |
+| **auditLogType** | [**AuditLogType**](.md)| Filter Audit logs by Audit log type. | [optional] [enum: productCreated, productChanged, productDeleted, productsReordered, productPreferencesUpdated, teamMemberInvited, teamMemberInvitationRevoked, teamMemberJoined, teamMemberPermissionGroupChanged, teamMemberRemoved, teamMemberLeft, teamMemberInvitationChanged, teamMemberInvitationResent, teamMemberInvitationRejected, teamMemberAddedToProduct, configCreated, configChanged, configDeleted, configsReordered, environmentCreated, environmentChanged, environmentDeleted, environmentsReordered, settingCreated, settingChanged, settingDeleted, settingsReordered, predefinedVariationsChanged, settingConvertedToPredefinedVariations, settingConvertedToFreeFormValues, settingValueChanged, webHookCreated, webHookChanged, webHookDeleted, permissionGroupCreated, permissionGroupChanged, permissionGroupDeleted, permissionGroupDefault, apiKeyAdded, apiKeyRemoved, integrationAdded, integrationChanged, integrationRemoved, apiKeyConnected, integrationLinkAdded, integrationLinkRemoved, organizationAdded, organizationChanged, organizationSubscriptionTypeChanged, organizationAdminChanged, organizationAdminLeft, twoFactorDisabledForMember, tagAdded, tagChanged, tagRemoved, settingTagAdded, settingTagRemoved, publicApiAccessTokenAdded, publicApiAccessTokenRemoved, domainAdded, domainVerified, domainRemoved, autoProvisioningConfigurationChanged, samlIdpConfigurationAdded, samlIdpConfigurationRemoved, samlIdpConfigurationUpdated, autoProvisioningEnabledChanged, organizationMemberJoined, organizationMemberProductJoinRequested, organizationMemberProductJoinRequestRejected, organizationMemberProductJoinRequestApproved, organizationMemberRemoved, codeReferencesUploaded, codeReferenceDeleted, codeReferenceStaleBranchDeleted, segmentCreated, segmentChanged, segmentDeleted, webhookSigningKeyDeleted, webhookSigningKeyCreated, userProvisioningConfigurationChanged, syncGroupProvisioningRuleChanged, syncGroupsReordered, syncUserProvisioningEnabled, syncUserProvisioningDisabled, userEmailChanged, userFullNameChanged, userDisabled, awsConnected, awsDisconnected, userEnabled, syncUserDeleted, syncGroupDeleted, proxyConfigurationCreated, proxyConfigurationChanged, proxyConfigurationDeleted, proxyConfigurationSecretRegenerated, proxyNotificationSettingsUpdated, proxyNotificationSettingsDeleted, proxyNotificationSigningKeyAdded, proxyNotificationSigningKeyDeleted, changeRequestCreated, changeRequestUpdated, changeRequestSettingValuesUpdated, changeRequestSettingValueRebased, changeRequestApproved, changeRequestApprovalDismissed, changeRequestApplied, changeRequestAppliedOnSchedule, changeRequestClosed, changeRequestNeedsAttention, changeRequestCommentAdded, changeRequestCommentEdited, changeRequestCommentDeleted, changeRequestSettingDeleted, changeRequestNeedsAttentionFixed] |
 | **fromUtcDateTime** | **OffsetDateTime**| Filter Audit logs by starting UTC date. | [optional] |
 | **toUtcDateTime** | **OffsetDateTime**| Filter Audit logs by ending UTC date. | [optional] |
 
 ### Return type
 
 [**List&lt;AuditLogItemModel&gt;**](AuditLogItemModel.md)
+
+### Authorization
+
+[Basic](../README.md#Basic)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+| **400** | Bad request. |  -  |
+| **404** | Not found. |  -  |
+| **429** | Too many requests. In case of the request rate exceeds the rate limits. |  -  |
+
+<a id="getOrganizationAuditlogsV2"></a>
+# **getOrganizationAuditlogsV2**
+> AuditLogItemModelPagedList getOrganizationAuditlogsV2(organizationId, productId, configId, environmentId, auditLogType, fromUtcDateTime, toUtcDateTime, pageNumber, pageSize)
+
+List Audit log items for Organization (V2)
+
+This endpoint returns the list of Audit log items for a given Organization and the result can be optionally filtered by Product and/or Config and/or Environment.
+
+### Example
+```java
+// Import classes:
+import com.configcat.publicapi.java.client.ApiClient;
+import com.configcat.publicapi.java.client.ApiException;
+import com.configcat.publicapi.java.client.Configuration;
+import com.configcat.publicapi.java.client.auth.*;
+import com.configcat.publicapi.java.client.models.*;
+import com.configcat.publicapi.java.client.api.AuditLogsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.configcat.com");
+    
+    // Configure HTTP basic authorization: Basic
+    HttpBasicAuth Basic = (HttpBasicAuth) defaultClient.getAuthentication("Basic");
+    Basic.setUsername("YOUR USERNAME");
+    Basic.setPassword("YOUR PASSWORD");
+
+    AuditLogsApi apiInstance = new AuditLogsApi(defaultClient);
+    UUID organizationId = UUID.randomUUID(); // UUID | The identifier of the Organization.
+    UUID productId = UUID.randomUUID(); // UUID | The identifier of the Product.
+    UUID configId = UUID.randomUUID(); // UUID | The identifier of the Config.
+    UUID environmentId = UUID.randomUUID(); // UUID | The identifier of the Environment.
+    AuditLogType auditLogType = AuditLogType.fromValue("productCreated"); // AuditLogType | Filter Audit logs by Audit log type.
+    OffsetDateTime fromUtcDateTime = OffsetDateTime.now(); // OffsetDateTime | Filter Audit logs by starting UTC date.
+    OffsetDateTime toUtcDateTime = OffsetDateTime.now(); // OffsetDateTime | Filter Audit logs by ending UTC date.
+    Integer pageNumber = 1; // Integer | Page number (min: 1).
+    Integer pageSize = 100; // Integer | Page size (min: 1, max: 100).
+    try {
+      AuditLogItemModelPagedList result = apiInstance.getOrganizationAuditlogsV2(organizationId, productId, configId, environmentId, auditLogType, fromUtcDateTime, toUtcDateTime, pageNumber, pageSize);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AuditLogsApi#getOrganizationAuditlogsV2");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **organizationId** | **UUID**| The identifier of the Organization. | |
+| **productId** | **UUID**| The identifier of the Product. | [optional] |
+| **configId** | **UUID**| The identifier of the Config. | [optional] |
+| **environmentId** | **UUID**| The identifier of the Environment. | [optional] |
+| **auditLogType** | [**AuditLogType**](.md)| Filter Audit logs by Audit log type. | [optional] [enum: productCreated, productChanged, productDeleted, productsReordered, productPreferencesUpdated, teamMemberInvited, teamMemberInvitationRevoked, teamMemberJoined, teamMemberPermissionGroupChanged, teamMemberRemoved, teamMemberLeft, teamMemberInvitationChanged, teamMemberInvitationResent, teamMemberInvitationRejected, teamMemberAddedToProduct, configCreated, configChanged, configDeleted, configsReordered, environmentCreated, environmentChanged, environmentDeleted, environmentsReordered, settingCreated, settingChanged, settingDeleted, settingsReordered, predefinedVariationsChanged, settingConvertedToPredefinedVariations, settingConvertedToFreeFormValues, settingValueChanged, webHookCreated, webHookChanged, webHookDeleted, permissionGroupCreated, permissionGroupChanged, permissionGroupDeleted, permissionGroupDefault, apiKeyAdded, apiKeyRemoved, integrationAdded, integrationChanged, integrationRemoved, apiKeyConnected, integrationLinkAdded, integrationLinkRemoved, organizationAdded, organizationChanged, organizationSubscriptionTypeChanged, organizationAdminChanged, organizationAdminLeft, twoFactorDisabledForMember, tagAdded, tagChanged, tagRemoved, settingTagAdded, settingTagRemoved, publicApiAccessTokenAdded, publicApiAccessTokenRemoved, domainAdded, domainVerified, domainRemoved, autoProvisioningConfigurationChanged, samlIdpConfigurationAdded, samlIdpConfigurationRemoved, samlIdpConfigurationUpdated, autoProvisioningEnabledChanged, organizationMemberJoined, organizationMemberProductJoinRequested, organizationMemberProductJoinRequestRejected, organizationMemberProductJoinRequestApproved, organizationMemberRemoved, codeReferencesUploaded, codeReferenceDeleted, codeReferenceStaleBranchDeleted, segmentCreated, segmentChanged, segmentDeleted, webhookSigningKeyDeleted, webhookSigningKeyCreated, userProvisioningConfigurationChanged, syncGroupProvisioningRuleChanged, syncGroupsReordered, syncUserProvisioningEnabled, syncUserProvisioningDisabled, userEmailChanged, userFullNameChanged, userDisabled, awsConnected, awsDisconnected, userEnabled, syncUserDeleted, syncGroupDeleted, proxyConfigurationCreated, proxyConfigurationChanged, proxyConfigurationDeleted, proxyConfigurationSecretRegenerated, proxyNotificationSettingsUpdated, proxyNotificationSettingsDeleted, proxyNotificationSigningKeyAdded, proxyNotificationSigningKeyDeleted, changeRequestCreated, changeRequestUpdated, changeRequestSettingValuesUpdated, changeRequestSettingValueRebased, changeRequestApproved, changeRequestApprovalDismissed, changeRequestApplied, changeRequestAppliedOnSchedule, changeRequestClosed, changeRequestNeedsAttention, changeRequestCommentAdded, changeRequestCommentEdited, changeRequestCommentDeleted, changeRequestSettingDeleted, changeRequestNeedsAttentionFixed] |
+| **fromUtcDateTime** | **OffsetDateTime**| Filter Audit logs by starting UTC date. | [optional] |
+| **toUtcDateTime** | **OffsetDateTime**| Filter Audit logs by ending UTC date. | [optional] |
+| **pageNumber** | **Integer**| Page number (min: 1). | [optional] [default to 1] |
+| **pageSize** | **Integer**| Page size (min: 1, max: 100). | [optional] [default to 100] |
+
+### Return type
+
+[**AuditLogItemModelPagedList**](AuditLogItemModelPagedList.md)
 
 ### Authorization
 

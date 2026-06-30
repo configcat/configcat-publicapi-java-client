@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,32 +50,37 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * CreateSegmentModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class CreateSegmentModel {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_COMPARISON_ATTRIBUTE = "comparisonAttribute";
   @SerializedName(SERIALIZED_NAME_COMPARISON_ATTRIBUTE)
+  @javax.annotation.Nonnull
   private String comparisonAttribute;
 
   public static final String SERIALIZED_NAME_COMPARATOR = "comparator";
   @SerializedName(SERIALIZED_NAME_COMPARATOR)
+  @javax.annotation.Nonnull
   private RolloutRuleComparator comparator;
 
   public static final String SERIALIZED_NAME_COMPARISON_VALUE = "comparisonValue";
   @SerializedName(SERIALIZED_NAME_COMPARISON_VALUE)
+  @javax.annotation.Nonnull
   private String comparisonValue;
 
   public CreateSegmentModel() {
   }
 
-  public CreateSegmentModel name(String name) {
+  public CreateSegmentModel name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -90,12 +94,12 @@ public class CreateSegmentModel {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public CreateSegmentModel description(String description) {
+  public CreateSegmentModel description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -109,12 +113,12 @@ public class CreateSegmentModel {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public CreateSegmentModel comparisonAttribute(String comparisonAttribute) {
+  public CreateSegmentModel comparisonAttribute(@javax.annotation.Nonnull String comparisonAttribute) {
     this.comparisonAttribute = comparisonAttribute;
     return this;
   }
@@ -128,12 +132,12 @@ public class CreateSegmentModel {
     return comparisonAttribute;
   }
 
-  public void setComparisonAttribute(String comparisonAttribute) {
+  public void setComparisonAttribute(@javax.annotation.Nonnull String comparisonAttribute) {
     this.comparisonAttribute = comparisonAttribute;
   }
 
 
-  public CreateSegmentModel comparator(RolloutRuleComparator comparator) {
+  public CreateSegmentModel comparator(@javax.annotation.Nonnull RolloutRuleComparator comparator) {
     this.comparator = comparator;
     return this;
   }
@@ -147,12 +151,12 @@ public class CreateSegmentModel {
     return comparator;
   }
 
-  public void setComparator(RolloutRuleComparator comparator) {
+  public void setComparator(@javax.annotation.Nonnull RolloutRuleComparator comparator) {
     this.comparator = comparator;
   }
 
 
-  public CreateSegmentModel comparisonValue(String comparisonValue) {
+  public CreateSegmentModel comparisonValue(@javax.annotation.Nonnull String comparisonValue) {
     this.comparisonValue = comparisonValue;
     return this;
   }
@@ -166,7 +170,7 @@ public class CreateSegmentModel {
     return comparisonValue;
   }
 
-  public void setComparisonValue(String comparisonValue) {
+  public void setComparisonValue(@javax.annotation.Nonnull String comparisonValue) {
     this.comparisonValue = comparisonValue;
   }
 
@@ -268,10 +272,7 @@ public class CreateSegmentModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -280,19 +281,10 @@ public class CreateSegmentModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("description");
-    openapiFields.add("comparisonAttribute");
-    openapiFields.add("comparator");
-    openapiFields.add("comparisonValue");
+    openapiFields = new HashSet<String>(Arrays.asList("name", "description", "comparisonAttribute", "comparator", "comparisonValue"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("comparisonAttribute");
-    openapiRequiredFields.add("comparator");
-    openapiRequiredFields.add("comparisonValue");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("name", "comparisonAttribute", "comparator", "comparisonValue"));
   }
 
   /**
@@ -304,30 +296,30 @@ public class CreateSegmentModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CreateSegmentModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in CreateSegmentModel is not found in the empty JSON string", CreateSegmentModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in CreateSegmentModel is not found in the empty JSON string", CreateSegmentModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : CreateSegmentModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       if (!jsonObj.get("comparisonAttribute").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `comparisonAttribute` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comparisonAttribute").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `comparisonAttribute` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comparisonAttribute").toString()));
       }
       // validate the required field `comparator`
       RolloutRuleComparator.validateJsonElement(jsonObj.get("comparator"));
       if (!jsonObj.get("comparisonValue").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `comparisonValue` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comparisonValue").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `comparisonValue` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comparisonValue").toString()));
       }
   }
 
@@ -388,7 +380,7 @@ public class CreateSegmentModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

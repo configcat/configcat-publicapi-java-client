@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,44 +48,52 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * OrganizationLimitations
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class OrganizationLimitations {
   public static final String SERIALIZED_NAME_MAX_PERCENTAGE_OPTION_COUNT = "maxPercentageOptionCount";
   @SerializedName(SERIALIZED_NAME_MAX_PERCENTAGE_OPTION_COUNT)
+  @javax.annotation.Nonnull
   private Integer maxPercentageOptionCount;
 
   public static final String SERIALIZED_NAME_MAX_TARGETING_RULE_COUNT = "maxTargetingRuleCount";
   @SerializedName(SERIALIZED_NAME_MAX_TARGETING_RULE_COUNT)
+  @javax.annotation.Nonnull
   private Integer maxTargetingRuleCount;
 
   public static final String SERIALIZED_NAME_MAX_COMPARISON_VALUE_LENGTH = "maxComparisonValueLength";
   @SerializedName(SERIALIZED_NAME_MAX_COMPARISON_VALUE_LENGTH)
+  @javax.annotation.Nonnull
   private Integer maxComparisonValueLength;
 
   public static final String SERIALIZED_NAME_MAX_COMPARISON_VALUE_LIST_LENGTH = "maxComparisonValueListLength";
   @SerializedName(SERIALIZED_NAME_MAX_COMPARISON_VALUE_LIST_LENGTH)
+  @javax.annotation.Nonnull
   private Integer maxComparisonValueListLength;
 
   public static final String SERIALIZED_NAME_MAX_COMPARISON_VALUE_LIST_ITEM_LENGTH = "maxComparisonValueListItemLength";
   @SerializedName(SERIALIZED_NAME_MAX_COMPARISON_VALUE_LIST_ITEM_LENGTH)
+  @javax.annotation.Nonnull
   private Integer maxComparisonValueListItemLength;
 
   public static final String SERIALIZED_NAME_MAX_STRING_FLAG_VALUE_LENGTH = "maxStringFlagValueLength";
   @SerializedName(SERIALIZED_NAME_MAX_STRING_FLAG_VALUE_LENGTH)
+  @javax.annotation.Nonnull
   private Integer maxStringFlagValueLength;
 
   public static final String SERIALIZED_NAME_MAX_CONDITION_PER_TARGETING_RULE_COUNT = "maxConditionPerTargetingRuleCount";
   @SerializedName(SERIALIZED_NAME_MAX_CONDITION_PER_TARGETING_RULE_COUNT)
+  @javax.annotation.Nonnull
   private Integer maxConditionPerTargetingRuleCount;
 
   public static final String SERIALIZED_NAME_MAX_PREDEFINED_VARIATIONS = "maxPredefinedVariations";
   @SerializedName(SERIALIZED_NAME_MAX_PREDEFINED_VARIATIONS)
+  @javax.annotation.Nonnull
   private Integer maxPredefinedVariations;
 
   public OrganizationLimitations() {
   }
 
-  public OrganizationLimitations maxPercentageOptionCount(Integer maxPercentageOptionCount) {
+  public OrganizationLimitations maxPercentageOptionCount(@javax.annotation.Nonnull Integer maxPercentageOptionCount) {
     this.maxPercentageOptionCount = maxPercentageOptionCount;
     return this;
   }
@@ -100,12 +107,12 @@ public class OrganizationLimitations {
     return maxPercentageOptionCount;
   }
 
-  public void setMaxPercentageOptionCount(Integer maxPercentageOptionCount) {
+  public void setMaxPercentageOptionCount(@javax.annotation.Nonnull Integer maxPercentageOptionCount) {
     this.maxPercentageOptionCount = maxPercentageOptionCount;
   }
 
 
-  public OrganizationLimitations maxTargetingRuleCount(Integer maxTargetingRuleCount) {
+  public OrganizationLimitations maxTargetingRuleCount(@javax.annotation.Nonnull Integer maxTargetingRuleCount) {
     this.maxTargetingRuleCount = maxTargetingRuleCount;
     return this;
   }
@@ -119,12 +126,12 @@ public class OrganizationLimitations {
     return maxTargetingRuleCount;
   }
 
-  public void setMaxTargetingRuleCount(Integer maxTargetingRuleCount) {
+  public void setMaxTargetingRuleCount(@javax.annotation.Nonnull Integer maxTargetingRuleCount) {
     this.maxTargetingRuleCount = maxTargetingRuleCount;
   }
 
 
-  public OrganizationLimitations maxComparisonValueLength(Integer maxComparisonValueLength) {
+  public OrganizationLimitations maxComparisonValueLength(@javax.annotation.Nonnull Integer maxComparisonValueLength) {
     this.maxComparisonValueLength = maxComparisonValueLength;
     return this;
   }
@@ -138,12 +145,12 @@ public class OrganizationLimitations {
     return maxComparisonValueLength;
   }
 
-  public void setMaxComparisonValueLength(Integer maxComparisonValueLength) {
+  public void setMaxComparisonValueLength(@javax.annotation.Nonnull Integer maxComparisonValueLength) {
     this.maxComparisonValueLength = maxComparisonValueLength;
   }
 
 
-  public OrganizationLimitations maxComparisonValueListLength(Integer maxComparisonValueListLength) {
+  public OrganizationLimitations maxComparisonValueListLength(@javax.annotation.Nonnull Integer maxComparisonValueListLength) {
     this.maxComparisonValueListLength = maxComparisonValueListLength;
     return this;
   }
@@ -157,12 +164,12 @@ public class OrganizationLimitations {
     return maxComparisonValueListLength;
   }
 
-  public void setMaxComparisonValueListLength(Integer maxComparisonValueListLength) {
+  public void setMaxComparisonValueListLength(@javax.annotation.Nonnull Integer maxComparisonValueListLength) {
     this.maxComparisonValueListLength = maxComparisonValueListLength;
   }
 
 
-  public OrganizationLimitations maxComparisonValueListItemLength(Integer maxComparisonValueListItemLength) {
+  public OrganizationLimitations maxComparisonValueListItemLength(@javax.annotation.Nonnull Integer maxComparisonValueListItemLength) {
     this.maxComparisonValueListItemLength = maxComparisonValueListItemLength;
     return this;
   }
@@ -176,12 +183,12 @@ public class OrganizationLimitations {
     return maxComparisonValueListItemLength;
   }
 
-  public void setMaxComparisonValueListItemLength(Integer maxComparisonValueListItemLength) {
+  public void setMaxComparisonValueListItemLength(@javax.annotation.Nonnull Integer maxComparisonValueListItemLength) {
     this.maxComparisonValueListItemLength = maxComparisonValueListItemLength;
   }
 
 
-  public OrganizationLimitations maxStringFlagValueLength(Integer maxStringFlagValueLength) {
+  public OrganizationLimitations maxStringFlagValueLength(@javax.annotation.Nonnull Integer maxStringFlagValueLength) {
     this.maxStringFlagValueLength = maxStringFlagValueLength;
     return this;
   }
@@ -195,12 +202,12 @@ public class OrganizationLimitations {
     return maxStringFlagValueLength;
   }
 
-  public void setMaxStringFlagValueLength(Integer maxStringFlagValueLength) {
+  public void setMaxStringFlagValueLength(@javax.annotation.Nonnull Integer maxStringFlagValueLength) {
     this.maxStringFlagValueLength = maxStringFlagValueLength;
   }
 
 
-  public OrganizationLimitations maxConditionPerTargetingRuleCount(Integer maxConditionPerTargetingRuleCount) {
+  public OrganizationLimitations maxConditionPerTargetingRuleCount(@javax.annotation.Nonnull Integer maxConditionPerTargetingRuleCount) {
     this.maxConditionPerTargetingRuleCount = maxConditionPerTargetingRuleCount;
     return this;
   }
@@ -214,12 +221,12 @@ public class OrganizationLimitations {
     return maxConditionPerTargetingRuleCount;
   }
 
-  public void setMaxConditionPerTargetingRuleCount(Integer maxConditionPerTargetingRuleCount) {
+  public void setMaxConditionPerTargetingRuleCount(@javax.annotation.Nonnull Integer maxConditionPerTargetingRuleCount) {
     this.maxConditionPerTargetingRuleCount = maxConditionPerTargetingRuleCount;
   }
 
 
-  public OrganizationLimitations maxPredefinedVariations(Integer maxPredefinedVariations) {
+  public OrganizationLimitations maxPredefinedVariations(@javax.annotation.Nonnull Integer maxPredefinedVariations) {
     this.maxPredefinedVariations = maxPredefinedVariations;
     return this;
   }
@@ -233,7 +240,7 @@ public class OrganizationLimitations {
     return maxPredefinedVariations;
   }
 
-  public void setMaxPredefinedVariations(Integer maxPredefinedVariations) {
+  public void setMaxPredefinedVariations(@javax.annotation.Nonnull Integer maxPredefinedVariations) {
     this.maxPredefinedVariations = maxPredefinedVariations;
   }
 
@@ -330,10 +337,7 @@ public class OrganizationLimitations {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -342,26 +346,10 @@ public class OrganizationLimitations {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("maxPercentageOptionCount");
-    openapiFields.add("maxTargetingRuleCount");
-    openapiFields.add("maxComparisonValueLength");
-    openapiFields.add("maxComparisonValueListLength");
-    openapiFields.add("maxComparisonValueListItemLength");
-    openapiFields.add("maxStringFlagValueLength");
-    openapiFields.add("maxConditionPerTargetingRuleCount");
-    openapiFields.add("maxPredefinedVariations");
+    openapiFields = new HashSet<String>(Arrays.asList("maxPercentageOptionCount", "maxTargetingRuleCount", "maxComparisonValueLength", "maxComparisonValueListLength", "maxComparisonValueListItemLength", "maxStringFlagValueLength", "maxConditionPerTargetingRuleCount", "maxPredefinedVariations"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("maxPercentageOptionCount");
-    openapiRequiredFields.add("maxTargetingRuleCount");
-    openapiRequiredFields.add("maxComparisonValueLength");
-    openapiRequiredFields.add("maxComparisonValueListLength");
-    openapiRequiredFields.add("maxComparisonValueListItemLength");
-    openapiRequiredFields.add("maxStringFlagValueLength");
-    openapiRequiredFields.add("maxConditionPerTargetingRuleCount");
-    openapiRequiredFields.add("maxPredefinedVariations");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("maxPercentageOptionCount", "maxTargetingRuleCount", "maxComparisonValueLength", "maxComparisonValueListLength", "maxComparisonValueListItemLength", "maxStringFlagValueLength", "maxConditionPerTargetingRuleCount", "maxPredefinedVariations"));
   }
 
   /**
@@ -373,14 +361,14 @@ public class OrganizationLimitations {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!OrganizationLimitations.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in OrganizationLimitations is not found in the empty JSON string", OrganizationLimitations.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in OrganizationLimitations is not found in the empty JSON string", OrganizationLimitations.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : OrganizationLimitations.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -443,7 +431,7 @@ public class OrganizationLimitations {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

@@ -44,7 +44,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -56,40 +55,47 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * Details of the Integration.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class IntegrationModel {
   public static final String SERIALIZED_NAME_PRODUCT = "product";
   @SerializedName(SERIALIZED_NAME_PRODUCT)
+  @javax.annotation.Nonnull
   private ProductModel product;
 
   public static final String SERIALIZED_NAME_INTEGRATION_ID = "integrationId";
   @SerializedName(SERIALIZED_NAME_INTEGRATION_ID)
+  @javax.annotation.Nonnull
   private UUID integrationId;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_INTEGRATION_TYPE = "integrationType";
   @SerializedName(SERIALIZED_NAME_INTEGRATION_TYPE)
+  @javax.annotation.Nonnull
   private IntegrationType integrationType;
 
   public static final String SERIALIZED_NAME_PARAMETERS = "parameters";
   @SerializedName(SERIALIZED_NAME_PARAMETERS)
+  @javax.annotation.Nullable
   private Map<String, String> parameters;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_IDS = "environmentIds";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_IDS)
+  @javax.annotation.Nonnull
   private List<UUID> environmentIds = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CONFIG_IDS = "configIds";
   @SerializedName(SERIALIZED_NAME_CONFIG_IDS)
+  @javax.annotation.Nonnull
   private List<UUID> configIds = new ArrayList<>();
 
   public IntegrationModel() {
   }
 
-  public IntegrationModel product(ProductModel product) {
+  public IntegrationModel product(@javax.annotation.Nonnull ProductModel product) {
     this.product = product;
     return this;
   }
@@ -103,12 +109,12 @@ public class IntegrationModel {
     return product;
   }
 
-  public void setProduct(ProductModel product) {
+  public void setProduct(@javax.annotation.Nonnull ProductModel product) {
     this.product = product;
   }
 
 
-  public IntegrationModel integrationId(UUID integrationId) {
+  public IntegrationModel integrationId(@javax.annotation.Nonnull UUID integrationId) {
     this.integrationId = integrationId;
     return this;
   }
@@ -122,12 +128,12 @@ public class IntegrationModel {
     return integrationId;
   }
 
-  public void setIntegrationId(UUID integrationId) {
+  public void setIntegrationId(@javax.annotation.Nonnull UUID integrationId) {
     this.integrationId = integrationId;
   }
 
 
-  public IntegrationModel name(String name) {
+  public IntegrationModel name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -141,12 +147,12 @@ public class IntegrationModel {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public IntegrationModel integrationType(IntegrationType integrationType) {
+  public IntegrationModel integrationType(@javax.annotation.Nonnull IntegrationType integrationType) {
     this.integrationType = integrationType;
     return this;
   }
@@ -160,12 +166,12 @@ public class IntegrationModel {
     return integrationType;
   }
 
-  public void setIntegrationType(IntegrationType integrationType) {
+  public void setIntegrationType(@javax.annotation.Nonnull IntegrationType integrationType) {
     this.integrationType = integrationType;
   }
 
 
-  public IntegrationModel parameters(Map<String, String> parameters) {
+  public IntegrationModel parameters(@javax.annotation.Nullable Map<String, String> parameters) {
     this.parameters = parameters;
     return this;
   }
@@ -187,12 +193,12 @@ public class IntegrationModel {
     return parameters;
   }
 
-  public void setParameters(Map<String, String> parameters) {
+  public void setParameters(@javax.annotation.Nullable Map<String, String> parameters) {
     this.parameters = parameters;
   }
 
 
-  public IntegrationModel environmentIds(List<UUID> environmentIds) {
+  public IntegrationModel environmentIds(@javax.annotation.Nonnull List<UUID> environmentIds) {
     this.environmentIds = environmentIds;
     return this;
   }
@@ -214,12 +220,12 @@ public class IntegrationModel {
     return environmentIds;
   }
 
-  public void setEnvironmentIds(List<UUID> environmentIds) {
+  public void setEnvironmentIds(@javax.annotation.Nonnull List<UUID> environmentIds) {
     this.environmentIds = environmentIds;
   }
 
 
-  public IntegrationModel configIds(List<UUID> configIds) {
+  public IntegrationModel configIds(@javax.annotation.Nonnull List<UUID> configIds) {
     this.configIds = configIds;
     return this;
   }
@@ -241,7 +247,7 @@ public class IntegrationModel {
     return configIds;
   }
 
-  public void setConfigIds(List<UUID> configIds) {
+  public void setConfigIds(@javax.annotation.Nonnull List<UUID> configIds) {
     this.configIds = configIds;
   }
 
@@ -336,10 +342,7 @@ public class IntegrationModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -348,24 +351,10 @@ public class IntegrationModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("product");
-    openapiFields.add("integrationId");
-    openapiFields.add("name");
-    openapiFields.add("integrationType");
-    openapiFields.add("parameters");
-    openapiFields.add("environmentIds");
-    openapiFields.add("configIds");
+    openapiFields = new HashSet<String>(Arrays.asList("product", "integrationId", "name", "integrationType", "parameters", "environmentIds", "configIds"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("product");
-    openapiRequiredFields.add("integrationId");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("integrationType");
-    openapiRequiredFields.add("parameters");
-    openapiRequiredFields.add("environmentIds");
-    openapiRequiredFields.add("configIds");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("product", "integrationId", "name", "integrationType", "parameters", "environmentIds", "configIds"));
   }
 
   /**
@@ -377,24 +366,24 @@ public class IntegrationModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!IntegrationModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in IntegrationModel is not found in the empty JSON string", IntegrationModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in IntegrationModel is not found in the empty JSON string", IntegrationModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : IntegrationModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the required field `product`
       ProductModel.validateJsonElement(jsonObj.get("product"));
       if (!jsonObj.get("integrationId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `integrationId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("integrationId").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `integrationId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("integrationId").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       // validate the required field `integrationType`
       IntegrationType.validateJsonElement(jsonObj.get("integrationType"));
@@ -402,13 +391,13 @@ public class IntegrationModel {
       if (jsonObj.get("environmentIds") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("environmentIds").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environmentIds` to be an array in the JSON string but got `%s`", jsonObj.get("environmentIds").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `environmentIds` to be an array in the JSON string but got `%s`", jsonObj.get("environmentIds").toString()));
       }
       // ensure the required json array is present
       if (jsonObj.get("configIds") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("configIds").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `configIds` to be an array in the JSON string but got `%s`", jsonObj.get("configIds").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `configIds` to be an array in the JSON string but got `%s`", jsonObj.get("configIds").toString()));
       }
   }
 
@@ -469,7 +458,7 @@ public class IntegrationModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

@@ -41,7 +41,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -53,32 +52,37 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * ReferenceLinesRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class ReferenceLinesRequest {
   public static final String SERIALIZED_NAME_FILE = "file";
   @SerializedName(SERIALIZED_NAME_FILE)
+  @javax.annotation.Nonnull
   private String _file;
 
   public static final String SERIALIZED_NAME_FILE_URL = "fileUrl";
   @SerializedName(SERIALIZED_NAME_FILE_URL)
+  @javax.annotation.Nullable
   private String fileUrl;
 
   public static final String SERIALIZED_NAME_PRE_LINES = "preLines";
   @SerializedName(SERIALIZED_NAME_PRE_LINES)
+  @javax.annotation.Nullable
   private List<ReferenceLineRequest> preLines = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_POST_LINES = "postLines";
   @SerializedName(SERIALIZED_NAME_POST_LINES)
+  @javax.annotation.Nullable
   private List<ReferenceLineRequest> postLines = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_REFERENCE_LINE = "referenceLine";
   @SerializedName(SERIALIZED_NAME_REFERENCE_LINE)
+  @javax.annotation.Nonnull
   private ReferenceLineRequest referenceLine;
 
   public ReferenceLinesRequest() {
   }
 
-  public ReferenceLinesRequest _file(String _file) {
+  public ReferenceLinesRequest _file(@javax.annotation.Nonnull String _file) {
     this._file = _file;
     return this;
   }
@@ -92,12 +96,12 @@ public class ReferenceLinesRequest {
     return _file;
   }
 
-  public void setFile(String _file) {
+  public void setFile(@javax.annotation.Nonnull String _file) {
     this._file = _file;
   }
 
 
-  public ReferenceLinesRequest fileUrl(String fileUrl) {
+  public ReferenceLinesRequest fileUrl(@javax.annotation.Nullable String fileUrl) {
     this.fileUrl = fileUrl;
     return this;
   }
@@ -111,12 +115,12 @@ public class ReferenceLinesRequest {
     return fileUrl;
   }
 
-  public void setFileUrl(String fileUrl) {
+  public void setFileUrl(@javax.annotation.Nullable String fileUrl) {
     this.fileUrl = fileUrl;
   }
 
 
-  public ReferenceLinesRequest preLines(List<ReferenceLineRequest> preLines) {
+  public ReferenceLinesRequest preLines(@javax.annotation.Nullable List<ReferenceLineRequest> preLines) {
     this.preLines = preLines;
     return this;
   }
@@ -138,12 +142,12 @@ public class ReferenceLinesRequest {
     return preLines;
   }
 
-  public void setPreLines(List<ReferenceLineRequest> preLines) {
+  public void setPreLines(@javax.annotation.Nullable List<ReferenceLineRequest> preLines) {
     this.preLines = preLines;
   }
 
 
-  public ReferenceLinesRequest postLines(List<ReferenceLineRequest> postLines) {
+  public ReferenceLinesRequest postLines(@javax.annotation.Nullable List<ReferenceLineRequest> postLines) {
     this.postLines = postLines;
     return this;
   }
@@ -165,12 +169,12 @@ public class ReferenceLinesRequest {
     return postLines;
   }
 
-  public void setPostLines(List<ReferenceLineRequest> postLines) {
+  public void setPostLines(@javax.annotation.Nullable List<ReferenceLineRequest> postLines) {
     this.postLines = postLines;
   }
 
 
-  public ReferenceLinesRequest referenceLine(ReferenceLineRequest referenceLine) {
+  public ReferenceLinesRequest referenceLine(@javax.annotation.Nonnull ReferenceLineRequest referenceLine) {
     this.referenceLine = referenceLine;
     return this;
   }
@@ -184,7 +188,7 @@ public class ReferenceLinesRequest {
     return referenceLine;
   }
 
-  public void setReferenceLine(ReferenceLineRequest referenceLine) {
+  public void setReferenceLine(@javax.annotation.Nonnull ReferenceLineRequest referenceLine) {
     this.referenceLine = referenceLine;
   }
 
@@ -286,10 +290,7 @@ public class ReferenceLinesRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -298,17 +299,10 @@ public class ReferenceLinesRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("file");
-    openapiFields.add("fileUrl");
-    openapiFields.add("preLines");
-    openapiFields.add("postLines");
-    openapiFields.add("referenceLine");
+    openapiFields = new HashSet<String>(Arrays.asList("file", "fileUrl", "preLines", "postLines", "referenceLine"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("file");
-    openapiRequiredFields.add("referenceLine");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("file", "referenceLine"));
   }
 
   /**
@@ -320,29 +314,29 @@ public class ReferenceLinesRequest {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ReferenceLinesRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ReferenceLinesRequest is not found in the empty JSON string", ReferenceLinesRequest.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ReferenceLinesRequest is not found in the empty JSON string", ReferenceLinesRequest.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ReferenceLinesRequest.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("file").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `file` to be a primitive type in the JSON string but got `%s`", jsonObj.get("file").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `file` to be a primitive type in the JSON string but got `%s`", jsonObj.get("file").toString()));
       }
       if ((jsonObj.get("fileUrl") != null && !jsonObj.get("fileUrl").isJsonNull()) && !jsonObj.get("fileUrl").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `fileUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("fileUrl").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `fileUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("fileUrl").toString()));
       }
       if (jsonObj.get("preLines") != null && !jsonObj.get("preLines").isJsonNull()) {
         JsonArray jsonArraypreLines = jsonObj.getAsJsonArray("preLines");
         if (jsonArraypreLines != null) {
           // ensure the json data is an array
           if (!jsonObj.get("preLines").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `preLines` to be an array in the JSON string but got `%s`", jsonObj.get("preLines").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `preLines` to be an array in the JSON string but got `%s`", jsonObj.get("preLines").toString()));
           }
 
           // validate the optional field `preLines` (array)
@@ -356,7 +350,7 @@ public class ReferenceLinesRequest {
         if (jsonArraypostLines != null) {
           // ensure the json data is an array
           if (!jsonObj.get("postLines").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `postLines` to be an array in the JSON string but got `%s`", jsonObj.get("postLines").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `postLines` to be an array in the JSON string but got `%s`", jsonObj.get("postLines").toString()));
           }
 
           // validate the optional field `postLines` (array)
@@ -426,7 +420,7 @@ public class ReferenceLinesRequest {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

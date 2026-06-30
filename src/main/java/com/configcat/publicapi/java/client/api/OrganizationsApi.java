@@ -81,13 +81,14 @@ public class OrganizationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getOrganizationLimitationsCall(UUID organizationId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getOrganizationLimitationsCall(@javax.annotation.Nonnull UUID organizationId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -133,7 +134,7 @@ public class OrganizationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getOrganizationLimitationsValidateBeforeCall(UUID organizationId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getOrganizationLimitationsValidateBeforeCall(@javax.annotation.Nonnull UUID organizationId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling getOrganizationLimitations(Async)");
@@ -150,13 +151,14 @@ public class OrganizationsApi {
      * @return OrganizationLimitations
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public OrganizationLimitations getOrganizationLimitations(UUID organizationId) throws ApiException {
+    public OrganizationLimitations getOrganizationLimitations(@javax.annotation.Nonnull UUID organizationId) throws ApiException {
         ApiResponse<OrganizationLimitations> localVarResp = getOrganizationLimitationsWithHttpInfo(organizationId);
         return localVarResp.getData();
     }
@@ -168,13 +170,14 @@ public class OrganizationsApi {
      * @return ApiResponse&lt;OrganizationLimitations&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OrganizationLimitations> getOrganizationLimitationsWithHttpInfo(UUID organizationId) throws ApiException {
+    public ApiResponse<OrganizationLimitations> getOrganizationLimitationsWithHttpInfo(@javax.annotation.Nonnull UUID organizationId) throws ApiException {
         okhttp3.Call localVarCall = getOrganizationLimitationsValidateBeforeCall(organizationId, null);
         Type localVarReturnType = new TypeToken<OrganizationLimitations>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -188,13 +191,14 @@ public class OrganizationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getOrganizationLimitationsAsync(UUID organizationId, final ApiCallback<OrganizationLimitations> _callback) throws ApiException {
+    public okhttp3.Call getOrganizationLimitationsAsync(@javax.annotation.Nonnull UUID organizationId, final ApiCallback<OrganizationLimitations> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getOrganizationLimitationsValidateBeforeCall(organizationId, _callback);
         Type localVarReturnType = new TypeToken<OrganizationLimitations>(){}.getType();
@@ -207,7 +211,8 @@ public class OrganizationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
@@ -269,7 +274,8 @@ public class OrganizationsApi {
      * @return List&lt;OrganizationModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
@@ -286,7 +292,8 @@ public class OrganizationsApi {
      * @return ApiResponse&lt;List&lt;OrganizationModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
@@ -305,7 +312,8 @@ public class OrganizationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>

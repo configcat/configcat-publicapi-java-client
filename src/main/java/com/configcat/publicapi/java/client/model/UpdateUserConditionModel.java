@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,24 +50,27 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * Describes a condition that is based on user attributes.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class UpdateUserConditionModel {
   public static final String SERIALIZED_NAME_COMPARISON_ATTRIBUTE = "comparisonAttribute";
   @SerializedName(SERIALIZED_NAME_COMPARISON_ATTRIBUTE)
+  @javax.annotation.Nonnull
   private String comparisonAttribute;
 
   public static final String SERIALIZED_NAME_COMPARATOR = "comparator";
   @SerializedName(SERIALIZED_NAME_COMPARATOR)
+  @javax.annotation.Nonnull
   private UserComparator comparator;
 
   public static final String SERIALIZED_NAME_COMPARISON_VALUE = "comparisonValue";
   @SerializedName(SERIALIZED_NAME_COMPARISON_VALUE)
+  @javax.annotation.Nonnull
   private UpdateComparisonValueModel comparisonValue;
 
   public UpdateUserConditionModel() {
   }
 
-  public UpdateUserConditionModel comparisonAttribute(String comparisonAttribute) {
+  public UpdateUserConditionModel comparisonAttribute(@javax.annotation.Nonnull String comparisonAttribute) {
     this.comparisonAttribute = comparisonAttribute;
     return this;
   }
@@ -82,12 +84,12 @@ public class UpdateUserConditionModel {
     return comparisonAttribute;
   }
 
-  public void setComparisonAttribute(String comparisonAttribute) {
+  public void setComparisonAttribute(@javax.annotation.Nonnull String comparisonAttribute) {
     this.comparisonAttribute = comparisonAttribute;
   }
 
 
-  public UpdateUserConditionModel comparator(UserComparator comparator) {
+  public UpdateUserConditionModel comparator(@javax.annotation.Nonnull UserComparator comparator) {
     this.comparator = comparator;
     return this;
   }
@@ -101,12 +103,12 @@ public class UpdateUserConditionModel {
     return comparator;
   }
 
-  public void setComparator(UserComparator comparator) {
+  public void setComparator(@javax.annotation.Nonnull UserComparator comparator) {
     this.comparator = comparator;
   }
 
 
-  public UpdateUserConditionModel comparisonValue(UpdateComparisonValueModel comparisonValue) {
+  public UpdateUserConditionModel comparisonValue(@javax.annotation.Nonnull UpdateComparisonValueModel comparisonValue) {
     this.comparisonValue = comparisonValue;
     return this;
   }
@@ -120,7 +122,7 @@ public class UpdateUserConditionModel {
     return comparisonValue;
   }
 
-  public void setComparisonValue(UpdateComparisonValueModel comparisonValue) {
+  public void setComparisonValue(@javax.annotation.Nonnull UpdateComparisonValueModel comparisonValue) {
     this.comparisonValue = comparisonValue;
   }
 
@@ -207,10 +209,7 @@ public class UpdateUserConditionModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -219,16 +218,10 @@ public class UpdateUserConditionModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("comparisonAttribute");
-    openapiFields.add("comparator");
-    openapiFields.add("comparisonValue");
+    openapiFields = new HashSet<String>(Arrays.asList("comparisonAttribute", "comparator", "comparisonValue"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("comparisonAttribute");
-    openapiRequiredFields.add("comparator");
-    openapiRequiredFields.add("comparisonValue");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("comparisonAttribute", "comparator", "comparisonValue"));
   }
 
   /**
@@ -240,19 +233,19 @@ public class UpdateUserConditionModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!UpdateUserConditionModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdateUserConditionModel is not found in the empty JSON string", UpdateUserConditionModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in UpdateUserConditionModel is not found in the empty JSON string", UpdateUserConditionModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : UpdateUserConditionModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("comparisonAttribute").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `comparisonAttribute` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comparisonAttribute").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `comparisonAttribute` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comparisonAttribute").toString()));
       }
       // validate the required field `comparator`
       UserComparator.validateJsonElement(jsonObj.get("comparator"));
@@ -317,7 +310,7 @@ public class UpdateUserConditionModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

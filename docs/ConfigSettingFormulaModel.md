@@ -18,6 +18,7 @@
 |**integrationLinks** | [**List&lt;IntegrationLinkModel&gt;**](IntegrationLinkModel.md) | The integration links attached to the Feature Flag or Setting. |  |
 |**settingTags** | [**List&lt;SettingTagModel&gt;**](SettingTagModel.md) | The tags attached to the Feature Flag or Setting. |  |
 |**settingIdsWherePrerequisite** | **List&lt;Integer&gt;** | List of Feature Flag and Setting IDs where the actual Feature Flag or Setting is prerequisite. |  |
+|**changeRequestCount** | **Integer** | The number of change requests for the Feature Flag or Setting. |  |
 
 
 

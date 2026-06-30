@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,52 +50,67 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * Metadata of a Feature Flag or Setting.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class SettingDataModel {
   public static final String SERIALIZED_NAME_SETTING_ID = "settingId";
   @SerializedName(SERIALIZED_NAME_SETTING_ID)
+  @javax.annotation.Nonnull
   private Integer settingId;
 
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nonnull
   private String key;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_HINT = "hint";
   @SerializedName(SERIALIZED_NAME_HINT)
+  @javax.annotation.Nullable
   private String hint;
 
   public static final String SERIALIZED_NAME_SETTING_TYPE = "settingType";
   @SerializedName(SERIALIZED_NAME_SETTING_TYPE)
+  @javax.annotation.Nonnull
   private SettingType settingType;
+
+  public static final String SERIALIZED_NAME_IS_JSON = "isJson";
+  @SerializedName(SERIALIZED_NAME_IS_JSON)
+  @javax.annotation.Nonnull
+  private Boolean isJson;
 
   public static final String SERIALIZED_NAME_ORDER = "order";
   @SerializedName(SERIALIZED_NAME_ORDER)
+  @javax.annotation.Nonnull
   private Integer order;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "createdAt";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nullable
   private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_CREATOR_EMAIL = "creatorEmail";
   @SerializedName(SERIALIZED_NAME_CREATOR_EMAIL)
+  @javax.annotation.Nullable
   private String creatorEmail;
 
   public static final String SERIALIZED_NAME_CREATOR_FULL_NAME = "creatorFullName";
   @SerializedName(SERIALIZED_NAME_CREATOR_FULL_NAME)
+  @javax.annotation.Nullable
   private String creatorFullName;
 
   public static final String SERIALIZED_NAME_IS_WATCHING = "isWatching";
   @SerializedName(SERIALIZED_NAME_IS_WATCHING)
+  @javax.annotation.Nonnull
   private Boolean isWatching;
 
   public SettingDataModel() {
   }
 
-  public SettingDataModel settingId(Integer settingId) {
+  public SettingDataModel settingId(@javax.annotation.Nonnull Integer settingId) {
     this.settingId = settingId;
     return this;
   }
@@ -110,12 +124,12 @@ public class SettingDataModel {
     return settingId;
   }
 
-  public void setSettingId(Integer settingId) {
+  public void setSettingId(@javax.annotation.Nonnull Integer settingId) {
     this.settingId = settingId;
   }
 
 
-  public SettingDataModel key(String key) {
+  public SettingDataModel key(@javax.annotation.Nonnull String key) {
     this.key = key;
     return this;
   }
@@ -129,12 +143,12 @@ public class SettingDataModel {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nonnull String key) {
     this.key = key;
   }
 
 
-  public SettingDataModel name(String name) {
+  public SettingDataModel name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -148,12 +162,12 @@ public class SettingDataModel {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public SettingDataModel hint(String hint) {
+  public SettingDataModel hint(@javax.annotation.Nullable String hint) {
     this.hint = hint;
     return this;
   }
@@ -167,12 +181,12 @@ public class SettingDataModel {
     return hint;
   }
 
-  public void setHint(String hint) {
+  public void setHint(@javax.annotation.Nullable String hint) {
     this.hint = hint;
   }
 
 
-  public SettingDataModel settingType(SettingType settingType) {
+  public SettingDataModel settingType(@javax.annotation.Nonnull SettingType settingType) {
     this.settingType = settingType;
     return this;
   }
@@ -186,12 +200,31 @@ public class SettingDataModel {
     return settingType;
   }
 
-  public void setSettingType(SettingType settingType) {
+  public void setSettingType(@javax.annotation.Nonnull SettingType settingType) {
     this.settingType = settingType;
   }
 
 
-  public SettingDataModel order(Integer order) {
+  public SettingDataModel isJson(@javax.annotation.Nonnull Boolean isJson) {
+    this.isJson = isJson;
+    return this;
+  }
+
+  /**
+   * Indicates whether this setting should validate string values as JSON values.
+   * @return isJson
+   */
+  @javax.annotation.Nonnull
+  public Boolean getIsJson() {
+    return isJson;
+  }
+
+  public void setIsJson(@javax.annotation.Nonnull Boolean isJson) {
+    this.isJson = isJson;
+  }
+
+
+  public SettingDataModel order(@javax.annotation.Nonnull Integer order) {
     this.order = order;
     return this;
   }
@@ -205,12 +238,12 @@ public class SettingDataModel {
     return order;
   }
 
-  public void setOrder(Integer order) {
+  public void setOrder(@javax.annotation.Nonnull Integer order) {
     this.order = order;
   }
 
 
-  public SettingDataModel createdAt(OffsetDateTime createdAt) {
+  public SettingDataModel createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -224,12 +257,12 @@ public class SettingDataModel {
     return createdAt;
   }
 
-  public void setCreatedAt(OffsetDateTime createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public SettingDataModel creatorEmail(String creatorEmail) {
+  public SettingDataModel creatorEmail(@javax.annotation.Nullable String creatorEmail) {
     this.creatorEmail = creatorEmail;
     return this;
   }
@@ -243,12 +276,12 @@ public class SettingDataModel {
     return creatorEmail;
   }
 
-  public void setCreatorEmail(String creatorEmail) {
+  public void setCreatorEmail(@javax.annotation.Nullable String creatorEmail) {
     this.creatorEmail = creatorEmail;
   }
 
 
-  public SettingDataModel creatorFullName(String creatorFullName) {
+  public SettingDataModel creatorFullName(@javax.annotation.Nullable String creatorFullName) {
     this.creatorFullName = creatorFullName;
     return this;
   }
@@ -262,12 +295,12 @@ public class SettingDataModel {
     return creatorFullName;
   }
 
-  public void setCreatorFullName(String creatorFullName) {
+  public void setCreatorFullName(@javax.annotation.Nullable String creatorFullName) {
     this.creatorFullName = creatorFullName;
   }
 
 
-  public SettingDataModel isWatching(Boolean isWatching) {
+  public SettingDataModel isWatching(@javax.annotation.Nonnull Boolean isWatching) {
     this.isWatching = isWatching;
     return this;
   }
@@ -281,7 +314,7 @@ public class SettingDataModel {
     return isWatching;
   }
 
-  public void setIsWatching(Boolean isWatching) {
+  public void setIsWatching(@javax.annotation.Nonnull Boolean isWatching) {
     this.isWatching = isWatching;
   }
 
@@ -345,6 +378,7 @@ public class SettingDataModel {
         Objects.equals(this.name, settingDataModel.name) &&
         Objects.equals(this.hint, settingDataModel.hint) &&
         Objects.equals(this.settingType, settingDataModel.settingType) &&
+        Objects.equals(this.isJson, settingDataModel.isJson) &&
         Objects.equals(this.order, settingDataModel.order) &&
         Objects.equals(this.createdAt, settingDataModel.createdAt) &&
         Objects.equals(this.creatorEmail, settingDataModel.creatorEmail) &&
@@ -355,7 +389,7 @@ public class SettingDataModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(settingId, key, name, hint, settingType, order, createdAt, creatorEmail, creatorFullName, isWatching, additionalProperties);
+    return Objects.hash(settingId, key, name, hint, settingType, isJson, order, createdAt, creatorEmail, creatorFullName, isWatching, additionalProperties);
   }
 
   @Override
@@ -367,6 +401,7 @@ public class SettingDataModel {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    hint: ").append(toIndentedString(hint)).append("\n");
     sb.append("    settingType: ").append(toIndentedString(settingType)).append("\n");
+    sb.append("    isJson: ").append(toIndentedString(isJson)).append("\n");
     sb.append("    order: ").append(toIndentedString(order)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    creatorEmail: ").append(toIndentedString(creatorEmail)).append("\n");
@@ -382,10 +417,7 @@ public class SettingDataModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -394,30 +426,10 @@ public class SettingDataModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("settingId");
-    openapiFields.add("key");
-    openapiFields.add("name");
-    openapiFields.add("hint");
-    openapiFields.add("settingType");
-    openapiFields.add("order");
-    openapiFields.add("createdAt");
-    openapiFields.add("creatorEmail");
-    openapiFields.add("creatorFullName");
-    openapiFields.add("isWatching");
+    openapiFields = new HashSet<String>(Arrays.asList("settingId", "key", "name", "hint", "settingType", "isJson", "order", "createdAt", "creatorEmail", "creatorFullName", "isWatching"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("settingId");
-    openapiRequiredFields.add("key");
-    openapiRequiredFields.add("name");
-    openapiRequiredFields.add("hint");
-    openapiRequiredFields.add("settingType");
-    openapiRequiredFields.add("order");
-    openapiRequiredFields.add("createdAt");
-    openapiRequiredFields.add("creatorEmail");
-    openapiRequiredFields.add("creatorFullName");
-    openapiRequiredFields.add("isWatching");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("settingId", "key", "name", "hint", "settingType", "isJson", "order", "createdAt", "creatorEmail", "creatorFullName", "isWatching"));
   }
 
   /**
@@ -429,33 +441,33 @@ public class SettingDataModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SettingDataModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in SettingDataModel is not found in the empty JSON string", SettingDataModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in SettingDataModel is not found in the empty JSON string", SettingDataModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : SettingDataModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if ((jsonObj.get("hint") != null && !jsonObj.get("hint").isJsonNull()) && !jsonObj.get("hint").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `hint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hint").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `hint` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hint").toString()));
       }
       // validate the required field `settingType`
       SettingType.validateJsonElement(jsonObj.get("settingType"));
       if ((jsonObj.get("creatorEmail") != null && !jsonObj.get("creatorEmail").isJsonNull()) && !jsonObj.get("creatorEmail").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `creatorEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("creatorEmail").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `creatorEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("creatorEmail").toString()));
       }
       if ((jsonObj.get("creatorFullName") != null && !jsonObj.get("creatorFullName").isJsonNull()) && !jsonObj.get("creatorFullName").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `creatorFullName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("creatorFullName").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `creatorFullName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("creatorFullName").toString()));
       }
   }
 
@@ -516,7 +528,7 @@ public class SettingDataModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

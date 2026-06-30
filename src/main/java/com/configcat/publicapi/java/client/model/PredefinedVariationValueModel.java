@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -47,30 +46,34 @@ import java.util.Set;
 import com.configcat.publicapi.java.client.JSON;
 
 /**
- * Represents the value of a Feature Flag or Predefined Variation.
+ * Represents the value of a Predefined Variation.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class PredefinedVariationValueModel {
   public static final String SERIALIZED_NAME_BOOL_VALUE = "boolValue";
   @SerializedName(SERIALIZED_NAME_BOOL_VALUE)
+  @javax.annotation.Nullable
   private Boolean boolValue;
 
   public static final String SERIALIZED_NAME_STRING_VALUE = "stringValue";
   @SerializedName(SERIALIZED_NAME_STRING_VALUE)
+  @javax.annotation.Nullable
   private String stringValue;
 
   public static final String SERIALIZED_NAME_INT_VALUE = "intValue";
   @SerializedName(SERIALIZED_NAME_INT_VALUE)
+  @javax.annotation.Nullable
   private Integer intValue;
 
   public static final String SERIALIZED_NAME_DOUBLE_VALUE = "doubleValue";
   @SerializedName(SERIALIZED_NAME_DOUBLE_VALUE)
+  @javax.annotation.Nullable
   private Double doubleValue;
 
   public PredefinedVariationValueModel() {
   }
 
-  public PredefinedVariationValueModel boolValue(Boolean boolValue) {
+  public PredefinedVariationValueModel boolValue(@javax.annotation.Nullable Boolean boolValue) {
     this.boolValue = boolValue;
     return this;
   }
@@ -84,12 +87,12 @@ public class PredefinedVariationValueModel {
     return boolValue;
   }
 
-  public void setBoolValue(Boolean boolValue) {
+  public void setBoolValue(@javax.annotation.Nullable Boolean boolValue) {
     this.boolValue = boolValue;
   }
 
 
-  public PredefinedVariationValueModel stringValue(String stringValue) {
+  public PredefinedVariationValueModel stringValue(@javax.annotation.Nullable String stringValue) {
     this.stringValue = stringValue;
     return this;
   }
@@ -103,12 +106,12 @@ public class PredefinedVariationValueModel {
     return stringValue;
   }
 
-  public void setStringValue(String stringValue) {
+  public void setStringValue(@javax.annotation.Nullable String stringValue) {
     this.stringValue = stringValue;
   }
 
 
-  public PredefinedVariationValueModel intValue(Integer intValue) {
+  public PredefinedVariationValueModel intValue(@javax.annotation.Nullable Integer intValue) {
     this.intValue = intValue;
     return this;
   }
@@ -122,12 +125,12 @@ public class PredefinedVariationValueModel {
     return intValue;
   }
 
-  public void setIntValue(Integer intValue) {
+  public void setIntValue(@javax.annotation.Nullable Integer intValue) {
     this.intValue = intValue;
   }
 
 
-  public PredefinedVariationValueModel doubleValue(Double doubleValue) {
+  public PredefinedVariationValueModel doubleValue(@javax.annotation.Nullable Double doubleValue) {
     this.doubleValue = doubleValue;
     return this;
   }
@@ -141,7 +144,7 @@ public class PredefinedVariationValueModel {
     return doubleValue;
   }
 
-  public void setDoubleValue(Double doubleValue) {
+  public void setDoubleValue(@javax.annotation.Nullable Double doubleValue) {
     this.doubleValue = doubleValue;
   }
 
@@ -230,10 +233,7 @@ public class PredefinedVariationValueModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -242,18 +242,10 @@ public class PredefinedVariationValueModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("boolValue");
-    openapiFields.add("stringValue");
-    openapiFields.add("intValue");
-    openapiFields.add("doubleValue");
+    openapiFields = new HashSet<String>(Arrays.asList("boolValue", "stringValue", "intValue", "doubleValue"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("boolValue");
-    openapiRequiredFields.add("stringValue");
-    openapiRequiredFields.add("intValue");
-    openapiRequiredFields.add("doubleValue");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("boolValue", "stringValue", "intValue", "doubleValue"));
   }
 
   /**
@@ -265,19 +257,19 @@ public class PredefinedVariationValueModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PredefinedVariationValueModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PredefinedVariationValueModel is not found in the empty JSON string", PredefinedVariationValueModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in PredefinedVariationValueModel is not found in the empty JSON string", PredefinedVariationValueModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : PredefinedVariationValueModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("stringValue") != null && !jsonObj.get("stringValue").isJsonNull()) && !jsonObj.get("stringValue").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `stringValue` to be a primitive type in the JSON string but got `%s`", jsonObj.get("stringValue").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `stringValue` to be a primitive type in the JSON string but got `%s`", jsonObj.get("stringValue").toString()));
       }
   }
 
@@ -338,7 +330,7 @@ public class PredefinedVariationValueModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

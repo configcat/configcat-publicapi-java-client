@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,40 +50,47 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * ProxyProfileSelectionRule
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class ProxyProfileSelectionRule {
   public static final String SERIALIZED_NAME_KIND = "kind";
   @SerializedName(SERIALIZED_NAME_KIND)
+  @javax.annotation.Nonnull
   private SelectionRuleKind kind;
 
   public static final String SERIALIZED_NAME_PRODUCT_ID_FILTER = "productIdFilter";
   @SerializedName(SERIALIZED_NAME_PRODUCT_ID_FILTER)
+  @javax.annotation.Nullable
   private UUID productIdFilter;
 
   public static final String SERIALIZED_NAME_CONFIG_ID_FILTER = "configIdFilter";
   @SerializedName(SERIALIZED_NAME_CONFIG_ID_FILTER)
+  @javax.annotation.Nullable
   private UUID configIdFilter;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_ID_FILTER = "environmentIdFilter";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_ID_FILTER)
+  @javax.annotation.Nullable
   private UUID environmentIdFilter;
 
   public static final String SERIALIZED_NAME_PRODUCT_NAME_MATCH_FILTER = "productNameMatchFilter";
   @SerializedName(SERIALIZED_NAME_PRODUCT_NAME_MATCH_FILTER)
+  @javax.annotation.Nullable
   private String productNameMatchFilter;
 
   public static final String SERIALIZED_NAME_CONFIG_NAME_MATCH_FILTER = "configNameMatchFilter";
   @SerializedName(SERIALIZED_NAME_CONFIG_NAME_MATCH_FILTER)
+  @javax.annotation.Nullable
   private String configNameMatchFilter;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_NAME_MATCH_FILTER = "environmentNameMatchFilter";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_NAME_MATCH_FILTER)
+  @javax.annotation.Nullable
   private String environmentNameMatchFilter;
 
   public ProxyProfileSelectionRule() {
   }
 
-  public ProxyProfileSelectionRule kind(SelectionRuleKind kind) {
+  public ProxyProfileSelectionRule kind(@javax.annotation.Nonnull SelectionRuleKind kind) {
     this.kind = kind;
     return this;
   }
@@ -98,12 +104,12 @@ public class ProxyProfileSelectionRule {
     return kind;
   }
 
-  public void setKind(SelectionRuleKind kind) {
+  public void setKind(@javax.annotation.Nonnull SelectionRuleKind kind) {
     this.kind = kind;
   }
 
 
-  public ProxyProfileSelectionRule productIdFilter(UUID productIdFilter) {
+  public ProxyProfileSelectionRule productIdFilter(@javax.annotation.Nullable UUID productIdFilter) {
     this.productIdFilter = productIdFilter;
     return this;
   }
@@ -117,12 +123,12 @@ public class ProxyProfileSelectionRule {
     return productIdFilter;
   }
 
-  public void setProductIdFilter(UUID productIdFilter) {
+  public void setProductIdFilter(@javax.annotation.Nullable UUID productIdFilter) {
     this.productIdFilter = productIdFilter;
   }
 
 
-  public ProxyProfileSelectionRule configIdFilter(UUID configIdFilter) {
+  public ProxyProfileSelectionRule configIdFilter(@javax.annotation.Nullable UUID configIdFilter) {
     this.configIdFilter = configIdFilter;
     return this;
   }
@@ -136,12 +142,12 @@ public class ProxyProfileSelectionRule {
     return configIdFilter;
   }
 
-  public void setConfigIdFilter(UUID configIdFilter) {
+  public void setConfigIdFilter(@javax.annotation.Nullable UUID configIdFilter) {
     this.configIdFilter = configIdFilter;
   }
 
 
-  public ProxyProfileSelectionRule environmentIdFilter(UUID environmentIdFilter) {
+  public ProxyProfileSelectionRule environmentIdFilter(@javax.annotation.Nullable UUID environmentIdFilter) {
     this.environmentIdFilter = environmentIdFilter;
     return this;
   }
@@ -155,12 +161,12 @@ public class ProxyProfileSelectionRule {
     return environmentIdFilter;
   }
 
-  public void setEnvironmentIdFilter(UUID environmentIdFilter) {
+  public void setEnvironmentIdFilter(@javax.annotation.Nullable UUID environmentIdFilter) {
     this.environmentIdFilter = environmentIdFilter;
   }
 
 
-  public ProxyProfileSelectionRule productNameMatchFilter(String productNameMatchFilter) {
+  public ProxyProfileSelectionRule productNameMatchFilter(@javax.annotation.Nullable String productNameMatchFilter) {
     this.productNameMatchFilter = productNameMatchFilter;
     return this;
   }
@@ -174,12 +180,12 @@ public class ProxyProfileSelectionRule {
     return productNameMatchFilter;
   }
 
-  public void setProductNameMatchFilter(String productNameMatchFilter) {
+  public void setProductNameMatchFilter(@javax.annotation.Nullable String productNameMatchFilter) {
     this.productNameMatchFilter = productNameMatchFilter;
   }
 
 
-  public ProxyProfileSelectionRule configNameMatchFilter(String configNameMatchFilter) {
+  public ProxyProfileSelectionRule configNameMatchFilter(@javax.annotation.Nullable String configNameMatchFilter) {
     this.configNameMatchFilter = configNameMatchFilter;
     return this;
   }
@@ -193,12 +199,12 @@ public class ProxyProfileSelectionRule {
     return configNameMatchFilter;
   }
 
-  public void setConfigNameMatchFilter(String configNameMatchFilter) {
+  public void setConfigNameMatchFilter(@javax.annotation.Nullable String configNameMatchFilter) {
     this.configNameMatchFilter = configNameMatchFilter;
   }
 
 
-  public ProxyProfileSelectionRule environmentNameMatchFilter(String environmentNameMatchFilter) {
+  public ProxyProfileSelectionRule environmentNameMatchFilter(@javax.annotation.Nullable String environmentNameMatchFilter) {
     this.environmentNameMatchFilter = environmentNameMatchFilter;
     return this;
   }
@@ -212,7 +218,7 @@ public class ProxyProfileSelectionRule {
     return environmentNameMatchFilter;
   }
 
-  public void setEnvironmentNameMatchFilter(String environmentNameMatchFilter) {
+  public void setEnvironmentNameMatchFilter(@javax.annotation.Nullable String environmentNameMatchFilter) {
     this.environmentNameMatchFilter = environmentNameMatchFilter;
   }
 
@@ -307,10 +313,7 @@ public class ProxyProfileSelectionRule {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -319,24 +322,10 @@ public class ProxyProfileSelectionRule {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("kind");
-    openapiFields.add("productIdFilter");
-    openapiFields.add("configIdFilter");
-    openapiFields.add("environmentIdFilter");
-    openapiFields.add("productNameMatchFilter");
-    openapiFields.add("configNameMatchFilter");
-    openapiFields.add("environmentNameMatchFilter");
+    openapiFields = new HashSet<String>(Arrays.asList("kind", "productIdFilter", "configIdFilter", "environmentIdFilter", "productNameMatchFilter", "configNameMatchFilter", "environmentNameMatchFilter"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("kind");
-    openapiRequiredFields.add("productIdFilter");
-    openapiRequiredFields.add("configIdFilter");
-    openapiRequiredFields.add("environmentIdFilter");
-    openapiRequiredFields.add("productNameMatchFilter");
-    openapiRequiredFields.add("configNameMatchFilter");
-    openapiRequiredFields.add("environmentNameMatchFilter");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("kind", "productIdFilter", "configIdFilter", "environmentIdFilter", "productNameMatchFilter", "configNameMatchFilter", "environmentNameMatchFilter"));
   }
 
   /**
@@ -348,36 +337,36 @@ public class ProxyProfileSelectionRule {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ProxyProfileSelectionRule.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ProxyProfileSelectionRule is not found in the empty JSON string", ProxyProfileSelectionRule.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ProxyProfileSelectionRule is not found in the empty JSON string", ProxyProfileSelectionRule.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ProxyProfileSelectionRule.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // validate the required field `kind`
       SelectionRuleKind.validateJsonElement(jsonObj.get("kind"));
       if ((jsonObj.get("productIdFilter") != null && !jsonObj.get("productIdFilter").isJsonNull()) && !jsonObj.get("productIdFilter").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `productIdFilter` to be a primitive type in the JSON string but got `%s`", jsonObj.get("productIdFilter").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `productIdFilter` to be a primitive type in the JSON string but got `%s`", jsonObj.get("productIdFilter").toString()));
       }
       if ((jsonObj.get("configIdFilter") != null && !jsonObj.get("configIdFilter").isJsonNull()) && !jsonObj.get("configIdFilter").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `configIdFilter` to be a primitive type in the JSON string but got `%s`", jsonObj.get("configIdFilter").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `configIdFilter` to be a primitive type in the JSON string but got `%s`", jsonObj.get("configIdFilter").toString()));
       }
       if ((jsonObj.get("environmentIdFilter") != null && !jsonObj.get("environmentIdFilter").isJsonNull()) && !jsonObj.get("environmentIdFilter").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environmentIdFilter` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentIdFilter").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `environmentIdFilter` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentIdFilter").toString()));
       }
       if ((jsonObj.get("productNameMatchFilter") != null && !jsonObj.get("productNameMatchFilter").isJsonNull()) && !jsonObj.get("productNameMatchFilter").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `productNameMatchFilter` to be a primitive type in the JSON string but got `%s`", jsonObj.get("productNameMatchFilter").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `productNameMatchFilter` to be a primitive type in the JSON string but got `%s`", jsonObj.get("productNameMatchFilter").toString()));
       }
       if ((jsonObj.get("configNameMatchFilter") != null && !jsonObj.get("configNameMatchFilter").isJsonNull()) && !jsonObj.get("configNameMatchFilter").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `configNameMatchFilter` to be a primitive type in the JSON string but got `%s`", jsonObj.get("configNameMatchFilter").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `configNameMatchFilter` to be a primitive type in the JSON string but got `%s`", jsonObj.get("configNameMatchFilter").toString()));
       }
       if ((jsonObj.get("environmentNameMatchFilter") != null && !jsonObj.get("environmentNameMatchFilter").isJsonNull()) && !jsonObj.get("environmentNameMatchFilter").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environmentNameMatchFilter` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentNameMatchFilter").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `environmentNameMatchFilter` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentNameMatchFilter").toString()));
       }
   }
 
@@ -438,7 +427,7 @@ public class ProxyProfileSelectionRule {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,20 +50,22 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * InviteMembersRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class InviteMembersRequest {
   public static final String SERIALIZED_NAME_EMAILS = "emails";
   @SerializedName(SERIALIZED_NAME_EMAILS)
+  @javax.annotation.Nonnull
   private List<String> emails = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PERMISSION_GROUP_ID = "permissionGroupId";
   @SerializedName(SERIALIZED_NAME_PERMISSION_GROUP_ID)
+  @javax.annotation.Nonnull
   private Long permissionGroupId;
 
   public InviteMembersRequest() {
   }
 
-  public InviteMembersRequest emails(List<String> emails) {
+  public InviteMembersRequest emails(@javax.annotation.Nonnull List<String> emails) {
     this.emails = emails;
     return this;
   }
@@ -86,12 +87,12 @@ public class InviteMembersRequest {
     return emails;
   }
 
-  public void setEmails(List<String> emails) {
+  public void setEmails(@javax.annotation.Nonnull List<String> emails) {
     this.emails = emails;
   }
 
 
-  public InviteMembersRequest permissionGroupId(Long permissionGroupId) {
+  public InviteMembersRequest permissionGroupId(@javax.annotation.Nonnull Long permissionGroupId) {
     this.permissionGroupId = permissionGroupId;
     return this;
   }
@@ -105,7 +106,7 @@ public class InviteMembersRequest {
     return permissionGroupId;
   }
 
-  public void setPermissionGroupId(Long permissionGroupId) {
+  public void setPermissionGroupId(@javax.annotation.Nonnull Long permissionGroupId) {
     this.permissionGroupId = permissionGroupId;
   }
 
@@ -190,10 +191,7 @@ public class InviteMembersRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -202,14 +200,10 @@ public class InviteMembersRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("emails");
-    openapiFields.add("permissionGroupId");
+    openapiFields = new HashSet<String>(Arrays.asList("emails", "permissionGroupId"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("emails");
-    openapiRequiredFields.add("permissionGroupId");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("emails", "permissionGroupId"));
   }
 
   /**
@@ -221,14 +215,14 @@ public class InviteMembersRequest {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!InviteMembersRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in InviteMembersRequest is not found in the empty JSON string", InviteMembersRequest.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in InviteMembersRequest is not found in the empty JSON string", InviteMembersRequest.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : InviteMembersRequest.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -236,7 +230,7 @@ public class InviteMembersRequest {
       if (jsonObj.get("emails") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("emails").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `emails` to be an array in the JSON string but got `%s`", jsonObj.get("emails").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `emails` to be an array in the JSON string but got `%s`", jsonObj.get("emails").toString()));
       }
   }
 
@@ -297,7 +291,7 @@ public class InviteMembersRequest {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

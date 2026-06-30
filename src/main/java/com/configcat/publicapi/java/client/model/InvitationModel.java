@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,32 +50,37 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * InvitationModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class InvitationModel {
   public static final String SERIALIZED_NAME_INVITATION_ID = "invitationId";
   @SerializedName(SERIALIZED_NAME_INVITATION_ID)
+  @javax.annotation.Nonnull
   private UUID invitationId;
 
   public static final String SERIALIZED_NAME_EMAIL = "email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
+  @javax.annotation.Nullable
   private String email;
 
   public static final String SERIALIZED_NAME_PERMISSION_GROUP_ID = "permissionGroupId";
   @SerializedName(SERIALIZED_NAME_PERMISSION_GROUP_ID)
+  @javax.annotation.Nonnull
   private Long permissionGroupId;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "createdAt";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
+  @javax.annotation.Nonnull
   private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_EXPIRED = "expired";
   @SerializedName(SERIALIZED_NAME_EXPIRED)
+  @javax.annotation.Nonnull
   private Boolean expired;
 
   public InvitationModel() {
   }
 
-  public InvitationModel invitationId(UUID invitationId) {
+  public InvitationModel invitationId(@javax.annotation.Nonnull UUID invitationId) {
     this.invitationId = invitationId;
     return this;
   }
@@ -90,12 +94,12 @@ public class InvitationModel {
     return invitationId;
   }
 
-  public void setInvitationId(UUID invitationId) {
+  public void setInvitationId(@javax.annotation.Nonnull UUID invitationId) {
     this.invitationId = invitationId;
   }
 
 
-  public InvitationModel email(String email) {
+  public InvitationModel email(@javax.annotation.Nullable String email) {
     this.email = email;
     return this;
   }
@@ -109,12 +113,12 @@ public class InvitationModel {
     return email;
   }
 
-  public void setEmail(String email) {
+  public void setEmail(@javax.annotation.Nullable String email) {
     this.email = email;
   }
 
 
-  public InvitationModel permissionGroupId(Long permissionGroupId) {
+  public InvitationModel permissionGroupId(@javax.annotation.Nonnull Long permissionGroupId) {
     this.permissionGroupId = permissionGroupId;
     return this;
   }
@@ -128,12 +132,12 @@ public class InvitationModel {
     return permissionGroupId;
   }
 
-  public void setPermissionGroupId(Long permissionGroupId) {
+  public void setPermissionGroupId(@javax.annotation.Nonnull Long permissionGroupId) {
     this.permissionGroupId = permissionGroupId;
   }
 
 
-  public InvitationModel createdAt(OffsetDateTime createdAt) {
+  public InvitationModel createdAt(@javax.annotation.Nonnull OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -147,12 +151,12 @@ public class InvitationModel {
     return createdAt;
   }
 
-  public void setCreatedAt(OffsetDateTime createdAt) {
+  public void setCreatedAt(@javax.annotation.Nonnull OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public InvitationModel expired(Boolean expired) {
+  public InvitationModel expired(@javax.annotation.Nonnull Boolean expired) {
     this.expired = expired;
     return this;
   }
@@ -166,7 +170,7 @@ public class InvitationModel {
     return expired;
   }
 
-  public void setExpired(Boolean expired) {
+  public void setExpired(@javax.annotation.Nonnull Boolean expired) {
     this.expired = expired;
   }
 
@@ -257,10 +261,7 @@ public class InvitationModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -269,20 +270,10 @@ public class InvitationModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("invitationId");
-    openapiFields.add("email");
-    openapiFields.add("permissionGroupId");
-    openapiFields.add("createdAt");
-    openapiFields.add("expired");
+    openapiFields = new HashSet<String>(Arrays.asList("invitationId", "email", "permissionGroupId", "createdAt", "expired"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("invitationId");
-    openapiRequiredFields.add("email");
-    openapiRequiredFields.add("permissionGroupId");
-    openapiRequiredFields.add("createdAt");
-    openapiRequiredFields.add("expired");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("invitationId", "email", "permissionGroupId", "createdAt", "expired"));
   }
 
   /**
@@ -294,22 +285,22 @@ public class InvitationModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!InvitationModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in InvitationModel is not found in the empty JSON string", InvitationModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in InvitationModel is not found in the empty JSON string", InvitationModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : InvitationModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("invitationId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `invitationId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("invitationId").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `invitationId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("invitationId").toString()));
       }
       if ((jsonObj.get("email") != null && !jsonObj.get("email").isJsonNull()) && !jsonObj.get("email").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
       }
   }
 
@@ -370,7 +361,7 @@ public class InvitationModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

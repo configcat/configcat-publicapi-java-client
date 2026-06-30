@@ -85,7 +85,8 @@ public class FeatureFlagSettingValuesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the setting value data returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -93,7 +94,7 @@ public class FeatureFlagSettingValuesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSettingValueCall(UUID environmentId, Integer settingId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getSettingValueCall(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -140,7 +141,7 @@ public class FeatureFlagSettingValuesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSettingValueValidateBeforeCall(UUID environmentId, Integer settingId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getSettingValueValidateBeforeCall(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'environmentId' is set
         if (environmentId == null) {
             throw new ApiException("Missing the required parameter 'environmentId' when calling getSettingValue(Async)");
@@ -163,7 +164,8 @@ public class FeatureFlagSettingValuesApi {
      * @return SettingValueModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the setting value data returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -171,7 +173,7 @@ public class FeatureFlagSettingValuesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public SettingValueModel getSettingValue(UUID environmentId, Integer settingId) throws ApiException {
+    public SettingValueModel getSettingValue(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId) throws ApiException {
         ApiResponse<SettingValueModel> localVarResp = getSettingValueWithHttpInfo(environmentId, settingId);
         return localVarResp.getData();
     }
@@ -184,7 +186,8 @@ public class FeatureFlagSettingValuesApi {
      * @return ApiResponse&lt;SettingValueModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the setting value data returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -192,7 +195,7 @@ public class FeatureFlagSettingValuesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SettingValueModel> getSettingValueWithHttpInfo(UUID environmentId, Integer settingId) throws ApiException {
+    public ApiResponse<SettingValueModel> getSettingValueWithHttpInfo(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId) throws ApiException {
         okhttp3.Call localVarCall = getSettingValueValidateBeforeCall(environmentId, settingId, null);
         Type localVarReturnType = new TypeToken<SettingValueModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -207,7 +210,8 @@ public class FeatureFlagSettingValuesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the setting value data returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -215,7 +219,7 @@ public class FeatureFlagSettingValuesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSettingValueAsync(UUID environmentId, Integer settingId, final ApiCallback<SettingValueModel> _callback) throws ApiException {
+    public okhttp3.Call getSettingValueAsync(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, final ApiCallback<SettingValueModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getSettingValueValidateBeforeCall(environmentId, settingId, _callback);
         Type localVarReturnType = new TypeToken<SettingValueModel>(){}.getType();
@@ -230,7 +234,8 @@ public class FeatureFlagSettingValuesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the setting values returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -238,7 +243,7 @@ public class FeatureFlagSettingValuesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSettingValuesCall(UUID configId, UUID environmentId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getSettingValuesCall(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -285,7 +290,7 @@ public class FeatureFlagSettingValuesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSettingValuesValidateBeforeCall(UUID configId, UUID environmentId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getSettingValuesValidateBeforeCall(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'configId' is set
         if (configId == null) {
             throw new ApiException("Missing the required parameter 'configId' when calling getSettingValues(Async)");
@@ -308,7 +313,8 @@ public class FeatureFlagSettingValuesApi {
      * @return ConfigSettingValuesModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the setting values returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -316,7 +322,7 @@ public class FeatureFlagSettingValuesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ConfigSettingValuesModel getSettingValues(UUID configId, UUID environmentId) throws ApiException {
+    public ConfigSettingValuesModel getSettingValues(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId) throws ApiException {
         ApiResponse<ConfigSettingValuesModel> localVarResp = getSettingValuesWithHttpInfo(configId, environmentId);
         return localVarResp.getData();
     }
@@ -329,7 +335,8 @@ public class FeatureFlagSettingValuesApi {
      * @return ApiResponse&lt;ConfigSettingValuesModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the setting values returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -337,7 +344,7 @@ public class FeatureFlagSettingValuesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ConfigSettingValuesModel> getSettingValuesWithHttpInfo(UUID configId, UUID environmentId) throws ApiException {
+    public ApiResponse<ConfigSettingValuesModel> getSettingValuesWithHttpInfo(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId) throws ApiException {
         okhttp3.Call localVarCall = getSettingValuesValidateBeforeCall(configId, environmentId, null);
         Type localVarReturnType = new TypeToken<ConfigSettingValuesModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -352,7 +359,8 @@ public class FeatureFlagSettingValuesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the setting values returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -360,7 +368,7 @@ public class FeatureFlagSettingValuesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSettingValuesAsync(UUID configId, UUID environmentId, final ApiCallback<ConfigSettingValuesModel> _callback) throws ApiException {
+    public okhttp3.Call getSettingValuesAsync(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, final ApiCallback<ConfigSettingValuesModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getSettingValuesValidateBeforeCall(configId, environmentId, _callback);
         Type localVarReturnType = new TypeToken<ConfigSettingValuesModel>(){}.getType();
@@ -377,7 +385,8 @@ public class FeatureFlagSettingValuesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the updated setting values returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -385,7 +394,7 @@ public class FeatureFlagSettingValuesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postSettingValuesCall(UUID configId, UUID environmentId, UpdateSettingValuesWithIdModel updateSettingValuesWithIdModel, String reason, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postSettingValuesCall(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull UpdateSettingValuesWithIdModel updateSettingValuesWithIdModel, @javax.annotation.Nullable String reason, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -439,7 +448,7 @@ public class FeatureFlagSettingValuesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postSettingValuesValidateBeforeCall(UUID configId, UUID environmentId, UpdateSettingValuesWithIdModel updateSettingValuesWithIdModel, String reason, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postSettingValuesValidateBeforeCall(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull UpdateSettingValuesWithIdModel updateSettingValuesWithIdModel, @javax.annotation.Nullable String reason, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'configId' is set
         if (configId == null) {
             throw new ApiException("Missing the required parameter 'configId' when calling postSettingValues(Async)");
@@ -469,7 +478,8 @@ public class FeatureFlagSettingValuesApi {
      * @return ConfigSettingValuesModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the updated setting values returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -477,7 +487,7 @@ public class FeatureFlagSettingValuesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ConfigSettingValuesModel postSettingValues(UUID configId, UUID environmentId, UpdateSettingValuesWithIdModel updateSettingValuesWithIdModel, String reason) throws ApiException {
+    public ConfigSettingValuesModel postSettingValues(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull UpdateSettingValuesWithIdModel updateSettingValuesWithIdModel, @javax.annotation.Nullable String reason) throws ApiException {
         ApiResponse<ConfigSettingValuesModel> localVarResp = postSettingValuesWithHttpInfo(configId, environmentId, updateSettingValuesWithIdModel, reason);
         return localVarResp.getData();
     }
@@ -492,7 +502,8 @@ public class FeatureFlagSettingValuesApi {
      * @return ApiResponse&lt;ConfigSettingValuesModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the updated setting values returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -500,7 +511,7 @@ public class FeatureFlagSettingValuesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ConfigSettingValuesModel> postSettingValuesWithHttpInfo(UUID configId, UUID environmentId, UpdateSettingValuesWithIdModel updateSettingValuesWithIdModel, String reason) throws ApiException {
+    public ApiResponse<ConfigSettingValuesModel> postSettingValuesWithHttpInfo(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull UpdateSettingValuesWithIdModel updateSettingValuesWithIdModel, @javax.annotation.Nullable String reason) throws ApiException {
         okhttp3.Call localVarCall = postSettingValuesValidateBeforeCall(configId, environmentId, updateSettingValuesWithIdModel, reason, null);
         Type localVarReturnType = new TypeToken<ConfigSettingValuesModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -517,7 +528,8 @@ public class FeatureFlagSettingValuesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When everything is ok, the updated setting values returned. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -525,7 +537,7 @@ public class FeatureFlagSettingValuesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postSettingValuesAsync(UUID configId, UUID environmentId, UpdateSettingValuesWithIdModel updateSettingValuesWithIdModel, String reason, final ApiCallback<ConfigSettingValuesModel> _callback) throws ApiException {
+    public okhttp3.Call postSettingValuesAsync(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull UpdateSettingValuesWithIdModel updateSettingValuesWithIdModel, @javax.annotation.Nullable String reason, final ApiCallback<ConfigSettingValuesModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = postSettingValuesValidateBeforeCall(configId, environmentId, updateSettingValuesWithIdModel, reason, _callback);
         Type localVarReturnType = new TypeToken<ConfigSettingValuesModel>(){}.getType();
@@ -542,7 +554,8 @@ public class FeatureFlagSettingValuesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -550,7 +563,7 @@ public class FeatureFlagSettingValuesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call replaceSettingValueCall(UUID environmentId, Integer settingId, UpdateSettingValueModel updateSettingValueModel, String reason, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call replaceSettingValueCall(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull UpdateSettingValueModel updateSettingValueModel, @javax.annotation.Nullable String reason, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -604,7 +617,7 @@ public class FeatureFlagSettingValuesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call replaceSettingValueValidateBeforeCall(UUID environmentId, Integer settingId, UpdateSettingValueModel updateSettingValueModel, String reason, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call replaceSettingValueValidateBeforeCall(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull UpdateSettingValueModel updateSettingValueModel, @javax.annotation.Nullable String reason, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'environmentId' is set
         if (environmentId == null) {
             throw new ApiException("Missing the required parameter 'environmentId' when calling replaceSettingValue(Async)");
@@ -634,7 +647,8 @@ public class FeatureFlagSettingValuesApi {
      * @return SettingValueModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -642,7 +656,7 @@ public class FeatureFlagSettingValuesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public SettingValueModel replaceSettingValue(UUID environmentId, Integer settingId, UpdateSettingValueModel updateSettingValueModel, String reason) throws ApiException {
+    public SettingValueModel replaceSettingValue(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull UpdateSettingValueModel updateSettingValueModel, @javax.annotation.Nullable String reason) throws ApiException {
         ApiResponse<SettingValueModel> localVarResp = replaceSettingValueWithHttpInfo(environmentId, settingId, updateSettingValueModel, reason);
         return localVarResp.getData();
     }
@@ -657,7 +671,8 @@ public class FeatureFlagSettingValuesApi {
      * @return ApiResponse&lt;SettingValueModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -665,7 +680,7 @@ public class FeatureFlagSettingValuesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SettingValueModel> replaceSettingValueWithHttpInfo(UUID environmentId, Integer settingId, UpdateSettingValueModel updateSettingValueModel, String reason) throws ApiException {
+    public ApiResponse<SettingValueModel> replaceSettingValueWithHttpInfo(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull UpdateSettingValueModel updateSettingValueModel, @javax.annotation.Nullable String reason) throws ApiException {
         okhttp3.Call localVarCall = replaceSettingValueValidateBeforeCall(environmentId, settingId, updateSettingValueModel, reason, null);
         Type localVarReturnType = new TypeToken<SettingValueModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -682,7 +697,8 @@ public class FeatureFlagSettingValuesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -690,7 +706,7 @@ public class FeatureFlagSettingValuesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call replaceSettingValueAsync(UUID environmentId, Integer settingId, UpdateSettingValueModel updateSettingValueModel, String reason, final ApiCallback<SettingValueModel> _callback) throws ApiException {
+    public okhttp3.Call replaceSettingValueAsync(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull UpdateSettingValueModel updateSettingValueModel, @javax.annotation.Nullable String reason, final ApiCallback<SettingValueModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = replaceSettingValueValidateBeforeCall(environmentId, settingId, updateSettingValueModel, reason, _callback);
         Type localVarReturnType = new TypeToken<SettingValueModel>(){}.getType();
@@ -707,7 +723,8 @@ public class FeatureFlagSettingValuesApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the patch was successful. </td><td>  -  </td></tr>
         <tr><td> 204 </td><td> When no change applied on the resource. </td><td>  -  </td></tr>
@@ -716,7 +733,7 @@ public class FeatureFlagSettingValuesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateSettingValueCall(UUID environmentId, Integer settingId, List<JsonPatchOperation> jsonPatchOperation, String reason, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateSettingValueCall(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, @javax.annotation.Nullable String reason, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -770,7 +787,7 @@ public class FeatureFlagSettingValuesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateSettingValueValidateBeforeCall(UUID environmentId, Integer settingId, List<JsonPatchOperation> jsonPatchOperation, String reason, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateSettingValueValidateBeforeCall(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, @javax.annotation.Nullable String reason, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'environmentId' is set
         if (environmentId == null) {
             throw new ApiException("Missing the required parameter 'environmentId' when calling updateSettingValue(Async)");
@@ -800,7 +817,8 @@ public class FeatureFlagSettingValuesApi {
      * @return SettingValueModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the patch was successful. </td><td>  -  </td></tr>
         <tr><td> 204 </td><td> When no change applied on the resource. </td><td>  -  </td></tr>
@@ -809,7 +827,7 @@ public class FeatureFlagSettingValuesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public SettingValueModel updateSettingValue(UUID environmentId, Integer settingId, List<JsonPatchOperation> jsonPatchOperation, String reason) throws ApiException {
+    public SettingValueModel updateSettingValue(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, @javax.annotation.Nullable String reason) throws ApiException {
         ApiResponse<SettingValueModel> localVarResp = updateSettingValueWithHttpInfo(environmentId, settingId, jsonPatchOperation, reason);
         return localVarResp.getData();
     }
@@ -824,7 +842,8 @@ public class FeatureFlagSettingValuesApi {
      * @return ApiResponse&lt;SettingValueModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the patch was successful. </td><td>  -  </td></tr>
         <tr><td> 204 </td><td> When no change applied on the resource. </td><td>  -  </td></tr>
@@ -833,7 +852,7 @@ public class FeatureFlagSettingValuesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SettingValueModel> updateSettingValueWithHttpInfo(UUID environmentId, Integer settingId, List<JsonPatchOperation> jsonPatchOperation, String reason) throws ApiException {
+    public ApiResponse<SettingValueModel> updateSettingValueWithHttpInfo(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, @javax.annotation.Nullable String reason) throws ApiException {
         okhttp3.Call localVarCall = updateSettingValueValidateBeforeCall(environmentId, settingId, jsonPatchOperation, reason, null);
         Type localVarReturnType = new TypeToken<SettingValueModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -850,7 +869,8 @@ public class FeatureFlagSettingValuesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> When the patch was successful. </td><td>  -  </td></tr>
         <tr><td> 204 </td><td> When no change applied on the resource. </td><td>  -  </td></tr>
@@ -859,7 +879,7 @@ public class FeatureFlagSettingValuesApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateSettingValueAsync(UUID environmentId, Integer settingId, List<JsonPatchOperation> jsonPatchOperation, String reason, final ApiCallback<SettingValueModel> _callback) throws ApiException {
+    public okhttp3.Call updateSettingValueAsync(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, @javax.annotation.Nullable String reason, final ApiCallback<SettingValueModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateSettingValueValidateBeforeCall(environmentId, settingId, jsonPatchOperation, reason, _callback);
         Type localVarReturnType = new TypeToken<SettingValueModel>(){}.getType();

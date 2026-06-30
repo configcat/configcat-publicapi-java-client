@@ -15,8 +15,11 @@ package com.configcat.publicapi.java.client.model;
 
 import java.util.Objects;
 import com.configcat.publicapi.java.client.model.AccessType;
+import com.configcat.publicapi.java.client.model.ApprovalPermissionType;
 import com.configcat.publicapi.java.client.model.CreateOrUpdateEnvironmentAccessModel;
+import com.configcat.publicapi.java.client.model.CreateOrUpdateEnvironmentApprovalPermissionModel;
 import com.configcat.publicapi.java.client.model.EnvironmentAccessType;
+import com.configcat.publicapi.java.client.model.EnvironmentApprovalPermissionType;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -43,7 +46,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -55,112 +57,152 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * CreatePermissionGroupRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class CreatePermissionGroupRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_CAN_MANAGE_MEMBERS = "canManageMembers";
   @SerializedName(SERIALIZED_NAME_CAN_MANAGE_MEMBERS)
+  @javax.annotation.Nullable
   private Boolean canManageMembers;
 
   public static final String SERIALIZED_NAME_CAN_CREATE_OR_UPDATE_CONFIG = "canCreateOrUpdateConfig";
   @SerializedName(SERIALIZED_NAME_CAN_CREATE_OR_UPDATE_CONFIG)
+  @javax.annotation.Nullable
   private Boolean canCreateOrUpdateConfig;
 
   public static final String SERIALIZED_NAME_CAN_DELETE_CONFIG = "canDeleteConfig";
   @SerializedName(SERIALIZED_NAME_CAN_DELETE_CONFIG)
+  @javax.annotation.Nullable
   private Boolean canDeleteConfig;
 
   public static final String SERIALIZED_NAME_CAN_CREATE_OR_UPDATE_ENVIRONMENT = "canCreateOrUpdateEnvironment";
   @SerializedName(SERIALIZED_NAME_CAN_CREATE_OR_UPDATE_ENVIRONMENT)
+  @javax.annotation.Nullable
   private Boolean canCreateOrUpdateEnvironment;
 
   public static final String SERIALIZED_NAME_CAN_DELETE_ENVIRONMENT = "canDeleteEnvironment";
   @SerializedName(SERIALIZED_NAME_CAN_DELETE_ENVIRONMENT)
+  @javax.annotation.Nullable
   private Boolean canDeleteEnvironment;
 
   public static final String SERIALIZED_NAME_CAN_CREATE_OR_UPDATE_SETTING = "canCreateOrUpdateSetting";
   @SerializedName(SERIALIZED_NAME_CAN_CREATE_OR_UPDATE_SETTING)
+  @javax.annotation.Nullable
   private Boolean canCreateOrUpdateSetting;
 
   public static final String SERIALIZED_NAME_CAN_TAG_SETTING = "canTagSetting";
   @SerializedName(SERIALIZED_NAME_CAN_TAG_SETTING)
+  @javax.annotation.Nullable
   private Boolean canTagSetting;
 
   public static final String SERIALIZED_NAME_CAN_DELETE_SETTING = "canDeleteSetting";
   @SerializedName(SERIALIZED_NAME_CAN_DELETE_SETTING)
+  @javax.annotation.Nullable
   private Boolean canDeleteSetting;
 
   public static final String SERIALIZED_NAME_CAN_CREATE_OR_UPDATE_TAG = "canCreateOrUpdateTag";
   @SerializedName(SERIALIZED_NAME_CAN_CREATE_OR_UPDATE_TAG)
+  @javax.annotation.Nullable
   private Boolean canCreateOrUpdateTag;
 
   public static final String SERIALIZED_NAME_CAN_DELETE_TAG = "canDeleteTag";
   @SerializedName(SERIALIZED_NAME_CAN_DELETE_TAG)
+  @javax.annotation.Nullable
   private Boolean canDeleteTag;
 
   public static final String SERIALIZED_NAME_CAN_MANAGE_WEBHOOK = "canManageWebhook";
   @SerializedName(SERIALIZED_NAME_CAN_MANAGE_WEBHOOK)
+  @javax.annotation.Nullable
   private Boolean canManageWebhook;
 
   public static final String SERIALIZED_NAME_CAN_USE_EXPORT_IMPORT = "canUseExportImport";
   @SerializedName(SERIALIZED_NAME_CAN_USE_EXPORT_IMPORT)
+  @javax.annotation.Nullable
   private Boolean canUseExportImport;
 
   public static final String SERIALIZED_NAME_CAN_MANAGE_PRODUCT_PREFERENCES = "canManageProductPreferences";
   @SerializedName(SERIALIZED_NAME_CAN_MANAGE_PRODUCT_PREFERENCES)
+  @javax.annotation.Nullable
   private Boolean canManageProductPreferences;
 
   public static final String SERIALIZED_NAME_CAN_MANAGE_INTEGRATIONS = "canManageIntegrations";
   @SerializedName(SERIALIZED_NAME_CAN_MANAGE_INTEGRATIONS)
+  @javax.annotation.Nullable
   private Boolean canManageIntegrations;
 
   public static final String SERIALIZED_NAME_CAN_VIEW_SDK_KEY = "canViewSdkKey";
   @SerializedName(SERIALIZED_NAME_CAN_VIEW_SDK_KEY)
+  @javax.annotation.Nullable
   private Boolean canViewSdkKey;
 
   public static final String SERIALIZED_NAME_CAN_ROTATE_SDK_KEY = "canRotateSdkKey";
   @SerializedName(SERIALIZED_NAME_CAN_ROTATE_SDK_KEY)
+  @javax.annotation.Nullable
   private Boolean canRotateSdkKey;
 
   public static final String SERIALIZED_NAME_CAN_CREATE_OR_UPDATE_SEGMENTS = "canCreateOrUpdateSegments";
   @SerializedName(SERIALIZED_NAME_CAN_CREATE_OR_UPDATE_SEGMENTS)
+  @javax.annotation.Nullable
   private Boolean canCreateOrUpdateSegments;
 
   public static final String SERIALIZED_NAME_CAN_DELETE_SEGMENTS = "canDeleteSegments";
   @SerializedName(SERIALIZED_NAME_CAN_DELETE_SEGMENTS)
+  @javax.annotation.Nullable
   private Boolean canDeleteSegments;
 
   public static final String SERIALIZED_NAME_CAN_VIEW_PRODUCT_AUDIT_LOG = "canViewProductAuditLog";
   @SerializedName(SERIALIZED_NAME_CAN_VIEW_PRODUCT_AUDIT_LOG)
+  @javax.annotation.Nullable
   private Boolean canViewProductAuditLog;
 
   public static final String SERIALIZED_NAME_CAN_VIEW_PRODUCT_STATISTICS = "canViewProductStatistics";
   @SerializedName(SERIALIZED_NAME_CAN_VIEW_PRODUCT_STATISTICS)
+  @javax.annotation.Nullable
   private Boolean canViewProductStatistics;
 
   public static final String SERIALIZED_NAME_ACCESS_TYPE = "accessType";
   @SerializedName(SERIALIZED_NAME_ACCESS_TYPE)
+  @javax.annotation.Nullable
   private AccessType accessType;
 
   public static final String SERIALIZED_NAME_NEW_ENVIRONMENT_ACCESS_TYPE = "newEnvironmentAccessType";
   @SerializedName(SERIALIZED_NAME_NEW_ENVIRONMENT_ACCESS_TYPE)
+  @javax.annotation.Nullable
   private EnvironmentAccessType newEnvironmentAccessType;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_ACCESSES = "environmentAccesses";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_ACCESSES)
+  @javax.annotation.Nullable
   private List<CreateOrUpdateEnvironmentAccessModel> environmentAccesses;
+
+  public static final String SERIALIZED_NAME_APPROVAL_PERMISSION_TYPE = "approvalPermissionType";
+  @SerializedName(SERIALIZED_NAME_APPROVAL_PERMISSION_TYPE)
+  @javax.annotation.Nullable
+  private ApprovalPermissionType approvalPermissionType;
+
+  public static final String SERIALIZED_NAME_NEW_ENVIRONMENT_APPROVAL_PERMISSION_TYPE = "newEnvironmentApprovalPermissionType";
+  @SerializedName(SERIALIZED_NAME_NEW_ENVIRONMENT_APPROVAL_PERMISSION_TYPE)
+  @javax.annotation.Nullable
+  private EnvironmentApprovalPermissionType newEnvironmentApprovalPermissionType;
+
+  public static final String SERIALIZED_NAME_ENVIRONMENT_APPROVAL_PERMISSIONS = "environmentApprovalPermissions";
+  @SerializedName(SERIALIZED_NAME_ENVIRONMENT_APPROVAL_PERMISSIONS)
+  @javax.annotation.Nullable
+  private List<CreateOrUpdateEnvironmentApprovalPermissionModel> environmentApprovalPermissions;
 
   public static final String SERIALIZED_NAME_CAN_DISABLE2_F_A = "canDisable2FA";
   @SerializedName(SERIALIZED_NAME_CAN_DISABLE2_F_A)
+  @javax.annotation.Nullable
   private Boolean canDisable2FA;
 
   public CreatePermissionGroupRequest() {
   }
 
-  public CreatePermissionGroupRequest name(String name) {
+  public CreatePermissionGroupRequest name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -174,12 +216,12 @@ public class CreatePermissionGroupRequest {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public CreatePermissionGroupRequest canManageMembers(Boolean canManageMembers) {
+  public CreatePermissionGroupRequest canManageMembers(@javax.annotation.Nullable Boolean canManageMembers) {
     this.canManageMembers = canManageMembers;
     return this;
   }
@@ -193,12 +235,12 @@ public class CreatePermissionGroupRequest {
     return canManageMembers;
   }
 
-  public void setCanManageMembers(Boolean canManageMembers) {
+  public void setCanManageMembers(@javax.annotation.Nullable Boolean canManageMembers) {
     this.canManageMembers = canManageMembers;
   }
 
 
-  public CreatePermissionGroupRequest canCreateOrUpdateConfig(Boolean canCreateOrUpdateConfig) {
+  public CreatePermissionGroupRequest canCreateOrUpdateConfig(@javax.annotation.Nullable Boolean canCreateOrUpdateConfig) {
     this.canCreateOrUpdateConfig = canCreateOrUpdateConfig;
     return this;
   }
@@ -212,12 +254,12 @@ public class CreatePermissionGroupRequest {
     return canCreateOrUpdateConfig;
   }
 
-  public void setCanCreateOrUpdateConfig(Boolean canCreateOrUpdateConfig) {
+  public void setCanCreateOrUpdateConfig(@javax.annotation.Nullable Boolean canCreateOrUpdateConfig) {
     this.canCreateOrUpdateConfig = canCreateOrUpdateConfig;
   }
 
 
-  public CreatePermissionGroupRequest canDeleteConfig(Boolean canDeleteConfig) {
+  public CreatePermissionGroupRequest canDeleteConfig(@javax.annotation.Nullable Boolean canDeleteConfig) {
     this.canDeleteConfig = canDeleteConfig;
     return this;
   }
@@ -231,12 +273,12 @@ public class CreatePermissionGroupRequest {
     return canDeleteConfig;
   }
 
-  public void setCanDeleteConfig(Boolean canDeleteConfig) {
+  public void setCanDeleteConfig(@javax.annotation.Nullable Boolean canDeleteConfig) {
     this.canDeleteConfig = canDeleteConfig;
   }
 
 
-  public CreatePermissionGroupRequest canCreateOrUpdateEnvironment(Boolean canCreateOrUpdateEnvironment) {
+  public CreatePermissionGroupRequest canCreateOrUpdateEnvironment(@javax.annotation.Nullable Boolean canCreateOrUpdateEnvironment) {
     this.canCreateOrUpdateEnvironment = canCreateOrUpdateEnvironment;
     return this;
   }
@@ -250,12 +292,12 @@ public class CreatePermissionGroupRequest {
     return canCreateOrUpdateEnvironment;
   }
 
-  public void setCanCreateOrUpdateEnvironment(Boolean canCreateOrUpdateEnvironment) {
+  public void setCanCreateOrUpdateEnvironment(@javax.annotation.Nullable Boolean canCreateOrUpdateEnvironment) {
     this.canCreateOrUpdateEnvironment = canCreateOrUpdateEnvironment;
   }
 
 
-  public CreatePermissionGroupRequest canDeleteEnvironment(Boolean canDeleteEnvironment) {
+  public CreatePermissionGroupRequest canDeleteEnvironment(@javax.annotation.Nullable Boolean canDeleteEnvironment) {
     this.canDeleteEnvironment = canDeleteEnvironment;
     return this;
   }
@@ -269,12 +311,12 @@ public class CreatePermissionGroupRequest {
     return canDeleteEnvironment;
   }
 
-  public void setCanDeleteEnvironment(Boolean canDeleteEnvironment) {
+  public void setCanDeleteEnvironment(@javax.annotation.Nullable Boolean canDeleteEnvironment) {
     this.canDeleteEnvironment = canDeleteEnvironment;
   }
 
 
-  public CreatePermissionGroupRequest canCreateOrUpdateSetting(Boolean canCreateOrUpdateSetting) {
+  public CreatePermissionGroupRequest canCreateOrUpdateSetting(@javax.annotation.Nullable Boolean canCreateOrUpdateSetting) {
     this.canCreateOrUpdateSetting = canCreateOrUpdateSetting;
     return this;
   }
@@ -288,12 +330,12 @@ public class CreatePermissionGroupRequest {
     return canCreateOrUpdateSetting;
   }
 
-  public void setCanCreateOrUpdateSetting(Boolean canCreateOrUpdateSetting) {
+  public void setCanCreateOrUpdateSetting(@javax.annotation.Nullable Boolean canCreateOrUpdateSetting) {
     this.canCreateOrUpdateSetting = canCreateOrUpdateSetting;
   }
 
 
-  public CreatePermissionGroupRequest canTagSetting(Boolean canTagSetting) {
+  public CreatePermissionGroupRequest canTagSetting(@javax.annotation.Nullable Boolean canTagSetting) {
     this.canTagSetting = canTagSetting;
     return this;
   }
@@ -307,12 +349,12 @@ public class CreatePermissionGroupRequest {
     return canTagSetting;
   }
 
-  public void setCanTagSetting(Boolean canTagSetting) {
+  public void setCanTagSetting(@javax.annotation.Nullable Boolean canTagSetting) {
     this.canTagSetting = canTagSetting;
   }
 
 
-  public CreatePermissionGroupRequest canDeleteSetting(Boolean canDeleteSetting) {
+  public CreatePermissionGroupRequest canDeleteSetting(@javax.annotation.Nullable Boolean canDeleteSetting) {
     this.canDeleteSetting = canDeleteSetting;
     return this;
   }
@@ -326,12 +368,12 @@ public class CreatePermissionGroupRequest {
     return canDeleteSetting;
   }
 
-  public void setCanDeleteSetting(Boolean canDeleteSetting) {
+  public void setCanDeleteSetting(@javax.annotation.Nullable Boolean canDeleteSetting) {
     this.canDeleteSetting = canDeleteSetting;
   }
 
 
-  public CreatePermissionGroupRequest canCreateOrUpdateTag(Boolean canCreateOrUpdateTag) {
+  public CreatePermissionGroupRequest canCreateOrUpdateTag(@javax.annotation.Nullable Boolean canCreateOrUpdateTag) {
     this.canCreateOrUpdateTag = canCreateOrUpdateTag;
     return this;
   }
@@ -345,12 +387,12 @@ public class CreatePermissionGroupRequest {
     return canCreateOrUpdateTag;
   }
 
-  public void setCanCreateOrUpdateTag(Boolean canCreateOrUpdateTag) {
+  public void setCanCreateOrUpdateTag(@javax.annotation.Nullable Boolean canCreateOrUpdateTag) {
     this.canCreateOrUpdateTag = canCreateOrUpdateTag;
   }
 
 
-  public CreatePermissionGroupRequest canDeleteTag(Boolean canDeleteTag) {
+  public CreatePermissionGroupRequest canDeleteTag(@javax.annotation.Nullable Boolean canDeleteTag) {
     this.canDeleteTag = canDeleteTag;
     return this;
   }
@@ -364,12 +406,12 @@ public class CreatePermissionGroupRequest {
     return canDeleteTag;
   }
 
-  public void setCanDeleteTag(Boolean canDeleteTag) {
+  public void setCanDeleteTag(@javax.annotation.Nullable Boolean canDeleteTag) {
     this.canDeleteTag = canDeleteTag;
   }
 
 
-  public CreatePermissionGroupRequest canManageWebhook(Boolean canManageWebhook) {
+  public CreatePermissionGroupRequest canManageWebhook(@javax.annotation.Nullable Boolean canManageWebhook) {
     this.canManageWebhook = canManageWebhook;
     return this;
   }
@@ -383,12 +425,12 @@ public class CreatePermissionGroupRequest {
     return canManageWebhook;
   }
 
-  public void setCanManageWebhook(Boolean canManageWebhook) {
+  public void setCanManageWebhook(@javax.annotation.Nullable Boolean canManageWebhook) {
     this.canManageWebhook = canManageWebhook;
   }
 
 
-  public CreatePermissionGroupRequest canUseExportImport(Boolean canUseExportImport) {
+  public CreatePermissionGroupRequest canUseExportImport(@javax.annotation.Nullable Boolean canUseExportImport) {
     this.canUseExportImport = canUseExportImport;
     return this;
   }
@@ -402,12 +444,12 @@ public class CreatePermissionGroupRequest {
     return canUseExportImport;
   }
 
-  public void setCanUseExportImport(Boolean canUseExportImport) {
+  public void setCanUseExportImport(@javax.annotation.Nullable Boolean canUseExportImport) {
     this.canUseExportImport = canUseExportImport;
   }
 
 
-  public CreatePermissionGroupRequest canManageProductPreferences(Boolean canManageProductPreferences) {
+  public CreatePermissionGroupRequest canManageProductPreferences(@javax.annotation.Nullable Boolean canManageProductPreferences) {
     this.canManageProductPreferences = canManageProductPreferences;
     return this;
   }
@@ -421,12 +463,12 @@ public class CreatePermissionGroupRequest {
     return canManageProductPreferences;
   }
 
-  public void setCanManageProductPreferences(Boolean canManageProductPreferences) {
+  public void setCanManageProductPreferences(@javax.annotation.Nullable Boolean canManageProductPreferences) {
     this.canManageProductPreferences = canManageProductPreferences;
   }
 
 
-  public CreatePermissionGroupRequest canManageIntegrations(Boolean canManageIntegrations) {
+  public CreatePermissionGroupRequest canManageIntegrations(@javax.annotation.Nullable Boolean canManageIntegrations) {
     this.canManageIntegrations = canManageIntegrations;
     return this;
   }
@@ -440,12 +482,12 @@ public class CreatePermissionGroupRequest {
     return canManageIntegrations;
   }
 
-  public void setCanManageIntegrations(Boolean canManageIntegrations) {
+  public void setCanManageIntegrations(@javax.annotation.Nullable Boolean canManageIntegrations) {
     this.canManageIntegrations = canManageIntegrations;
   }
 
 
-  public CreatePermissionGroupRequest canViewSdkKey(Boolean canViewSdkKey) {
+  public CreatePermissionGroupRequest canViewSdkKey(@javax.annotation.Nullable Boolean canViewSdkKey) {
     this.canViewSdkKey = canViewSdkKey;
     return this;
   }
@@ -459,12 +501,12 @@ public class CreatePermissionGroupRequest {
     return canViewSdkKey;
   }
 
-  public void setCanViewSdkKey(Boolean canViewSdkKey) {
+  public void setCanViewSdkKey(@javax.annotation.Nullable Boolean canViewSdkKey) {
     this.canViewSdkKey = canViewSdkKey;
   }
 
 
-  public CreatePermissionGroupRequest canRotateSdkKey(Boolean canRotateSdkKey) {
+  public CreatePermissionGroupRequest canRotateSdkKey(@javax.annotation.Nullable Boolean canRotateSdkKey) {
     this.canRotateSdkKey = canRotateSdkKey;
     return this;
   }
@@ -478,12 +520,12 @@ public class CreatePermissionGroupRequest {
     return canRotateSdkKey;
   }
 
-  public void setCanRotateSdkKey(Boolean canRotateSdkKey) {
+  public void setCanRotateSdkKey(@javax.annotation.Nullable Boolean canRotateSdkKey) {
     this.canRotateSdkKey = canRotateSdkKey;
   }
 
 
-  public CreatePermissionGroupRequest canCreateOrUpdateSegments(Boolean canCreateOrUpdateSegments) {
+  public CreatePermissionGroupRequest canCreateOrUpdateSegments(@javax.annotation.Nullable Boolean canCreateOrUpdateSegments) {
     this.canCreateOrUpdateSegments = canCreateOrUpdateSegments;
     return this;
   }
@@ -497,12 +539,12 @@ public class CreatePermissionGroupRequest {
     return canCreateOrUpdateSegments;
   }
 
-  public void setCanCreateOrUpdateSegments(Boolean canCreateOrUpdateSegments) {
+  public void setCanCreateOrUpdateSegments(@javax.annotation.Nullable Boolean canCreateOrUpdateSegments) {
     this.canCreateOrUpdateSegments = canCreateOrUpdateSegments;
   }
 
 
-  public CreatePermissionGroupRequest canDeleteSegments(Boolean canDeleteSegments) {
+  public CreatePermissionGroupRequest canDeleteSegments(@javax.annotation.Nullable Boolean canDeleteSegments) {
     this.canDeleteSegments = canDeleteSegments;
     return this;
   }
@@ -516,12 +558,12 @@ public class CreatePermissionGroupRequest {
     return canDeleteSegments;
   }
 
-  public void setCanDeleteSegments(Boolean canDeleteSegments) {
+  public void setCanDeleteSegments(@javax.annotation.Nullable Boolean canDeleteSegments) {
     this.canDeleteSegments = canDeleteSegments;
   }
 
 
-  public CreatePermissionGroupRequest canViewProductAuditLog(Boolean canViewProductAuditLog) {
+  public CreatePermissionGroupRequest canViewProductAuditLog(@javax.annotation.Nullable Boolean canViewProductAuditLog) {
     this.canViewProductAuditLog = canViewProductAuditLog;
     return this;
   }
@@ -535,12 +577,12 @@ public class CreatePermissionGroupRequest {
     return canViewProductAuditLog;
   }
 
-  public void setCanViewProductAuditLog(Boolean canViewProductAuditLog) {
+  public void setCanViewProductAuditLog(@javax.annotation.Nullable Boolean canViewProductAuditLog) {
     this.canViewProductAuditLog = canViewProductAuditLog;
   }
 
 
-  public CreatePermissionGroupRequest canViewProductStatistics(Boolean canViewProductStatistics) {
+  public CreatePermissionGroupRequest canViewProductStatistics(@javax.annotation.Nullable Boolean canViewProductStatistics) {
     this.canViewProductStatistics = canViewProductStatistics;
     return this;
   }
@@ -554,12 +596,12 @@ public class CreatePermissionGroupRequest {
     return canViewProductStatistics;
   }
 
-  public void setCanViewProductStatistics(Boolean canViewProductStatistics) {
+  public void setCanViewProductStatistics(@javax.annotation.Nullable Boolean canViewProductStatistics) {
     this.canViewProductStatistics = canViewProductStatistics;
   }
 
 
-  public CreatePermissionGroupRequest accessType(AccessType accessType) {
+  public CreatePermissionGroupRequest accessType(@javax.annotation.Nullable AccessType accessType) {
     this.accessType = accessType;
     return this;
   }
@@ -573,12 +615,12 @@ public class CreatePermissionGroupRequest {
     return accessType;
   }
 
-  public void setAccessType(AccessType accessType) {
+  public void setAccessType(@javax.annotation.Nullable AccessType accessType) {
     this.accessType = accessType;
   }
 
 
-  public CreatePermissionGroupRequest newEnvironmentAccessType(EnvironmentAccessType newEnvironmentAccessType) {
+  public CreatePermissionGroupRequest newEnvironmentAccessType(@javax.annotation.Nullable EnvironmentAccessType newEnvironmentAccessType) {
     this.newEnvironmentAccessType = newEnvironmentAccessType;
     return this;
   }
@@ -592,12 +634,12 @@ public class CreatePermissionGroupRequest {
     return newEnvironmentAccessType;
   }
 
-  public void setNewEnvironmentAccessType(EnvironmentAccessType newEnvironmentAccessType) {
+  public void setNewEnvironmentAccessType(@javax.annotation.Nullable EnvironmentAccessType newEnvironmentAccessType) {
     this.newEnvironmentAccessType = newEnvironmentAccessType;
   }
 
 
-  public CreatePermissionGroupRequest environmentAccesses(List<CreateOrUpdateEnvironmentAccessModel> environmentAccesses) {
+  public CreatePermissionGroupRequest environmentAccesses(@javax.annotation.Nullable List<CreateOrUpdateEnvironmentAccessModel> environmentAccesses) {
     this.environmentAccesses = environmentAccesses;
     return this;
   }
@@ -619,12 +661,77 @@ public class CreatePermissionGroupRequest {
     return environmentAccesses;
   }
 
-  public void setEnvironmentAccesses(List<CreateOrUpdateEnvironmentAccessModel> environmentAccesses) {
+  public void setEnvironmentAccesses(@javax.annotation.Nullable List<CreateOrUpdateEnvironmentAccessModel> environmentAccesses) {
     this.environmentAccesses = environmentAccesses;
   }
 
 
-  public CreatePermissionGroupRequest canDisable2FA(Boolean canDisable2FA) {
+  public CreatePermissionGroupRequest approvalPermissionType(@javax.annotation.Nullable ApprovalPermissionType approvalPermissionType) {
+    this.approvalPermissionType = approvalPermissionType;
+    return this;
+  }
+
+  /**
+   * Get approvalPermissionType
+   * @return approvalPermissionType
+   */
+  @javax.annotation.Nullable
+  public ApprovalPermissionType getApprovalPermissionType() {
+    return approvalPermissionType;
+  }
+
+  public void setApprovalPermissionType(@javax.annotation.Nullable ApprovalPermissionType approvalPermissionType) {
+    this.approvalPermissionType = approvalPermissionType;
+  }
+
+
+  public CreatePermissionGroupRequest newEnvironmentApprovalPermissionType(@javax.annotation.Nullable EnvironmentApprovalPermissionType newEnvironmentApprovalPermissionType) {
+    this.newEnvironmentApprovalPermissionType = newEnvironmentApprovalPermissionType;
+    return this;
+  }
+
+  /**
+   * Get newEnvironmentApprovalPermissionType
+   * @return newEnvironmentApprovalPermissionType
+   */
+  @javax.annotation.Nullable
+  public EnvironmentApprovalPermissionType getNewEnvironmentApprovalPermissionType() {
+    return newEnvironmentApprovalPermissionType;
+  }
+
+  public void setNewEnvironmentApprovalPermissionType(@javax.annotation.Nullable EnvironmentApprovalPermissionType newEnvironmentApprovalPermissionType) {
+    this.newEnvironmentApprovalPermissionType = newEnvironmentApprovalPermissionType;
+  }
+
+
+  public CreatePermissionGroupRequest environmentApprovalPermissions(@javax.annotation.Nullable List<CreateOrUpdateEnvironmentApprovalPermissionModel> environmentApprovalPermissions) {
+    this.environmentApprovalPermissions = environmentApprovalPermissions;
+    return this;
+  }
+
+  public CreatePermissionGroupRequest addEnvironmentApprovalPermissionsItem(CreateOrUpdateEnvironmentApprovalPermissionModel environmentApprovalPermissionsItem) {
+    if (this.environmentApprovalPermissions == null) {
+      this.environmentApprovalPermissions = new ArrayList<>();
+    }
+    this.environmentApprovalPermissions.add(environmentApprovalPermissionsItem);
+    return this;
+  }
+
+  /**
+   * List of environment specific change request approval permissions.
+   * @return environmentApprovalPermissions
+   */
+  @javax.annotation.Nullable
+  public List<CreateOrUpdateEnvironmentApprovalPermissionModel> getEnvironmentApprovalPermissions() {
+    return environmentApprovalPermissions;
+  }
+
+  public void setEnvironmentApprovalPermissions(@javax.annotation.Nullable List<CreateOrUpdateEnvironmentApprovalPermissionModel> environmentApprovalPermissions) {
+    this.environmentApprovalPermissions = environmentApprovalPermissions;
+  }
+
+
+  public CreatePermissionGroupRequest canDisable2FA(@javax.annotation.Nullable Boolean canDisable2FA) {
     this.canDisable2FA = canDisable2FA;
     return this;
   }
@@ -638,7 +745,7 @@ public class CreatePermissionGroupRequest {
     return canDisable2FA;
   }
 
-  public void setCanDisable2FA(Boolean canDisable2FA) {
+  public void setCanDisable2FA(@javax.annotation.Nullable Boolean canDisable2FA) {
     this.canDisable2FA = canDisable2FA;
   }
 
@@ -721,6 +828,9 @@ public class CreatePermissionGroupRequest {
         Objects.equals(this.accessType, createPermissionGroupRequest.accessType) &&
         Objects.equals(this.newEnvironmentAccessType, createPermissionGroupRequest.newEnvironmentAccessType) &&
         Objects.equals(this.environmentAccesses, createPermissionGroupRequest.environmentAccesses) &&
+        Objects.equals(this.approvalPermissionType, createPermissionGroupRequest.approvalPermissionType) &&
+        Objects.equals(this.newEnvironmentApprovalPermissionType, createPermissionGroupRequest.newEnvironmentApprovalPermissionType) &&
+        Objects.equals(this.environmentApprovalPermissions, createPermissionGroupRequest.environmentApprovalPermissions) &&
         Objects.equals(this.canDisable2FA, createPermissionGroupRequest.canDisable2FA)&&
         Objects.equals(this.additionalProperties, createPermissionGroupRequest.additionalProperties);
   }
@@ -731,7 +841,7 @@ public class CreatePermissionGroupRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, canManageMembers, canCreateOrUpdateConfig, canDeleteConfig, canCreateOrUpdateEnvironment, canDeleteEnvironment, canCreateOrUpdateSetting, canTagSetting, canDeleteSetting, canCreateOrUpdateTag, canDeleteTag, canManageWebhook, canUseExportImport, canManageProductPreferences, canManageIntegrations, canViewSdkKey, canRotateSdkKey, canCreateOrUpdateSegments, canDeleteSegments, canViewProductAuditLog, canViewProductStatistics, accessType, newEnvironmentAccessType, environmentAccesses, canDisable2FA, additionalProperties);
+    return Objects.hash(name, canManageMembers, canCreateOrUpdateConfig, canDeleteConfig, canCreateOrUpdateEnvironment, canDeleteEnvironment, canCreateOrUpdateSetting, canTagSetting, canDeleteSetting, canCreateOrUpdateTag, canDeleteTag, canManageWebhook, canUseExportImport, canManageProductPreferences, canManageIntegrations, canViewSdkKey, canRotateSdkKey, canCreateOrUpdateSegments, canDeleteSegments, canViewProductAuditLog, canViewProductStatistics, accessType, newEnvironmentAccessType, environmentAccesses, approvalPermissionType, newEnvironmentApprovalPermissionType, environmentApprovalPermissions, canDisable2FA, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -769,6 +879,9 @@ public class CreatePermissionGroupRequest {
     sb.append("    accessType: ").append(toIndentedString(accessType)).append("\n");
     sb.append("    newEnvironmentAccessType: ").append(toIndentedString(newEnvironmentAccessType)).append("\n");
     sb.append("    environmentAccesses: ").append(toIndentedString(environmentAccesses)).append("\n");
+    sb.append("    approvalPermissionType: ").append(toIndentedString(approvalPermissionType)).append("\n");
+    sb.append("    newEnvironmentApprovalPermissionType: ").append(toIndentedString(newEnvironmentApprovalPermissionType)).append("\n");
+    sb.append("    environmentApprovalPermissions: ").append(toIndentedString(environmentApprovalPermissions)).append("\n");
     sb.append("    canDisable2FA: ").append(toIndentedString(canDisable2FA)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
@@ -780,10 +893,7 @@ public class CreatePermissionGroupRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -792,36 +902,10 @@ public class CreatePermissionGroupRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("name");
-    openapiFields.add("canManageMembers");
-    openapiFields.add("canCreateOrUpdateConfig");
-    openapiFields.add("canDeleteConfig");
-    openapiFields.add("canCreateOrUpdateEnvironment");
-    openapiFields.add("canDeleteEnvironment");
-    openapiFields.add("canCreateOrUpdateSetting");
-    openapiFields.add("canTagSetting");
-    openapiFields.add("canDeleteSetting");
-    openapiFields.add("canCreateOrUpdateTag");
-    openapiFields.add("canDeleteTag");
-    openapiFields.add("canManageWebhook");
-    openapiFields.add("canUseExportImport");
-    openapiFields.add("canManageProductPreferences");
-    openapiFields.add("canManageIntegrations");
-    openapiFields.add("canViewSdkKey");
-    openapiFields.add("canRotateSdkKey");
-    openapiFields.add("canCreateOrUpdateSegments");
-    openapiFields.add("canDeleteSegments");
-    openapiFields.add("canViewProductAuditLog");
-    openapiFields.add("canViewProductStatistics");
-    openapiFields.add("accessType");
-    openapiFields.add("newEnvironmentAccessType");
-    openapiFields.add("environmentAccesses");
-    openapiFields.add("canDisable2FA");
+    openapiFields = new HashSet<String>(Arrays.asList("name", "canManageMembers", "canCreateOrUpdateConfig", "canDeleteConfig", "canCreateOrUpdateEnvironment", "canDeleteEnvironment", "canCreateOrUpdateSetting", "canTagSetting", "canDeleteSetting", "canCreateOrUpdateTag", "canDeleteTag", "canManageWebhook", "canUseExportImport", "canManageProductPreferences", "canManageIntegrations", "canViewSdkKey", "canRotateSdkKey", "canCreateOrUpdateSegments", "canDeleteSegments", "canViewProductAuditLog", "canViewProductStatistics", "accessType", "newEnvironmentAccessType", "environmentAccesses", "approvalPermissionType", "newEnvironmentApprovalPermissionType", "environmentApprovalPermissions", "canDisable2FA"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("name");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("name"));
   }
 
   /**
@@ -833,19 +917,19 @@ public class CreatePermissionGroupRequest {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CreatePermissionGroupRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in CreatePermissionGroupRequest is not found in the empty JSON string", CreatePermissionGroupRequest.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in CreatePermissionGroupRequest is not found in the empty JSON string", CreatePermissionGroupRequest.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : CreatePermissionGroupRequest.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       // validate the optional field `accessType`
       if (jsonObj.get("accessType") != null && !jsonObj.get("accessType").isJsonNull()) {
@@ -860,12 +944,34 @@ public class CreatePermissionGroupRequest {
         if (jsonArrayenvironmentAccesses != null) {
           // ensure the json data is an array
           if (!jsonObj.get("environmentAccesses").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `environmentAccesses` to be an array in the JSON string but got `%s`", jsonObj.get("environmentAccesses").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `environmentAccesses` to be an array in the JSON string but got `%s`", jsonObj.get("environmentAccesses").toString()));
           }
 
           // validate the optional field `environmentAccesses` (array)
           for (int i = 0; i < jsonArrayenvironmentAccesses.size(); i++) {
             CreateOrUpdateEnvironmentAccessModel.validateJsonElement(jsonArrayenvironmentAccesses.get(i));
+          };
+        }
+      }
+      // validate the optional field `approvalPermissionType`
+      if (jsonObj.get("approvalPermissionType") != null && !jsonObj.get("approvalPermissionType").isJsonNull()) {
+        ApprovalPermissionType.validateJsonElement(jsonObj.get("approvalPermissionType"));
+      }
+      // validate the optional field `newEnvironmentApprovalPermissionType`
+      if (jsonObj.get("newEnvironmentApprovalPermissionType") != null && !jsonObj.get("newEnvironmentApprovalPermissionType").isJsonNull()) {
+        EnvironmentApprovalPermissionType.validateJsonElement(jsonObj.get("newEnvironmentApprovalPermissionType"));
+      }
+      if (jsonObj.get("environmentApprovalPermissions") != null && !jsonObj.get("environmentApprovalPermissions").isJsonNull()) {
+        JsonArray jsonArrayenvironmentApprovalPermissions = jsonObj.getAsJsonArray("environmentApprovalPermissions");
+        if (jsonArrayenvironmentApprovalPermissions != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("environmentApprovalPermissions").isJsonArray()) {
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `environmentApprovalPermissions` to be an array in the JSON string but got `%s`", jsonObj.get("environmentApprovalPermissions").toString()));
+          }
+
+          // validate the optional field `environmentApprovalPermissions` (array)
+          for (int i = 0; i < jsonArrayenvironmentApprovalPermissions.size(); i++) {
+            CreateOrUpdateEnvironmentApprovalPermissionModel.validateJsonElement(jsonArrayenvironmentApprovalPermissions.get(i));
           };
         }
       }
@@ -928,7 +1034,7 @@ public class CreatePermissionGroupRequest {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

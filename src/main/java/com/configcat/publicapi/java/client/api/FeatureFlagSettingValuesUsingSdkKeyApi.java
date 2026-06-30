@@ -82,7 +82,8 @@ public class FeatureFlagSettingValuesUsingSdkKeyApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -90,7 +91,7 @@ public class FeatureFlagSettingValuesUsingSdkKeyApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSettingValueBySdkkeyCall(String settingKeyOrId, String X_CONFIGCAT_SDKKEY, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getSettingValueBySdkkeyCall(@javax.annotation.Nonnull String settingKeyOrId, @javax.annotation.Nullable String X_CONFIGCAT_SDKKEY, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -116,10 +117,6 @@ public class FeatureFlagSettingValuesUsingSdkKeyApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (X_CONFIGCAT_SDKKEY != null) {
-            localVarHeaderParams.put("X-CONFIGCAT-SDKKEY", localVarApiClient.parameterToString(X_CONFIGCAT_SDKKEY));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -135,12 +132,17 @@ public class FeatureFlagSettingValuesUsingSdkKeyApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (X_CONFIGCAT_SDKKEY != null) {
+            localVarHeaderParams.put("X-CONFIGCAT-SDKKEY", localVarApiClient.parameterToString(X_CONFIGCAT_SDKKEY));
+        }
+
+
         String[] localVarAuthNames = new String[] { "Basic" };
         return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSettingValueBySdkkeyValidateBeforeCall(String settingKeyOrId, String X_CONFIGCAT_SDKKEY, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getSettingValueBySdkkeyValidateBeforeCall(@javax.annotation.Nonnull String settingKeyOrId, @javax.annotation.Nullable String X_CONFIGCAT_SDKKEY, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'settingKeyOrId' is set
         if (settingKeyOrId == null) {
             throw new ApiException("Missing the required parameter 'settingKeyOrId' when calling getSettingValueBySdkkey(Async)");
@@ -158,7 +160,8 @@ public class FeatureFlagSettingValuesUsingSdkKeyApi {
      * @return SettingValueModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -166,7 +169,7 @@ public class FeatureFlagSettingValuesUsingSdkKeyApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public SettingValueModel getSettingValueBySdkkey(String settingKeyOrId, String X_CONFIGCAT_SDKKEY) throws ApiException {
+    public SettingValueModel getSettingValueBySdkkey(@javax.annotation.Nonnull String settingKeyOrId, @javax.annotation.Nullable String X_CONFIGCAT_SDKKEY) throws ApiException {
         ApiResponse<SettingValueModel> localVarResp = getSettingValueBySdkkeyWithHttpInfo(settingKeyOrId, X_CONFIGCAT_SDKKEY);
         return localVarResp.getData();
     }
@@ -179,7 +182,8 @@ public class FeatureFlagSettingValuesUsingSdkKeyApi {
      * @return ApiResponse&lt;SettingValueModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -187,7 +191,7 @@ public class FeatureFlagSettingValuesUsingSdkKeyApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SettingValueModel> getSettingValueBySdkkeyWithHttpInfo(String settingKeyOrId, String X_CONFIGCAT_SDKKEY) throws ApiException {
+    public ApiResponse<SettingValueModel> getSettingValueBySdkkeyWithHttpInfo(@javax.annotation.Nonnull String settingKeyOrId, @javax.annotation.Nullable String X_CONFIGCAT_SDKKEY) throws ApiException {
         okhttp3.Call localVarCall = getSettingValueBySdkkeyValidateBeforeCall(settingKeyOrId, X_CONFIGCAT_SDKKEY, null);
         Type localVarReturnType = new TypeToken<SettingValueModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -202,7 +206,8 @@ public class FeatureFlagSettingValuesUsingSdkKeyApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -210,7 +215,7 @@ public class FeatureFlagSettingValuesUsingSdkKeyApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSettingValueBySdkkeyAsync(String settingKeyOrId, String X_CONFIGCAT_SDKKEY, final ApiCallback<SettingValueModel> _callback) throws ApiException {
+    public okhttp3.Call getSettingValueBySdkkeyAsync(@javax.annotation.Nonnull String settingKeyOrId, @javax.annotation.Nullable String X_CONFIGCAT_SDKKEY, final ApiCallback<SettingValueModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getSettingValueBySdkkeyValidateBeforeCall(settingKeyOrId, X_CONFIGCAT_SDKKEY, _callback);
         Type localVarReturnType = new TypeToken<SettingValueModel>(){}.getType();
@@ -227,7 +232,8 @@ public class FeatureFlagSettingValuesUsingSdkKeyApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -235,7 +241,7 @@ public class FeatureFlagSettingValuesUsingSdkKeyApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call replaceSettingValueBySdkkeyCall(String settingKeyOrId, UpdateSettingValueModel updateSettingValueModel, String reason, String X_CONFIGCAT_SDKKEY, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call replaceSettingValueBySdkkeyCall(@javax.annotation.Nonnull String settingKeyOrId, @javax.annotation.Nonnull UpdateSettingValueModel updateSettingValueModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable String X_CONFIGCAT_SDKKEY, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -265,10 +271,6 @@ public class FeatureFlagSettingValuesUsingSdkKeyApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("reason", reason));
         }
 
-        if (X_CONFIGCAT_SDKKEY != null) {
-            localVarHeaderParams.put("X-CONFIGCAT-SDKKEY", localVarApiClient.parameterToString(X_CONFIGCAT_SDKKEY));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -287,12 +289,17 @@ public class FeatureFlagSettingValuesUsingSdkKeyApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (X_CONFIGCAT_SDKKEY != null) {
+            localVarHeaderParams.put("X-CONFIGCAT-SDKKEY", localVarApiClient.parameterToString(X_CONFIGCAT_SDKKEY));
+        }
+
+
         String[] localVarAuthNames = new String[] { "Basic" };
         return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call replaceSettingValueBySdkkeyValidateBeforeCall(String settingKeyOrId, UpdateSettingValueModel updateSettingValueModel, String reason, String X_CONFIGCAT_SDKKEY, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call replaceSettingValueBySdkkeyValidateBeforeCall(@javax.annotation.Nonnull String settingKeyOrId, @javax.annotation.Nonnull UpdateSettingValueModel updateSettingValueModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable String X_CONFIGCAT_SDKKEY, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'settingKeyOrId' is set
         if (settingKeyOrId == null) {
             throw new ApiException("Missing the required parameter 'settingKeyOrId' when calling replaceSettingValueBySdkkey(Async)");
@@ -317,7 +324,8 @@ public class FeatureFlagSettingValuesUsingSdkKeyApi {
      * @return SettingValueModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -325,7 +333,7 @@ public class FeatureFlagSettingValuesUsingSdkKeyApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public SettingValueModel replaceSettingValueBySdkkey(String settingKeyOrId, UpdateSettingValueModel updateSettingValueModel, String reason, String X_CONFIGCAT_SDKKEY) throws ApiException {
+    public SettingValueModel replaceSettingValueBySdkkey(@javax.annotation.Nonnull String settingKeyOrId, @javax.annotation.Nonnull UpdateSettingValueModel updateSettingValueModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable String X_CONFIGCAT_SDKKEY) throws ApiException {
         ApiResponse<SettingValueModel> localVarResp = replaceSettingValueBySdkkeyWithHttpInfo(settingKeyOrId, updateSettingValueModel, reason, X_CONFIGCAT_SDKKEY);
         return localVarResp.getData();
     }
@@ -340,7 +348,8 @@ public class FeatureFlagSettingValuesUsingSdkKeyApi {
      * @return ApiResponse&lt;SettingValueModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -348,7 +357,7 @@ public class FeatureFlagSettingValuesUsingSdkKeyApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SettingValueModel> replaceSettingValueBySdkkeyWithHttpInfo(String settingKeyOrId, UpdateSettingValueModel updateSettingValueModel, String reason, String X_CONFIGCAT_SDKKEY) throws ApiException {
+    public ApiResponse<SettingValueModel> replaceSettingValueBySdkkeyWithHttpInfo(@javax.annotation.Nonnull String settingKeyOrId, @javax.annotation.Nonnull UpdateSettingValueModel updateSettingValueModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable String X_CONFIGCAT_SDKKEY) throws ApiException {
         okhttp3.Call localVarCall = replaceSettingValueBySdkkeyValidateBeforeCall(settingKeyOrId, updateSettingValueModel, reason, X_CONFIGCAT_SDKKEY, null);
         Type localVarReturnType = new TypeToken<SettingValueModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -365,7 +374,8 @@ public class FeatureFlagSettingValuesUsingSdkKeyApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request. </td><td>  -  </td></tr>
@@ -373,7 +383,7 @@ public class FeatureFlagSettingValuesUsingSdkKeyApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call replaceSettingValueBySdkkeyAsync(String settingKeyOrId, UpdateSettingValueModel updateSettingValueModel, String reason, String X_CONFIGCAT_SDKKEY, final ApiCallback<SettingValueModel> _callback) throws ApiException {
+    public okhttp3.Call replaceSettingValueBySdkkeyAsync(@javax.annotation.Nonnull String settingKeyOrId, @javax.annotation.Nonnull UpdateSettingValueModel updateSettingValueModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable String X_CONFIGCAT_SDKKEY, final ApiCallback<SettingValueModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = replaceSettingValueBySdkkeyValidateBeforeCall(settingKeyOrId, updateSettingValueModel, reason, X_CONFIGCAT_SDKKEY, _callback);
         Type localVarReturnType = new TypeToken<SettingValueModel>(){}.getType();
@@ -390,7 +400,8 @@ public class FeatureFlagSettingValuesUsingSdkKeyApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 204 </td><td> When no change applied on the resource. </td><td>  -  </td></tr>
@@ -399,7 +410,7 @@ public class FeatureFlagSettingValuesUsingSdkKeyApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateSettingValueBySdkkeyCall(String settingKeyOrId, List<JsonPatchOperation> jsonPatchOperation, String reason, String X_CONFIGCAT_SDKKEY, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateSettingValueBySdkkeyCall(@javax.annotation.Nonnull String settingKeyOrId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, @javax.annotation.Nullable String reason, @javax.annotation.Nullable String X_CONFIGCAT_SDKKEY, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -429,10 +440,6 @@ public class FeatureFlagSettingValuesUsingSdkKeyApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("reason", reason));
         }
 
-        if (X_CONFIGCAT_SDKKEY != null) {
-            localVarHeaderParams.put("X-CONFIGCAT-SDKKEY", localVarApiClient.parameterToString(X_CONFIGCAT_SDKKEY));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -451,12 +458,17 @@ public class FeatureFlagSettingValuesUsingSdkKeyApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (X_CONFIGCAT_SDKKEY != null) {
+            localVarHeaderParams.put("X-CONFIGCAT-SDKKEY", localVarApiClient.parameterToString(X_CONFIGCAT_SDKKEY));
+        }
+
+
         String[] localVarAuthNames = new String[] { "Basic" };
         return localVarApiClient.buildCall(basePath, localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateSettingValueBySdkkeyValidateBeforeCall(String settingKeyOrId, List<JsonPatchOperation> jsonPatchOperation, String reason, String X_CONFIGCAT_SDKKEY, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateSettingValueBySdkkeyValidateBeforeCall(@javax.annotation.Nonnull String settingKeyOrId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, @javax.annotation.Nullable String reason, @javax.annotation.Nullable String X_CONFIGCAT_SDKKEY, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'settingKeyOrId' is set
         if (settingKeyOrId == null) {
             throw new ApiException("Missing the required parameter 'settingKeyOrId' when calling updateSettingValueBySdkkey(Async)");
@@ -481,7 +493,8 @@ public class FeatureFlagSettingValuesUsingSdkKeyApi {
      * @return SettingValueModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 204 </td><td> When no change applied on the resource. </td><td>  -  </td></tr>
@@ -490,7 +503,7 @@ public class FeatureFlagSettingValuesUsingSdkKeyApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public SettingValueModel updateSettingValueBySdkkey(String settingKeyOrId, List<JsonPatchOperation> jsonPatchOperation, String reason, String X_CONFIGCAT_SDKKEY) throws ApiException {
+    public SettingValueModel updateSettingValueBySdkkey(@javax.annotation.Nonnull String settingKeyOrId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, @javax.annotation.Nullable String reason, @javax.annotation.Nullable String X_CONFIGCAT_SDKKEY) throws ApiException {
         ApiResponse<SettingValueModel> localVarResp = updateSettingValueBySdkkeyWithHttpInfo(settingKeyOrId, jsonPatchOperation, reason, X_CONFIGCAT_SDKKEY);
         return localVarResp.getData();
     }
@@ -505,7 +518,8 @@ public class FeatureFlagSettingValuesUsingSdkKeyApi {
      * @return ApiResponse&lt;SettingValueModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 204 </td><td> When no change applied on the resource. </td><td>  -  </td></tr>
@@ -514,7 +528,7 @@ public class FeatureFlagSettingValuesUsingSdkKeyApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SettingValueModel> updateSettingValueBySdkkeyWithHttpInfo(String settingKeyOrId, List<JsonPatchOperation> jsonPatchOperation, String reason, String X_CONFIGCAT_SDKKEY) throws ApiException {
+    public ApiResponse<SettingValueModel> updateSettingValueBySdkkeyWithHttpInfo(@javax.annotation.Nonnull String settingKeyOrId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, @javax.annotation.Nullable String reason, @javax.annotation.Nullable String X_CONFIGCAT_SDKKEY) throws ApiException {
         okhttp3.Call localVarCall = updateSettingValueBySdkkeyValidateBeforeCall(settingKeyOrId, jsonPatchOperation, reason, X_CONFIGCAT_SDKKEY, null);
         Type localVarReturnType = new TypeToken<SettingValueModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -531,7 +545,8 @@ public class FeatureFlagSettingValuesUsingSdkKeyApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
         <tr><td> 204 </td><td> When no change applied on the resource. </td><td>  -  </td></tr>
@@ -540,7 +555,7 @@ public class FeatureFlagSettingValuesUsingSdkKeyApi {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateSettingValueBySdkkeyAsync(String settingKeyOrId, List<JsonPatchOperation> jsonPatchOperation, String reason, String X_CONFIGCAT_SDKKEY, final ApiCallback<SettingValueModel> _callback) throws ApiException {
+    public okhttp3.Call updateSettingValueBySdkkeyAsync(@javax.annotation.Nonnull String settingKeyOrId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, @javax.annotation.Nullable String reason, @javax.annotation.Nullable String X_CONFIGCAT_SDKKEY, final ApiCallback<SettingValueModel> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateSettingValueBySdkkeyValidateBeforeCall(settingKeyOrId, jsonPatchOperation, reason, X_CONFIGCAT_SDKKEY, _callback);
         Type localVarReturnType = new TypeToken<SettingValueModel>(){}.getType();

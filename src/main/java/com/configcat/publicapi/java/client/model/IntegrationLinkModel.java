@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,28 +49,32 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * IntegrationLinkModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class IntegrationLinkModel {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
+  @javax.annotation.Nullable
   private String key;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  @javax.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_INTEGRATION_LINK_TYPE = "integrationLinkType";
   @SerializedName(SERIALIZED_NAME_INTEGRATION_LINK_TYPE)
+  @javax.annotation.Nonnull
   private IntegrationLinkType integrationLinkType;
 
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
+  @javax.annotation.Nullable
   private String url;
 
   public IntegrationLinkModel() {
   }
 
-  public IntegrationLinkModel key(String key) {
+  public IntegrationLinkModel key(@javax.annotation.Nullable String key) {
     this.key = key;
     return this;
   }
@@ -85,12 +88,12 @@ public class IntegrationLinkModel {
     return key;
   }
 
-  public void setKey(String key) {
+  public void setKey(@javax.annotation.Nullable String key) {
     this.key = key;
   }
 
 
-  public IntegrationLinkModel description(String description) {
+  public IntegrationLinkModel description(@javax.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -104,12 +107,12 @@ public class IntegrationLinkModel {
     return description;
   }
 
-  public void setDescription(String description) {
+  public void setDescription(@javax.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public IntegrationLinkModel integrationLinkType(IntegrationLinkType integrationLinkType) {
+  public IntegrationLinkModel integrationLinkType(@javax.annotation.Nonnull IntegrationLinkType integrationLinkType) {
     this.integrationLinkType = integrationLinkType;
     return this;
   }
@@ -123,12 +126,12 @@ public class IntegrationLinkModel {
     return integrationLinkType;
   }
 
-  public void setIntegrationLinkType(IntegrationLinkType integrationLinkType) {
+  public void setIntegrationLinkType(@javax.annotation.Nonnull IntegrationLinkType integrationLinkType) {
     this.integrationLinkType = integrationLinkType;
   }
 
 
-  public IntegrationLinkModel url(String url) {
+  public IntegrationLinkModel url(@javax.annotation.Nullable String url) {
     this.url = url;
     return this;
   }
@@ -142,7 +145,7 @@ public class IntegrationLinkModel {
     return url;
   }
 
-  public void setUrl(String url) {
+  public void setUrl(@javax.annotation.Nullable String url) {
     this.url = url;
   }
 
@@ -231,10 +234,7 @@ public class IntegrationLinkModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -243,18 +243,10 @@ public class IntegrationLinkModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("key");
-    openapiFields.add("description");
-    openapiFields.add("integrationLinkType");
-    openapiFields.add("url");
+    openapiFields = new HashSet<String>(Arrays.asList("key", "description", "integrationLinkType", "url"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("key");
-    openapiRequiredFields.add("description");
-    openapiRequiredFields.add("integrationLinkType");
-    openapiRequiredFields.add("url");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("key", "description", "integrationLinkType", "url"));
   }
 
   /**
@@ -266,27 +258,27 @@ public class IntegrationLinkModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!IntegrationLinkModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in IntegrationLinkModel is not found in the empty JSON string", IntegrationLinkModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in IntegrationLinkModel is not found in the empty JSON string", IntegrationLinkModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : IntegrationLinkModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("key") != null && !jsonObj.get("key").isJsonNull()) && !jsonObj.get("key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
       }
       // validate the required field `integrationLinkType`
       IntegrationLinkType.validateJsonElement(jsonObj.get("integrationLinkType"));
       if ((jsonObj.get("url") != null && !jsonObj.get("url").isJsonNull()) && !jsonObj.get("url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
       }
   }
 
@@ -347,7 +339,7 @@ public class IntegrationLinkModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

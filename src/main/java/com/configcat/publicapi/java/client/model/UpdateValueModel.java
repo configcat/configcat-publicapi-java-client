@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,32 +50,37 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * Represents the value of a Feature Flag or Setting.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class UpdateValueModel {
   public static final String SERIALIZED_NAME_BOOL_VALUE = "boolValue";
   @SerializedName(SERIALIZED_NAME_BOOL_VALUE)
+  @javax.annotation.Nullable
   private Boolean boolValue;
 
   public static final String SERIALIZED_NAME_STRING_VALUE = "stringValue";
   @SerializedName(SERIALIZED_NAME_STRING_VALUE)
+  @javax.annotation.Nullable
   private String stringValue;
 
   public static final String SERIALIZED_NAME_INT_VALUE = "intValue";
   @SerializedName(SERIALIZED_NAME_INT_VALUE)
+  @javax.annotation.Nullable
   private Integer intValue;
 
   public static final String SERIALIZED_NAME_DOUBLE_VALUE = "doubleValue";
   @SerializedName(SERIALIZED_NAME_DOUBLE_VALUE)
+  @javax.annotation.Nullable
   private Double doubleValue;
 
   public static final String SERIALIZED_NAME_PREDEFINED_VARIATION_ID = "predefinedVariationId";
   @SerializedName(SERIALIZED_NAME_PREDEFINED_VARIATION_ID)
+  @javax.annotation.Nullable
   private UUID predefinedVariationId;
 
   public UpdateValueModel() {
   }
 
-  public UpdateValueModel boolValue(Boolean boolValue) {
+  public UpdateValueModel boolValue(@javax.annotation.Nullable Boolean boolValue) {
     this.boolValue = boolValue;
     return this;
   }
@@ -90,12 +94,12 @@ public class UpdateValueModel {
     return boolValue;
   }
 
-  public void setBoolValue(Boolean boolValue) {
+  public void setBoolValue(@javax.annotation.Nullable Boolean boolValue) {
     this.boolValue = boolValue;
   }
 
 
-  public UpdateValueModel stringValue(String stringValue) {
+  public UpdateValueModel stringValue(@javax.annotation.Nullable String stringValue) {
     this.stringValue = stringValue;
     return this;
   }
@@ -109,12 +113,12 @@ public class UpdateValueModel {
     return stringValue;
   }
 
-  public void setStringValue(String stringValue) {
+  public void setStringValue(@javax.annotation.Nullable String stringValue) {
     this.stringValue = stringValue;
   }
 
 
-  public UpdateValueModel intValue(Integer intValue) {
+  public UpdateValueModel intValue(@javax.annotation.Nullable Integer intValue) {
     this.intValue = intValue;
     return this;
   }
@@ -128,12 +132,12 @@ public class UpdateValueModel {
     return intValue;
   }
 
-  public void setIntValue(Integer intValue) {
+  public void setIntValue(@javax.annotation.Nullable Integer intValue) {
     this.intValue = intValue;
   }
 
 
-  public UpdateValueModel doubleValue(Double doubleValue) {
+  public UpdateValueModel doubleValue(@javax.annotation.Nullable Double doubleValue) {
     this.doubleValue = doubleValue;
     return this;
   }
@@ -147,12 +151,12 @@ public class UpdateValueModel {
     return doubleValue;
   }
 
-  public void setDoubleValue(Double doubleValue) {
+  public void setDoubleValue(@javax.annotation.Nullable Double doubleValue) {
     this.doubleValue = doubleValue;
   }
 
 
-  public UpdateValueModel predefinedVariationId(UUID predefinedVariationId) {
+  public UpdateValueModel predefinedVariationId(@javax.annotation.Nullable UUID predefinedVariationId) {
     this.predefinedVariationId = predefinedVariationId;
     return this;
   }
@@ -166,7 +170,7 @@ public class UpdateValueModel {
     return predefinedVariationId;
   }
 
-  public void setPredefinedVariationId(UUID predefinedVariationId) {
+  public void setPredefinedVariationId(@javax.annotation.Nullable UUID predefinedVariationId) {
     this.predefinedVariationId = predefinedVariationId;
   }
 
@@ -268,10 +272,7 @@ public class UpdateValueModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -280,15 +281,10 @@ public class UpdateValueModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("boolValue");
-    openapiFields.add("stringValue");
-    openapiFields.add("intValue");
-    openapiFields.add("doubleValue");
-    openapiFields.add("predefinedVariationId");
+    openapiFields = new HashSet<String>(Arrays.asList("boolValue", "stringValue", "intValue", "doubleValue", "predefinedVariationId"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -300,15 +296,15 @@ public class UpdateValueModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!UpdateValueModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdateValueModel is not found in the empty JSON string", UpdateValueModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in UpdateValueModel is not found in the empty JSON string", UpdateValueModel.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("stringValue") != null && !jsonObj.get("stringValue").isJsonNull()) && !jsonObj.get("stringValue").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `stringValue` to be a primitive type in the JSON string but got `%s`", jsonObj.get("stringValue").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `stringValue` to be a primitive type in the JSON string but got `%s`", jsonObj.get("stringValue").toString()));
       }
       if ((jsonObj.get("predefinedVariationId") != null && !jsonObj.get("predefinedVariationId").isJsonNull()) && !jsonObj.get("predefinedVariationId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `predefinedVariationId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("predefinedVariationId").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `predefinedVariationId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("predefinedVariationId").toString()));
       }
   }
 
@@ -369,7 +365,7 @@ public class UpdateValueModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

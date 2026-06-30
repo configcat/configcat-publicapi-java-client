@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,32 +49,37 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * ProxyProfileSdkKeyItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class ProxyProfileSdkKeyItem {
   public static final String SERIALIZED_NAME_PRIMARY_SDK_KEY = "primarySdkKey";
   @SerializedName(SERIALIZED_NAME_PRIMARY_SDK_KEY)
+  @javax.annotation.Nonnull
   private String primarySdkKey;
 
   public static final String SERIALIZED_NAME_SECONDARY_SDK_KEY = "secondarySdkKey";
   @SerializedName(SERIALIZED_NAME_SECONDARY_SDK_KEY)
+  @javax.annotation.Nullable
   private String secondarySdkKey;
 
   public static final String SERIALIZED_NAME_SDK_ID = "sdkId";
   @SerializedName(SERIALIZED_NAME_SDK_ID)
+  @javax.annotation.Nonnull
   private String sdkId;
 
   public static final String SERIALIZED_NAME_CONFIG_ID = "configId";
   @SerializedName(SERIALIZED_NAME_CONFIG_ID)
+  @javax.annotation.Nonnull
   private UUID configId;
 
   public static final String SERIALIZED_NAME_ENVIRONMENT_ID = "environmentId";
   @SerializedName(SERIALIZED_NAME_ENVIRONMENT_ID)
+  @javax.annotation.Nonnull
   private UUID environmentId;
 
   public ProxyProfileSdkKeyItem() {
   }
 
-  public ProxyProfileSdkKeyItem primarySdkKey(String primarySdkKey) {
+  public ProxyProfileSdkKeyItem primarySdkKey(@javax.annotation.Nonnull String primarySdkKey) {
     this.primarySdkKey = primarySdkKey;
     return this;
   }
@@ -89,12 +93,12 @@ public class ProxyProfileSdkKeyItem {
     return primarySdkKey;
   }
 
-  public void setPrimarySdkKey(String primarySdkKey) {
+  public void setPrimarySdkKey(@javax.annotation.Nonnull String primarySdkKey) {
     this.primarySdkKey = primarySdkKey;
   }
 
 
-  public ProxyProfileSdkKeyItem secondarySdkKey(String secondarySdkKey) {
+  public ProxyProfileSdkKeyItem secondarySdkKey(@javax.annotation.Nullable String secondarySdkKey) {
     this.secondarySdkKey = secondarySdkKey;
     return this;
   }
@@ -108,12 +112,12 @@ public class ProxyProfileSdkKeyItem {
     return secondarySdkKey;
   }
 
-  public void setSecondarySdkKey(String secondarySdkKey) {
+  public void setSecondarySdkKey(@javax.annotation.Nullable String secondarySdkKey) {
     this.secondarySdkKey = secondarySdkKey;
   }
 
 
-  public ProxyProfileSdkKeyItem sdkId(String sdkId) {
+  public ProxyProfileSdkKeyItem sdkId(@javax.annotation.Nonnull String sdkId) {
     this.sdkId = sdkId;
     return this;
   }
@@ -127,12 +131,12 @@ public class ProxyProfileSdkKeyItem {
     return sdkId;
   }
 
-  public void setSdkId(String sdkId) {
+  public void setSdkId(@javax.annotation.Nonnull String sdkId) {
     this.sdkId = sdkId;
   }
 
 
-  public ProxyProfileSdkKeyItem configId(UUID configId) {
+  public ProxyProfileSdkKeyItem configId(@javax.annotation.Nonnull UUID configId) {
     this.configId = configId;
     return this;
   }
@@ -146,12 +150,12 @@ public class ProxyProfileSdkKeyItem {
     return configId;
   }
 
-  public void setConfigId(UUID configId) {
+  public void setConfigId(@javax.annotation.Nonnull UUID configId) {
     this.configId = configId;
   }
 
 
-  public ProxyProfileSdkKeyItem environmentId(UUID environmentId) {
+  public ProxyProfileSdkKeyItem environmentId(@javax.annotation.Nonnull UUID environmentId) {
     this.environmentId = environmentId;
     return this;
   }
@@ -165,7 +169,7 @@ public class ProxyProfileSdkKeyItem {
     return environmentId;
   }
 
-  public void setEnvironmentId(UUID environmentId) {
+  public void setEnvironmentId(@javax.annotation.Nonnull UUID environmentId) {
     this.environmentId = environmentId;
   }
 
@@ -256,10 +260,7 @@ public class ProxyProfileSdkKeyItem {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -268,20 +269,10 @@ public class ProxyProfileSdkKeyItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("primarySdkKey");
-    openapiFields.add("secondarySdkKey");
-    openapiFields.add("sdkId");
-    openapiFields.add("configId");
-    openapiFields.add("environmentId");
+    openapiFields = new HashSet<String>(Arrays.asList("primarySdkKey", "secondarySdkKey", "sdkId", "configId", "environmentId"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("primarySdkKey");
-    openapiRequiredFields.add("secondarySdkKey");
-    openapiRequiredFields.add("sdkId");
-    openapiRequiredFields.add("configId");
-    openapiRequiredFields.add("environmentId");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("primarySdkKey", "secondarySdkKey", "sdkId", "configId", "environmentId"));
   }
 
   /**
@@ -293,31 +284,31 @@ public class ProxyProfileSdkKeyItem {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ProxyProfileSdkKeyItem.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ProxyProfileSdkKeyItem is not found in the empty JSON string", ProxyProfileSdkKeyItem.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ProxyProfileSdkKeyItem is not found in the empty JSON string", ProxyProfileSdkKeyItem.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ProxyProfileSdkKeyItem.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("primarySdkKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `primarySdkKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("primarySdkKey").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `primarySdkKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("primarySdkKey").toString()));
       }
       if ((jsonObj.get("secondarySdkKey") != null && !jsonObj.get("secondarySdkKey").isJsonNull()) && !jsonObj.get("secondarySdkKey").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `secondarySdkKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("secondarySdkKey").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `secondarySdkKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("secondarySdkKey").toString()));
       }
       if (!jsonObj.get("sdkId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `sdkId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sdkId").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `sdkId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sdkId").toString()));
       }
       if (!jsonObj.get("configId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `configId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("configId").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `configId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("configId").toString()));
       }
       if (!jsonObj.get("environmentId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `environmentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("environmentId").toString()));
       }
   }
 
@@ -378,7 +369,7 @@ public class ProxyProfileSdkKeyItem {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

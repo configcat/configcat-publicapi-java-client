@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,20 +51,22 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * PredefinedVariationsModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class PredefinedVariationsModel {
   public static final String SERIALIZED_NAME_PREDEFINED_VARIATIONS = "predefinedVariations";
   @SerializedName(SERIALIZED_NAME_PREDEFINED_VARIATIONS)
+  @javax.annotation.Nonnull
   private List<PredefinedVariationModel> predefinedVariations = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_MAX_PREDEFINED_VARIATIONS = "maxPredefinedVariations";
   @SerializedName(SERIALIZED_NAME_MAX_PREDEFINED_VARIATIONS)
+  @javax.annotation.Nonnull
   private Integer maxPredefinedVariations;
 
   public PredefinedVariationsModel() {
   }
 
-  public PredefinedVariationsModel predefinedVariations(List<PredefinedVariationModel> predefinedVariations) {
+  public PredefinedVariationsModel predefinedVariations(@javax.annotation.Nonnull List<PredefinedVariationModel> predefinedVariations) {
     this.predefinedVariations = predefinedVariations;
     return this;
   }
@@ -87,12 +88,12 @@ public class PredefinedVariationsModel {
     return predefinedVariations;
   }
 
-  public void setPredefinedVariations(List<PredefinedVariationModel> predefinedVariations) {
+  public void setPredefinedVariations(@javax.annotation.Nonnull List<PredefinedVariationModel> predefinedVariations) {
     this.predefinedVariations = predefinedVariations;
   }
 
 
-  public PredefinedVariationsModel maxPredefinedVariations(Integer maxPredefinedVariations) {
+  public PredefinedVariationsModel maxPredefinedVariations(@javax.annotation.Nonnull Integer maxPredefinedVariations) {
     this.maxPredefinedVariations = maxPredefinedVariations;
     return this;
   }
@@ -106,7 +107,7 @@ public class PredefinedVariationsModel {
     return maxPredefinedVariations;
   }
 
-  public void setMaxPredefinedVariations(Integer maxPredefinedVariations) {
+  public void setMaxPredefinedVariations(@javax.annotation.Nonnull Integer maxPredefinedVariations) {
     this.maxPredefinedVariations = maxPredefinedVariations;
   }
 
@@ -191,10 +192,7 @@ public class PredefinedVariationsModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -203,14 +201,10 @@ public class PredefinedVariationsModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("predefinedVariations");
-    openapiFields.add("maxPredefinedVariations");
+    openapiFields = new HashSet<String>(Arrays.asList("predefinedVariations", "maxPredefinedVariations"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("predefinedVariations");
-    openapiRequiredFields.add("maxPredefinedVariations");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("predefinedVariations", "maxPredefinedVariations"));
   }
 
   /**
@@ -222,27 +216,27 @@ public class PredefinedVariationsModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!PredefinedVariationsModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in PredefinedVariationsModel is not found in the empty JSON string", PredefinedVariationsModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in PredefinedVariationsModel is not found in the empty JSON string", PredefinedVariationsModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : PredefinedVariationsModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // ensure the json data is an array
-      if (!jsonObj.get("predefinedVariations").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `predefinedVariations` to be an array in the JSON string but got `%s`", jsonObj.get("predefinedVariations").toString()));
+      if (jsonObj.get("predefinedVariations") != null) {
+        if (!jsonObj.get("predefinedVariations").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `predefinedVariations` to be an array in the JSON string but got `%s`", jsonObj.get("predefinedVariations").toString()));
+        }
+        JsonArray jsonArraypredefinedVariations = jsonObj.getAsJsonArray("predefinedVariations");
+        // validate the required field `predefinedVariations` (array)
+        for (int i = 0; i < jsonArraypredefinedVariations.size(); i++) {
+          PredefinedVariationModel.validateJsonElement(jsonArraypredefinedVariations.get(i));
+        }
       }
-
-      JsonArray jsonArraypredefinedVariations = jsonObj.getAsJsonArray("predefinedVariations");
-      // validate the required field `predefinedVariations` (array)
-      for (int i = 0; i < jsonArraypredefinedVariations.size(); i++) {
-        PredefinedVariationModel.validateJsonElement(jsonArraypredefinedVariations.get(i));
-      };
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -302,7 +296,7 @@ public class PredefinedVariationsModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object

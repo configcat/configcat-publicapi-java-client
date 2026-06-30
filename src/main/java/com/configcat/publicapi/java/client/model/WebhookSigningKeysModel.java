@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,20 +48,22 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * WebhookSigningKeysModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T09:20:10.031721056Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class WebhookSigningKeysModel {
   public static final String SERIALIZED_NAME_KEY1 = "key1";
   @SerializedName(SERIALIZED_NAME_KEY1)
+  @javax.annotation.Nullable
   private String key1;
 
   public static final String SERIALIZED_NAME_KEY2 = "key2";
   @SerializedName(SERIALIZED_NAME_KEY2)
+  @javax.annotation.Nullable
   private String key2;
 
   public WebhookSigningKeysModel() {
   }
 
-  public WebhookSigningKeysModel key1(String key1) {
+  public WebhookSigningKeysModel key1(@javax.annotation.Nullable String key1) {
     this.key1 = key1;
     return this;
   }
@@ -76,12 +77,12 @@ public class WebhookSigningKeysModel {
     return key1;
   }
 
-  public void setKey1(String key1) {
+  public void setKey1(@javax.annotation.Nullable String key1) {
     this.key1 = key1;
   }
 
 
-  public WebhookSigningKeysModel key2(String key2) {
+  public WebhookSigningKeysModel key2(@javax.annotation.Nullable String key2) {
     this.key2 = key2;
     return this;
   }
@@ -95,7 +96,7 @@ public class WebhookSigningKeysModel {
     return key2;
   }
 
-  public void setKey2(String key2) {
+  public void setKey2(@javax.annotation.Nullable String key2) {
     this.key2 = key2;
   }
 
@@ -180,10 +181,7 @@ public class WebhookSigningKeysModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -192,14 +190,10 @@ public class WebhookSigningKeysModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("key1");
-    openapiFields.add("key2");
+    openapiFields = new HashSet<String>(Arrays.asList("key1", "key2"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("key1");
-    openapiRequiredFields.add("key2");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("key1", "key2"));
   }
 
   /**
@@ -211,22 +205,22 @@ public class WebhookSigningKeysModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!WebhookSigningKeysModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in WebhookSigningKeysModel is not found in the empty JSON string", WebhookSigningKeysModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in WebhookSigningKeysModel is not found in the empty JSON string", WebhookSigningKeysModel.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : WebhookSigningKeysModel.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("key1") != null && !jsonObj.get("key1").isJsonNull()) && !jsonObj.get("key1").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key1` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key1").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `key1` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key1").toString()));
       }
       if ((jsonObj.get("key2") != null && !jsonObj.get("key2").isJsonNull()) && !jsonObj.get("key2").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `key2` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key2").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `key2` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key2").toString()));
       }
   }
 
@@ -287,7 +281,7 @@ public class WebhookSigningKeysModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format("The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
