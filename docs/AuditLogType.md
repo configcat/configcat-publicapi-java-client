@@ -237,5 +237,7 @@
 
 * `CHANGE_REQUEST_NEEDS_ATTENTION_FIXED` (value: `"changeRequestNeedsAttentionFixed"`)
 
+* `CHANGE_REQUEST_OWNERSHIP_CLAIMED` (value: `"changeRequestOwnershipClaimed"`)
+
 
 

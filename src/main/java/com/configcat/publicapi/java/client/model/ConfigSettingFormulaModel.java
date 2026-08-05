@@ -57,7 +57,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * ConfigSettingFormulaModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-05T13:17:19.774498623Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class ConfigSettingFormulaModel {
   public static final String SERIALIZED_NAME_LAST_VERSION_ID = "lastVersionId";
   @SerializedName(SERIALIZED_NAME_LAST_VERSION_ID)
@@ -128,7 +128,7 @@ public class ConfigSettingFormulaModel {
   }
 
   /**
-   * Get lastVersionId
+   * The version identifier of the last change made to the Feature Flag or Setting in the Environment. It can be used to make sure concurrent updates are not overwriting each other. If the version identifier does not match the current version, the update will be rejected with a 409 Conflict response.
    * @return lastVersionId
    */
   @javax.annotation.Nonnull

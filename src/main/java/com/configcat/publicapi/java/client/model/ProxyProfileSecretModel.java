@@ -48,7 +48,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * ProxyProfileSecretModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-05T13:17:19.774498623Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class ProxyProfileSecretModel {
   public static final String SERIALIZED_NAME_SECRET_TOKEN = "secretToken";
   @SerializedName(SERIALIZED_NAME_SECRET_TOKEN)

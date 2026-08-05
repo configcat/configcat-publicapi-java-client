@@ -259,7 +259,9 @@ public enum AuditLogType {
   
   CHANGE_REQUEST_SETTING_DELETED("changeRequestSettingDeleted"),
   
-  CHANGE_REQUEST_NEEDS_ATTENTION_FIXED("changeRequestNeedsAttentionFixed");
+  CHANGE_REQUEST_NEEDS_ATTENTION_FIXED("changeRequestNeedsAttentionFixed"),
+  
+  CHANGE_REQUEST_OWNERSHIP_CLAIMED("changeRequestOwnershipClaimed");
 
   private String value;
 

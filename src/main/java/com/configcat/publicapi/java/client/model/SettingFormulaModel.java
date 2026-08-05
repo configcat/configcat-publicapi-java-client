@@ -60,7 +60,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * SettingFormulaModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T14:53:36.301118746Z[Etc/UTC]", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-05T13:17:19.774498623Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class SettingFormulaModel {
   public static final String SERIALIZED_NAME_LAST_VERSION_ID = "lastVersionId";
   @SerializedName(SERIALIZED_NAME_LAST_VERSION_ID)
@@ -142,6 +142,21 @@ public class SettingFormulaModel {
   @javax.annotation.Nonnull
   private FeatureFlagLimitations featureFlagLimitations;
 
+  public static final String SERIALIZED_NAME_APPROVE_REQUIRED = "approveRequired";
+  @SerializedName(SERIALIZED_NAME_APPROVE_REQUIRED)
+  @javax.annotation.Nonnull
+  private Boolean approveRequired;
+
+  public static final String SERIALIZED_NAME_CAN_BYPASS_APPROVAL = "canBypassApproval";
+  @SerializedName(SERIALIZED_NAME_CAN_BYPASS_APPROVAL)
+  @javax.annotation.Nonnull
+  private Boolean canBypassApproval;
+
+  public static final String SERIALIZED_NAME_REASON_REQUIRED = "reasonRequired";
+  @SerializedName(SERIALIZED_NAME_REASON_REQUIRED)
+  @javax.annotation.Nonnull
+  private Boolean reasonRequired;
+
   public SettingFormulaModel() {
   }
 
@@ -151,7 +166,7 @@ public class SettingFormulaModel {
   }
 
   /**
-   * Get lastVersionId
+   * The version identifier of the last change made to the Feature Flag or Setting in the Environment. It can be used to make sure concurrent updates are not overwriting each other. If the version identifier does not match the current version, the update will be rejected with a 409 Conflict response.
    * @return lastVersionId
    */
   @javax.annotation.Nonnull
@@ -449,7 +464,7 @@ public class SettingFormulaModel {
   }
 
   /**
-   * Get readOnly
+   * Indicates whether you have Read-only access to the Environment.
    * @return readOnly
    */
   @javax.annotation.Nonnull
@@ -478,6 +493,63 @@ public class SettingFormulaModel {
 
   public void setFeatureFlagLimitations(@javax.annotation.Nonnull FeatureFlagLimitations featureFlagLimitations) {
     this.featureFlagLimitations = featureFlagLimitations;
+  }
+
+
+  public SettingFormulaModel approveRequired(@javax.annotation.Nonnull Boolean approveRequired) {
+    this.approveRequired = approveRequired;
+    return this;
+  }
+
+  /**
+   * Indicates that a mandatory approval is required for saving and publishing.
+   * @return approveRequired
+   */
+  @javax.annotation.Nonnull
+  public Boolean getApproveRequired() {
+    return approveRequired;
+  }
+
+  public void setApproveRequired(@javax.annotation.Nonnull Boolean approveRequired) {
+    this.approveRequired = approveRequired;
+  }
+
+
+  public SettingFormulaModel canBypassApproval(@javax.annotation.Nonnull Boolean canBypassApproval) {
+    this.canBypassApproval = canBypassApproval;
+    return this;
+  }
+
+  /**
+   * Indicates whether the user can bypass the approval flow.
+   * @return canBypassApproval
+   */
+  @javax.annotation.Nonnull
+  public Boolean getCanBypassApproval() {
+    return canBypassApproval;
+  }
+
+  public void setCanBypassApproval(@javax.annotation.Nonnull Boolean canBypassApproval) {
+    this.canBypassApproval = canBypassApproval;
+  }
+
+
+  public SettingFormulaModel reasonRequired(@javax.annotation.Nonnull Boolean reasonRequired) {
+    this.reasonRequired = reasonRequired;
+    return this;
+  }
+
+  /**
+   * Indicates that a mandatory note required for saving and publishing.
+   * @return reasonRequired
+   */
+  @javax.annotation.Nonnull
+  public Boolean getReasonRequired() {
+    return reasonRequired;
+  }
+
+  public void setReasonRequired(@javax.annotation.Nonnull Boolean reasonRequired) {
+    this.reasonRequired = reasonRequired;
   }
 
   /**
@@ -550,13 +622,16 @@ public class SettingFormulaModel {
         Objects.equals(this.config, settingFormulaModel.config) &&
         Objects.equals(this.environment, settingFormulaModel.environment) &&
         Objects.equals(this.readOnly, settingFormulaModel.readOnly) &&
-        Objects.equals(this.featureFlagLimitations, settingFormulaModel.featureFlagLimitations)&&
+        Objects.equals(this.featureFlagLimitations, settingFormulaModel.featureFlagLimitations) &&
+        Objects.equals(this.approveRequired, settingFormulaModel.approveRequired) &&
+        Objects.equals(this.canBypassApproval, settingFormulaModel.canBypassApproval) &&
+        Objects.equals(this.reasonRequired, settingFormulaModel.reasonRequired)&&
         Objects.equals(this.additionalProperties, settingFormulaModel.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(lastVersionId, defaultValue, targetingRules, setting, updatedAt, percentageEvaluationAttribute, lastUpdaterUserEmail, lastUpdaterUserFullName, integrationLinks, settingTags, settingIdsWherePrerequisite, changeRequestCount, config, environment, readOnly, featureFlagLimitations, additionalProperties);
+    return Objects.hash(lastVersionId, defaultValue, targetingRules, setting, updatedAt, percentageEvaluationAttribute, lastUpdaterUserEmail, lastUpdaterUserFullName, integrationLinks, settingTags, settingIdsWherePrerequisite, changeRequestCount, config, environment, readOnly, featureFlagLimitations, approveRequired, canBypassApproval, reasonRequired, additionalProperties);
   }
 
   @Override
@@ -579,6 +654,9 @@ public class SettingFormulaModel {
     sb.append("    environment: ").append(toIndentedString(environment)).append("\n");
     sb.append("    readOnly: ").append(toIndentedString(readOnly)).append("\n");
     sb.append("    featureFlagLimitations: ").append(toIndentedString(featureFlagLimitations)).append("\n");
+    sb.append("    approveRequired: ").append(toIndentedString(approveRequired)).append("\n");
+    sb.append("    canBypassApproval: ").append(toIndentedString(canBypassApproval)).append("\n");
+    sb.append("    reasonRequired: ").append(toIndentedString(reasonRequired)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -598,10 +676,10 @@ public class SettingFormulaModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("lastVersionId", "defaultValue", "targetingRules", "setting", "updatedAt", "percentageEvaluationAttribute", "lastUpdaterUserEmail", "lastUpdaterUserFullName", "integrationLinks", "settingTags", "settingIdsWherePrerequisite", "changeRequestCount", "config", "environment", "readOnly", "featureFlagLimitations"));
+    openapiFields = new HashSet<String>(Arrays.asList("lastVersionId", "defaultValue", "targetingRules", "setting", "updatedAt", "percentageEvaluationAttribute", "lastUpdaterUserEmail", "lastUpdaterUserFullName", "integrationLinks", "settingTags", "settingIdsWherePrerequisite", "changeRequestCount", "config", "environment", "readOnly", "featureFlagLimitations", "approveRequired", "canBypassApproval", "reasonRequired"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("lastVersionId", "defaultValue", "targetingRules", "setting", "updatedAt", "percentageEvaluationAttribute", "lastUpdaterUserEmail", "lastUpdaterUserFullName", "integrationLinks", "settingTags", "settingIdsWherePrerequisite", "changeRequestCount", "config", "environment", "readOnly", "featureFlagLimitations"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("lastVersionId", "defaultValue", "targetingRules", "setting", "updatedAt", "percentageEvaluationAttribute", "lastUpdaterUserEmail", "lastUpdaterUserFullName", "integrationLinks", "settingTags", "settingIdsWherePrerequisite", "changeRequestCount", "config", "environment", "readOnly", "featureFlagLimitations", "approveRequired", "canBypassApproval", "reasonRequired"));
   }
 
   /**
