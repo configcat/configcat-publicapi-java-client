@@ -84,7 +84,7 @@ public class Example {
 
 <a id="replaceSettingValueBySdkkeyV2"></a>
 # **replaceSettingValueBySdkkeyV2**
-> SettingFormulaModel replaceSettingValueBySdkkeyV2(settingKeyOrId, updateEvaluationFormulaModel, reason, bypassApproval, X_CONFIGCAT_SDKKEY)
+> SettingFormulaModel replaceSettingValueBySdkkeyV2(settingKeyOrId, updateEvaluationFormulaModel, reason, bypassApproval, latestVersionId, X_CONFIGCAT_SDKKEY)
 
 Replace value
 
@@ -115,9 +115,10 @@ public class Example {
     UpdateEvaluationFormulaModel updateEvaluationFormulaModel = new UpdateEvaluationFormulaModel(); // UpdateEvaluationFormulaModel | 
     String reason = "reason_example"; // String | The reason note for the Audit Log if the Product's \"Config changes require a reason\" preference is turned on.
     Boolean bypassApproval = true; // Boolean | Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission.
+    UUID latestVersionId = UUID.randomUUID(); // UUID | Optional. The version identifier of the last change made to the Feature Flag or Setting in the Environment. It can be used to make sure concurrent updates are not overwriting each other. If provided and the version identifier does not match the current version, the update will be rejected with a 409 Conflict response. The latest version id can be acquired from the `LastVersionId` property of the response models.
     String X_CONFIGCAT_SDKKEY = "X_CONFIGCAT_SDKKEY_example"; // String | The ConfigCat SDK Key. (https://app.configcat.com/sdkkey)
     try {
-      SettingFormulaModel result = apiInstance.replaceSettingValueBySdkkeyV2(settingKeyOrId, updateEvaluationFormulaModel, reason, bypassApproval, X_CONFIGCAT_SDKKEY);
+      SettingFormulaModel result = apiInstance.replaceSettingValueBySdkkeyV2(settingKeyOrId, updateEvaluationFormulaModel, reason, bypassApproval, latestVersionId, X_CONFIGCAT_SDKKEY);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FeatureFlagSettingValuesUsingSdkKeyV2Api#replaceSettingValueBySdkkeyV2");
@@ -138,6 +139,7 @@ public class Example {
 | **updateEvaluationFormulaModel** | [**UpdateEvaluationFormulaModel**](UpdateEvaluationFormulaModel.md)|  | |
 | **reason** | **String**| The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. | [optional] |
 | **bypassApproval** | **Boolean**| Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. | [optional] |
+| **latestVersionId** | **UUID**| Optional. The version identifier of the last change made to the Feature Flag or Setting in the Environment. It can be used to make sure concurrent updates are not overwriting each other. If provided and the version identifier does not match the current version, the update will be rejected with a 409 Conflict response. The latest version id can be acquired from the &#x60;LastVersionId&#x60; property of the response models. | [optional] |
 | **X_CONFIGCAT_SDKKEY** | **String**| The ConfigCat SDK Key. (https://app.configcat.com/sdkkey) | [optional] |
 
 ### Return type
@@ -163,7 +165,7 @@ public class Example {
 
 <a id="updateSettingValueBySdkkeyV2"></a>
 # **updateSettingValueBySdkkeyV2**
-> SettingFormulaModel updateSettingValueBySdkkeyV2(settingKeyOrId, jsonPatchOperation, reason, bypassApproval, X_CONFIGCAT_SDKKEY)
+> SettingFormulaModel updateSettingValueBySdkkeyV2(settingKeyOrId, jsonPatchOperation, reason, bypassApproval, latestVersionId, X_CONFIGCAT_SDKKEY)
 
 Update value
 
@@ -194,9 +196,10 @@ public class Example {
     List<JsonPatchOperation> jsonPatchOperation = Arrays.asList(); // List<JsonPatchOperation> | 
     String reason = "reason_example"; // String | The reason note for the Audit Log if the Product's \"Config changes require a reason\" preference is turned on.
     Boolean bypassApproval = true; // Boolean | Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission.
+    UUID latestVersionId = UUID.randomUUID(); // UUID | Optional. The version identifier of the last change made to the Feature Flag or Setting in the Environment. It can be used to make sure concurrent updates are not overwriting each other. If provided and the version identifier does not match the current version, the update will be rejected with a 409 Conflict response. The latest version id can be acquired from the `LastVersionId` property of the response models.
     String X_CONFIGCAT_SDKKEY = "X_CONFIGCAT_SDKKEY_example"; // String | The ConfigCat SDK Key. (https://app.configcat.com/sdkkey)
     try {
-      SettingFormulaModel result = apiInstance.updateSettingValueBySdkkeyV2(settingKeyOrId, jsonPatchOperation, reason, bypassApproval, X_CONFIGCAT_SDKKEY);
+      SettingFormulaModel result = apiInstance.updateSettingValueBySdkkeyV2(settingKeyOrId, jsonPatchOperation, reason, bypassApproval, latestVersionId, X_CONFIGCAT_SDKKEY);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FeatureFlagSettingValuesUsingSdkKeyV2Api#updateSettingValueBySdkkeyV2");
@@ -217,6 +220,7 @@ public class Example {
 | **jsonPatchOperation** | [**List&lt;JsonPatchOperation&gt;**](JsonPatchOperation.md)|  | |
 | **reason** | **String**| The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. | [optional] |
 | **bypassApproval** | **Boolean**| Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. | [optional] |
+| **latestVersionId** | **UUID**| Optional. The version identifier of the last change made to the Feature Flag or Setting in the Environment. It can be used to make sure concurrent updates are not overwriting each other. If provided and the version identifier does not match the current version, the update will be rejected with a 409 Conflict response. The latest version id can be acquired from the &#x60;LastVersionId&#x60; property of the response models. | [optional] |
 | **X_CONFIGCAT_SDKKEY** | **String**| The ConfigCat SDK Key. (https://app.configcat.com/sdkkey) | [optional] |
 
 ### Return type

@@ -382,6 +382,7 @@ public class FeatureFlagSettingValuesV2Api {
      * @param updateEvaluationFormulasModel  (required)
      * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
      * @param bypassApproval Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. (optional)
+     * @param latestVersionId Optional. The version identifier of the last change made to the Feature Flag or Setting in the Environment. It can be used to make sure concurrent updates are not overwriting each other. If provided and the version identifier does not match the current version, the update will be rejected with a 409 Conflict response. The latest version id can be acquired from the &#x60;LastVersionId&#x60; property of the response models. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -395,7 +396,7 @@ public class FeatureFlagSettingValuesV2Api {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postSettingValuesV2Call(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull UpdateEvaluationFormulasModel updateEvaluationFormulasModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postSettingValuesV2Call(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull UpdateEvaluationFormulasModel updateEvaluationFormulasModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, @javax.annotation.Nullable UUID latestVersionId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -430,6 +431,10 @@ public class FeatureFlagSettingValuesV2Api {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("bypassApproval", bypassApproval));
         }
 
+        if (latestVersionId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("latestVersionId", latestVersionId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -453,7 +458,7 @@ public class FeatureFlagSettingValuesV2Api {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postSettingValuesV2ValidateBeforeCall(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull UpdateEvaluationFormulasModel updateEvaluationFormulasModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postSettingValuesV2ValidateBeforeCall(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull UpdateEvaluationFormulasModel updateEvaluationFormulasModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, @javax.annotation.Nullable UUID latestVersionId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'configId' is set
         if (configId == null) {
             throw new ApiException("Missing the required parameter 'configId' when calling postSettingValuesV2(Async)");
@@ -469,7 +474,7 @@ public class FeatureFlagSettingValuesV2Api {
             throw new ApiException("Missing the required parameter 'updateEvaluationFormulasModel' when calling postSettingValuesV2(Async)");
         }
 
-        return postSettingValuesV2Call(configId, environmentId, updateEvaluationFormulasModel, reason, bypassApproval, _callback);
+        return postSettingValuesV2Call(configId, environmentId, updateEvaluationFormulasModel, reason, bypassApproval, latestVersionId, _callback);
 
     }
 
@@ -481,6 +486,7 @@ public class FeatureFlagSettingValuesV2Api {
      * @param updateEvaluationFormulasModel  (required)
      * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
      * @param bypassApproval Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. (optional)
+     * @param latestVersionId Optional. The version identifier of the last change made to the Feature Flag or Setting in the Environment. It can be used to make sure concurrent updates are not overwriting each other. If provided and the version identifier does not match the current version, the update will be rejected with a 409 Conflict response. The latest version id can be acquired from the &#x60;LastVersionId&#x60; property of the response models. (optional)
      * @return ConfigSettingFormulasModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -493,8 +499,8 @@ public class FeatureFlagSettingValuesV2Api {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ConfigSettingFormulasModel postSettingValuesV2(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull UpdateEvaluationFormulasModel updateEvaluationFormulasModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval) throws ApiException {
-        ApiResponse<ConfigSettingFormulasModel> localVarResp = postSettingValuesV2WithHttpInfo(configId, environmentId, updateEvaluationFormulasModel, reason, bypassApproval);
+    public ConfigSettingFormulasModel postSettingValuesV2(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull UpdateEvaluationFormulasModel updateEvaluationFormulasModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, @javax.annotation.Nullable UUID latestVersionId) throws ApiException {
+        ApiResponse<ConfigSettingFormulasModel> localVarResp = postSettingValuesV2WithHttpInfo(configId, environmentId, updateEvaluationFormulasModel, reason, bypassApproval, latestVersionId);
         return localVarResp.getData();
     }
 
@@ -506,6 +512,7 @@ public class FeatureFlagSettingValuesV2Api {
      * @param updateEvaluationFormulasModel  (required)
      * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
      * @param bypassApproval Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. (optional)
+     * @param latestVersionId Optional. The version identifier of the last change made to the Feature Flag or Setting in the Environment. It can be used to make sure concurrent updates are not overwriting each other. If provided and the version identifier does not match the current version, the update will be rejected with a 409 Conflict response. The latest version id can be acquired from the &#x60;LastVersionId&#x60; property of the response models. (optional)
      * @return ApiResponse&lt;ConfigSettingFormulasModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -518,8 +525,8 @@ public class FeatureFlagSettingValuesV2Api {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ConfigSettingFormulasModel> postSettingValuesV2WithHttpInfo(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull UpdateEvaluationFormulasModel updateEvaluationFormulasModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval) throws ApiException {
-        okhttp3.Call localVarCall = postSettingValuesV2ValidateBeforeCall(configId, environmentId, updateEvaluationFormulasModel, reason, bypassApproval, null);
+    public ApiResponse<ConfigSettingFormulasModel> postSettingValuesV2WithHttpInfo(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull UpdateEvaluationFormulasModel updateEvaluationFormulasModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, @javax.annotation.Nullable UUID latestVersionId) throws ApiException {
+        okhttp3.Call localVarCall = postSettingValuesV2ValidateBeforeCall(configId, environmentId, updateEvaluationFormulasModel, reason, bypassApproval, latestVersionId, null);
         Type localVarReturnType = new TypeToken<ConfigSettingFormulasModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -532,6 +539,7 @@ public class FeatureFlagSettingValuesV2Api {
      * @param updateEvaluationFormulasModel  (required)
      * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
      * @param bypassApproval Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. (optional)
+     * @param latestVersionId Optional. The version identifier of the last change made to the Feature Flag or Setting in the Environment. It can be used to make sure concurrent updates are not overwriting each other. If provided and the version identifier does not match the current version, the update will be rejected with a 409 Conflict response. The latest version id can be acquired from the &#x60;LastVersionId&#x60; property of the response models. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -545,9 +553,9 @@ public class FeatureFlagSettingValuesV2Api {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postSettingValuesV2Async(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull UpdateEvaluationFormulasModel updateEvaluationFormulasModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, final ApiCallback<ConfigSettingFormulasModel> _callback) throws ApiException {
+    public okhttp3.Call postSettingValuesV2Async(@javax.annotation.Nonnull UUID configId, @javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull UpdateEvaluationFormulasModel updateEvaluationFormulasModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, @javax.annotation.Nullable UUID latestVersionId, final ApiCallback<ConfigSettingFormulasModel> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = postSettingValuesV2ValidateBeforeCall(configId, environmentId, updateEvaluationFormulasModel, reason, bypassApproval, _callback);
+        okhttp3.Call localVarCall = postSettingValuesV2ValidateBeforeCall(configId, environmentId, updateEvaluationFormulasModel, reason, bypassApproval, latestVersionId, _callback);
         Type localVarReturnType = new TypeToken<ConfigSettingFormulasModel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -559,6 +567,7 @@ public class FeatureFlagSettingValuesV2Api {
      * @param updateEvaluationFormulaModel  (required)
      * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
      * @param bypassApproval Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. (optional)
+     * @param latestVersionId Optional. The version identifier of the last change made to the Feature Flag or Setting in the Environment. It can be used to make sure concurrent updates are not overwriting each other. If provided and the version identifier does not match the current version, the update will be rejected with a 409 Conflict response. The latest version id can be acquired from the &#x60;LastVersionId&#x60; property of the response models. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -572,7 +581,7 @@ public class FeatureFlagSettingValuesV2Api {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call replaceSettingValueV2Call(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull UpdateEvaluationFormulaModel updateEvaluationFormulaModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call replaceSettingValueV2Call(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull UpdateEvaluationFormulaModel updateEvaluationFormulaModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, @javax.annotation.Nullable UUID latestVersionId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -607,6 +616,10 @@ public class FeatureFlagSettingValuesV2Api {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("bypassApproval", bypassApproval));
         }
 
+        if (latestVersionId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("latestVersionId", latestVersionId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -630,7 +643,7 @@ public class FeatureFlagSettingValuesV2Api {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call replaceSettingValueV2ValidateBeforeCall(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull UpdateEvaluationFormulaModel updateEvaluationFormulaModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call replaceSettingValueV2ValidateBeforeCall(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull UpdateEvaluationFormulaModel updateEvaluationFormulaModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, @javax.annotation.Nullable UUID latestVersionId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'environmentId' is set
         if (environmentId == null) {
             throw new ApiException("Missing the required parameter 'environmentId' when calling replaceSettingValueV2(Async)");
@@ -646,7 +659,7 @@ public class FeatureFlagSettingValuesV2Api {
             throw new ApiException("Missing the required parameter 'updateEvaluationFormulaModel' when calling replaceSettingValueV2(Async)");
         }
 
-        return replaceSettingValueV2Call(environmentId, settingId, updateEvaluationFormulaModel, reason, bypassApproval, _callback);
+        return replaceSettingValueV2Call(environmentId, settingId, updateEvaluationFormulaModel, reason, bypassApproval, latestVersionId, _callback);
 
     }
 
@@ -658,6 +671,7 @@ public class FeatureFlagSettingValuesV2Api {
      * @param updateEvaluationFormulaModel  (required)
      * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
      * @param bypassApproval Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. (optional)
+     * @param latestVersionId Optional. The version identifier of the last change made to the Feature Flag or Setting in the Environment. It can be used to make sure concurrent updates are not overwriting each other. If provided and the version identifier does not match the current version, the update will be rejected with a 409 Conflict response. The latest version id can be acquired from the &#x60;LastVersionId&#x60; property of the response models. (optional)
      * @return SettingFormulaModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -670,8 +684,8 @@ public class FeatureFlagSettingValuesV2Api {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public SettingFormulaModel replaceSettingValueV2(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull UpdateEvaluationFormulaModel updateEvaluationFormulaModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval) throws ApiException {
-        ApiResponse<SettingFormulaModel> localVarResp = replaceSettingValueV2WithHttpInfo(environmentId, settingId, updateEvaluationFormulaModel, reason, bypassApproval);
+    public SettingFormulaModel replaceSettingValueV2(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull UpdateEvaluationFormulaModel updateEvaluationFormulaModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, @javax.annotation.Nullable UUID latestVersionId) throws ApiException {
+        ApiResponse<SettingFormulaModel> localVarResp = replaceSettingValueV2WithHttpInfo(environmentId, settingId, updateEvaluationFormulaModel, reason, bypassApproval, latestVersionId);
         return localVarResp.getData();
     }
 
@@ -683,6 +697,7 @@ public class FeatureFlagSettingValuesV2Api {
      * @param updateEvaluationFormulaModel  (required)
      * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
      * @param bypassApproval Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. (optional)
+     * @param latestVersionId Optional. The version identifier of the last change made to the Feature Flag or Setting in the Environment. It can be used to make sure concurrent updates are not overwriting each other. If provided and the version identifier does not match the current version, the update will be rejected with a 409 Conflict response. The latest version id can be acquired from the &#x60;LastVersionId&#x60; property of the response models. (optional)
      * @return ApiResponse&lt;SettingFormulaModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -695,8 +710,8 @@ public class FeatureFlagSettingValuesV2Api {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SettingFormulaModel> replaceSettingValueV2WithHttpInfo(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull UpdateEvaluationFormulaModel updateEvaluationFormulaModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval) throws ApiException {
-        okhttp3.Call localVarCall = replaceSettingValueV2ValidateBeforeCall(environmentId, settingId, updateEvaluationFormulaModel, reason, bypassApproval, null);
+    public ApiResponse<SettingFormulaModel> replaceSettingValueV2WithHttpInfo(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull UpdateEvaluationFormulaModel updateEvaluationFormulaModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, @javax.annotation.Nullable UUID latestVersionId) throws ApiException {
+        okhttp3.Call localVarCall = replaceSettingValueV2ValidateBeforeCall(environmentId, settingId, updateEvaluationFormulaModel, reason, bypassApproval, latestVersionId, null);
         Type localVarReturnType = new TypeToken<SettingFormulaModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -709,6 +724,7 @@ public class FeatureFlagSettingValuesV2Api {
      * @param updateEvaluationFormulaModel  (required)
      * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
      * @param bypassApproval Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. (optional)
+     * @param latestVersionId Optional. The version identifier of the last change made to the Feature Flag or Setting in the Environment. It can be used to make sure concurrent updates are not overwriting each other. If provided and the version identifier does not match the current version, the update will be rejected with a 409 Conflict response. The latest version id can be acquired from the &#x60;LastVersionId&#x60; property of the response models. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -722,9 +738,9 @@ public class FeatureFlagSettingValuesV2Api {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call replaceSettingValueV2Async(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull UpdateEvaluationFormulaModel updateEvaluationFormulaModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, final ApiCallback<SettingFormulaModel> _callback) throws ApiException {
+    public okhttp3.Call replaceSettingValueV2Async(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull UpdateEvaluationFormulaModel updateEvaluationFormulaModel, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, @javax.annotation.Nullable UUID latestVersionId, final ApiCallback<SettingFormulaModel> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = replaceSettingValueV2ValidateBeforeCall(environmentId, settingId, updateEvaluationFormulaModel, reason, bypassApproval, _callback);
+        okhttp3.Call localVarCall = replaceSettingValueV2ValidateBeforeCall(environmentId, settingId, updateEvaluationFormulaModel, reason, bypassApproval, latestVersionId, _callback);
         Type localVarReturnType = new TypeToken<SettingFormulaModel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -736,6 +752,7 @@ public class FeatureFlagSettingValuesV2Api {
      * @param jsonPatchOperation  (required)
      * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
      * @param bypassApproval Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. (optional)
+     * @param latestVersionId Optional. The version identifier of the last change made to the Feature Flag or Setting in the Environment. It can be used to make sure concurrent updates are not overwriting each other. If provided and the version identifier does not match the current version, the update will be rejected with a 409 Conflict response. The latest version id can be acquired from the &#x60;LastVersionId&#x60; property of the response models. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -750,7 +767,7 @@ public class FeatureFlagSettingValuesV2Api {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateSettingValueV2Call(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateSettingValueV2Call(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, @javax.annotation.Nullable UUID latestVersionId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -785,6 +802,10 @@ public class FeatureFlagSettingValuesV2Api {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("bypassApproval", bypassApproval));
         }
 
+        if (latestVersionId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("latestVersionId", latestVersionId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -808,7 +829,7 @@ public class FeatureFlagSettingValuesV2Api {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateSettingValueV2ValidateBeforeCall(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateSettingValueV2ValidateBeforeCall(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, @javax.annotation.Nullable UUID latestVersionId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'environmentId' is set
         if (environmentId == null) {
             throw new ApiException("Missing the required parameter 'environmentId' when calling updateSettingValueV2(Async)");
@@ -824,7 +845,7 @@ public class FeatureFlagSettingValuesV2Api {
             throw new ApiException("Missing the required parameter 'jsonPatchOperation' when calling updateSettingValueV2(Async)");
         }
 
-        return updateSettingValueV2Call(environmentId, settingId, jsonPatchOperation, reason, bypassApproval, _callback);
+        return updateSettingValueV2Call(environmentId, settingId, jsonPatchOperation, reason, bypassApproval, latestVersionId, _callback);
 
     }
 
@@ -836,6 +857,7 @@ public class FeatureFlagSettingValuesV2Api {
      * @param jsonPatchOperation  (required)
      * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
      * @param bypassApproval Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. (optional)
+     * @param latestVersionId Optional. The version identifier of the last change made to the Feature Flag or Setting in the Environment. It can be used to make sure concurrent updates are not overwriting each other. If provided and the version identifier does not match the current version, the update will be rejected with a 409 Conflict response. The latest version id can be acquired from the &#x60;LastVersionId&#x60; property of the response models. (optional)
      * @return SettingFormulaModel
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -849,8 +871,8 @@ public class FeatureFlagSettingValuesV2Api {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public SettingFormulaModel updateSettingValueV2(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval) throws ApiException {
-        ApiResponse<SettingFormulaModel> localVarResp = updateSettingValueV2WithHttpInfo(environmentId, settingId, jsonPatchOperation, reason, bypassApproval);
+    public SettingFormulaModel updateSettingValueV2(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, @javax.annotation.Nullable UUID latestVersionId) throws ApiException {
+        ApiResponse<SettingFormulaModel> localVarResp = updateSettingValueV2WithHttpInfo(environmentId, settingId, jsonPatchOperation, reason, bypassApproval, latestVersionId);
         return localVarResp.getData();
     }
 
@@ -862,6 +884,7 @@ public class FeatureFlagSettingValuesV2Api {
      * @param jsonPatchOperation  (required)
      * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
      * @param bypassApproval Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. (optional)
+     * @param latestVersionId Optional. The version identifier of the last change made to the Feature Flag or Setting in the Environment. It can be used to make sure concurrent updates are not overwriting each other. If provided and the version identifier does not match the current version, the update will be rejected with a 409 Conflict response. The latest version id can be acquired from the &#x60;LastVersionId&#x60; property of the response models. (optional)
      * @return ApiResponse&lt;SettingFormulaModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -875,8 +898,8 @@ public class FeatureFlagSettingValuesV2Api {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<SettingFormulaModel> updateSettingValueV2WithHttpInfo(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval) throws ApiException {
-        okhttp3.Call localVarCall = updateSettingValueV2ValidateBeforeCall(environmentId, settingId, jsonPatchOperation, reason, bypassApproval, null);
+    public ApiResponse<SettingFormulaModel> updateSettingValueV2WithHttpInfo(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, @javax.annotation.Nullable UUID latestVersionId) throws ApiException {
+        okhttp3.Call localVarCall = updateSettingValueV2ValidateBeforeCall(environmentId, settingId, jsonPatchOperation, reason, bypassApproval, latestVersionId, null);
         Type localVarReturnType = new TypeToken<SettingFormulaModel>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -889,6 +912,7 @@ public class FeatureFlagSettingValuesV2Api {
      * @param jsonPatchOperation  (required)
      * @param reason The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. (optional)
      * @param bypassApproval Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. (optional)
+     * @param latestVersionId Optional. The version identifier of the last change made to the Feature Flag or Setting in the Environment. It can be used to make sure concurrent updates are not overwriting each other. If provided and the version identifier does not match the current version, the update will be rejected with a 409 Conflict response. The latest version id can be acquired from the &#x60;LastVersionId&#x60; property of the response models. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -903,9 +927,9 @@ public class FeatureFlagSettingValuesV2Api {
         <tr><td> 429 </td><td> Too many requests. In case of the request rate exceeds the rate limits. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateSettingValueV2Async(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, final ApiCallback<SettingFormulaModel> _callback) throws ApiException {
+    public okhttp3.Call updateSettingValueV2Async(@javax.annotation.Nonnull UUID environmentId, @javax.annotation.Nonnull Integer settingId, @javax.annotation.Nonnull List<JsonPatchOperation> jsonPatchOperation, @javax.annotation.Nullable String reason, @javax.annotation.Nullable Boolean bypassApproval, @javax.annotation.Nullable UUID latestVersionId, final ApiCallback<SettingFormulaModel> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateSettingValueV2ValidateBeforeCall(environmentId, settingId, jsonPatchOperation, reason, bypassApproval, _callback);
+        okhttp3.Call localVarCall = updateSettingValueV2ValidateBeforeCall(environmentId, settingId, jsonPatchOperation, reason, bypassApproval, latestVersionId, _callback);
         Type localVarReturnType = new TypeToken<SettingFormulaModel>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

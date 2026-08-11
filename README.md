@@ -2,7 +2,7 @@
 
 ConfigCat Public Management API
 - API version: v1
-  - Build date: 2026-06-30T14:53:36.301118746Z[Etc/UTC]
+  - Build date: 2026-08-05T13:17:19.774498623Z[Etc/UTC]
   - Generator version: 7.23.0
 
 The purpose of this API is to access the ConfigCat platform programmatically.
@@ -167,6 +167,22 @@ Class | Method | HTTP request | Description
 *AuditLogsApi* | [**getDeletedSettings**](docs/AuditLogsApi.md#getDeletedSettings) | **GET** /v1/configs/{configId}/deleted-settings | List Deleted Settings
 *AuditLogsApi* | [**getOrganizationAuditlogs**](docs/AuditLogsApi.md#getOrganizationAuditlogs) | **GET** /v1/organizations/{organizationId}/auditlogs | List Audit log items for Organization
 *AuditLogsApi* | [**getOrganizationAuditlogsV2**](docs/AuditLogsApi.md#getOrganizationAuditlogsV2) | **GET** /v2/organizations/{organizationId}/auditlogs | List Audit log items for Organization (V2)
+*ChangeRequestsApprovalFlowScheduledChangesBetaApi* | [**addChangeRequestComment**](docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md#addChangeRequestComment) | **POST** /v2/change-requests/{changeRequestId}/comments | Add Comment
+*ChangeRequestsApprovalFlowScheduledChangesBetaApi* | [**applyChangeRequest**](docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md#applyChangeRequest) | **POST** /v2/change-requests/{changeRequestId}/apply | Apply Change Request
+*ChangeRequestsApprovalFlowScheduledChangesBetaApi* | [**approveChangeRequest**](docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md#approveChangeRequest) | **POST** /v2/change-requests/{changeRequestId}/approve | Approve Change Request
+*ChangeRequestsApprovalFlowScheduledChangesBetaApi* | [**claimChangeRequestOwnership**](docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md#claimChangeRequestOwnership) | **POST** /v2/change-requests/{changeRequestId}/claim-ownership | Claim Ownership
+*ChangeRequestsApprovalFlowScheduledChangesBetaApi* | [**closeChangeRequest**](docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md#closeChangeRequest) | **POST** /v2/change-requests/{changeRequestId}/close | Close Change Request
+*ChangeRequestsApprovalFlowScheduledChangesBetaApi* | [**createChangeRequest**](docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md#createChangeRequest) | **POST** /v2/configs/{configId}/environments/{environmentId}/change-requests | Create Change Request
+*ChangeRequestsApprovalFlowScheduledChangesBetaApi* | [**deleteChangeRequestComment**](docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md#deleteChangeRequestComment) | **DELETE** /v2/change-request-comments/{commentId} | Delete Comment
+*ChangeRequestsApprovalFlowScheduledChangesBetaApi* | [**deleteChangeRequestProposedChange**](docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md#deleteChangeRequestProposedChange) | **DELETE** /v2/change-requests/{changeRequestId}/proposed-changes/{settingId} | Delete Setting from Change Request
+*ChangeRequestsApprovalFlowScheduledChangesBetaApi* | [**getChangeRequest**](docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md#getChangeRequest) | **GET** /v2/change-requests/{changeRequestId} | Get Change Request
+*ChangeRequestsApprovalFlowScheduledChangesBetaApi* | [**getChangeRequestProposedChanges**](docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md#getChangeRequestProposedChanges) | **GET** /v2/change-requests/{changeRequestId}/proposed-changes | Get Settings included in Change Request
+*ChangeRequestsApprovalFlowScheduledChangesBetaApi* | [**getChangeRequests**](docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md#getChangeRequests) | **GET** /v2/products/{productId}/change-requests | List Change Requests
+*ChangeRequestsApprovalFlowScheduledChangesBetaApi* | [**removeChangeRequestApproval**](docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md#removeChangeRequestApproval) | **POST** /v2/change-requests/{changeRequestId}/remove-approval | Remove Approval
+*ChangeRequestsApprovalFlowScheduledChangesBetaApi* | [**resolveChangeRequestSettingConflicts**](docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md#resolveChangeRequestSettingConflicts) | **POST** /v2/change-requests/{changeRequestId}/proposed-changes/{settingId}/resolve-conflicts | Resolve Setting Conflicts
+*ChangeRequestsApprovalFlowScheduledChangesBetaApi* | [**updateChangeRequest**](docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md#updateChangeRequest) | **PUT** /v2/change-requests/{changeRequestId} | Update Change Request
+*ChangeRequestsApprovalFlowScheduledChangesBetaApi* | [**updateChangeRequestComment**](docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md#updateChangeRequestComment) | **PUT** /v2/change-request-comments/{commentId} | Update Comment
+*ChangeRequestsApprovalFlowScheduledChangesBetaApi* | [**updateChangeRequestProposedChanges**](docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md#updateChangeRequestProposedChanges) | **PUT** /v2/change-requests/{changeRequestId}/proposed-changes | Update Settings included in Change Request
 *CodeReferencesApi* | [**v1CodeReferencesDeleteReportsPost**](docs/CodeReferencesApi.md#v1CodeReferencesDeleteReportsPost) | **POST** /v1/code-references/delete-reports | Delete Reference reports
 *CodeReferencesApi* | [**v1CodeReferencesPost**](docs/CodeReferencesApi.md#v1CodeReferencesPost) | **POST** /v1/code-references | Upload References
 *CodeReferencesApi* | [**v1SettingsSettingIdCodeReferencesGet**](docs/CodeReferencesApi.md#v1SettingsSettingIdCodeReferencesGet) | **GET** /v1/settings/{settingId}/code-references | Get References for Feature Flag or Setting
@@ -274,18 +290,39 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [AccessType](docs/AccessType.md)
+ - [AddChangeRequestCommentModel](docs/AddChangeRequestCommentModel.md)
  - [AddOrUpdateIntegrationLinkModel](docs/AddOrUpdateIntegrationLinkModel.md)
  - [AddOrUpdateJiraIntegrationLinkModel](docs/AddOrUpdateJiraIntegrationLinkModel.md)
  - [ApprovalPermissionType](docs/ApprovalPermissionType.md)
  - [ApproveRequiredEnvironmentModel](docs/ApproveRequiredEnvironmentModel.md)
  - [AuditLogItemModel](docs/AuditLogItemModel.md)
  - [AuditLogItemModelPagedList](docs/AuditLogItemModelPagedList.md)
+ - [AuditLogSettingValueV2EvaluationFormula](docs/AuditLogSettingValueV2EvaluationFormula.md)
+ - [AuditLogSettingValueV2EvaluationFormulaConditionModel](docs/AuditLogSettingValueV2EvaluationFormulaConditionModel.md)
+ - [AuditLogSettingValueV2EvaluationFormulaPercentageOptionModel](docs/AuditLogSettingValueV2EvaluationFormulaPercentageOptionModel.md)
+ - [AuditLogSettingValueV2EvaluationFormulaTargetingRuleModel](docs/AuditLogSettingValueV2EvaluationFormulaTargetingRuleModel.md)
  - [AuditLogType](docs/AuditLogType.md)
+ - [ChangeRequestActivityModel](docs/ChangeRequestActivityModel.md)
+ - [ChangeRequestActivityType](docs/ChangeRequestActivityType.md)
+ - [ChangeRequestApprovalModel](docs/ChangeRequestApprovalModel.md)
+ - [ChangeRequestApproveRequiredFilter](docs/ChangeRequestApproveRequiredFilter.md)
+ - [ChangeRequestCommentModel](docs/ChangeRequestCommentModel.md)
+ - [ChangeRequestIssueModel](docs/ChangeRequestIssueModel.md)
+ - [ChangeRequestIssueType](docs/ChangeRequestIssueType.md)
+ - [ChangeRequestModel](docs/ChangeRequestModel.md)
+ - [ChangeRequestProposedChangeModel](docs/ChangeRequestProposedChangeModel.md)
+ - [ChangeRequestProposedChangesModel](docs/ChangeRequestProposedChangesModel.md)
+ - [ChangeRequestScheduleFilter](docs/ChangeRequestScheduleFilter.md)
+ - [ChangeRequestStatus](docs/ChangeRequestStatus.md)
+ - [ChangeRequestSummaryModel](docs/ChangeRequestSummaryModel.md)
+ - [ChangeRequestSummaryModelPagedList](docs/ChangeRequestSummaryModelPagedList.md)
+ - [ChangeRequestsModel](docs/ChangeRequestsModel.md)
  - [CodeReferenceModel](docs/CodeReferenceModel.md)
  - [CodeReferenceRequest](docs/CodeReferenceRequest.md)
  - [ComparisonValueListModel](docs/ComparisonValueListModel.md)
  - [ComparisonValueModel](docs/ComparisonValueModel.md)
  - [ConditionModel](docs/ConditionModel.md)
+ - [ConditionType](docs/ConditionType.md)
  - [ConfigModel](docs/ConfigModel.md)
  - [ConfigSettingFormulaModel](docs/ConfigSettingFormulaModel.md)
  - [ConfigSettingFormulasModel](docs/ConfigSettingFormulasModel.md)
@@ -293,6 +330,8 @@ Class | Method | HTTP request | Description
  - [ConfigSettingValuesModel](docs/ConfigSettingValuesModel.md)
  - [ConnectRequest](docs/ConnectRequest.md)
  - [ConnectionPreferences](docs/ConnectionPreferences.md)
+ - [CreateChangeRequestModel](docs/CreateChangeRequestModel.md)
+ - [CreateChangeRequestProposedChangeModel](docs/CreateChangeRequestProposedChangeModel.md)
  - [CreateConfigRequest](docs/CreateConfigRequest.md)
  - [CreateEnvironmentModel](docs/CreateEnvironmentModel.md)
  - [CreateIntegrationModel](docs/CreateIntegrationModel.md)
@@ -332,6 +371,7 @@ Class | Method | HTTP request | Description
  - [MeModel](docs/MeModel.md)
  - [MemberModel](docs/MemberModel.md)
  - [ModifyIntegrationRequest](docs/ModifyIntegrationRequest.md)
+ - [NeedsAttentionFilter](docs/NeedsAttentionFilter.md)
  - [OperationType](docs/OperationType.md)
  - [OrganizationAdminModel](docs/OrganizationAdminModel.md)
  - [OrganizationInvitationModel](docs/OrganizationInvitationModel.md)
@@ -373,6 +413,7 @@ Class | Method | HTTP request | Description
  - [ReferenceLinesModel](docs/ReferenceLinesModel.md)
  - [ReferenceLinesRequest](docs/ReferenceLinesRequest.md)
  - [ReplaceSettingModel](docs/ReplaceSettingModel.md)
+ - [ResolveChangeRequestSettingConflictsModel](docs/ResolveChangeRequestSettingConflictsModel.md)
  - [RolloutPercentageItemModel](docs/RolloutPercentageItemModel.md)
  - [RolloutRuleComparator](docs/RolloutRuleComparator.md)
  - [RolloutRuleModel](docs/RolloutRuleModel.md)
@@ -401,6 +442,9 @@ Class | Method | HTTP request | Description
  - [TagModel](docs/TagModel.md)
  - [TargetingRuleModel](docs/TargetingRuleModel.md)
  - [UpdateApproveRequiredEnvironmentModel](docs/UpdateApproveRequiredEnvironmentModel.md)
+ - [UpdateChangeRequestCommentModel](docs/UpdateChangeRequestCommentModel.md)
+ - [UpdateChangeRequestModel](docs/UpdateChangeRequestModel.md)
+ - [UpdateChangeRequestProposedChangesModel](docs/UpdateChangeRequestProposedChangesModel.md)
  - [UpdateComparisonValueListModel](docs/UpdateComparisonValueListModel.md)
  - [UpdateComparisonValueModel](docs/UpdateComparisonValueModel.md)
  - [UpdateConditionModel](docs/UpdateConditionModel.md)
@@ -408,6 +452,7 @@ Class | Method | HTTP request | Description
  - [UpdateEnvironmentModel](docs/UpdateEnvironmentModel.md)
  - [UpdateEvaluationFormulaModel](docs/UpdateEvaluationFormulaModel.md)
  - [UpdateEvaluationFormulaWithIdModel](docs/UpdateEvaluationFormulaWithIdModel.md)
+ - [UpdateEvaluationFormulaWithLatestVersionModel](docs/UpdateEvaluationFormulaWithLatestVersionModel.md)
  - [UpdateEvaluationFormulasModel](docs/UpdateEvaluationFormulasModel.md)
  - [UpdateMemberPermissionsRequest](docs/UpdateMemberPermissionsRequest.md)
  - [UpdatePercentageOptionModel](docs/UpdatePercentageOptionModel.md)

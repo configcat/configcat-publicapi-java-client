@@ -33,7 +33,7 @@ public enum EnvironmentApprovalPermissionType {
   
   CAN_APPROVE_OTHERS("canApproveOthers"),
   
-  CAN_BYPASS_APPROVES("canBypassApproves");
+  CAN_BYPASS_APPROVAL("canBypassApproval");
 
   private String value;
 

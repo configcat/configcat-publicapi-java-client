@@ -159,7 +159,7 @@ public class Example {
 
 <a id="postSettingValuesV2"></a>
 # **postSettingValuesV2**
-> ConfigSettingFormulasModel postSettingValuesV2(configId, environmentId, updateEvaluationFormulasModel, reason, bypassApproval)
+> ConfigSettingFormulasModel postSettingValuesV2(configId, environmentId, updateEvaluationFormulasModel, reason, bypassApproval, latestVersionId)
 
 Post values
 
@@ -191,8 +191,9 @@ public class Example {
     UpdateEvaluationFormulasModel updateEvaluationFormulasModel = new UpdateEvaluationFormulasModel(); // UpdateEvaluationFormulasModel | 
     String reason = "reason_example"; // String | The reason note for the Audit Log if the Product's \"Config changes require a reason\" preference is turned on.
     Boolean bypassApproval = true; // Boolean | Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission.
+    UUID latestVersionId = UUID.randomUUID(); // UUID | Optional. The version identifier of the last change made to the Feature Flag or Setting in the Environment. It can be used to make sure concurrent updates are not overwriting each other. If provided and the version identifier does not match the current version, the update will be rejected with a 409 Conflict response. The latest version id can be acquired from the `LastVersionId` property of the response models.
     try {
-      ConfigSettingFormulasModel result = apiInstance.postSettingValuesV2(configId, environmentId, updateEvaluationFormulasModel, reason, bypassApproval);
+      ConfigSettingFormulasModel result = apiInstance.postSettingValuesV2(configId, environmentId, updateEvaluationFormulasModel, reason, bypassApproval, latestVersionId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FeatureFlagSettingValuesV2Api#postSettingValuesV2");
@@ -214,6 +215,7 @@ public class Example {
 | **updateEvaluationFormulasModel** | [**UpdateEvaluationFormulasModel**](UpdateEvaluationFormulasModel.md)|  | |
 | **reason** | **String**| The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. | [optional] |
 | **bypassApproval** | **Boolean**| Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. | [optional] |
+| **latestVersionId** | **UUID**| Optional. The version identifier of the last change made to the Feature Flag or Setting in the Environment. It can be used to make sure concurrent updates are not overwriting each other. If provided and the version identifier does not match the current version, the update will be rejected with a 409 Conflict response. The latest version id can be acquired from the &#x60;LastVersionId&#x60; property of the response models. | [optional] |
 
 ### Return type
 
@@ -238,7 +240,7 @@ public class Example {
 
 <a id="replaceSettingValueV2"></a>
 # **replaceSettingValueV2**
-> SettingFormulaModel replaceSettingValueV2(environmentId, settingId, updateEvaluationFormulaModel, reason, bypassApproval)
+> SettingFormulaModel replaceSettingValueV2(environmentId, settingId, updateEvaluationFormulaModel, reason, bypassApproval, latestVersionId)
 
 Replace value
 
@@ -270,8 +272,9 @@ public class Example {
     UpdateEvaluationFormulaModel updateEvaluationFormulaModel = new UpdateEvaluationFormulaModel(); // UpdateEvaluationFormulaModel | 
     String reason = "reason_example"; // String | The reason note for the Audit Log if the Product's \"Config changes require a reason\" preference is turned on.
     Boolean bypassApproval = true; // Boolean | Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission.
+    UUID latestVersionId = UUID.randomUUID(); // UUID | Optional. The version identifier of the last change made to the Feature Flag or Setting in the Environment. It can be used to make sure concurrent updates are not overwriting each other. If provided and the version identifier does not match the current version, the update will be rejected with a 409 Conflict response. The latest version id can be acquired from the `LastVersionId` property of the response models.
     try {
-      SettingFormulaModel result = apiInstance.replaceSettingValueV2(environmentId, settingId, updateEvaluationFormulaModel, reason, bypassApproval);
+      SettingFormulaModel result = apiInstance.replaceSettingValueV2(environmentId, settingId, updateEvaluationFormulaModel, reason, bypassApproval, latestVersionId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FeatureFlagSettingValuesV2Api#replaceSettingValueV2");
@@ -293,6 +296,7 @@ public class Example {
 | **updateEvaluationFormulaModel** | [**UpdateEvaluationFormulaModel**](UpdateEvaluationFormulaModel.md)|  | |
 | **reason** | **String**| The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. | [optional] |
 | **bypassApproval** | **Boolean**| Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. | [optional] |
+| **latestVersionId** | **UUID**| Optional. The version identifier of the last change made to the Feature Flag or Setting in the Environment. It can be used to make sure concurrent updates are not overwriting each other. If provided and the version identifier does not match the current version, the update will be rejected with a 409 Conflict response. The latest version id can be acquired from the &#x60;LastVersionId&#x60; property of the response models. | [optional] |
 
 ### Return type
 
@@ -317,7 +321,7 @@ public class Example {
 
 <a id="updateSettingValueV2"></a>
 # **updateSettingValueV2**
-> SettingFormulaModel updateSettingValueV2(environmentId, settingId, jsonPatchOperation, reason, bypassApproval)
+> SettingFormulaModel updateSettingValueV2(environmentId, settingId, jsonPatchOperation, reason, bypassApproval, latestVersionId)
 
 Update value
 
@@ -349,8 +353,9 @@ public class Example {
     List<JsonPatchOperation> jsonPatchOperation = Arrays.asList(); // List<JsonPatchOperation> | 
     String reason = "reason_example"; // String | The reason note for the Audit Log if the Product's \"Config changes require a reason\" preference is turned on.
     Boolean bypassApproval = true; // Boolean | Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission.
+    UUID latestVersionId = UUID.randomUUID(); // UUID | Optional. The version identifier of the last change made to the Feature Flag or Setting in the Environment. It can be used to make sure concurrent updates are not overwriting each other. If provided and the version identifier does not match the current version, the update will be rejected with a 409 Conflict response. The latest version id can be acquired from the `LastVersionId` property of the response models.
     try {
-      SettingFormulaModel result = apiInstance.updateSettingValueV2(environmentId, settingId, jsonPatchOperation, reason, bypassApproval);
+      SettingFormulaModel result = apiInstance.updateSettingValueV2(environmentId, settingId, jsonPatchOperation, reason, bypassApproval, latestVersionId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling FeatureFlagSettingValuesV2Api#updateSettingValueV2");
@@ -372,6 +377,7 @@ public class Example {
 | **jsonPatchOperation** | [**List&lt;JsonPatchOperation&gt;**](JsonPatchOperation.md)|  | |
 | **reason** | **String**| The reason note for the Audit Log if the Product&#39;s \&quot;Config changes require a reason\&quot; preference is turned on. | [optional] |
 | **bypassApproval** | **Boolean**| Whether to bypass the approval process and directly apply the change. This is only applicable for users with bypass approval permission. | [optional] |
+| **latestVersionId** | **UUID**| Optional. The version identifier of the last change made to the Feature Flag or Setting in the Environment. It can be used to make sure concurrent updates are not overwriting each other. If provided and the version identifier does not match the current version, the update will be rejected with a 409 Conflict response. The latest version id can be acquired from the &#x60;LastVersionId&#x60; property of the response models. | [optional] |
 
 ### Return type
 
