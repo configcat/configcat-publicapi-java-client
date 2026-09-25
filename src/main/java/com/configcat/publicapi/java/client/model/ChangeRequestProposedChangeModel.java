@@ -50,7 +50,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * Model representing proposed changes to a Setting included in a Change Request.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-05T13:17:19.774498623Z[Etc/UTC]", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-25T11:19:08.631426472Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class ChangeRequestProposedChangeModel {
   public static final String SERIALIZED_NAME_SETTING_ID = "settingId";
   @SerializedName(SERIALIZED_NAME_SETTING_ID)
@@ -76,6 +76,11 @@ public class ChangeRequestProposedChangeModel {
   @SerializedName(SERIALIZED_NAME_SETTING_TYPE)
   @javax.annotation.Nonnull
   private SettingType settingType;
+
+  public static final String SERIALIZED_NAME_IS_JSON = "isJson";
+  @SerializedName(SERIALIZED_NAME_IS_JSON)
+  @javax.annotation.Nonnull
+  private Boolean isJson;
 
   public static final String SERIALIZED_NAME_HAS_CONFLICT = "hasConflict";
   @SerializedName(SERIALIZED_NAME_HAS_CONFLICT)
@@ -187,6 +192,25 @@ public class ChangeRequestProposedChangeModel {
 
   public void setSettingType(@javax.annotation.Nonnull SettingType settingType) {
     this.settingType = settingType;
+  }
+
+
+  public ChangeRequestProposedChangeModel isJson(@javax.annotation.Nonnull Boolean isJson) {
+    this.isJson = isJson;
+    return this;
+  }
+
+  /**
+   * Indicates whether this setting should validate string values as JSON values.
+   * @return isJson
+   */
+  @javax.annotation.Nonnull
+  public Boolean getIsJson() {
+    return isJson;
+  }
+
+  public void setIsJson(@javax.annotation.Nonnull Boolean isJson) {
+    this.isJson = isJson;
   }
 
 
@@ -306,6 +330,7 @@ public class ChangeRequestProposedChangeModel {
         Objects.equals(this.settingName, changeRequestProposedChangeModel.settingName) &&
         Objects.equals(this.settingHint, changeRequestProposedChangeModel.settingHint) &&
         Objects.equals(this.settingType, changeRequestProposedChangeModel.settingType) &&
+        Objects.equals(this.isJson, changeRequestProposedChangeModel.isJson) &&
         Objects.equals(this.hasConflict, changeRequestProposedChangeModel.hasConflict) &&
         Objects.equals(this.originalEvaluationFormula, changeRequestProposedChangeModel.originalEvaluationFormula) &&
         Objects.equals(this.proposedEvaluationFormula, changeRequestProposedChangeModel.proposedEvaluationFormula)&&
@@ -314,7 +339,7 @@ public class ChangeRequestProposedChangeModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(settingId, settingKey, settingName, settingHint, settingType, hasConflict, originalEvaluationFormula, proposedEvaluationFormula, additionalProperties);
+    return Objects.hash(settingId, settingKey, settingName, settingHint, settingType, isJson, hasConflict, originalEvaluationFormula, proposedEvaluationFormula, additionalProperties);
   }
 
   @Override
@@ -326,6 +351,7 @@ public class ChangeRequestProposedChangeModel {
     sb.append("    settingName: ").append(toIndentedString(settingName)).append("\n");
     sb.append("    settingHint: ").append(toIndentedString(settingHint)).append("\n");
     sb.append("    settingType: ").append(toIndentedString(settingType)).append("\n");
+    sb.append("    isJson: ").append(toIndentedString(isJson)).append("\n");
     sb.append("    hasConflict: ").append(toIndentedString(hasConflict)).append("\n");
     sb.append("    originalEvaluationFormula: ").append(toIndentedString(originalEvaluationFormula)).append("\n");
     sb.append("    proposedEvaluationFormula: ").append(toIndentedString(proposedEvaluationFormula)).append("\n");
@@ -348,10 +374,10 @@ public class ChangeRequestProposedChangeModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("settingId", "settingKey", "settingName", "settingHint", "settingType", "hasConflict", "originalEvaluationFormula", "proposedEvaluationFormula"));
+    openapiFields = new HashSet<String>(Arrays.asList("settingId", "settingKey", "settingName", "settingHint", "settingType", "isJson", "hasConflict", "originalEvaluationFormula", "proposedEvaluationFormula"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("settingId", "settingKey", "settingName", "settingHint", "settingType", "hasConflict", "originalEvaluationFormula", "proposedEvaluationFormula"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("settingId", "settingKey", "settingName", "settingHint", "settingType", "isJson", "hasConflict", "originalEvaluationFormula", "proposedEvaluationFormula"));
   }
 
   /**

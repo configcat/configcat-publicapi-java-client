@@ -13,6 +13,7 @@ Model representing proposed changes to a Setting included in a Change Request.
 |**settingName** | **String** | Display name of the Setting. |  |
 |**settingHint** | **String** | Optional hint or description for the Setting. |  |
 |**settingType** | **SettingType** |  |  |
+|**isJson** | **Boolean** | Indicates whether this setting should validate string values as JSON values. |  |
 |**hasConflict** | **Boolean** | Indicates whether the proposed changes to the Setting are in conflict with concurrently published changes. |  |
 |**originalEvaluationFormula** | [**AuditLogSettingValueV2EvaluationFormula**](AuditLogSettingValueV2EvaluationFormula.md) |  |  |
 |**proposedEvaluationFormula** | [**AuditLogSettingValueV2EvaluationFormula**](AuditLogSettingValueV2EvaluationFormula.md) |  |  |

@@ -31,6 +31,7 @@ Summary of a Change Request with essential information for list views.
 |**closedByUserId** | **String** | Identifier of the user who closed the Change Request. |  |
 |**closedByUserEmail** | **String** | Email of the user who closed the Change Request. |  |
 |**closedByUserFullName** | **String** | Full name of the user who closed the Change Request. |  |
+|**sendNotificationsToApprovers** | **Boolean** | When true, email notifications are sent to team members with approval permission about this Change Request. |  |
 
 
 

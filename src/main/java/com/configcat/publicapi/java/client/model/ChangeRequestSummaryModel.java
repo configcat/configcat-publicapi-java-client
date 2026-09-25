@@ -52,7 +52,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * Summary of a Change Request with essential information for list views.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-05T13:17:19.774498623Z[Etc/UTC]", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-25T11:19:08.631426472Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class ChangeRequestSummaryModel {
   public static final String SERIALIZED_NAME_CHANGE_REQUEST_ID = "changeRequestId";
   @SerializedName(SERIALIZED_NAME_CHANGE_REQUEST_ID)
@@ -168,6 +168,11 @@ public class ChangeRequestSummaryModel {
   @SerializedName(SERIALIZED_NAME_CLOSED_BY_USER_FULL_NAME)
   @javax.annotation.Nullable
   private String closedByUserFullName;
+
+  public static final String SERIALIZED_NAME_SEND_NOTIFICATIONS_TO_APPROVERS = "sendNotificationsToApprovers";
+  @SerializedName(SERIALIZED_NAME_SEND_NOTIFICATIONS_TO_APPROVERS)
+  @javax.annotation.Nonnull
+  private Boolean sendNotificationsToApprovers;
 
   public ChangeRequestSummaryModel() {
   }
@@ -616,6 +621,25 @@ public class ChangeRequestSummaryModel {
     this.closedByUserFullName = closedByUserFullName;
   }
 
+
+  public ChangeRequestSummaryModel sendNotificationsToApprovers(@javax.annotation.Nonnull Boolean sendNotificationsToApprovers) {
+    this.sendNotificationsToApprovers = sendNotificationsToApprovers;
+    return this;
+  }
+
+  /**
+   * When true, email notifications are sent to team members with approval permission about this Change Request.
+   * @return sendNotificationsToApprovers
+   */
+  @javax.annotation.Nonnull
+  public Boolean getSendNotificationsToApprovers() {
+    return sendNotificationsToApprovers;
+  }
+
+  public void setSendNotificationsToApprovers(@javax.annotation.Nonnull Boolean sendNotificationsToApprovers) {
+    this.sendNotificationsToApprovers = sendNotificationsToApprovers;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -693,13 +717,14 @@ public class ChangeRequestSummaryModel {
         Objects.equals(this.closedAt, changeRequestSummaryModel.closedAt) &&
         Objects.equals(this.closedByUserId, changeRequestSummaryModel.closedByUserId) &&
         Objects.equals(this.closedByUserEmail, changeRequestSummaryModel.closedByUserEmail) &&
-        Objects.equals(this.closedByUserFullName, changeRequestSummaryModel.closedByUserFullName)&&
+        Objects.equals(this.closedByUserFullName, changeRequestSummaryModel.closedByUserFullName) &&
+        Objects.equals(this.sendNotificationsToApprovers, changeRequestSummaryModel.sendNotificationsToApprovers)&&
         Objects.equals(this.additionalProperties, changeRequestSummaryModel.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(changeRequestId, changeRequestStatus, needsAttention, title, reason, applyAt, createdAt, creatorUserEmail, creatorUserFullName, creatorUserId, affectedSettingKeys, commentCount, approved, conflictCount, bypassApproval, appliedAt, appliedByUserId, appliedByUserEmail, appliedByUserFullName, closedAt, closedByUserId, closedByUserEmail, closedByUserFullName, additionalProperties);
+    return Objects.hash(changeRequestId, changeRequestStatus, needsAttention, title, reason, applyAt, createdAt, creatorUserEmail, creatorUserFullName, creatorUserId, affectedSettingKeys, commentCount, approved, conflictCount, bypassApproval, appliedAt, appliedByUserId, appliedByUserEmail, appliedByUserFullName, closedAt, closedByUserId, closedByUserEmail, closedByUserFullName, sendNotificationsToApprovers, additionalProperties);
   }
 
   @Override
@@ -729,6 +754,7 @@ public class ChangeRequestSummaryModel {
     sb.append("    closedByUserId: ").append(toIndentedString(closedByUserId)).append("\n");
     sb.append("    closedByUserEmail: ").append(toIndentedString(closedByUserEmail)).append("\n");
     sb.append("    closedByUserFullName: ").append(toIndentedString(closedByUserFullName)).append("\n");
+    sb.append("    sendNotificationsToApprovers: ").append(toIndentedString(sendNotificationsToApprovers)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -748,10 +774,10 @@ public class ChangeRequestSummaryModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("changeRequestId", "changeRequestStatus", "needsAttention", "title", "reason", "applyAt", "createdAt", "creatorUserEmail", "creatorUserFullName", "creatorUserId", "affectedSettingKeys", "commentCount", "approved", "conflictCount", "bypassApproval", "appliedAt", "appliedByUserId", "appliedByUserEmail", "appliedByUserFullName", "closedAt", "closedByUserId", "closedByUserEmail", "closedByUserFullName"));
+    openapiFields = new HashSet<String>(Arrays.asList("changeRequestId", "changeRequestStatus", "needsAttention", "title", "reason", "applyAt", "createdAt", "creatorUserEmail", "creatorUserFullName", "creatorUserId", "affectedSettingKeys", "commentCount", "approved", "conflictCount", "bypassApproval", "appliedAt", "appliedByUserId", "appliedByUserEmail", "appliedByUserFullName", "closedAt", "closedByUserId", "closedByUserEmail", "closedByUserFullName", "sendNotificationsToApprovers"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("changeRequestId", "changeRequestStatus", "needsAttention", "title", "reason", "applyAt", "createdAt", "creatorUserEmail", "creatorUserFullName", "creatorUserId", "affectedSettingKeys", "commentCount", "approved", "conflictCount", "bypassApproval", "appliedAt", "appliedByUserId", "appliedByUserEmail", "appliedByUserFullName", "closedAt", "closedByUserId", "closedByUserEmail", "closedByUserFullName"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("changeRequestId", "changeRequestStatus", "needsAttention", "title", "reason", "applyAt", "createdAt", "creatorUserEmail", "creatorUserFullName", "creatorUserId", "affectedSettingKeys", "commentCount", "approved", "conflictCount", "bypassApproval", "appliedAt", "appliedByUserId", "appliedByUserEmail", "appliedByUserFullName", "closedAt", "closedByUserId", "closedByUserEmail", "closedByUserFullName", "sendNotificationsToApprovers"));
   }
 
   /**

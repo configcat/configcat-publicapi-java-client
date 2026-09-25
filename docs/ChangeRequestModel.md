@@ -35,6 +35,7 @@ Detailed Change Request model with all information including proposed changes, c
 |**closedByUserEmail** | **String** | Email of the user who closed the Change Request. |  |
 |**closedByUserFullName** | **String** | Full name of the user who closed the Change Request. |  |
 |**bypassApproval** | **Boolean** | Indicates whether approval flow is bypassed. |  |
+|**sendNotificationsToApprovers** | **Boolean** | When true, email notifications are sent to team members with approval permission about this Change Request. |  |
 
 
 

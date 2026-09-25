@@ -2,7 +2,7 @@
 
 ConfigCat Public Management API
 - API version: v1
-  - Build date: 2026-08-05T13:17:19.774498623Z[Etc/UTC]
+  - Build date: 2026-09-25T11:19:08.631426472Z[Etc/UTC]
   - Generator version: 7.23.0
 
 The purpose of this API is to access the ConfigCat platform programmatically.
@@ -167,22 +167,22 @@ Class | Method | HTTP request | Description
 *AuditLogsApi* | [**getDeletedSettings**](docs/AuditLogsApi.md#getDeletedSettings) | **GET** /v1/configs/{configId}/deleted-settings | List Deleted Settings
 *AuditLogsApi* | [**getOrganizationAuditlogs**](docs/AuditLogsApi.md#getOrganizationAuditlogs) | **GET** /v1/organizations/{organizationId}/auditlogs | List Audit log items for Organization
 *AuditLogsApi* | [**getOrganizationAuditlogsV2**](docs/AuditLogsApi.md#getOrganizationAuditlogsV2) | **GET** /v2/organizations/{organizationId}/auditlogs | List Audit log items for Organization (V2)
-*ChangeRequestsApprovalFlowScheduledChangesBetaApi* | [**addChangeRequestComment**](docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md#addChangeRequestComment) | **POST** /v2/change-requests/{changeRequestId}/comments | Add Comment
-*ChangeRequestsApprovalFlowScheduledChangesBetaApi* | [**applyChangeRequest**](docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md#applyChangeRequest) | **POST** /v2/change-requests/{changeRequestId}/apply | Apply Change Request
-*ChangeRequestsApprovalFlowScheduledChangesBetaApi* | [**approveChangeRequest**](docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md#approveChangeRequest) | **POST** /v2/change-requests/{changeRequestId}/approve | Approve Change Request
-*ChangeRequestsApprovalFlowScheduledChangesBetaApi* | [**claimChangeRequestOwnership**](docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md#claimChangeRequestOwnership) | **POST** /v2/change-requests/{changeRequestId}/claim-ownership | Claim Ownership
-*ChangeRequestsApprovalFlowScheduledChangesBetaApi* | [**closeChangeRequest**](docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md#closeChangeRequest) | **POST** /v2/change-requests/{changeRequestId}/close | Close Change Request
-*ChangeRequestsApprovalFlowScheduledChangesBetaApi* | [**createChangeRequest**](docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md#createChangeRequest) | **POST** /v2/configs/{configId}/environments/{environmentId}/change-requests | Create Change Request
-*ChangeRequestsApprovalFlowScheduledChangesBetaApi* | [**deleteChangeRequestComment**](docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md#deleteChangeRequestComment) | **DELETE** /v2/change-request-comments/{commentId} | Delete Comment
-*ChangeRequestsApprovalFlowScheduledChangesBetaApi* | [**deleteChangeRequestProposedChange**](docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md#deleteChangeRequestProposedChange) | **DELETE** /v2/change-requests/{changeRequestId}/proposed-changes/{settingId} | Delete Setting from Change Request
-*ChangeRequestsApprovalFlowScheduledChangesBetaApi* | [**getChangeRequest**](docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md#getChangeRequest) | **GET** /v2/change-requests/{changeRequestId} | Get Change Request
-*ChangeRequestsApprovalFlowScheduledChangesBetaApi* | [**getChangeRequestProposedChanges**](docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md#getChangeRequestProposedChanges) | **GET** /v2/change-requests/{changeRequestId}/proposed-changes | Get Settings included in Change Request
-*ChangeRequestsApprovalFlowScheduledChangesBetaApi* | [**getChangeRequests**](docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md#getChangeRequests) | **GET** /v2/products/{productId}/change-requests | List Change Requests
-*ChangeRequestsApprovalFlowScheduledChangesBetaApi* | [**removeChangeRequestApproval**](docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md#removeChangeRequestApproval) | **POST** /v2/change-requests/{changeRequestId}/remove-approval | Remove Approval
-*ChangeRequestsApprovalFlowScheduledChangesBetaApi* | [**resolveChangeRequestSettingConflicts**](docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md#resolveChangeRequestSettingConflicts) | **POST** /v2/change-requests/{changeRequestId}/proposed-changes/{settingId}/resolve-conflicts | Resolve Setting Conflicts
-*ChangeRequestsApprovalFlowScheduledChangesBetaApi* | [**updateChangeRequest**](docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md#updateChangeRequest) | **PUT** /v2/change-requests/{changeRequestId} | Update Change Request
-*ChangeRequestsApprovalFlowScheduledChangesBetaApi* | [**updateChangeRequestComment**](docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md#updateChangeRequestComment) | **PUT** /v2/change-request-comments/{commentId} | Update Comment
-*ChangeRequestsApprovalFlowScheduledChangesBetaApi* | [**updateChangeRequestProposedChanges**](docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md#updateChangeRequestProposedChanges) | **PUT** /v2/change-requests/{changeRequestId}/proposed-changes | Update Settings included in Change Request
+*ChangeRequestsApprovalFlowScheduledChangesApi* | [**addChangeRequestComment**](docs/ChangeRequestsApprovalFlowScheduledChangesApi.md#addChangeRequestComment) | **POST** /v2/change-requests/{changeRequestId}/comments | Add Comment
+*ChangeRequestsApprovalFlowScheduledChangesApi* | [**applyChangeRequest**](docs/ChangeRequestsApprovalFlowScheduledChangesApi.md#applyChangeRequest) | **POST** /v2/change-requests/{changeRequestId}/apply | Apply Change Request
+*ChangeRequestsApprovalFlowScheduledChangesApi* | [**approveChangeRequest**](docs/ChangeRequestsApprovalFlowScheduledChangesApi.md#approveChangeRequest) | **POST** /v2/change-requests/{changeRequestId}/approve | Approve Change Request
+*ChangeRequestsApprovalFlowScheduledChangesApi* | [**claimChangeRequestOwnership**](docs/ChangeRequestsApprovalFlowScheduledChangesApi.md#claimChangeRequestOwnership) | **POST** /v2/change-requests/{changeRequestId}/claim-ownership | Claim Ownership
+*ChangeRequestsApprovalFlowScheduledChangesApi* | [**closeChangeRequest**](docs/ChangeRequestsApprovalFlowScheduledChangesApi.md#closeChangeRequest) | **POST** /v2/change-requests/{changeRequestId}/close | Close Change Request
+*ChangeRequestsApprovalFlowScheduledChangesApi* | [**createChangeRequest**](docs/ChangeRequestsApprovalFlowScheduledChangesApi.md#createChangeRequest) | **POST** /v2/configs/{configId}/environments/{environmentId}/change-requests | Create Change Request
+*ChangeRequestsApprovalFlowScheduledChangesApi* | [**deleteChangeRequestComment**](docs/ChangeRequestsApprovalFlowScheduledChangesApi.md#deleteChangeRequestComment) | **DELETE** /v2/change-request-comments/{commentId} | Delete Comment
+*ChangeRequestsApprovalFlowScheduledChangesApi* | [**deleteChangeRequestProposedChange**](docs/ChangeRequestsApprovalFlowScheduledChangesApi.md#deleteChangeRequestProposedChange) | **DELETE** /v2/change-requests/{changeRequestId}/proposed-changes/{settingId} | Delete Setting from Change Request
+*ChangeRequestsApprovalFlowScheduledChangesApi* | [**getChangeRequest**](docs/ChangeRequestsApprovalFlowScheduledChangesApi.md#getChangeRequest) | **GET** /v2/change-requests/{changeRequestId} | Get Change Request
+*ChangeRequestsApprovalFlowScheduledChangesApi* | [**getChangeRequestProposedChanges**](docs/ChangeRequestsApprovalFlowScheduledChangesApi.md#getChangeRequestProposedChanges) | **GET** /v2/change-requests/{changeRequestId}/proposed-changes | Get Settings included in Change Request
+*ChangeRequestsApprovalFlowScheduledChangesApi* | [**getChangeRequests**](docs/ChangeRequestsApprovalFlowScheduledChangesApi.md#getChangeRequests) | **GET** /v2/products/{productId}/change-requests | List Change Requests
+*ChangeRequestsApprovalFlowScheduledChangesApi* | [**removeChangeRequestApproval**](docs/ChangeRequestsApprovalFlowScheduledChangesApi.md#removeChangeRequestApproval) | **POST** /v2/change-requests/{changeRequestId}/remove-approval | Remove Approval
+*ChangeRequestsApprovalFlowScheduledChangesApi* | [**resolveChangeRequestSettingConflicts**](docs/ChangeRequestsApprovalFlowScheduledChangesApi.md#resolveChangeRequestSettingConflicts) | **POST** /v2/change-requests/{changeRequestId}/proposed-changes/{settingId}/resolve-conflicts | Resolve Setting Conflicts
+*ChangeRequestsApprovalFlowScheduledChangesApi* | [**updateChangeRequest**](docs/ChangeRequestsApprovalFlowScheduledChangesApi.md#updateChangeRequest) | **PUT** /v2/change-requests/{changeRequestId} | Update Change Request
+*ChangeRequestsApprovalFlowScheduledChangesApi* | [**updateChangeRequestComment**](docs/ChangeRequestsApprovalFlowScheduledChangesApi.md#updateChangeRequestComment) | **PUT** /v2/change-request-comments/{commentId} | Update Comment
+*ChangeRequestsApprovalFlowScheduledChangesApi* | [**updateChangeRequestProposedChanges**](docs/ChangeRequestsApprovalFlowScheduledChangesApi.md#updateChangeRequestProposedChanges) | **PUT** /v2/change-requests/{changeRequestId}/proposed-changes | Update Settings included in Change Request
 *CodeReferencesApi* | [**v1CodeReferencesDeleteReportsPost**](docs/CodeReferencesApi.md#v1CodeReferencesDeleteReportsPost) | **POST** /v1/code-references/delete-reports | Delete Reference reports
 *CodeReferencesApi* | [**v1CodeReferencesPost**](docs/CodeReferencesApi.md#v1CodeReferencesPost) | **POST** /v1/code-references | Upload References
 *CodeReferencesApi* | [**v1SettingsSettingIdCodeReferencesGet**](docs/CodeReferencesApi.md#v1SettingsSettingIdCodeReferencesGet) | **GET** /v1/settings/{settingId}/code-references | Get References for Feature Flag or Setting
@@ -277,6 +277,7 @@ Class | Method | HTTP request | Description
 *TagsApi* | [**getTag**](docs/TagsApi.md#getTag) | **GET** /v1/tags/{tagId} | Get Tag
 *TagsApi* | [**getTags**](docs/TagsApi.md#getTags) | **GET** /v1/products/{productId}/tags | List Tags
 *TagsApi* | [**updateTag**](docs/TagsApi.md#updateTag) | **PUT** /v1/tags/{tagId} | Update Tag
+*UsageQuotaApi* | [**getOrganizationUsageAndQuota**](docs/UsageQuotaApi.md#getOrganizationUsageAndQuota) | **GET** /v1/organizations/{organizationId}/usage-and-quota | Get usage and quota
 *WebhooksApi* | [**createWebhook**](docs/WebhooksApi.md#createWebhook) | **POST** /v1/configs/{configId}/environments/{environmentId}/webhooks | Create Webhook
 *WebhooksApi* | [**deleteWebhook**](docs/WebhooksApi.md#deleteWebhook) | **DELETE** /v1/webhooks/{webhookId} | Delete Webhook
 *WebhooksApi* | [**getWebhook**](docs/WebhooksApi.md#getWebhook) | **GET** /v1/webhooks/{webhookId} | Get Webhook
@@ -350,6 +351,7 @@ Class | Method | HTTP request | Description
  - [DeleteIntegrationLinkModel](docs/DeleteIntegrationLinkModel.md)
  - [DeleteRepositoryReportsRequest](docs/DeleteRepositoryReportsRequest.md)
  - [DeletedSettingModel](docs/DeletedSettingModel.md)
+ - [DetailedStatisticV2Model](docs/DetailedStatisticV2Model.md)
  - [EnvironmentAccessType](docs/EnvironmentAccessType.md)
  - [EnvironmentApprovalPermissionType](docs/EnvironmentApprovalPermissionType.md)
  - [EnvironmentModel](docs/EnvironmentModel.md)
@@ -379,6 +381,7 @@ Class | Method | HTTP request | Description
  - [OrganizationMemberModel](docs/OrganizationMemberModel.md)
  - [OrganizationMembersModel](docs/OrganizationMembersModel.md)
  - [OrganizationModel](docs/OrganizationModel.md)
+ - [OrganizationMonthlyStatisticV2Model](docs/OrganizationMonthlyStatisticV2Model.md)
  - [OrganizationPermissionGroupModel](docs/OrganizationPermissionGroupModel.md)
  - [OrganizationPermissionModel](docs/OrganizationPermissionModel.md)
  - [OrganizationProductModel](docs/OrganizationProductModel.md)
@@ -399,6 +402,7 @@ Class | Method | HTTP request | Description
  - [PrerequisiteComparator](docs/PrerequisiteComparator.md)
  - [PrerequisiteFlagConditionModel](docs/PrerequisiteFlagConditionModel.md)
  - [ProductModel](docs/ProductModel.md)
+ - [ProductMonthlyStatisticV2Model](docs/ProductMonthlyStatisticV2Model.md)
  - [ProxyProfileListModel](docs/ProxyProfileListModel.md)
  - [ProxyProfileModel](docs/ProxyProfileModel.md)
  - [ProxyProfileSdkKeyItem](docs/ProxyProfileSdkKeyItem.md)
@@ -439,6 +443,7 @@ Class | Method | HTTP request | Description
  - [StaleFlagSettingTagModel](docs/StaleFlagSettingTagModel.md)
  - [StaleFlagSettingValueModel](docs/StaleFlagSettingValueModel.md)
  - [StaleFlagStaleInEnvironmentsType](docs/StaleFlagStaleInEnvironmentsType.md)
+ - [StatisticsV2Model](docs/StatisticsV2Model.md)
  - [TagModel](docs/TagModel.md)
  - [TargetingRuleModel](docs/TargetingRuleModel.md)
  - [UpdateApproveRequiredEnvironmentModel](docs/UpdateApproveRequiredEnvironmentModel.md)
