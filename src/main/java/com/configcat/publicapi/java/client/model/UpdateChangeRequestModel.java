@@ -50,7 +50,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * UpdateChangeRequestModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-05T13:17:19.774498623Z[Etc/UTC]", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-25T11:19:08.631426472Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class UpdateChangeRequestModel {
   public static final String SERIALIZED_NAME_TITLE = "title";
   @SerializedName(SERIALIZED_NAME_TITLE)
@@ -71,6 +71,11 @@ public class UpdateChangeRequestModel {
   @SerializedName(SERIALIZED_NAME_BYPASS_APPROVAL)
   @javax.annotation.Nullable
   private Boolean bypassApproval;
+
+  public static final String SERIALIZED_NAME_SEND_NOTIFICATIONS_TO_APPROVERS = "sendNotificationsToApprovers";
+  @SerializedName(SERIALIZED_NAME_SEND_NOTIFICATIONS_TO_APPROVERS)
+  @javax.annotation.Nullable
+  private Boolean sendNotificationsToApprovers;
 
   public UpdateChangeRequestModel() {
   }
@@ -150,6 +155,25 @@ public class UpdateChangeRequestModel {
     this.bypassApproval = bypassApproval;
   }
 
+
+  public UpdateChangeRequestModel sendNotificationsToApprovers(@javax.annotation.Nullable Boolean sendNotificationsToApprovers) {
+    this.sendNotificationsToApprovers = sendNotificationsToApprovers;
+    return this;
+  }
+
+  /**
+   * The updated flag for whether email notifications should be sent to team members with approval permission about this Change Request.
+   * @return sendNotificationsToApprovers
+   */
+  @javax.annotation.Nullable
+  public Boolean getSendNotificationsToApprovers() {
+    return sendNotificationsToApprovers;
+  }
+
+  public void setSendNotificationsToApprovers(@javax.annotation.Nullable Boolean sendNotificationsToApprovers) {
+    this.sendNotificationsToApprovers = sendNotificationsToApprovers;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -208,7 +232,8 @@ public class UpdateChangeRequestModel {
     return Objects.equals(this.title, updateChangeRequestModel.title) &&
         Objects.equals(this.reason, updateChangeRequestModel.reason) &&
         Objects.equals(this.applyAt, updateChangeRequestModel.applyAt) &&
-        Objects.equals(this.bypassApproval, updateChangeRequestModel.bypassApproval)&&
+        Objects.equals(this.bypassApproval, updateChangeRequestModel.bypassApproval) &&
+        Objects.equals(this.sendNotificationsToApprovers, updateChangeRequestModel.sendNotificationsToApprovers)&&
         Objects.equals(this.additionalProperties, updateChangeRequestModel.additionalProperties);
   }
 
@@ -218,7 +243,7 @@ public class UpdateChangeRequestModel {
 
   @Override
   public int hashCode() {
-    return Objects.hash(title, reason, applyAt, bypassApproval, additionalProperties);
+    return Objects.hash(title, reason, applyAt, bypassApproval, sendNotificationsToApprovers, additionalProperties);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -236,6 +261,7 @@ public class UpdateChangeRequestModel {
     sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("    applyAt: ").append(toIndentedString(applyAt)).append("\n");
     sb.append("    bypassApproval: ").append(toIndentedString(bypassApproval)).append("\n");
+    sb.append("    sendNotificationsToApprovers: ").append(toIndentedString(sendNotificationsToApprovers)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -255,7 +281,7 @@ public class UpdateChangeRequestModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("title", "reason", "applyAt", "bypassApproval"));
+    openapiFields = new HashSet<String>(Arrays.asList("title", "reason", "applyAt", "bypassApproval", "sendNotificationsToApprovers"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("title"));

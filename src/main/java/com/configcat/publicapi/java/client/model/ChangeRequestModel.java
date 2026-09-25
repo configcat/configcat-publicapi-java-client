@@ -58,7 +58,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * Detailed Change Request model with all information including proposed changes, comments, and approvals.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-05T13:17:19.774498623Z[Etc/UTC]", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-25T11:19:08.631426472Z[Etc/UTC]", comments = "Generator version: 7.23.0")
 public class ChangeRequestModel {
   public static final String SERIALIZED_NAME_CHANGE_REQUEST_ID = "changeRequestId";
   @SerializedName(SERIALIZED_NAME_CHANGE_REQUEST_ID)
@@ -194,6 +194,11 @@ public class ChangeRequestModel {
   @SerializedName(SERIALIZED_NAME_BYPASS_APPROVAL)
   @javax.annotation.Nonnull
   private Boolean bypassApproval;
+
+  public static final String SERIALIZED_NAME_SEND_NOTIFICATIONS_TO_APPROVERS = "sendNotificationsToApprovers";
+  @SerializedName(SERIALIZED_NAME_SEND_NOTIFICATIONS_TO_APPROVERS)
+  @javax.annotation.Nonnull
+  private Boolean sendNotificationsToApprovers;
 
   public ChangeRequestModel() {
   }
@@ -750,6 +755,25 @@ public class ChangeRequestModel {
     this.bypassApproval = bypassApproval;
   }
 
+
+  public ChangeRequestModel sendNotificationsToApprovers(@javax.annotation.Nonnull Boolean sendNotificationsToApprovers) {
+    this.sendNotificationsToApprovers = sendNotificationsToApprovers;
+    return this;
+  }
+
+  /**
+   * When true, email notifications are sent to team members with approval permission about this Change Request.
+   * @return sendNotificationsToApprovers
+   */
+  @javax.annotation.Nonnull
+  public Boolean getSendNotificationsToApprovers() {
+    return sendNotificationsToApprovers;
+  }
+
+  public void setSendNotificationsToApprovers(@javax.annotation.Nonnull Boolean sendNotificationsToApprovers) {
+    this.sendNotificationsToApprovers = sendNotificationsToApprovers;
+  }
+
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -831,13 +855,14 @@ public class ChangeRequestModel {
         Objects.equals(this.closedByUserId, changeRequestModel.closedByUserId) &&
         Objects.equals(this.closedByUserEmail, changeRequestModel.closedByUserEmail) &&
         Objects.equals(this.closedByUserFullName, changeRequestModel.closedByUserFullName) &&
-        Objects.equals(this.bypassApproval, changeRequestModel.bypassApproval)&&
+        Objects.equals(this.bypassApproval, changeRequestModel.bypassApproval) &&
+        Objects.equals(this.sendNotificationsToApprovers, changeRequestModel.sendNotificationsToApprovers)&&
         Objects.equals(this.additionalProperties, changeRequestModel.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(changeRequestId, configId, environmentId, changeRequestStatus, needsAttention, title, reason, applyAt, createdAt, creatorUserEmail, creatorUserFullName, creatorUserId, settingValues, comments, approved, approvals, activities, changeRequestIssues, appliedAt, appliedByUserId, appliedByUserEmail, appliedByUserFullName, closedAt, closedByUserId, closedByUserEmail, closedByUserFullName, bypassApproval, additionalProperties);
+    return Objects.hash(changeRequestId, configId, environmentId, changeRequestStatus, needsAttention, title, reason, applyAt, createdAt, creatorUserEmail, creatorUserFullName, creatorUserId, settingValues, comments, approved, approvals, activities, changeRequestIssues, appliedAt, appliedByUserId, appliedByUserEmail, appliedByUserFullName, closedAt, closedByUserId, closedByUserEmail, closedByUserFullName, bypassApproval, sendNotificationsToApprovers, additionalProperties);
   }
 
   @Override
@@ -871,6 +896,7 @@ public class ChangeRequestModel {
     sb.append("    closedByUserEmail: ").append(toIndentedString(closedByUserEmail)).append("\n");
     sb.append("    closedByUserFullName: ").append(toIndentedString(closedByUserFullName)).append("\n");
     sb.append("    bypassApproval: ").append(toIndentedString(bypassApproval)).append("\n");
+    sb.append("    sendNotificationsToApprovers: ").append(toIndentedString(sendNotificationsToApprovers)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -890,10 +916,10 @@ public class ChangeRequestModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("changeRequestId", "configId", "environmentId", "changeRequestStatus", "needsAttention", "title", "reason", "applyAt", "createdAt", "creatorUserEmail", "creatorUserFullName", "creatorUserId", "settingValues", "comments", "approved", "approvals", "activities", "changeRequestIssues", "appliedAt", "appliedByUserId", "appliedByUserEmail", "appliedByUserFullName", "closedAt", "closedByUserId", "closedByUserEmail", "closedByUserFullName", "bypassApproval"));
+    openapiFields = new HashSet<String>(Arrays.asList("changeRequestId", "configId", "environmentId", "changeRequestStatus", "needsAttention", "title", "reason", "applyAt", "createdAt", "creatorUserEmail", "creatorUserFullName", "creatorUserId", "settingValues", "comments", "approved", "approvals", "activities", "changeRequestIssues", "appliedAt", "appliedByUserId", "appliedByUserEmail", "appliedByUserFullName", "closedAt", "closedByUserId", "closedByUserEmail", "closedByUserFullName", "bypassApproval", "sendNotificationsToApprovers"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>(Arrays.asList("changeRequestId", "configId", "environmentId", "changeRequestStatus", "needsAttention", "title", "reason", "applyAt", "createdAt", "creatorUserEmail", "creatorUserFullName", "creatorUserId", "settingValues", "comments", "approved", "approvals", "activities", "changeRequestIssues", "appliedAt", "appliedByUserId", "appliedByUserEmail", "appliedByUserFullName", "closedAt", "closedByUserId", "closedByUserEmail", "closedByUserFullName", "bypassApproval"));
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("changeRequestId", "configId", "environmentId", "changeRequestStatus", "needsAttention", "title", "reason", "applyAt", "createdAt", "creatorUserEmail", "creatorUserFullName", "creatorUserId", "settingValues", "comments", "approved", "approvals", "activities", "changeRequestIssues", "appliedAt", "appliedByUserId", "appliedByUserEmail", "appliedByUserFullName", "closedAt", "closedByUserId", "closedByUserEmail", "closedByUserFullName", "bypassApproval", "sendNotificationsToApprovers"));
   }
 
   /**

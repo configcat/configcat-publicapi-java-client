@@ -148,6 +148,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.DeleteIntegrationLinkModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.DeleteRepositoryReportsRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.DeletedSettingModel.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.DetailedStatisticV2Model.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.EnvironmentModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.FeatureFlagLimitations.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.FlagReference.CustomTypeAdapterFactory());
@@ -169,6 +170,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.OrganizationMemberModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.OrganizationMembersModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.OrganizationModel.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.OrganizationMonthlyStatisticV2Model.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.OrganizationPermissionGroupModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.OrganizationPermissionModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.OrganizationProductModel.CustomTypeAdapterFactory());
@@ -188,6 +190,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.PreferencesModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.PrerequisiteFlagConditionModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.ProductModel.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.ProductMonthlyStatisticV2Model.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.ProxyProfileListModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.ProxyProfileModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.ProxyProfileSdkKeyItem.CustomTypeAdapterFactory());
@@ -222,6 +225,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.StaleFlagSettingModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.StaleFlagSettingTagModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.StaleFlagSettingValueModel.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.StatisticsV2Model.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.TagModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.TargetingRuleModel.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.configcat.publicapi.java.client.model.UpdateApproveRequiredEnvironmentModel.CustomTypeAdapterFactory());

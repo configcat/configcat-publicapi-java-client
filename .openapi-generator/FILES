@@ -29,7 +29,7 @@ docs/ChangeRequestScheduleFilter.md
 docs/ChangeRequestStatus.md
 docs/ChangeRequestSummaryModel.md
 docs/ChangeRequestSummaryModelPagedList.md
-docs/ChangeRequestsApprovalFlowScheduledChangesBetaApi.md
+docs/ChangeRequestsApprovalFlowScheduledChangesApi.md
 docs/ChangeRequestsModel.md
 docs/CodeReferenceModel.md
 docs/CodeReferenceRequest.md
@@ -66,6 +66,7 @@ docs/CreateTagModel.md
 docs/DeleteIntegrationLinkModel.md
 docs/DeleteRepositoryReportsRequest.md
 docs/DeletedSettingModel.md
+docs/DetailedStatisticV2Model.md
 docs/EnvironmentAccessType.md
 docs/EnvironmentApprovalPermissionType.md
 docs/EnvironmentModel.md
@@ -105,6 +106,7 @@ docs/OrganizationLimitations.md
 docs/OrganizationMemberModel.md
 docs/OrganizationMembersModel.md
 docs/OrganizationModel.md
+docs/OrganizationMonthlyStatisticV2Model.md
 docs/OrganizationPermissionGroupModel.md
 docs/OrganizationPermissionModel.md
 docs/OrganizationProductModel.md
@@ -127,6 +129,7 @@ docs/PreferencesModel.md
 docs/PrerequisiteComparator.md
 docs/PrerequisiteFlagConditionModel.md
 docs/ProductModel.md
+docs/ProductMonthlyStatisticV2Model.md
 docs/ProductsApi.md
 docs/ProxyProfileListModel.md
 docs/ProxyProfileModel.md
@@ -171,6 +174,7 @@ docs/StaleFlagSettingModel.md
 docs/StaleFlagSettingTagModel.md
 docs/StaleFlagSettingValueModel.md
 docs/StaleFlagStaleInEnvironmentsType.md
+docs/StatisticsV2Model.md
 docs/TagModel.md
 docs/TagsApi.md
 docs/TargetingRuleModel.md
@@ -209,6 +213,7 @@ docs/UpdateTagModel.md
 docs/UpdateTargetingRuleModel.md
 docs/UpdateUserConditionModel.md
 docs/UpdateValueModel.md
+docs/UsageQuotaApi.md
 docs/UserComparator.md
 docs/UserConditionModel.md
 docs/UserModel.md
@@ -246,7 +251,7 @@ src/main/java/com/configcat/publicapi/java/client/ServerConfiguration.java
 src/main/java/com/configcat/publicapi/java/client/ServerVariable.java
 src/main/java/com/configcat/publicapi/java/client/StringUtil.java
 src/main/java/com/configcat/publicapi/java/client/api/AuditLogsApi.java
-src/main/java/com/configcat/publicapi/java/client/api/ChangeRequestsApprovalFlowScheduledChangesBetaApi.java
+src/main/java/com/configcat/publicapi/java/client/api/ChangeRequestsApprovalFlowScheduledChangesApi.java
 src/main/java/com/configcat/publicapi/java/client/api/CodeReferencesApi.java
 src/main/java/com/configcat/publicapi/java/client/api/ConfigsApi.java
 src/main/java/com/configcat/publicapi/java/client/api/EnvironmentsApi.java
@@ -266,6 +271,7 @@ src/main/java/com/configcat/publicapi/java/client/api/ProxyProfilesApi.java
 src/main/java/com/configcat/publicapi/java/client/api/SdkKeysApi.java
 src/main/java/com/configcat/publicapi/java/client/api/SegmentsApi.java
 src/main/java/com/configcat/publicapi/java/client/api/TagsApi.java
+src/main/java/com/configcat/publicapi/java/client/api/UsageQuotaApi.java
 src/main/java/com/configcat/publicapi/java/client/api/WebhooksApi.java
 src/main/java/com/configcat/publicapi/java/client/api/ZombieStaleFlagsApi.java
 src/main/java/com/configcat/publicapi/java/client/auth/ApiKeyAuth.java
@@ -334,6 +340,7 @@ src/main/java/com/configcat/publicapi/java/client/model/CreateTagModel.java
 src/main/java/com/configcat/publicapi/java/client/model/DeleteIntegrationLinkModel.java
 src/main/java/com/configcat/publicapi/java/client/model/DeleteRepositoryReportsRequest.java
 src/main/java/com/configcat/publicapi/java/client/model/DeletedSettingModel.java
+src/main/java/com/configcat/publicapi/java/client/model/DetailedStatisticV2Model.java
 src/main/java/com/configcat/publicapi/java/client/model/EnvironmentAccessType.java
 src/main/java/com/configcat/publicapi/java/client/model/EnvironmentApprovalPermissionType.java
 src/main/java/com/configcat/publicapi/java/client/model/EnvironmentModel.java
@@ -363,6 +370,7 @@ src/main/java/com/configcat/publicapi/java/client/model/OrganizationLimitations.
 src/main/java/com/configcat/publicapi/java/client/model/OrganizationMemberModel.java
 src/main/java/com/configcat/publicapi/java/client/model/OrganizationMembersModel.java
 src/main/java/com/configcat/publicapi/java/client/model/OrganizationModel.java
+src/main/java/com/configcat/publicapi/java/client/model/OrganizationMonthlyStatisticV2Model.java
 src/main/java/com/configcat/publicapi/java/client/model/OrganizationPermissionGroupModel.java
 src/main/java/com/configcat/publicapi/java/client/model/OrganizationPermissionModel.java
 src/main/java/com/configcat/publicapi/java/client/model/OrganizationProductModel.java
@@ -383,6 +391,7 @@ src/main/java/com/configcat/publicapi/java/client/model/PreferencesModel.java
 src/main/java/com/configcat/publicapi/java/client/model/PrerequisiteComparator.java
 src/main/java/com/configcat/publicapi/java/client/model/PrerequisiteFlagConditionModel.java
 src/main/java/com/configcat/publicapi/java/client/model/ProductModel.java
+src/main/java/com/configcat/publicapi/java/client/model/ProductMonthlyStatisticV2Model.java
 src/main/java/com/configcat/publicapi/java/client/model/ProxyProfileListModel.java
 src/main/java/com/configcat/publicapi/java/client/model/ProxyProfileModel.java
 src/main/java/com/configcat/publicapi/java/client/model/ProxyProfileSdkKeyItem.java
@@ -423,6 +432,7 @@ src/main/java/com/configcat/publicapi/java/client/model/StaleFlagSettingModel.ja
 src/main/java/com/configcat/publicapi/java/client/model/StaleFlagSettingTagModel.java
 src/main/java/com/configcat/publicapi/java/client/model/StaleFlagSettingValueModel.java
 src/main/java/com/configcat/publicapi/java/client/model/StaleFlagStaleInEnvironmentsType.java
+src/main/java/com/configcat/publicapi/java/client/model/StatisticsV2Model.java
 src/main/java/com/configcat/publicapi/java/client/model/TagModel.java
 src/main/java/com/configcat/publicapi/java/client/model/TargetingRuleModel.java
 src/main/java/com/configcat/publicapi/java/client/model/UpdateApproveRequiredEnvironmentModel.java

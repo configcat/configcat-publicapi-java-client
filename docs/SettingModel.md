@@ -14,7 +14,7 @@ Metadata of a Feature Flag or Setting.
 |**hint** | **String** | Description of the Feature Flag or Setting. |  |
 |**order** | **Integer** | The order of the Feature Flag or Setting represented on the ConfigCat Dashboard. |  |
 |**settingType** | **SettingType** |  |  |
-|**isJson** | **Boolean** |  |  |
+|**isJson** | **Boolean** | Indicates whether this setting should validate string values as JSON values. |  |
 |**configId** | **UUID** | Identifier of the Feature Flag&#39;s Config. |  |
 |**configName** | **String** | Name of the Feature Flag&#39;s Config. |  |
 |**createdAt** | **OffsetDateTime** | The creation time of the Feature Flag or Setting. |  |
