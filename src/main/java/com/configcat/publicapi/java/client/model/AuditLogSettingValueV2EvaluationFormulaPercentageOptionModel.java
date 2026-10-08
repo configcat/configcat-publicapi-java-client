@@ -30,6 +30,7 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonNull;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
@@ -49,7 +50,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * A percentage option for percentage-based user bucketing (for A/B testing), specifying a percentage range and the value to return.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-25T11:19:08.631426472Z[Etc/UTC]", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-08T12:55:18.638075226Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class AuditLogSettingValueV2EvaluationFormulaPercentageOptionModel {
   public static final String SERIALIZED_NAME_PERCENTAGE = "percentage";
   @SerializedName(SERIALIZED_NAME_PERCENTAGE)
@@ -279,7 +280,9 @@ public class AuditLogSettingValueV2EvaluationFormulaPercentageOptionModel {
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
                    JsonElement jsonElement = gson.toJsonTree(entry.getValue());
-                   if (jsonElement.isJsonArray()) {
+                   if (jsonElement.isJsonNull()) {
+                     obj.add(entry.getKey(), JsonNull.INSTANCE);
+                   } else if (jsonElement.isJsonArray()) {
                      obj.add(entry.getKey(), jsonElement.getAsJsonArray());
                    } else {
                      obj.add(entry.getKey(), jsonElement.getAsJsonObject());

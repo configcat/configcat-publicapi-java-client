@@ -36,6 +36,7 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonNull;
 import com.google.gson.JsonParseException;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
@@ -55,7 +56,7 @@ import com.configcat.publicapi.java.client.JSON;
 /**
  * A condition that needs to be evaluated to determine if a targeting rule applies to a user. Conditions can be based on user attributes, segments, or prerequisite settings.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-25T11:19:08.631426472Z[Etc/UTC]", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-08T12:55:18.638075226Z[Etc/UTC]", comments = "Generator version: 7.26.0")
 public class AuditLogSettingValueV2EvaluationFormulaConditionModel {
   public static final String SERIALIZED_NAME_CONDITION_TYPE = "conditionType";
   @SerializedName(SERIALIZED_NAME_CONDITION_TYPE)
@@ -551,7 +552,9 @@ public class AuditLogSettingValueV2EvaluationFormulaConditionModel {
                    obj.addProperty(entry.getKey(), (Character) entry.getValue());
                  else {
                    JsonElement jsonElement = gson.toJsonTree(entry.getValue());
-                   if (jsonElement.isJsonArray()) {
+                   if (jsonElement.isJsonNull()) {
+                     obj.add(entry.getKey(), JsonNull.INSTANCE);
+                   } else if (jsonElement.isJsonArray()) {
                      obj.add(entry.getKey(), jsonElement.getAsJsonArray());
                    } else {
                      obj.add(entry.getKey(), jsonElement.getAsJsonObject());
