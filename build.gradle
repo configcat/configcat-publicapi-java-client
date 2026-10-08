@@ -95,7 +95,7 @@ dependencies {
     implementation(libs.gson)
     implementation(libs.gson.fire)
     implementation(libs.jsr311.api)
-    implementation(libs.javax.ws.rs.api)
+    implementation(libs.jakarta.ws.rs.api)
     implementation(libs.jackson.databind.nullable)
     implementation(libs.jackson.core)
     implementation(libs.commons.lang3)
@@ -148,48 +148,5 @@ test {
     testLogging {
         events "passed", "skipped", "failed"
     }
+
 }
-
-mavenPublishing {
-    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
-
-    def signingInMemoryKey = findProperty("signingInMemoryKey")
-    def signingInMemoryKeyPassword = findProperty("signingInMemoryKeyPassword")
-    if (signingInMemoryKey && signingInMemoryKeyPassword) {
-        signAllPublications()
-    }
-
-    configure(new JavaLibrary(new JavadocJar.Javadoc(), true))
-
-    coordinates(project.group as String, project.name, project.version as String)
-
-    pom {
-        name.set("ConfigCat PublicApi Java Client")
-        description.set("ConfigCat PublicApi Java Client generated with OpenAPI Generator.")
-        url.set("https://github.com/configcat/configcat-publicapi-java-client")
-        licenses {
-            license {
-                name.set("MIT License")
-                url.set("https://raw.githubusercontent.com/configcat/configcat-publicapi-java-client/main/LICENSE")
-                distribution.set("repo")
-            }
-        }
-        scm {
-            connection.set("scm:git:git://github.com/configcat/configcat-publicapi-java-client.git")
-            developerConnection.set("scm:git:ssh:git@github.com:configcat/configcat-publicapi-java-client.git")
-            url.set("https://github.com/configcat/configcat-publicapi-java-client")
-        }
-        developers {
-            developer {
-                id.set("configcat")
-                name.set("ConfigCat")
-                email.set("developer@configcat.com")
-            }
-        }
-        organization {
-            url.set("https://configcat.com")
-            name.set("ConfigCat")
-        }
-    }
-}
-

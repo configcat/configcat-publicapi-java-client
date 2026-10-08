@@ -1,6 +1,8 @@
 .travis.yml
 README.md
 api/openapi.yaml
+build.gradle
+build.sbt
 docs/AccessType.md
 docs/AddChangeRequestCommentModel.md
 docs/AddOrUpdateIntegrationLinkModel.md
@@ -235,6 +237,7 @@ gradle/wrapper/gradle-wrapper.jar
 gradle/wrapper/gradle-wrapper.properties
 gradlew
 gradlew.bat
+pom.xml
 settings.gradle
 src/main/AndroidManifest.xml
 src/main/java/com/configcat/publicapi/java/client/ApiCallback.java

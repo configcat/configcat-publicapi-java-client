@@ -2,8 +2,8 @@
 
 ConfigCat Public Management API
 - API version: v1
-  - Build date: 2026-09-25T11:19:08.631426472Z[Etc/UTC]
-  - Generator version: 7.23.0
+  - Build date: 2026-10-08T12:55:18.638075226Z[Etc/UTC]
+  - Generator version: 7.26.0
 
 The purpose of this API is to access the ConfigCat platform programmatically.
 You can **Create**, **Read**, **Update** and **Delete** any entities like **Feature Flags, Configs, Environments** or **Products** within ConfigCat.
